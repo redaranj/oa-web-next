@@ -11,7 +11,7 @@ const withMDX = mdx({
 
 const config = withMDX({
   reactStrictMode: true,
-  basePath: "",
+  basePath: "/web-next",
   assetPrefix: "",
   pageExtensions: ["ts", "tsx", "mdx"],
 });
