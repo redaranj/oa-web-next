@@ -1,136 +1,58 @@
 import { Box, Grid } from "@mui/material";
 
-export const breakSmall = "@media (max-width: 500px)";
-
-export const colors: any = {
-  white: "#ffffff",
-  black: "#000000",
-  grey: "#aaa",
-  red: "#f94b26",
-  darkRed: "#3c0c02",
-  mintGreen: "#a9d8b8",
-  darkMintGreen: "#224428",
-  mustardYellow: "#ffdb57",
-  darkMustardYellow: "#e0b000",
-  lavender: "#e2c5e4",
-  darkLavender: "#432046",
-  lightBlue: "#42acf7",
-  darkLightBlue: "#02243c",
-  brightBlue: "#0000ff",
+export const breakpoints = {
+  desktopLarge: "@media (max-width: 1920px)",
+  desktopSmall: "@media (max-width: 1366px)",
+  tabletLarge: "@media (max-width: 1024px)",
+  tabletSmall: "@media (max-width: 768px)",
+  phoneLarge: "@media (max-width: 576px)",
+  phoneSmall: "@media (max-width: 360px)",
 };
 
-export const typography: any = {
-  // chapter title
+export const colors = {
+  white: "#ffffff",
+  black: "#1a1a1a",
+  lightGrey: "#f1f4f8",
+  turquoise: "#00b4a6",
+};
+
+const typographyDefaults = {
+  color: colors.black,
+  margin: 0,
+};
+
+export const typography = {
   h1: {
-    fontFamily: "Helvetica, sans-serif",
-    fontSize: "75px",
-    lineHeight: "80px",
-    textTransform: "uppercase",
-    fontWeight: 400,
-    margin: 0,
-    [breakSmall]: {
-      fontSize: "40px",
-      lineHeight: "50px",
+    ...typographyDefaults,
+    fontFamily: "Montserrat, sans-serif",
+    fontStyle: "normal",
+    fontWeight: 600,
+    fontSize: "70px",
+    lineHeight: "100%",
+    [breakpoints.desktopSmall]: {
+      fontSize: "66px",
+    },
+    [breakpoints.tabletLarge]: {
+      fontSize: "50px",
+    },
+    [breakpoints.phoneLarge]: {
+      fontSize: "34px",
     },
   },
-  // section title
-  h2: {
-    fontFamily: "Helvetica, sans-serif",
-    fontSize: "42px",
-    lineHeight: "56px",
-    textTransform: "uppercase",
+  h2: { ...typographyDefaults },
+  h3: { ...typographyDefaults },
+  h4: { ...typographyDefaults },
+  h5: { ...typographyDefaults },
+  h6: { ...typographyDefaults },
+  p: { ...typographyDefaults },
+  bodyLarge: {
+    ...typographyDefaults,
+    fontFamily: "Montserrat, sans-serif",
     fontWeight: 400,
-    margin: 0,
-    [breakSmall]: {
-      fontSize: "30px",
-      lineHeight: "38px",
-    },
+    fontSize: "20px",
+    lineHeight: "150%",
   },
-  // section title with background
-  h3: {
-    fontFamily: "Helvetica, sans-serif",
-    fontSize: "42px",
-    lineHeight: "56px",
-    textTransform: "uppercase",
-    fontWeight: 400,
-    margin: 0,
-    [breakSmall]: {
-      fontSize: "30px",
-      lineHeight: "38px",
-    },
-  },
-  // exercise title
-  h4: {
-    fontFamily: "Helvetica, sans-serif",
-    fontSize: "42px",
-    lineHeight: "50px",
-    textTransform: "uppercase",
-    fontWeight: 400,
-    margin: 0,
-    [breakSmall]: {
-      fontSize: "30px",
-      lineHeight: "38px",
-      overflowWrap: "anywhere",
-    },
-  },
-  // tags
-  h5: {
-    fontFamily: "Helvetica, sans-serif",
-    fontSize: "18px",
-    lineHeight: "22px",
-    textTransform: "uppercase",
-    fontWeight: 400,
-    margin: 0,
-    [breakSmall]: {
-      overflowWrap: "anywhere",
-    },
-  },
-  // reading time
-  h6: {
-    fontFamily: "Helvetica, sans-serif",
-    fontSize: "34px",
-    lineHeight: "40px",
-    fontWeight: 400,
-    margin: 0,
-    [breakSmall]: {
-      fontSize: "24px",
-      lineHeight: "30px",
-    },
-  },
-  p: {
-    fontFamily: "Helvetica, sans-serif",
-    fontSize: "24px",
-    lineHeight: "28px",
-    fontWeight: 400,
-    margin: 0,
-    overflowWrap: "anywhere",
-    [breakSmall]: {
-      fontSize: "19px",
-      lineHeight: "24px",
-    },
-  },
-  blockquote: {
-    fontWeight: 400,
-    margin: 0,
-    p: 2,
-    pl: 4,
-    pr: 4,
-    [breakSmall]: {
-      p: 1,
-      pl: 1,
-      pr: 1,
-    },
-    "& div": {
-      width: "100%",
-    },
-    "& p": {
-      fontFamily: "Helvetica, sans-serif",
-      color: colors.brightBlue,
-      width: "100%",
-    },
-    border: `1px solid ${colors.brightBlue}`,
-    borderRadius: "500px",
-  },
+  blockquote: { ...typographyDefaults },
 };
 
 const extractID = (rawText: string) => {
@@ -274,9 +196,6 @@ export const components = (
           justifyContent="flex-end"
           sx={{
             marginLeft: "20px",
-            [breakSmall]: {
-              marginLeft: "10px",
-            },
             backgroundColor: color,
             borderRadius: "0px 0px 50px 50px",
             pb: "40px",

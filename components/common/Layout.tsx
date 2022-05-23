@@ -1,10 +1,10 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import { Grid } from "@mui/material";
-import { TopBar } from "./TopBar";
+import { TopNav } from "./TopNav";
 
-export const Layout: FC = ({ children }) => (
+export const Layout: FC<PropsWithChildren<{}>> = ({ children }) => (
   <Grid container direction="column">
-    <TopBar />
+    <TopNav />
     <Grid item>{children}</Grid>
   </Grid>
 );

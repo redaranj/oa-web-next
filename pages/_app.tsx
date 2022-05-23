@@ -1,14 +1,13 @@
 import { AppProps } from "next/app";
 import { CssBaseline } from "@mui/material";
-import { Layout } from "components/common/Layout";
 import "styles/global.css";
+import "@fontsource/montserrat/400.css";
+import "@fontsource/montserrat/600.css";
 
 const OpenArchiveWeb = ({ Component, pageProps }: AppProps) => (
   <>
     <CssBaseline />
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <Component {...pageProps} />
   </>
 );
 

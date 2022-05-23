@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { Grid, Box, IconButton } from "@mui/material";
 
-export const TopBar = () => {
+export const TopNav = () => {
   const router = useRouter();
   const {
     asPath,
