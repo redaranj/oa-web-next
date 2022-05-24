@@ -10,7 +10,8 @@ export const MissionSection: FC = () => {
   return (
     <PageSection backgroundColor={lightGrey}>
       <Grid container>
-        <Grid item container direction="column">
+        <Grid item sx={{ width: "50%" }}></Grid>
+        <Grid item container direction="column" sx={{ width: "50%" }}>
           <Grid item>
             <Box component="h1" sx={h1}>
               Mission statement
