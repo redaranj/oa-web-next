@@ -1,8 +1,17 @@
 import { FC } from "react";
+import Image from "next/image";
 import { Grid } from "@mui/material";
 import { useTranslate } from "react-polyglot";
-import { colors } from "styles/theme";
+import { colors, loader } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
+import { IconLink } from "components/common/IconLink";
+import openArchiveLogo from "images/open-archive.svg";
+import demchco from "images/demchco.svg";
+import twitter from "images/twitter-black.svg";
+import instagram from "images/instagram-black.svg";
+import github from "images/github-black.svg";
+import linkedin from "images/linkedin-black.svg";
+import youtube from "images/youtube-black.svg";
 
 export const Footer: FC = () => {
   const t = useTranslate();
@@ -18,7 +27,11 @@ export const Footer: FC = () => {
         <Grid item container direction="column" sx={{ width: "33%" }}>
           <Grid item container direction="row">
             <Grid item>
-              <img alt="OpenArchive logo" src="/images/open-archive.svg" />
+              <Image
+                alt="OpenArchive logo"
+                src={openArchiveLogo}
+                loader={loader}
+              />
             </Grid>
             <Grid item container direction="row">
               <Grid item>
@@ -42,7 +55,11 @@ export const Footer: FC = () => {
             </Grid>
           </Grid>
           <Grid item>
-            <img alt="Site designed by demch.co" src="/images/demchco.svg" />
+            <Image
+              alt="Site designed by demch.co"
+              src={demchco}
+              loader={loader}
+            />
           </Grid>
         </Grid>
         <Grid item container direction="column" sx={{ width: "33%" }}>
@@ -53,22 +70,44 @@ export const Footer: FC = () => {
         <Grid item container direction="column" sx={{ width: "33%" }}>
           <Grid item container direction="row">
             <Grid item>
-              <img alt="Twitter logo" src="/images/twitter-black.svg" />
+              <IconLink
+                image={twitter}
+                size="30px"
+                url="https://twitter.com/open_archive"
+              />
             </Grid>
             <Grid item>
-              <img alt="Instagram logo" src="/images/instagram-black.svg" />
+              <IconLink
+                image={instagram}
+                size="30px"
+                url="https://instagram.com/open__archive"
+              />
             </Grid>
             <Grid item>
-              <img alt="Github logo" src="/images/github-black.svg" />
+              <IconLink
+                image={github}
+                size="30px"
+                url="https://github.com/openarchive"
+              />
             </Grid>
             <Grid item>
-              <img alt="LinkedIn logo" src="/images/linkedin-black.svg" />
+              <IconLink
+                image={linkedin}
+                size="30px"
+                url="https://linkedin.com/openarchive"
+              />
             </Grid>
             <Grid item>
-              <img alt="YouTube logo" src="/images/youtube-black.svg" />
+              <IconLink
+                image={youtube}
+                size="30px"
+                url="https://youtube.com/openarchive"
+              />
             </Grid>
           </Grid>
-          <Grid item>info@open-archive.org</Grid>
+          <Grid item>
+            <a href="mailto:info@open-archive.org">info@open-archive.org</a>
+          </Grid>
         </Grid>
       </Grid>
     </PageSection>

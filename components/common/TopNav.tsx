@@ -2,9 +2,13 @@ import Image from "next/image";
 import { AppBar, Grid, Container } from "@mui/material";
 import { colors, loader } from "styles/theme";
 import { FilledButton } from "components/common/FilledButton";
-import { NavButton } from "components/common/NavButton";
+import { MenuButton } from "components/common/MenuButton";
+import { IconLink } from "components/common/IconLink";
 import openArchiveLogo from "images/open-archive.svg";
 import search from "images/search.svg";
+import twitter from "images/twitter-grey.svg";
+import instagram from "images/instagram-grey.svg";
+import github from "images/github-grey.svg";
 
 export const TopNav = () => {
   const { white, lightGrey, mediumBurgundy } = colors;
@@ -58,10 +62,10 @@ export const TopNav = () => {
               }}
             >
               <Grid item>
-                <NavButton>Our work</NavButton>
+                <MenuButton>Our work</MenuButton>
               </Grid>
               <Grid item>
-                <NavButton>About</NavButton>
+                <MenuButton>About</MenuButton>
               </Grid>
               <Grid item>
                 <FilledButton
@@ -85,13 +89,25 @@ export const TopNav = () => {
               }}
             >
               <Grid item>
-                <img src="/images/twitter-grey.svg" />
+                <IconLink
+                  image={twitter}
+                  size="24px"
+                  url="https://twitter.com/open_archive"
+                />
               </Grid>
               <Grid item>
-                <img src="/images/instagram-grey.svg" />
+                <IconLink
+                  image={instagram}
+                  size="24px"
+                  url="https://instagram.com/open__archive"
+                />
               </Grid>
               <Grid item>
-                <img src="/images/github-grey.svg" />
+                <IconLink
+                  image={github}
+                  size="24px"
+                  url="https://github.com/openarchive"
+                />
               </Grid>
             </Grid>
           </Grid>

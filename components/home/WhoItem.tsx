@@ -1,7 +1,10 @@
 import { FC, PropsWithChildren } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Box, Grid } from "@mui/material";
-import { colors } from "styles/theme";
+import { colors, loader } from "styles/theme";
+import plus from "images/plus.svg";
+import quote from "images/quote.svg";
 
 type WhoItemProps = PropsWithChildren<{
   name: string;
@@ -42,11 +45,11 @@ export const WhoItem: FC<WhoItemProps> = ({
         </Grid>
         <Grid container item sx={{ width: "50%", backgroundColor: lightGrey }}>
           <Grid item>
-            {name} <img src="/images/plus.svg" />
+            {name} <Image src={plus} loader={loader} />
           </Grid>
           <Grid item>{profile}</Grid>
           <Grid item>
-            <img src="/images/quote.svg" />
+            <Image src={quote} loader={loader} />
             {description}
           </Grid>
         </Grid>

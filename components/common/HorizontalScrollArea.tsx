@@ -1,6 +1,9 @@
 import { FC, PropsWithChildren } from "react";
+import Image from "next/image";
 import { Box, Grid } from "@mui/material";
-import { colors } from "styles/theme";
+import { colors, loader } from "styles/theme";
+import back from "images/back.svg";
+import forward from "images/forward.svg";
 
 type HorizontalScrollAreaProps = PropsWithChildren<{}>;
 
@@ -14,10 +17,10 @@ export const HorizontalScrollArea: FC<HorizontalScrollAreaProps> = ({
     <Grid item container direction="row" spacing={2}>
       <Grid item container direction="row" spacing={2}>
         <Grid item>
-          <img src="/images/back.svg" />
+          <Image src={back} loader={loader} />
         </Grid>
         <Grid item>
-          <img src="/images/forward.svg" />
+          <Image src={forward} loader={loader} />
         </Grid>
       </Grid>
       <Grid item>

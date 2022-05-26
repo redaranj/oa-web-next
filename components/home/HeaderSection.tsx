@@ -4,6 +4,8 @@ import { useTranslate } from "react-polyglot";
 import { typography, colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { OutlinedButton } from "components/common/OutlinedButton";
+import header1 from "images/header-1.png";
+import header2 from "images/header-2.png";
 
 export const HeaderSection: FC = () => {
   const t = useTranslate();
@@ -48,7 +50,7 @@ export const HeaderSection: FC = () => {
           item
           sx={{
             width: "50%",
-            backgroundImage: `url(/images/header-1.png), url(/images/header-2.png), url(/images/header-3.png), url(/images/header-4.png), url(/images/header-5.png), url(/images/header-6.png), url(/images/header-7.png), url(/images/header-8.png)`,
+            backgroundImage: `url(${header1.src}), url(${header2.src}), url(/images/header-3.png), url(/images/header-4.png), url(/images/header-5.png), url(/images/header-6.png), url(/images/header-7.png), url(/images/header-8.png)`,
             backgroundSize: "150px",
             backgroundPosition:
               "0% -25%, 50% 0%, 0% 25%, 50% 0%, 0% 50%, 50% 0%, 0% 25%, 75% 0%",

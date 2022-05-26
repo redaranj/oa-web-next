@@ -2,11 +2,11 @@ import { FC, PropsWithChildren } from "react";
 import { Button } from "@mui/material";
 import { colors } from "styles/theme";
 
-type NavButtonProps = PropsWithChildren<{}>;
+type MenuButtonProps = PropsWithChildren<{}>;
 
 const { black } = colors;
 
-export const NavButton: FC<NavButtonProps> = ({ children }) => (
+export const MenuButton: FC<MenuButtonProps> = ({ children }) => (
   <Button
     sx={{
       fontFamily: "Montserrat, sans-serif",
