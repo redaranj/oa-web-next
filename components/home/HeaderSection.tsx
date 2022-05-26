@@ -1,10 +1,12 @@
 import { FC } from "react";
-import { Box, Grid } from "@mui/material";
+import { Box, Grid, Button } from "@mui/material";
+import { useTranslate } from "react-polyglot";
 import { typography, colors, breakpoints as bp } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 
 export const HeaderSection: FC = () => {
-  const { white } = colors;
+  const t = useTranslate();
+  const { white, turquoise } = colors;
   const { h1, bodyLarge } = typography;
 
   return (
@@ -13,25 +15,43 @@ export const HeaderSection: FC = () => {
         container
         sx={{
           flexDirection: "row",
-          [bp.desktopLarge]: { flexDirection: "column" },
         }}
       >
-        <Grid container direction="column" item sx={{ width: "50%" }}>
+        <Grid
+          container
+          direction="column"
+          item
+          sx={{
+            width: "50%",
+          }}
+        >
           <Grid item>
-            <Box component="h1" sx={h1}>
-              We help preserve truth to power
-            </Box>
+            <Box
+              component="h1"
+              sx={h1}
+              dangerouslySetInnerHTML={{
+                __html: t("truthToPowerTitle"),
+              }}
+            />
           </Grid>
           <Grid item>
             <Box component="p" sx={bodyLarge}>
-              The tools OpenArchive builds help citizen reporters and
-              eyewitnesses across the world preserve, protect, and amplify what
-              they’ve documented on their phones
+              {t("truthToPowerDescription")}
             </Box>
           </Grid>
-          <Grid item>Button</Grid>
+          <Button>{t("more")}</Button>
         </Grid>
-        <Grid item sx={{ width: "50%" }}>
+        <Grid
+          item
+          sx={{
+            width: "50%",
+            backgroundImage: `url(/images/header-1.png), url(/images/header-2.png), url(/images/header-3.png), url(/images/header-4.png), url(/images/header-5.png), url(/images/header-6.png), url(/images/header-7.png), url(/images/header-8.png)`,
+            backgroundSize: "150px",
+            backgroundPosition:
+              "0% -25%, 50% 0%, 0% 25%, 50% 0%, 0% 0%, 50% 0%, 0% 0%, 50% 0%",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
           Photos
         </Grid>
       </Grid>

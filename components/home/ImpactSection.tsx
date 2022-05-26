@@ -1,42 +1,45 @@
 import { FC } from "react";
 import { Box, Grid } from "@mui/material";
+import { useTranslate } from "react-polyglot";
 import { typography, colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { ImpactItem } from "components/home/ImpactItem";
 
 export const ImpactSection: FC = () => {
+  const t = useTranslate();
+  const { h1 } = typography;
   const { white } = colors;
 
   return (
     <PageSection backgroundColor={white}>
       <Grid direction="column">
-        <Grid item>Our impact</Grid>
+        <Grid item>
+          <Box
+            component="h1"
+            sx={h1}
+            dangerouslySetInnerHTML={{ __html: t("ourImpactTitle") }}
+          />
+        </Grid>
         <Grid item container direction="row">
           <ImpactItem
-            title={"Information security"}
-            description={
-              "The tools OpenArchive builds help citizen reporters and eyewitnesses"
-            }
-            image={null}
+            title={t("informationSecurityTitle")}
+            description={t("informationSecurityDescription")}
+            image={"information-security.svg"}
           />
           <ImpactItem
-            title={"Free speech"}
-            description={
-              "The tools OpenArchive builds help citizen reporters and eyewitnesses"
-            }
-            image={null}
+            title={t("freeSpeechTitle")}
+            description={t("freeSpeechDescription")}
+            image={"free-speech.svg"}
           />
           <ImpactItem
-            title={"Free universal access"}
-            description={
-              "The tools OpenArchive builds help citizen reporters and eyewitnesses across the world preserve"
-            }
-            image={null}
+            title={t("freeUniversalAccessTitle")}
+            description={t("freeUniversalAccessDescription")}
+            image={"free-universal-access.svg"}
           />
           <ImpactItem
-            title={"Data processing speed"}
-            description={"The tools OpenArchive builds help citizen reporters and eyewitnesses"}
-            image={null}
+            title={t("dataProcessingSpeedTitle")}
+            description={t("dataProcessingSpeedDescription")}
+            image={"data-processing-speed.svg"}
           />
         </Grid>
       </Grid>

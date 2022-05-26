@@ -14,7 +14,9 @@ export const ImpactItem: FC<ImpactItemProps> = ({
 }) => {
   return (
     <Grid container direction="column" sx={{ width: "25%" }}>
-      <Grid item>{image}</Grid>
+      <Grid item>
+        <img src={`/images/${image}`} />
+      </Grid>
       <Grid item>{title}</Grid>
       <Grid item>{description}</Grid>
     </Grid>

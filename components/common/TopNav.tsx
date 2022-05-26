@@ -26,6 +26,7 @@ export const TopNav = () => {
         direction="row"
         justifyContent="center"
       >
+        <Grid item>OpenArchive</Grid>
         <Grid
           item
           container

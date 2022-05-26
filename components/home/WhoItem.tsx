@@ -17,7 +17,7 @@ export const WhoItem: FC<WhoItemProps> = ({
   image,
 }) => {
   return (
-    <Grid direction="row" sx={{ width: "50%" }}>
+    <Grid container direction="row" sx={{ width: "50%" }}>
       <Grid item sx={{ width: "50%" }}>
         {image}
       </Grid>

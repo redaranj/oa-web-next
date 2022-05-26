@@ -29,6 +29,9 @@ export const typography = {
     fontWeight: 600,
     fontSize: "70px",
     lineHeight: "100%",
+    "& strong": {
+      color: colors.turquoise,
+    },
     [breakpoints.desktopSmall]: {
       fontSize: "66px",
     },

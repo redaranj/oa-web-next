@@ -16,7 +16,7 @@ const Home: NextPage = () => {
       <Head>
         <title>OpenArchive</title>
       </Head>
-      <Grid direction="column">
+      <Grid container direction="column">
         <Grid item>
           <HeaderSection />
         </Grid>
