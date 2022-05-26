@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { AppBar, Grid, Container } from "@mui/material";
-import { colors } from "styles/theme";
+import { colors, loader } from "styles/theme";
 import { FilledButton } from "components/common/FilledButton";
 import { NavButton } from "components/common/NavButton";
 import openArchiveLogo from "images/open-archive.svg";
@@ -33,7 +33,7 @@ export const TopNav = () => {
           flexWrap="nowrap"
         >
           <Grid item sx={{ width: "50%" }}>
-            <Image alt="" src={openArchiveLogo} width={200} />
+            <Image alt="" src={openArchiveLogo} loader={loader} />
           </Grid>
           <Grid
             item
@@ -44,7 +44,7 @@ export const TopNav = () => {
             sx={{ width: "50%" }}
           >
             <Grid item>
-              <Image src={search} width={20} />
+              <Image alt="search" src={search} loader={loader} />
             </Grid>
             <Grid
               item

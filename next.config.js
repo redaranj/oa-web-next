@@ -1,7 +1,7 @@
 import mdx from "@next/mdx";
 import remarkGfm from "remark-gfm";
 
-const basePath = process.env.NODE_ENV === "production" ? "/web-next" : "";
+const basePath = !!process.env.CI ? "/web-next" : "";
 
 const withMDX = mdx({
   extension: /\.mdx?$/,
@@ -15,6 +15,9 @@ const config = withMDX({
   reactStrictMode: true,
   basePath,
   assetPrefix: basePath,
+  images: {
+    loader: "custom",
+  },
   pageExtensions: ["ts", "tsx", "mdx"],
 });
 
