@@ -1,7 +1,10 @@
+import Image from "next/image";
 import { AppBar, Grid, Container } from "@mui/material";
 import { colors } from "styles/theme";
 import { FilledButton } from "components/common/FilledButton";
 import { NavButton } from "components/common/NavButton";
+import openArchiveLogo from "images/open-archive.svg";
+import search from "images/search.svg";
 
 export const TopNav = () => {
   const { white, lightGrey, mediumBurgundy } = colors;
@@ -30,7 +33,7 @@ export const TopNav = () => {
           flexWrap="nowrap"
         >
           <Grid item sx={{ width: "50%" }}>
-            <img src="/images/open-archive.svg" />
+            <Image alt="" src={openArchiveLogo} width={200} />
           </Grid>
           <Grid
             item
@@ -41,7 +44,7 @@ export const TopNav = () => {
             sx={{ width: "50%" }}
           >
             <Grid item>
-              <img src="/images/search.svg" />
+              <Image src={search} width={20} />
             </Grid>
             <Grid
               item
