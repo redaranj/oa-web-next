@@ -1,5 +1,7 @@
 import { FC, PropsWithChildren } from "react";
+import Link from "next/link";
 import { Box, Grid } from "@mui/material";
+import { colors } from "styles/theme";
 
 type WhoItemProps = PropsWithChildren<{
   name: string;
@@ -16,16 +18,39 @@ export const WhoItem: FC<WhoItemProps> = ({
   url,
   image,
 }) => {
+  const { lightGrey } = colors;
+
   return (
-    <Grid container direction="row" sx={{ width: "50%" }}>
-      <Grid item sx={{ width: "50%" }}>
-        {image}
+    <Link href={url}>
+      <Grid item container direction="row" sx={{ width: "50%" }}>
+        <Grid
+          item
+          sx={{
+            width: "50%",
+          }}
+        >
+          <Box
+            sx={{
+              backgroundColor: lightGrey,
+              backgroundImage: `url(/images/${image})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              width: "100%",
+              height: "100%",
+            }}
+          />
+        </Grid>
+        <Grid container item sx={{ width: "50%", backgroundColor: lightGrey }}>
+          <Grid item>
+            {name} <img src="/images/plus.svg" />
+          </Grid>
+          <Grid item>{profile}</Grid>
+          <Grid item>
+            <img src="/images/quote.svg" />
+            {description}
+          </Grid>
+        </Grid>
       </Grid>
-      <Grid container item sx={{ width: "50%" }}>
-        <Grid item>{name}</Grid>
-        <Grid item>{profile}</Grid>
-        <Grid item>{description}</Grid>
-      </Grid>
-    </Grid>
+    </Link>
   );
 };

@@ -3,43 +3,50 @@ import { Box, Grid } from "@mui/material";
 import { useTranslate } from "react-polyglot";
 import { typography, colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
+import { HorizontalScrollArea } from "components/common/HorizontalScrollArea";
 import { TestimonialItem } from "components/home/TestimonialItem";
 
 export const TestimonialsSection: FC = () => {
   const t = useTranslate();
-  const { h1 } = typography;
+  const { h2 } = typography;
   const { lightGrey } = colors;
 
   return (
     <PageSection backgroundColor={lightGrey}>
-      <Grid container direction="column">
+      <Grid
+        container
+        direction="column"
+        sx={{ paddingTop: "50px", paddingBottom: "50px" }}
+      >
         <Grid item>
           <Box
-            component="h1"
-            sx={h1}
+            component="h2"
+            sx={h2}
             dangerouslySetInnerHTML={{ __html: t("testimonialsTitle") }}
           />
         </Grid>
-        <Grid item container direction="row">
-          <TestimonialItem
-            name={t("testimonialDariusName")}
-            position={t("testimonialDariusPosition")}
-            quote={t("testimonialDariusQuote")}
-            image={null}
-          />
-          <TestimonialItem
-            name={t("testimonialDariusName")}
-            position={t("testimonialDariusPosition")}
-            quote={t("testimonialDariusQuote")}
-            image={null}
-          />
-          <TestimonialItem
-            name={t("testimonialDariusName")}
-            position={t("testimonialDariusPosition")}
-            quote={t("testimonialDariusQuote")}
-            image={null}
-          />
-        </Grid>
+        <HorizontalScrollArea>
+          <Grid item container direction="row" spacing={2}>
+            <TestimonialItem
+              name={t("testimonialDariusName")}
+              position={t("testimonialDariusPosition")}
+              quote={t("testimonialDariusQuote")}
+              image="darius.png"
+            />
+            <TestimonialItem
+              name={t("testimonialDariusName")}
+              position={t("testimonialDariusPosition")}
+              quote={t("testimonialDariusQuote")}
+              image="darius.png"
+            />
+            <TestimonialItem
+              name={t("testimonialDariusName")}
+              position={t("testimonialDariusPosition")}
+              quote={t("testimonialDariusQuote")}
+              image="darius.png"
+            />
+          </Grid>
+        </HorizontalScrollArea>
       </Grid>
     </PageSection>
   );

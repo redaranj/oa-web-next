@@ -1,11 +1,5 @@
-import type { NextPage } from 'next'
+import type { NextPage } from "next";
 
-const Team: NextPage = () => {
-  return (
-    <div>
-
-    </div>
-  )
-}
+const Team: NextPage = () => <div />;
 
 export default Team;

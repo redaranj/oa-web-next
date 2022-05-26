@@ -9,18 +9,16 @@ type PageSectionProps = PropsWithChildren<{
 export const PageSection: FC<PageSectionProps> = ({
   backgroundColor,
   children,
-}) => {
-  return (
-    <Box sx={{ backgroundColor }}>
-      <Container
-        sx={{
-          maxWidth: 1920,
-          [bp.desktopSmall]: {},
-          [bp.tabletLarge]: {},
-        }}
-      >
-        {children}
-      </Container>
-    </Box>
-  );
-};
+}) => (
+  <Box sx={{ backgroundColor }}>
+    <Container
+      sx={{
+        maxWidth: 1920,
+        [bp.desktopSmall]: {},
+        [bp.tabletLarge]: {},
+      }}
+    >
+      {children}
+    </Container>
+  </Box>
+);

@@ -1,11 +1,5 @@
-import type { NextPage } from 'next'
+import type { NextPage } from "next";
 
-const CaseStudies: NextPage = () => {
-  return (
-    <div>
-
-    </div>
-  )
-}
+const CaseStudies: NextPage = () => <div />;
 
 export default CaseStudies;

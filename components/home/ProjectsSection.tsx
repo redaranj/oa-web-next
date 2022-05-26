@@ -3,28 +3,44 @@ import { Box, Grid } from "@mui/material";
 import { useTranslate } from "react-polyglot";
 import { typography, colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
+import { HorizontalScrollArea } from "components/common/HorizontalScrollArea";
 import { ProjectItem } from "components/home/ProjectItem";
 
 export const ProjectsSection: FC = () => {
   const t = useTranslate();
-  const { h1 } = typography;
+  const { h2 } = typography;
   const { lightGrey } = colors;
 
   return (
     <PageSection backgroundColor={lightGrey}>
-      <Grid container direction="column">
+      <Grid
+        container
+        direction="column"
+        sx={{ paddingTop: "50px", paddingBottom: "50px" }}
+      >
         <Grid item>
           <Box
-            component="h1"
-            sx={h1}
+            component="h2"
+            sx={h2}
             dangerouslySetInnerHTML={{ __html: t("ourProjectsTitle") }}
           />
         </Grid>
-        <Grid item container direction="row">
-          <ProjectItem title={t("save")} image={null} url={""} />
-          <ProjectItem title={t("guide")} image={null} url={""} />
-          <ProjectItem title={t("research")} image={null} url={""} />
-        </Grid>
+        <HorizontalScrollArea>
+          <Grid item container direction="row" spacing={2}>
+            <ProjectItem title={t("save")} image="project-save.png" url="" />
+            <ProjectItem
+              title={t("guide")}
+              description={t("guideDescription")}
+              image="project-guide.png"
+              url=""
+            />
+            <ProjectItem
+              title={t("research")}
+              image="project-research.png"
+              url=""
+            />
+          </Grid>
+        </HorizontalScrollArea>
       </Grid>
     </PageSection>
   );

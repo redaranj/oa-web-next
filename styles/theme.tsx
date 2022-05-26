@@ -13,10 +13,14 @@ export const colors = {
   white: "#ffffff",
   black: "#1a1a1a",
   lightGrey: "#f1f4f8",
+  mediumGrey: "#e3e3e3",
   turquoise: "#00b4a6",
+  mediumBurgundy: "#ad898a",
 };
 
 const typographyDefaults = {
+  fontFamily: "Montserrat, sans-serif",
+  fontStyle: "normal",
   color: colors.black,
   margin: 0,
 };
@@ -24,13 +28,14 @@ const typographyDefaults = {
 export const typography = {
   h1: {
     ...typographyDefaults,
-    fontFamily: "Montserrat, sans-serif",
-    fontStyle: "normal",
     fontWeight: 600,
-    fontSize: "70px",
+    fontSize: "7px",
     lineHeight: "100%",
     "& strong": {
       color: colors.turquoise,
+    },
+    [breakpoints.desktopLarge]: {
+      fontSize: "70px",
     },
     [breakpoints.desktopSmall]: {
       fontSize: "66px",
@@ -42,10 +47,33 @@ export const typography = {
       fontSize: "34px",
     },
   },
-  h2: { ...typographyDefaults },
-  h3: { ...typographyDefaults },
-  h4: { ...typographyDefaults },
-  h5: { ...typographyDefaults },
+  h2: {
+    ...typographyDefaults,
+    fontWeight: 600,
+    fontSize: "66px",
+    lineHeight: "66px",
+    "& strong": {
+      color: colors.turquoise,
+    },
+  },
+  h3: {
+    ...typographyDefaults,
+    fontWeight: 600,
+    fontSize: "40px",
+    lineHeight: "40px",
+  },
+  h4: {
+    ...typographyDefaults,
+    fontWeight: 600,
+    fontSize: "34px",
+    lineHeight: "34px",
+  },
+  h5: {
+    ...typographyDefaults,
+    fontWeight: 600,
+    fontSize: "30px",
+    lineHeight: "39px",
+  },
   h6: { ...typographyDefaults },
   p: { ...typographyDefaults },
   bodyLarge: {
@@ -54,6 +82,13 @@ export const typography = {
     fontWeight: 400,
     fontSize: "20px",
     lineHeight: "150%",
+  },
+  body: {
+    ...typographyDefaults,
+    fontFamily: "Montserrat, sans-serif",
+    fontWeight: 400,
+    fontSize: "16px",
+    lineHeight: "24px",
   },
   blockquote: { ...typographyDefaults },
 };

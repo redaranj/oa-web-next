@@ -1,11 +1,5 @@
-import type { NextPage } from 'next'
+import type { NextPage } from "next";
 
-const Resources: NextPage = () => {
-  return (
-    <div>
-
-    </div>
-  )
-}
+const Resources: NextPage = () => <div />;
 
 export default Resources;

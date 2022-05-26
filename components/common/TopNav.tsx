@@ -1,14 +1,11 @@
-import Link from "next/link";
-import { useRouter } from "next/router";
-import { AppBar, Grid, Box, IconButton } from "@mui/material";
+import { AppBar, Grid, Container } from "@mui/material";
 import { colors } from "styles/theme";
+import { FilledButton } from "components/common/FilledButton";
+import { NavButton } from "components/common/NavButton";
 
 export const TopNav = () => {
-  const { white } = colors;
-  const router = useRouter();
-  const { asPath } = router;
-  const path = asPath.split("/")[1];
-  const tabs = ["about", "news", "team", "save", "faq", "donate"];
+  const { white, lightGrey, mediumBurgundy } = colors;
+
   return (
     <AppBar
       position="fixed"
@@ -16,46 +13,87 @@ export const TopNav = () => {
       sx={{
         backgroundColor: white,
         marginBottom: 180,
-        opacity: 0.98,
+        opacity: 0.95,
+        p: 1,
       }}
     >
-      <Grid
-        item
-        sx={{ background: "#999", p: 1 }}
-        container
-        direction="row"
-        justifyContent="center"
+      <Container
+        sx={{
+          maxWidth: 1920,
+        }}
       >
-        <Grid item>OpenArchive</Grid>
         <Grid
           item
           container
-          xs={8}
-          alignItems="center"
-          justifyContent="space-around"
+          direction="row"
+          justifyContent="center"
+          flexWrap="nowrap"
         >
-          {tabs.map((tab) => (
-            <Link key={tab} href={`/${tab}`} passHref>
-              <Box
-                component="a"
-                sx={{
-                  color: "white",
-                  textDecoration: "none",
-                  fontSize: 13,
-                  fontWeight: 900,
-                  textTransform: "uppercase",
-                  textAlign: "center",
-                  borderBottom: tab === path ? "1px solid white" : "none",
-                  letterSpacing: 0.7,
-                  p: 1,
-                }}
-              >
-                {tab}
-              </Box>
-            </Link>
-          ))}
+          <Grid item sx={{ width: "50%" }}>
+            <img src="/images/open-archive.svg" />
+          </Grid>
+          <Grid
+            item
+            container
+            alignItems="center"
+            justifyContent="space-around"
+            flexWrap="nowrap"
+            sx={{ width: "50%" }}
+          >
+            <Grid item>
+              <img src="/images/search.svg" />
+            </Grid>
+            <Grid
+              item
+              container
+              direction="row"
+              flexWrap="nowrap"
+              spacing={2}
+              sx={{
+                borderLeft: `1px solid ${lightGrey}`,
+                borderRight: `1px solid ${lightGrey}`,
+              }}
+            >
+              <Grid item>
+                <NavButton>Our work</NavButton>
+              </Grid>
+              <Grid item>
+                <NavButton>About</NavButton>
+              </Grid>
+              <Grid item>
+                <FilledButton
+                  textColor={white}
+                  backgroundColor={mediumBurgundy}
+                >
+                  Donate
+                </FilledButton>
+              </Grid>
+            </Grid>
+            <Grid
+              item
+              container
+              direction="row"
+              flexWrap="nowrap"
+              spacing={2}
+              sx={{
+                svg: {
+                  color: "red !important",
+                },
+              }}
+            >
+              <Grid item>
+                <img src="/images/twitter-grey.svg" />
+              </Grid>
+              <Grid item>
+                <img src="/images/instagram-grey.svg" />
+              </Grid>
+              <Grid item>
+                <img src="/images/github-grey.svg" />
+              </Grid>
+            </Grid>
+          </Grid>
         </Grid>
-      </Grid>
+      </Container>
     </AppBar>
   );
 };

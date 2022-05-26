@@ -5,6 +5,7 @@ import en from "../locales/en.json";
 import "styles/global.css";
 import "@fontsource/montserrat/400.css";
 import "@fontsource/montserrat/600.css";
+import "@fontsource/montserrat/700.css";
 
 const locale = "en";
 const messages = { en };

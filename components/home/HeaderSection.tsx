@@ -1,12 +1,13 @@
 import { FC } from "react";
-import { Box, Grid, Button } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import { useTranslate } from "react-polyglot";
-import { typography, colors, breakpoints as bp } from "styles/theme";
+import { typography, colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
+import { OutlinedButton } from "components/common/OutlinedButton";
 
 export const HeaderSection: FC = () => {
   const t = useTranslate();
-  const { white, turquoise } = colors;
+  const { white } = colors;
   const { h1, bodyLarge } = typography;
 
   return (
@@ -15,6 +16,8 @@ export const HeaderSection: FC = () => {
         container
         sx={{
           flexDirection: "row",
+          paddingTop: "50px",
+          paddingBottom: "50px",
         }}
       >
         <Grid
@@ -39,7 +42,7 @@ export const HeaderSection: FC = () => {
               {t("truthToPowerDescription")}
             </Box>
           </Grid>
-          <Button>{t("more")}</Button>
+          <OutlinedButton arrowDirection="down">{t("more")}</OutlinedButton>
         </Grid>
         <Grid
           item
@@ -48,7 +51,7 @@ export const HeaderSection: FC = () => {
             backgroundImage: `url(/images/header-1.png), url(/images/header-2.png), url(/images/header-3.png), url(/images/header-4.png), url(/images/header-5.png), url(/images/header-6.png), url(/images/header-7.png), url(/images/header-8.png)`,
             backgroundSize: "150px",
             backgroundPosition:
-              "0% -25%, 50% 0%, 0% 25%, 50% 0%, 0% 0%, 50% 0%, 0% 0%, 50% 0%",
+              "0% -25%, 50% 0%, 0% 25%, 50% 0%, 0% 50%, 50% 0%, 0% 25%, 75% 0%",
             backgroundRepeat: "no-repeat",
           }}
         >

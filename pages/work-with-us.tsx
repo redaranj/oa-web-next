@@ -1,11 +1,5 @@
-import type { NextPage } from 'next'
+import type { NextPage } from "next";
 
-const WorkWithUs: NextPage = () => {
-  return (
-    <div>
-
-    </div>
-  )
-}
+const WorkWithUs: NextPage = () => <div />;
 
 export default WorkWithUs;

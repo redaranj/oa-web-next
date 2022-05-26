@@ -1,11 +1,5 @@
-import type { NextPage } from 'next'
+import type { NextPage } from "next";
 
-const FAQ: NextPage = () => {
-  return (
-    <div>
-
-    </div>
-  )
-}
+const FAQ: NextPage = () => <div />;
 
 export default FAQ;

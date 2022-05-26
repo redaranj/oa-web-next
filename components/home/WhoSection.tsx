@@ -7,17 +7,21 @@ import { WhoItem } from "components/home/WhoItem";
 
 export const WhoSection: FC = () => {
   const t = useTranslate();
-  const { h1, bodyLarge } = typography;
+  const { h2, bodyLarge } = typography;
   const { white } = colors;
 
   return (
     <PageSection backgroundColor={white}>
-      <Grid container direction="column">
+      <Grid
+        container
+        direction="column"
+        sx={{ paddingTop: "50px", paddingBottom: "50px" }}
+      >
         <Grid item container direction="row">
           <Grid item sx={{ width: "50%" }}>
             <Box
-              component="h1"
-              sx={h1}
+              component="h2"
+              sx={h2}
               dangerouslySetInnerHTML={{ __html: t("whoWorkForTitle") }}
             />
           </Grid>
@@ -27,20 +31,20 @@ export const WhoSection: FC = () => {
             </Box>
           </Grid>
         </Grid>
-        <Grid item container direction="row">
+        <Grid item container direction="row" spacing={2}>
           <WhoItem
             name={t("whoMeganName")}
             profile={t("whoMeganProfile")}
             description={t("whoMeganDescription")}
-            image={null}
-            url={null}
+            image="megan.svg"
+            url=""
           />
           <WhoItem
             name={t("whoKevinName")}
             profile={t("whoKevinProfile")}
             description={t("whoKevinDescription")}
-            image={null}
-            url={null}
+            image="kevin.svg"
+            url=""
           />
         </Grid>
       </Grid>

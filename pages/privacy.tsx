@@ -1,11 +1,5 @@
-import type { NextPage } from 'next'
+import type { NextPage } from "next";
 
-const Privacy: NextPage = () => {
-  return (
-    <div>
-
-    </div>
-  )
-}
+const Privacy: NextPage = () => <div />;
 
 export default Privacy;

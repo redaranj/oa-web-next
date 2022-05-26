@@ -7,11 +7,15 @@ import { PageSection } from "components/common/PageSection";
 export const MissionSection: FC = () => {
   const t = useTranslate();
   const { lightGrey } = colors;
-  const { h1, bodyLarge } = typography;
+  const { h2, bodyLarge } = typography;
 
   return (
     <PageSection backgroundColor={lightGrey}>
-      <Grid container>
+      <Grid
+        container
+        direction="row"
+        sx={{ paddingTop: "50px", paddingBottom: "50px" }}
+      >
         <Grid
           item
           sx={{
@@ -26,21 +30,21 @@ export const MissionSection: FC = () => {
               height: "100%",
               width: "100%",
               backgroundImage:
-                "url(/images/mission02.png), url(/images/mission01.png) ",
+                "url(/images/mission-2.png), url(/images/mission-1.png) ",
               backgroundRepeat: "no-repeat",
               backgroundSize: "300px",
               backgroundPosition: "50% 50%, 0% 25%",
               zIndex: 100,
             },
           }}
-        ></Grid>
+        />
         <Grid item container direction="column" sx={{ width: "50%" }}>
           <Grid item>
             <Box
-              component="h1"
-              sx={h1}
+              component="h2"
+              sx={h2}
               dangerouslySetInnerHTML={{ __html: t("missionStatementTitle") }}
-            ></Box>
+            />
           </Grid>
           <Grid item>
             <Box component="p" sx={bodyLarge}>

@@ -1,5 +1,6 @@
 import { FC, PropsWithChildren } from "react";
 import { Box, Grid } from "@mui/material";
+import { typography } from "styles/theme";
 
 type ImpactItemProps = PropsWithChildren<{
   title: string;
@@ -12,13 +13,23 @@ export const ImpactItem: FC<ImpactItemProps> = ({
   description,
   image,
 }) => {
+  const { h5, bodyLarge } = typography;
+
   return (
-    <Grid container direction="column" sx={{ width: "25%" }}>
+    <Grid item container direction="column" sx={{ width: "25%" }}>
       <Grid item>
         <img src={`/images/${image}`} />
       </Grid>
-      <Grid item>{title}</Grid>
-      <Grid item>{description}</Grid>
+      <Grid item>
+        <Box component="h5" sx={h5}>
+          {title}
+        </Box>
+      </Grid>
+      <Grid item>
+        <Box component="p" sx={bodyLarge}>
+          {description}
+        </Box>
+      </Grid>
     </Grid>
   );
 };

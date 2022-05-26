@@ -1,11 +1,5 @@
-import type { NextPage } from 'next'
+import type { NextPage } from "next";
 
-const Donate: NextPage = () => {
-  return (
-    <div>
-
-    </div>
-  )
-}
+const Donate: NextPage = () => <div />;
 
 export default Donate;

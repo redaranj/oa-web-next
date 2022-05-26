@@ -1,11 +1,5 @@
-import type { NextPage } from 'next'
+import type { NextPage } from "next";
 
-const Save: NextPage = () => {
-  return (
-    <div>
-
-    </div>
-  )
-}
+const Save: NextPage = () => <div />;
 
 export default Save;

@@ -32,7 +32,11 @@
   "wantToParticipate": "Want to participate?",
   "save": "Save",
   "guide": "Guide",
+  "guideDescription": "Learn how to ethically and safely store sensitive mobile media",
   "research": "Research",
   "more": "More",
-  "readMore": "Read more"
+  "readMore": "Read more",
+  "workWithUs": "Work with us",
+  "termsAndPrivacy": "Terms and privacy",
+  "codeOfConduct": "Code of conduct"
 }

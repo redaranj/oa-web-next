@@ -1,11 +1,5 @@
-import type { NextPage } from 'next'
+import type { NextPage } from "next";
 
-const Contact: NextPage = () => {
-  return (
-    <div>
-
-    </div>
-  )
-}
+const Contact: NextPage = () => <div />;
 
 export default Contact;
