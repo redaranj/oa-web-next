@@ -5,6 +5,7 @@ import { typography, colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { HorizontalScrollArea } from "components/common/HorizontalScrollArea";
 import { TestimonialItem } from "components/home/TestimonialItem";
+import darius from "images/darius.png";
 
 export const TestimonialsSection: FC = () => {
   const t = useTranslate();
@@ -31,19 +32,19 @@ export const TestimonialsSection: FC = () => {
               name={t("testimonialDariusName")}
               position={t("testimonialDariusPosition")}
               quote={t("testimonialDariusQuote")}
-              image="darius.png"
+              image={darius}
             />
             <TestimonialItem
               name={t("testimonialDariusName")}
               position={t("testimonialDariusPosition")}
               quote={t("testimonialDariusQuote")}
-              image="darius.png"
+              image={darius}
             />
             <TestimonialItem
               name={t("testimonialDariusName")}
               position={t("testimonialDariusPosition")}
               quote={t("testimonialDariusQuote")}
-              image="darius.png"
+              image={darius}
             />
           </Grid>
         </HorizontalScrollArea>

@@ -93,6 +93,7 @@ export const TopNav = () => {
                   image={twitter}
                   size="24px"
                   url="https://twitter.com/open_archive"
+                  alt="Twitter logo"
                 />
               </Grid>
               <Grid item>
@@ -100,6 +101,7 @@ export const TopNav = () => {
                   image={instagram}
                   size="24px"
                   url="https://instagram.com/open__archive"
+                  alt="Instagram logo"
                 />
               </Grid>
               <Grid item>
@@ -107,6 +109,7 @@ export const TopNav = () => {
                   image={github}
                   size="24px"
                   url="https://github.com/openarchive"
+                  alt="Github logo"
                 />
               </Grid>
             </Grid>

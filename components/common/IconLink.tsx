@@ -8,11 +8,12 @@ type IconLinkProps = PropsWithChildren<{
   image: string;
   size: string;
   url: string;
+  alt: string;
 }>;
 
 const { black } = colors;
 
-export const IconLink: FC<IconLinkProps> = ({ image, size, url }) => (
+export const IconLink: FC<IconLinkProps> = ({ image, size, url, alt }) => (
   <Link href={url}>
     <Button
       sx={{
@@ -23,7 +24,7 @@ export const IconLink: FC<IconLinkProps> = ({ image, size, url }) => (
         whiteSpace: "nowrap",
       }}
     >
-      <Image src={image} alt="" width={size} height={size} loader={loader} />
+      <Image src={image} alt={alt} width={size} height={size} loader={loader} />
     </Button>
   </Link>
 );

@@ -4,6 +4,10 @@ import { useTranslate } from "react-polyglot";
 import { typography, colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { ImpactItem } from "components/home/ImpactItem";
+import informationSecurity from "images/information-security.svg";
+import freeSpeech from "images/free-speech.svg";
+import freeUniversalAccess from "images/free-universal-access.svg";
+import dataProcessingSpeed from "images/data-processing-speed.svg";
 
 export const ImpactSection: FC = () => {
   const t = useTranslate();
@@ -28,22 +32,22 @@ export const ImpactSection: FC = () => {
           <ImpactItem
             title={t("informationSecurityTitle")}
             description={t("informationSecurityDescription")}
-            image="information-security.svg"
+            image={informationSecurity}
           />
           <ImpactItem
             title={t("freeSpeechTitle")}
             description={t("freeSpeechDescription")}
-            image="free-speech.svg"
+            image={freeSpeech}
           />
           <ImpactItem
             title={t("freeUniversalAccessTitle")}
             description={t("freeUniversalAccessDescription")}
-            image="free-universal-access.svg"
+            image={freeUniversalAccess}
           />
           <ImpactItem
             title={t("dataProcessingSpeedTitle")}
             description={t("dataProcessingSpeedDescription")}
-            image="data-processing-speed.svg"
+            image={dataProcessingSpeed}
           />
         </Grid>
       </Grid>

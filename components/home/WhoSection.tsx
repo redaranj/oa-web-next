@@ -4,6 +4,8 @@ import { useTranslate } from "react-polyglot";
 import { typography, colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { WhoItem } from "components/home/WhoItem";
+import megan from "images/megan.svg";
+import kevin from "images/kevin.svg";
 
 export const WhoSection: FC = () => {
   const t = useTranslate();
@@ -36,14 +38,14 @@ export const WhoSection: FC = () => {
             name={t("whoMeganName")}
             profile={t("whoMeganProfile")}
             description={t("whoMeganDescription")}
-            image="megan.svg"
+            image={megan}
             url=""
           />
           <WhoItem
             name={t("whoKevinName")}
             profile={t("whoKevinProfile")}
             description={t("whoKevinDescription")}
-            image="kevin.svg"
+            image={kevin}
             url=""
           />
         </Grid>

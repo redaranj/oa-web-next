@@ -1,11 +1,12 @@
 import { FC, PropsWithChildren } from "react";
+import Image, { StaticImageData } from "next/image";
 import { Box, Grid } from "@mui/material";
-import { typography } from "styles/theme";
+import { typography, loader } from "styles/theme";
 
 type ImpactItemProps = PropsWithChildren<{
   title: string;
   description: string;
-  image: string;
+  image: StaticImageData;
 }>;
 
 export const ImpactItem: FC<ImpactItemProps> = ({
@@ -18,7 +19,7 @@ export const ImpactItem: FC<ImpactItemProps> = ({
   return (
     <Grid item container direction="column" sx={{ width: "25%" }}>
       <Grid item>
-        <img src={`/images/${image}`} />
+        <Image src={image} alt="" width="60px" loader={loader} />
       </Grid>
       <Grid item>
         <Box component="h5" sx={h5}>

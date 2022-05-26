@@ -1,4 +1,5 @@
 import { FC, PropsWithChildren } from "react";
+import { StaticImageData } from "next/image";
 import Link from "next/link";
 import { Box, Grid } from "@mui/material";
 import { colors, typography } from "styles/theme";
@@ -6,7 +7,7 @@ import { colors, typography } from "styles/theme";
 type ProjectItemProps = PropsWithChildren<{
   title: string;
   description?: string;
-  image: string;
+  image: StaticImageData;
   url: string;
 }>;
 
@@ -32,7 +33,7 @@ export const ProjectItem: FC<ProjectItemProps> = ({
             <Box
               sx={{
                 height: "400px",
-                backgroundImage: `url(/images/${image})`,
+                backgroundImage: `url(${image.src})`,
                 backgroundSize: "cover",
               }}
             >

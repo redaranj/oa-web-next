@@ -1,8 +1,8 @@
 import { FC, PropsWithChildren } from "react";
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import Image from "next/image";
 import { Box, Grid } from "@mui/material";
-import { colors, loader } from "styles/theme";
+import { colors, loader, typography } from "styles/theme";
 import plus from "images/plus.svg";
 import quote from "images/quote.svg";
 
@@ -11,7 +11,7 @@ type WhoItemProps = PropsWithChildren<{
   profile: string;
   description: string;
   url: string;
-  image: string;
+  image: StaticImageData;
 }>;
 
 export const WhoItem: FC<WhoItemProps> = ({
@@ -21,7 +21,8 @@ export const WhoItem: FC<WhoItemProps> = ({
   url,
   image,
 }) => {
-  const { lightGrey } = colors;
+  const { lightGrey, turquoise } = colors;
+  const { h5, body, bodyLarge } = typography;
 
   return (
     <Link href={url}>
@@ -35,7 +36,7 @@ export const WhoItem: FC<WhoItemProps> = ({
           <Box
             sx={{
               backgroundColor: lightGrey,
-              backgroundImage: `url(/images/${image})`,
+              backgroundImage: `url(${image.src})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
               width: "100%",
@@ -45,12 +46,21 @@ export const WhoItem: FC<WhoItemProps> = ({
         </Grid>
         <Grid container item sx={{ width: "50%", backgroundColor: lightGrey }}>
           <Grid item>
-            {name} <Image src={plus} loader={loader} />
+            <Box component="h5" sx={{ ...h5, color: turquoise }}>
+              {name}
+            </Box>
+            <Image src={plus} loader={loader} />
           </Grid>
-          <Grid item>{profile}</Grid>
+          <Grid item>
+            <Box component="p" sx={body}>
+              {profile}
+            </Box>
+          </Grid>
           <Grid item>
             <Image src={quote} loader={loader} />
-            {description}
+            <Box component="p" sx={bodyLarge}>
+              {description}
+            </Box>
           </Grid>
         </Grid>
       </Grid>

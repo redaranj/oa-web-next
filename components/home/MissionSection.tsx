@@ -3,6 +3,8 @@ import { Box, Grid } from "@mui/material";
 import { useTranslate } from "react-polyglot";
 import { typography, colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
+import mission1 from "images/mission-1.png";
+import mission2 from "images/mission-2.png";
 
 export const MissionSection: FC = () => {
   const t = useTranslate();
@@ -30,7 +32,7 @@ export const MissionSection: FC = () => {
               height: "100%",
               width: "100%",
               backgroundImage:
-                "url(/images/mission-2.png), url(/images/mission-1.png) ",
+                `url(${mission2.src}), url(${mission1.src})`,
               backgroundRepeat: "no-repeat",
               backgroundSize: "300px",
               backgroundPosition: "50% 50%, 0% 25%",

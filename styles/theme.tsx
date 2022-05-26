@@ -31,6 +31,7 @@ export const typography = {
     fontWeight: 600,
     fontSize: "7px",
     lineHeight: "100%",
+    marginBottom: "40px",
     "& strong": {
       color: colors.turquoise,
     },
@@ -50,8 +51,9 @@ export const typography = {
   h2: {
     ...typographyDefaults,
     fontWeight: 600,
-    fontSize: "66px",
-    lineHeight: "66px",
+    fontSize: "60px",
+    lineHeight: "60px",
+    marginBottom: "40px",
     "& strong": {
       color: colors.turquoise,
     },
@@ -74,7 +76,7 @@ export const typography = {
     fontSize: "30px",
     lineHeight: "39px",
   },
-  h6: { ...typographyDefaults },
+  h6: { ...typographyDefaults, fontSize: "22px", lineHeight: "29px" },
   p: { ...typographyDefaults },
   bodyLarge: {
     ...typographyDefaults,

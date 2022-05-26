@@ -6,6 +6,12 @@ import { PageSection } from "components/common/PageSection";
 import { OutlinedButton } from "components/common/OutlinedButton";
 import header1 from "images/header-1.png";
 import header2 from "images/header-2.png";
+import header3 from "images/header-3.png";
+import header4 from "images/header-4.png";
+import header5 from "images/header-5.png";
+import header6 from "images/header-6.png";
+import header7 from "images/header-7.png";
+import header8 from "images/header-8.png";
 
 export const HeaderSection: FC = () => {
   const t = useTranslate();
@@ -16,10 +22,9 @@ export const HeaderSection: FC = () => {
     <PageSection backgroundColor={white}>
       <Grid
         container
+        spacing={8}
         sx={{
           flexDirection: "row",
-          paddingTop: "50px",
-          paddingBottom: "50px",
         }}
       >
         <Grid
@@ -50,15 +55,13 @@ export const HeaderSection: FC = () => {
           item
           sx={{
             width: "50%",
-            backgroundImage: `url(${header1.src}), url(${header2.src}), url(/images/header-3.png), url(/images/header-4.png), url(/images/header-5.png), url(/images/header-6.png), url(/images/header-7.png), url(/images/header-8.png)`,
+            backgroundImage: `url(${header1.src}), url(${header2.src}), url(${header3.src}), url(${header4.src}), url(${header5.src}), url(${header6.src}), url(${header7.src}), url(${header8.src})`,
             backgroundSize: "150px",
             backgroundPosition:
               "0% -25%, 50% 0%, 0% 25%, 50% 0%, 0% 50%, 50% 0%, 0% 25%, 75% 0%",
             backgroundRepeat: "no-repeat",
           }}
-        >
-          Photos
-        </Grid>
+        />
       </Grid>
     </PageSection>
   );

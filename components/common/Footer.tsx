@@ -6,6 +6,9 @@ import { colors, loader } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { IconLink } from "components/common/IconLink";
 import openArchiveLogo from "images/open-archive.svg";
+import attribution from "images/attribution.svg";
+import nonCommercial from "images/non-commercial.svg";
+import shareAlike from "images/share-alike.svg";
 import demchco from "images/demchco.svg";
 import twitter from "images/twitter-black.svg";
 import instagram from "images/instagram-black.svg";
@@ -16,6 +19,8 @@ import youtube from "images/youtube-black.svg";
 export const Footer: FC = () => {
   const t = useTranslate();
   const { lightGrey } = colors;
+  const creativeCommonsIconSize = "16px";
+  const socialIconSize = "24px";
 
   return (
     <PageSection backgroundColor={lightGrey}>
@@ -35,21 +40,27 @@ export const Footer: FC = () => {
             </Grid>
             <Grid item container direction="row">
               <Grid item>
-                <img
+                <IconLink
+                  image={attribution}
+                  size={creativeCommonsIconSize}
+                  url="https://creativecommons.org/licenses/by-nc-sa/4.0/"
                   alt="Creative Commons Attribution"
-                  src="/images/attribution.svg"
                 />
               </Grid>
               <Grid item>
-                <img
+                <IconLink
+                  image={nonCommercial}
+                  size={creativeCommonsIconSize}
+                  url="https://creativecommons.org/licenses/by-nc-sa/4.0/"
                   alt="Creative Commons Non-Commercial"
-                  src="/images/non-commercial.svg"
                 />
               </Grid>
               <Grid item>
-                <img
+                <IconLink
+                  image={shareAlike}
+                  size={creativeCommonsIconSize}
+                  url="https://creativecommons.org/licenses/by-nc-sa/4.0/"
                   alt="Creative Commons Share-Alike"
-                  src="/images/share-alike.svg"
                 />
               </Grid>
             </Grid>
@@ -72,36 +83,41 @@ export const Footer: FC = () => {
             <Grid item>
               <IconLink
                 image={twitter}
-                size="30px"
+                size={socialIconSize}
                 url="https://twitter.com/open_archive"
+                alt="Twitter logo"
               />
             </Grid>
             <Grid item>
               <IconLink
                 image={instagram}
-                size="30px"
+                size={socialIconSize}
                 url="https://instagram.com/open__archive"
+                alt="Instagram logo"
               />
             </Grid>
             <Grid item>
               <IconLink
                 image={github}
-                size="30px"
+                size={socialIconSize}
                 url="https://github.com/openarchive"
+                alt="Github logo"
               />
             </Grid>
             <Grid item>
               <IconLink
                 image={linkedin}
-                size="30px"
+                size={socialIconSize}
                 url="https://linkedin.com/openarchive"
+                alt="LinkedIn logo"
               />
             </Grid>
             <Grid item>
               <IconLink
                 image={youtube}
-                size="30px"
+                size={socialIconSize}
                 url="https://youtube.com/openarchive"
+                alt="YouTube logo"
               />
             </Grid>
           </Grid>

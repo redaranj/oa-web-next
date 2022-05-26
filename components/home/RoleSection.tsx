@@ -3,10 +3,13 @@ import { Box, Grid } from "@mui/material";
 import { useTranslate } from "react-polyglot";
 import { typography, colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
+import role1 from "images/role-1.png";
+import role2 from "images/role-2.png";
+import role3 from "images/role-3.png";
 
 export const RoleSection: FC = () => {
   const t = useTranslate();
-  const { h2, bodyLarge } = typography;
+  const { h2, h3, h5, bodyLarge } = typography;
   const { white } = colors;
 
   return (
@@ -35,8 +38,11 @@ export const RoleSection: FC = () => {
             <Grid item>
               <Box
                 sx={{
+                  ...h5,
+                  color: white,
+                  p: 3,
                   height: 200,
-                  backgroundImage: "url(/images/role-1.png)",
+                  backgroundImage: `url(${role1.src})`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
@@ -47,8 +53,11 @@ export const RoleSection: FC = () => {
             <Grid item>
               <Box
                 sx={{
+                  ...h5,
+                  color: white,
+                  p: 3,
                   height: 200,
-                  backgroundImage: "url(/images/role-2.png)",
+                  backgroundImage: `url(${role2.src})`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
@@ -65,8 +74,11 @@ export const RoleSection: FC = () => {
           >
             <Box
               sx={{
+                ...h3,
+                color: white,
+                p: 3,
                 height: "100%",
-                backgroundImage: "url(/images/role-3.png)",
+                backgroundImage: `url(${role3.src})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}

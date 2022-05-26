@@ -1,12 +1,13 @@
 import { FC, PropsWithChildren } from "react";
+import Image, { StaticImageData } from "next/image";
 import { Box, Grid } from "@mui/material";
-import { colors } from "styles/theme";
+import { colors, loader, typography } from "styles/theme";
 
 type TestimonialItemProps = PropsWithChildren<{
   name: string;
   position: string;
   quote: string;
-  image: string;
+  image: StaticImageData;
 }>;
 
 export const TestimonialItem: FC<TestimonialItemProps> = ({
@@ -15,24 +16,29 @@ export const TestimonialItem: FC<TestimonialItemProps> = ({
   quote,
   image,
 }) => {
-  const { white } = colors;
+  const { white, turquoise } = colors;
+  const { h6, body } = typography;
 
   return (
-    <Grid item container direction="column" sx={{ width: "33%" }}>
-      <Grid item sx={{ backgroundColor: white }}>
-        {quote}
+    <Grid item container direction="column" sx={{ width: "33%" }} spacing={4}>
+      <Grid item>
+        <Box sx={{ backgroundColor: white, p: 3 }}>{quote}</Box>
       </Grid>
-      <Grid item container direction="row">
+      <Grid item container direction="row" flexWrap="nowrap" spacing={2}>
         <Grid item>
-          <Box
-            component="img"
-            src={`/images/${image}`}
-            sx={{ height: "50px", width: "50px" }}
-          />
+          <Image src={image} loader={loader} height="50px" width="50px" />
         </Grid>
         <Grid item container direction="column">
-          <Grid item>{name}</Grid>
-          <Grid item>{position}</Grid>
+          <Grid item>
+            <Box component="h6" sx={{ ...h6 }}>
+              {name}
+            </Box>
+          </Grid>
+          <Grid item>
+            <Box component="p" sx={{ ...body, color: turquoise }}>
+              {position}
+            </Box>
+          </Grid>
         </Grid>
       </Grid>
     </Grid>
