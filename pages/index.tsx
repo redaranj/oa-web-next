@@ -7,8 +7,8 @@ import { MissionSection } from "components/home/MissionSection";
 import { ImpactSection } from "components/home/ImpactSection";
 import { ProjectsSection } from "components/home/ProjectsSection";
 import { WhoSection } from "components/home/WhoSection";
-import { TestimonialsSection } from "components/home/TestimonialsSection";
-import { RoleSection } from "components/home/RoleSection";
+import { TestimonialsSection } from "components/common/TestimonialsSection";
+import { RoleSection } from "components/common/RoleSection";
 
 const Home: NextPage = () => (
   <Layout>
