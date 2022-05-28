@@ -4,6 +4,7 @@ import { useTranslate } from "react-polyglot";
 import { typography, colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { OutlinedButton } from "components/common/OutlinedButton";
+import { JobItem } from "components/team/JobItem";
 
 export const AboutSection: FC = () => {
   const t = useTranslate();
@@ -32,16 +33,53 @@ export const AboutSection: FC = () => {
               component="h2"
               sx={h2}
               dangerouslySetInnerHTML={{
-                __html: t("appSaveTitle"),
+                __html: t("aboutOpenArchiveTitle"),
               }}
             />
           </Grid>
           <Grid item>
             <Box component="p" sx={bodyLarge}>
-              {t("appSaveDescription")}
+              {t("aboutOpenArchiveDescription")}
             </Box>
           </Grid>
-          <OutlinedButton arrowDirection="down">{t("more")}</OutlinedButton>
+          <Grid item>
+            <OutlinedButton arrowDirection="right">
+              {t("readMore")}
+            </OutlinedButton>
+          </Grid>
+          <Grid item>{t("joinOurTeam")}</Grid>
+          <Grid item container direction="row">
+            <JobItem
+              jobTitle="Software Engineer"
+              details="Details"
+              date={new Date()}
+            />
+            <JobItem
+              jobTitle="Software Engineer"
+              details="Details"
+              date={new Date()}
+            />
+            <JobItem
+              jobTitle="Software Engineer"
+              details="Details"
+              date={new Date()}
+            />
+            <JobItem
+              jobTitle="Software Engineer"
+              details="Details"
+              date={new Date()}
+            />
+            <JobItem
+              jobTitle="Software Engineer"
+              details="Details"
+              date={new Date()}
+            />
+            <JobItem
+              jobTitle="Software Engineer"
+              details="Details"
+              date={new Date()}
+            />
+          </Grid>
         </Grid>
         <Grid
           item

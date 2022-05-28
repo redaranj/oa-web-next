@@ -1,14 +1,12 @@
 import { FC } from "react";
-import { Box, Grid } from "@mui/material";
-import { useTranslate } from "react-polyglot";
-import { typography, colors } from "styles/theme";
+import { Grid } from "@mui/material";
+import { colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
-import { OutlinedButton } from "components/common/OutlinedButton";
+import { GuideItem } from "components/guides/GuideItem";
+import guideSample from "images/guide-sample.png";
 
 export const GuidesSection: FC = () => {
-  const t = useTranslate();
   const { lightGrey } = colors;
-  const { h1, bodyLarge } = typography;
 
   return (
     <PageSection backgroundColor={lightGrey}>
@@ -16,42 +14,23 @@ export const GuidesSection: FC = () => {
         container
         spacing={8}
         sx={{
-          flexDirection: "row",
+          flexDirection: "column",
         }}
       >
-        <Grid
-          container
-          direction="column"
-          item
-          sx={{
-            width: "50%",
-          }}
-        >
-          <Grid item>
-            <Box
-              component="h1"
-              sx={h1}
-              dangerouslySetInnerHTML={{
-                __html: t("appSaveTitle"),
-              }}
-            />
-          </Grid>
-          <Grid item>
-            <Box component="p" sx={bodyLarge}>
-              {t("appSaveDescription")}
-            </Box>
-          </Grid>
-          <OutlinedButton arrowDirection="down">{t("more")}</OutlinedButton>
-        </Grid>
-        <Grid
-          item
-          sx={{
-            width: "50%",
-            backgroundImage: `url()`,
-            backgroundSize: "150px",
-            backgroundPosition: "0% 0%",
-            backgroundRepeat: "no-repeat",
-          }}
+        <GuideItem
+          title="OpenAchive's Guide to Preserving Truth to Power"
+          description="OpenAchive's Guide to Preserving Truth to Power"
+          image={guideSample}
+        />
+        <GuideItem
+          title="OpenAchive's Guide to Preserving Truth to Power"
+          description="OpenAchive's Guide to Preserving Truth to Power"
+          image={guideSample}
+        />
+        <GuideItem
+          title="OpenAchive's Guide to Preserving Truth to Power"
+          description="OpenAchive's Guide to Preserving Truth to Power"
+          image={guideSample}
         />
       </Grid>
     </PageSection>

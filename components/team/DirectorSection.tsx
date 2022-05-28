@@ -3,56 +3,35 @@ import { Box, Grid } from "@mui/material";
 import { useTranslate } from "react-polyglot";
 import { typography, colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
-import { OutlinedButton } from "components/common/OutlinedButton";
+import { TeamItem } from "components/team/TeamItem";
+import natalieCadranel from "images/darius.png";
 
 export const DirectorSection: FC = () => {
   const t = useTranslate();
-  const { white } = colors;
-  const { h2, bodyLarge } = typography;
+  const { white, lightGrey } = colors;
+  const { h2 } = typography;
 
   return (
     <PageSection backgroundColor={white}>
-      <Grid
-        container
-        spacing={8}
-        sx={{
-          flexDirection: "row",
-        }}
-      >
-        <Grid
-          container
-          direction="column"
-          item
-          sx={{
-            width: "50%",
-          }}
-        >
-          <Grid item>
-            <Box
-              component="h2"
-              sx={h2}
-              dangerouslySetInnerHTML={{
-                __html: t("appSaveTitle"),
-              }}
-            />
-          </Grid>
-          <Grid item>
-            <Box component="p" sx={bodyLarge}>
-              {t("appSaveDescription")}
-            </Box>
-          </Grid>
-          <OutlinedButton arrowDirection="down">{t("more")}</OutlinedButton>
+      <Grid container direction="column">
+        <Grid item>
+          <Box
+            component="h2"
+            sx={{ ...h2, textAlign: "center" }}
+            dangerouslySetInnerHTML={{
+              __html: t("founderAndDirector"),
+            }}
+          />
         </Grid>
-        <Grid
-          item
-          sx={{
-            width: "50%",
-            backgroundImage: `url()`,
-            backgroundSize: "150px",
-            backgroundPosition: "0% 0%",
-            backgroundRepeat: "no-repeat",
-          }}
-        />
+        <Grid item>
+          <TeamItem
+            name="Natalie Cadranel"
+            jobTitle="Founder and Director"
+            bio="Natalie is an archivist and ethnographer working at the nexus of human rights, design, and technology. She aims to protect and amplify community media by helping organizations better manage, protect, and preserve documentation they create and receive. She consults with human rights-focused organizations worldwide and was a 2019 fellow at Stanford's Digital Civil Society Lab. For the last decade, she shaped initiatives dedicated to improving access to information for social and environmental justice organizations. She holds a Masters from the UC Berkeley School of Information and a Bachelors in International Relations from UC Davis."
+            image={natalieCadranel}
+            backgroundColor={lightGrey}
+          />
+        </Grid>
       </Grid>
     </PageSection>
   );

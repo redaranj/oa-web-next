@@ -17,19 +17,23 @@ export const GuideItem: FC<GuideItemProps> = ({
   const { h5, bodyLarge } = typography;
 
   return (
-    <Grid item container direction="column" sx={{ width: "25%" }}>
+    <Grid item container direction="row" flexWrap="nowrap" spacing={4}>
       <Grid item>
-        <Image src={image} alt="" width="60px" loader={loader} />
-      </Grid>
-      <Grid item>
-        <Box component="h5" sx={h5}>
-          {title}
+        <Box sx={{ width: "200px" }}>
+          <Image src={image} alt="" loader={loader} />
         </Box>
       </Grid>
-      <Grid item>
-        <Box component="p" sx={bodyLarge}>
-          {description}
-        </Box>
+      <Grid item container direction="column">
+        <Grid item>
+          <Box component="h5" sx={h5}>
+            {title}
+          </Box>
+        </Grid>
+        <Grid item>
+          <Box component="p" sx={bodyLarge}>
+            {description}
+          </Box>
+        </Grid>
       </Grid>
     </Grid>
   );

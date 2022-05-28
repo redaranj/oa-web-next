@@ -15,7 +15,9 @@ export const colors = {
   lightGrey: "#f1f4f8",
   mediumGrey: "#e3e3e3",
   turquoise: "#00b4a6",
+  lightTurquoise: "#aae6e1",
   mediumBurgundy: "#ad898a",
+  lightBurgundy: "#ffdfd9",
 };
 
 const typographyDefaults = {
