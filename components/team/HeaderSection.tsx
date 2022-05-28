@@ -32,13 +32,13 @@ export const HeaderSection: FC = () => {
               component="h1"
               sx={h1}
               dangerouslySetInnerHTML={{
-                __html: t("appSaveTitle"),
+                __html: t("ourTeamTitle"),
               }}
             />
           </Grid>
           <Grid item>
             <Box component="p" sx={bodyLarge}>
-              {t("appSaveDescription")}
+              {t("ourTeamDescription")}
             </Box>
           </Grid>
           <OutlinedButton arrowDirection="down">{t("more")}</OutlinedButton>
