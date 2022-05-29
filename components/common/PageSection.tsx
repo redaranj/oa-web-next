@@ -13,7 +13,6 @@ export const PageSection: FC<PageSectionProps> = ({
   backgroundImage,
   children,
 }) => {
-  console.log({ backgroundImage });
   const backgroundImageProps = backgroundImage
     ? {
         backgroundImage: `url(${backgroundImage.src})`,
@@ -22,7 +21,7 @@ export const PageSection: FC<PageSectionProps> = ({
         backgroundSize: "100%",
       }
     : {};
-  console.log({ backgroundImageProps });
+
   return (
     <Box sx={{ backgroundColor, ...backgroundImageProps }}>
       <Container

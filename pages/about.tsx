@@ -21,13 +21,13 @@ const About: NextPage = () => (
         <BeliefsSection />
       </Grid>
       <Grid item>
-        <RoleSection />
-      </Grid>
-      <Grid item>
         <ActivitiesSection />
       </Grid>
       <Grid item>
         <PartnersSection />
+      </Grid>
+      <Grid item>
+        <RoleSection />
       </Grid>
     </Grid>
   </Layout>

@@ -3,12 +3,13 @@ import { Box, Grid } from "@mui/material";
 import { useTranslate } from "react-polyglot";
 import { typography, colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
-import { OutlinedButton } from "components/common/OutlinedButton";
+import { ActivityItem } from "components/about/ActivityItem";
+import guideSample from "images/guide-sample.png";
 
 export const ActivitiesSection: FC = () => {
   const t = useTranslate();
   const { lightGrey } = colors;
-  const { h1, bodyLarge } = typography;
+  const { h2 } = typography;
 
   return (
     <PageSection backgroundColor={lightGrey}>
@@ -16,43 +17,50 @@ export const ActivitiesSection: FC = () => {
         container
         spacing={8}
         sx={{
-          flexDirection: "row",
+          flexDirection: "column",
         }}
       >
-        <Grid
-          container
-          direction="column"
-          item
-          sx={{
-            width: "50%",
-          }}
-        >
-          <Grid item>
-            <Box
-              component="h1"
-              sx={h1}
-              dangerouslySetInnerHTML={{
-                __html: t("aboutTitle"),
-              }}
-            />
-          </Grid>
-          <Grid item>
-            <Box component="p" sx={bodyLarge}>
-              {t("appSaveDescription")}
-            </Box>
-          </Grid>
-          <OutlinedButton arrowDirection="down">{t("more")}</OutlinedButton>
+        <Grid item>
+          <Box
+            component="h2"
+            sx={h2}
+            dangerouslySetInnerHTML={{
+              __html: t("soThatWeTitle"),
+            }}
+          />
         </Grid>
-        <Grid
-          item
-          sx={{
-            width: "50%",
-            backgroundImage: `url()`,
-            backgroundSize: "150px",
-            backgroundPosition: "0% 0%",
-            backgroundRepeat: "no-repeat",
-          }}
-        />
+        <Grid item container direction="row">
+          <ActivityItem
+            title={t("developSave")}
+            description=""
+            url=""
+            image={guideSample}
+          />
+          <ActivityItem
+            title={t("conductResearch")}
+            description=""
+            url=""
+            image={guideSample}
+          />
+          <ActivityItem
+            title={t("prepareReports")}
+            description=""
+            url=""
+            image={guideSample}
+          />
+          <ActivityItem
+            title={t("archiving")}
+            description=""
+            url=""
+            image={guideSample}
+          />
+          <ActivityItem
+            title={t("documentaryActivities")}
+            description=""
+            url=""
+            image={guideSample}
+          />
+        </Grid>
       </Grid>
     </PageSection>
   );

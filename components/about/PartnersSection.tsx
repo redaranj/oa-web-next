@@ -3,12 +3,13 @@ import { Box, Grid } from "@mui/material";
 import { useTranslate } from "react-polyglot";
 import { typography, colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
-import { OutlinedButton } from "components/common/OutlinedButton";
+import { PartnerItem } from "components/about/PartnerItem";
+import guideSample from "images/guide-sample.png";
 
 export const PartnersSection: FC = () => {
   const t = useTranslate();
   const { lightGrey } = colors;
-  const { h1, bodyLarge } = typography;
+  const { h2 } = typography;
 
   return (
     <PageSection backgroundColor={lightGrey}>
@@ -16,43 +17,44 @@ export const PartnersSection: FC = () => {
         container
         spacing={8}
         sx={{
-          flexDirection: "row",
+          flexDirection: "column",
         }}
       >
-        <Grid
-          container
-          direction="column"
-          item
-          sx={{
-            width: "50%",
-          }}
-        >
-          <Grid item>
-            <Box
-              component="h1"
-              sx={h1}
-              dangerouslySetInnerHTML={{
-                __html: t("aboutTitle"),
-              }}
-            />
-          </Grid>
-          <Grid item>
-            <Box component="p" sx={bodyLarge}>
-              {t("appSaveDescription")}
-            </Box>
-          </Grid>
-          <OutlinedButton arrowDirection="down">{t("more")}</OutlinedButton>
+        <Grid item>
+          <Box
+            component="h2"
+            sx={{ ...h2, textAlign: "center" }}
+            dangerouslySetInnerHTML={{
+              __html: t("couldntAloneTitle"),
+            }}
+          />
         </Grid>
-        <Grid
-          item
-          sx={{
-            width: "50%",
-            backgroundImage: `url()`,
-            backgroundSize: "150px",
-            backgroundPosition: "0% 0%",
-            backgroundRepeat: "no-repeat",
-          }}
-        />
+        <Grid item container direction="row">
+          <Grid item sx={{ width: "50%" }} />
+          <Grid item sx={{ width: "50%" }}>
+            <Box>{t("ourTeam")}</Box>
+            <Box>{t("ourTeamInfo")}</Box>
+          </Grid>
+        </Grid>
+        <Grid item container direction="row">
+          <Grid item sx={{ width: "50%" }} />
+          <Grid item sx={{ width: "50%" }}>
+            <Box>{t("advisoryBoard")}</Box>
+            <Box>{t("advisoryBoardInfo")}</Box>
+          </Grid>
+        </Grid>
+        <Grid item>
+          <Box>{t("partners")}</Box>
+        </Grid>
+        <Grid item container direction="row">
+          <PartnerItem
+            name="Filecoin Foundation for the Distributed Web"
+            image={guideSample}
+            url=""
+          />
+          <PartnerItem name="Open Technology Fund" image={guideSample} url="" />
+          <PartnerItem name="Knight Foundation" image={guideSample} url="" />
+        </Grid>
       </Grid>
     </PageSection>
   );
