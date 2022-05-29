@@ -64,5 +64,15 @@
   "shareDescriptionOne": "Uploads your verified media to your own secure server such as Nextcloud, Internet Archive, or DropBox.",
   "shareDescriptionTwo": "Enables you to grant access to your shared media and communicate your intentions for future use by easily generating a Creative Commons license, allowing others to reuse or remix it.",
   "coreFeaturesTitle": "<strong>Core</strong> features",
-  "coreFeaturesDescription": "Unlike other media-sharing tools, Save offers a suite of responsive features that streamline secure preservation based on community input and our commitment to digital inclusion."
+  "coreFeaturesDescription": "Unlike other media-sharing tools, Save offers a suite of responsive features that streamline secure preservation based on community input and our commitment to digital inclusion.",
+  "coreFeaturesIntro": "With Save, you can be sure your media is always authenticated because you have full control—without interference from intermediaries—from phone to archive. And, when paired with Proofmode (available now for Android, iOS coming soon), you can even add sensor data to corroborate the metadata.",
+  "sendMediaSecureTitle": "Send Media via Secure Transit",
+  "preserveMobileMediaTitle": "Preserve Mobile Media for Long-Term Access",
+  "communicateIntentionsTitle": "Communicate Your Intentions for Future Use",
+  "simplifyWorkflowsTitle": "Simplify Organizational Workflows",
+  "additionalFeaturesTitle": "<strong>Additional</strong> features",
+  "moreAboutSaveTitle": "More about <strong>Save</strong>",
+  "moreAboutSaveDescription": "Together, we can build a world where everyone has the safety they deserve. Join us.",
+  "pressRelease": "Press release",
+  "video": "Video"
 }

@@ -3,7 +3,8 @@ import { Box, Grid } from "@mui/material";
 import { useTranslate } from "react-polyglot";
 import { typography, colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
-import { OutlinedButton } from "components/common/OutlinedButton";
+import { MoreItem } from "components/save/MoreItem";
+import guideSample from "images/guide-sample.png";
 
 export const MoreSection: FC = () => {
   const t = useTranslate();
@@ -16,43 +17,43 @@ export const MoreSection: FC = () => {
         container
         spacing={8}
         sx={{
-          flexDirection: "row",
+          flexDirection: "column",
         }}
       >
-        <Grid
-          container
-          direction="column"
-          item
-          sx={{
-            width: "50%",
-          }}
-        >
-          <Grid item>
-            <Box
-              component="h2"
-              sx={h2}
-              dangerouslySetInnerHTML={{
-                __html: t("appSaveTitle"),
-              }}
-            />
-          </Grid>
-          <Grid item>
-            <Box component="p" sx={bodyLarge}>
-              {t("appSaveDescription")}
-            </Box>
-          </Grid>
-          <OutlinedButton arrowDirection="down">{t("more")}</OutlinedButton>
+        <Grid item>
+          <Box
+            component="h2"
+            sx={{ ...h2, textAlign: "center" }}
+            dangerouslySetInnerHTML={{
+              __html: t("moreAboutSaveTitle"),
+            }}
+          />
         </Grid>
-        <Grid
-          item
-          sx={{
-            width: "50%",
-            backgroundImage: `url()`,
-            backgroundSize: "150px",
-            backgroundPosition: "0% 0%",
-            backgroundRepeat: "no-repeat",
-          }}
-        />
+        <Grid item>
+          <Box component="p" sx={{ ...bodyLarge, textAlign: "center" }}>
+            {t("moreAboutSaveDescription")}
+          </Box>
+        </Grid>
+        <Grid item container direction="row">
+          <MoreItem
+            title={t("pressRelease")}
+            description=""
+            image={guideSample}
+            url=""
+          />
+          <MoreItem
+            title={t("guide")}
+            description=""
+            image={guideSample}
+            url=""
+          />
+          <MoreItem
+            title={t("video")}
+            description=""
+            image={guideSample}
+            url=""
+          />
+        </Grid>
       </Grid>
     </PageSection>
   );
