@@ -7,6 +7,7 @@ body {
   overscroll-behavior-x: none;
   overscroll-behavior-y: none;
   text-size-adjust: none;
+  overscroll-behavior: none;
 }
 
 a {

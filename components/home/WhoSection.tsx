@@ -71,36 +71,27 @@ export const WhoSection: FC = () => {
           </Grid>
         </Grid>
         <HorizontalScrollArea>
-          <Grid
-            item
-            container
-            spacing={6}
-            flexWrap="nowrap"
-            sx={{
-              flexDirection: "row",
-              [phoneSmall]: {
-                flexDirection: "column",
-              },
-              [tabletSmall]: {
-                flexDirection: "row",
-              },
-            }}
-          >
-            <WhoItem
-              name={t("whoMeganName")}
-              profile={t("whoMeganProfile")}
-              description={t("whoMeganDescription")}
-              image={megan}
-              url=""
-            />
-            <WhoItem
-              name={t("whoKevinName")}
-              profile={t("whoKevinProfile")}
-              description={t("whoKevinDescription")}
-              image={kevin}
-              url=""
-            />
-          </Grid>
+          <WhoItem
+            name={t("whoMeganName")}
+            profile={t("whoMeganProfile")}
+            description={t("whoMeganDescription")}
+            image={megan}
+            url=""
+          />
+          <WhoItem
+            name={t("whoKevinName")}
+            profile={t("whoKevinProfile")}
+            description={t("whoKevinDescription")}
+            image={kevin}
+            url=""
+          />
+          <WhoItem
+            name={t("whoMeganName")}
+            profile={t("whoMeganProfile")}
+            description={t("whoMeganDescription")}
+            image={megan}
+            url=""
+          />
         </HorizontalScrollArea>
       </Grid>
     </PageSection>

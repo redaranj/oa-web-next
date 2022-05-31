@@ -1,9 +1,11 @@
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { AppBar, Box, Grid } from "@mui/material";
-import { colors, typography, loader } from "styles/theme";
+import { AppBar, Box, Grid, Drawer, Button } from "@mui/material";
+import { colors, typography, loader, breakpoints } from "styles/theme";
 import { FilledButton } from "components/common/FilledButton";
 import { MenuButton } from "components/common/MenuButton";
+import { MobileMenu } from "components/common/MobileMenu";
 import { IconLink } from "components/common/IconLink";
 import openArchiveLogo from "images/open-archive.svg";
 import search from "images/search.svg";
@@ -12,8 +14,10 @@ import instagram from "images/instagram-grey.svg";
 import github from "images/github-grey.svg";
 
 export const TopNav = () => {
+  const [drawerOpen, setDrawerOpen] = useState(false);
   const { white, mediumGrey, mediumBurgundy } = colors;
   const { body } = typography;
+  const { phoneSmall, tabletSmall } = breakpoints;
 
   return (
     <AppBar
@@ -27,6 +31,8 @@ export const TopNav = () => {
         pt: 2,
         pr: 6,
         pb: 2,
+        [phoneSmall]: { pl: 3, pt: 1, pr: 3, pb: 1 },
+        [tabletSmall]: { pl: 6, pt: 2, pr: 6, pb: 2 },
       }}
     >
       <Box
@@ -55,6 +61,12 @@ export const TopNav = () => {
             direction="row"
             justifyContent="flex-end"
             flexWrap="nowrap"
+            sx={{
+              display: "flex",
+              [phoneSmall]: {
+                display: "none",
+              },
+            }}
           >
             <Grid item>
               <Image alt="search" src={search} loader={loader} />
@@ -147,8 +159,31 @@ export const TopNav = () => {
               </Grid>
             </Grid>
           </Grid>
+          <Grid item>
+            <Button
+              onClick={() => setDrawerOpen(true)}
+              sx={{
+                display: "none",
+                [phoneSmall]: {
+                  display: "initial",
+                },
+                [tabletSmall]: {
+                  display: "none",
+                },
+              }}
+            >
+              menu
+            </Button>
+          </Grid>
         </Grid>
       </Box>
+      <Drawer
+        anchor="top"
+        open={drawerOpen}
+        onClose={() => setDrawerOpen(false)}
+      >
+        <MobileMenu closeMenu={() => setDrawerOpen(false)} />
+      </Drawer>
     </AppBar>
   );
 };

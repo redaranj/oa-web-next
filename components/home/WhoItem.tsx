@@ -26,13 +26,17 @@ export const WhoItem: FC<WhoItemProps> = ({
 
   return (
     <Link href={url}>
-      <Grid item container direction="row">
-        <Grid
-          item
-          sx={{
-            width: "30%",
-          }}
-        >
+      <Grid
+        item
+        container
+        direction="row"
+        flexWrap="nowrap"
+        sx={{
+          width: "600px",
+          minWidth: "600px",
+        }}
+      >
+        <Grid item sx={{ width: "200px" }}>
           <Box
             sx={{
               backgroundColor: lightGrey,

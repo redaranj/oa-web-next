@@ -26,12 +26,15 @@ export const TestimonialItem: FC<TestimonialItemProps> = ({
       container
       direction="column"
       sx={{
-        width: "33%",
+        width: "500px",
+        minWidth: "500px",
         [phoneSmall]: {
           width: "100%",
+          minWidth: "100%",
         },
         [tabletSmall]: {
-          width: "33%",
+          width: "500px",
+          minWidth: "500px",
         },
       }}
       spacing={4}

@@ -26,28 +26,44 @@ export const TestimonialsSection: FC = () => {
             dangerouslySetInnerHTML={{ __html: t("testimonialsTitle") }}
           />
         </Grid>
-        <HorizontalScrollArea>
-          <Grid item container direction="row" spacing={6}>
-            <TestimonialItem
-              name={t("testimonialDariusName")}
-              position={t("testimonialDariusPosition")}
-              quote={t("testimonialDariusQuote")}
-              image={darius}
-            />
-            <TestimonialItem
-              name={t("testimonialDariusName")}
-              position={t("testimonialDariusPosition")}
-              quote={t("testimonialDariusQuote")}
-              image={darius}
-            />
-            <TestimonialItem
-              name={t("testimonialDariusName")}
-              position={t("testimonialDariusPosition")}
-              quote={t("testimonialDariusQuote")}
-              image={darius}
-            />
-          </Grid>
-        </HorizontalScrollArea>
+      <HorizontalScrollArea> 
+          <TestimonialItem
+            name={t("testimonialDariusName")}
+            position={t("testimonialDariusPosition")}
+            quote={t("testimonialDariusQuote")}
+            image={darius}
+          />
+          <TestimonialItem
+            name={t("testimonialDariusName")}
+            position={t("testimonialDariusPosition")}
+            quote={t("testimonialDariusQuote")}
+            image={darius}
+          />
+          <TestimonialItem
+            name={t("testimonialDariusName")}
+            position={t("testimonialDariusPosition")}
+            quote={t("testimonialDariusQuote")}
+            image={darius}
+          />
+          <TestimonialItem
+            name={t("testimonialDariusName")}
+            position={t("testimonialDariusPosition")}
+            quote={t("testimonialDariusQuote")}
+            image={darius}
+          />
+          <TestimonialItem
+            name={t("testimonialDariusName")}
+            position={t("testimonialDariusPosition")}
+            quote={t("testimonialDariusQuote")}
+            image={darius}
+          />
+          <TestimonialItem
+            name={t("testimonialDariusName")}
+            position={t("testimonialDariusPosition")}
+            quote={t("testimonialDariusQuote")}
+            image={darius}
+          />
+</HorizontalScrollArea>
       </Grid>
     </PageSection>
   );
