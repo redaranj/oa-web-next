@@ -26,7 +26,7 @@ export const WhoItem: FC<WhoItemProps> = ({
 
   return (
     <Link href={url}>
-      <Grid item container direction="row" sx={{ width: 800 }}>
+      <Grid item container direction="row">
         <Grid
           item
           sx={{

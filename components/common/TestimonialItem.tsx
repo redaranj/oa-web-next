@@ -1,7 +1,7 @@
 import { FC, PropsWithChildren } from "react";
 import Image, { StaticImageData } from "next/image";
 import { Box, Grid } from "@mui/material";
-import { colors, loader, typography } from "styles/theme";
+import { colors, loader, typography, breakpoints } from "styles/theme";
 
 type TestimonialItemProps = PropsWithChildren<{
   name: string;
@@ -18,9 +18,24 @@ export const TestimonialItem: FC<TestimonialItemProps> = ({
 }) => {
   const { white, turquoise } = colors;
   const { h6, body } = typography;
+  const { phoneSmall, tabletSmall } = breakpoints;
 
   return (
-    <Grid item container direction="column" sx={{ width: "33%" }} spacing={4}>
+    <Grid
+      item
+      container
+      direction="column"
+      sx={{
+        width: "33%",
+        [phoneSmall]: {
+          width: "100%",
+        },
+        [tabletSmall]: {
+          width: "33%",
+        },
+      }}
+      spacing={4}
+    >
       <Grid item>
         <Box sx={{ backgroundColor: white, p: 3 }}>{quote}</Box>
       </Grid>

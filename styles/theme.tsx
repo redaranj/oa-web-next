@@ -91,6 +91,24 @@ export const typography = {
     fontWeight: 600,
     fontSize: "40px",
     lineHeight: "40px",
+    [breakpoints.phoneSmall]: {
+      fontSize: "16px",
+    },
+    [breakpoints.phoneLarge]: {
+      fontSize: "16px",
+    },
+    [breakpoints.tabletSmall]: {
+      fontSize: "20px",
+    },
+    [breakpoints.tabletLarge]: {
+      fontSize: "20px",
+    },
+    [breakpoints.desktopSmall]: {
+      fontSize: "30px",
+    },
+    [breakpoints.desktopLarge]: {
+      fontSize: "40px",
+    },
   },
   h4: {
     ...typographyDefaults,
