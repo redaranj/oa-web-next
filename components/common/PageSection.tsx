@@ -1,7 +1,6 @@
 import { FC, PropsWithChildren } from "react";
 import { StaticImageData } from "next/image";
-import { Box, Container } from "@mui/material";
-import { breakpoints as bp } from "styles/theme";
+import { Box } from "@mui/material";
 
 type PageSectionProps = PropsWithChildren<{
   backgroundColor: string;
@@ -24,15 +23,7 @@ export const PageSection: FC<PageSectionProps> = ({
 
   return (
     <Box sx={{ backgroundColor, ...backgroundImageProps }}>
-      <Container
-        sx={{
-          maxWidth: 1920,
-          [bp.desktopSmall]: {},
-          [bp.tabletLarge]: {},
-        }}
-      >
-        {children}
-      </Container>
+      <Box sx={{ margin: "auto", maxWidth: 1920 }}>{children}</Box>
     </Box>
   );
 };

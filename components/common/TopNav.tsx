@@ -1,6 +1,7 @@
 import Image from "next/image";
-import { AppBar, Grid, Container } from "@mui/material";
-import { colors, loader } from "styles/theme";
+import Link from "next/link";
+import { AppBar, Box, Grid } from "@mui/material";
+import { colors, typography, loader } from "styles/theme";
 import { FilledButton } from "components/common/FilledButton";
 import { MenuButton } from "components/common/MenuButton";
 import { IconLink } from "components/common/IconLink";
@@ -11,7 +12,8 @@ import instagram from "images/instagram-grey.svg";
 import github from "images/github-grey.svg";
 
 export const TopNav = () => {
-  const { white, lightGrey, mediumBurgundy } = colors;
+  const { white, mediumGrey, mediumBurgundy } = colors;
+  const { body } = typography;
 
   return (
     <AppBar
@@ -21,31 +23,36 @@ export const TopNav = () => {
         backgroundColor: white,
         marginBottom: 180,
         opacity: 0.95,
-        p: 1,
+        pt: "16px",
+        pb: "16px",
       }}
     >
-      <Container
+      <Box
         sx={{
+          margin: "auto",
           maxWidth: 1920,
+          width: "100%",
         }}
       >
         <Grid
           item
           container
           direction="row"
-          justifyContent="center"
+          justifyContent="space-between"
           flexWrap="nowrap"
+          alignItems="center"
         >
-          <Grid item sx={{ width: "50%" }}>
-            <Image alt="" src={openArchiveLogo} loader={loader} />
+          <Grid item sx={{ mt: "4px" }} xs="auto">
+            <Link href="/">
+              <Image alt="" src={openArchiveLogo} loader={loader} />
+            </Link>
           </Grid>
           <Grid
             item
             container
-            alignItems="center"
-            justifyContent="space-around"
+            direction="row"
+            justifyContent="flex-end"
             flexWrap="nowrap"
-            sx={{ width: "50%" }}
           >
             <Grid item>
               <Image alt="search" src={search} loader={loader} />
@@ -56,16 +63,43 @@ export const TopNav = () => {
               direction="row"
               flexWrap="nowrap"
               spacing={2}
+              xs="auto"
               sx={{
-                borderLeft: `1px solid ${lightGrey}`,
-                borderRight: `1px solid ${lightGrey}`,
+                borderLeft: `1px solid ${mediumGrey}`,
+                borderRight: `1px solid ${mediumGrey}`,
               }}
             >
               <Grid item>
-                <MenuButton>Our work</MenuButton>
+                <MenuButton title="Our work">
+                  <Grid container direction="column">
+                    <Grid item>
+                      <Link href="/save">
+                        <Box sx={{ ...body, fontWeight: 600 }}>Save</Box>
+                      </Link>
+                    </Grid>
+                    <Grid item>
+                      <Link href="/guides">
+                        <Box sx={{ ...body, fontWeight: 600 }}>Guides</Box>
+                      </Link>
+                    </Grid>
+                  </Grid>
+                </MenuButton>
               </Grid>
               <Grid item>
-                <MenuButton>About</MenuButton>
+                <MenuButton title="About">
+                  <Grid container direction="column">
+                    <Grid item>
+                      <Link href="/about">
+                        <Box sx={{ ...body, fontWeight: 600 }}>About us</Box>
+                      </Link>
+                    </Grid>
+                    <Grid item>
+                      <Link href="/team">
+                        <Box sx={{ ...body, fontWeight: 600 }}>Team</Box>
+                      </Link>
+                    </Grid>
+                  </Grid>
+                </MenuButton>
               </Grid>
               <Grid item>
                 <FilledButton
@@ -81,12 +115,9 @@ export const TopNav = () => {
               container
               direction="row"
               flexWrap="nowrap"
-              spacing={2}
-              sx={{
-                svg: {
-                  color: "red !important",
-                },
-              }}
+              xs="auto"
+              spacing={0}
+              sx={{ ml: "32px" }}
             >
               <Grid item>
                 <IconLink
@@ -115,7 +146,7 @@ export const TopNav = () => {
             </Grid>
           </Grid>
         </Grid>
-      </Container>
+      </Box>
     </AppBar>
   );
 };

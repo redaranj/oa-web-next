@@ -25,6 +25,7 @@
     "@mui/system": "^5.8.1",
     "@next/mdx": "^12.1.6",
     "json2mq": "^0.2.0",
+    "material-ui-popup-state": "^3.1.1",
     "next": "^12.1",
     "react": "^17",
     "react-dom": "^17",

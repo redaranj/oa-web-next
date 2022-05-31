@@ -17,3 +17,28 @@ a {
 * {
   box-sizing: border-box;
 }
+
+/*
+html,body {
+  cursor: none
+}
+html *,body * {
+  cursor: none;
+}
+
+.c--hidden {
+   opacity: 0;
+}
+
+.cursor {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #121212;
+  border-radius: 100%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  transition: all 100ms ease;
+  transition-property: opacity;
+  z-index: 3000;
+}
+*/

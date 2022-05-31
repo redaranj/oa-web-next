@@ -29,7 +29,13 @@ export const ProjectsSection: FC = () => {
           />
         </Grid>
         <HorizontalScrollArea>
-          <Grid item container direction="row" spacing={2}>
+          <Grid
+            item
+            container
+            direction="row"
+            spacing={2}
+            sx={{ minWidth: 700 }}
+          >
             <ProjectItem title={t("save")} image={projectSave} url="" />
             <ProjectItem
               title={t("guide")}

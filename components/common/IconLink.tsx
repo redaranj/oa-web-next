@@ -22,6 +22,7 @@ export const IconLink: FC<IconLinkProps> = ({ image, size, url, alt }) => (
         textTransform: "none",
         color: black,
         whiteSpace: "nowrap",
+        marginLeft: "-16px",
       }}
     >
       <Image src={image} alt={alt} width={size} height={size} loader={loader} />

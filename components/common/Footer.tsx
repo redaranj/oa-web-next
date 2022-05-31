@@ -1,5 +1,6 @@
 import { FC } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Grid } from "@mui/material";
 import { useTranslate } from "react-polyglot";
 import { colors, loader } from "styles/theme";
@@ -74,9 +75,15 @@ export const Footer: FC = () => {
           </Grid>
         </Grid>
         <Grid item container direction="column" sx={{ width: "33%" }}>
-          <Grid item>{t("workWithUs")}</Grid>
-          <Grid item>{t("termsAndPrivacy")}</Grid>
-          <Grid item>{t("codeOfConduct")}</Grid>
+          <Grid item>
+            <Link href="/work-with-us">{t("workWithUs")}</Link>
+          </Grid>
+          <Grid item>
+            <Link href="/privacy">{t("termsAndPrivacy")}</Link>
+          </Grid>
+          <Grid item>
+            <Link href="/conduct">{t("codeOfConduct")}</Link>
+          </Grid>
         </Grid>
         <Grid item container direction="column" sx={{ width: "33%" }}>
           <Grid item container direction="row">

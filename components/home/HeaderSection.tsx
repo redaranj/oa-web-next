@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Box, Grid } from "@mui/material";
 import { useTranslate } from "react-polyglot";
-import { typography, colors } from "styles/theme";
+import { typography, colors, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { OutlinedButton } from "components/common/OutlinedButton";
 import header1 from "images/header-1.png";
@@ -17,6 +17,7 @@ export const HeaderSection: FC = () => {
   const t = useTranslate();
   const { white } = colors;
   const { h1, bodyLarge } = typography;
+  const { phoneSmall, tabletLarge } = breakpoints;
 
   return (
     <PageSection backgroundColor={white}>
@@ -25,6 +26,12 @@ export const HeaderSection: FC = () => {
         spacing={8}
         sx={{
           flexDirection: "row",
+          [phoneSmall]: {
+            flexDirection: "column-reverse",
+          },
+          [tabletLarge]: {
+            flexDirection: "row",
+          },
         }}
       >
         <Grid
@@ -33,6 +40,12 @@ export const HeaderSection: FC = () => {
           item
           sx={{
             width: "50%",
+            [phoneSmall]: {
+              width: "100%",
+            },
+            [tabletLarge]: {
+              width: "50%",
+            },
           }}
         >
           <Grid item>
@@ -55,6 +68,13 @@ export const HeaderSection: FC = () => {
           item
           sx={{
             width: "50%",
+            [phoneSmall]: {
+              width: "100%",
+              height: 200,
+            },
+            [tabletLarge]: {
+              width: "50%",
+            },
             backgroundImage: `url(${header1.src}), url(${header2.src}), url(${header3.src}), url(${header4.src}), url(${header5.src}), url(${header6.src}), url(${header7.src}), url(${header8.src})`,
             backgroundSize: "150px",
             backgroundPosition:

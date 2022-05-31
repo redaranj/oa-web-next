@@ -17,13 +17,34 @@ export const ProjectItem: FC<ProjectItemProps> = ({
   image,
   url,
 }) => {
-  const { white, black } = colors;
+  const { white, black, turquoise } = colors;
   const { h5, bodyLarge } = typography;
+  //  const containerRef = useRef(null);
+  //  const [visible, setVisible] = useState(false);
+  // ref={containerRef}
+  // onMouseOver={() => setVisible(!visible)}
 
   return (
-    <Grid item container direction="column" sx={{ width: "33%" }}>
+    <Grid
+      item
+      container
+      direction="column"
+      sx={{
+        overflow: "hidden",
+        width: "33%",
+      }}
+    >
       <Link href={url}>
-        <Box sx={{ backgroundColor: white }}>
+        <Box
+          sx={{
+            backgroundColor: white,
+            "&:hover #slide": {
+              transition: "1s",
+              bottom: "0px",
+            },
+            position: "relative",
+          }}
+        >
           <Grid item>
             <Box component="h5" sx={{ ...h5, color: black }}>
               {title}
@@ -37,7 +58,20 @@ export const ProjectItem: FC<ProjectItemProps> = ({
                 backgroundSize: "cover",
               }}
             >
-              <Box sx={{ ...bodyLarge, color: white }}>{description}</Box>
+              <Box
+                id="slide"
+                sx={{
+                  width: "100%",
+                  backgroundColor: turquoise,
+                  color: white,
+                  height: "300px",
+                  position: "absolute",
+                  bottom: "-300px",
+                  transition: "1s",
+                }}
+              >
+                <Box sx={{ ...bodyLarge, color: white }}>{description}</Box>
+              </Box>
             </Box>
           </Grid>
         </Box>
