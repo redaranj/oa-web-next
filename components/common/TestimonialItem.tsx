@@ -24,13 +24,15 @@ export const TestimonialItem: FC<TestimonialItemProps> = ({
       <Grid item>
         <Box sx={{ backgroundColor: white, p: 3 }}>{quote}</Box>
       </Grid>
-      <Grid item container direction="row" flexWrap="nowrap" spacing={2}>
+      <Grid item container direction="row" flexWrap="nowrap" spacing={3}>
         <Grid item>
-          <Image src={image} loader={loader} height="50px" width="50px" />
+          <Box sx={{ width: 60, height: 60 }}>
+            <Image src={image} loader={loader} />
+          </Box>
         </Grid>
         <Grid item container direction="column">
           <Grid item>
-            <Box component="h6" sx={{ ...h6 }}>
+            <Box component="h6" sx={{ ...h6, mt: "-4px" }}>
               {name}
             </Box>
           </Grid>

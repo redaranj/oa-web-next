@@ -17,9 +17,9 @@ export const WhoSection: FC = () => {
       <Grid
         container
         direction="column"
-        sx={{ paddingTop: "50px", paddingBottom: "50px" }}
+        sx={{ paddingTop: 16, paddingBottom: 20 }}
       >
-        <Grid item container direction="row">
+        <Grid item container direction="row" sx={{ pb: 8 }}>
           <Grid item sx={{ width: "50%" }}>
             <Box
               component="h2"
@@ -33,7 +33,7 @@ export const WhoSection: FC = () => {
             </Box>
           </Grid>
         </Grid>
-        <Grid item container direction="row" spacing={2}>
+        <Grid item container direction="row" spacing={6} flexWrap="nowrap">
           <WhoItem
             name={t("whoMeganName")}
             profile={t("whoMeganProfile")}

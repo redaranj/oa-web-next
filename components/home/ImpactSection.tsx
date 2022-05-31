@@ -19,16 +19,16 @@ export const ImpactSection: FC = () => {
       <Grid
         container
         direction="column"
-        sx={{ paddingTop: "50px", paddingBottom: "50px" }}
+        sx={{ paddingTop: 26, paddingBottom: 20 }}
       >
         <Grid item>
           <Box
             component="h2"
-            sx={h2}
+            sx={{ ...h2, textAlign: "center" }}
             dangerouslySetInnerHTML={{ __html: t("ourImpactTitle") }}
           />
         </Grid>
-        <Grid item container direction="row" spacing={2}>
+        <Grid item container direction="row" spacing={6} sx={{ pt: 1 }}>
           <ImpactItem
             title={t("informationSecurityTitle")}
             description={t("informationSecurityDescription")}

@@ -17,7 +17,7 @@ export const RoleSection: FC = () => {
       <Grid
         container
         direction="column"
-        sx={{ paddingTop: "50px", paddingBottom: "50px" }}
+        sx={{ paddingTop: 16, paddingBottom: 16 }}
       >
         <Grid item sx={{ textAlign: "center" }}>
           <Box
@@ -25,22 +25,27 @@ export const RoleSection: FC = () => {
             sx={h2}
             dangerouslySetInnerHTML={{ __html: t("roleToPlayTitle") }}
           />
-          <Box sx={bodyLarge}>{t("roleToPlayDescription")}</Box>
+          <Box
+            component="p"
+            sx={{ ...bodyLarge, mb: 12, maxWidth: 700, margin: "auto" }}
+          >
+            {t("roleToPlayDescription")}
+          </Box>
         </Grid>
-        <Grid item container direction="row" spacing={2}>
+        <Grid item container direction="row" spacing={6}>
           <Grid
             item
             container
             direction="column"
             sx={{ width: "50%" }}
-            spacing={2}
+            spacing={6}
           >
             <Grid item>
               <Box
                 sx={{
                   ...h5,
                   color: white,
-                  p: 3,
+                  p: 6,
                   height: 200,
                   backgroundImage: `url(${role1.src})`,
                   backgroundSize: "cover",
@@ -55,7 +60,7 @@ export const RoleSection: FC = () => {
                 sx={{
                   ...h5,
                   color: white,
-                  p: 3,
+                  p: 6,
                   height: 200,
                   backgroundImage: `url(${role2.src})`,
                   backgroundSize: "cover",
@@ -76,8 +81,8 @@ export const RoleSection: FC = () => {
               sx={{
                 ...h3,
                 color: white,
-                p: 3,
-                height: "100%",
+                p: 6,
+                height: 467,
                 backgroundImage: `url(${role3.src})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",

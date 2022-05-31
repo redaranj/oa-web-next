@@ -6,7 +6,7 @@ import { Footer } from "components/common/Footer";
 export const Layout: FC<PropsWithChildren<{}>> = ({ children }) => (
   <>
     <TopNav />
-    <Box sx={{ paddingTop: "60px" }}>{children}</Box>
+    <Box sx={{ paddingTop: 12 }}>{children}</Box>
     <Footer />
   </>
 );

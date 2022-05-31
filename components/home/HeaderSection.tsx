@@ -17,7 +17,14 @@ export const HeaderSection: FC = () => {
   const t = useTranslate();
   const { white } = colors;
   const { h1, bodyLarge } = typography;
-  const { phoneSmall, tabletLarge } = breakpoints;
+  const {
+    phoneSmall,
+    phoneLarge,
+    tabletSmall,
+    tabletLarge,
+    desktopSmall,
+    desktopLarge,
+  } = breakpoints;
 
   return (
     <PageSection backgroundColor={white}>
@@ -51,37 +58,65 @@ export const HeaderSection: FC = () => {
           <Grid item>
             <Box
               component="h1"
-              sx={h1}
+              sx={{ ...h1, mt: 12 }}
               dangerouslySetInnerHTML={{
                 __html: t("truthToPowerTitle"),
               }}
             />
           </Grid>
-          <Grid item>
-            <Box component="p" sx={bodyLarge}>
-              {t("truthToPowerDescription")}
-            </Box>
+          <Grid item container direction="column" spacing={6} sx={{ mb: 12 }}>
+            <Grid item>
+              <Box component="p" sx={bodyLarge}>
+                {t("truthToPowerDescription")}
+              </Box>
+            </Grid>
+            <Grid item>
+              <OutlinedButton arrowDirection="down">{t("more")}</OutlinedButton>
+            </Grid>
           </Grid>
-          <OutlinedButton arrowDirection="down">{t("more")}</OutlinedButton>
         </Grid>
         <Grid
           item
           sx={{
             width: "50%",
+            overflow: "visible",
             [phoneSmall]: {
               width: "100%",
-              height: 200,
             },
             [tabletLarge]: {
               width: "50%",
             },
-            backgroundImage: `url(${header1.src}), url(${header2.src}), url(${header3.src}), url(${header4.src}), url(${header5.src}), url(${header6.src}), url(${header7.src}), url(${header8.src})`,
-            backgroundSize: "150px",
-            backgroundPosition:
-              "0% -25%, 50% 0%, 0% 25%, 50% 0%, 0% 50%, 50% 0%, 0% 25%, 75% 0%",
-            backgroundRepeat: "no-repeat",
           }}
-        />
+        >
+          <Box
+            sx={{
+              height: "100%",
+              minHeight: 500,
+              overflow: "visible",
+              width: "100%",
+              backgroundImage: `url(${header1.src}), url(${header2.src}), url(${header3.src}), url(${header4.src}), url(${header5.src}), url(${header6.src}), url(${header7.src}), url(${header8.src})`,
+              backgroundSize: "300px",
+              backgroundPosition:
+                "0% -25%, 50% 0%, 0% 25%, 50% 0%, 0% 50%, 50% 0%, 0% 25%, 75% 0%",
+              backgroundRepeat: "no-repeat",
+              [phoneSmall]: {
+                width: "100%",
+                height: 200,
+              },
+              [phoneLarge]: {},
+              [tabletSmall]: {},
+              [tabletLarge]: {},
+              [desktopSmall]: {
+                backgroundSize: "250px",
+                backgroundPosition:
+                  "60px -100px, 380px 0px, 60px 210px, 380px 310px, 60px 500px, 380px 1000px, 60px 2500px, 380px 10000px",
+              },
+              [desktopLarge]: {
+                backgroundSize: "300px",
+              },
+            }}
+          />
+        </Grid>
       </Grid>
     </PageSection>
   );

@@ -24,6 +24,8 @@ export const OutlinedButton: FC<OutlinedButtonProps> = ({
       fontWeight: 700,
       textTransform: "none",
       color: textColor,
+      pl: 4,
+      pr: 4,
       "&:hover": {
         backgroundColor: turquoise,
         border: `1px solid ${turquoise}`,

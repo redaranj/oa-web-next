@@ -53,6 +53,7 @@ export const typography = {
       fontSize: "90px",
     },
     "& strong": {
+      fontWeight: 600,
       color: colors.turquoise,
     },
   },
@@ -81,6 +82,7 @@ export const typography = {
       fontSize: "66px",
     },
     "& strong": {
+      fontWeight: 600,
       color: colors.turquoise,
     },
   },
@@ -98,9 +100,10 @@ export const typography = {
   },
   h5: {
     ...typographyDefaults,
-    fontWeight: 600,
+    fontWeight: 700,
     fontSize: "30px",
     lineHeight: "39px",
+    mb: 2,
     [breakpoints.phoneSmall]: {
       fontSize: "20px",
     },
@@ -120,7 +123,12 @@ export const typography = {
       fontSize: "34px",
     },
   },
-  h6: { ...typographyDefaults, fontSize: "22px", lineHeight: "29px" },
+  h6: {
+    ...typographyDefaults,
+    fontSize: "22px",
+    lineHeight: "29px",
+    fontWeight: 600,
+  },
   p: { ...typographyDefaults },
   bodyLarge: {
     ...typographyDefaults,

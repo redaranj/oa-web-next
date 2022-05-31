@@ -19,12 +19,12 @@ export const ProjectsSection: FC = () => {
       <Grid
         container
         direction="column"
-        sx={{ paddingTop: "50px", paddingBottom: "50px" }}
+        sx={{ paddingTop: 16, paddingBottom: 12 }}
       >
         <Grid item>
           <Box
             component="h2"
-            sx={h2}
+            sx={{ ...h2, mb: 7 }}
             dangerouslySetInnerHTML={{ __html: t("ourProjectsTitle") }}
           />
         </Grid>
@@ -33,7 +33,7 @@ export const ProjectsSection: FC = () => {
             item
             container
             direction="row"
-            spacing={2}
+            spacing={5}
             sx={{ minWidth: 700 }}
           >
             <ProjectItem title={t("save")} image={projectSave} url="" />

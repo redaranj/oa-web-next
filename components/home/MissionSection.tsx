@@ -3,6 +3,7 @@ import { Box, Grid } from "@mui/material";
 import { useTranslate } from "react-polyglot";
 import { typography, colors, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
+import { OutlinedButton } from "components/common/OutlinedButton";
 import mission1 from "images/mission-1.png";
 import mission2 from "images/mission-2.png";
 
@@ -38,11 +39,12 @@ export const MissionSection: FC = () => {
               left: 0,
               top: 0,
               height: "100%",
+              minHeight: 500,
               width: "100%",
-              backgroundImage: `url(${mission2.src}), url(${mission1.src})`,
+              backgroundImage: `url(${mission1.src}), url(${mission2.src})`,
               backgroundRepeat: "no-repeat",
-              backgroundSize: "300px",
-              backgroundPosition: "50% 50%, 0% 25%",
+              backgroundSize: "500px",
+              backgroundPosition: "0px 70px, 80px 300px",
               zIndex: 100,
             },
           }}
@@ -60,14 +62,22 @@ export const MissionSection: FC = () => {
           <Grid item>
             <Box
               component="h2"
-              sx={h2}
+              sx={{ ...h2, mt: 10 }}
               dangerouslySetInnerHTML={{ __html: t("missionStatementTitle") }}
             />
           </Grid>
-          <Grid item>
-            <Box component="p" sx={bodyLarge}>
-              {t("missionStatementDescription")}
-            </Box>
+          <Grid item container direction="column">
+            <Grid item>
+              <Box component="p" sx={{ ...bodyLarge, mb: 5 }}>
+                {t("missionStatementDescription")}
+              </Box>
+            </Grid>
+            <Grid item>
+              {" "}
+              <OutlinedButton arrowDirection="right">
+                {t("readMore")}
+              </OutlinedButton>
+            </Grid>
           </Grid>
         </Grid>
       </Grid>

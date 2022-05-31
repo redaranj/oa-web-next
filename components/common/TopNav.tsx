@@ -23,8 +23,10 @@ export const TopNav = () => {
         backgroundColor: white,
         marginBottom: 180,
         opacity: 0.95,
-        pt: "16px",
-        pb: "16px",
+        pl: 6,
+        pt: 2,
+        pr: 6,
+        pb: 2,
       }}
     >
       <Box

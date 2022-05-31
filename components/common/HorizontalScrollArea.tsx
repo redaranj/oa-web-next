@@ -13,7 +13,9 @@ export const HorizontalScrollArea: FC<HorizontalScrollAreaProps> = ({
   children,
 }) => (
   <Grid container direction="column">
-    <Grid item>{children}</Grid>
+    <Grid item sx={{ pb: 5 }}>
+      {children}
+    </Grid>
     <Grid item container direction="row" spacing={2}>
       <Grid item container direction="row" spacing={2}>
         <Grid item>

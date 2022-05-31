@@ -45,10 +45,13 @@ export const ProjectItem: FC<ProjectItemProps> = ({
             position: "relative",
           }}
         >
-          <Grid item>
-            <Box component="h5" sx={{ ...h5, color: black }}>
-              {title}
-            </Box>
+          <Grid item container direction="row" justifyContent="space-between">
+            <Grid item>
+              <Box component="h5" sx={{ ...h5, color: black, p: 3 }}>
+                {title}
+              </Box>
+            </Grid>
+            <Grid item />
           </Grid>
           <Grid item>
             <Box

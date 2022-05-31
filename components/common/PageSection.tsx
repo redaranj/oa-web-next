@@ -23,7 +23,9 @@ export const PageSection: FC<PageSectionProps> = ({
 
   return (
     <Box sx={{ backgroundColor, ...backgroundImageProps }}>
-      <Box sx={{ margin: "auto", maxWidth: 1920 }}>{children}</Box>
+      <Box sx={{ margin: "auto", maxWidth: 1920, pl: 6, pr: 6 }}>
+        {children}
+      </Box>
     </Box>
   );
 };

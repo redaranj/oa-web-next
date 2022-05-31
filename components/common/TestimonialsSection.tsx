@@ -17,7 +17,7 @@ export const TestimonialsSection: FC = () => {
       <Grid
         container
         direction="column"
-        sx={{ paddingTop: "50px", paddingBottom: "50px" }}
+        sx={{ paddingTop: 16, paddingBottom: 16 }}
       >
         <Grid item>
           <Box
@@ -27,7 +27,7 @@ export const TestimonialsSection: FC = () => {
           />
         </Grid>
         <HorizontalScrollArea>
-          <Grid item container direction="row" spacing={2}>
+          <Grid item container direction="row" spacing={6}>
             <TestimonialItem
               name={t("testimonialDariusName")}
               position={t("testimonialDariusPosition")}

@@ -21,44 +21,56 @@ export const WhoItem: FC<WhoItemProps> = ({
   url,
   image,
 }) => {
-  const { lightGrey, turquoise } = colors;
+  const { lightGrey } = colors;
   const { h5, body, bodyLarge } = typography;
 
   return (
     <Link href={url}>
-      <Grid item container direction="row" sx={{ width: "50%" }}>
+      <Grid item container direction="row" sx={{ width: 800 }}>
         <Grid
           item
           sx={{
-            width: "50%",
+            width: "30%",
           }}
         >
           <Box
             sx={{
               backgroundColor: lightGrey,
               backgroundImage: `url(${image.src})`,
-              backgroundSize: "cover",
+              backgroundSize: "200px",
+              backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
               width: "100%",
               height: "100%",
             }}
           />
         </Grid>
-        <Grid container item sx={{ width: "50%", backgroundColor: lightGrey }}>
-          <Grid item>
-            <Box component="h5" sx={{ ...h5, color: turquoise }}>
-              {name}
-            </Box>
-            <Image src={plus} loader={loader} />
+        <Grid
+          container
+          direction="column"
+          item
+          sx={{ width: "70%", backgroundColor: lightGrey, p: 6 }}
+        >
+          <Grid item container direction="row" spacing={2} alignItems="center">
+            <Grid item>
+              <Box component="h5" sx={{ ...h5 }}>
+                {name}
+              </Box>
+            </Grid>
+            <Grid item>
+              <Box sx={{ mt: -1 }}>
+                <Image src={plus} loader={loader} />
+              </Box>
+            </Grid>
           </Grid>
           <Grid item>
-            <Box component="p" sx={body}>
+            <Box component="p" sx={{ ...body, mb: 4 }}>
               {profile}
             </Box>
           </Grid>
           <Grid item>
             <Image src={quote} loader={loader} />
-            <Box component="p" sx={bodyLarge}>
+            <Box component="p" sx={{ bodyLarge, mb: 2 }}>
               {description}
             </Box>
           </Grid>
