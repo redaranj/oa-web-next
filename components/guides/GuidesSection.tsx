@@ -6,30 +6,32 @@ import { GuideItem } from "components/guides/GuideItem";
 import guideSample from "images/guide-sample.png";
 
 export const GuidesSection: FC = () => {
-  const { lightGrey } = colors;
+  const { white, mediumGrey } = colors;
 
   return (
-    <PageSection backgroundColor={lightGrey}>
+    <PageSection backgroundColor={white}>
       <Grid
         container
-        spacing={8}
+        rowSpacing={8}
         sx={{
           flexDirection: "column",
+          borderBottom: `1px solid ${mediumGrey}`,
+          pb: 20,
         }}
       >
         <GuideItem
-          title="OpenAchive's Guide to Preserving Truth to Power"
-          description="OpenAchive's Guide to Preserving Truth to Power"
+          title="OpenArchive's Guide to Preserving Truth to Power"
+          description="OpenArchive's Guide to Preserving Truth to Power"
           image={guideSample}
         />
         <GuideItem
-          title="OpenAchive's Guide to Preserving Truth to Power"
-          description="OpenAchive's Guide to Preserving Truth to Power"
+          title="OpenArchive's Guide to Preserving Truth to Power"
+          description="OpenArchive's Guide to Preserving Truth to Power"
           image={guideSample}
         />
         <GuideItem
-          title="OpenAchive's Guide to Preserving Truth to Power"
-          description="OpenAchive's Guide to Preserving Truth to Power"
+          title="OpenArchive's Guide to Preserving Truth to Power"
+          description="OpenArchive's Guide to Preserving Truth to Power"
           image={guideSample}
         />
       </Grid>

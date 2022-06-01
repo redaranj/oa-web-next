@@ -70,7 +70,7 @@ export const WhoSection: FC = () => {
             </Box>
           </Grid>
         </Grid>
-        <HorizontalScrollArea>
+        <HorizontalScrollArea columnOnMobile>
           <WhoItem
             name={t("whoMeganName")}
             profile={t("whoMeganProfile")}

@@ -7,7 +7,7 @@ import guidesHeader from "images/guides-header.png";
 
 export const HeaderSection: FC = () => {
   const t = useTranslate();
-  const { lightGrey } = colors;
+  const { white, lightGrey } = colors;
   const { h1 } = typography;
 
   return (
@@ -22,7 +22,13 @@ export const HeaderSection: FC = () => {
         <Grid item>
           <Box
             component="h1"
-            sx={{ ...h1, textAlign: "center", minHeight: "300px" }}
+            sx={{
+              ...h1,
+              textAlign: "center",
+              minHeight: "500px",
+              color: white,
+              pt: 24,
+            }}
             dangerouslySetInnerHTML={{
               __html: t("guidesTitle"),
             }}

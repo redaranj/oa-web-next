@@ -1,7 +1,7 @@
 import { FC, PropsWithChildren } from "react";
 import Image from "next/image";
 import { Box, Button } from "@mui/material";
-import { colors, loader } from "styles/theme";
+import { colors, loader, typography } from "styles/theme";
 import rightArrow from "images/right-arrow.svg";
 import downArrow from "images/down-arrow.svg";
 
@@ -12,6 +12,7 @@ type OutlinedButtonProps = PropsWithChildren<{
 }>;
 
 const { black, white, mediumGrey, turquoise } = colors;
+const { body } = typography;
 
 export const OutlinedButton: FC<OutlinedButtonProps> = ({
   textColor = black,
@@ -22,8 +23,8 @@ export const OutlinedButton: FC<OutlinedButtonProps> = ({
   <Button
     sx={{
       border: `1px solid ${borderColor}`,
+      ...body,
       borderRadius: "500px",
-      fontFamily: "Montserrat, sans-serif",
       fontWeight: 700,
       textTransform: "none",
       color: textColor,
