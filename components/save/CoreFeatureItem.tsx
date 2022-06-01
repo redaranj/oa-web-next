@@ -18,21 +18,16 @@ export const CoreFeatureItem: FC<CoreFeatureItemProps> = ({
   const { lightGrey } = colors;
 
   return (
-    <Grid
-      item
-      container
-      direction="column"
-      sx={{ width: "50%", backgroundColor: lightGrey }}
-    >
-      <Grid item>
+    <Grid item container direction="column" sx={{ width: "50%" }}>
+      <Grid item sx={{ backgroundColor: lightGrey }}>
         <Image src={image} loader={loader} alt="" />
       </Grid>
-      <Grid item>
+      <Grid item sx={{ backgroundColor: lightGrey, p: 3 }}>
         <Box component="h5" sx={h5}>
           {title}
         </Box>
       </Grid>
-      <Grid item>
+      <Grid item sx={{ backgroundColor: lightGrey, minHeight: 200 }}>
         <Box component="p" sx={bodyLarge}>
           {description}
         </Box>

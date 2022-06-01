@@ -1,8 +1,8 @@
 import { FC, PropsWithChildren } from "react";
-import Image, { StaticImageData } from "next/image";
+import { StaticImageData } from "next/image";
 import { Box, Grid } from "@mui/material";
 import { useTranslate } from "react-polyglot";
-import { typography, loader } from "styles/theme";
+import { typography } from "styles/theme";
 
 type AcronymItemProps = PropsWithChildren<{
   titleKey: string;
@@ -52,7 +52,15 @@ export const AcronymItem: FC<AcronymItemProps> = ({
         </Grid>
       </Grid>
       <Grid item>
-        <Image src={image} loader={loader} />
+        <Box
+          sx={{
+            height: 400,
+            backgroundImage: `url(${image.src})`,
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center 50px",
+            backgroundSize: "1000px",
+          }}
+        />
       </Grid>
     </Grid>
   );

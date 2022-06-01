@@ -5,6 +5,7 @@ import { typography, colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { CoreFeatureItem } from "components/save/CoreFeatureItem";
 import coreFeature from "images/information-security.svg";
+import coreFeaturesBackground from "images/core-features-background.png";
 
 export const CoreFeaturesSection: FC = () => {
   const t = useTranslate();
@@ -32,7 +33,7 @@ export const CoreFeaturesSection: FC = () => {
           >
             <Box
               component="h2"
-              sx={h2}
+              sx={{ ...h2, mt: 16 }}
               dangerouslySetInnerHTML={{
                 __html: t("coreFeaturesTitle"),
               }}
@@ -44,7 +45,7 @@ export const CoreFeaturesSection: FC = () => {
               width: "50%",
             }}
           >
-            <Box component="p" sx={bodyLarge}>
+            <Box component="p" sx={{ ...bodyLarge, mt: 16, mb: 16 }}>
               {t("coreFeaturesDescription")}
             </Box>
           </Grid>
@@ -64,12 +65,20 @@ export const CoreFeaturesSection: FC = () => {
             sx={{
               width: "50%",
             }}
+            spacing={6}
           >
-            <Grid
-              item
-              sx={{ width: "50%", backgroundColor: turquoise, color: white }}
-            >
-              {t("coreFeaturesIntro")}
+            <Grid item sx={{ width: "50%" }}>
+              <Box
+                sx={{
+                  width: "100%",
+                  minHeight: "300px",
+                  backgroundColor: turquoise,
+                  color: white,
+                  p: 3,
+                }}
+              >
+                {t("coreFeaturesIntro")}
+              </Box>
             </Grid>
             <CoreFeatureItem
               title={t("sendMediaSecureTitle")}
@@ -97,7 +106,18 @@ export const CoreFeaturesSection: FC = () => {
             sx={{
               width: "50%",
             }}
-          />
+          >
+            <Box
+              sx={{
+                width: "100%",
+                height: 600,
+                backgroundImage: `url(${coreFeaturesBackground.src})`,
+                backgroundSize: "cover",
+                backgroundPosition: "top",
+                backgroundRepeat: "no-repeat",
+              }}
+            />
+          </Grid>
         </Grid>
       </Grid>
     </PageSection>

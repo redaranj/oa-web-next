@@ -4,6 +4,7 @@ import { useTranslate } from "react-polyglot";
 import { typography, colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { OutlinedButton } from "components/common/OutlinedButton";
+import saveHeader from "images/save-header.png";
 
 export const HeaderSection: FC = () => {
   const t = useTranslate();
@@ -30,26 +31,30 @@ export const HeaderSection: FC = () => {
           <Grid item>
             <Box
               component="h1"
-              sx={h1}
+              sx={{ ...h1, mt: 30 }}
               dangerouslySetInnerHTML={{
                 __html: t("appSaveTitle"),
               }}
             />
           </Grid>
-          <Grid item>
-            <Box component="p" sx={bodyLarge}>
-              {t("appSaveDescription")}
-            </Box>
+          <Grid item container direction="column" spacing={6} sx={{ mb: 30 }}>
+            <Grid item>
+              <Box component="p" sx={bodyLarge}>
+                {t("appSaveDescription")}
+              </Box>
+            </Grid>
+            <Grid item>
+              <OutlinedButton arrowDirection="down">{t("more")}</OutlinedButton>
+            </Grid>
           </Grid>
-          <OutlinedButton arrowDirection="down">{t("more")}</OutlinedButton>
         </Grid>
         <Grid
           item
           sx={{
             width: "50%",
-            backgroundImage: `url()`,
-            backgroundSize: "150px",
-            backgroundPosition: "0% 0%",
+            backgroundImage: `url(${saveHeader.src})`,
+            backgroundSize: "800px",
+            backgroundPosition: "bottom center",
             backgroundRepeat: "no-repeat",
           }}
         />

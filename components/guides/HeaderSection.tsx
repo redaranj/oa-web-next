@@ -7,11 +7,11 @@ import guidesHeader from "images/guides-header.png";
 
 export const HeaderSection: FC = () => {
   const t = useTranslate();
-  const { white, lightGrey } = colors;
+  const { white } = colors;
   const { h1 } = typography;
 
   return (
-    <PageSection backgroundColor={lightGrey} backgroundImage={guidesHeader}>
+    <PageSection backgroundColor={white} backgroundImage={guidesHeader}>
       <Grid
         container
         spacing={8}
