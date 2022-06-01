@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslate } from "react-polyglot";
 import { AppBar, Box, Grid, Drawer, Button } from "@mui/material";
 import { colors, typography, loader, breakpoints } from "styles/theme";
 import { FilledButton } from "components/common/FilledButton";
@@ -8,16 +9,18 @@ import { MenuButton } from "components/common/MenuButton";
 import { MobileMenu } from "components/common/MobileMenu";
 import { IconLink } from "components/common/IconLink";
 import openArchiveLogo from "images/open-archive.svg";
-import search from "images/search.svg";
+// import search from "images/search.svg";
 import twitter from "images/twitter-grey.svg";
 import instagram from "images/instagram-grey.svg";
 import github from "images/github-grey.svg";
 
 export const TopNav = () => {
+  const t = useTranslate();
   const [drawerOpen, setDrawerOpen] = useState(false);
   const { white, mediumGrey, mediumBurgundy } = colors;
   const { body } = typography;
   const { phoneSmall, tabletSmall } = breakpoints;
+  const menuItemProps = { ...body, fontWeight: 600, color: white };
 
   return (
     <AppBar
@@ -51,8 +54,10 @@ export const TopNav = () => {
           alignItems="center"
         >
           <Grid item sx={{ mt: "4px" }} xs="auto">
-            <Link href="/">
-              <Image alt="" src={openArchiveLogo} loader={loader} />
+            <Link href="/" passHref>
+              <Box component="a">
+                <Image alt="" src={openArchiveLogo} loader={loader} />
+              </Box>
             </Link>
           </Grid>
           <Grid
@@ -66,34 +71,47 @@ export const TopNav = () => {
               [phoneSmall]: {
                 display: "none",
               },
+              [tabletSmall]: {
+                display: "flex",
+              },
             }}
           >
+            {/*
             <Grid item>
               <Image alt="search" src={search} loader={loader} />
-            </Grid>
+            </Grid> */}
             <Grid
               item
               container
               direction="row"
               flexWrap="nowrap"
-              spacing={2}
+              spacing={4}
               xs="auto"
-              sx={{
-                borderLeft: `1px solid ${mediumGrey}`,
-                borderRight: `1px solid ${mediumGrey}`,
-              }}
             >
               <Grid item>
-                <MenuButton title="Our work">
-                  <Grid container direction="column">
+                <Box
+                  sx={{
+                    backgroundColor: mediumGrey,
+                    height: "100%",
+                    width: "1px",
+                  }}
+                />
+              </Grid>
+              <Grid item>
+                <MenuButton title={t("ourWork")}>
+                  <Grid container direction="column" spacing={2}>
                     <Grid item>
-                      <Link href="/save">
-                        <Box sx={{ ...body, fontWeight: 600 }}>Save</Box>
+                      <Link href="/save" passHref>
+                        <Box component="a" sx={menuItemProps}>
+                          {t("save")}
+                        </Box>
                       </Link>
                     </Grid>
                     <Grid item>
-                      <Link href="/guides">
-                        <Box sx={{ ...body, fontWeight: 600 }}>Guides</Box>
+                      <Link href="/guides" passHref>
+                        <Box component="a" sx={menuItemProps}>
+                          {t("guides")}
+                        </Box>
                       </Link>
                     </Grid>
                   </Grid>
@@ -101,15 +119,19 @@ export const TopNav = () => {
               </Grid>
               <Grid item>
                 <MenuButton title="About">
-                  <Grid container direction="column">
+                  <Grid container direction="column" spacing={2}>
                     <Grid item>
-                      <Link href="/about">
-                        <Box sx={{ ...body, fontWeight: 600 }}>About us</Box>
+                      <Link href="/about" passHref>
+                        <Box component="a" sx={menuItemProps}>
+                          {t("aboutUs")}
+                        </Box>
                       </Link>
                     </Grid>
                     <Grid item>
-                      <Link href="/team">
-                        <Box sx={{ ...body, fontWeight: 600 }}>Team</Box>
+                      <Link href="/team" passHref>
+                        <Box component="a" sx={menuItemProps}>
+                          {t("team")}
+                        </Box>
                       </Link>
                     </Grid>
                   </Grid>
@@ -122,6 +144,15 @@ export const TopNav = () => {
                 >
                   Donate
                 </FilledButton>
+              </Grid>
+              <Grid item>
+                <Box
+                  sx={{
+                    backgroundColor: mediumGrey,
+                    height: "100%",
+                    width: "1px",
+                  }}
+                />
               </Grid>
             </Grid>
             <Grid
@@ -178,7 +209,7 @@ export const TopNav = () => {
         </Grid>
       </Box>
       <Drawer
-        anchor="top"
+        anchor="right"
         open={drawerOpen}
         onClose={() => setDrawerOpen(false)}
       >

@@ -1,6 +1,9 @@
 import { FC, PropsWithChildren } from "react";
+import Image from "next/image";
 import { Box, Button } from "@mui/material";
-import { colors } from "styles/theme";
+import { colors, loader } from "styles/theme";
+import rightArrow from "images/right-arrow.svg";
+import downArrow from "images/down-arrow.svg";
 
 type OutlinedButtonProps = PropsWithChildren<{
   textColor?: string;
@@ -35,20 +38,14 @@ export const OutlinedButton: FC<OutlinedButtonProps> = ({
   >
     {children}
     {arrowDirection === "right" && (
-      <Box
-        component="img"
-        sx={{ ml: "8px" }}
-        alt=""
-        src="/images/right-arrow.svg"
-      />
+      <Box sx={{ ml: "8px" }}>
+        <Image src={rightArrow} alt="" loader={loader} />
+      </Box>
     )}
     {arrowDirection === "down" && (
-      <Box
-        component="img"
-        sx={{ ml: "8px" }}
-        alt=""
-        src="/images/down-arrow.svg"
-      />
+      <Box sx={{ ml: "8px" }}>
+        <Image src={downArrow} alt="" loader={loader} />
+      </Box>
     )}
   </Button>
 );

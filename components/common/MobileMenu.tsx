@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { useTranslate } from "react-polyglot";
 import { Box, Button, Grid } from "@mui/material";
 import { colors } from "styles/theme";
 import { OutlinedButton } from "components/common/OutlinedButton";
@@ -8,10 +9,18 @@ type MobileMenuProps = {
 };
 
 export const MobileMenu: FC<MobileMenuProps> = ({ closeMenu }) => {
+  const t = useTranslate();
   const { white, turquoise } = colors;
 
   return (
-    <Box sx={{ backgroundColor: turquoise, color: white, height: "100vh" }}>
+    <Box
+      sx={{
+        backgroundColor: turquoise,
+        color: white,
+        height: "100vh",
+        width: "100vw",
+      }}
+    >
       <Box sx={{ backgroundColor: white, height: 50 }}>
         <Button onClick={closeMenu}>Close</Button>
       </Box>
@@ -22,16 +31,15 @@ export const MobileMenu: FC<MobileMenuProps> = ({ closeMenu }) => {
         sx={{ height: "75%" }}
       >
         <Grid item container direction="column">
-          <Grid item>Start typing</Grid>
           <Grid item container direction="column">
-            <Grid item>Our work</Grid>
-            <Grid item>Save</Grid>
-            <Grid item>Guides</Grid>
+            <Grid item>{t("ourWork")}</Grid>
+            <Grid item>{t("save")}</Grid>
+            <Grid item>{t("guides")}</Grid>
           </Grid>
           <Grid item container direction="column">
-            <Grid item>About</Grid>
-            <Grid item>About us</Grid>
-            <Grid item>Team</Grid>
+            <Grid item>{t("about")}</Grid>
+            <Grid item>{t("aboutUs")}</Grid>
+            <Grid item>{t("team")}</Grid>
           </Grid>
         </Grid>
         <Grid item sx={{ textAlign: "center" }}>
