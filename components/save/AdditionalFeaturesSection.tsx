@@ -8,16 +8,17 @@ import additionalFeature from "images/information-security.svg";
 
 export const AdditionalFeaturesSection: FC = () => {
   const t = useTranslate();
-  const { white } = colors;
+  const { lightGrey, white, turquoise, black } = colors;
   const { h2 } = typography;
 
   return (
-    <PageSection backgroundColor={white}>
+    <PageSection backgroundColor={lightGrey}>
       <Grid
         container
         spacing={8}
         sx={{
           flexDirection: "column",
+          pb: 24,
         }}
       >
         <Grid item>
@@ -29,16 +30,20 @@ export const AdditionalFeaturesSection: FC = () => {
             }}
           />
         </Grid>
-        <Grid item container direction="row">
+        <Grid item container direction="row" columnSpacing={8}>
           <AdditionalFeatureItem
             title={t("addMetadata")}
             description=""
             image={additionalFeature}
+            backgroundColor={white}
+            textColor={black}
           />
           <AdditionalFeatureItem
             title={t("flagSignificantContent")}
             description=""
             image={additionalFeature}
+            backgroundColor={turquoise}
+            textColor={white}
           />
         </Grid>
       </Grid>

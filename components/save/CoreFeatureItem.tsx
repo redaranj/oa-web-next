@@ -19,7 +19,7 @@ export const CoreFeatureItem: FC<CoreFeatureItemProps> = ({
 
   return (
     <Grid item container direction="column" sx={{ width: "50%" }}>
-      <Grid item sx={{ backgroundColor: lightGrey }}>
+      <Grid item sx={{ backgroundColor: lightGrey, p: 3 }}>
         <Image src={image} loader={loader} alt="" />
       </Grid>
       <Grid item sx={{ backgroundColor: lightGrey, p: 3 }}>
@@ -27,7 +27,7 @@ export const CoreFeatureItem: FC<CoreFeatureItemProps> = ({
           {title}
         </Box>
       </Grid>
-      <Grid item sx={{ backgroundColor: lightGrey, minHeight: 200 }}>
+      <Grid item sx={{ backgroundColor: lightGrey, minHeight: 100 }}>
         <Box component="p" sx={bodyLarge}>
           {description}
         </Box>

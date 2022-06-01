@@ -4,7 +4,9 @@ import { useTranslate } from "react-polyglot";
 import { typography, colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { MoreItem } from "components/save/MoreItem";
-import guideSample from "images/guide-sample.png";
+import microphone from "images/microphone.png";
+import preservingGuide from "images/preserving-guide.png";
+import saveVideo from "images/save-video.png";
 
 export const MoreSection: FC = () => {
   const t = useTranslate();
@@ -15,7 +17,6 @@ export const MoreSection: FC = () => {
     <PageSection backgroundColor={white}>
       <Grid
         container
-        spacing={8}
         sx={{
           flexDirection: "column",
         }}
@@ -23,34 +24,43 @@ export const MoreSection: FC = () => {
         <Grid item>
           <Box
             component="h2"
-            sx={{ ...h2, textAlign: "center" }}
+            sx={{ ...h2, textAlign: "center", pt: 12 }}
             dangerouslySetInnerHTML={{
               __html: t("moreAboutSaveTitle"),
             }}
           />
         </Grid>
         <Grid item>
-          <Box component="p" sx={{ ...bodyLarge, textAlign: "center" }}>
+          <Box
+            component="p"
+            sx={{
+              ...bodyLarge,
+              textAlign: "center",
+              mb: 12,
+              maxWidth: 700,
+              margin: "auto",
+            }}
+          >
             {t("moreAboutSaveDescription")}
           </Box>
         </Grid>
-        <Grid item container direction="row">
+        <Grid item container direction="row" columnSpacing={6} sx={{ pb: 12 }}>
           <MoreItem
             title={t("pressRelease")}
             description=""
-            image={guideSample}
+            image={microphone}
             url=""
           />
           <MoreItem
             title={t("guide")}
             description=""
-            image={guideSample}
+            image={preservingGuide}
             url=""
           />
           <MoreItem
             title={t("video")}
             description=""
-            image={guideSample}
+            image={saveVideo}
             url=""
           />
         </Grid>

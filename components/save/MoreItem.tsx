@@ -17,28 +17,30 @@ export const MoreItem: FC<MoreItemProps> = ({
   image,
   url,
 }) => {
-  const { white, black } = colors;
+  const { white, black, lightGrey } = colors;
   const { h5, bodyLarge } = typography;
 
   return (
     <Grid item container direction="column" sx={{ width: "33%" }}>
       <Link href={url}>
-        <Box sx={{ backgroundColor: white }}>
+        <Box
+          sx={{
+            backgroundColor: lightGrey,
+            height: "500px",
+            backgroundImage: `url(${image.src})`,
+            backgroundSize: "450px",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center bottom",
+            p: 3,
+          }}
+        >
           <Grid item>
             <Box component="h5" sx={{ ...h5, color: black }}>
               {title}
             </Box>
           </Grid>
           <Grid item>
-            <Box
-              sx={{
-                height: "400px",
-                backgroundImage: `url(${image.src})`,
-                backgroundSize: "cover",
-              }}
-            >
-              <Box sx={{ ...bodyLarge, color: white }}>{description}</Box>
-            </Box>
+            <Box sx={{ ...bodyLarge, color: white }}>{description}</Box>
           </Grid>
         </Box>
       </Link>

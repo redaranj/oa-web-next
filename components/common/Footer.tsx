@@ -21,7 +21,7 @@ export const Footer: FC = () => {
   const t = useTranslate();
   const { h6 } = typography;
   const { lightGrey } = colors;
-  const { phoneSmall } = breakpoints;
+  const { phoneSmall, tabletSmall } = breakpoints;
   const creativeCommonsIconSize = "19px";
   const socialIconSize = "36px";
 
@@ -38,6 +38,10 @@ export const Footer: FC = () => {
             flexDirection: "row-reverse",
             flexWrap: "wrap",
           },
+          [tabletSmall]: {
+            flexDirection: "row",
+            flexWrap: "nowrap",
+          },
         }}
       >
         <Grid
@@ -49,6 +53,9 @@ export const Footer: FC = () => {
             [phoneSmall]: {
               flexDirection: "row",
               width: "100%",
+            },
+            [tabletSmall]: {
+              width: "40%",
             },
           }}
           spacing={8}

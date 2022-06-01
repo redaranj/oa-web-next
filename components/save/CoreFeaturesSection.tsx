@@ -14,7 +14,7 @@ export const CoreFeaturesSection: FC = () => {
 
   return (
     <PageSection backgroundColor={white}>
-      <Grid container direction="column">
+      <Grid container direction="column" sx={{ mb: 30 }}>
         <Grid
           container
           item
@@ -110,7 +110,7 @@ export const CoreFeaturesSection: FC = () => {
             <Box
               sx={{
                 width: "100%",
-                height: 600,
+                height: 1000,
                 backgroundImage: `url(${coreFeaturesBackground.src})`,
                 backgroundSize: "cover",
                 backgroundPosition: "top",

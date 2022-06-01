@@ -97,5 +97,12 @@
   "ourTeamInfo": "OpenArchive is dedicated to protecting media freedom: preserving, amplifying, and securely routing mobile media to community-maintained collections in accessible public and private archives, outside the corporate walled gardens currently dominating the online media ecosystem.",
   "advisoryBoardInfo": "OpenArchive is dedicated to protecting media freedom: preserving, amplifying, and securely routing mobile media to community-maintained",
   "partners": "Partners",
-  "donate": "Donate"
+  "donate": "Donate",
+  "gettingStartedTitle": "Getting <strong>started</strong>",
+  "gettingStartedDescription": "Save protects your freedom of speech by leveraging a suite of privacy-enhancing technologies to safeguard your media and identity in the event of internet shutdowns, surveillance, device confiscations, content takedowns, limited bandwidth, and data loss.",
+  "threeEasySteps": "To get started, simply follow these three easy steps!",
+  "step": "step",
+  "downloadSave": "Download Save",
+  "downloadOrbot": "Download Orbot",
+  "watchTutorials": "Watch our video tutorials and follow along on your phone"
 }

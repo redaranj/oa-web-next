@@ -8,6 +8,8 @@ import { TestimonialsSection } from "components/common/TestimonialsSection";
 import { CoreFeaturesSection } from "components/save/CoreFeaturesSection";
 import { AdditionalFeaturesSection } from "components/save/AdditionalFeaturesSection";
 import { MoreSection } from "components/save/MoreSection";
+import { GettingStartedSection } from "components/save/GettingStartedSection";
+import { RoleSection } from "components/common/RoleSection";
 
 const Save: NextPage = () => (
   <Layout>
@@ -32,6 +34,12 @@ const Save: NextPage = () => (
       </Grid>
       <Grid item>
         <MoreSection />
+      </Grid>
+      <Grid item>
+        <GettingStartedSection />
+      </Grid>
+      <Grid item>
+        <RoleSection />
       </Grid>
     </Grid>
   </Layout>
