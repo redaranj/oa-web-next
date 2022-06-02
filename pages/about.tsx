@@ -16,27 +16,13 @@ const About: NextPage = () => (
       <title>OpenArchive: About</title>
     </Head>
     <Grid container direction="column">
-      <Grid item>
-        <HeaderSection />
-      </Grid>
-      <Grid item>
-        <BeliefsSection />
-      </Grid>
-      <Grid item>
-        <BetterSection />
-      </Grid>
-      <Grid item>
-        <RefuseSection />
-      </Grid>
-      <Grid item>
-        <ActivitiesSection />
-      </Grid>
-      <Grid item>
-        <PartnersSection />
-      </Grid>
-      <Grid item>
-        <RoleSection />
-      </Grid>
+      <HeaderSection />
+      <BeliefsSection />
+      <BetterSection />
+      <RefuseSection />
+      <ActivitiesSection />
+      <PartnersSection />
+      <RoleSection />
     </Grid>
   </Layout>
 );

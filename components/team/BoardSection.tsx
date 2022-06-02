@@ -17,7 +17,7 @@ export const BoardSection: FC = () => {
         <Grid item>
           <Box
             component="h2"
-            sx={{ ...h2, textAlign: "center" }}
+            sx={{ ...h2, textAlign: "center", pt: 16, pb: 4 }}
             dangerouslySetInnerHTML={{
               __html: t("advisoryBoardTitle"),
             }}

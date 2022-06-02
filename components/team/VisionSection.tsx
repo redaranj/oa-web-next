@@ -13,11 +13,11 @@ export const VisionSection: FC = () => {
 
   return (
     <PageSection backgroundColor={white} backgroundImage={visionBackground}>
-      <Grid container direction="column" item sx={{ minHeight: 400 }}>
+      <Grid container direction="column" item sx={{ minHeight: 300 }}>
         <Grid item>
           <Box
             component="h2"
-            sx={{ ...h2, color: white, textAlign: "center" }}
+            sx={{ ...h2, color: white, textAlign: "center", pt: 16, pb: 8 }}
             dangerouslySetInnerHTML={{
               __html: t("ourSharedVisionTitle"),
             }}

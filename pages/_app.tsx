@@ -14,7 +14,6 @@ const messages = { en };
 const OpenArchiveWeb = ({ Component, pageProps }: AppProps) => (
   <>
     <CssBaseline />
-
     <I18n locale={locale} messages={messages[locale]}>
       <Component {...pageProps} />
     </I18n>

@@ -4,6 +4,7 @@ import { useTranslate } from "react-polyglot";
 import { typography, colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { OutlinedButton } from "components/common/OutlinedButton";
+import ourTeam from "images/our-team.svg";
 
 export const HeaderSection: FC = () => {
   const t = useTranslate();
@@ -14,42 +15,47 @@ export const HeaderSection: FC = () => {
     <PageSection backgroundColor={lightGrey}>
       <Grid
         container
-        spacing={8}
         sx={{
           flexDirection: "row",
+          minHeight: 500,
         }}
       >
         <Grid
           container
           direction="column"
+          justifyContent="space-around"
           item
           sx={{
             width: "50%",
           }}
         >
-          <Grid item>
-            <Box
-              component="h1"
-              sx={h1}
-              dangerouslySetInnerHTML={{
-                __html: t("ourTeamTitle"),
-              }}
-            />
+          <Grid item container direction="column">
+            <Grid item>
+              <Box
+                component="h1"
+                sx={h1}
+                dangerouslySetInnerHTML={{
+                  __html: t("ourTeamTitle"),
+                }}
+              />
+            </Grid>
+            <Grid item>
+              <Box component="p" sx={{ ...bodyLarge, maxWidth: 600, mb: 6 }}>
+                {t("ourTeamDescription")}
+              </Box>
+            </Grid>
+            <Grid item>
+              <OutlinedButton arrowDirection="down">{t("more")}</OutlinedButton>
+            </Grid>
           </Grid>
-          <Grid item>
-            <Box component="p" sx={bodyLarge}>
-              {t("ourTeamDescription")}
-            </Box>
-          </Grid>
-          <OutlinedButton arrowDirection="down">{t("more")}</OutlinedButton>
         </Grid>
         <Grid
           item
           sx={{
             width: "50%",
-            backgroundImage: `url()`,
-            backgroundSize: "150px",
-            backgroundPosition: "0% 0%",
+            backgroundImage: `url(${ourTeam.src})`,
+            backgroundSize: "60%",
+            backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
           }}
         />

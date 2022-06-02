@@ -13,30 +13,16 @@ import { RoleSection } from "components/common/RoleSection";
 const Home: NextPage = () => (
   <Layout>
     <Head>
-      <title>OpenArchive</title>
+      <title>OpenArchive: Home</title>
     </Head>
     <Grid container direction="column">
-      <Grid item>
-        <HeaderSection />
-      </Grid>
-      <Grid item>
-        <MissionSection />
-      </Grid>
-      <Grid item>
-        <ImpactSection />
-      </Grid>
-      <Grid item>
-        <ProjectsSection />
-      </Grid>
-      <Grid item>
-        <WhoSection />
-      </Grid>
-      <Grid item>
-        <TestimonialsSection />
-      </Grid>
-      <Grid item>
-        <RoleSection />
-      </Grid>
+      <HeaderSection />
+      <MissionSection />
+      <ImpactSection />
+      <ProjectsSection />
+      <WhoSection />
+      <TestimonialsSection />
+      <RoleSection />
     </Grid>
   </Layout>
 );

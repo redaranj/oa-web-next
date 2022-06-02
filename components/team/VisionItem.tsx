@@ -12,21 +12,23 @@ export const VisionItem: FC<VisionItemProps> = ({ title, number }) => {
   const { lightGrey } = colors;
 
   return (
-    <Grid
-      item
-      container
-      direction="column"
-      sx={{ width: "25%", backgroundColor: lightGrey }}
-    >
-      <Grid item>
-        <Box component="p" sx={bodyLarge}>
-          {number}
-        </Box>
-      </Grid>
-      <Grid item>
-        <Box component="h5" sx={h5}>
-          {title}
-        </Box>
+    <Grid item sx={{ width: "25%" }}>
+      <Grid
+        item
+        container
+        direction="column"
+        sx={{ backgroundColor: lightGrey, minHeight: 300 }}
+      >
+        <Grid item>
+          <Box component="p" sx={{ ...bodyLarge, p: 3 }}>
+            {number}
+          </Box>
+        </Grid>
+        <Grid item>
+          <Box component="h5" sx={{ ...h5, p: 3 }}>
+            {title}
+          </Box>
+        </Grid>
       </Grid>
     </Grid>
   );

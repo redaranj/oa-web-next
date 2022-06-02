@@ -1,6 +1,6 @@
 import { FC, PropsWithChildren } from "react";
 import { StaticImageData } from "next/image";
-import { Box } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import { breakpoints } from "styles/theme";
 
 type PageSectionProps = PropsWithChildren<{
@@ -24,22 +24,24 @@ export const PageSection: FC<PageSectionProps> = ({
     : {};
 
   return (
-    <Box sx={{ backgroundColor, ...backgroundImageProps }}>
-      <Box
-        sx={{
-          margin: "auto",
-          maxWidth: 1920,
-          pl: 6,
-          pr: 6,
-          [phoneSmall]: {
-            pl: 3,
-            pr: 3,
-          },
-          [tabletSmall]: { pl: 4, pr: 4 },
-        }}
-      >
-        {children}
+    <Grid item>
+      <Box sx={{ backgroundColor, ...backgroundImageProps }}>
+        <Box
+          sx={{
+            margin: "auto",
+            maxWidth: 1920,
+            pl: 6,
+            pr: 6,
+            [phoneSmall]: {
+              pl: 3,
+              pr: 3,
+            },
+            [tabletSmall]: { pl: 4, pr: 4 },
+          }}
+        >
+          {children}
+        </Box>
       </Box>
-    </Box>
+    </Grid>
   );
 };

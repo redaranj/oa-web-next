@@ -12,15 +12,9 @@ const Guides: NextPage = () => (
       <title>OpenArchive: Guides</title>
     </Head>
     <Grid container direction="column">
-      <Grid item>
-        <HeaderSection />
-      </Grid>
-      <Grid item>
-        <GuidesSection />
-      </Grid>
-      <Grid item>
-        <RoleSection />
-      </Grid>
+      <HeaderSection />
+      <GuidesSection />
+      <RoleSection />
     </Grid>
   </Layout>
 );

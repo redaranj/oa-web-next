@@ -17,30 +17,14 @@ const Save: NextPage = () => (
       <title>OpenArchive: Save</title>
     </Head>
     <Grid container direction="column">
-      <Grid item>
-        <HeaderSection />
-      </Grid>
-      <Grid item>
-        <AcronymSection />
-      </Grid>
-      <Grid item>
-        <TestimonialsSection />
-      </Grid>
-      <Grid item>
-        <CoreFeaturesSection />
-      </Grid>
-      <Grid item>
-        <AdditionalFeaturesSection />
-      </Grid>
-      <Grid item>
-        <MoreSection />
-      </Grid>
-      <Grid item>
-        <GettingStartedSection />
-      </Grid>
-      <Grid item>
-        <RoleSection />
-      </Grid>
+      <HeaderSection />
+      <AcronymSection />
+      <TestimonialsSection />
+      <CoreFeaturesSection />
+      <AdditionalFeaturesSection />
+      <MoreSection />
+      <GettingStartedSection />
+      <RoleSection />
     </Grid>
   </Layout>
 );
