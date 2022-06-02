@@ -7,11 +7,11 @@ import fist from "images/fist.svg";
 
 export const BeliefsSection: FC = () => {
   const t = useTranslate();
-  const { lightGrey, lightBurgundy } = colors;
-  const { h2, h5, bodyLarge } = typography;
+  const { white } = colors;
+  const { h2, bodyLarge } = typography;
 
   return (
-    <PageSection backgroundColor={lightGrey}>
+    <PageSection backgroundColor={white}>
       <Grid container direction="column">
         <Grid
           item
@@ -25,12 +25,19 @@ export const BeliefsSection: FC = () => {
             item
             sx={{
               width: "50%",
-              backgroundImage: `url(${fist.src})`,
-              backgroundSize: "150px",
-              backgroundPosition: "0% 0%",
-              backgroundRepeat: "no-repeat",
             }}
-          />
+          >
+            <Box
+              sx={{
+                backgroundImage: `url(${fist.src})`,
+                backgroundSize: "25%",
+                backgroundPosition: "center center",
+                backgroundRepeat: "no-repeat",
+                height: "100%",
+                marginLeft: -4,
+              }}
+            />
+          </Grid>
           <Grid
             container
             direction="column"
@@ -42,50 +49,17 @@ export const BeliefsSection: FC = () => {
             <Grid item>
               <Box
                 component="h2"
-                sx={h2}
+                sx={{ ...h2, pt: 16 }}
                 dangerouslySetInnerHTML={{
                   __html: t("weBelieveTitle"),
                 }}
               />
             </Grid>
             <Grid item>
-              <Box component="p" sx={bodyLarge}>
+              <Box component="p" sx={{ ...bodyLarge, pb: 12, width: "80%" }}>
                 {t("weBelieveDescription")}
               </Box>
             </Grid>
-          </Grid>
-        </Grid>
-        <Grid item>
-          <Box
-            sx={{ color: lightBurgundy, fontSize: "150px", fontWeight: 600 }}
-          >
-            {t("weAreDoing")}
-          </Box>
-        </Grid>
-        <Grid item>
-          <Box sx={h5}>{t("virtualCommons")}</Box>
-        </Grid>
-        <Grid item>
-          <Grid item>
-            <Box
-              component="h2"
-              sx={{ ...h2, textAlign: "center" }}
-              dangerouslySetInnerHTML={{
-                __html: t("refuseToStopTitle"),
-              }}
-            />
-          </Grid>
-        </Grid>
-        <Grid item container>
-          <Grid item sx={{ width: "50%" }} />
-          <Grid item sx={{ width: "50%" }}>
-            <Box
-              component="p"
-              sx={bodyLarge}
-              dangerouslySetInnerHTML={{
-                __html: t("refuseToStopDescription"),
-              }}
-            />
           </Grid>
         </Grid>
       </Grid>

@@ -14,9 +14,10 @@ export const HeaderSection: FC = () => {
     <PageSection backgroundColor={white} backgroundImage={guidesHeader}>
       <Grid
         container
-        spacing={8}
+        justifyContent="space-around"
         sx={{
           flexDirection: "column",
+          minHeight: "35vh",
         }}
       >
         <Grid item>
@@ -25,9 +26,7 @@ export const HeaderSection: FC = () => {
             sx={{
               ...h1,
               textAlign: "center",
-              minHeight: "500px",
               color: white,
-              pt: 24,
             }}
             dangerouslySetInnerHTML={{
               __html: t("guidesTitle"),

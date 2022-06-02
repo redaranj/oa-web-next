@@ -19,7 +19,7 @@ export const BoardSection: FC = () => {
             component="h2"
             sx={{ ...h2, textAlign: "center" }}
             dangerouslySetInnerHTML={{
-              __html: t("advisoryBoard"),
+              __html: t("advisoryBoardTitle"),
             }}
           />
         </Grid>

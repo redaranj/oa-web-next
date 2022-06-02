@@ -6,41 +6,47 @@ import { colors, typography } from "styles/theme";
 
 type ActivityItemProps = PropsWithChildren<{
   title: string;
-  description?: string;
   image: StaticImageData;
   url: string;
+  height: number;
 }>;
 
 export const ActivityItem: FC<ActivityItemProps> = ({
   title,
-  description,
   image,
   url,
+  height,
 }) => {
-  const { white, black } = colors;
-  const { h5, bodyLarge } = typography;
+  const { white } = colors;
+  const { h5 } = typography;
 
   return (
-    <Grid item container direction="column" sx={{ width: "33%" }}>
+    <Grid
+      item
+      sx={{
+        width: "33%",
+      }}
+    >
       <Link href={url}>
-        <Box sx={{ backgroundColor: white }}>
+        <Grid
+          item
+          container
+          direction="column-reverse"
+          sx={{
+            height,
+            backgroundImage: `url(${image.src})`,
+            backgroundSize: "cover",
+          }}
+        >
           <Grid item>
-            <Box component="h5" sx={{ ...h5, color: black }}>
+            <Box
+              component="h5"
+              sx={{ ...h5, color: white, pl: 3, pb: 1, maxWidth: "50%" }}
+            >
               {title}
             </Box>
           </Grid>
-          <Grid item>
-            <Box
-              sx={{
-                height: "400px",
-                backgroundImage: `url(${image.src})`,
-                backgroundSize: "cover",
-              }}
-            >
-              <Box sx={{ ...bodyLarge, color: white }}>{description}</Box>
-            </Box>
-          </Grid>
-        </Box>
+        </Grid>
       </Link>
     </Grid>
   );

@@ -4,7 +4,11 @@ import { useTranslate } from "react-polyglot";
 import { typography, colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { ActivityItem } from "components/about/ActivityItem";
-import guideSample from "images/guide-sample.png";
+import activities1 from "images/activities-1.png";
+import activities2 from "images/activities-2.png";
+import activities3 from "images/activities-3.png";
+import activities4 from "images/activities-4.png";
+import activities5 from "images/activities-5.png";
 
 export const ActivitiesSection: FC = () => {
   const t = useTranslate();
@@ -15,7 +19,6 @@ export const ActivitiesSection: FC = () => {
     <PageSection backgroundColor={lightGrey}>
       <Grid
         container
-        spacing={8}
         sx={{
           flexDirection: "column",
         }}
@@ -23,42 +26,59 @@ export const ActivitiesSection: FC = () => {
         <Grid item>
           <Box
             component="h2"
-            sx={h2}
+            sx={{ ...h2, pt: 12 }}
             dangerouslySetInnerHTML={{
               __html: t("soThatWeTitle"),
             }}
           />
         </Grid>
-        <Grid item container direction="row">
+        <Grid
+          item
+          container
+          direction="row"
+          columnSpacing={6}
+          rowSpacing={6}
+          alignItems="flex-end"
+        >
           <ActivityItem
             title={t("developSave")}
-            description=""
             url=""
-            image={guideSample}
+            image={activities1}
+            height={600}
           />
           <ActivityItem
             title={t("conductResearch")}
-            description=""
             url=""
-            image={guideSample}
+            image={activities2}
+            height={500}
           />
           <ActivityItem
             title={t("prepareReports")}
-            description=""
             url=""
-            image={guideSample}
+            image={activities3}
+            height={600}
           />
+        </Grid>
+        <Grid
+          item
+          container
+          direction="row"
+          columnSpacing={6}
+          rowSpacing={6}
+          alignItems="flex-start"
+          sx={{ pt: 6, pb: 16 }}
+        >
           <ActivityItem
             title={t("archiving")}
-            description=""
             url=""
-            image={guideSample}
+            image={activities4}
+            height={500}
           />
           <ActivityItem
             title={t("documentaryActivities")}
-            description=""
             url=""
-            image={guideSample}
+            image={activities5}
+            height={600}
           />
         </Grid>
       </Grid>

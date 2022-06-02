@@ -18,8 +18,8 @@ export const PageSection: FC<PageSectionProps> = ({
     ? {
         backgroundImage: `url(${backgroundImage.src})`,
         backgroundRepeat: "no-repeat",
-        backgroundPosition: "cover",
-        backgroundSize: "100%",
+        backgroundPosition: "center center",
+        backgroundSize: "cover",
       }
     : {};
 

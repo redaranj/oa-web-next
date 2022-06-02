@@ -14,10 +14,10 @@ export const HeaderSection: FC = () => {
     <PageSection backgroundColor={turquoise} backgroundImage={aboutHeader}>
       <Grid
         container
-        spacing={8}
+        justifyContent="space-around"
         sx={{
           flexDirection: "column",
-          minHeight: 300,
+          minHeight: "35vh",
         }}
       >
         <Grid item>
