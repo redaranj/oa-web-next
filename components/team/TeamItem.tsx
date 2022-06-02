@@ -2,7 +2,7 @@ import { FC, PropsWithChildren } from "react";
 import Image, { StaticImageData } from "next/image";
 import { Box, Grid } from "@mui/material";
 import { useTranslate } from "react-polyglot";
-import { typography, loader } from "styles/theme";
+import { typography, colors, loader } from "styles/theme";
 import { OutlinedButton } from "components/common/OutlinedButton";
 
 type TeamItemProps = PropsWithChildren<{
@@ -21,45 +21,45 @@ export const TeamItem: FC<TeamItemProps> = ({
   backgroundColor,
 }) => {
   const t = useTranslate();
-  const { bodyLarge } = typography;
+  const { turquoise } = colors;
+  const { h6, bodyLarge, body } = typography;
 
   return (
-    <Grid
-      item
-      container
-      direction="row"
-      sx={{ backgroundColor }}
-      flexWrap="nowrap"
-      spacing={4}
-    >
-      <Grid
-        item
-        container
-        direction="row"
-        sx={{ width: "50%" }}
-        flexWrap="nowrap"
-        spacing={4}
-      >
-        <Grid item>
-          <Image src={image} loader={loader} width={100} />
+    <Grid item>
+      <Box sx={{ backgroundColor, p: 6 }}>
+        <Grid item container direction="row" flexWrap="nowrap" spacing={4}>
+          <Grid
+            item
+            container
+            direction="row"
+            sx={{ width: "50%" }}
+            flexWrap="nowrap"
+            spacing={4}
+          >
+            <Grid item>
+              <Image src={image} loader={loader} width={100} />
+            </Grid>
+            <Grid item container direction="column">
+              <Box component="h6" sx={h6}>
+                {name}
+              </Box>
+              <Box component="p" sx={{ ...body, color: turquoise }}>
+                {jobTitle}
+              </Box>
+            </Grid>
+          </Grid>
+          <Grid item container direction="column">
+            <Grid item>
+              <Box component="p" sx={{ ...bodyLarge, pb: 3 }}>
+                {bio}
+              </Box>
+            </Grid>
+            <Grid item>
+              <OutlinedButton arrowDirection="down">{t("more")}</OutlinedButton>
+            </Grid>
+          </Grid>
         </Grid>
-        <Grid item container direction="column">
-          <Box component="p" sx={bodyLarge}>
-            {name}
-          </Box>
-        </Grid>
-        <Grid item>
-          <Box component="p" sx={bodyLarge}>
-            {jobTitle}
-          </Box>
-        </Grid>
-      </Grid>
-      <Grid item>
-        <Box component="p" sx={bodyLarge}>
-          {bio}
-        </Box>
-        <OutlinedButton arrowDirection="down">{t("more")}</OutlinedButton>
-      </Grid>
+      </Box>
     </Grid>
   );
 };

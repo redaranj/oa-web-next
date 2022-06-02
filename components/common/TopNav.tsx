@@ -142,7 +142,7 @@ export const TopNav = () => {
                   textColor={white}
                   backgroundColor={mediumBurgundy}
                 >
-                  Donate
+                  {t("donate")}
                 </FilledButton>
               </Grid>
               <Grid item>

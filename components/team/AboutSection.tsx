@@ -5,19 +5,21 @@ import { typography, colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { OutlinedButton } from "components/common/OutlinedButton";
 import { JobItem } from "components/team/JobItem";
+import teamAbout from "images/team-about.png";
 
 export const AboutSection: FC = () => {
   const t = useTranslate();
-  const { white } = colors;
-  const { h2, bodyLarge } = typography;
+  const { lightGrey, turquoise } = colors;
+  const { h2, h5, bodyLarge } = typography;
 
   return (
-    <PageSection backgroundColor={white}>
+    <PageSection backgroundColor={lightGrey}>
       <Grid
         container
         spacing={8}
         sx={{
           flexDirection: "row",
+          pb: 16,
         }}
       >
         <Grid
@@ -31,14 +33,14 @@ export const AboutSection: FC = () => {
           <Grid item>
             <Box
               component="h2"
-              sx={h2}
+              sx={{ ...h2, pt: 8 }}
               dangerouslySetInnerHTML={{
                 __html: t("aboutOpenArchiveTitle"),
               }}
             />
           </Grid>
           <Grid item>
-            <Box component="p" sx={bodyLarge}>
+            <Box component="p" sx={{ ...bodyLarge, mb: 3 }}>
               {t("aboutOpenArchiveDescription")}
             </Box>
           </Grid>
@@ -47,8 +49,12 @@ export const AboutSection: FC = () => {
               {t("readMore")}
             </OutlinedButton>
           </Grid>
-          <Grid item>{t("joinOurTeam")}</Grid>
-          <Grid item container direction="row">
+          <Grid item>
+            <Box sx={{ ...h5, color: turquoise, mt: 8, mb: 8 }}>
+              {t("joinOurTeam")}
+            </Box>
+          </Grid>
+          <Grid item container direction="row" spacing={4}>
             <JobItem
               jobTitle="Software Engineer"
               details="Details"
@@ -85,9 +91,9 @@ export const AboutSection: FC = () => {
           item
           sx={{
             width: "50%",
-            backgroundImage: `url()`,
-            backgroundSize: "150px",
-            backgroundPosition: "0% 0%",
+            backgroundImage: `url(${teamAbout.src})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
           }}
         />

@@ -8,12 +8,12 @@ import johnHess from "images/darius.png";
 
 export const BoardSection: FC = () => {
   const t = useTranslate();
-  const { white } = colors;
+  const { white, lightGrey } = colors;
   const { h2 } = typography;
 
   return (
     <PageSection backgroundColor={white}>
-      <Grid container direction="column">
+      <Grid container direction="column" rowSpacing={8} sx={{ pb: 12 }}>
         <Grid item>
           <Box
             component="h2"
@@ -23,42 +23,34 @@ export const BoardSection: FC = () => {
             }}
           />
         </Grid>
-        <Grid item>
-          <TeamItem
-            name="John Hess"
-            jobTitle="Tech Lead"
-            bio="John is an engineer and data scientist with experience across domains as varied as aerospace, healthcare, and education. He’s worked on cyber security, privacy..."
-            image={johnHess}
-            backgroundColor={white}
-          />
-        </Grid>
-        <Grid item>
-          <TeamItem
-            name="John Hess"
-            jobTitle="Tech Lead"
-            bio="John is an engineer and data scientist with experience across domains as varied as aerospace, healthcare, and education. He’s worked on cyber security, privacy..."
-            image={johnHess}
-            backgroundColor={white}
-          />
-        </Grid>
-        <Grid item>
-          <TeamItem
-            name="John Hess"
-            jobTitle="Tech Lead"
-            bio="John is an engineer and data scientist with experience across domains as varied as aerospace, healthcare, and education. He’s worked on cyber security, privacy..."
-            image={johnHess}
-            backgroundColor={white}
-          />
-        </Grid>
-        <Grid item>
-          <TeamItem
-            name="John Hess"
-            jobTitle="Tech Lead"
-            bio="John is an engineer and data scientist with experience across domains as varied as aerospace, healthcare, and education. He’s worked on cyber security, privacy..."
-            image={johnHess}
-            backgroundColor={white}
-          />
-        </Grid>
+        <TeamItem
+          name="John Hess"
+          jobTitle="Tech Lead"
+          bio="John is an engineer and data scientist with experience across domains as varied as aerospace, healthcare, and education. He’s worked on cyber security, privacy..."
+          image={johnHess}
+          backgroundColor={lightGrey}
+        />
+        <TeamItem
+          name="John Hess"
+          jobTitle="Tech Lead"
+          bio="John is an engineer and data scientist with experience across domains as varied as aerospace, healthcare, and education. He’s worked on cyber security, privacy..."
+          image={johnHess}
+          backgroundColor={lightGrey}
+        />
+        <TeamItem
+          name="John Hess"
+          jobTitle="Tech Lead"
+          bio="John is an engineer and data scientist with experience across domains as varied as aerospace, healthcare, and education. He’s worked on cyber security, privacy..."
+          image={johnHess}
+          backgroundColor={lightGrey}
+        />
+        <TeamItem
+          name="John Hess"
+          jobTitle="Tech Lead"
+          bio="John is an engineer and data scientist with experience across domains as varied as aerospace, healthcare, and education. He’s worked on cyber security, privacy..."
+          image={johnHess}
+          backgroundColor={lightGrey}
+        />
       </Grid>
     </PageSection>
   );
