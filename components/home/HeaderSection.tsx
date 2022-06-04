@@ -30,7 +30,6 @@ export const HeaderSection: FC = () => {
     <PageSection backgroundColor={white}>
       <Grid
         container
-        spacing={8}
         sx={{
           flexDirection: "row",
           [phoneSmall]: {
@@ -58,7 +57,7 @@ export const HeaderSection: FC = () => {
           <Grid item>
             <Box
               component="h1"
-              sx={{ ...h1, mt: 12 }}
+              sx={{ ...h1 }}
               dangerouslySetInnerHTML={{
                 __html: t("truthToPowerTitle"),
               }}

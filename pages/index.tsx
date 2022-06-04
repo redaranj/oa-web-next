@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { Layout } from "components/common/Layout";
-import { Grid } from "@mui/material";
+import { Stack } from "@mui/material";
 import { HeaderSection } from "components/home/HeaderSection";
 import { MissionSection } from "components/home/MissionSection";
 import { ImpactSection } from "components/home/ImpactSection";
@@ -15,7 +15,7 @@ const Home: NextPage = () => (
     <Head>
       <title>OpenArchive: Home</title>
     </Head>
-    <Grid container direction="column">
+    <Stack>
       <HeaderSection />
       <MissionSection />
       <ImpactSection />
@@ -23,7 +23,7 @@ const Home: NextPage = () => (
       <WhoSection />
       <TestimonialsSection />
       <RoleSection />
-    </Grid>
+    </Stack>
   </Layout>
 );
 

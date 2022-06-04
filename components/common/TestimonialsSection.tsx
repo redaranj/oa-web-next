@@ -14,19 +14,15 @@ export const TestimonialsSection: FC = () => {
 
   return (
     <PageSection backgroundColor={lightGrey}>
-      <Grid
-        container
-        direction="column"
-        sx={{ paddingTop: 16, paddingBottom: 16 }}
-      >
+      <Grid container direction="column">
         <Grid item>
           <Box
             component="h2"
-            sx={h2}
+            sx={{ ...h2, mb: "60px" }}
             dangerouslySetInnerHTML={{ __html: t("testimonialsTitle") }}
           />
         </Grid>
-      <HorizontalScrollArea> 
+        <HorizontalScrollArea>
           <TestimonialItem
             name={t("testimonialDariusName")}
             position={t("testimonialDariusPosition")}
@@ -63,7 +59,7 @@ export const TestimonialsSection: FC = () => {
             quote={t("testimonialDariusQuote")}
             image={darius}
           />
-</HorizontalScrollArea>
+        </HorizontalScrollArea>
       </Grid>
     </PageSection>
   );

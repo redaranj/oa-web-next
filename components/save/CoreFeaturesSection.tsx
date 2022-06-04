@@ -14,11 +14,10 @@ export const CoreFeaturesSection: FC = () => {
 
   return (
     <PageSection backgroundColor={white}>
-      <Grid container direction="column" sx={{ mb: 30 }}>
+      <Grid container direction="column">
         <Grid
           container
           item
-          spacing={8}
           sx={{
             flexDirection: "row",
           }}
@@ -33,7 +32,7 @@ export const CoreFeaturesSection: FC = () => {
           >
             <Box
               component="h2"
-              sx={{ ...h2, mt: 16 }}
+              sx={{ ...h2 }}
               dangerouslySetInnerHTML={{
                 __html: t("coreFeaturesTitle"),
               }}
@@ -45,7 +44,7 @@ export const CoreFeaturesSection: FC = () => {
               width: "50%",
             }}
           >
-            <Box component="p" sx={{ ...bodyLarge, mt: 16, mb: 16 }}>
+            <Box component="p" sx={{ ...bodyLarge }}>
               {t("coreFeaturesDescription")}
             </Box>
           </Grid>
@@ -55,6 +54,7 @@ export const CoreFeaturesSection: FC = () => {
           item
           spacing={8}
           sx={{
+            mt: "100px",
             flexDirection: "row",
           }}
         >

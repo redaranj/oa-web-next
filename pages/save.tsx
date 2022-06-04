@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { Grid } from "@mui/material";
+import { Stack } from "@mui/material";
 import { Layout } from "components/common/Layout";
 import { HeaderSection } from "components/save/HeaderSection";
 import { AcronymSection } from "components/save/AcronymSection";
@@ -16,7 +16,7 @@ const Save: NextPage = () => (
     <Head>
       <title>OpenArchive: Save</title>
     </Head>
-    <Grid container direction="column">
+    <Stack>
       <HeaderSection />
       <AcronymSection />
       <TestimonialsSection />
@@ -25,7 +25,7 @@ const Save: NextPage = () => (
       <MoreSection />
       <GettingStartedSection />
       <RoleSection />
-    </Grid>
+    </Stack>
   </Layout>
 );
 

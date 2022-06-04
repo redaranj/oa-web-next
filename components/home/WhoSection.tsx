@@ -16,11 +16,7 @@ export const WhoSection: FC = () => {
 
   return (
     <PageSection backgroundColor={white}>
-      <Grid
-        container
-        flexDirection="column"
-        sx={{ paddingTop: 16, paddingBottom: 20 }}
-      >
+      <Grid container flexDirection="column">
         <Grid
           item
           container

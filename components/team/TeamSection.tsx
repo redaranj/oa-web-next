@@ -13,7 +13,7 @@ export const TeamSection: FC = () => {
 
   return (
     <PageSection backgroundColor={lightGrey}>
-      <Grid container direction="column" rowSpacing={8} sx={{ pb: 12 }}>
+      <Grid container direction="column" rowSpacing={8}>
         <Grid item>
           <Box
             component="h2"

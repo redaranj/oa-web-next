@@ -28,8 +28,9 @@ export const FilledButton: FC<FilledButtonProps> = ({
       textTransform: "none",
       color: textColor,
       backgroundColor,
-      pl: 4,
-      pr: 4,
+      p: "10px",
+      pl: "30px",
+      pr: "30px",
       "&:hover": {
         backgroundColor: turquoise,
         color: white,

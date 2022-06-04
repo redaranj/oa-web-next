@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { Grid } from "@mui/material";
+import { Stack } from "@mui/material";
 import { Layout } from "components/common/Layout";
 import { HeaderSection } from "components/team/HeaderSection";
 import { VisionSection } from "components/team/VisionSection";
@@ -14,14 +14,14 @@ const Team: NextPage = () => (
     <Head>
       <title>OpenArchive: Team</title>
     </Head>
-    <Grid container direction="column">
+    <Stack>
       <HeaderSection />
       <VisionSection />
       <TeamSection />
       <BoardSection />
       <AboutSection />
       <ParticipateSection />
-    </Grid>
+    </Stack>
   </Layout>
 );
 

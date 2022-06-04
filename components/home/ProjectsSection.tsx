@@ -16,11 +16,7 @@ export const ProjectsSection: FC = () => {
 
   return (
     <PageSection backgroundColor={lightGrey}>
-      <Grid
-        container
-        direction="column"
-        sx={{ paddingTop: 16, paddingBottom: 12 }}
-      >
+      <Grid container direction="column">
         <Grid item>
           <Box
             component="h2"
@@ -28,7 +24,7 @@ export const ProjectsSection: FC = () => {
             dangerouslySetInnerHTML={{ __html: t("ourProjectsTitle") }}
           />
         </Grid>
-        <HorizontalScrollArea>
+        <HorizontalScrollArea columnOnMobile>
           <ProjectItem title={t("save")} image={projectSave} url="" />
           <ProjectItem
             title={t("guide")}

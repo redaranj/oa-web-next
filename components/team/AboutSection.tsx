@@ -16,10 +16,8 @@ export const AboutSection: FC = () => {
     <PageSection backgroundColor={lightGrey}>
       <Grid
         container
-        spacing={8}
         sx={{
           flexDirection: "row",
-          pb: 16,
         }}
       >
         <Grid

@@ -12,12 +12,11 @@ export const HeaderSection: FC = () => {
   const { h1, bodyLarge } = typography;
 
   return (
-    <PageSection backgroundColor={lightGrey}>
+    <PageSection backgroundColor={lightGrey} sx={{ mt: "80px" }}>
       <Grid
         container
         sx={{
           flexDirection: "row",
-          minHeight: 500,
         }}
       >
         <Grid

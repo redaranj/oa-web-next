@@ -37,7 +37,7 @@ export const TestimonialItem: FC<TestimonialItemProps> = ({
           minWidth: "500px",
         },
       }}
-      spacing={4}
+      spacing="32px"
     >
       <Grid item>
         <Box sx={{ backgroundColor: white, p: 3 }}>{quote}</Box>

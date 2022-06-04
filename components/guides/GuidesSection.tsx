@@ -9,14 +9,15 @@ export const GuidesSection: FC = () => {
   const { white, mediumGrey } = colors;
 
   return (
-    <PageSection backgroundColor={white}>
+    <PageSection
+      backgroundColor={white}
+      sx={{ borderBottom: `1px solid ${mediumGrey}` }}
+    >
       <Grid
         container
         rowSpacing={8}
         sx={{
           flexDirection: "column",
-          borderBottom: `1px solid ${mediumGrey}`,
-          pb: 20,
         }}
       >
         <GuideItem

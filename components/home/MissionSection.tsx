@@ -18,8 +18,6 @@ export const MissionSection: FC = () => {
       <Grid
         container
         sx={{
-          paddingTop: "50px",
-          paddingBottom: "50px",
           flexDirection: "row",
           [phoneSmall]: { flexDirection: "column" },
           [tabletLarge]: { flexDirection: "row" },

@@ -12,11 +12,10 @@ export const GettingStartedSection: FC = () => {
 
   return (
     <PageSection backgroundColor={lightGrey}>
-      <Grid container direction="column" sx={{ pb: 20 }}>
+      <Grid container direction="column">
         <Grid
           container
           item
-          spacing={8}
           sx={{
             flexDirection: "row",
           }}
@@ -31,7 +30,7 @@ export const GettingStartedSection: FC = () => {
           >
             <Box
               component="h2"
-              sx={{ ...h2, mt: 16 }}
+              sx={{ ...h2 }}
               dangerouslySetInnerHTML={{
                 __html: t("gettingStartedTitle"),
               }}
@@ -43,7 +42,7 @@ export const GettingStartedSection: FC = () => {
               width: "50%",
             }}
           >
-            <Box component="p" sx={{ ...bodyLarge, mt: 16, mb: 16 }}>
+            <Box component="p" sx={{ ...bodyLarge, mb: 16 }}>
               {t("gettingStartedDescription")}
             </Box>
           </Grid>

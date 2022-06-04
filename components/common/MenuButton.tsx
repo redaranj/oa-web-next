@@ -29,7 +29,7 @@ export const MenuButton: FC<MenuButtonProps> = ({ title, children }) => {
             {...bindTrigger(popupState)}
           >
             {title}
-            <Box sx={{ ml: 1 }}>
+            <Box sx={{ ml: "6px", mt: "-3px" }}>
               <Image src={downArrow} alt="" loader={loader} />
             </Box>
           </Button>

@@ -28,8 +28,9 @@ export const OutlinedButton: FC<OutlinedButtonProps> = ({
       fontWeight: 700,
       textTransform: "none",
       color: textColor,
-      pl: 4,
-      pr: 4,
+      p: "16px",
+      pl: "40px",
+      pr: "40px",
       "&:hover": {
         backgroundColor: turquoise,
         border: `1px solid ${turquoise}`,
@@ -39,12 +40,12 @@ export const OutlinedButton: FC<OutlinedButtonProps> = ({
   >
     {children}
     {arrowDirection === "right" && (
-      <Box sx={{ ml: "8px" }}>
+      <Box sx={{ ml: "8px", mt: "-3px" }}>
         <Image src={rightArrow} alt="" loader={loader} />
       </Box>
     )}
     {arrowDirection === "down" && (
-      <Box sx={{ ml: "8px" }}>
+      <Box sx={{ ml: "8px", mt: "-3px" }}>
         <Image src={downArrow} alt="" loader={loader} />
       </Box>
     )}

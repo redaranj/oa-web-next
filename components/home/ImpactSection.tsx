@@ -16,11 +16,7 @@ export const ImpactSection: FC = () => {
 
   return (
     <PageSection backgroundColor={white}>
-      <Grid
-        container
-        direction="column"
-        sx={{ paddingTop: 26, paddingBottom: 20 }}
-      >
+      <Grid container direction="column">
         <Grid item>
           <Box
             component="h2"

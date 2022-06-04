@@ -1,20 +1,26 @@
 import { FC } from "react";
 import { Grid } from "@mui/material";
-import { colors } from "styles/theme";
+import { colors, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { AcronymItem } from "components/save/AcronymItem";
 import sharePhone from "images/share-phone.png";
 
 export const AcronymSection: FC = () => {
   const { white } = colors;
+  const { phoneSmall, tabletSmall } = breakpoints;
 
   return (
-    <PageSection backgroundColor={white}>
+    <PageSection backgroundColor={white} sx={{ pb: 0 }}>
       <Grid
         container
-        spacing={8}
         sx={{
           flexDirection: "row",
+          [phoneSmall]: {
+            flexDirection: "column",
+          },
+          [tabletSmall]: {
+            flexDirection: "row",
+          },
         }}
       >
         <AcronymItem

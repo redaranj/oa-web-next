@@ -13,11 +13,11 @@ export const BoardSection: FC = () => {
 
   return (
     <PageSection backgroundColor={white}>
-      <Grid container direction="column" rowSpacing={8} sx={{ pb: 12 }}>
+      <Grid container direction="column" rowSpacing={8}>
         <Grid item>
           <Box
             component="h2"
-            sx={{ ...h2, textAlign: "center", pt: 16, pb: 4 }}
+            sx={{ ...h2, textAlign: "center", pb: 4 }}
             dangerouslySetInnerHTML={{
               __html: t("advisoryBoardTitle"),
             }}

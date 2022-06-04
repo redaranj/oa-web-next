@@ -24,7 +24,7 @@ export const MoreSection: FC = () => {
         <Grid item>
           <Box
             component="h2"
-            sx={{ ...h2, textAlign: "center", pt: 12 }}
+            sx={{ ...h2, textAlign: "center" }}
             dangerouslySetInnerHTML={{
               __html: t("moreAboutSaveTitle"),
             }}
@@ -36,7 +36,7 @@ export const MoreSection: FC = () => {
             sx={{
               ...bodyLarge,
               textAlign: "center",
-              mb: 12,
+              mb: "80px",
               maxWidth: 700,
               margin: "auto",
             }}
@@ -44,7 +44,7 @@ export const MoreSection: FC = () => {
             {t("moreAboutSaveDescription")}
           </Box>
         </Grid>
-        <Grid item container direction="row" columnSpacing={6} sx={{ pb: 12 }}>
+        <Grid item container direction="row" columnSpacing={6}>
           <MoreItem
             title={t("pressRelease")}
             description=""

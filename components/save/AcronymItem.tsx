@@ -21,18 +21,18 @@ export const AcronymItem: FC<AcronymItemProps> = ({
   const { h2, bodyLarge } = typography;
 
   return (
-    <Grid item container direction="column" spacing={4}>
+    <Grid item container direction="column">
       <Grid item>
         <Box
           component="h2"
-          sx={{ ...h2, textAlign: "center" }}
+          sx={{ ...h2, textAlign: "center", mb: "70px" }}
           dangerouslySetInnerHTML={{
             __html: t(titleKey),
           }}
         />
       </Grid>
       <Grid item container direction="row" flexWrap="nowrap">
-        <Grid item xs={6}>
+        <Grid item sx={{ width: "35%" }}>
           <Box
             component="p"
             sx={bodyLarge}
@@ -41,7 +41,8 @@ export const AcronymItem: FC<AcronymItemProps> = ({
             }}
           />
         </Grid>
-        <Grid item xs={6}>
+        <Grid item sx={{ width: "17%" }} />
+        <Grid item sx={{ width: "35%" }}>
           <Box
             component="p"
             sx={bodyLarge}
@@ -54,11 +55,11 @@ export const AcronymItem: FC<AcronymItemProps> = ({
       <Grid item>
         <Box
           sx={{
-            height: 400,
+            height: "550px",
             backgroundImage: `url(${image.src})`,
             backgroundRepeat: "no-repeat",
-            backgroundPosition: "center 50px",
-            backgroundSize: "1000px",
+            backgroundPosition: "center 75px",
+            backgroundSize: "1250px",
           }}
         />
       </Grid>

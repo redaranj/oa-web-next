@@ -32,7 +32,7 @@ export const typography = {
     ...typographyDefaults,
     fontWeight: 600,
     fontSize: "90px",
-    lineHeight: "100%",
+    lineHeight: "110%",
     marginBottom: "40px",
     [breakpoints.phoneSmall]: {
       fontSize: "34px",

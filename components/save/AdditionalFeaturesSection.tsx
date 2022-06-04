@@ -15,16 +15,14 @@ export const AdditionalFeaturesSection: FC = () => {
     <PageSection backgroundColor={lightGrey}>
       <Grid
         container
-        spacing={8}
         sx={{
           flexDirection: "column",
-          pb: 24,
         }}
       >
         <Grid item>
           <Box
             component="h2"
-            sx={h2}
+            sx={{ ...h2, mb: "120px" }}
             dangerouslySetInnerHTML={{
               __html: t("additionalFeaturesTitle"),
             }}
