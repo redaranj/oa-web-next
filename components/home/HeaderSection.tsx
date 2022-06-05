@@ -30,13 +30,15 @@ export const HeaderSection: FC = () => {
       <Grid
         container
         sx={{
-          flexDirection: "row",
-          [phoneSmall]: {
-            flexDirection: "column-reverse",
+          backgroundColor: {
+            ps: "red",
+            pl: "orange",
+            ts: "yellow",
+            tl: "green",
+            ds: "blue",
+            dl: "purple",
           },
-          [tabletLarge]: {
-            flexDirection: "row",
-          },
+          flexDirection: { ps: "column-reverse", pl: "row" },
         }}
       >
         <Grid
