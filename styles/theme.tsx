@@ -1,4 +1,4 @@
-import { Box, createTheme } from "@mui/material";
+import { Box } from "@mui/material";
 
 export const breakpoints = {
   dl: "@media (min-width: 1366px)",
@@ -20,6 +20,14 @@ export const colors = {
   lightBurgundy: "#ffdfd9",
 };
 
+const typographyDefaults = {
+  fontFamily: "Montserrat, sans-serif",
+  fontStyle: "normal",
+  color: colors.black,
+  margin: 0,
+};
+
+/*
 declare module "@mui/material" {
   interface BreakpointOverrides {
     xs: false;
@@ -60,12 +68,7 @@ declare module "@mui/material" {
   }
 }
 
-const typographyDefaults = {
-  fontFamily: "Montserrat, sans-serif",
-  fontStyle: "normal",
-  color: colors.black,
-  margin: 0,
-};
+
 
 export const theme = createTheme({
   palette: {
@@ -289,6 +292,7 @@ export const theme = createTheme({
     },
   },
 });
+*/
 
 export const typography = {
   h1: {

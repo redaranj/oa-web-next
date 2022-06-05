@@ -1,6 +1,7 @@
 import { FC } from "react";
-import { Grid, Typography } from "@mui/material";
+import { Grid, Box } from "@mui/material";
 import { useTranslate } from "react-polyglot";
+import { typography } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { OutlinedButton } from "components/common/OutlinedButton";
 import mission1 from "images/mission-1.png";
@@ -8,6 +9,7 @@ import mission2 from "images/mission-2.png";
 
 export const MissionSection: FC = () => {
   const t = useTranslate();
+  const { h2, bodyLarge } = typography;
 
   return (
     <PageSection backgroundColor="gray.light">
@@ -48,17 +50,17 @@ export const MissionSection: FC = () => {
           }}
         >
           <Grid item>
-            <Typography
-              variant="h2"
-              sx={{ mt: 10 }}
+            <Box
+              component="h2"
+              sx={{ ...h2, mt: 10 }}
               dangerouslySetInnerHTML={{ __html: t("missionStatementTitle") }}
             />
           </Grid>
           <Grid item container direction="column">
             <Grid item>
-              <Typography variant="body1" sx={{ mb: 5 }}>
+              <Box component="p" sx={{ ...bodyLarge, mb: 5 }}>
                 {t("missionStatementDescription")}
-              </Typography>
+              </Box>
             </Grid>
             <Grid item>
               <OutlinedButton arrowDirection="right">
