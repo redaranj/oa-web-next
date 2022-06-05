@@ -73,7 +73,7 @@ export const HeaderSection: FC = () => {
           sx={{
             width: "50%",
             [ps]: { width: "100%" },
-            [ts]: { width: "100%" },
+            [ts]: { width: "50%" },
           }}
         >
           <Box
