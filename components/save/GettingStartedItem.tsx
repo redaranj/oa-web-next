@@ -1,7 +1,7 @@
 import { FC, PropsWithChildren } from "react";
 import { useTranslate } from "react-polyglot";
 import { Box, Grid } from "@mui/material";
-import { typography, colors } from "styles/theme";
+import { typography, colors, breakpoints } from "styles/theme";
 
 type GettingStartedItemProps = PropsWithChildren<{
   title: string;
@@ -16,9 +16,13 @@ export const GettingStartedItem: FC<GettingStartedItemProps> = ({
   const t = useTranslate();
   const { h4, h5, body } = typography;
   const { white, turquoise } = colors;
+  const { ps, tl } = breakpoints;
 
   return (
-    <Grid item sx={{ width: "50%" }}>
+    <Grid
+      item
+      sx={{ width: "50%", [ps]: { width: "100%" }, [tl]: { width: "50%" } }}
+    >
       <Grid container direction="column" sx={{ backgroundColor: white }}>
         <Grid container item direction="row">
           <Grid item>

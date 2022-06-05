@@ -1,6 +1,6 @@
 import { FC, PropsWithChildren } from "react";
 import { Box, Grid } from "@mui/material";
-import { typography } from "styles/theme";
+import { typography, breakpoints } from "styles/theme";
 
 type ParticipateItemProps = PropsWithChildren<{
   title: string;
@@ -15,10 +15,14 @@ export const ParticipateItem: FC<ParticipateItemProps> = ({
   height,
 }) => {
   const { h5 } = typography;
+  const { ps, tl } = breakpoints;
 
   return (
-    <Grid item xs={4}>
-      <Box sx={{ backgroundColor, p: 3, height }}>
+    <Grid
+      item
+      sx={{ width: "33%", [ps]: { width: "100%" }, [tl]: { width: "50%" } }}
+    >
+      <Box sx={{ backgroundColor, p: 3, minHeight: height }}>
         <Grid
           item
           container

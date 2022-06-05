@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Box, Grid } from "@mui/material";
 import { useTranslate } from "react-polyglot";
-import { typography, colors } from "styles/theme";
+import { typography, colors, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { MoreItem } from "components/save/MoreItem";
 import microphone from "images/microphone.png";
@@ -12,6 +12,7 @@ export const MoreSection: FC = () => {
   const t = useTranslate();
   const { white } = colors;
   const { h2, bodyLarge } = typography;
+  const { ps, tl } = breakpoints;
 
   return (
     <PageSection backgroundColor={white}>
@@ -44,7 +45,16 @@ export const MoreSection: FC = () => {
             {t("moreAboutSaveDescription")}
           </Box>
         </Grid>
-        <Grid item container direction="row" columnSpacing={6}>
+        <Grid
+          item
+          container
+          columnSpacing={6}
+          sx={{
+            flexDirection: "row",
+            [ps]: { flexDirection: "column" },
+            [tl]: { flexDirection: "row" },
+          }}
+        >
           <MoreItem
             title={t("pressRelease")}
             description=""

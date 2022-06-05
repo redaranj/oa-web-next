@@ -2,7 +2,7 @@ import { FC, PropsWithChildren } from "react";
 import Image, { StaticImageData } from "next/image";
 import { Box, Grid } from "@mui/material";
 import { useTranslate } from "react-polyglot";
-import { typography, colors, loader } from "styles/theme";
+import { typography, colors, loader, breakpoints } from "styles/theme";
 import { OutlinedButton } from "components/common/OutlinedButton";
 
 type TeamItemProps = PropsWithChildren<{
@@ -23,11 +23,22 @@ export const TeamItem: FC<TeamItemProps> = ({
   const t = useTranslate();
   const { turquoise } = colors;
   const { h6, bodyLarge, body } = typography;
+  const { ps, tl } = breakpoints;
 
   return (
     <Grid item>
       <Box sx={{ backgroundColor, p: 6 }}>
-        <Grid item container direction="row" flexWrap="nowrap" spacing={4}>
+        <Grid
+          item
+          container
+          flexWrap="nowrap"
+          spacing={4}
+          sx={{
+            flexDirection: "row",
+            [ps]: { flexDirection: "column" },
+            [tl]: { flexDirection: "row" },
+          }}
+        >
           <Grid
             item
             container

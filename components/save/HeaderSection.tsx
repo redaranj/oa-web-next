@@ -94,7 +94,7 @@ export const HeaderSection: FC = () => {
           }}
         >
           <Grid item>
-            <Box sx={{ width: "1000px", mb: "-10px" }}>
+            <Box sx={{ width: "1000px", mb: "-10px", [ps]: { width: "100%" } }}>
               <Image src={saveHeader} loader={loader} alt="" />
             </Box>
           </Grid>

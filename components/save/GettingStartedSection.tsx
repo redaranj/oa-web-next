@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Box, Grid } from "@mui/material";
 import { useTranslate } from "react-polyglot";
-import { typography, colors } from "styles/theme";
+import { typography, colors, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { GettingStartedItem } from "components/save/GettingStartedItem";
 
@@ -9,6 +9,7 @@ export const GettingStartedSection: FC = () => {
   const t = useTranslate();
   const { lightGrey } = colors;
   const { h2, h6, bodyLarge } = typography;
+  const { ps, tl } = breakpoints;
 
   return (
     <PageSection backgroundColor={lightGrey}>
@@ -18,6 +19,8 @@ export const GettingStartedSection: FC = () => {
           item
           sx={{
             flexDirection: "row",
+            [ps]: { flexDirection: "column" },
+            [tl]: { flexDirection: "row" },
           }}
         >
           <Grid
@@ -26,6 +29,8 @@ export const GettingStartedSection: FC = () => {
             item
             sx={{
               width: "50%",
+              [ps]: { width: "100%" },
+              [tl]: { width: "50%" },
             }}
           >
             <Box
@@ -40,6 +45,8 @@ export const GettingStartedSection: FC = () => {
             item
             sx={{
               width: "50%",
+              [ps]: { width: "100%" },
+              [tl]: { width: "50%" },
             }}
           >
             <Box component="p" sx={{ ...bodyLarge, mb: 16 }}>
@@ -58,6 +65,8 @@ export const GettingStartedSection: FC = () => {
           spacing={8}
           sx={{
             flexDirection: "row",
+            [ps]: { flexDirection: "column" },
+            [tl]: { flexDirection: "row" },
           }}
         >
           <GettingStartedItem title={t("downloadSave")} step="01" />

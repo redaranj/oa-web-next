@@ -13,6 +13,7 @@ import openArchiveLogo from "images/open-archive.svg";
 import twitter from "images/twitter-grey.svg";
 import instagram from "images/instagram-grey.svg";
 import github from "images/github-grey.svg";
+import menuIcon from "images/menu-icon.svg";
 
 export const TopNav = () => {
   const t = useTranslate();
@@ -259,7 +260,7 @@ export const TopNav = () => {
                     },
                   }}
                 >
-                  menu
+                  <Image src={menuIcon} alt="menu" loader={loader} />
                 </Button>
               </Grid>
             </Grid>

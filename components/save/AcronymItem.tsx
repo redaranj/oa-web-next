@@ -2,7 +2,7 @@ import { FC, PropsWithChildren } from "react";
 import { StaticImageData } from "next/image";
 import { Box, Grid } from "@mui/material";
 import { useTranslate } from "react-polyglot";
-import { typography } from "styles/theme";
+import { typography, breakpoints } from "styles/theme";
 
 type AcronymItemProps = PropsWithChildren<{
   titleKey: string;
@@ -19,6 +19,7 @@ export const AcronymItem: FC<AcronymItemProps> = ({
 }) => {
   const t = useTranslate();
   const { h2, bodyLarge } = typography;
+  const { ps, tl } = breakpoints;
 
   return (
     <Grid item container direction="column">
@@ -31,8 +32,21 @@ export const AcronymItem: FC<AcronymItemProps> = ({
           }}
         />
       </Grid>
-      <Grid item container direction="row" flexWrap="nowrap">
-        <Grid item sx={{ width: "35%" }}>
+      <Grid
+        item
+        container
+        direction="row"
+        flexWrap="nowrap"
+        sx={{
+          flexDirection: "row",
+          [ps]: { flexDirection: "column" },
+          [tl]: { flexDirection: "row" },
+        }}
+      >
+        <Grid
+          item
+          sx={{ width: "35%", [ps]: { width: "100%" }, [tl]: { width: "33%" } }}
+        >
           <Box
             component="p"
             sx={bodyLarge}
@@ -41,8 +55,14 @@ export const AcronymItem: FC<AcronymItemProps> = ({
             }}
           />
         </Grid>
-        <Grid item sx={{ width: "17%" }} />
-        <Grid item sx={{ width: "35%" }}>
+        <Grid
+          item
+          sx={{ width: "17%", [ps]: { width: "100%" }, [tl]: { width: "17%" } }}
+        />
+        <Grid
+          item
+          sx={{ width: "35%", [ps]: { width: "100%" }, [tl]: { width: "33%" } }}
+        >
           <Box
             component="p"
             sx={bodyLarge}

@@ -2,7 +2,7 @@ import { FC, PropsWithChildren } from "react";
 import { StaticImageData } from "next/image";
 import Link from "next/link";
 import { Box, Grid } from "@mui/material";
-import { colors, typography } from "styles/theme";
+import { colors, typography, breakpoints } from "styles/theme";
 
 type MoreItemProps = PropsWithChildren<{
   title: string;
@@ -19,9 +19,15 @@ export const MoreItem: FC<MoreItemProps> = ({
 }) => {
   const { white, black, lightGrey } = colors;
   const { h5, bodyLarge } = typography;
+  const { ps, tl } = breakpoints;
 
   return (
-    <Grid item container direction="column" sx={{ width: "33%" }}>
+    <Grid
+      item
+      container
+      direction="column"
+      sx={{ width: "33%", [ps]: { width: "100%" }, [tl]: { width: "33%" } }}
+    >
       <Link href={url}>
         <Box
           sx={{

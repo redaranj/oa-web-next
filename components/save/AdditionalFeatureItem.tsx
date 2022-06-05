@@ -1,7 +1,7 @@
 import { FC, PropsWithChildren } from "react";
 import Image, { StaticImageData } from "next/image";
 import { Box, Grid } from "@mui/material";
-import { typography, loader } from "styles/theme";
+import { typography, loader, breakpoints } from "styles/theme";
 
 type AdditionalFeatureItemProps = PropsWithChildren<{
   title: string;
@@ -19,10 +19,14 @@ export const AdditionalFeatureItem: FC<AdditionalFeatureItemProps> = ({
   image,
 }) => {
   const { h5, bodyLarge } = typography;
+  const { ps, tl } = breakpoints;
   console.log({ description });
 
   return (
-    <Grid item sx={{ width: "50%" }}>
+    <Grid
+      item
+      sx={{ width: "50%", [ps]: { width: "100%" }, [tl]: { width: "100%" } }}
+    >
       <Grid
         container
         direction="column"

@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Box, Grid } from "@mui/material";
 import { useTranslate } from "react-polyglot";
-import { typography, colors } from "styles/theme";
+import { typography, colors, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { OutlinedButton } from "components/common/OutlinedButton";
 import { FilledButton } from "components/common/FilledButton";
@@ -12,6 +12,7 @@ export const ParticipateSection: FC = () => {
   const { white, black, lightBurgundy, lightTurquoise, mediumBurgundy } =
     colors;
   const { h2, bodyLarge } = typography;
+  const { ps, tl } = breakpoints;
 
   return (
     <PageSection backgroundColor={white}>
@@ -33,10 +34,16 @@ export const ParticipateSection: FC = () => {
         <Grid
           item
           container
-          direction="row"
           spacing={6}
           alignItems="flex-end"
-          sx={{ pb: 12 }}
+          sx={{
+            pb: 12,
+            flexDirection: "row",
+            [ps]: { flexDirection: "column" },
+            [tl]: {
+              flexDirection: "row",
+            },
+          }}
         >
           <ParticipateItem
             title={t("haveQuestions")}

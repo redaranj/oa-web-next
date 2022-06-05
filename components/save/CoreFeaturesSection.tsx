@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Box, Grid } from "@mui/material";
 import { useTranslate } from "react-polyglot";
-import { typography, colors } from "styles/theme";
+import { typography, colors, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { CoreFeatureItem } from "components/save/CoreFeatureItem";
 import coreFeature from "images/information-security.svg";
@@ -11,6 +11,7 @@ export const CoreFeaturesSection: FC = () => {
   const t = useTranslate();
   const { white, turquoise } = colors;
   const { h2, bodyLarge } = typography;
+  const { ps, tl } = breakpoints;
 
   return (
     <PageSection backgroundColor={white}>
@@ -20,6 +21,8 @@ export const CoreFeaturesSection: FC = () => {
           item
           sx={{
             flexDirection: "row",
+            [ps]: { flexDirection: "column" },
+            [tl]: { flexDirection: "row" },
           }}
         >
           <Grid
@@ -28,6 +31,8 @@ export const CoreFeaturesSection: FC = () => {
             item
             sx={{
               width: "50%",
+              [ps]: { width: "100%" },
+              [tl]: { width: "50%" },
             }}
           >
             <Box
@@ -42,6 +47,8 @@ export const CoreFeaturesSection: FC = () => {
             item
             sx={{
               width: "50%",
+              [ps]: { width: "100%" },
+              [tl]: { width: "50%" },
             }}
           >
             <Box component="p" sx={{ ...bodyLarge }}>
@@ -56,18 +63,29 @@ export const CoreFeaturesSection: FC = () => {
           sx={{
             mt: "100px",
             flexDirection: "row",
+            [ps]: { flexDirection: "column" },
+            [tl]: { flexDirection: "row" },
           }}
         >
           <Grid
             container
-            direction="row"
             item
             sx={{
               width: "50%",
+              flexDirection: "row",
+              [ps]: { flexDirection: "column", width: "100%" },
+              [tl]: { flexDirection: "row", width: "50%" },
             }}
             spacing={6}
           >
-            <Grid item sx={{ width: "50%" }}>
+            <Grid
+              item
+              sx={{
+                width: "50%",
+                [ps]: { width: "100%" },
+                [tl]: { width: "50%" },
+              }}
+            >
               <Box
                 sx={{
                   width: "100%",
@@ -105,6 +123,8 @@ export const CoreFeaturesSection: FC = () => {
             item
             sx={{
               width: "50%",
+              [ps]: { width: "100%" },
+              [tl]: { width: "50%" },
             }}
           >
             <Box

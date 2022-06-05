@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Box, Grid } from "@mui/material";
 import { useTranslate } from "react-polyglot";
-import { typography, colors } from "styles/theme";
+import { typography, colors, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { OutlinedButton } from "components/common/OutlinedButton";
 import { JobItem } from "components/team/JobItem";
@@ -11,6 +11,7 @@ export const AboutSection: FC = () => {
   const t = useTranslate();
   const { lightGrey, turquoise } = colors;
   const { h2, h5, bodyLarge } = typography;
+  const { ps, tl } = breakpoints;
 
   return (
     <PageSection backgroundColor={lightGrey}>
@@ -18,6 +19,8 @@ export const AboutSection: FC = () => {
         container
         sx={{
           flexDirection: "row",
+          [ps]: { flexDirection: "column" },
+          [tl]: { flexDirection: "row" },
         }}
       >
         <Grid
@@ -26,6 +29,8 @@ export const AboutSection: FC = () => {
           item
           sx={{
             width: "50%",
+            [ps]: { width: "100%" },
+            [tl]: { width: "50%" },
           }}
         >
           <Grid item>

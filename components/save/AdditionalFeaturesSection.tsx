@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Box, Grid } from "@mui/material";
 import { useTranslate } from "react-polyglot";
-import { typography, colors } from "styles/theme";
+import { typography, colors, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { AdditionalFeatureItem } from "components/save/AdditionalFeatureItem";
 import additionalFeature from "images/information-security.svg";
@@ -10,6 +10,7 @@ export const AdditionalFeaturesSection: FC = () => {
   const t = useTranslate();
   const { lightGrey, white, turquoise, black } = colors;
   const { h2 } = typography;
+  const { ps, tl } = breakpoints;
 
   return (
     <PageSection backgroundColor={lightGrey}>
@@ -28,7 +29,17 @@ export const AdditionalFeaturesSection: FC = () => {
             }}
           />
         </Grid>
-        <Grid item container direction="row" columnSpacing={8}>
+        <Grid
+          item
+          container
+          direction="row"
+          columnSpacing={8}
+          sx={{
+            flexDirection: "row",
+            [ps]: { flexDirection: "column" },
+            [tl]: { flexDirection: "row" },
+          }}
+        >
           <AdditionalFeatureItem
             title={t("addMetadata")}
             description=""
