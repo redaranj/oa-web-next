@@ -25,14 +25,24 @@ export const ProjectsSection: FC = () => {
           />
         </Grid>
         <HorizontalScrollArea columnOnMobile>
-          <ProjectItem title={t("save")} image={projectSave} url="" />
           <ProjectItem
-            title={t("guide")}
-            description={t("guideDescription")}
+            title={t("save")}
+            description={t("saveDescription")}
+            image={projectSave}
+            url=""
+          />
+          <ProjectItem
+            title={t("guides")}
+            description={t("guidesDescription")}
             image={projectGuide}
             url=""
           />
-          <ProjectItem title={t("research")} image={projectResearch} url="" />
+          <ProjectItem
+            title={t("research")}
+            description={t("researchDescription")}
+            image={projectResearch}
+            url=""
+          />
         </HorizontalScrollArea>
       </Grid>
     </PageSection>

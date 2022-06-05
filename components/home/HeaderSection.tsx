@@ -24,13 +24,9 @@ export const HeaderSection: FC = () => {
       <Grid
         container
         sx={{
-          [ps]: { backgroundColor: "red" },
-          [pl]: { backgroundColor: "orange" },
-          [ts]: { backgroundColor: "yellow" },
-          [tl]: { backgroundColor: "green" },
-          [ds]: { backgroundColor: "blue" },
-          [dl]: { backgroundColor: "purple" },
-          flexDirection: { ps: "column-reverse", pl: "row" },
+          flexDirection: "row",
+          [ps]: { flexDirection: "column-reverse" },
+          [pl]: { flexDirection: "row" },
         }}
       >
         <Grid
@@ -52,14 +48,14 @@ export const HeaderSection: FC = () => {
               component="h1"
               sx={h1}
               dangerouslySetInnerHTML={{
-                __html: t("truthToPowerTitle"),
+                __html: t("openArchiveTitle"),
               }}
             />
           </Grid>
           <Grid item container direction="column" spacing={6} sx={{ mb: 12 }}>
             <Grid item>
               <Box component="p" sx={bodyLarge}>
-                {t("truthToPowerDescription")}
+                {t("empoweringEyewitnessesDescription")}
               </Box>
             </Grid>
             <Grid item>
@@ -98,7 +94,7 @@ export const HeaderSection: FC = () => {
               [pl]: {},
               [ts]: {},
               [tl]: {},
-              [dl]: {
+              [ds]: {
                 backgroundSize: "250px",
                 backgroundPosition:
                   "60px -100px, 380px 0px, 60px 210px, 380px 310px, 60px 500px, 380px 1000px, 60px 2500px, 380px 10000px",

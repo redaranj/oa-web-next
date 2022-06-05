@@ -8,7 +8,7 @@ type VisionItemProps = PropsWithChildren<{
 }>;
 
 export const VisionItem: FC<VisionItemProps> = ({ title, number }) => {
-  const { h5, bodyLarge } = typography;
+  const { h6, body } = typography;
   const { lightGrey } = colors;
 
   return (
@@ -20,12 +20,12 @@ export const VisionItem: FC<VisionItemProps> = ({ title, number }) => {
         sx={{ backgroundColor: lightGrey, minHeight: 300 }}
       >
         <Grid item>
-          <Box component="p" sx={{ ...bodyLarge, p: 3 }}>
+          <Box component="p" sx={{ ...body, p: 3, pb: 4 }}>
             {number}
           </Box>
         </Grid>
         <Grid item>
-          <Box component="h5" sx={{ ...h5, p: 3 }}>
+          <Box component="h6" sx={{ ...h6, p: 3 }}>
             {title}
           </Box>
         </Grid>

@@ -15,7 +15,7 @@ export const PageSection: FC<PageSectionProps> = ({
   sx = {},
   children,
 }) => {
-  const { ps, ts } = breakpoints;
+  const { ps, pl, ts, tl, ds, dl } = breakpoints;
   const backgroundImageProps = backgroundImage
     ? {
         backgroundImage: `url(${backgroundImage.src})`,
@@ -31,12 +31,31 @@ export const PageSection: FC<PageSectionProps> = ({
         sx={{
           margin: "auto",
           maxWidth: 1920,
-          padding: "150px 90px",
+          py: 13,
+          px: 11.25,
           [ps]: {
-            padding: "150px 90px",
+            py: 6,
+            px: 3,
+          },
+          [pl]: {
+            py: 6,
+            px: 3,
           },
           [ts]: {
-            padding: "150px 90px",
+            py: 7,
+            px: 4.375,
+          },
+          [tl]: {
+            py: 9,
+            px: 4.375,
+          },
+          [ds]: {
+            py: 13,
+            px: 6.25,
+          },
+          [dl]: {
+            py: 13,
+            px: 11.25,
           },
           ...sx,
         }}

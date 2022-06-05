@@ -80,7 +80,9 @@ export const ProjectItem: FC<ProjectItemProps> = ({
                   transition: "1s",
                 }}
               >
-                <Box sx={{ ...bodyLarge, color: white }}>{description}</Box>
+                <Box sx={{ ...bodyLarge, color: white, p: 6 }}>
+                  {description}
+                </Box>
               </Box>
             </Box>
           </Grid>

@@ -26,23 +26,23 @@ export const ImpactSection: FC = () => {
         </Grid>
         <Grid item container direction="row" spacing={6} sx={{ pt: 1 }}>
           <ImpactItem
-            title={t("informationSecurityTitle")}
-            description={t("informationSecurityDescription")}
+            title={t("bolsterFreedomTitle")}
+            description={t("bolsterFreedomDescription")}
             image={informationSecurity}
           />
           <ImpactItem
-            title={t("freeSpeechTitle")}
-            description={t("freeSpeechDescription")}
+            title={t("empowerCommunitiesTitle")}
+            description={t("empowerCommunitiesDescription")}
             image={freeSpeech}
           />
           <ImpactItem
-            title={t("freeUniversalAccessTitle")}
-            description={t("freeUniversalAccessDescription")}
+            title={t("protectSourcesTitle")}
+            description={t("protectSourcesDescription")}
             image={freeUniversalAccess}
           />
           <ImpactItem
-            title={t("dataProcessingSpeedTitle")}
-            description={t("dataProcessingSpeedDescription")}
+            title={t("createStandardsTitle")}
+            description={t("createStandardsDescription")}
             image={dataProcessingSpeed}
           />
         </Grid>

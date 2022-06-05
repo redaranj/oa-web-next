@@ -53,13 +53,13 @@ export const MissionSection: FC = () => {
             <Box
               component="h2"
               sx={{ ...h2, mt: 10 }}
-              dangerouslySetInnerHTML={{ __html: t("missionStatementTitle") }}
+              dangerouslySetInnerHTML={{ __html: t("radicalArchivingTitle") }}
             />
           </Grid>
           <Grid item container direction="column">
             <Grid item>
               <Box component="p" sx={{ ...bodyLarge, mb: 5 }}>
-                {t("missionStatementDescription")}
+                {t("radicalArchivingDescription")}
               </Box>
             </Grid>
             <Grid item>

@@ -28,7 +28,7 @@ export const FilledButton: FC<FilledButtonProps> = ({
       textTransform: "none",
       color: textColor,
       backgroundColor,
-      p: "10px",
+      p: 1,
       pl: "30px",
       pr: "30px",
       "&:hover": {

@@ -19,7 +19,7 @@ export const TopNav = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const { white, mediumGrey, mediumBurgundy } = colors;
   const { body } = typography;
-  const { ps, ts } = breakpoints;
+  const { ps, pl, ts, tl, ds, dl } = breakpoints;
   const menuItemProps = { ...body, fontWeight: 600, color: white };
 
   return (
@@ -29,7 +29,10 @@ export const TopNav = () => {
       sx={{
         backgroundColor: "rgba(255, 255, 255, 0.95)",
         opacity: 0.95,
-        height: { ps: 50, ts: 80, dl: 90 },
+        height: 90,
+        [ps]: { height: 50 },
+        [ts]: { height: 80 },
+        [dl]: { height: 90 },
         p: 0,
         m: 0,
       }}
@@ -46,7 +49,13 @@ export const TopNav = () => {
             sx={{
               maxWidth: 1920,
               width: "100%",
-              pl: "90px",
+              px: 11.25,
+              [ps]: { px: 3 },
+              [pl]: { px: 3 },
+              [ts]: { px: 6 },
+              [tl]: { px: 6 },
+              [ds]: { px: 6.25 },
+              [dl]: { px: 11.25 },
             }}
           >
             <Grid
@@ -57,10 +66,20 @@ export const TopNav = () => {
               flexWrap="nowrap"
               alignItems="center"
             >
-              <Grid item sx={{ mt: "4px" }} xs="auto">
+              <Grid item sx={{ mt: 0.5 }} xs="auto">
                 <Link href="/" passHref>
                   <Box component="a">
-                    <Image alt="" src={openArchiveLogo} loader={loader} />
+                    <Box
+                      sx={{
+                        width: 200,
+                        [ps]: {
+                          width: 150,
+                        },
+                        [ts]: { width: 200 },
+                      }}
+                    >
+                      <Image alt="" src={openArchiveLogo} loader={loader} />
+                    </Box>
                   </Box>
                 </Link>
               </Grid>
@@ -92,7 +111,18 @@ export const TopNav = () => {
                   spacing={4}
                   xs="auto"
                 >
-                  <Grid item>
+                  <Grid
+                    item
+                    sx={{
+                      display: "initial",
+                      [ps]: {
+                        display: "none",
+                      },
+                      [ds]: {
+                        display: "initial",
+                      },
+                    }}
+                  >
                     <Box
                       sx={{
                         backgroundColor: mediumGrey,
@@ -101,7 +131,18 @@ export const TopNav = () => {
                       }}
                     />
                   </Grid>
-                  <Grid item>
+                  <Grid
+                    item
+                    sx={{
+                      display: "initial",
+                      [ps]: {
+                        display: "none",
+                      },
+                      [ds]: {
+                        display: "initial",
+                      },
+                    }}
+                  >
                     <MenuButton title={t("ourWork")}>
                       <Grid container direction="column" spacing={2}>
                         <Grid item>
@@ -121,7 +162,18 @@ export const TopNav = () => {
                       </Grid>
                     </MenuButton>
                   </Grid>
-                  <Grid item>
+                  <Grid
+                    item
+                    sx={{
+                      display: "initial",
+                      [ps]: {
+                        display: "none",
+                      },
+                      [ds]: {
+                        display: "initial",
+                      },
+                    }}
+                  >
                     <MenuButton title="About">
                       <Grid container direction="column" spacing={2}>
                         <Grid item>

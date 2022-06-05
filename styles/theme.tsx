@@ -27,273 +27,6 @@ const typographyDefaults = {
   margin: 0,
 };
 
-/*
-declare module "@mui/material" {
-  interface BreakpointOverrides {
-    xs: false;
-    sm: false;
-    md: false;
-    lg: false;
-    xl: false;
-    ps: true; // phone small
-    pl: true; // phone large
-    ts: true; // tablet small
-    tl: true; // tablet large
-    ds: true; // desktop small
-    dl: true; // desktop large
-  }
-
-  interface Palette {
-    white: Palette["primary"];
-    black: Palette["primary"];
-    gray: Palette["primary"];
-    turquoise: Palette["primary"];
-    burgundy: Palette["primary"];
-  }
-
-  interface PaletteOptions {
-    white: Palette["primary"];
-    black: Palette["primary"];
-    gray: Palette["primary"];
-    turquoise: Palette["primary"];
-    burgundy: Palette["primary"];
-  }
-
-  interface PaletteColor {
-    medium?: string;
-  }
-
-  interface SimplePaletteColorOptions {
-    medium?: string;
-  }
-}
-
-
-
-export const theme = createTheme({
-  palette: {
-    white: {
-      main: colors.white,
-      light: colors.white,
-      medium: colors.white,
-      dark: colors.white,
-      contrastText: colors.black,
-    },
-    black: {
-      main: colors.black,
-      light: colors.black,
-      medium: colors.black,
-      dark: colors.black,
-      contrastText: colors.white,
-    },
-    gray: {
-      main: colors.lightGrey,
-      light: colors.lightGrey,
-      medium: colors.mediumGrey,
-      dark: colors.mediumGrey,
-      contrastText: colors.black,
-    },
-    turquoise: {
-      main: colors.turquoise,
-      light: colors.lightTurquoise,
-      medium: colors.lightTurquoise,
-      dark: colors.turquoise,
-      contrastText: colors.white,
-    },
-    burgundy: {
-      main: colors.mediumBurgundy,
-      light: colors.lightBurgundy,
-      medium: colors.mediumBurgundy,
-      dark: colors.mediumBurgundy,
-      contrastText: colors.black,
-    },
-  },
-  breakpoints: {
-    values: {
-      ps: 0,
-      pl: 360,
-      ts: 576,
-      tl: 768,
-      ds: 1024,
-      dl: 1366,
-    },
-  },
-  spacing: 10,
-  typography: {
-    fontFamily: "Montserrat, sans-serif",
-    h1: {
-      ...typographyDefaults,
-      fontWeight: 600,
-      fontSize: "90px",
-      lineHeight: "110%",
-      marginBottom: "40px",
-      [breakpoints.ps]: {
-        fontSize: "34px",
-      },
-      [breakpoints.pl]: {
-        fontSize: "34px",
-      },
-      [breakpoints.ts]: {
-        fontSize: "50px",
-      },
-      [breakpoints.tl]: {
-        fontSize: "50px",
-      },
-      [breakpoints.ds]: {
-        fontSize: "66px",
-      },
-      [breakpoints.dl]: {
-        fontSize: "90px",
-      },
-      "& strong": {
-        fontWeight: 600,
-        color: colors.turquoise,
-      },
-    },
-    h2: {
-      ...typographyDefaults,
-      fontWeight: 600,
-      fontSize: "66px",
-      lineHeight: "100%",
-      marginBottom: "40px",
-      [breakpoints.ps]: {
-        fontSize: "30px",
-      },
-      [breakpoints.pl]: {
-        fontSize: "30px",
-      },
-      [breakpoints.ts]: {
-        fontSize: "44px",
-      },
-      [breakpoints.tl]: {
-        fontSize: "44px",
-      },
-      [breakpoints.dl]: {
-        fontSize: "60px",
-      },
-      [breakpoints.dl]: {
-        fontSize: "66px",
-      },
-      "& strong": {
-        fontWeight: 600,
-        color: colors.turquoise,
-      },
-    },
-    h3: {
-      ...typographyDefaults,
-      fontWeight: 600,
-      fontSize: "40px",
-      lineHeight: "40px",
-      [breakpoints.ps]: {
-        fontSize: "16px",
-      },
-      [breakpoints.pl]: {
-        fontSize: "16px",
-      },
-      [breakpoints.ts]: {
-        fontSize: "20px",
-      },
-      [breakpoints.tl]: {
-        fontSize: "20px",
-      },
-      [breakpoints.dl]: {
-        fontSize: "30px",
-      },
-      [breakpoints.dl]: {
-        fontSize: "40px",
-      },
-    },
-    h4: {
-      ...typographyDefaults,
-      fontWeight: 600,
-      fontSize: "34px",
-      lineHeight: "44.2px",
-    },
-    h5: {
-      ...typographyDefaults,
-      fontWeight: 700,
-      fontSize: "30px",
-      lineHeight: "39px",
-      mb: 2,
-      [breakpoints.ps]: {
-        fontSize: "20px",
-      },
-      [breakpoints.pl]: {
-        fontSize: "20px",
-      },
-      [breakpoints.ts]: {
-        fontSize: "24px",
-      },
-      [breakpoints.tl]: {
-        fontSize: "24px",
-      },
-      [breakpoints.dl]: {
-        fontSize: "30px",
-      },
-      [breakpoints.dl]: {
-        fontSize: "34px",
-      },
-    },
-    h6: {
-      ...typographyDefaults,
-      fontSize: "22px",
-      lineHeight: "29px",
-      fontWeight: 600,
-    },
-    body1: {
-      ...typographyDefaults,
-      fontFamily: "Montserrat, sans-serif",
-      fontWeight: 400,
-      fontSize: "22px",
-      lineHeight: "150%",
-      [breakpoints.ps]: {
-        fontSize: "16px",
-      },
-      [breakpoints.pl]: {
-        fontSize: "16px",
-      },
-      [breakpoints.ts]: {
-        fontSize: "18px",
-      },
-      [breakpoints.tl]: {
-        fontSize: "18px",
-      },
-      [breakpoints.dl]: {
-        fontSize: "20px",
-      },
-      [breakpoints.dl]: {
-        fontSize: "22px",
-      },
-    },
-    body2: {
-      ...typographyDefaults,
-      fontFamily: "Montserrat, sans-serif",
-      fontWeight: 400,
-      fontSize: "18px",
-      lineHeight: "24px",
-      [breakpoints.ps]: {
-        fontSize: "14px",
-      },
-      [breakpoints.pl]: {
-        fontSize: "14px",
-      },
-      [breakpoints.ts]: {
-        fontSize: "14px",
-      },
-      [breakpoints.tl]: {
-        fontSize: "14px",
-      },
-      [breakpoints.dl]: {
-        fontSize: "16px",
-      },
-      [breakpoints.dl]: {
-        fontSize: "18px",
-      },
-    },
-  },
-});
-*/
-
 export const typography = {
   h1: {
     ...typographyDefaults,
@@ -303,6 +36,7 @@ export const typography = {
     marginBottom: "40px",
     [breakpoints.ps]: {
       fontSize: "34px",
+      marginBottom: "30px",
     },
     [breakpoints.pl]: {
       fontSize: "34px",
@@ -313,7 +47,7 @@ export const typography = {
     [breakpoints.tl]: {
       fontSize: "50px",
     },
-    [breakpoints.dl]: {
+    [breakpoints.ds]: {
       fontSize: "66px",
     },
     [breakpoints.dl]: {
@@ -342,7 +76,7 @@ export const typography = {
     [breakpoints.tl]: {
       fontSize: "44px",
     },
-    [breakpoints.dl]: {
+    [breakpoints.ds]: {
       fontSize: "60px",
     },
     [breakpoints.dl]: {
@@ -370,7 +104,7 @@ export const typography = {
     [breakpoints.tl]: {
       fontSize: "20px",
     },
-    [breakpoints.dl]: {
+    [breakpoints.ds]: {
       fontSize: "30px",
     },
     [breakpoints.dl]: {
@@ -401,7 +135,7 @@ export const typography = {
     [breakpoints.tl]: {
       fontSize: "24px",
     },
-    [breakpoints.dl]: {
+    [breakpoints.ds]: {
       fontSize: "30px",
     },
     [breakpoints.dl]: {
@@ -433,7 +167,7 @@ export const typography = {
     [breakpoints.tl]: {
       fontSize: "18px",
     },
-    [breakpoints.dl]: {
+    [breakpoints.ds]: {
       fontSize: "20px",
     },
     [breakpoints.dl]: {
@@ -458,7 +192,7 @@ export const typography = {
     [breakpoints.tl]: {
       fontSize: "14px",
     },
-    [breakpoints.dl]: {
+    [breakpoints.ds]: {
       fontSize: "16px",
     },
     [breakpoints.dl]: {

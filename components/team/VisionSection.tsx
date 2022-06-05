@@ -1,35 +1,64 @@
 import { FC } from "react";
-import { Box, Grid } from "@mui/material";
+import { Box } from "@mui/material";
 import { useTranslate } from "react-polyglot";
-import { typography, colors } from "styles/theme";
+import { typography, colors, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
-import { VisionItem } from "components/team/VisionItem";
+// import { VisionItem } from "components/team/VisionItem";
 import visionBackground from "images/vision-background.png";
 
 export const VisionSection: FC = () => {
   const t = useTranslate();
   const { white } = colors;
   const { h2 } = typography;
+  const { ps, ds } = breakpoints;
 
   return (
-    <PageSection backgroundColor={white} backgroundImage={visionBackground}>
-      <Grid container direction="column" item sx={{ minHeight: 300 }}>
-        <Grid item>
+    <>
+      <PageSection backgroundColor={white} backgroundImage={visionBackground}>
+        <Box
+          component="h2"
+          sx={{
+            ...h2,
+            color: white,
+            textAlign: "center",
+            pt: 7,
+            pb: 17,
+            [ps]: { pb: 17 },
+            [ds]: { pb: 17 },
+          }}
+          dangerouslySetInnerHTML={{
+            __html: t("ourSharedVisionTitle"),
+          }}
+        />
+      </PageSection>
+      {/*
+      <PageSection backgroundColor={white}>
+        <Box sx={{ position: "relative", height: 100 }}>
           <Box
-            component="h2"
-            sx={{ ...h2, color: white, textAlign: "center", pt: 16, pb: 8 }}
-            dangerouslySetInnerHTML={{
-              __html: t("ourSharedVisionTitle"),
+            sx={{
+              position: "absolute",
+              width: "116vw",
+              // minWidth: "1600px",
+              left: "-8vw",
+              top: -250,
+              overflow: "hidden",
             }}
-          />
-        </Grid>
-        <Grid item container direction="row" spacing={3}>
-          <VisionItem title={t("addMetadata")} number={t("01")} />
-          <VisionItem title={t("flagSignificantContent")} number={t("02")} />
-          <VisionItem title={t("addMetadata")} number={t("03")} />
-          <VisionItem title={t("flagSignificantContent")} number={t("04")} />
-        </Grid>
-      </Grid>
-    </PageSection>
+          >
+            <Grid item container direction="row" spacing={6}>
+              <VisionItem title={t("addMetadata")} number={t("01")} />
+              <VisionItem
+                title={t("flagSignificantContent")}
+                number={t("02")}
+              />
+              <VisionItem title={t("addMetadata")} number={t("03")} />
+              <VisionItem
+                title={t("flagSignificantContent")}
+                number={t("04")}
+              />
+            </Grid>
+          </Box>
+        </Box>
+          </PageSection> */}
+    </>
   );
 };

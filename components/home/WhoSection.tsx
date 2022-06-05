@@ -46,7 +46,7 @@ export const WhoSection: FC = () => {
             <Box
               component="h2"
               sx={h2}
-              dangerouslySetInnerHTML={{ __html: t("whoWorkForTitle") }}
+              dangerouslySetInnerHTML={{ __html: t("whoServeTitle") }}
             />
           </Grid>
           <Grid
@@ -62,29 +62,29 @@ export const WhoSection: FC = () => {
             }}
           >
             <Box component="p" sx={bodyLarge}>
-              {t("whoWorkForDescription")}
+              {t("whoServeDescription")}
             </Box>
           </Grid>
         </Grid>
         <HorizontalScrollArea columnOnMobile>
           <WhoItem
-            name={t("whoMeganName")}
-            profile={t("whoMeganProfile")}
-            description={t("whoMeganDescription")}
+            name={t("whoAnnaName")}
+            profile={t("whoAnnaProfile")}
+            description={t("whoAnnaDescription")}
             image={megan}
             url=""
           />
           <WhoItem
-            name={t("whoKevinName")}
-            profile={t("whoKevinProfile")}
-            description={t("whoKevinDescription")}
+            name={t("whoDariusName")}
+            profile={t("whoDariusProfile")}
+            description={t("whoDariusDescription")}
             image={kevin}
             url=""
           />
           <WhoItem
-            name={t("whoMeganName")}
-            profile={t("whoMeganProfile")}
-            description={t("whoMeganDescription")}
+            name={t("whoKaiName")}
+            profile={t("whoKaiProfile")}
+            description={t("whoKaiDescription")}
             image={megan}
             url=""
           />

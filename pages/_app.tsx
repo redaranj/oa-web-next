@@ -1,7 +1,6 @@
 import { AppProps } from "next/app";
 import { CssBaseline } from "@mui/material";
 import { I18n } from "react-polyglot";
-// import { theme } from "styles/theme";
 import en from "../locales/en.json";
 import "styles/global.css";
 import "@fontsource/montserrat/400.css";

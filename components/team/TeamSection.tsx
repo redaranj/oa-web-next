@@ -10,6 +10,7 @@ export const TeamSection: FC = () => {
   const t = useTranslate();
   const { white, lightGrey } = colors;
   const { h2 } = typography;
+  // const { ps, pl, ts, tl, ds, dl } = breakpoints;
 
   return (
     <PageSection backgroundColor={lightGrey}>
