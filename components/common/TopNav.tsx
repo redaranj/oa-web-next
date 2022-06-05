@@ -15,7 +15,6 @@ import twitter from "images/twitter-grey.svg";
 import instagram from "images/instagram-grey.svg";
 import github from "images/github-grey.svg";
 import menuIcon from "images/menu-icon.svg";
-import { Router } from "next/router";
 
 export const TopNav = () => {
   const router = useRouter();
