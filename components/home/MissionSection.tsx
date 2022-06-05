@@ -1,7 +1,6 @@
 import { FC } from "react";
-import { Box, Grid } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import { useTranslate } from "react-polyglot";
-import { typography, colors, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { OutlinedButton } from "components/common/OutlinedButton";
 import mission1 from "images/mission-1.png";
@@ -9,26 +8,19 @@ import mission2 from "images/mission-2.png";
 
 export const MissionSection: FC = () => {
   const t = useTranslate();
-  const { lightGrey } = colors;
-  const { h2, bodyLarge } = typography;
-  const { phoneSmall, tabletLarge } = breakpoints;
 
   return (
-    <PageSection backgroundColor={lightGrey}>
+    <PageSection backgroundColor="gray.light">
       <Grid
         container
         sx={{
-          flexDirection: "row",
-          [phoneSmall]: { flexDirection: "column" },
-          [tabletLarge]: { flexDirection: "row" },
+          flexDirection: { ps: "column", pl: "row" },
         }}
       >
         <Grid
           item
           sx={{
-            width: "50%",
-            [phoneSmall]: { width: "100%", height: 300 },
-            [tabletLarge]: { width: "50%" },
+            width: { ps: "100%", pl: "50%" },
             position: "relative",
             overflow: "visible",
             ":before": {
@@ -52,26 +44,23 @@ export const MissionSection: FC = () => {
           container
           direction="column"
           sx={{
-            width: "50%",
-            [phoneSmall]: { width: "100%" },
-            [tabletLarge]: { width: "50%" },
+            width: { ps: "100%", pl: "50%" },
           }}
         >
           <Grid item>
-            <Box
-              component="h2"
-              sx={{ ...h2, mt: 10 }}
+            <Typography
+              variant="h2"
+              sx={{ mt: 10 }}
               dangerouslySetInnerHTML={{ __html: t("missionStatementTitle") }}
             />
           </Grid>
           <Grid item container direction="column">
             <Grid item>
-              <Box component="p" sx={{ ...bodyLarge, mb: 5 }}>
+              <Typography variant="body1" sx={{ mb: 5 }}>
                 {t("missionStatementDescription")}
-              </Box>
+              </Typography>
             </Grid>
             <Grid item>
-              {" "}
               <OutlinedButton arrowDirection="right">
                 {t("readMore")}
               </OutlinedButton>

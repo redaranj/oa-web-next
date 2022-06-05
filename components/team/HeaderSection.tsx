@@ -1,7 +1,8 @@
 import { FC } from "react";
+import Image from "next/image";
 import { Box, Grid } from "@mui/material";
 import { useTranslate } from "react-polyglot";
-import { typography, colors } from "styles/theme";
+import { typography, colors, loader } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { OutlinedButton } from "components/common/OutlinedButton";
 import ourTeam from "images/our-team.svg";
@@ -12,7 +13,7 @@ export const HeaderSection: FC = () => {
   const { h1, bodyLarge } = typography;
 
   return (
-    <PageSection backgroundColor={lightGrey} sx={{ mt: "80px" }}>
+    <PageSection backgroundColor={lightGrey} sx={{ mt: 8 }}>
       <Grid
         container
         sx={{
@@ -24,9 +25,8 @@ export const HeaderSection: FC = () => {
           direction="column"
           justifyContent="space-around"
           item
-          sx={{
-            width: "50%",
-          }}
+          xs={6}
+          sx={{ pr: 8 }}
         >
           <Grid item container direction="column">
             <Grid item>
@@ -39,7 +39,7 @@ export const HeaderSection: FC = () => {
               />
             </Grid>
             <Grid item>
-              <Box component="p" sx={{ ...bodyLarge, maxWidth: 600, mb: 6 }}>
+              <Box component="p" sx={{ ...bodyLarge, maxWidth: 600, mb: 4 }}>
                 {t("ourTeamDescription")}
               </Box>
             </Grid>
@@ -48,16 +48,11 @@ export const HeaderSection: FC = () => {
             </Grid>
           </Grid>
         </Grid>
-        <Grid
-          item
-          sx={{
-            width: "50%",
-            backgroundImage: `url(${ourTeam.src})`,
-            backgroundSize: "60%",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-          }}
-        />
+        <Grid item xs={6}>
+          <Box sx={{ m: -8 }}>
+            <Image src={ourTeam} alt="" loader={loader} />
+          </Box>
+        </Grid>
       </Grid>
     </PageSection>
   );

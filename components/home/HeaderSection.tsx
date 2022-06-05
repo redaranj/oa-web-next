@@ -1,7 +1,7 @@
 import { FC } from "react";
-import { Box, Grid } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import { useTranslate } from "react-polyglot";
-import { typography, colors, breakpoints } from "styles/theme";
+import { colors, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { OutlinedButton } from "components/common/OutlinedButton";
 import header1 from "images/header-1.png";
@@ -16,7 +16,6 @@ import header8 from "images/header-8.png";
 export const HeaderSection: FC = () => {
   const t = useTranslate();
   const { white } = colors;
-  const { h1, bodyLarge } = typography;
   const {
     phoneSmall,
     phoneLarge,
@@ -55,9 +54,8 @@ export const HeaderSection: FC = () => {
           }}
         >
           <Grid item>
-            <Box
-              component="h1"
-              sx={{ ...h1 }}
+            <Typography
+              variant="h1"
               dangerouslySetInnerHTML={{
                 __html: t("truthToPowerTitle"),
               }}
@@ -65,9 +63,9 @@ export const HeaderSection: FC = () => {
           </Grid>
           <Grid item container direction="column" spacing={6} sx={{ mb: 12 }}>
             <Grid item>
-              <Box component="p" sx={bodyLarge}>
+              <Typography variant="body1" color="neutral.main">
                 {t("truthToPowerDescription")}
-              </Box>
+              </Typography>
             </Grid>
             <Grid item>
               <OutlinedButton arrowDirection="down">{t("more")}</OutlinedButton>

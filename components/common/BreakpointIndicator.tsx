@@ -1,6 +1,5 @@
 import { FC, useEffect, useState } from "react";
 import { Box } from "@mui/material";
-import { breakpoints } from "styles/theme";
 
 export const BreakpointIndicator: FC = () => {
   const [width, setWidth] = useState(0);
@@ -10,15 +9,6 @@ export const BreakpointIndicator: FC = () => {
     handleResize();
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
-  const {
-    phoneSmall,
-    phoneLarge,
-    tabletSmall,
-    tabletLarge,
-    desktopSmall,
-    desktopLarge,
-  } = breakpoints;
 
   return !process.env.CI ? (
     <Box
@@ -35,65 +25,42 @@ export const BreakpointIndicator: FC = () => {
     >
       <Box
         sx={{
-          display: "none",
-          [phoneSmall]: {
-            display: "inherit",
-          },
-          [phoneLarge]: { display: "none" },
+          display: { ps: "inherit", pl: "none" },
         }}
       >
         Phone Small ({width} px)
       </Box>
       <Box
         sx={{
-          display: "none",
-          [phoneLarge]: {
-            display: "inherit",
-          },
-          [tabletSmall]: { display: "none" },
+          display: { ps: "none", pl: "inherit", ts: "none" },
         }}
       >
         Phone Large ({width} px)
       </Box>
       <Box
         sx={{
-          display: "none",
-          [tabletSmall]: {
-            display: "inherit",
-          },
-          [tabletLarge]: { display: "none" },
+          display: { ps: "none", ts: "inherit", tl: "none" },
         }}
       >
         Tablet Small ({width} px)
       </Box>
       <Box
         sx={{
-          display: "none",
-          [tabletLarge]: {
-            display: "inherit",
-          },
-          [desktopSmall]: { display: "none" },
+          display: { ps: "none", tl: "inherit", ds: "none" },
         }}
       >
         Tablet Large ({width} px)
       </Box>
       <Box
         sx={{
-          display: "none",
-          [desktopSmall]: {
-            display: "inherit",
-          },
-          [desktopLarge]: { display: "none" },
+          display: { ps: "none", ds: "inherit", dl: "none" },
         }}
       >
         Desktop Small ({width} px)
       </Box>
       <Box
         sx={{
-          display: "none",
-          [desktopLarge]: {
-            display: "inherit",
-          },
+          display: { ps: "none", dl: "inherit" },
         }}
       >
         Desktop Large ({width} px)

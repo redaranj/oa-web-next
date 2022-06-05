@@ -19,7 +19,7 @@ export const TopNav = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const { white, mediumGrey, mediumBurgundy } = colors;
   const { body } = typography;
-  const { phoneSmall, tabletSmall, desktopLarge } = breakpoints;
+  const { phoneSmall, tabletSmall } = breakpoints;
   const menuItemProps = { ...body, fontWeight: 600, color: white };
 
   return (
@@ -28,18 +28,8 @@ export const TopNav = () => {
       elevation={0}
       sx={{
         backgroundColor: "rgba(255, 255, 255, 0.95)",
-        backdropFilter: "blur(30px)",
         opacity: 0.95,
-        height: "90px",
-        [phoneSmall]: {
-          height: "50px",
-        },
-        [tabletSmall]: {
-          height: "80px",
-        },
-        [desktopLarge]: {
-          height: "90px",
-        },
+        height: { ps: 50, ts: 80, dl: 90 },
         p: 0,
         m: 0,
       }}
