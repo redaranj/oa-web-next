@@ -1,7 +1,7 @@
 import { FC, PropsWithChildren } from "react";
 import { StaticImageData } from "next/image";
 import { Box, Grid } from "@mui/material";
-import { typography, colors } from "styles/theme";
+import { typography, colors, breakpoints } from "styles/theme";
 
 type GuideItemProps = PropsWithChildren<{
   title: string;
@@ -16,14 +16,27 @@ export const GuideItem: FC<GuideItemProps> = ({
 }) => {
   const { h5, bodyLarge } = typography;
   const { lightGrey, white } = colors;
+  const { ps, tl } = breakpoints;
 
   return (
-    <Grid item container direction="row" flexWrap="nowrap" spacing={0}>
+    <Grid
+      item
+      container
+      flexWrap="nowrap"
+      spacing={0}
+      sx={{
+        flexDirection: "row",
+        [ps]: { flexDirection: "column" },
+        [tl]: { flexDirection: "row" },
+      }}
+    >
       <Grid item>
         <Box
           sx={{
             height: 300,
             width: 400,
+            [ps]: { width: "100%" },
+            [tl]: { width: 400 },
             p: 2,
             backgroundImage: `url(${image.src})`,
             backgroundPosition: "center",

@@ -12,6 +12,7 @@ type FilledButtonProps = PropsWithChildren<{
   textColor?: string;
   backgroundColor?: string;
   arrowDirection?: "right" | "down" | "none";
+  onClick?: () => void;
 }>;
 
 export const FilledButton: FC<FilledButtonProps> = ({
@@ -19,6 +20,7 @@ export const FilledButton: FC<FilledButtonProps> = ({
   backgroundColor = lightGrey,
   children,
   arrowDirection = "none",
+  onClick,
 }) => (
   <Button
     sx={{
@@ -36,6 +38,7 @@ export const FilledButton: FC<FilledButtonProps> = ({
         color: white,
       },
     }}
+    onClick={onClick}
   >
     {children}
     {arrowDirection === "right" && (

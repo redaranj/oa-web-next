@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslate } from "react-polyglot";
@@ -14,8 +15,10 @@ import twitter from "images/twitter-grey.svg";
 import instagram from "images/instagram-grey.svg";
 import github from "images/github-grey.svg";
 import menuIcon from "images/menu-icon.svg";
+import { Router } from "next/router";
 
 export const TopNav = () => {
+  const router = useRouter();
   const t = useTranslate();
   const [drawerOpen, setDrawerOpen] = useState(false);
   const { white, mediumGrey, mediumBurgundy } = colors;
@@ -198,6 +201,11 @@ export const TopNav = () => {
                     <FilledButton
                       textColor={white}
                       backgroundColor={mediumBurgundy}
+                      onClick={() =>
+                        router.push(
+                          "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MA7ZZG3DJL97E&source=url"
+                        )
+                      }
                     >
                       {t("donate")}
                     </FilledButton>
