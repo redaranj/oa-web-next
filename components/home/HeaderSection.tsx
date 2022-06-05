@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Box, Grid, Typography } from "@mui/material";
 import { useTranslate } from "react-polyglot";
-import { colors, breakpoints } from "styles/theme";
+import { colors, breakpoints, breakpoints2 } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { OutlinedButton } from "components/common/OutlinedButton";
 import header1 from "images/header-1.png";
@@ -25,19 +25,19 @@ export const HeaderSection: FC = () => {
     desktopLarge,
   } = breakpoints;
 
+  const { ps, pl, ts, tl, ds, dl } = breakpoints2;
+
   return (
     <PageSection backgroundColor={white}>
       <Grid
         container
         sx={{
-          backgroundColor: {
-            ps: "red",
-            pl: "orange",
-            ts: "yellow",
-            tl: "green",
-            ds: "blue",
-            dl: "purple",
-          },
+          [ps]: { backgroundColor: "red" },
+          [pl]: { backgroundColor: "orange" },
+          [ts]: { backgroundColor: "yellow" },
+          [tl]: { backgroundColor: "green" },
+          [ds]: { backgroundColor: "blue" },
+          [dl]: { backgroundColor: "purple" },
           flexDirection: { ps: "column-reverse", pl: "row" },
         }}
       >

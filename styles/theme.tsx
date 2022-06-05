@@ -9,6 +9,15 @@ export const breakpoints = {
   phoneSmall: "@media (min-width: 0px)",
 };
 
+export const breakpoints2 = {
+  dl: "@media (min-width: 1366px)",
+  ds: "@media (min-width: 1024px)",
+  tl: "@media (min-width: 768px)",
+  ts: "@media (min-width: 576px)",
+  pl: "@media (min-width: 360px)",
+  ps: "@media (min-width: 0px)",
+};
+
 export const colors = {
   white: "#ffffff",
   black: "#1a1a1a",
