@@ -12,7 +12,7 @@ export const WhoSection: FC = () => {
   const t = useTranslate();
   const { h2, bodyLarge } = typography;
   const { white } = colors;
-  const { phoneSmall, tabletSmall } = breakpoints;
+  const { ps, ts } = breakpoints;
 
   return (
     <PageSection backgroundColor={white}>
@@ -23,10 +23,10 @@ export const WhoSection: FC = () => {
           sx={{
             pb: 8,
             flexDirection: "row",
-            [phoneSmall]: {
+            [ps]: {
               flexDirection: "column",
             },
-            [tabletSmall]: {
+            [ts]: {
               flexDirection: "row",
             },
           }}
@@ -35,10 +35,10 @@ export const WhoSection: FC = () => {
             item
             sx={{
               width: "50%",
-              [phoneSmall]: {
+              [ps]: {
                 width: "100%",
               },
-              [tabletSmall]: {
+              [ts]: {
                 width: "50%",
               },
             }}
@@ -53,10 +53,10 @@ export const WhoSection: FC = () => {
             item
             sx={{
               width: "50%",
-              [phoneSmall]: {
+              [ps]: {
                 width: "100%",
               },
-              [tabletSmall]: {
+              [ts]: {
                 width: "50%",
               },
             }}

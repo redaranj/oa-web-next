@@ -7,7 +7,7 @@ import sharePhone from "images/share-phone.png";
 
 export const AcronymSection: FC = () => {
   const { white } = colors;
-  const { phoneSmall, tabletSmall } = breakpoints;
+  const { ps, ts } = breakpoints;
 
   return (
     <PageSection backgroundColor={white} sx={{ pb: 0 }}>
@@ -15,10 +15,10 @@ export const AcronymSection: FC = () => {
         container
         sx={{
           flexDirection: "row",
-          [phoneSmall]: {
+          [ps]: {
             flexDirection: "column",
           },
-          [tabletSmall]: {
+          [ts]: {
             flexDirection: "row",
           },
         }}

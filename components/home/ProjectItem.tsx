@@ -19,7 +19,7 @@ export const ProjectItem: FC<ProjectItemProps> = ({
 }) => {
   const { white, black, turquoise } = colors;
   const { h5, bodyLarge } = typography;
-  const { phoneSmall, tabletSmall } = breakpoints;
+  const { ps, ts } = breakpoints;
   //  const containerRef = useRef(null);
   //  const [visible, setVisible] = useState(false);
   // ref={containerRef}
@@ -33,10 +33,10 @@ export const ProjectItem: FC<ProjectItemProps> = ({
       sx={{
         overflow: "hidden",
         width: "33%",
-        [phoneSmall]: {
+        [ps]: {
           width: "100%",
         },
-        [tabletSmall]: {
+        [ts]: {
           width: "33%",
         },
       }}

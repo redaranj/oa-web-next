@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Box, Grid, Typography } from "@mui/material";
 import { useTranslate } from "react-polyglot";
-import { colors, breakpoints, breakpoints2 } from "styles/theme";
+import { colors, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { OutlinedButton } from "components/common/OutlinedButton";
 import header1 from "images/header-1.png";
@@ -16,16 +16,7 @@ import header8 from "images/header-8.png";
 export const HeaderSection: FC = () => {
   const t = useTranslate();
   const { white } = colors;
-  const {
-    phoneSmall,
-    phoneLarge,
-    tabletSmall,
-    tabletLarge,
-    desktopSmall,
-    desktopLarge,
-  } = breakpoints;
-
-  const { ps, pl, ts, tl, ds, dl } = breakpoints2;
+  const { ps, pl, ts, tl, ds, dl } = breakpoints;
 
   return (
     <PageSection backgroundColor={white}>
@@ -47,10 +38,10 @@ export const HeaderSection: FC = () => {
           item
           sx={{
             width: "50%",
-            [phoneSmall]: {
+            [ps]: {
               width: "100%",
             },
-            [tabletLarge]: {
+            [tl]: {
               width: "50%",
             },
           }}
@@ -79,10 +70,10 @@ export const HeaderSection: FC = () => {
           sx={{
             width: "50%",
             overflow: "visible",
-            [phoneSmall]: {
+            [ps]: {
               width: "100%",
             },
-            [tabletLarge]: {
+            [tl]: {
               width: "50%",
             },
           }}
@@ -98,19 +89,19 @@ export const HeaderSection: FC = () => {
               backgroundPosition:
                 "0% -25%, 50% 0%, 0% 25%, 50% 0%, 0% 50%, 50% 0%, 0% 25%, 75% 0%",
               backgroundRepeat: "no-repeat",
-              [phoneSmall]: {
+              [ps]: {
                 width: "100%",
                 height: 200,
               },
-              [phoneLarge]: {},
-              [tabletSmall]: {},
-              [tabletLarge]: {},
-              [desktopSmall]: {
+              [pl]: {},
+              [ts]: {},
+              [tl]: {},
+              [dl]: {
                 backgroundSize: "250px",
                 backgroundPosition:
                   "60px -100px, 380px 0px, 60px 210px, 380px 310px, 60px 500px, 380px 1000px, 60px 2500px, 380px 10000px",
               },
-              [desktopLarge]: {
+              [dl]: {
                 backgroundSize: "300px",
               },
             }}

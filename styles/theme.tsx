@@ -1,15 +1,6 @@
-import { Box, createTheme, SimplePaletteColorOptions } from "@mui/material";
+import { Box, createTheme } from "@mui/material";
 
 export const breakpoints = {
-  desktopLarge: "@media (min-width: 1366px)",
-  desktopSmall: "@media (min-width: 1024px)",
-  tabletLarge: "@media (min-width: 768px)",
-  tabletSmall: "@media (min-width: 576px)",
-  phoneLarge: "@media (min-width: 360px)",
-  phoneSmall: "@media (min-width: 0px)",
-};
-
-export const breakpoints2 = {
   dl: "@media (min-width: 1366px)",
   ds: "@media (min-width: 1024px)",
   tl: "@media (min-width: 768px)",
@@ -133,22 +124,22 @@ export const theme = createTheme({
       fontSize: "90px",
       lineHeight: "110%",
       marginBottom: "40px",
-      [breakpoints.phoneSmall]: {
+      [breakpoints.ps]: {
         fontSize: "34px",
       },
-      [breakpoints.phoneLarge]: {
+      [breakpoints.pl]: {
         fontSize: "34px",
       },
-      [breakpoints.tabletSmall]: {
+      [breakpoints.ts]: {
         fontSize: "50px",
       },
-      [breakpoints.tabletLarge]: {
+      [breakpoints.tl]: {
         fontSize: "50px",
       },
-      [breakpoints.desktopSmall]: {
+      [breakpoints.ds]: {
         fontSize: "66px",
       },
-      [breakpoints.desktopLarge]: {
+      [breakpoints.dl]: {
         fontSize: "90px",
       },
       "& strong": {
@@ -162,22 +153,22 @@ export const theme = createTheme({
       fontSize: "66px",
       lineHeight: "100%",
       marginBottom: "40px",
-      [breakpoints.phoneSmall]: {
+      [breakpoints.ps]: {
         fontSize: "30px",
       },
-      [breakpoints.phoneLarge]: {
+      [breakpoints.pl]: {
         fontSize: "30px",
       },
-      [breakpoints.tabletSmall]: {
+      [breakpoints.ts]: {
         fontSize: "44px",
       },
-      [breakpoints.tabletLarge]: {
+      [breakpoints.tl]: {
         fontSize: "44px",
       },
-      [breakpoints.desktopSmall]: {
+      [breakpoints.dl]: {
         fontSize: "60px",
       },
-      [breakpoints.desktopLarge]: {
+      [breakpoints.dl]: {
         fontSize: "66px",
       },
       "& strong": {
@@ -190,22 +181,22 @@ export const theme = createTheme({
       fontWeight: 600,
       fontSize: "40px",
       lineHeight: "40px",
-      [breakpoints.phoneSmall]: {
+      [breakpoints.ps]: {
         fontSize: "16px",
       },
-      [breakpoints.phoneLarge]: {
+      [breakpoints.pl]: {
         fontSize: "16px",
       },
-      [breakpoints.tabletSmall]: {
+      [breakpoints.ts]: {
         fontSize: "20px",
       },
-      [breakpoints.tabletLarge]: {
+      [breakpoints.tl]: {
         fontSize: "20px",
       },
-      [breakpoints.desktopSmall]: {
+      [breakpoints.dl]: {
         fontSize: "30px",
       },
-      [breakpoints.desktopLarge]: {
+      [breakpoints.dl]: {
         fontSize: "40px",
       },
     },
@@ -221,22 +212,22 @@ export const theme = createTheme({
       fontSize: "30px",
       lineHeight: "39px",
       mb: 2,
-      [breakpoints.phoneSmall]: {
+      [breakpoints.ps]: {
         fontSize: "20px",
       },
-      [breakpoints.phoneLarge]: {
+      [breakpoints.pl]: {
         fontSize: "20px",
       },
-      [breakpoints.tabletSmall]: {
+      [breakpoints.ts]: {
         fontSize: "24px",
       },
-      [breakpoints.tabletLarge]: {
+      [breakpoints.tl]: {
         fontSize: "24px",
       },
-      [breakpoints.desktopSmall]: {
+      [breakpoints.dl]: {
         fontSize: "30px",
       },
-      [breakpoints.desktopLarge]: {
+      [breakpoints.dl]: {
         fontSize: "34px",
       },
     },
@@ -252,22 +243,22 @@ export const theme = createTheme({
       fontWeight: 400,
       fontSize: "22px",
       lineHeight: "150%",
-      [breakpoints.phoneSmall]: {
+      [breakpoints.ps]: {
         fontSize: "16px",
       },
-      [breakpoints.phoneLarge]: {
+      [breakpoints.pl]: {
         fontSize: "16px",
       },
-      [breakpoints.tabletSmall]: {
+      [breakpoints.ts]: {
         fontSize: "18px",
       },
-      [breakpoints.tabletLarge]: {
+      [breakpoints.tl]: {
         fontSize: "18px",
       },
-      [breakpoints.desktopSmall]: {
+      [breakpoints.dl]: {
         fontSize: "20px",
       },
-      [breakpoints.desktopLarge]: {
+      [breakpoints.dl]: {
         fontSize: "22px",
       },
     },
@@ -277,22 +268,22 @@ export const theme = createTheme({
       fontWeight: 400,
       fontSize: "18px",
       lineHeight: "24px",
-      [breakpoints.phoneSmall]: {
+      [breakpoints.ps]: {
         fontSize: "14px",
       },
-      [breakpoints.phoneLarge]: {
+      [breakpoints.pl]: {
         fontSize: "14px",
       },
-      [breakpoints.tabletSmall]: {
+      [breakpoints.ts]: {
         fontSize: "14px",
       },
-      [breakpoints.tabletLarge]: {
+      [breakpoints.tl]: {
         fontSize: "14px",
       },
-      [breakpoints.desktopSmall]: {
+      [breakpoints.dl]: {
         fontSize: "16px",
       },
-      [breakpoints.desktopLarge]: {
+      [breakpoints.dl]: {
         fontSize: "18px",
       },
     },
@@ -306,22 +297,22 @@ export const typography = {
     fontSize: "90px",
     lineHeight: "110%",
     marginBottom: "40px",
-    [breakpoints.phoneSmall]: {
+    [breakpoints.ps]: {
       fontSize: "34px",
     },
-    [breakpoints.phoneLarge]: {
+    [breakpoints.pl]: {
       fontSize: "34px",
     },
-    [breakpoints.tabletSmall]: {
+    [breakpoints.ts]: {
       fontSize: "50px",
     },
-    [breakpoints.tabletLarge]: {
+    [breakpoints.tl]: {
       fontSize: "50px",
     },
-    [breakpoints.desktopSmall]: {
+    [breakpoints.dl]: {
       fontSize: "66px",
     },
-    [breakpoints.desktopLarge]: {
+    [breakpoints.dl]: {
       fontSize: "90px",
     },
     "& strong": {
@@ -335,22 +326,22 @@ export const typography = {
     fontSize: "66px",
     lineHeight: "100%",
     marginBottom: "40px",
-    [breakpoints.phoneSmall]: {
+    [breakpoints.ps]: {
       fontSize: "30px",
     },
-    [breakpoints.phoneLarge]: {
+    [breakpoints.pl]: {
       fontSize: "30px",
     },
-    [breakpoints.tabletSmall]: {
+    [breakpoints.ts]: {
       fontSize: "44px",
     },
-    [breakpoints.tabletLarge]: {
+    [breakpoints.tl]: {
       fontSize: "44px",
     },
-    [breakpoints.desktopSmall]: {
+    [breakpoints.dl]: {
       fontSize: "60px",
     },
-    [breakpoints.desktopLarge]: {
+    [breakpoints.dl]: {
       fontSize: "66px",
     },
     "& strong": {
@@ -363,22 +354,22 @@ export const typography = {
     fontWeight: 600,
     fontSize: "40px",
     lineHeight: "40px",
-    [breakpoints.phoneSmall]: {
+    [breakpoints.ps]: {
       fontSize: "16px",
     },
-    [breakpoints.phoneLarge]: {
+    [breakpoints.pl]: {
       fontSize: "16px",
     },
-    [breakpoints.tabletSmall]: {
+    [breakpoints.ts]: {
       fontSize: "20px",
     },
-    [breakpoints.tabletLarge]: {
+    [breakpoints.tl]: {
       fontSize: "20px",
     },
-    [breakpoints.desktopSmall]: {
+    [breakpoints.dl]: {
       fontSize: "30px",
     },
-    [breakpoints.desktopLarge]: {
+    [breakpoints.dl]: {
       fontSize: "40px",
     },
   },
@@ -394,22 +385,22 @@ export const typography = {
     fontSize: "30px",
     lineHeight: "39px",
     mb: 2,
-    [breakpoints.phoneSmall]: {
+    [breakpoints.ps]: {
       fontSize: "20px",
     },
-    [breakpoints.phoneLarge]: {
+    [breakpoints.pl]: {
       fontSize: "20px",
     },
-    [breakpoints.tabletSmall]: {
+    [breakpoints.ts]: {
       fontSize: "24px",
     },
-    [breakpoints.tabletLarge]: {
+    [breakpoints.tl]: {
       fontSize: "24px",
     },
-    [breakpoints.desktopSmall]: {
+    [breakpoints.dl]: {
       fontSize: "30px",
     },
-    [breakpoints.desktopLarge]: {
+    [breakpoints.dl]: {
       fontSize: "34px",
     },
   },
@@ -426,22 +417,22 @@ export const typography = {
     fontWeight: 400,
     fontSize: "22px",
     lineHeight: "150%",
-    [breakpoints.phoneSmall]: {
+    [breakpoints.ps]: {
       fontSize: "16px",
     },
-    [breakpoints.phoneLarge]: {
+    [breakpoints.pl]: {
       fontSize: "16px",
     },
-    [breakpoints.tabletSmall]: {
+    [breakpoints.ts]: {
       fontSize: "18px",
     },
-    [breakpoints.tabletLarge]: {
+    [breakpoints.tl]: {
       fontSize: "18px",
     },
-    [breakpoints.desktopSmall]: {
+    [breakpoints.dl]: {
       fontSize: "20px",
     },
-    [breakpoints.desktopLarge]: {
+    [breakpoints.dl]: {
       fontSize: "22px",
     },
   },
@@ -451,22 +442,22 @@ export const typography = {
     fontWeight: 400,
     fontSize: "18px",
     lineHeight: "24px",
-    [breakpoints.phoneSmall]: {
+    [breakpoints.ps]: {
       fontSize: "14px",
     },
-    [breakpoints.phoneLarge]: {
+    [breakpoints.pl]: {
       fontSize: "14px",
     },
-    [breakpoints.tabletSmall]: {
+    [breakpoints.ts]: {
       fontSize: "14px",
     },
-    [breakpoints.tabletLarge]: {
+    [breakpoints.tl]: {
       fontSize: "14px",
     },
-    [breakpoints.desktopSmall]: {
+    [breakpoints.dl]: {
       fontSize: "16px",
     },
-    [breakpoints.desktopLarge]: {
+    [breakpoints.dl]: {
       fontSize: "18px",
     },
   },

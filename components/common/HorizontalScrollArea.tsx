@@ -16,7 +16,7 @@ export const HorizontalScrollArea: FC<HorizontalScrollAreaProps> = ({
   children,
 }) => {
   const scrollRef = useRef();
-  const { phoneSmall, tabletSmall } = breakpoints;
+  const { ps, ts } = breakpoints;
 
   return (
     <Grid container direction="column">
@@ -31,8 +31,8 @@ export const HorizontalScrollArea: FC<HorizontalScrollAreaProps> = ({
           maxWidth: "100vw",
           width: "100vw",
           flexDirection: "row",
-          [phoneSmall]: { flexDirection: columnOnMobile ? "column" : "row" },
-          [tabletSmall]: { flexDirection: "row" },
+          [ps]: { flexDirection: columnOnMobile ? "column" : "row" },
+          [ts]: { flexDirection: "row" },
         }}
       >
         {children}

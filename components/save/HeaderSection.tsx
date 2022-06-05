@@ -12,7 +12,7 @@ export const HeaderSection: FC = () => {
   const t = useTranslate();
   const { lightGrey, mediumGrey } = colors;
   const { h1, bodyLarge } = typography;
-  const { phoneSmall, tabletSmall } = breakpoints;
+  const { ps, ts } = breakpoints;
 
   return (
     <PageSection backgroundColor={lightGrey} sx={{ pb: 0 }}>
@@ -20,8 +20,8 @@ export const HeaderSection: FC = () => {
         container
         sx={{
           flexDirection: "row",
-          [phoneSmall]: { flexDirection: "column" },
-          [tabletSmall]: { flexDirection: "row" },
+          [ps]: { flexDirection: "column" },
+          [ts]: { flexDirection: "row" },
         }}
       >
         <Grid
@@ -32,10 +32,10 @@ export const HeaderSection: FC = () => {
             pt: "180px",
             pb: "250px",
             width: "50%",
-            [phoneSmall]: {
+            [ps]: {
               width: "100%",
             },
-            [tabletSmall]: {
+            [ts]: {
               width: "50%",
             },
           }}

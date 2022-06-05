@@ -6,7 +6,7 @@ import { BreakpointIndicator } from "components/common/BreakpointIndicator";
 import { breakpoints } from "styles/theme";
 
 export const Layout: FC<PropsWithChildren<{}>> = ({ children }) => {
-  const { phoneSmall, tabletSmall } = breakpoints;
+  const { ps, ts } = breakpoints;
 
   return (
     <>
@@ -15,10 +15,10 @@ export const Layout: FC<PropsWithChildren<{}>> = ({ children }) => {
       <Box
         sx={{
           paddingTop: 12,
-          [phoneSmall]: {
+          [ps]: {
             paddingTop: 3,
           },
-          [tabletSmall]: { paddingTop: 6 },
+          [ts]: { paddingTop: 6 },
         }}
       >
         {children}

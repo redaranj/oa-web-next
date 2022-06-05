@@ -15,7 +15,7 @@ export const PageSection: FC<PageSectionProps> = ({
   sx = {},
   children,
 }) => {
-  const { phoneSmall, tabletSmall } = breakpoints;
+  const { ps, ts } = breakpoints;
   const backgroundImageProps = backgroundImage
     ? {
         backgroundImage: `url(${backgroundImage.src})`,
@@ -32,10 +32,10 @@ export const PageSection: FC<PageSectionProps> = ({
           margin: "auto",
           maxWidth: 1920,
           padding: "150px 90px",
-          [phoneSmall]: {
+          [ps]: {
             padding: "150px 90px",
           },
-          [tabletSmall]: {
+          [ts]: {
             padding: "150px 90px",
           },
           ...sx,

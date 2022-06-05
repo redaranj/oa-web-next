@@ -15,7 +15,7 @@ export const ImpactItem: FC<ImpactItemProps> = ({
   image,
 }) => {
   const { h5, bodyLarge } = typography;
-  const { tabletLarge, phoneLarge, phoneSmall } = breakpoints;
+  const { tl, pl, ps } = breakpoints;
 
   return (
     <Grid
@@ -24,13 +24,13 @@ export const ImpactItem: FC<ImpactItemProps> = ({
       direction="column"
       sx={{
         width: "25%",
-        [phoneSmall]: {
+        [ps]: {
           width: "100%",
         },
-        [phoneLarge]: {
+        [pl]: {
           width: "50%",
         },
-        [tabletLarge]: {
+        [tl]: {
           width: "25%",
         },
       }}

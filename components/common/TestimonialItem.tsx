@@ -18,7 +18,7 @@ export const TestimonialItem: FC<TestimonialItemProps> = ({
 }) => {
   const { white, turquoise } = colors;
   const { h6, body } = typography;
-  const { phoneSmall, tabletSmall } = breakpoints;
+  const { ps, ts } = breakpoints;
 
   return (
     <Grid
@@ -28,11 +28,11 @@ export const TestimonialItem: FC<TestimonialItemProps> = ({
       sx={{
         width: "500px",
         minWidth: "500px",
-        [phoneSmall]: {
+        [ps]: {
           width: "100%",
           minWidth: "100%",
         },
-        [tabletSmall]: {
+        [ts]: {
           width: "500px",
           minWidth: "500px",
         },

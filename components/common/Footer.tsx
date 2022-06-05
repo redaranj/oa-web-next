@@ -21,7 +21,7 @@ export const Footer: FC = () => {
   const t = useTranslate();
   const { h6 } = typography;
   const { lightGrey } = colors;
-  const { phoneSmall, tabletSmall } = breakpoints;
+  const { ps, ts } = breakpoints;
   const creativeCommonsIconSize = "19px";
   const socialIconSize = "36px";
 
@@ -34,11 +34,11 @@ export const Footer: FC = () => {
           paddingBottom: 16,
           flexDirection: "row",
           flexWrap: "nowrap",
-          [phoneSmall]: {
+          [ps]: {
             flexDirection: "row-reverse",
             flexWrap: "wrap",
           },
-          [tabletSmall]: {
+          [ts]: {
             flexDirection: "row",
             flexWrap: "nowrap",
           },
@@ -50,11 +50,11 @@ export const Footer: FC = () => {
           sx={{
             width: "40%",
             flexDirection: "column",
-            [phoneSmall]: {
+            [ps]: {
               flexDirection: "row",
               width: "100%",
             },
-            [tabletSmall]: {
+            [ts]: {
               width: "40%",
             },
           }}

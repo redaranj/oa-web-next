@@ -19,7 +19,7 @@ export const TopNav = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const { white, mediumGrey, mediumBurgundy } = colors;
   const { body } = typography;
-  const { phoneSmall, tabletSmall } = breakpoints;
+  const { ps, ts } = breakpoints;
   const menuItemProps = { ...body, fontWeight: 600, color: white };
 
   return (
@@ -72,10 +72,10 @@ export const TopNav = () => {
                 flexWrap="nowrap"
                 sx={{
                   display: "flex",
-                  [phoneSmall]: {
+                  [ps]: {
                     display: "none",
                   },
-                  [tabletSmall]: {
+                  [ts]: {
                     display: "flex",
                   },
                 }}
@@ -199,10 +199,10 @@ export const TopNav = () => {
                   onClick={() => setDrawerOpen(true)}
                   sx={{
                     display: "none",
-                    [phoneSmall]: {
+                    [ps]: {
                       display: "initial",
                     },
-                    [tabletSmall]: {
+                    [ts]: {
                       display: "none",
                     },
                   }}
