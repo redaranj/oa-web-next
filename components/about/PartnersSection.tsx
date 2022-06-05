@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Box, Grid } from "@mui/material";
 import { useTranslate } from "react-polyglot";
-import { typography, colors } from "styles/theme";
+import { typography, colors, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { PartnerItem } from "components/about/PartnerItem";
 import ourTeam from "images/our-team.svg";
@@ -18,6 +18,7 @@ export const PartnersSection: FC = () => {
   const t = useTranslate();
   const { white, lightGrey } = colors;
   const { h2, h5, bodyLarge } = typography;
+  const { ps, tl } = breakpoints;
 
   return (
     <PageSection backgroundColor={white}>
@@ -43,8 +44,22 @@ export const PartnersSection: FC = () => {
               mb: 8,
             }}
           >
-            <Grid container direction="row">
-              <Grid item sx={{ width: "50%" }}>
+            <Grid
+              container
+              sx={{
+                flexDirection: "row",
+                [ps]: { flexDirection: "column" },
+                [tl]: { flexDirection: "row" },
+              }}
+            >
+              <Grid
+                item
+                sx={{
+                  width: "50%",
+                  [ps]: { width: "100%" },
+                  [tl]: { width: "50%" },
+                }}
+              >
                 <Box
                   sx={{
                     backgroundImage: `url(${ourTeam.src})`,
@@ -60,7 +75,11 @@ export const PartnersSection: FC = () => {
                 container
                 direction="column"
                 justifyContent="space-around"
-                sx={{ width: "50%" }}
+                sx={{
+                  width: "50%",
+                  [ps]: { width: "100%" },
+                  [tl]: { width: "50%" },
+                }}
               >
                 <Grid item>
                   <Box component="h5" sx={{ ...h5, pt: 16, pr: 8 }}>
@@ -77,7 +96,15 @@ export const PartnersSection: FC = () => {
         <Grid item>
           <Box sx={{ backgroundColor: lightGrey }}>
             <Grid item container direction="row">
-              <Grid item sx={{ width: "50%", pl: 8 }}>
+              <Grid
+                item
+                sx={{
+                  width: "50%",
+                  [ps]: { width: "100%" },
+                  [tl]: { width: "50%" },
+                  pl: 8,
+                }}
+              >
                 <Box component="h5" sx={{ ...h5, pt: 16 }}>
                   {t("advisoryBoard")}
                 </Box>
@@ -85,7 +112,14 @@ export const PartnersSection: FC = () => {
                   {t("advisoryBoardInfo")}
                 </Box>
               </Grid>
-              <Grid item sx={{ width: "50%" }}>
+              <Grid
+                item
+                sx={{
+                  width: "50%",
+                  [ps]: { width: "100%" },
+                  [tl]: { width: "50%" },
+                }}
+              >
                 <Box
                   sx={{
                     backgroundImage: `url(${arm1.src}), url(${arm2.src}), url(${arm3.src}), url(${arm4.src}), url(${arm5.src})`,
@@ -108,7 +142,16 @@ export const PartnersSection: FC = () => {
               {t("partners")}
             </Box>
           </Grid>
-          <Grid item container direction="row" sx={{ pb: 8 }}>
+          <Grid
+            item
+            container
+            sx={{
+              pb: 8,
+              flexDirection: "row",
+              [ps]: { flexDirection: "column" },
+              [tl]: { flexDirection: "row" },
+            }}
+          >
             <PartnerItem
               name="Filecoin Foundation for the Distributed Web"
               image={ffdw}

@@ -2,7 +2,7 @@ import { FC, PropsWithChildren } from "react";
 import { StaticImageData } from "next/image";
 import Link from "next/link";
 import { Box, Grid } from "@mui/material";
-import { colors, typography } from "styles/theme";
+import { colors, typography, breakpoints } from "styles/theme";
 
 type ActivityItemProps = PropsWithChildren<{
   title: string;
@@ -19,12 +19,15 @@ export const ActivityItem: FC<ActivityItemProps> = ({
 }) => {
   const { white } = colors;
   const { h5 } = typography;
+  const { ps, tl } = breakpoints;
 
   return (
     <Grid
       item
       sx={{
         width: "33%",
+        [ps]: { width: "100%" },
+        [tl]: { width: "33%" },
       }}
     >
       <Link href={url}>

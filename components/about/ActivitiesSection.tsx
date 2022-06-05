@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Box, Grid } from "@mui/material";
 import { useTranslate } from "react-polyglot";
-import { typography, colors } from "styles/theme";
+import { typography, colors, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { ActivityItem } from "components/about/ActivityItem";
 import activities1 from "images/activities-1.png";
@@ -14,6 +14,7 @@ export const ActivitiesSection: FC = () => {
   const t = useTranslate();
   const { lightGrey } = colors;
   const { h2 } = typography;
+  const { ps, tl } = breakpoints;
 
   return (
     <PageSection backgroundColor={lightGrey}>
@@ -35,10 +36,14 @@ export const ActivitiesSection: FC = () => {
         <Grid
           item
           container
-          direction="row"
           columnSpacing={6}
           rowSpacing={6}
           alignItems="flex-end"
+          sx={{
+            flexDirection: "row",
+            [ps]: { flexDirection: "column" },
+            [tl]: { flexDirection: "row" },
+          }}
         >
           <ActivityItem
             title={t("developSave")}

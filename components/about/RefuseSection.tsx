@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Box, Grid } from "@mui/material";
 import { useTranslate } from "react-polyglot";
-import { typography, colors } from "styles/theme";
+import { typography, colors, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import refuse1 from "images/refuse-1.png";
 import refuse2 from "images/refuse-2.png";
@@ -11,6 +11,7 @@ export const RefuseSection: FC = () => {
   const t = useTranslate();
   const { white } = colors;
   const { h2, h6, bodyLarge } = typography;
+  const { ps, tl } = breakpoints;
 
   return (
     <PageSection backgroundColor={white}>
@@ -50,7 +51,14 @@ export const RefuseSection: FC = () => {
           </Grid>
         </Grid>
         <Grid item container>
-          <Grid item sx={{ width: "50%" }}>
+          <Grid
+            item
+            sx={{
+              width: "50%",
+              [ps]: { width: "100%" },
+              [tl]: { width: "50%" },
+            }}
+          >
             <Box
               sx={{
                 backgroundImage: `url(${target.src})`,
@@ -62,7 +70,14 @@ export const RefuseSection: FC = () => {
               }}
             />
           </Grid>
-          <Grid item sx={{ width: "50%" }}>
+          <Grid
+            item
+            sx={{
+              width: "50%",
+              [ps]: { width: "100%" },
+              [tl]: { width: "50%" },
+            }}
+          >
             <Box
               component="p"
               sx={{ ...bodyLarge, pb: 30 }}

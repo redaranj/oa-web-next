@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Box, Grid } from "@mui/material";
 import { useTranslate } from "react-polyglot";
-import { typography, colors } from "styles/theme";
+import { typography, colors, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import fist from "images/fist.svg";
 
@@ -9,6 +9,7 @@ export const BeliefsSection: FC = () => {
   const t = useTranslate();
   const { white } = colors;
   const { h2, bodyLarge } = typography;
+  const { ps, tl } = breakpoints;
 
   return (
     <PageSection backgroundColor={white}>
@@ -19,12 +20,24 @@ export const BeliefsSection: FC = () => {
           spacing={8}
           sx={{
             flexDirection: "row",
+            [ps]: {
+              flexDirection: "column",
+            },
+            [tl]: {
+              flexDirection: "row",
+            },
           }}
         >
           <Grid
             item
             sx={{
               width: "50%",
+              [ps]: {
+                width: "100%",
+              },
+              [tl]: {
+                width: "50%",
+              },
             }}
           >
             <Box
@@ -44,6 +57,12 @@ export const BeliefsSection: FC = () => {
             item
             sx={{
               width: "50%",
+              [ps]: {
+                width: "100%",
+              },
+              [tl]: {
+                width: "50%",
+              },
             }}
           >
             <Grid item>
