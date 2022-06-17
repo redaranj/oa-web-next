@@ -3,7 +3,7 @@ import { Box, Grid } from "@mui/material";
 import { useTranslate } from "react-polyglot";
 import { colors, breakpoints, typography } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
-import { OutlinedButton } from "components/common/OutlinedButton";
+// import { OutlinedButton } from "components/common/OutlinedButton";
 import header1 from "images/header-1.png";
 import header2 from "images/header-2.png";
 import header3 from "images/header-3.png";
@@ -16,7 +16,7 @@ import header8 from "images/header-8.png";
 export const HeaderSection: FC = () => {
   const t = useTranslate();
   const { white } = colors;
-  const { h1, bodyLarge } = typography;
+  const { h1, h5, bodyLarge } = typography;
   const { ps, pl, ts, tl, ds, dl } = breakpoints;
 
   return (
@@ -54,12 +54,16 @@ export const HeaderSection: FC = () => {
           </Grid>
           <Grid item container direction="column" spacing={6} sx={{ mb: 12 }}>
             <Grid item>
+              <Box component="h5" sx={h5}>
+                {t("empoweringEyewitnessesSubtitle")}
+              </Box>
+            </Grid>
+          </Grid>
+          <Grid item container direction="column" spacing={6} sx={{ mb: 12 }}>
+            <Grid item>
               <Box component="p" sx={bodyLarge}>
                 {t("empoweringEyewitnessesDescription")}
               </Box>
-            </Grid>
-            <Grid item>
-              <OutlinedButton arrowDirection="down">{t("more")}</OutlinedButton>
             </Grid>
           </Grid>
         </Grid>

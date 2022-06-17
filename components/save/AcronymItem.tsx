@@ -45,7 +45,11 @@ export const AcronymItem: FC<AcronymItemProps> = ({
       >
         <Grid
           item
-          sx={{ width: "35%", [ps]: { width: "100%" }, [tl]: { width: "33%" } }}
+          sx={{
+            width: "35%",
+            [ps]: { width: "100%" },
+            [tl]: { width: "33%" },
+          }}
         >
           <Box
             component="p"
@@ -57,11 +61,19 @@ export const AcronymItem: FC<AcronymItemProps> = ({
         </Grid>
         <Grid
           item
-          sx={{ width: "17%", [ps]: { width: "100%" }, [tl]: { width: "17%" } }}
+          sx={{
+            width: "17%",
+            [ps]: { width: "100%" },
+            [tl]: { width: "17%" },
+          }}
         />
         <Grid
           item
-          sx={{ width: "35%", [ps]: { width: "100%" }, [tl]: { width: "33%" } }}
+          sx={{
+            width: "35%",
+            [ps]: { width: "100%" },
+            [tl]: { width: "33%" },
+          }}
         >
           <Box
             component="p"

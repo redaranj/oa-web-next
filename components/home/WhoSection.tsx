@@ -3,7 +3,7 @@ import { Box, Grid } from "@mui/material";
 import { useTranslate } from "react-polyglot";
 import { typography, colors, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
-import { HorizontalScrollArea } from "components/common/HorizontalScrollArea";
+import { HorizontalCarousel } from "components/common/HorizontalCarousel";
 import { WhoItem } from "components/home/WhoItem";
 import megan from "images/megan.svg";
 import kevin from "images/kevin.svg";
@@ -66,7 +66,7 @@ export const WhoSection: FC = () => {
             </Box>
           </Grid>
         </Grid>
-        <HorizontalScrollArea columnOnMobile>
+        <HorizontalCarousel columnOnMobile>
           <WhoItem
             name={t("whoAnnaName")}
             profile={t("whoAnnaProfile")}
@@ -88,7 +88,7 @@ export const WhoSection: FC = () => {
             image={megan}
             url=""
           />
-        </HorizontalScrollArea>
+        </HorizontalCarousel>
       </Grid>
     </PageSection>
   );

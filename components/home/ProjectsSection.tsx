@@ -3,7 +3,7 @@ import { Box, Grid } from "@mui/material";
 import { useTranslate } from "react-polyglot";
 import { typography, colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
-import { HorizontalScrollArea } from "components/common/HorizontalScrollArea";
+import { HorizontalCarousel } from "components/common/HorizontalCarousel";
 import { ProjectItem } from "components/home/ProjectItem";
 import projectSave from "images/project-save.png";
 import projectGuide from "images/project-guide.png";
@@ -24,7 +24,7 @@ export const ProjectsSection: FC = () => {
             dangerouslySetInnerHTML={{ __html: t("ourProjectsTitle") }}
           />
         </Grid>
-        <HorizontalScrollArea columnOnMobile>
+        <HorizontalCarousel columnOnMobile>
           <ProjectItem
             title={t("save")}
             description={t("saveDescription")}
@@ -43,7 +43,7 @@ export const ProjectsSection: FC = () => {
             image={projectResearch}
             url=""
           />
-        </HorizontalScrollArea>
+        </HorizontalCarousel>
       </Grid>
     </PageSection>
   );

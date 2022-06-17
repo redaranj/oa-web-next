@@ -1,6 +1,7 @@
 {
   "openArchiveTitle": "Open<strong>Archive</strong>",
-  "empoweringEyewitnessesDescription": "Empowering eyewitnesses to preserve truth to power",
+  "empoweringEyewitnessesSubtitle": "Empowering eyewitnesses to preserve truth to power",
+  "empoweringEyewitnessesDescription": "Anyone with a phone can expose global injustice. OpenArchive helps history's first responders safely store, verify, and share critical evidence. We conduct co-research, build tools, and create guides that advance human rights every day.",
   "radicalArchivingTitle": "Radical Archiving, <strong>In Practice</strong>",
   "radicalArchivingDescription": "We are a team of archival activists collaborating with human rights defenders and at-risk communities to create responsive, secure, and ethical archiving technologies to advance justice and accountability. Learn more (link to about us)",
   "ourImpactTitle": "Our <strong>impact</strong>",
@@ -33,7 +34,7 @@
   "haveQuestions": "Have questions?",
   "getInvolved": "Get involved",
   "wantToParticipate": "Want to participate?",
-  "save": "Save",
+  "saveApp": "Save App",
   "saveDescription": "Save helps eyewitnesses preserve, protect, authenticate and amplify crucial records of human rights abuses. Download Save for iOS and Android.",
   "guides": "Guides",
   "guidesDescription": "Explore our guides and toolkits to learn how to preserve evidence of global injustice and combat disinformation",
@@ -71,6 +72,15 @@
   "shareTitle": "<strong>S</strong>hare",
   "shareDescriptionOne": "Uploads your verified media to your own secure server such as Nextcloud, Internet Archive, or DropBox.",
   "shareDescriptionTwo": "Enables you to grant access to your shared media and communicate your intentions for future use by easily generating a Creative Commons license, allowing others to reuse or remix it.",
+  "archiveTitle": "<strong>A</strong>rchive",
+  "archiveDescriptionOne": "Uploads your verified media to your own secure server such as Nextcloud, Internet Archive, or DropBox.",
+  "archiveDescriptionTwo": "Enables you to grant access to your shared media and communicate your intentions for future use by easily generating a Creative Commons license, allowing others to reuse or remix it.",
+  "verifyTitle": "<strong>V</strong>erify",
+  "verifyDescriptionOne": "Uploads your verified media to your own secure server such as Nextcloud, Internet Archive, or DropBox.",
+  "verifyDescriptionTwo": "Enables you to grant access to your shared media and communicate your intentions for future use by easily generating a Creative Commons license, allowing others to reuse or remix it.",
+  "encryptTitle": "<strong>E</strong>ncrypt",
+  "encryptDescriptionOne": "Uploads your verified media to your own secure server such as Nextcloud, Internet Archive, or DropBox.",
+  "encryptDescriptionTwo": "Enables you to grant access to your shared media and communicate your intentions for future use by easily generating a Creative Commons license, allowing others to reuse or remix it.",
   "coreFeaturesTitle": "<strong>Core</strong> features",
   "coreFeaturesDescription": "Unlike other media-sharing tools, Save offers a suite of responsive features that streamline secure preservation based on community input and our commitment to digital inclusion.",
   "coreFeaturesIntro": "With Save, you can be sure your media is always authenticated because you have full control—without interference from intermediaries—from phone to archive. And, when paired with Proofmode (available now for Android, iOS coming soon), you can even add sensor data to corroborate the metadata.",
@@ -108,5 +118,6 @@
   "step": "step",
   "downloadSave": "Download Save",
   "downloadOrbot": "Download Orbot",
-  "watchTutorials": "Watch our video tutorials and follow along on your phone"
+  "watchTutorials": "Watch our video tutorials and follow along on your phone",
+  "save": "Save"
 }

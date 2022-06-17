@@ -11,6 +11,7 @@ const { body } = typography;
 type FilledButtonProps = PropsWithChildren<{
   textColor?: string;
   backgroundColor?: string;
+  highlightColor?: string;
   arrowDirection?: "right" | "down" | "none";
   onClick?: () => void;
 }>;
@@ -18,6 +19,7 @@ type FilledButtonProps = PropsWithChildren<{
 export const FilledButton: FC<FilledButtonProps> = ({
   textColor = black,
   backgroundColor = lightGrey,
+  highlightColor = turquoise,
   children,
   arrowDirection = "none",
   onClick,
@@ -34,7 +36,7 @@ export const FilledButton: FC<FilledButtonProps> = ({
       pl: "30px",
       pr: "30px",
       "&:hover": {
-        backgroundColor: turquoise,
+        backgroundColor: highlightColor,
         color: white,
       },
     }}

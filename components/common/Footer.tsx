@@ -192,7 +192,7 @@ export const Footer: FC = () => {
             </Grid>
             <Grid item>
               <a href="mailto:info@open-archive.org">
-                <Box sx={{ ...h6, mt: 7 }}>info@open-archive.org</Box>
+                <Box sx={{ ...h6, mt: 7 }}>Contact us</Box>
               </a>
             </Grid>
           </Grid>
