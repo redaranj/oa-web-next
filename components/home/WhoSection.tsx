@@ -16,7 +16,7 @@ export const WhoSection: FC = () => {
 
   return (
     <PageSection backgroundColor={white}>
-      <Grid container flexDirection="column">
+      <Box>
         <Grid
           item
           container
@@ -66,13 +66,19 @@ export const WhoSection: FC = () => {
             </Box>
           </Grid>
         </Grid>
-        <HorizontalCarousel columnOnMobile>
+      </Box>
+      <Box>
+        <HorizontalCarousel columnOnMobile visibleCount={1.5}>
           <WhoItem
             name={t("whoAnnaName")}
             profile={t("whoAnnaProfile")}
             description={t("whoAnnaDescription")}
             image={megan}
             url=""
+            backgroundProps={{
+              backgroundSize: "180px",
+              backgroundPosition: "30px 45px",
+            }}
           />
           <WhoItem
             name={t("whoDariusName")}
@@ -80,6 +86,10 @@ export const WhoSection: FC = () => {
             description={t("whoDariusDescription")}
             image={kevin}
             url=""
+            backgroundProps={{
+              backgroundSize: "220px",
+              backgroundPosition: "0px 50px",
+            }}
           />
           <WhoItem
             name={t("whoKaiName")}
@@ -87,9 +97,13 @@ export const WhoSection: FC = () => {
             description={t("whoKaiDescription")}
             image={megan}
             url=""
+            backgroundProps={{
+              backgroundSize: "180px",
+              backgroundPosition: "20px 45px",
+            }}
           />
         </HorizontalCarousel>
-      </Grid>
+      </Box>
     </PageSection>
   );
 };

@@ -12,6 +12,7 @@ type WhoItemProps = PropsWithChildren<{
   description: string;
   url: string;
   image: StaticImageData;
+  backgroundProps: any;
 }>;
 
 export const WhoItem: FC<WhoItemProps> = ({
@@ -20,6 +21,7 @@ export const WhoItem: FC<WhoItemProps> = ({
   description,
   url,
   image,
+  backgroundProps,
 }) => {
   const { lightGrey } = colors;
   const { h5, body, bodyLarge } = typography;
@@ -31,27 +33,26 @@ export const WhoItem: FC<WhoItemProps> = ({
         container
         direction="row"
         flexWrap="nowrap"
-        sx={{
-          width: "600px",
-          minWidth: "600px",
-        }}
+        sx={{ height: 600 }}
       >
-        <Grid item sx={{ width: "200px" }}>
+        <Grid item sx={{ width: "250px" }}>
           <Box
             sx={{
               backgroundColor: lightGrey,
               backgroundImage: `url(${image.src})`,
-              backgroundSize: "200px",
+              backgroundSize: "150px",
+              backgroundPosition: "40px 50px",
               backgroundRepeat: "no-repeat",
-              backgroundPosition: "center",
               width: "100%",
               height: "100%",
+              ...backgroundProps,
             }}
           />
         </Grid>
         <Grid
           container
           direction="column"
+          wrap="nowrap"
           item
           sx={{ width: "70%", backgroundColor: lightGrey, p: 6 }}
         >

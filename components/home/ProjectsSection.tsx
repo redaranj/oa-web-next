@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Box, Grid } from "@mui/material";
+import { Box } from "@mui/material";
 import { useTranslate } from "react-polyglot";
 import { typography, colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
@@ -16,15 +16,13 @@ export const ProjectsSection: FC = () => {
 
   return (
     <PageSection backgroundColor={lightGrey}>
-      <Grid container direction="column">
-        <Grid item>
-          <Box
-            component="h2"
-            sx={{ ...h2, mb: 7 }}
-            dangerouslySetInnerHTML={{ __html: t("ourProjectsTitle") }}
-          />
-        </Grid>
-        <HorizontalCarousel columnOnMobile>
+      <Box
+        component="h2"
+        sx={{ ...h2, mb: 7 }}
+        dangerouslySetInnerHTML={{ __html: t("ourProjectsTitle") }}
+      />
+      <Box>
+        <HorizontalCarousel columnOnMobile visibleCount={3}>
           <ProjectItem
             title={t("save")}
             description={t("saveDescription")}
@@ -44,7 +42,7 @@ export const ProjectsSection: FC = () => {
             url=""
           />
         </HorizontalCarousel>
-      </Grid>
+      </Box>
     </PageSection>
   );
 };

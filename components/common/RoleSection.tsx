@@ -24,7 +24,18 @@ export const RoleSection: FC = () => {
           />
           <Box
             component="p"
-            sx={{ ...bodyLarge, mb: 12, maxWidth: 700, margin: "auto" }}
+            sx={{
+              ...bodyLarge,
+              mb: 12,
+              [ps]: {
+                mb: 6,
+              },
+              [ts]: {
+                mb: 12,
+              },
+              maxWidth: 700,
+              margin: "auto",
+            }}
           >
             {t("roleToPlayDescription")}
           </Box>
@@ -32,8 +43,9 @@ export const RoleSection: FC = () => {
         <Grid
           item
           container
-          spacing={6}
+          flexWrap="nowrap"
           sx={{
+            height: 500,
             flexDirection: "row",
             [ps]: {
               flexDirection: "column",
@@ -47,25 +59,36 @@ export const RoleSection: FC = () => {
             item
             container
             direction="column"
+            justifyContent="space-between"
             sx={{
               width: "50%",
-              pr: 6,
-              pb: 6,
               [ps]: {
                 width: "100%",
               },
               [ts]: {
-                width: "50",
+                width: "50%",
               },
             }}
           >
-            <Grid item>
+            <Grid
+              item
+              sx={{
+                height: "50%",
+                pb: 3,
+                [ps]: {
+                  pb: 1,
+                },
+                [ts]: {
+                  pb: 3,
+                },
+              }}
+            >
               <Box
                 sx={{
                   ...h5,
                   color: white,
                   p: 6,
-                  height: 200,
+                  height: "100%",
                   backgroundImage: `url(${role1.src})`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
@@ -74,13 +97,25 @@ export const RoleSection: FC = () => {
                 {t("haveQuestions")}
               </Box>
             </Grid>
-            <Grid item>
+            <Grid
+              item
+              sx={{
+                height: "50%",
+                pt: 3,
+                [ps]: {
+                  pt: 1,
+                },
+                [ts]: {
+                  pt: 3,
+                },
+              }}
+            >
               <Box
                 sx={{
                   ...h5,
                   color: white,
+                  height: "100%",
                   p: 6,
-                  height: 200,
                   backgroundImage: `url(${role2.src})`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
@@ -94,11 +129,17 @@ export const RoleSection: FC = () => {
             item
             sx={{
               width: "50%",
+              pt: 0,
+              pl: 6,
               [ps]: {
                 width: "100%",
+                pt: 2,
+                pl: 0,
               },
               [ts]: {
                 width: "50%",
+                pt: 0,
+                pl: 6,
               },
             }}
           >
@@ -107,7 +148,7 @@ export const RoleSection: FC = () => {
                 ...h3,
                 color: white,
                 p: 6,
-                height: 467,
+                height: "100%",
                 backgroundImage: `url(${role3.src})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",

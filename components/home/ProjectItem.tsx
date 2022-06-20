@@ -2,7 +2,7 @@ import { FC, PropsWithChildren } from "react";
 import { StaticImageData } from "next/image";
 import Link from "next/link";
 import { Box, Grid } from "@mui/material";
-import { colors, typography, breakpoints } from "styles/theme";
+import { colors, typography } from "styles/theme";
 
 type ProjectItemProps = PropsWithChildren<{
   title: string;
@@ -19,7 +19,6 @@ export const ProjectItem: FC<ProjectItemProps> = ({
 }) => {
   const { white, black, turquoise } = colors;
   const { h5, bodyLarge } = typography;
-  const { ps, ts } = breakpoints;
   //  const containerRef = useRef(null);
   //  const [visible, setVisible] = useState(false);
   // ref={containerRef}
@@ -32,13 +31,6 @@ export const ProjectItem: FC<ProjectItemProps> = ({
       direction="column"
       sx={{
         overflow: "hidden",
-        width: "33%",
-        [ps]: {
-          width: "100%",
-        },
-        [ts]: {
-          width: "33%",
-        },
       }}
     >
       <Link href={url}>

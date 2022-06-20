@@ -16,7 +16,7 @@ import header8 from "images/header-8.png";
 export const HeaderSection: FC = () => {
   const t = useTranslate();
   const { white } = colors;
-  const { h1, h5, bodyLarge } = typography;
+  const { h1, bodyLarge } = typography;
   const { ps, pl, ts, tl, ds, dl } = breakpoints;
 
   return (
@@ -48,16 +48,9 @@ export const HeaderSection: FC = () => {
               component="h1"
               sx={h1}
               dangerouslySetInnerHTML={{
-                __html: t("openArchiveTitle"),
+                __html: t("empoweringEyewitnessesTitle"),
               }}
             />
-          </Grid>
-          <Grid item container direction="column" spacing={6} sx={{ mb: 12 }}>
-            <Grid item>
-              <Box component="h5" sx={h5}>
-                {t("empoweringEyewitnessesSubtitle")}
-              </Box>
-            </Grid>
           </Grid>
           <Grid item container direction="column" spacing={6} sx={{ mb: 12 }}>
             <Grid item>

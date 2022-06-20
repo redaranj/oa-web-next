@@ -20,8 +20,8 @@ import youtube from "images/youtube-black.svg";
 export const Footer: FC = () => {
   const t = useTranslate();
   const { h6 } = typography;
-  const { lightGrey } = colors;
-  const { ps, ts } = breakpoints;
+  const { lightGrey, mediumGrey } = colors;
+  const { ps, pl, ds } = breakpoints;
   const creativeCommonsIconSize = "19px";
   const socialIconSize = "36px";
 
@@ -35,10 +35,10 @@ export const Footer: FC = () => {
           flexDirection: "row",
           flexWrap: "nowrap",
           [ps]: {
-            flexDirection: "row-reverse",
+            flexDirection: "column-reverse",
             flexWrap: "wrap",
           },
-          [ts]: {
+          [ds]: {
             flexDirection: "row",
             flexWrap: "nowrap",
           },
@@ -47,14 +47,19 @@ export const Footer: FC = () => {
         <Grid
           item
           container
+          flexWrap="nowrap"
           sx={{
             width: "40%",
             flexDirection: "column",
             [ps]: {
-              flexDirection: "row",
+              flexDirection: "colum",
               width: "100%",
             },
-            [ts]: {
+            [pl]: {
+              flexDirection: "row",
+            },
+            [ds]: {
+              flexDirection: "column",
               width: "40%",
             },
           }}
@@ -84,15 +89,17 @@ export const Footer: FC = () => {
               item
               container
               direction="row"
+              wrap="nowrap"
               spacing={0}
               sx={{ mt: "-4px" }}
             >
-              <Grid item>
+              <Grid item sx={{ m: 0, p: 0 }}>
                 <IconLink
                   image={attribution}
                   size={creativeCommonsIconSize}
                   url="https://creativecommons.org/licenses/by-nc-sa/4.0/"
                   alt="Creative Commons Attribution"
+                  inset={`-${creativeCommonsIconSize}`}
                 />
               </Grid>
               <Grid item>
@@ -101,6 +108,7 @@ export const Footer: FC = () => {
                   size={creativeCommonsIconSize}
                   url="https://creativecommons.org/licenses/by-nc-sa/4.0/"
                   alt="Creative Commons Non-Commercial"
+                  inset={`-${creativeCommonsIconSize}`}
                 />
               </Grid>
               <Grid item>
@@ -109,6 +117,7 @@ export const Footer: FC = () => {
                   size={creativeCommonsIconSize}
                   url="https://creativecommons.org/licenses/by-nc-sa/4.0/"
                   alt="Creative Commons Share-Alike"
+                  inset={`-${creativeCommonsIconSize}`}
                 />
               </Grid>
             </Grid>
@@ -123,12 +132,46 @@ export const Footer: FC = () => {
             </Link>
           </Grid>
         </Grid>
-        <Grid item container direction="row" sx={{ width: "60%" }}>
+        <Grid item>
+          <Box
+            sx={{
+              height: "1px",
+              width: "100%",
+              backgroundColor: mediumGrey,
+              mt: 12,
+              mb: 4,
+              display: "none",
+              [ps]: {
+                display: "block",
+              },
+              [ds]: {
+                display: "none",
+              },
+            }}
+          />
+        </Grid>
+        <Grid
+          item
+          container
+          sx={{
+            width: "60%",
+            flexDirection: "row",
+            [ps]: { width: "100%", flexDirection: "column" },
+            [pl]: { flexDirection: "row" },
+            [ds]: {
+              width: "60%",
+            },
+          }}
+        >
           <Grid
             item
             container
             direction="column"
-            sx={{ width: "50%" }}
+            sx={{
+              width: "50%",
+              [ps]: { width: "100%" },
+              [pl]: { width: "50%" },
+            }}
             spacing={3}
           >
             <Grid item>
@@ -147,7 +190,35 @@ export const Footer: FC = () => {
               </Link>
             </Grid>
           </Grid>
-          <Grid item container direction="column" sx={{ width: "50%" }}>
+          <Grid item>
+            <Box
+              sx={{
+                height: "1px",
+                width: "100%",
+                backgroundColor: mediumGrey,
+                mt: 12,
+                mb: 4,
+                display: "none",
+                [ps]: {
+                  display: "block",
+                },
+                [pl]: {
+                  display: "none",
+                },
+              }}
+            />
+          </Grid>
+          <Grid
+            item
+            container
+            direction="column"
+            sx={{
+              width: "50%",
+              [ps]: { width: "100%" },
+              [pl]: { width: "50%" },
+            }}
+            justifyContent="space-between"
+          >
             <Grid item container direction="row" spacing={2}>
               <Grid item>
                 <IconLink
@@ -191,8 +262,24 @@ export const Footer: FC = () => {
               </Grid>
             </Grid>
             <Grid item>
+              <Box
+                sx={{
+                  height: "1px",
+                  width: "100%",
+                  backgroundColor: mediumGrey,
+                  display: "block",
+                  [ps]: {
+                    display: "none",
+                  },
+                  [pl]: {
+                    display: "block",
+                  },
+                }}
+              />
+            </Grid>
+            <Grid item>
               <a href="mailto:info@open-archive.org">
-                <Box sx={{ ...h6, mt: 7 }}>Contact us</Box>
+                <Box sx={{ ...h6 }}>info@open-archive.org</Box>
               </a>
             </Grid>
           </Grid>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
@@ -17,6 +17,7 @@ import github from "images/github-grey.svg";
 import menuIcon from "images/menu-icon.svg";
 
 export const TopNav = () => {
+  const ref = useRef(null);
   const router = useRouter();
   const t = useTranslate();
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -24,6 +25,7 @@ export const TopNav = () => {
   const { body } = typography;
   const { ps, pl, ts, tl, ds, dl } = breakpoints;
   const menuItemProps = { ...body, fontWeight: 600, color: white };
+  const getAnchorRef = () => ref.current;
 
   return (
     <AppBar
@@ -107,6 +109,7 @@ export const TopNav = () => {
               <Image alt="search" src={search} loader={loader} />
             </Grid> */}
                 <Grid
+                  ref={ref}
                   item
                   container
                   direction="row"
@@ -146,7 +149,7 @@ export const TopNav = () => {
                       },
                     }}
                   >
-                    <MenuButton title={t("ourWork")}>
+                    <MenuButton title={t("ourWork")} anchorEl={getAnchorRef}>
                       <Grid container direction="column" spacing={2}>
                         <Grid item>
                           <Link href="/save" passHref>
@@ -177,7 +180,7 @@ export const TopNav = () => {
                       },
                     }}
                   >
-                    <MenuButton title="About">
+                    <MenuButton title="About" anchorEl={getAnchorRef}>
                       <Grid container direction="column" spacing={2}>
                         <Grid item>
                           <Link href="/about" passHref>

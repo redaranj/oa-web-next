@@ -7,51 +7,56 @@ import downArrow from "images/down-arrow.svg";
 
 type MenuButtonProps = PropsWithChildren<{
   title: string;
+  anchorEl: any;
 }>;
 
-export const MenuButton: FC<MenuButtonProps> = ({ title, children }) => {
+export const MenuButton: FC<MenuButtonProps> = ({
+  title,
+  anchorEl,
+  children,
+}) => {
   const { black, turquoise } = colors;
   const { body } = typography;
+  const isBrowser = typeof window !== "undefined";
 
   return (
-    <PopupState variant="popover" popupId={title}>
-      {(popupState) => (
-        <>
-          <Button
-            sx={{
-              ...body,
-              fontWeight: 700,
-              textTransform: "none",
-              color: black,
-              whiteSpace: "nowrap",
-              cursor: "pointer",
-            }}
-            {...bindTrigger(popupState)}
-          >
-            {title}
-            <Box sx={{ ml: "6px", mt: "-3px" }}>
-              <Image src={downArrow} alt="" loader={loader} />
-            </Box>
-          </Button>
-          <Popover
-            elevation={0}
-            {...bindPopover(popupState)}
-            anchorOrigin={{
-              vertical: "bottom",
-              horizontal: "left",
-            }}
-            transformOrigin={{
-              vertical: "top",
-              horizontal: "left",
-            }}
-            PaperProps={{
-              sx: { backgroundColor: turquoise, minWidth: 400, mt: 1 },
-            }}
-          >
-            <Box sx={{ p: 4 }}>{children}</Box>
-          </Popover>
-        </>
-      )}
-    </PopupState>
+    isBrowser && (
+      <PopupState variant="popover" popupId={title}>
+        {(popupState) => (
+          <>
+            <Button
+              sx={{
+                ...body,
+                fontWeight: 700,
+                textTransform: "none",
+                color: black,
+                whiteSpace: "nowrap",
+                cursor: "pointer",
+              }}
+              {...bindTrigger(popupState)}
+            >
+              {title}
+              <Box sx={{ ml: "6px", mt: "-3px" }}>
+                <Image src={downArrow} alt="" loader={loader} />
+              </Box>
+            </Button>
+            <Popover
+              elevation={0}
+              {...bindPopover(popupState)}
+              anchorEl={anchorEl}
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "left",
+              }}
+              PaperProps={{
+                sx: { backgroundColor: turquoise, minWidth: 400, mt: 1 },
+              }}
+            >
+              <Box sx={{ p: 4 }}>{children}</Box>
+            </Popover>
+          </>
+        )}
+      </PopupState>
+    )
   );
 };
