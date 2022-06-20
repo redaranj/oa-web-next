@@ -34,6 +34,7 @@ export const MenuButton: FC<MenuButtonProps> = ({
                 cursor: "pointer",
                 "&:hover": {
                   color: turquoise,
+                  backgroundColor: "transparent",
                   img: {
                     filter:
                       "brightness(0) saturate(100%) invert(47%) sepia(82%) saturate(4262%) hue-rotate(155deg) brightness(99%) contrast(101%)",

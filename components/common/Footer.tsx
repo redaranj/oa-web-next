@@ -22,7 +22,11 @@ export const Footer: FC = () => {
   const { h6 } = typography;
   const { lightGrey, mediumGrey, turquoise } = colors;
   const { ps, pl, ds } = breakpoints;
-  const linkStyles = { ...h6, "&:hover": { color: turquoise } };
+  const linkStyles = {
+    ...h6,
+    "&:hover": { color: turquoise },
+    cursor: "pointer",
+  };
   const creativeCommonsIconSize = "19px";
   const socialIconSize = "36px";
 
@@ -82,6 +86,7 @@ export const Footer: FC = () => {
                     alt="OpenArchive logo"
                     src={openArchiveLogo}
                     loader={loader}
+                    style={{ cursor: "pointer" }}
                   />
                 </Link>
               </Box>
@@ -137,6 +142,7 @@ export const Footer: FC = () => {
                 alt="Site designed by demch.co"
                 src={demchco}
                 loader={loader}
+                style={{ cursor: "pointer" }}
               />
             </Link>
           </Grid>
