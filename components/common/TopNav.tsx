@@ -24,7 +24,12 @@ export const TopNav = () => {
   const { white, mediumGrey, mediumBurgundy } = colors;
   const { body } = typography;
   const { ps, pl, ts, tl, ds, dl } = breakpoints;
-  const menuItemProps = { ...body, fontWeight: 600, color: white };
+  const menuItemProps = {
+    ...body,
+    fontWeight: 600,
+    color: white,
+    textDecoration: "none",
+  };
   const getAnchorRef = () => ref.current;
 
   return (

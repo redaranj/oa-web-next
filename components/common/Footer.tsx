@@ -20,8 +20,9 @@ import youtube from "images/youtube-black.svg";
 export const Footer: FC = () => {
   const t = useTranslate();
   const { h6 } = typography;
-  const { lightGrey, mediumGrey } = colors;
+  const { lightGrey, mediumGrey, turquoise } = colors;
   const { ps, pl, ds } = breakpoints;
+  const linkStyles = { ...h6, "&:hover": { color: turquoise } };
   const creativeCommonsIconSize = "19px";
   const socialIconSize = "36px";
 
@@ -30,8 +31,8 @@ export const Footer: FC = () => {
       <Grid
         container
         sx={{
-          paddingTop: 16,
-          paddingBottom: 16,
+          paddingTop: 0,
+          paddingBottom: 6,
           flexDirection: "row",
           flexWrap: "nowrap",
           [ps]: {
@@ -122,7 +123,15 @@ export const Footer: FC = () => {
               </Grid>
             </Grid>
           </Grid>
-          <Grid item>
+          <Grid
+            item
+            sx={{
+              "&:hover": {
+                filter:
+                  "brightness(0) saturate(100%) invert(47%) sepia(82%) saturate(4262%) hue-rotate(155deg) brightness(99%) contrast(101%)",
+              },
+            }}
+          >
             <Link href="https://demch.co">
               <Image
                 alt="Site designed by demch.co"
@@ -176,17 +185,17 @@ export const Footer: FC = () => {
           >
             <Grid item>
               <Link href="/work-with-us">
-                <Box sx={h6}>{t("workWithUs")}</Box>
+                <Box sx={linkStyles}>{t("workWithUs")}</Box>
               </Link>
             </Grid>
             <Grid item>
               <Link href="/privacy">
-                <Box sx={h6}>{t("termsAndPrivacy")}</Box>
+                <Box sx={linkStyles}>{t("termsAndPrivacy")}</Box>
               </Link>
             </Grid>
             <Grid item>
               <Link href="/conduct">
-                <Box sx={h6}>{t("codeOfConduct")}</Box>
+                <Box sx={linkStyles}>{t("codeOfConduct")}</Box>
               </Link>
             </Grid>
           </Grid>
@@ -219,7 +228,7 @@ export const Footer: FC = () => {
             }}
             justifyContent="space-between"
           >
-            <Grid item container direction="row" spacing={2}>
+            <Grid item container direction="row" wrap="nowrap" spacing={2}>
               <Grid item>
                 <IconLink
                   image={twitter}
@@ -278,9 +287,13 @@ export const Footer: FC = () => {
               />
             </Grid>
             <Grid item>
-              <a href="mailto:info@open-archive.org">
-                <Box sx={{ ...h6 }}>info@open-archive.org</Box>
-              </a>
+              <Box
+                component="a"
+                sx={{ textDecoration: "none" }}
+                href="mailto:info@open-archive.org"
+              >
+                <Box sx={linkStyles}>Contact us</Box>
+              </Box>
             </Grid>
           </Grid>
         </Grid>

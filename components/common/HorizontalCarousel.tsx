@@ -34,7 +34,7 @@ const SlideNavigation = () => {
             <Image src={forward} loader={loader} />
           </Button>
         </Grid>
-        <Grid item sx={{ width: "90%" }}>
+        <Grid item sx={{ width: "80%" }}>
           <Box
             sx={{
               flexGrow: 1,
@@ -75,7 +75,7 @@ export const HorizontalCarousel: FC<HorizontalCarouselProps> = ({
           spaceBetween={spaceBetween}
           slidesPerView={visibleCount}
           breakpoints={breakpoints}
-          style={{ paddingBottom: 70 }}
+          style={{ paddingBottom: 90 }}
         >
           {(children as any).map((child: any, index: number) => (
             <SwiperSlide key={index}>{child}</SwiperSlide>

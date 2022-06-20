@@ -63,8 +63,8 @@ export const MissionSection: FC = () => {
               </Box>
             </Grid>
             <Grid item>
-              <OutlinedButton arrowDirection="right">
-                {t("readMore")}
+              <OutlinedButton arrowDirection="right" href="/about">
+                {t("learnMore")}
               </OutlinedButton>
             </Grid>
           </Grid>
