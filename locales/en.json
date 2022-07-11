@@ -120,5 +120,8 @@
   "downloadSave": "Download Save",
   "downloadOrbot": "Download Orbot",
   "watchTutorials": "Watch our video tutorials and follow along on your phone",
-  "save": "Save"
+  "save": "Save",
+  "oops": "Oops!",
+  "cantFindPage": "Sorry, we can't find that page",
+  "goToMainPage": "Go to the main page"
 }

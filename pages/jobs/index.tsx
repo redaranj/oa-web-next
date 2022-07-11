@@ -2,19 +2,17 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { Stack } from "@mui/material";
 import { Layout } from "components/common/Layout";
-import { QuestionsSection } from "components/faq/QuestionsSection";
-import { ContactUsSection } from "components/faq/ContactUsSection";
+import { JobsSection } from "components/jobs/JobsSection";
 
-const FAQ: NextPage = () => (
+const Jobs: NextPage = () => (
   <Layout>
     <Head>
       <title>OpenArchive: FAQ</title>
     </Head>
     <Stack>
-      <QuestionsSection />
-      <ContactUsSection />
+      <JobsSection />
     </Stack>
   </Layout>
 );
 
-export default FAQ;
+export default Jobs;

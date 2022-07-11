@@ -3,7 +3,7 @@ import Head from "next/head";
 import { Box } from "@mui/material";
 import { Layout } from "components/common/Layout";
 import { PageSection } from "components/common/PageSection";
-import { RoleSection } from "components/common/RoleSection";
+import { HeaderSection } from "components/conduct/HeaderSection";
 import { colors, privacyConductComponents as components } from "styles/theme";
 
 export default function Conduct({ children }) {
@@ -13,19 +13,14 @@ export default function Conduct({ children }) {
       <Head>
         <title>OpenArchive: Code of Conduct</title>
       </Head>
-      <PageSection backgroundColor={lightGrey}>
-        <Box sx={{ height: 300 }} />
-      </PageSection>
-      <RoleSection />
+      <HeaderSection />
       <PageSection backgroundColor={white}>
         <Box sx={{ margin: "auto", maxWidth: "710px" }}>
           <MDXProvider components={components}>{children}</MDXProvider>
         </Box>
       </PageSection>
-
     </Layout>
-
-);
+  );
 }
 
 [comment]: # "↓↓↓ Editable ↓↓↓"

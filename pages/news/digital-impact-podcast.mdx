@@ -1,0 +1,27 @@
+import { MDXProvider } from "@mdx-js/react";
+import Head from "next/head";
+import { Box } from "@mui/material";
+import { Layout } from "components/common/Layout";
+import { PageSection } from "components/common/PageSection";
+import { MarkdownComponents } from "components/news/MarkdownComponents";
+import { colors } from "styles/theme";
+
+export default function News({ children }) {
+  const { white, lightGrey, mediumGrey } = colors;
+  return (
+    <Layout>
+      <Head>
+        <title>OpenArchive: News</title>
+      </Head>
+      <PageSection backgroundColor={white}>
+        <Box sx={{ margin: "auto", maxWidth: "710px" }}>
+          <MDXProvider components={MarkdownComponents}>{children}</MDXProvider>
+        </Box>
+      </PageSection>
+    </Layout>
+  );
+}
+
+[comment]: # "↓↓↓ Editable ↓↓↓"
+
+Digital Impact Podcast

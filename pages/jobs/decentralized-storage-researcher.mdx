@@ -1,0 +1,26 @@
+import { MDXProvider } from "@mdx-js/react";
+import Head from "next/head";
+import { Box } from "@mui/material";
+import { Layout } from "components/common/Layout";
+import { PageSection } from "components/common/PageSection";
+import { colors, privacyConductComponents as components } from "styles/theme";
+
+export default function Job({ children }) {
+  const { white, lightGrey, mediumGrey } = colors;
+  return (
+    <Layout>
+      <Head>
+        <title>OpenArchive: Use Cases</title>
+      </Head>
+      <PageSection backgroundColor={white}>
+        <Box sx={{ margin: "auto", maxWidth: "710px" }}>
+          <MDXProvider components={components}>{children}</MDXProvider>
+        </Box>
+      </PageSection>
+    </Layout>
+  );
+}
+
+[comment]: # "↓↓↓ Editable ↓↓↓"
+
+Decentralized Storage Researcher

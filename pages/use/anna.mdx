@@ -1,0 +1,59 @@
+import { MDXProvider } from "@mdx-js/react";
+import Head from "next/head";
+import { Box } from "@mui/material";
+import { Layout } from "components/common/Layout";
+import { PageSection } from "components/common/PageSection";
+import { MarkdownComponents } from "components/use/MarkdownComponents";
+import { colors } from "styles/theme";
+
+export default function Privacy({ children }) {
+  const { white, lightGrey, mediumGrey } = colors;
+  return (
+    <Layout>
+      <Head>
+        <title>OpenArchive: Use Cases</title>
+      </Head>
+      <MDXProvider components={MarkdownComponents}>{children}</MDXProvider>
+    </Layout>
+  );
+}
+
+[comment]: # "↓↓↓ Editable ↓↓↓"
+
+<PageSection>
+
+# Anna
+
+Human rights, legal, academic and journalistic organizations
+
+> Social media and messaging apps compress audio and video before upload, which is not an option for our work
+
+|        |                                                            |
+| ------ | ---------------------------------------------------------- |
+| Age    | 36                                                         |
+| Gender | Female                                                     |
+| Role   | Archivist for Human Rights Watch                           |
+| Skills | Cataloging and preserving data, digital systems management |
+
+- ![Test](/images/darius.png) Anna is an archivist for Human Rights Watch
+- ![Test](/images/darius.png) She created the archive
+- ![Test](/images/darius.png) She works in the multimedia department and receives data from researchers, videographers, satellite imagery analysts, graphic artists, animators, etc.
+- ![Test](/images/darius.png) She then catalogs the data received and manages data for posterity and easy access.
+- ![Test](/images/darius.png) She also maintains digital systems - distribution sites for the press and public-facing websites.
+- ![Test](/images/darius.png) Requires metadata about the data received from various actors to validate its authenticity.
+- ![Test](/images/darius.png) Desktop applications help her manage and send large data which would not be possible on mobile.
+
+</PageSection>
+<PageSection>
+
+## Anna's achievements
+
+- ![Test](/images/darius.png)
+- ### Goals and tasks
+- Ensure easy access of data for future reference, smooth functioning of digital systems and receive multimedia from multiple sources and ensure it is cataloged and maintained methodically for future reference
+
+- ![Test](/images/darius.png)
+- ### Goals and tasks
+- Ensure easy access of data for future reference, smooth functioning of digital systems and receive multimedia from multiple sources and ensure it is cataloged and maintained methodically for future reference
+
+</PageSection>

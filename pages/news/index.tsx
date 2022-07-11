@@ -2,19 +2,19 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { Stack } from "@mui/material";
 import { Layout } from "components/common/Layout";
-import { HeaderSection } from "components/donate/HeaderSection";
-import { DonateSection } from "components/donate/DonateSection";
+import { HeaderSection } from "components/news/HeaderSection";
+import { NewsSection } from "components/news/NewsSection";
 
-const Donate: NextPage = () => (
+const News: NextPage = () => (
   <Layout>
     <Head>
-      <title>OpenArchive: Donate</title>
+      <title>OpenArchive: About</title>
     </Head>
     <Stack>
       <HeaderSection />
-      <DonateSection />
+      <NewsSection />
     </Stack>
   </Layout>
 );
 
-export default Donate;
+export default News;
