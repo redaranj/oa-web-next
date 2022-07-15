@@ -1,9 +1,11 @@
+import { FC } from "react";
 import { Box } from "@mui/material";
 import { typography } from "styles/theme";
+import { MarkdownWrapper as BaseMarkdownWrapper } from "components/common/MarkdownWrapper";
 
 const { h1, h2, body } = typography;
 
-export const MarkdownComponents = {
+const MarkdownComponents = {
   h1: ({ children }) => (
     <Box
       component="h1"
@@ -45,3 +47,16 @@ export const MarkdownComponents = {
     </Box>
   ),
 };
+
+interface MarkdownWrapperProps {
+  title: string;
+}
+
+export const MarkdownWrapper: FC<MarkdownWrapperProps> = ({
+  title,
+  children,
+}) => (
+  <BaseMarkdownWrapper title={title} components={MarkdownComponents}>
+    {children}
+  </BaseMarkdownWrapper>
+);

@@ -24,14 +24,16 @@
     "@mui/styles": "^5",
     "@mui/system": "^5.8.4",
     "@next/mdx": "^12.1.6",
-    "json2mq": "^0.2.0",
+    "gray-matter": "^4.0.3",
     "material-ui-popup-state": "^3.1.1",
     "next": "^12.1",
     "react": "^17",
     "react-dom": "^17",
     "react-lunr": "^1.1.0",
     "react-polyglot": "^0.7.2",
+    "remark-frontmatter": "^4.0.1",
     "remark-gfm": "^3.0.1",
+    "remark-mdx-frontmatter": "^2.0.2",
     "swiper": "^8.2.4"
   },
   "devDependencies": {

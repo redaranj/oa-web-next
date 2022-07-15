@@ -1,7 +1,7 @@
 import { FC, PropsWithChildren } from "react";
 import { StaticImageData } from "next/image";
 import { Box } from "@mui/material";
-import { breakpoints } from "styles/theme";
+import { breakpoints, colors } from "styles/theme";
 
 type PageSectionProps = PropsWithChildren<{
   backgroundColor: string;
@@ -65,3 +65,13 @@ export const PageSection: FC<PageSectionProps> = ({
     </Box>
   );
 };
+
+const { white, lightGrey } = colors;
+
+export const WhitePageSection: FC = ({ children }) => (
+  <PageSection backgroundColor={white}>{children}</PageSection>
+);
+
+export const GreyPageSection: FC = ({ children }) => (
+  <PageSection backgroundColor={lightGrey}>{children}</PageSection>
+);

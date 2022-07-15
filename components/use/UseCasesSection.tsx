@@ -5,7 +5,11 @@ import { typography, colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import aboutHeader from "images/about-header.png";
 
-export const UseCasesSection: FC = () => {
+interface UseCasesSectionProps {
+  pages: any[];
+}
+
+export const UseCasesSection: FC<UseCasesSectionProps> = ({ pages }) => {
   const t = useTranslate();
   const { white, turquoise } = colors;
   const { h1 } = typography;
@@ -20,7 +24,13 @@ export const UseCasesSection: FC = () => {
           minHeight: "35vh",
         }}
       >
-        <Grid item></Grid>
+        {pages.map(({ title, path }) => {
+          return (
+            <Grid item key={path}>
+              {title}
+            </Grid>
+          );
+        })}
       </Grid>
     </PageSection>
   );
