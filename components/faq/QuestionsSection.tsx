@@ -1,10 +1,10 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import { Box, Grid } from "@mui/material";
 import { useTranslate } from "react-polyglot";
 import { typography, colors, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 
-export const QuestionsSection: FC = () => {
+export const QuestionsSection: FC<PropsWithChildren> = ({ children }) => {
   const t = useTranslate();
   const { lightGrey } = colors;
   const { h2 } = typography;
@@ -18,7 +18,7 @@ export const QuestionsSection: FC = () => {
           flexDirection: "column",
         }}
       >
-        Questions
+        {children}
       </Grid>
     </PageSection>
   );

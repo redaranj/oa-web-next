@@ -1,8 +1,8 @@
 import { FC } from "react";
 import { Box, Grid } from "@mui/material";
-import { useTranslate } from "react-polyglot";
 import { colors, breakpoints, typography } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
+import { MDXProvider } from "@mdx-js/react";
 // import { OutlinedButton } from "components/common/OutlinedButton";
 import header1 from "images/header-1.png";
 import header2 from "images/header-2.png";
@@ -13,11 +13,11 @@ import header6 from "images/header-6.png";
 import header7 from "images/header-7.png";
 import header8 from "images/header-8.png";
 
-export const HeaderSection: FC = () => {
-  const t = useTranslate();
+export const HeaderSection: FC = ({ children }) => {
   const { white } = colors;
-  const { h1, bodyLarge } = typography;
+  const { bodyLarge } = typography;
   const { ps, pl, ts, tl, ds, dl } = breakpoints;
+  const [first, ...rest] = children as any[];
 
   return (
     <PageSection backgroundColor={white}>
@@ -44,19 +44,21 @@ export const HeaderSection: FC = () => {
           }}
         >
           <Grid item>
-            <Box
-              component="h1"
-              sx={h1}
-              dangerouslySetInnerHTML={{
-                __html: t("empoweringEyewitnessesTitle"),
-              }}
-            />
+            <MDXProvider>{first}</MDXProvider>
           </Grid>
           <Grid item container direction="column" spacing={6} sx={{ mb: 12 }}>
             <Grid item>
-              <Box component="p" sx={bodyLarge}>
-                {t("empoweringEyewitnessesDescription")}
-              </Box>
+              <MDXProvider
+                components={{
+                  h3: ({ children }) => (
+                    <Box component="p" sx={{ ...bodyLarge, color: "red" }}>
+                      {children}
+                    </Box>
+                  ),
+                }}
+              >
+                {rest}
+              </MDXProvider>
             </Grid>
           </Grid>
         </Grid>

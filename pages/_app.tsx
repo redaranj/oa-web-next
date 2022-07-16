@@ -1,5 +1,8 @@
 import { AppProps } from "next/app";
 import { CssBaseline } from "@mui/material";
+import { MDXProvider } from "@mdx-js/react";
+import { Layout } from "components/common/Layout";
+import { components } from "styles/theme";
 import { I18n } from "react-polyglot";
 import en from "../locales/en.json";
 import "styles/global.css";
@@ -14,7 +17,14 @@ const OpenArchiveWeb = ({ Component, pageProps }: AppProps) => (
   <>
     <CssBaseline />
     <I18n locale={locale} messages={messages[locale]}>
-      <Component {...pageProps} />
+      <MDXProvider
+        components={{
+          wrapper: Layout,
+          ...components,
+        }}
+      >
+        <Component {...pageProps} />
+      </MDXProvider>
     </I18n>
   </>
 );

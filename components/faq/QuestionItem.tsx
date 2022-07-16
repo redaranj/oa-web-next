@@ -1,23 +1,21 @@
-import { FC } from "react";
-import { Box, Grid } from "@mui/material";
-import { useTranslate } from "react-polyglot";
-import { typography, colors, breakpoints } from "styles/theme";
-import { PageSection } from "components/common/PageSection";
+import { FC, useState } from "react";
+import { Accordion } from "@mui/material";
+import { Question } from "components/faq/Question";
+import { Answer } from "components/faq/Answer";
 
-export const QuestionItem: FC = () => {
-  const t = useTranslate();
-  const { lightGrey } = colors;
-  const { h2 } = typography;
-  const { ps, tl } = breakpoints;
+export const QuestionItem: FC = ({ children }) => {
+  const [expanded, setExpanded] = useState(false);
+  const [first, ...rest] = children as any[];
 
   return (
-    <PageSection backgroundColor={lightGrey}>
-      <Grid
-        container
-        sx={{
-          flexDirection: "column",
-        }}
-      ></Grid>
-    </PageSection>
+    <Accordion
+      expanded={expanded}
+      onChange={() => setExpanded(!expanded)}
+      elevation={0}
+      sx={{ "::before": { display: "none" } }}
+    >
+      <Question expanded={expanded}>{first}</Question>
+      <Answer>{rest}</Answer>
+    </Accordion>
   );
 };

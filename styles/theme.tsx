@@ -204,34 +204,39 @@ export const typography = {
 
 export const loader = (image: any) => `${image.src}?${image.width ?? ""}`;
 
-export const privacyConductComponents = {
+export const components = {
   h1: ({ children }) => (
-    <Box
-      component="h1"
-      sx={{
-        ...typography.h1,
-      }}
-    >
+    <Box component="h1" sx={typography.h1}>
       {children}
     </Box>
   ),
   h2: ({ children }) => (
-    <Box
-      component="h2"
-      sx={{
-        ...typography.h2,
-      }}
-    >
+    <Box component="h2" sx={typography.h2}>
+      {children}
+    </Box>
+  ),
+  h3: ({ children }) => (
+    <Box component="h3" sx={typography.h3}>
+      {children}
+    </Box>
+  ),
+  h4: ({ children }) => (
+    <Box component="h4" sx={typography.h4}>
+      {children}
+    </Box>
+  ),
+  h5: ({ children }) => (
+    <Box component="h5" sx={typography.h5}>
+      {children}
+    </Box>
+  ),
+  h6: ({ children }) => (
+    <Box component="h6" sx={typography.h6}>
       {children}
     </Box>
   ),
   p: ({ children }) => (
-    <Box
-      component="p"
-      sx={{
-        ...typography.body,
-      }}
-    >
+    <Box component="p" sx={typography.body}>
       {children}
     </Box>
   ),
