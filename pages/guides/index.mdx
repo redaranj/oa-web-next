@@ -1,7 +1,10 @@
 import { HeaderSection } from "components/guides/HeaderSection";
 import { GuidesSection } from "components/guides/GuidesSection";
 import { RoleSection } from "components/common/RoleSection";
+import { getIndexProps } from "lib/helpers";
+
+export const getStaticProps = async (context) => getIndexProps("pages/guides");
 
 <HeaderSection />
-<GuidesSection />
+<GuidesSection pages={props.pages} />
 <RoleSection />

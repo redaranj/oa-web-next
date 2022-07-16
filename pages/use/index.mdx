@@ -1,0 +1,8 @@
+import { HeaderSection } from "components/use/HeaderSection";
+import { UseCasesSection } from "components/use/UseCasesSection";
+import { getIndexProps } from "lib/helpers";
+
+export const getStaticProps = async (context) => getIndexProps("pages/use");
+
+<HeaderSection />
+<UseCasesSection pages={props.pages} />

@@ -1,5 +1,8 @@
 import { HeaderSection } from "components/news/HeaderSection";
 import { NewsSection } from "components/news/NewsSection";
+import { getIndexProps } from "lib/helpers";
+
+export const getStaticProps = async (context) => getIndexProps("pages/news");
 
 <HeaderSection />
-<NewsSection />
+<NewsSection pages={props.pages} />

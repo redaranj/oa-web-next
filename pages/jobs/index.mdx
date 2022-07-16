@@ -1,3 +1,8 @@
+import { HeaderSection } from "components/jobs/HeaderSection";
 import { JobsSection } from "components/jobs/JobsSection";
+import { getIndexProps } from "lib/helpers";
 
-<JobsSection />
+export const getStaticProps = async (context) => getIndexProps("pages/jobs");
+
+<HeaderSection />
+<JobsSection pages={props.pages} />
