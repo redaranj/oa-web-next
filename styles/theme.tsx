@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Box } from "@mui/material";
 
 export const breakpoints = {
@@ -239,5 +240,8 @@ export const components = {
     <Box component="p" sx={typography.body}>
       {children}
     </Box>
+  ),
+  img: (props) => (
+    <Image alt={props.alt} layout="responsive" loader={loader} {...props} />
   ),
 };

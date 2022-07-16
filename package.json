@@ -31,6 +31,7 @@
     "react-dom": "^17",
     "react-lunr": "^1.1.0",
     "react-polyglot": "^0.7.2",
+    "rehype-img-size": "^1.0.1",
     "remark-frontmatter": "^4.0.1",
     "remark-gfm": "^3.0.1",
     "remark-mdx-frontmatter": "^2.0.2",

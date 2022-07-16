@@ -3,9 +3,10 @@ import { Grid } from "@mui/material";
 import { colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 
-export const DonateSection: FC = ({ children }) => {
+export const OpportunityItem: FC = ({ children }) => {
   const { white } = colors;
   const [first, ...rest] = children as any[];
+  console.log({ neat: "neat", children: first.props.children });
 
   return (
     <PageSection backgroundColor={white}>
