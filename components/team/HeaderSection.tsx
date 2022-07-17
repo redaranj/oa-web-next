@@ -7,11 +7,12 @@ import { PageSection } from "components/common/PageSection";
 import { OutlinedButton } from "components/common/OutlinedButton";
 import ourTeam from "images/our-team.svg";
 
-export const HeaderSection: FC = () => {
+export const HeaderSection: FC = ({ children }) => {
   const t = useTranslate();
   const { lightGrey } = colors;
   const { h1, bodyLarge } = typography;
   const { ps, pl, ts, tl, ds, dl } = breakpoints;
+  const [first, ...rest] = children as any[];
 
   return (
     <PageSection backgroundColor={lightGrey}>
@@ -37,15 +38,7 @@ export const HeaderSection: FC = () => {
           }}
         >
           <Grid item container direction="column">
-            <Grid item>
-              <Box
-                component="h1"
-                sx={h1}
-                dangerouslySetInnerHTML={{
-                  __html: t("ourTeamTitle"),
-                }}
-              />
-            </Grid>
+            <Grid item>{first}</Grid>
             <Grid item>
               <Box
                 component="p"
@@ -60,7 +53,7 @@ export const HeaderSection: FC = () => {
                   [dl]: { maxWidth: 600 },
                 }}
               >
-                {t("ourTeamDescription")}
+                {rest}
               </Box>
             </Grid>
             <Grid item>

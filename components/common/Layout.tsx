@@ -15,7 +15,7 @@ export const Layout: FC<LayoutProps> = ({
   title = "OpenArchive",
   children,
 }) => {
-  const { ps, ts } = breakpoints;
+  const { ps, ts, dl } = breakpoints;
 
   return (
     <>
@@ -25,11 +25,10 @@ export const Layout: FC<LayoutProps> = ({
       <TopNav />
       <Box
         sx={{
-          paddingTop: 12,
-          [ps]: {
-            paddingTop: 3,
-          },
-          [ts]: { paddingTop: 6 },
+          pt: "90px",
+          [ps]: { pt: "50px" },
+          [ts]: { pt: "80px" },
+          [dl]: { pt: "90px" },
         }}
       >
         <Stack>{children}</Stack>

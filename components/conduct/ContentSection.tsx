@@ -5,7 +5,7 @@ import { typography, colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import aboutHeader from "images/about-header.png";
 
-export const HeaderSection: FC = ({ children }) => {
+export const ContentSection: FC = ({ children }) => {
   const t = useTranslate();
   const { white, turquoise } = colors;
   const { h1 } = typography;
