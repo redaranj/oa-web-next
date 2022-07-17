@@ -243,17 +243,9 @@ export const components = {
     </Box>
   ),
   img: (props) => {
-    console.log({ imageProps: props });
     const basePath = !!process.env.CI ? "/web-next" : "";
-    console.log({ imagePath: `${basePath}/images/${props.src}` });
     return (
-      <Image
-        {...props}
-        src={`${basePath}/images/${props.src}`}
-        alt={props.alt}
-        layout="responsive"
-        loader={loader}
-      />
+      <img {...props} src={`${basePath}/images/${props.src}`} alt={props.alt} />
     );
   },
 };
