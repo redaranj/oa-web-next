@@ -1,8 +1,6 @@
 import Image from "next/image";
 import { Box } from "@mui/material";
 
-const basePath = !!process.env.CI ? "/web-next/" : "";
-
 export const breakpoints = {
   dl: "@media (min-width: 1366px)",
   ds: "@media (min-width: 1024px)",
@@ -207,8 +205,6 @@ export const typography = {
 };
 
 export const loader = (image: any) => `${image.src}?${image.width ?? ""}`;
-export const markdownLoader = (image: any) =>
-  `${basePath}${image.src}?${image.width ?? ""}`;
 
 export const components = {
   h1: ({ children }) => (
@@ -248,13 +244,15 @@ export const components = {
   ),
   img: (props) => {
     console.log({ imageProps: props });
+    const basePath = !!process.env.CI ? "/web-next" : "";
+    console.log({ imagePath: `${basePath}/images/${props.src}` });
     return (
       <Image
         {...props}
         src={`${basePath}/images/${props.src}`}
         alt={props.alt}
         layout="responsive"
-        loader={markdownLoader}
+        loader={loader}
       />
     );
   },
