@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Grid } from "@mui/material";
-import { typography, colors } from "styles/theme";
+import { colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 
 export const ContactSection: FC = ({ children }) => {
@@ -15,7 +15,9 @@ export const ContactSection: FC = ({ children }) => {
           flexDirection: "row",
         }}
       >
-        <Grid item xs={6}></Grid>
+        <Grid item xs={6}>
+          {" "}
+        </Grid>
         <Grid item xs={6}>
           {children}
         </Grid>

@@ -4,7 +4,7 @@ import { colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import aboutHeader from "images/about-header.png";
 
-export const NewsItemSection: FC = ({ children }) => {
+export const NewsItem: FC = ({ children }) => {
   const { turquoise } = colors;
 
   return (

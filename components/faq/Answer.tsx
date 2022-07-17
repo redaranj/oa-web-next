@@ -1,11 +1,10 @@
 import { FC } from "react";
 import { MDXProvider } from "@mdx-js/react";
 import { Box, AccordionDetails } from "@mui/material";
-import { typography, colors } from "styles/theme";
+import {  colors } from "styles/theme";
 
 export const Answer: FC = ({ children }) => {
   const { lightGrey } = colors;
-  const { p } = typography;
 
   return (
     <AccordionDetails sx={{ border: 0 }}>

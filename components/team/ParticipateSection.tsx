@@ -1,17 +1,10 @@
 import { FC } from "react";
-import { Box, Grid } from "@mui/material";
-import { useTranslate } from "react-polyglot";
-import { typography, colors, breakpoints } from "styles/theme";
+import { Grid } from "@mui/material";
+import { colors, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
-import { OutlinedButton } from "components/common/OutlinedButton";
-import { FilledButton } from "components/common/FilledButton";
-import { ParticipateItem } from "components/team/ParticipateItem";
 
 export const ParticipateSection: FC = ({ children }) => {
-  const t = useTranslate();
-  const { white, black, lightBurgundy, lightTurquoise, mediumBurgundy } =
-    colors;
-  const { h2, bodyLarge } = typography;
+  const { white } = colors;
   const { ps, tl } = breakpoints;
   const [title, description, ...items] = children as any[];
 

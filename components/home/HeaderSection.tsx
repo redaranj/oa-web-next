@@ -13,9 +13,18 @@ import header6 from "images/header-6.png";
 import header7 from "images/header-7.png";
 import header8 from "images/header-8.png";
 
+const H3 = ({ children }) => {
+  const { bodyLarge } = typography;
+
+  return (
+    <Box component="p" sx={{ ...bodyLarge, color: "red" }}>
+      {children}
+    </Box>
+  );
+};
+
 export const HeaderSection: FC = ({ children }) => {
   const { white } = colors;
-  const { bodyLarge } = typography;
   const { ps, pl, ts, tl, ds, dl } = breakpoints;
   const [first, ...rest] = children as any[];
 
@@ -50,11 +59,7 @@ export const HeaderSection: FC = ({ children }) => {
             <Grid item>
               <MDXProvider
                 components={{
-                  h3: ({ children }) => (
-                    <Box component="p" sx={{ ...bodyLarge, color: "red" }}>
-                      {children}
-                    </Box>
-                  ),
+                  h3: H3,
                 }}
               >
                 {rest}

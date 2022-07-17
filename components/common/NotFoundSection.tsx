@@ -2,18 +2,14 @@ import { FC } from "react";
 import Image from "next/image";
 import { MDXProvider } from "@mdx-js/react";
 import { Box } from "@mui/material";
-import { useTranslate } from "react-polyglot";
-import { typography, colors, loader } from "styles/theme";
+import { colors, loader } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
-import { OutlinedButton } from "components/common/OutlinedButton";
 import FourOne from "images/not-found-four-one.svg";
 import Zero from "images/not-found-zero.svg";
 import FourTwo from "images/not-found-four-two.svg";
 
 export const NotFoundSection: FC = ({ children }) => {
-  const t = useTranslate();
-  const { white, turquoise } = colors;
-  const { h2, h6 } = typography;
+  const { white } = colors;
 
   return (
     <PageSection backgroundColor={white}>

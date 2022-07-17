@@ -1,4 +1,4 @@
-import { FC, PropsWithChildren } from "react";
+import { FC } from "react";
 import { Grid } from "@mui/material";
 import { colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
