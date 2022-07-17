@@ -1,20 +1,18 @@
 import { FC } from "react";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import { Box, Stack } from "@mui/material";
 import { TopNav } from "components/common/TopNav";
 import { Footer } from "components/common/Footer";
 // import { BreakpointIndicator } from "components/common/BreakpointIndicator";
 import { breakpoints } from "styles/theme";
 
-interface LayoutProps {
-  title?: string;
-  children: any;
-}
+export const Layout: FC = ({ children }) => {
+  const router = useRouter();
+  const basePath = router.pathname.split("/")[0];
+  const title = "OpenArchive";
+  console.log({ basePath });
 
-export const Layout: FC<LayoutProps> = ({
-  title = "OpenArchive",
-  children,
-}) => {
   const { ps, ts, dl } = breakpoints;
 
   return (

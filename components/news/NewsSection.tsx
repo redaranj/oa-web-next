@@ -2,22 +2,35 @@ import { FC } from "react";
 import { Grid } from "@mui/material";
 import { colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
-import aboutHeader from "images/about-header.png";
+import { NewsItem } from "components/news/NewsItem";
 
-export const NewsSection: FC = ({ children }) => {
-  const { turquoise } = colors;
+interface NewsSectionProps {
+  pages: any[];
+}
+
+export const NewsSection: FC<NewsSectionProps> = ({ pages }) => {
+  const { lightGrey } = colors;
+  /* eslint-disable no-param-reassign */
+  const allCategories = pages.reduce((prev, current) => {
+    prev[current.category] = prev[current.category] ?? 0 + 1;
+    return prev;
+  }, {});
+  /* eslint-enable no-param-reassign */
+  const categories = Object.keys(allCategories).sort();
 
   return (
-    <PageSection backgroundColor={turquoise} backgroundImage={aboutHeader}>
+    <PageSection backgroundColor={lightGrey}>
+      <Grid item>{categories.join(",")}</Grid>
       <Grid
         container
         justifyContent="space-around"
         sx={{
           flexDirection: "column",
-          minHeight: "35vh",
         }}
       >
-        <Grid item>{children}</Grid>
+        {pages.map((page) => (
+          <NewsItem key={page.path}>{page.title}</NewsItem>
+        ))}
       </Grid>
     </PageSection>
   );
