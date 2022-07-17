@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { Box } from "@mui/material";
 
+const basePath = !!process.env.CI ? "/web-next" : "";
+
 export const breakpoints = {
   dl: "@media (min-width: 1366px)",
   ds: "@media (min-width: 1024px)",
@@ -247,7 +249,7 @@ export const components = {
     return (
       <Image
         {...props}
-        src={`/images/${props.src}`}
+        src={`${basePath}/images/${props.src}`}
         alt={props.alt}
         layout="responsive"
         loader={loader}
