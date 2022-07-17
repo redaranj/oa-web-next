@@ -1,14 +1,11 @@
 import { FC } from "react";
-import { Box, Grid } from "@mui/material";
-import { useTranslate } from "react-polyglot";
-import { typography, colors } from "styles/theme";
+import { Grid } from "@mui/material";
+import { colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import aboutHeader from "images/about-header.png";
 
-export const ProfileSection: FC = () => {
-  const t = useTranslate();
-  const { white, turquoise } = colors;
-  const { h1 } = typography;
+export const ProfileSection: FC = ({ children }) => {
+  const { turquoise } = colors;
 
   return (
     <PageSection backgroundColor={turquoise} backgroundImage={aboutHeader}>
@@ -20,7 +17,7 @@ export const ProfileSection: FC = () => {
           minHeight: "35vh",
         }}
       >
-        <Grid item></Grid>
+        <Grid item>{children}</Grid>
       </Grid>
     </PageSection>
   );

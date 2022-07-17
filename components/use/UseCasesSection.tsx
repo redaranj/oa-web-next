@@ -1,7 +1,6 @@
 import { FC } from "react";
-import { Box, Grid } from "@mui/material";
-import { useTranslate } from "react-polyglot";
-import { typography, colors } from "styles/theme";
+import { Grid } from "@mui/material";
+import { colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import aboutHeader from "images/about-header.png";
 
@@ -10,9 +9,7 @@ interface UseCasesSectionProps {
 }
 
 export const UseCasesSection: FC<UseCasesSectionProps> = ({ pages }) => {
-  const t = useTranslate();
-  const { white, turquoise } = colors;
-  const { h1 } = typography;
+  const { turquoise } = colors;
 
   return (
     <PageSection backgroundColor={turquoise} backgroundImage={aboutHeader}>
@@ -24,13 +21,11 @@ export const UseCasesSection: FC<UseCasesSectionProps> = ({ pages }) => {
           minHeight: "35vh",
         }}
       >
-        {pages.map(({ title, path }) => {
-          return (
-            <Grid item key={path}>
-              {title}
-            </Grid>
-          );
-        })}
+        {pages.map(({ title, path }) => (
+          <Grid item key={path}>
+            {title}
+          </Grid>
+        ))}
       </Grid>
     </PageSection>
   );

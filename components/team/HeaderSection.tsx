@@ -10,7 +10,7 @@ import ourTeam from "images/our-team.svg";
 export const HeaderSection: FC = ({ children }) => {
   const t = useTranslate();
   const { lightGrey } = colors;
-  const { h1, bodyLarge } = typography;
+  const { bodyLarge } = typography;
   const { ps, pl, ts, tl, ds, dl } = breakpoints;
   const [first, ...rest] = children as any[];
 

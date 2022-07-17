@@ -1,15 +1,12 @@
 import { FC } from "react";
-import { Box, Grid } from "@mui/material";
-import { useTranslate } from "react-polyglot";
-import { typography, colors, breakpoints } from "styles/theme";
+import { Grid } from "@mui/material";
+import { colors, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { OutlinedButton } from "components/common/OutlinedButton";
 import teamAbout from "images/team-about.png";
 
 export const JoinSection: FC = ({ children }) => {
-  const t = useTranslate();
-  const { lightGrey, turquoise } = colors;
-  const { h2, h5, bodyLarge } = typography;
+  const { lightGrey } = colors;
   const { ps, tl } = breakpoints;
 
   return (
@@ -34,9 +31,7 @@ export const JoinSection: FC = ({ children }) => {
         >
           <Grid item>{children}</Grid>
           <Grid item>
-            <OutlinedButton arrowDirection="right">
-              {t("readMore")}
-            </OutlinedButton>
+            <OutlinedButton arrowDirection="right">Read More</OutlinedButton>
           </Grid>
         </Grid>
         <Grid

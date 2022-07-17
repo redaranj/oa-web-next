@@ -1,8 +1,6 @@
-import { FC, PropsWithChildren } from "react";
-import Image, { StaticImageData } from "next/image";
+import { FC } from "react";
 import { Box, Grid } from "@mui/material";
-import { useTranslate } from "react-polyglot";
-import { typography, colors, loader, breakpoints } from "styles/theme";
+import { typography, colors, breakpoints } from "styles/theme";
 import { OutlinedButton } from "components/common/OutlinedButton";
 
 interface PersonItemProps {
@@ -13,7 +11,6 @@ export const PersonItem: FC<PersonItemProps> = ({
   backgroundColor,
   children,
 }) => {
-  const t = useTranslate();
   const { turquoise } = colors;
   const { h6, bodyLarge, body } = typography;
   const { ps, tl } = breakpoints;
@@ -58,7 +55,7 @@ export const PersonItem: FC<PersonItemProps> = ({
               </Box>
             </Grid>
             <Grid item>
-              <OutlinedButton arrowDirection="down">{t("more")}</OutlinedButton>
+              <OutlinedButton arrowDirection="down">More</OutlinedButton>
             </Grid>
           </Grid>
         </Grid>

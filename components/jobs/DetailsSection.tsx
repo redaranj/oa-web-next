@@ -1,13 +1,9 @@
 import { FC } from "react";
 import { Box, Grid } from "@mui/material";
-import { useTranslate } from "react-polyglot";
-import { typography, colors, breakpoints } from "styles/theme";
+import { colors } from "styles/theme";
 
 export const DetailsSection: FC = ({ children }) => {
-  const t = useTranslate();
   const { white } = colors;
-  const { h2 } = typography;
-  const { ps, tl } = breakpoints;
 
   return (
     <Box sx={{ backgroundColor: white }}>
