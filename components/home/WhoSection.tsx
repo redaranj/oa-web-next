@@ -5,8 +5,8 @@ import { typography, colors, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { HorizontalCarousel } from "components/common/HorizontalCarousel";
 import { WhoItem } from "components/home/WhoItem";
-import megan from "images/megan.svg";
-import kevin from "images/kevin.svg";
+import megan from "public/images/megan.svg";
+import kevin from "public/images/kevin.svg";
 
 export const WhoSection: FC = () => {
   const t = useTranslate();

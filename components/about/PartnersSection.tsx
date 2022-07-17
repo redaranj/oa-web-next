@@ -4,15 +4,15 @@ import { useTranslate } from "react-polyglot";
 import { typography, colors, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { PartnerItem } from "components/about/PartnerItem";
-import ourTeam from "images/our-team.svg";
-import arm1 from "images/arm-1.svg";
-import arm2 from "images/arm-2.svg";
-import arm3 from "images/arm-3.svg";
-import arm4 from "images/arm-4.svg";
-import arm5 from "images/arm-5.svg";
-import ffdw from "images/ffdw.png";
-import otf from "images/otf.png";
-import knight from "images/knight.png";
+import ourTeam from "public/images/our-team.svg";
+import arm1 from "public/images/arm-1.svg";
+import arm2 from "public/images/arm-2.svg";
+import arm3 from "public/images/arm-3.svg";
+import arm4 from "public/images/arm-4.svg";
+import arm5 from "public/images/arm-5.svg";
+import ffdw from "public/images/ffdw.png";
+import otf from "public/images/otf.png";
+import knight from "public/images/knight.png";
 
 export const PartnersSection: FC = () => {
   const t = useTranslate();

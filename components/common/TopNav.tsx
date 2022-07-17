@@ -9,12 +9,12 @@ import { FilledButton } from "components/common/FilledButton";
 import { MenuButton } from "components/common/MenuButton";
 import { MobileMenu } from "components/common/MobileMenu";
 import { IconLink } from "components/common/IconLink";
-import openArchiveLogo from "images/open-archive.svg";
-// import search from "images/search.svg";
-import twitter from "images/twitter-grey.svg";
-import instagram from "images/instagram-grey.svg";
-import github from "images/github-grey.svg";
-import menuIcon from "images/menu-icon.svg";
+import openArchiveLogo from "public/images/open-archive.svg";
+// import search from "public/images/search.svg";
+import twitter from "public/images/twitter-grey.svg";
+import instagram from "public/images/instagram-grey.svg";
+import github from "public/images/github-grey.svg";
+import menuIcon from "public/images/menu-icon.svg";
 
 export const TopNav = () => {
   const ref = useRef(null);

@@ -3,8 +3,8 @@ import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { Box, Grid } from "@mui/material";
 import { colors, loader, typography } from "styles/theme";
-import plus from "images/plus.svg";
-import quote from "images/quote.svg";
+import plus from "public/images/plus.svg";
+import quote from "public/images/quote.svg";
 
 type WhoItemProps = PropsWithChildren<{
   name: string;

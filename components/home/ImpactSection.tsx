@@ -4,10 +4,10 @@ import { useTranslate } from "react-polyglot";
 import { typography, colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { ImpactItem } from "components/home/ImpactItem";
-import informationSecurity from "images/information-security.svg";
-import freeSpeech from "images/free-speech.svg";
-import freeUniversalAccess from "images/free-universal-access.svg";
-import dataProcessingSpeed from "images/data-processing-speed.svg";
+import informationSecurity from "public/images/information-security.svg";
+import freeSpeech from "public/images/free-speech.svg";
+import freeUniversalAccess from "public/images/free-universal-access.svg";
+import dataProcessingSpeed from "public/images/data-processing-speed.svg";
 
 export const ImpactSection: FC = () => {
   const t = useTranslate();

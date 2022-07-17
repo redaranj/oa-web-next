@@ -5,7 +5,7 @@ import { useTranslate } from "react-polyglot";
 import { typography, colors, loader, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { OutlinedButton } from "components/common/OutlinedButton";
-import ourTeam from "images/our-team.svg";
+import ourTeam from "public/images/our-team.svg";
 
 export const HeaderSection: FC = ({ children }) => {
   const t = useTranslate();

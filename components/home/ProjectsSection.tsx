@@ -5,9 +5,9 @@ import { typography, colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { HorizontalCarousel } from "components/common/HorizontalCarousel";
 import { ProjectItem } from "components/home/ProjectItem";
-import projectSave from "images/project-save.png";
-import projectGuide from "images/project-guide.png";
-import projectResearch from "images/project-research.png";
+import projectSave from "public/images/project-save.png";
+import projectGuide from "public/images/project-guide.png";
+import projectResearch from "public/images/project-research.png";
 
 export const ProjectsSection: FC = () => {
   const t = useTranslate();

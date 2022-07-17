@@ -3,7 +3,7 @@ import { Box } from "@mui/material";
 import { colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { AcronymItem } from "components/save/AcronymItem";
-import sharePhone from "images/share-phone.png";
+import sharePhone from "public/images/share-phone.png";
 import { Autoplay, EffectFade } from "swiper";
 /* eslint-disable import/no-unresolved */
 import { Swiper, SwiperSlide } from "swiper/react";

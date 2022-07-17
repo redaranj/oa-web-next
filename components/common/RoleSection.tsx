@@ -3,9 +3,9 @@ import { Box, Grid } from "@mui/material";
 import { useTranslate } from "react-polyglot";
 import { typography, colors, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
-import role1 from "images/role-1.png";
-import role2 from "images/role-2.png";
-import role3 from "images/role-3.png";
+import role1 from "public/images/role-1.png";
+import role2 from "public/images/role-2.png";
+import role3 from "public/images/role-3.png";
 
 export const RoleSection: FC = () => {
   const t = useTranslate();

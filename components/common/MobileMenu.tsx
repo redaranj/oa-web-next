@@ -5,7 +5,7 @@ import { useTranslate } from "react-polyglot";
 import { Box, Button, Grid } from "@mui/material";
 import { colors, loader, typography } from "styles/theme";
 import { FilledButton } from "components/common/FilledButton";
-import rightArrow from "images/right-arrow.svg";
+import rightArrow from "public/images/right-arrow.svg";
 
 type MenuItemProps = {
   title: string;

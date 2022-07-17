@@ -4,7 +4,7 @@ import { useTranslate } from "react-polyglot";
 import { typography, colors, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 // import { VisionItem } from "components/team/VisionItem";
-import visionBackground from "images/vision-background.png";
+import visionBackground from "public/images/vision-background.png";
 
 export const VisionSection: FC = () => {
   const t = useTranslate();

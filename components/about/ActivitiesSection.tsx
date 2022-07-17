@@ -4,11 +4,11 @@ import { useTranslate } from "react-polyglot";
 import { typography, colors, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { ActivityItem } from "components/about/ActivityItem";
-import activities1 from "images/activities-1.png";
-import activities2 from "images/activities-2.png";
-import activities3 from "images/activities-3.png";
-import activities4 from "images/activities-4.png";
-import activities5 from "images/activities-5.png";
+import activities1 from "public/images/activities-1.png";
+import activities2 from "public/images/activities-2.png";
+import activities3 from "public/images/activities-3.png";
+import activities4 from "public/images/activities-4.png";
+import activities5 from "public/images/activities-5.png";
 
 export const ActivitiesSection: FC = () => {
   const t = useTranslate();

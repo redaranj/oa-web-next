@@ -4,9 +4,9 @@ import { MDXProvider } from "@mdx-js/react";
 import { Box } from "@mui/material";
 import { colors, loader } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
-import FourOne from "images/not-found-four-one.svg";
-import Zero from "images/not-found-zero.svg";
-import FourTwo from "images/not-found-four-two.svg";
+import FourOne from "public/images/not-found-four-one.svg";
+import Zero from "public/images/not-found-zero.svg";
+import FourTwo from "public/images/not-found-four-two.svg";
 
 export const NotFoundSection: FC = ({ children }) => {
   const { white } = colors;

@@ -3,9 +3,9 @@ import { Box, Grid } from "@mui/material";
 import { useTranslate } from "react-polyglot";
 import { typography, colors, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
-import refuse1 from "images/refuse-1.png";
-import refuse2 from "images/refuse-2.png";
-import target from "images/target.svg";
+import refuse1 from "public/images/refuse-1.png";
+import refuse2 from "public/images/refuse-2.png";
+import target from "public/images/target.svg";
 
 export const RefuseSection: FC = () => {
   const t = useTranslate();

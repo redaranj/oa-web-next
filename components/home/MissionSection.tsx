@@ -4,8 +4,8 @@ import { useTranslate } from "react-polyglot";
 import { typography } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { OutlinedButton } from "components/common/OutlinedButton";
-import mission1 from "images/mission-1.png";
-import mission2 from "images/mission-2.png";
+import mission1 from "public/images/mission-1.png";
+import mission2 from "public/images/mission-2.png";
 
 export const MissionSection: FC = () => {
   const t = useTranslate();

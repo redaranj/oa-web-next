@@ -4,9 +4,9 @@ import { useTranslate } from "react-polyglot";
 import { typography, colors, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { MoreItem } from "components/save/MoreItem";
-import microphone from "images/microphone.png";
-import preservingGuide from "images/preserving-guide.png";
-import saveVideo from "images/save-video.png";
+import microphone from "public/images/microphone.png";
+import preservingGuide from "public/images/preserving-guide.png";
+import saveVideo from "public/images/save-video.png";
 
 export const MoreSection: FC = () => {
   const t = useTranslate();

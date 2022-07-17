@@ -6,6 +6,8 @@ export const getIndexProps = (basePath: string) => {
   const pages = paths
     .filter((path) => path.endsWith(".mdx") && !path.endsWith("index.mdx"))
     .map((path) => {
+      const fullPath = `${basePath}/${path}`;
+      const navPath = fullPath.replace("pages", "").replace(".mdx", "");
       const {
         data: {
           title = "",
@@ -14,8 +16,15 @@ export const getIndexProps = (basePath: string) => {
           date = "",
           image = "",
         },
-      } = matter(fs.readFileSync(`${basePath}/${path}`));
-      return { path, title, description, category, date, image };
+      } = matter(fs.readFileSync(fullPath));
+      return {
+        path: navPath,
+        title,
+        description,
+        category,
+        date,
+        image,
+      };
     });
 
   return {

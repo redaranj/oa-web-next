@@ -2,7 +2,7 @@ import { FC } from "react";
 import { Box } from "@mui/material";
 import { colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
-import doingBetter from "images/doing-better.svg";
+import doingBetter from "public/images/doing-better.svg";
 
 export const BetterSection: FC = () => {
   const { white } = colors;

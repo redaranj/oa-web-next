@@ -11,7 +11,7 @@ const withMDX = mdx({
   options: {
     providerImportSource: "@mdx-js/react",
     remarkPlugins: [remarkGfm, remarkFrontmatter, remarkMDXFrontmatter],
-    rehypePlugins: [rehypeImageSize, { dir: "" }],
+    rehypePlugins: [[rehypeImageSize, { dir: "public/images" }]],
   },
 });
 

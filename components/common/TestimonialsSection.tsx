@@ -5,7 +5,7 @@ import { typography, colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { HorizontalCarousel } from "components/common/HorizontalCarousel";
 import { TestimonialItem } from "components/common/TestimonialItem";
-import darius from "images/darius.png";
+import darius from "public/images/darius.png";
 
 export const TestimonialsSection: FC = () => {
   const t = useTranslate();

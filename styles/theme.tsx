@@ -181,6 +181,7 @@ export const typography = {
     fontWeight: 400,
     fontSize: "18px",
     lineHeight: "24px",
+    mb: 3,
     [breakpoints.ps]: {
       fontSize: "14px",
     },
@@ -241,7 +242,16 @@ export const components = {
       {children}
     </Box>
   ),
-  img: (props) => (
-    <Image alt={props.alt} layout="responsive" loader={loader} {...props} />
-  ),
+  img: (props) => {
+    console.log({ imageProps: props });
+    return (
+      <Image
+        {...props}
+        src={`/images/${props.src}`}
+        alt={props.alt}
+        layout="responsive"
+        loader={loader}
+      />
+    );
+  },
 };

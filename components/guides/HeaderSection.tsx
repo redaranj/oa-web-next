@@ -3,7 +3,7 @@ import { Box, Grid } from "@mui/material";
 import { useTranslate } from "react-polyglot";
 import { typography, colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
-import guidesHeader from "images/guides-header.png";
+import guidesHeader from "public/images/guides-header.png";
 
 export const HeaderSection: FC = () => {
   const t = useTranslate();

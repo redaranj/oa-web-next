@@ -1,8 +1,8 @@
 import { FC } from "react";
 import { Grid } from "@mui/material";
-import {  colors } from "styles/theme";
+import { colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
-import aboutHeader from "images/about-header.png";
+import aboutHeader from "public/images/about-header.png";
 
 export const HeaderSection: FC = ({ children }) => {
   const { turquoise } = colors;

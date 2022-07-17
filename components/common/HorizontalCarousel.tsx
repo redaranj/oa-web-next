@@ -9,8 +9,8 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 /* eslint-enable import/no-unresolved */
 import { colors, loader } from "styles/theme";
-import back from "images/back.svg";
-import forward from "images/forward.svg";
+import back from "public/images/back.svg";
+import forward from "public/images/forward.svg";
 
 const SlideNavigation = () => {
   const swiper = useSwiper();

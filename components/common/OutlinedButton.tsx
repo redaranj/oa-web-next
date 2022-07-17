@@ -3,8 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { Box, Button } from "@mui/material";
 import { colors, loader, typography } from "styles/theme";
-import rightArrow from "images/right-arrow.svg";
-import downArrow from "images/down-arrow.svg";
+import rightArrow from "public/images/right-arrow.svg";
+import downArrow from "public/images/down-arrow.svg";
 
 type InnerButtonProps = PropsWithChildren<{
   textColor?: string;

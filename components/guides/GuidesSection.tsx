@@ -3,7 +3,7 @@ import { Grid } from "@mui/material";
 import { colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { GuideItem } from "components/guides/GuideItem";
-import guideSample from "images/guide-sample.png";
+import guideSample from "public/images/guide-sample.png";
 
 export const GuidesSection: FC = () => {
   const { white, mediumGrey } = colors;

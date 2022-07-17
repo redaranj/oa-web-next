@@ -3,7 +3,7 @@ import { Box, Grid } from "@mui/material";
 import { useTranslate } from "react-polyglot";
 import { typography, colors, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
-import fist from "images/fist.svg";
+import fist from "public/images/fist.svg";
 
 export const BeliefsSection: FC = () => {
   const t = useTranslate();

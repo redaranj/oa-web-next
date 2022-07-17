@@ -6,16 +6,16 @@ import { useTranslate } from "react-polyglot";
 import { colors, loader, typography, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { IconLink } from "components/common/IconLink";
-import openArchiveLogo from "images/open-archive.svg";
-import attribution from "images/attribution.svg";
-import nonCommercial from "images/non-commercial.svg";
-import shareAlike from "images/share-alike.svg";
-import demchco from "images/demchco.svg";
-import twitter from "images/twitter-black.svg";
-import instagram from "images/instagram-black.svg";
-import github from "images/github-black.svg";
-import linkedin from "images/linkedin-black.svg";
-import youtube from "images/youtube-black.svg";
+import openArchiveLogo from "public/images/open-archive.svg";
+import attribution from "public/images/attribution.svg";
+import nonCommercial from "public/images/non-commercial.svg";
+import shareAlike from "public/images/share-alike.svg";
+import demchco from "public/images/demchco.svg";
+import twitter from "public/images/twitter-black.svg";
+import instagram from "public/images/instagram-black.svg";
+import github from "public/images/github-black.svg";
+import linkedin from "public/images/linkedin-black.svg";
+import youtube from "public/images/youtube-black.svg";
 
 export const Footer: FC = () => {
   const t = useTranslate();

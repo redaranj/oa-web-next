@@ -5,8 +5,8 @@ import { useTranslate } from "react-polyglot";
 import { typography, colors, breakpoints, loader } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { OutlinedButton } from "components/common/OutlinedButton";
-import saveHeader from "images/save-header.png";
-import saveLogo from "images/save-logo.png";
+import saveHeader from "public/images/save-header.png";
+import saveLogo from "public/images/save-logo.png";
 
 export const HeaderSection: FC = () => {
   const t = useTranslate();

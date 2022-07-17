@@ -28,8 +28,8 @@ export const NewsSection: FC<NewsSectionProps> = ({ pages }) => {
           flexDirection: "column",
         }}
       >
-        {pages.map((page) => (
-          <NewsItem key={page.path}>{page.title}</NewsItem>
+        {pages.map((page: any) => (
+          <NewsItem key={page.path} {...page} />
         ))}
       </Grid>
     </PageSection>

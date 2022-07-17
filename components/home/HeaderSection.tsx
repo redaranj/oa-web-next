@@ -4,14 +4,14 @@ import { colors, breakpoints, typography } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { MDXProvider } from "@mdx-js/react";
 // import { OutlinedButton } from "components/common/OutlinedButton";
-import header1 from "images/header-1.png";
-import header2 from "images/header-2.png";
-import header3 from "images/header-3.png";
-import header4 from "images/header-4.png";
-import header5 from "images/header-5.png";
-import header6 from "images/header-6.png";
-import header7 from "images/header-7.png";
-import header8 from "images/header-8.png";
+import header1 from "public/images/header-1.png";
+import header2 from "public/images/header-2.png";
+import header3 from "public/images/header-3.png";
+import header4 from "public/images/header-4.png";
+import header5 from "public/images/header-5.png";
+import header6 from "public/images/header-6.png";
+import header7 from "public/images/header-7.png";
+import header8 from "public/images/header-8.png";
 
 const H3 = ({ children }) => {
   const { bodyLarge } = typography;

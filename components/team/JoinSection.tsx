@@ -3,7 +3,7 @@ import { Grid } from "@mui/material";
 import { colors, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { OutlinedButton } from "components/common/OutlinedButton";
-import teamAbout from "images/team-about.png";
+import teamAbout from "public/images/team-about.png";
 
 export const JoinSection: FC = ({ children }) => {
   const { lightGrey } = colors;

@@ -4,7 +4,7 @@ import { useTranslate } from "react-polyglot";
 import { typography, colors, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { AdditionalFeatureItem } from "components/save/AdditionalFeatureItem";
-import additionalFeature from "images/information-security.svg";
+import additionalFeature from "public/images/information-security.svg";
 
 export const AdditionalFeaturesSection: FC = () => {
   const t = useTranslate();

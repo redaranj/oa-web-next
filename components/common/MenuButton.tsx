@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Box, Button, Popover } from "@mui/material";
 import PopupState, { bindTrigger, bindPopover } from "material-ui-popup-state";
 import { colors, typography, loader } from "styles/theme";
-import downArrow from "images/down-arrow.svg";
+import downArrow from "public/images/down-arrow.svg";
 
 type MenuButtonProps = PropsWithChildren<{
   title: string;

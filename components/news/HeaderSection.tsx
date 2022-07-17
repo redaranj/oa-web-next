@@ -1,24 +1,17 @@
 import { FC } from "react";
-import { Grid } from "@mui/material";
+import { Box } from "@mui/material";
 import { colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
-import aboutHeader from "images/about-header.png";
+import aboutHeader from "public/images/about-header.png";
 
 export const HeaderSection: FC = ({ children }) => {
-  const { turquoise } = colors;
+  const { white } = colors;
 
   return (
-    <PageSection backgroundColor={turquoise} backgroundImage={aboutHeader}>
-      <Grid
-        container
-        justifyContent="space-around"
-        sx={{
-          flexDirection: "column",
-          minHeight: "35vh",
-        }}
-      >
-        <Grid item>{children}</Grid>
-      </Grid>
+    <PageSection backgroundColor={white} backgroundImage={aboutHeader}>
+      <Box sx={{ "> h1": { color: white, textAlign: "center" } }}>
+        {children}
+      </Box>
     </PageSection>
   );
 };
