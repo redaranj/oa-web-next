@@ -1,6 +1,5 @@
 import { FC } from "react";
-import { MDXProvider } from "@mdx-js/react";
-import { Grid, AccordionSummary } from "@mui/material";
+import { Grid, AccordionSummary, Box } from "@mui/material";
 import {
   ChevronRight as ChevronRightIcon,
   ExpandMore as ExpandMoreIcon,
@@ -17,26 +16,25 @@ export const Question: FC<QuestionProps> = ({ expanded, children }) => {
 
   return (
     <AccordionSummary>
-      <Grid
-        container
-        direction="row"
-        justifyContent="space-between"
-        sx={{ maxWidth: 500 }}
-      >
-        <MDXProvider>{children}</MDXProvider>
-        {expanded ? (
-          <ExpandMoreIcon
-            htmlColor={lightGrey}
-            fontSize="medium"
-            sx={{ mt: "2px" }}
-          />
-        ) : (
-          <ChevronRightIcon
-            htmlColor={lightGrey}
-            fontSize="medium"
-            sx={{ mt: "4px" }}
-          />
-        )}
+      <Grid container direction="row" justifyContent="space-between">
+        <Grid item>
+          <Box className="question">{children}</Box>
+        </Grid>
+        <Grid item>
+          {expanded ? (
+            <ExpandMoreIcon
+              htmlColor={lightGrey}
+              fontSize="medium"
+              sx={{ mt: "2px" }}
+            />
+          ) : (
+            <ChevronRightIcon
+              htmlColor={lightGrey}
+              fontSize="medium"
+              sx={{ mt: "4px" }}
+            />
+          )}
+        </Grid>
       </Grid>
     </AccordionSummary>
   );

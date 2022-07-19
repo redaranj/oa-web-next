@@ -3,7 +3,7 @@ import { Grid, Box } from "@mui/material";
 import { colors, typography } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 
-export const AboutSection: FC = ({ children }) => {
+export const AboutSection: FC = () => {
   const { lightGrey } = colors;
   const { h2, body } = typography;
 
