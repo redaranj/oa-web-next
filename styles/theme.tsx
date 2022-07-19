@@ -202,6 +202,51 @@ export const typography = {
     },
   },
   blockquote: { ...typographyDefaults },
+  outlinedButton: {
+    ...typographyDefaults,
+    display: "inline-block",
+    fontFamily: "Montserrat, sans-serif",
+    fontSize: "18px",
+    lineHeight: "24px",
+    mt: 3,
+    mb: 3,
+    [breakpoints.ps]: {
+      fontSize: "14px",
+    },
+    [breakpoints.pl]: {
+      fontSize: "14px",
+    },
+    [breakpoints.ts]: {
+      fontSize: "14px",
+    },
+    [breakpoints.tl]: {
+      fontSize: "14px",
+    },
+    [breakpoints.ds]: {
+      fontSize: "16px",
+    },
+    [breakpoints.dl]: {
+      fontSize: "18px",
+    },
+    border: `1px solid ${colors.black}`,
+    borderRadius: "500px",
+    fontWeight: 700,
+    textTransform: "none",
+    textDecoration: "none",
+    color: colors.black,
+    p: 1.25,
+    pl: "40px",
+    pr: "40px",
+    "&:hover": {
+      backgroundColor: colors.turquoise,
+      border: `1px solid ${colors.turquoise}`,
+      color: colors.white,
+      img: {
+        filter:
+          "brightness(0) saturate(100%) invert(93%) sepia(93%) saturate(27%) hue-rotate(99deg) brightness(107%) contrast(105%)",
+      },
+    },
+  },
 };
 
 export const loader = (image: any) => `${image.src}?${image.width ?? ""}`;

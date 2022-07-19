@@ -1,13 +1,15 @@
 import { FC } from "react";
-import { Grid } from "@mui/material";
-import { colors } from "styles/theme";
-import { PageSection } from "components/common/PageSection";
+import { Grid, Box } from "@mui/material";
+import { colors, typography } from "styles/theme";
+import { HeaderSection as BaseHeaderSection } from "components/common/HeaderSection";
+import ContactHeader from "public/images/contact-header.png";
 
 export const ContactSection: FC = ({ children }) => {
-  const { turquoise } = colors;
+  const { white } = colors;
+  const { outlinedButton } = typography;
 
   return (
-    <PageSection backgroundColor={turquoise}>
+    <BaseHeaderSection backgroundColor={white}>
       <Grid
         container
         justifyContent="space-between"
@@ -15,13 +17,22 @@ export const ContactSection: FC = ({ children }) => {
           flexDirection: "row",
         }}
       >
-        <Grid item xs={6}>
+        <Grid
+          item
+          xs={6}
+          sx={{
+            backgroundImage: `url(${ContactHeader.src})`,
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center center",
+            backgroundSize: "cover",
+          }}
+        >
           {" "}
         </Grid>
         <Grid item xs={6}>
-          {children}
+          <Box sx={{ a: outlinedButton }}>{children}</Box>
         </Grid>
       </Grid>
-    </PageSection>
+    </BaseHeaderSection>
   );
 };

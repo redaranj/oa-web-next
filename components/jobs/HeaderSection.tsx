@@ -1,21 +1,17 @@
 import { FC } from "react";
-import { Grid } from "@mui/material";
+import { Box } from "@mui/material";
 import { colors } from "styles/theme";
-import { PageSection } from "components/common/PageSection";
+import { HeaderSection as BaseHeaderSection } from "components/common/HeaderSection";
+import JobsHeader from "public/images/jobs-header.png";
 
 export const HeaderSection: FC = ({ children }) => {
-  const { lightGrey } = colors;
+  const { white } = colors;
 
   return (
-    <PageSection backgroundColor={lightGrey}>
-      <Grid
-        container
-        sx={{
-          flexDirection: "column",
-        }}
-      >
+    <BaseHeaderSection backgroundImage={JobsHeader}>
+      <Box sx={{ "> h1": { color: white, textAlign: "center" } }}>
         {children}
-      </Grid>
-    </PageSection>
+      </Box>
+    </BaseHeaderSection>
   );
 };

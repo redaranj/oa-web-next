@@ -2,13 +2,8 @@ import { FC } from "react";
 import { Grid } from "@mui/material";
 import { colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
-import { JobItem } from "components/jobs/JobItem";
 
-type JobsSectionProps = {
-  pages: any[];
-};
-
-export const JobsSection: FC<JobsSectionProps> = ({ pages }) => {
+export const AboutPositionSection: FC = ({ children }) => {
   const { lightGrey } = colors;
 
   return (
@@ -19,9 +14,7 @@ export const JobsSection: FC<JobsSectionProps> = ({ pages }) => {
           flexDirection: "column",
         }}
       >
-        {pages.map((page: any) => (
-          <JobItem key={page.path} {...page} />
-        ))}
+        {children}
       </Grid>
     </PageSection>
   );

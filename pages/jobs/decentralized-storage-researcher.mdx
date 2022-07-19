@@ -7,37 +7,31 @@ import {
   WhitePageSection,
   GreyPageSection,
 } from "components/common/PageSection";
-import { MarkdownWrapper } from "components/jobs/MarkdownWrapper";
+import { JobHeaderSection } from "components/jobs/JobHeaderSection";
 import { AboutSection } from "components/jobs/AboutSection";
+import { AboutPositionSection } from "components/jobs/AboutPositionSection";
 import { DetailsSection } from "components/jobs/DetailsSection";
 import { DetailItem } from "components/jobs/DetailItem";
 import { DiverseSection } from "components/jobs/DiverseSection";
 
-export default function Job({ children }) {
-  return <MarkdownWrapper title={title}>{children}</MarkdownWrapper>;
-}
-
-[comment]: # "↓↓↓ Editable ↓↓↓"
-
-<GreyPageSection>
+<JobHeaderSection>
 {date}
 
 # {title}
 
-</GreyPageSection>
+</JobHeaderSection>
 
 <AboutSection />
 
-<WhitePageSection>
+<AboutPositionSection>
 ## About the **Position**
 
 The OpenArchive project is expanding from supporting centralized approaches for hosting media archives (NextCloud, Internet Archive) to decentralized approaches (IPFS / Filecoin, Tor Onion). This next technical step is crucial, as we must maintain our focus on the real threats and risks our core human rights and activist communities face in their work as citizen journalists and media activists. While we are enthusiastic about the possibilities that the “Decentralized Web” offers, we do not want to lose focus on privacy and security.
 
 With that in mind, we are eager to bring on board a technical researcher who can look at the technical architecture and capabilities of these new technical stacks through the lens of our existing functionality and user expectations. Here is an example of a question that needs to be answered: “How does sharing a video file using IPFS look different on a network versus uploading it to a server using WebDAV? Would it set off red flags for a mobile network operator?” Another may be, “Who can see when a file is published on IPFS, and are there any additional layers of access control or encryption that can be added, either within IPFS or on top of it?” We also need to consider how the perceived permanence of publishing something on the decentralized web, often seen as a feature, could also be harmful, if sensitive images or videos are accidentally released or need to be removed. Figuring out what the right questions is the first step, answering them is the second, and sharing the findings with the OpenArchive team, and eventually the world, is the final outcome.
 
-</WhitePageSection>
+</AboutPositionSection>
 
-<GreyPageSection>
 <DetailsSection>
   <DetailItem>
 ### Required skills and experience
@@ -62,5 +56,5 @@ With that in mind, we are eager to bring on board a technical researcher who can
 
 </DetailItem>
 </DetailsSection>
+
 <DiverseSection />
-</GreyPageSection>
