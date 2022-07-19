@@ -1,24 +1,26 @@
 import { FC } from "react";
-import { Grid } from "@mui/material";
+import { Stack } from "@mui/material";
 import { colors } from "styles/theme";
-import { PageSection } from "components/common/PageSection";
-import aboutHeader from "public/images/about-header.png";
+import { HeaderSection as BaseHeaderSection } from "components/common/HeaderSection";
+import useCasesHeader from "public/images/use-cases-header.png";
 
 export const HeaderSection: FC = ({ children }) => {
-  const { turquoise } = colors;
+  const { white } = colors;
 
   return (
-    <PageSection backgroundColor={turquoise} backgroundImage={aboutHeader}>
-      <Grid
-        container
+    <BaseHeaderSection backgroundColor={white} backgroundImage={useCasesHeader}>
+      <Stack
         justifyContent="space-around"
         sx={{
           flexDirection: "column",
-          minHeight: "35vh",
+          "> h1": {
+            color: white,
+            textAlign: "center",
+          },
         }}
       >
-        <Grid item>{children}</Grid>
-      </Grid>
-    </PageSection>
+        {children}
+      </Stack>
+    </BaseHeaderSection>
   );
 };

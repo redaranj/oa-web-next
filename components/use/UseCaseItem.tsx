@@ -1,24 +1,49 @@
 import { FC } from "react";
-import { Grid } from "@mui/material";
-import { colors } from "styles/theme";
-import { PageSection } from "components/common/PageSection";
-import aboutHeader from "public/images/about-header.png";
+import Link from "next/link";
+import { Grid, Box } from "@mui/material";
+import { colors, typography } from "styles/theme";
 
-export const UseCaseItem: FC = ({ children }) => {
-  const { turquoise } = colors;
+type UseCaseItemProps = {
+  name: string;
+  title: string;
+  quote: string;
+  image: string;
+  path: string;
+};
+
+export const UseCaseItem: FC<UseCaseItemProps> = ({
+  name,
+  title,
+  quote,
+  image,
+  path,
+}) => {
+  const { lightGrey } = colors;
+  const { h5, h6, bodyLarge } = typography;
 
   return (
-    <PageSection backgroundColor={turquoise} backgroundImage={aboutHeader}>
-      <Grid
-        container
-        justifyContent="space-around"
-        sx={{
-          flexDirection: "column",
-          minHeight: "35vh",
-        }}
-      >
-        <Grid item>{children}</Grid>
-      </Grid>
-    </PageSection>
+    <Link href={path}>
+      <Box sx={{ backgroundColor: lightGrey, p: 6 }}>
+        <Grid container direction="row">
+          <Grid item sx={{ width: "20%" }}>
+            <img src={`images/${image}`} />
+          </Grid>
+          <Grid item sx={{ width: "60%" }}>
+            <Box component="h5" sx={h5}>
+              {name}
+            </Box>
+            <Box component="h6" sx={h6}>
+              {title}
+            </Box>
+            <Box component="p" sx={bodyLarge}>
+              {quote}
+            </Box>
+          </Grid>
+          <Grid item sx={{ width: "20%" }}>
+            {" "}
+          </Grid>
+        </Grid>
+      </Box>
+    </Link>
   );
 };

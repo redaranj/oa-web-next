@@ -11,6 +11,8 @@ export const getIndexProps = (basePath: string) => {
       const {
         data: {
           title = "",
+          name = "",
+          quote = "",
           description = "",
           category = "",
           date = "",
@@ -20,6 +22,8 @@ export const getIndexProps = (basePath: string) => {
       return {
         path: navPath,
         title,
+        name,
+        quote,
         description,
         category,
         date,
