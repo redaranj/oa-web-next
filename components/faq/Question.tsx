@@ -1,7 +1,7 @@
 import { FC } from "react";
-import { Grid, AccordionSummary, Box } from "@mui/material";
+import { Grid, AccordionSummary } from "@mui/material";
 import {
-  ChevronRight as ChevronRightIcon,
+  ExpandLess as ExpandLessIcon,
   ExpandMore as ExpandMoreIcon,
 } from "@mui/icons-material";
 import { colors } from "styles/theme";
@@ -12,25 +12,31 @@ interface QuestionProps {
 }
 
 export const Question: FC<QuestionProps> = ({ expanded, children }) => {
-  const { lightGrey } = colors;
+  const { darkGrey, turquoise } = colors;
 
   return (
     <AccordionSummary>
-      <Grid container direction="row" justifyContent="space-between">
-        <Grid item>
-          <Box className="question">{children}</Box>
+      <Grid
+        container
+        direction="row"
+        justifyContent="space-between"
+        spacing={3}
+      >
+        <Grid item className="question" />
+        <Grid item flexGrow={1}>
+          {children}
         </Grid>
         <Grid item>
           {expanded ? (
-            <ExpandMoreIcon
-              htmlColor={lightGrey}
-              fontSize="medium"
+            <ExpandLessIcon
+              htmlColor={turquoise}
+              fontSize="large"
               sx={{ mt: "2px" }}
             />
           ) : (
-            <ChevronRightIcon
-              htmlColor={lightGrey}
-              fontSize="medium"
+            <ExpandMoreIcon
+              htmlColor={darkGrey}
+              fontSize="large"
               sx={{ mt: "4px" }}
             />
           )}

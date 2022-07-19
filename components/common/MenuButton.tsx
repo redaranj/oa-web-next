@@ -27,6 +27,7 @@ export const MenuButton: FC<MenuButtonProps> = ({
             <Button
               sx={{
                 ...body,
+                height: "100%",
                 fontWeight: 700,
                 textTransform: "none",
                 color: black,

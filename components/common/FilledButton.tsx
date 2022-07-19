@@ -1,7 +1,7 @@
 import { FC, PropsWithChildren } from "react";
 import Image from "next/image";
 import { Box, Button } from "@mui/material";
-import { colors, loader, typography } from "styles/theme";
+import { colors, loader, typography, breakpoints } from "styles/theme";
 import rightArrow from "public/images/right-arrow.svg";
 import downArrow from "public/images/down-arrow.svg";
 
@@ -26,13 +26,32 @@ export const FilledButton: FC<FilledButtonProps> = ({
 }) => (
   <Button
     sx={{
-      ...body,
+      lineHeight: "24px",
+      [breakpoints.ps]: {
+        fontSize: "14px",
+      },
+      [breakpoints.pl]: {
+        fontSize: "14px",
+      },
+      [breakpoints.ts]: {
+        fontSize: "14px",
+      },
+      [breakpoints.tl]: {
+        fontSize: "14px",
+      },
+      [breakpoints.ds]: {
+        fontSize: "16px",
+      },
+      [breakpoints.dl]: {
+        fontSize: "18px",
+      },
       borderRadius: "500px",
       fontWeight: 700,
       textTransform: "none",
       color: textColor,
       backgroundColor,
       p: 1,
+      m: 0,
       pl: "30px",
       pr: "30px",
       "&:hover": {

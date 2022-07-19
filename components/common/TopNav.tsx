@@ -75,6 +75,7 @@ export const TopNav = () => {
               justifyContent="space-between"
               flexWrap="nowrap"
               alignItems="center"
+              alignContent="center"
             >
               <Grid item sx={{ mt: 0.5 }} xs="auto">
                 <Link href="/" passHref>
@@ -98,6 +99,7 @@ export const TopNav = () => {
                 container
                 direction="row"
                 justifyContent="flex-end"
+                alignItems="center"
                 flexWrap="nowrap"
                 sx={{
                   display: "flex",
@@ -144,6 +146,9 @@ export const TopNav = () => {
                   </Grid>
                   <Grid
                     item
+                    container
+                    direction="column"
+                    justifyContent="space-around"
                     sx={{
                       display: "initial",
                       [ps]: {
@@ -204,7 +209,14 @@ export const TopNav = () => {
                       </Grid>
                     </MenuButton>
                   </Grid>
-                  <Grid item>
+                  <Grid
+                    item
+                    container
+                    direction="column"
+                    justifyContent="space-around"
+                    alignItems="center"
+                    alignContent="center"
+                  >
                     <FilledButton
                       textColor={white}
                       backgroundColor={mediumBurgundy}

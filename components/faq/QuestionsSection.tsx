@@ -1,10 +1,11 @@
 import { FC } from "react";
 import { Grid } from "@mui/material";
-import { colors } from "styles/theme";
+import { colors, typography } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 
 export const QuestionsSection: FC = ({ children }) => {
-  const { lightGrey, darkGrey } = colors;
+  const { lightGrey, mediumGrey } = colors;
+  const { bodyLarge } = typography;
 
   return (
     <PageSection backgroundColor={lightGrey}>
@@ -17,9 +18,11 @@ export const QuestionsSection: FC = ({ children }) => {
             counterIncrement: "questionCounter",
           },
           ".question::before": {
+            ...bodyLarge,
             content: "counter(questionCounter, decimal-leading-zero)",
-            color: darkGrey,
+            color: mediumGrey,
             display: "flex",
+            p: "4px",
           },
         }}
       >
