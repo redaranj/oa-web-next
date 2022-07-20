@@ -21,6 +21,8 @@ export const GuideItem: FC<GuideItemProps> = ({
   const { lightGrey, white } = colors;
   const { ps, tl } = breakpoints;
 
+  console.log({ category, date });
+
   return (
     <Grid
       item

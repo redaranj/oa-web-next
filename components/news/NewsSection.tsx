@@ -25,7 +25,7 @@ export const NewsSection: FC<NewsSectionProps> = ({ pages }) => {
         <Box sx={{ pb: 6 }}>
           <Grid container direction="row" justifyContent="center">
             {categories.map((category) => (
-              <Grid item>
+              <Grid item key={category}>
                 <FilledButton backgroundColor={white} textColor={black}>
                   {category}
                 </FilledButton>
