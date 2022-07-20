@@ -291,11 +291,7 @@ export const TopNav = () => {
                     <FilledButton
                       textColor={white}
                       backgroundColor={mediumBurgundy}
-                      onClick={() =>
-                        router.push(
-                          "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MA7ZZG3DJL97E&source=url"
-                        )
-                      }
+                      onClick={() => router.push("/donate")}
                     >
                       {t("donate")}
                     </FilledButton>

@@ -294,4 +294,20 @@ export const components = {
       <img {...props} src={`${basePath}/images/${props.src}`} alt={props.alt} />
     );
   },
+  a: ({ children }) => {
+    return (
+      <Box
+        component="a"
+        sx={{
+          color: "inherit",
+          textDecoration: "underline",
+          textDecorationColor: "#00b4a6",
+          textDecorationStyle: "dashed",
+          cursor: "pointer",
+        }}
+      >
+        {children}
+      </Box>
+    );
+  },
 };

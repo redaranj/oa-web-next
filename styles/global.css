@@ -13,6 +13,8 @@ body {
 a {
   color: inherit;
   text-decoration: underline;
+  text-decoration-color: "#00b4a6";
+  text-decoration-style: "dashed";
   cursor: pointer;
 }
 

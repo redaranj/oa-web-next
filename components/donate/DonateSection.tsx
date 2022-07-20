@@ -12,6 +12,7 @@ export const DonateSection: FC = ({ children }) => {
       <Grid
         container
         justifyContent="space-around"
+        spacing={3}
         sx={{
           flexDirection: "row",
         }}
