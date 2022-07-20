@@ -1,21 +1,11 @@
-import { FC, PropsWithChildren } from "react";
-import Image, { StaticImageData } from "next/image";
+import { FC } from "react";
 import { Box, Grid } from "@mui/material";
-import { typography, loader, breakpoints } from "styles/theme";
+import { typography, breakpoints } from "styles/theme";
 
-type ImpactItemProps = PropsWithChildren<{
-  title: string;
-  description: string;
-  image: StaticImageData;
-}>;
-
-export const ImpactItem: FC<ImpactItemProps> = ({
-  title,
-  description,
-  image,
-}) => {
+export const ImpactItem: FC = ({ children }) => {
   const { h5, bodyLarge } = typography;
   const { tl, pl, ps } = breakpoints;
+  const [image, title, ...description] = children as any[];
 
   return (
     <Grid
@@ -36,7 +26,7 @@ export const ImpactItem: FC<ImpactItemProps> = ({
       }}
     >
       <Grid item>
-        <Image src={image} alt="" width="60px" loader={loader} />
+        <img src={image} alt="" width="60px" />
       </Grid>
       <Grid item>
         <Box component="h5" sx={h5}>

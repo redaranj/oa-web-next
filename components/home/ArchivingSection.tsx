@@ -1,15 +1,13 @@
 import { FC } from "react";
-import { Grid, Box } from "@mui/material";
+import { Grid } from "@mui/material";
 import { useTranslate } from "react-polyglot";
-import { typography } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { OutlinedButton } from "components/common/OutlinedButton";
 import mission1 from "public/images/mission-1.png";
 import mission2 from "public/images/mission-2.png";
 
-export const MissionSection: FC = () => {
+export const ArchivingSection: FC = ({ children }) => {
   const t = useTranslate();
-  const { h2, bodyLarge } = typography;
 
   return (
     <PageSection backgroundColor="gray.light">
@@ -49,24 +47,11 @@ export const MissionSection: FC = () => {
             width: { ps: "100%", pl: "50%" },
           }}
         >
+          <Grid item>{children}</Grid>
           <Grid item>
-            <Box
-              component="h2"
-              sx={{ ...h2, mt: 10 }}
-              dangerouslySetInnerHTML={{ __html: t("radicalArchivingTitle") }}
-            />
-          </Grid>
-          <Grid item container direction="column">
-            <Grid item>
-              <Box component="p" sx={{ ...bodyLarge, mb: 5 }}>
-                {t("radicalArchivingDescription")}
-              </Box>
-            </Grid>
-            <Grid item>
-              <OutlinedButton arrowDirection="right" href="/about">
-                {t("learnMore")}
-              </OutlinedButton>
-            </Grid>
+            <OutlinedButton arrowDirection="right" href="/about">
+              {t("learnMore")}
+            </OutlinedButton>
           </Grid>
         </Grid>
       </Grid>
