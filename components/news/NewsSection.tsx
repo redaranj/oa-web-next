@@ -1,7 +1,8 @@
 import { FC } from "react";
-import { Grid } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import { colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
+import { FilledButton } from "components/common/FilledButton";
 import { NewsItem } from "components/news/NewsItem";
 
 interface NewsSectionProps {
@@ -9,7 +10,7 @@ interface NewsSectionProps {
 }
 
 export const NewsSection: FC<NewsSectionProps> = ({ pages }) => {
-  const { lightGrey } = colors;
+  const { lightGrey, white, black } = colors;
   /* eslint-disable no-param-reassign */
   const allCategories = pages.reduce((prev, current) => {
     prev[current.category] = prev[current.category] ?? 0 + 1;
@@ -20,7 +21,19 @@ export const NewsSection: FC<NewsSectionProps> = ({ pages }) => {
 
   return (
     <PageSection backgroundColor={lightGrey}>
-      <Grid item>{categories.join(",")}</Grid>
+      <Grid item>
+        <Box sx={{ pb: 6 }}>
+          <Grid container direction="row" justifyContent="center">
+            {categories.map((category) => (
+              <Grid item>
+                <FilledButton backgroundColor={white} textColor={black}>
+                  {category}
+                </FilledButton>
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
+      </Grid>
       <Grid
         container
         justifyContent="space-around"

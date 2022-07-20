@@ -1,17 +1,20 @@
 import { FC, PropsWithChildren } from "react";
-import { StaticImageData } from "next/image";
 import { Box, Grid } from "@mui/material";
 import { typography, colors, breakpoints } from "styles/theme";
 
 type GuideItemProps = PropsWithChildren<{
   title: string;
   description: string;
-  image: StaticImageData;
+  category: string;
+  date: string;
+  image: string;
 }>;
 
 export const GuideItem: FC<GuideItemProps> = ({
   title,
   description,
+  category,
+  date,
   image,
 }) => {
   const { h5, bodyLarge } = typography;
@@ -38,7 +41,7 @@ export const GuideItem: FC<GuideItemProps> = ({
             [ps]: { width: "100%" },
             [tl]: { width: 400 },
             p: 2,
-            backgroundImage: `url(${image.src})`,
+            backgroundImage: `url(images/${image})`,
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
           }}

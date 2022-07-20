@@ -6,6 +6,7 @@ import { typography, colors, breakpoints } from "styles/theme";
 type NewsItemProps = PropsWithChildren<{
   title: string;
   description: string;
+  category: string;
   path: string;
   image: string;
 }>;
@@ -13,6 +14,7 @@ type NewsItemProps = PropsWithChildren<{
 export const NewsItem: FC<NewsItemProps> = ({
   title,
   description,
+  category,
   path,
   image,
 }) => {
@@ -41,7 +43,7 @@ export const NewsItem: FC<NewsItemProps> = ({
               [ps]: { width: "100%" },
               [tl]: { width: 400 },
               p: 2,
-              backgroundImage: `url(${image})`,
+              backgroundImage: `url(/images/${image})`,
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
             }}
@@ -54,7 +56,7 @@ export const NewsItem: FC<NewsItemProps> = ({
                 mt: 2,
               }}
             >
-              Category
+              {category}
             </Box>
           </Box>
         </Grid>
