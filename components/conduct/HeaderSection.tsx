@@ -1,24 +1,22 @@
 import { FC } from "react";
 import { Grid } from "@mui/material";
 import { colors } from "styles/theme";
-import { PageSection } from "components/common/PageSection";
-import aboutHeader from "public/images/about-header.png";
+import { HeaderSection as BaseHeaderSection } from "components/common/HeaderSection";
 
 export const HeaderSection: FC = ({ children }) => {
-  const { turquoise } = colors;
+  const { lightGrey } = colors;
 
   return (
-    <PageSection backgroundColor={turquoise} backgroundImage={aboutHeader}>
+    <BaseHeaderSection backgroundColor={lightGrey}>
       <Grid
         container
         justifyContent="space-around"
         sx={{
           flexDirection: "column",
-          minHeight: "35vh",
         }}
       >
         {children}
       </Grid>
-    </PageSection>
+    </BaseHeaderSection>
   );
 };
