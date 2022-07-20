@@ -1,17 +1,12 @@
-import { FC, PropsWithChildren } from "react";
-import Image, { StaticImageData } from "next/image";
+import { FC } from "react";
 import Link from "next/link";
 import { Box, Grid } from "@mui/material";
-import { loader, breakpoints } from "styles/theme";
+import { breakpoints } from "styles/theme";
 
-type PartnerItemProps = PropsWithChildren<{
-  name: string;
-  image: StaticImageData;
-  url: string;
-}>;
-
-export const PartnerItem: FC<PartnerItemProps> = ({ name, image, url }) => {
+export const PartnerItem: FC = ({ children }) => {
   const { ps, tl } = breakpoints;
+  const [image, url, ...rest] = children as any[];
+  const name = rest as unknown as string;
 
   return (
     <Grid
@@ -27,7 +22,7 @@ export const PartnerItem: FC<PartnerItemProps> = ({ name, image, url }) => {
             maxWidth: "300px",
           }}
         >
-          <Image src={image} loader={loader} alt={name} />
+          <img src={`/images${image}`} alt={name} />
         </Box>
       </Link>
     </Grid>
