@@ -7,10 +7,10 @@ import refuse1 from "public/images/refuse-1.png";
 import refuse2 from "public/images/refuse-2.png";
 import target from "public/images/target.svg";
 
-export const RefuseSection: FC = () => {
+export const MissionSection: FC = ({ children }) => {
   const t = useTranslate();
   const { white } = colors;
-  const { h2, h6, bodyLarge } = typography;
+  const { h2, h6 } = typography;
   const { ps, tl } = breakpoints;
 
   return (
@@ -78,13 +78,7 @@ export const RefuseSection: FC = () => {
               [tl]: { width: "50%" },
             }}
           >
-            <Box
-              component="p"
-              sx={{ ...bodyLarge, pb: 30 }}
-              dangerouslySetInnerHTML={{
-                __html: t("refuseToStopDescription"),
-              }}
-            />
+            {children}
           </Grid>
         </Grid>
       </Grid>

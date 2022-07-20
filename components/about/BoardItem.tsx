@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Box, Grid } from "@mui/material";
 import { colors, typography, breakpoints } from "styles/theme";
 
-export const ActivityItem: FC = ({ children }) => {
+export const BoardItem: FC = ({ children }) => {
   const { white } = colors;
   const { h5 } = typography;
   const { ps, tl } = breakpoints;

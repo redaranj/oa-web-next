@@ -1,35 +1,20 @@
 import { FC } from "react";
-import { Box, Grid } from "@mui/material";
-import { useTranslate } from "react-polyglot";
-import { typography, colors } from "styles/theme";
-import { PageSection } from "components/common/PageSection";
+import { Box } from "@mui/material";
+import { colors } from "styles/theme";
+import { HeaderSection as BaseHeaderSection } from "components/common/HeaderSection";
 import aboutHeader from "public/images/about-header.png";
 
-export const HeaderSection: FC = () => {
-  const t = useTranslate();
+export const HeaderSection: FC = ({ children }) => {
   const { white, turquoise } = colors;
-  const { h1 } = typography;
 
   return (
-    <PageSection backgroundColor={turquoise} backgroundImage={aboutHeader}>
-      <Grid
-        container
-        justifyContent="space-around"
-        sx={{
-          flexDirection: "column",
-          minHeight: "35vh",
-        }}
-      >
-        <Grid item>
-          <Box
-            component="h1"
-            sx={{ ...h1, textAlign: "center", color: white }}
-            dangerouslySetInnerHTML={{
-              __html: t("aboutUsTitle"),
-            }}
-          />
-        </Grid>
-      </Grid>
-    </PageSection>
+    <BaseHeaderSection
+      backgroundColor={turquoise}
+      backgroundImage={aboutHeader}
+    >
+      <Box sx={{ "> h1": { color: white, textAlign: "center" } }}>
+        {children}
+      </Box>
+    </BaseHeaderSection>
   );
 };

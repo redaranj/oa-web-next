@@ -3,22 +3,19 @@ import { Box, Grid } from "@mui/material";
 import { useTranslate } from "react-polyglot";
 import { typography, colors, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
-import { PartnerItem } from "components/about/PartnerItem";
 import ourTeam from "public/images/our-team.svg";
 import arm1 from "public/images/arm-1.svg";
 import arm2 from "public/images/arm-2.svg";
 import arm3 from "public/images/arm-3.svg";
 import arm4 from "public/images/arm-4.svg";
 import arm5 from "public/images/arm-5.svg";
-import ffdw from "public/images/ffdw.png";
-import otf from "public/images/otf.png";
-import knight from "public/images/knight.png";
 
-export const PartnersSection: FC = () => {
+export const PartnersSection: FC = ({ children }) => {
   const t = useTranslate();
   const { white, lightGrey } = colors;
-  const { h2, h5, bodyLarge } = typography;
+  const { h5 } = typography;
   const { ps, tl } = breakpoints;
+  const [title, team, board, ...rest] = children as any[];
 
   return (
     <PageSection backgroundColor={white}>
@@ -28,15 +25,7 @@ export const PartnersSection: FC = () => {
           flexDirection: "column",
         }}
       >
-        <Grid item>
-          <Box
-            component="h2"
-            sx={{ ...h2, textAlign: "center", pt: 16 }}
-            dangerouslySetInnerHTML={{
-              __html: t("couldntAloneTitle"),
-            }}
-          />
-        </Grid>
+        <Grid item>{title}</Grid>
         <Grid item>
           <Box
             sx={{
@@ -81,14 +70,7 @@ export const PartnersSection: FC = () => {
                   [tl]: { width: "50%" },
                 }}
               >
-                <Grid item>
-                  <Box component="h5" sx={{ ...h5, pt: 16, pr: 8 }}>
-                    {t("ourTeam")}
-                  </Box>
-                  <Box component="p" sx={{ ...bodyLarge, pb: 16 }}>
-                    {t("ourTeamInfo")}
-                  </Box>
-                </Grid>
+                {team}
               </Grid>
             </Grid>
           </Box>
@@ -105,12 +87,7 @@ export const PartnersSection: FC = () => {
                   pl: 8,
                 }}
               >
-                <Box component="h5" sx={{ ...h5, pt: 16 }}>
-                  {t("advisoryBoard")}
-                </Box>
-                <Box component="p" sx={{ ...bodyLarge, pb: 16 }}>
-                  {t("advisoryBoardInfo")}
-                </Box>
+                {board}
               </Grid>
               <Grid
                 item
@@ -152,21 +129,7 @@ export const PartnersSection: FC = () => {
               [tl]: { flexDirection: "row" },
             }}
           >
-            <PartnerItem
-              name="Filecoin Foundation for the Distributed Web"
-              image={ffdw}
-              url="https://ffdweb.org"
-            />
-            <PartnerItem
-              name="Open Technology Fund"
-              image={otf}
-              url="https://www.opentech.fund"
-            />
-            <PartnerItem
-              name="Knight Foundation"
-              image={knight}
-              url="https://knightfoundation.org/"
-            />
+            {rest}
           </Grid>
         </Grid>
       </Grid>

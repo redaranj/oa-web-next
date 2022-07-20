@@ -4,7 +4,7 @@ import { colors, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import handPhone from "public/images/hand-phone.svg";
 
-export const BeliefsSection: FC = ({ children }) => {
+export const VisionSection: FC = ({ children }) => {
   const { white } = colors;
   const { ps, tl } = breakpoints;
 
