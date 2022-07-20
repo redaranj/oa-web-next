@@ -21,7 +21,7 @@ export const TopNav = () => {
   const router = useRouter();
   const t = useTranslate();
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const { white, mediumGrey, mediumBurgundy } = colors;
+  const { white, mediumGrey, mediumBurgundy, black, turquoise } = colors;
   const { body } = typography;
   const { ps, pl, ts, tl, ds, dl } = breakpoints;
   const menuItemProps = {
@@ -175,8 +175,51 @@ export const TopNav = () => {
                             </Box>
                           </Link>
                         </Grid>
+                        <Grid item>
+                          <Link href="/use" passHref>
+                            <Box component="a" sx={menuItemProps}>
+                              {t("useCases")}
+                            </Box>
+                          </Link>
+                        </Grid>
                       </Grid>
                     </MenuButton>
+                  </Grid>
+                  <Grid
+                    item
+                    sx={{
+                      display: "initial",
+                      [ps]: {
+                        display: "none",
+                      },
+                      [ds]: {
+                        display: "initial",
+                      },
+                    }}
+                  >
+                    <Link href="/news" passHref>
+                      <Button
+                        sx={{
+                          ...body,
+                          height: "100%",
+                          fontWeight: 700,
+                          textTransform: "none",
+                          color: black,
+                          whiteSpace: "nowrap",
+                          cursor: "pointer",
+                          "&:hover": {
+                            color: turquoise,
+                            backgroundColor: "transparent",
+                            img: {
+                              filter:
+                                "brightness(0) saturate(100%) invert(47%) sepia(82%) saturate(4262%) hue-rotate(155deg) brightness(99%) contrast(101%)",
+                            },
+                          },
+                        }}
+                      >
+                        {t("news")}
+                      </Button>
+                    </Link>
                   </Grid>
                   <Grid
                     item
@@ -203,6 +246,34 @@ export const TopNav = () => {
                           <Link href="/team" passHref>
                             <Box component="a" sx={menuItemProps}>
                               {t("team")}
+                            </Box>
+                          </Link>
+                        </Grid>
+                        <Grid item>
+                          <Link href="/partner" passHref>
+                            <Box component="a" sx={menuItemProps}>
+                              {t("partnerWithUs")}
+                            </Box>
+                          </Link>
+                        </Grid>
+                        <Grid item>
+                          <Link href="/jobs" passHref>
+                            <Box component="a" sx={menuItemProps}>
+                              {t("jobs")}
+                            </Box>
+                          </Link>
+                        </Grid>
+                        <Grid item>
+                          <Link href="/contact" passHref>
+                            <Box component="a" sx={menuItemProps}>
+                              {t("contactUs")}
+                            </Box>
+                          </Link>
+                        </Grid>
+                        <Grid item>
+                          <Link href="/faq" passHref>
+                            <Box component="a" sx={menuItemProps}>
+                              {t("faq")}
                             </Box>
                           </Link>
                         </Grid>

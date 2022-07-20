@@ -13,7 +13,7 @@ export const UseCasesSection: FC<UseCasesSectionProps> = ({ pages }) => {
 
   return (
     <PageSection backgroundColor={white}>
-      <Stack>
+      <Stack spacing={3}>
         {pages.map((page) => (
           <UseCaseItem key={page.path} {...page} />
         ))}

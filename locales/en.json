@@ -123,5 +123,10 @@
   "save": "Save",
   "oops": "Oops!",
   "cantFindPage": "Sorry, we can't find that page",
-  "goToMainPage": "Go to the main page"
+  "goToMainPage": "Go to the main page",
+  "useCases": "Use cases",
+  "partnerWithUs": "Partner with us",
+  "jobs": "Jobs",
+  "contactUs": "Contact us",
+  "news": "News"
 }

@@ -5,9 +5,11 @@ quote: Social media and messaging apps compress audio and video before upload, w
 image: anna.svg
 ---
 
-import { PageSection } from "components/common/PageSection";
+import { ProfileSection } from "components/use/ProfileSection";
+import { AchievementsSection } from "components/use/AchievementsSection";
+import { AchievementItem } from "components/use/AchievementItem";
 
-<PageSection>
+<ProfileSection>
 
 # {name}
 
@@ -22,25 +24,59 @@ import { PageSection } from "components/common/PageSection";
 | Role   | Archivist for Human Rights Watch                           |
 | Skills | Cataloging and preserving data, digital systems management |
 
-- ![Test](darius.png) Anna is an archivist for Human Rights Watch
-- ![Test](darius.png) She created the archive
-- ![Test](darius.png) She works in the multimedia department and receives data from researchers, videographers, satellite imagery analysts, graphic artists, animators, etc.
-- ![Test](darius.png) She then catalogs the data received and manages data for posterity and easy access.
-- ![Test](darius.png) She also maintains digital systems - distribution sites for the press and public-facing websites.
-- ![Test](darius.png) Requires metadata about the data received from various actors to validate its authenticity.
-- ![Test](darius.png) Desktop applications help her manage and send large data which would not be possible on mobile.
+- ![](hrw.svg) Anna is an archivist for Human Rights Watch
+- ![](folder.svg) She created the archive
+- ![](play.svg) She works in the multimedia department and receives data from researchers, videographers, satellite imagery analysts, graphic artists, animators, etc.
+- ![](hands.svg) She then catalogs the data received and manages data for posterity and easy access.
+- ![](website.svg) She also maintains digital systems - distribution sites for the press and public-facing websites.
+- ![](checkmark.svg) Requires metadata about the data received from various actors to validate its authenticity.
+- ![](squares.svg) Desktop applications help her manage and send large data which would not be possible on mobile.
 
-</PageSection>
-<PageSection>
+</ProfileSection>
+<AchievementsSection>
+    ### Anna's achievements
 
-## Anna's achievements
+<AchievementItem>
+![](knight.png)
 
-- ![Test](knight.png)
-- ### Goals and tasks
-- Ensure easy access of data for future reference, smooth functioning of digital systems and receive multimedia from multiple sources and ensure it is cataloged and maintained methodically for future reference
+### Goals and tasks
 
-- ![Test](darius.png)
-- ### Goals and tasks
-- Ensure easy access of data for future reference, smooth functioning of digital systems and receive multimedia from multiple sources and ensure it is cataloged and maintained methodically for future reference
+Ensure easy access of data for future reference, smooth functioning of digital systems and receive multimedia from multiple sources and ensure it is cataloged and maintained methodically for future reference
 
-</PageSection>
+</AchievementItem>
+<AchievementItem>
+![](darius.png)
+
+### Motivations
+
+Preservation of information and technology. Storytelling. Being faithful to the people in the stories she archives.
+
+</AchievementItem>
+<AchievementItem>
+### Environment
+
+Works from office location. Physically connected to NAZ server. Editing from massive workstations.
+
+</AchievementItem>
+
+<AchievementItem>
+### Influences
+
+Easy management of large data collections. Notification system when content is uploaded.
+
+</AchievementItem>
+<AchievementItem>
+
+### Pain points
+
+File management on mobile is difficult. Sensitive data sitting in the cloud. Absence of an established workflow for researchers. Lack of acknowledgment of the need for archivists. Receiving data physically or online depends on their security concern. Physical mail has complications based on the laws in the countries and takes time. Security concerns. Often hacked.
+
+</AchievementItem>
+<AchievementItem>
+
+### Solutions
+
+Media coming in will have proof mode, metadata - prepackaged info which will be useful for Nicole. Different tags for incoming media will help to catalog data. A secure backend will reduce the dependency on receiving data through physical mail. Researchers will be able to start cataloging and describing the content, thus creating a workflow.
+
+</AchievementItem>
+</AchievementsSection>

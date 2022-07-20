@@ -24,11 +24,11 @@ export const UseCaseItem: FC<UseCaseItemProps> = ({
   return (
     <Link href={path}>
       <Box sx={{ backgroundColor: lightGrey, p: 6 }}>
-        <Grid container direction="row">
-          <Grid item sx={{ width: "20%" }}>
+        <Grid container direction="row" wrap="nowrap" spacing={3}>
+          <Grid item flexGrow={0}>
             <img src={`images/${image}`} />
           </Grid>
-          <Grid item sx={{ width: "60%" }}>
+          <Grid item flexGrow={1}>
             <Box component="h5" sx={h5}>
               {name}
             </Box>
@@ -39,7 +39,7 @@ export const UseCaseItem: FC<UseCaseItemProps> = ({
               {quote}
             </Box>
           </Grid>
-          <Grid item sx={{ width: "20%" }}>
+          <Grid item flexGrow={0}>
             {" "}
           </Grid>
         </Grid>
