@@ -8,11 +8,12 @@ import { OutlinedButton } from "components/common/OutlinedButton";
 import saveHeader from "public/images/save-header.png";
 import saveLogo from "public/images/save-logo.png";
 
-export const HeaderSection: FC = () => {
+export const HeaderSection: FC = ({ children }) => {
   const t = useTranslate();
   const { lightGrey, mediumGrey } = colors;
-  const { h1, bodyLarge } = typography;
+  const { bodyLarge } = typography;
   const { ps, ts } = breakpoints;
+  const [title, description, ...rest] = children as any[];
 
   return (
     <PageSection backgroundColor={lightGrey} sx={{ pb: 0 }}>
@@ -61,15 +62,7 @@ export const HeaderSection: FC = () => {
                 }}
               />
             </Grid>
-            <Grid item>
-              <Box
-                component="h1"
-                sx={{ ...h1, ml: "16px" }}
-                dangerouslySetInnerHTML={{
-                  __html: t("appSaveTitle"),
-                }}
-              />
-            </Grid>
+            <Grid item>{title}</Grid>
           </Grid>
           <Grid item container direction="column">
             <Grid item>
@@ -77,7 +70,7 @@ export const HeaderSection: FC = () => {
                 component="p"
                 sx={{ ...bodyLarge, maxWidth: "550px", mb: "60px" }}
               >
-                {t("appSaveDescription")}
+                {description}
               </Box>
             </Grid>
             <Grid item>
@@ -85,6 +78,7 @@ export const HeaderSection: FC = () => {
             </Grid>
           </Grid>
         </Grid>
+        <Grid item>{rest}</Grid>
         <Grid
           item
           container

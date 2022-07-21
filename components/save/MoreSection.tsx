@@ -3,12 +3,11 @@ import { Box, Grid } from "@mui/material";
 import { useTranslate } from "react-polyglot";
 import { typography, colors, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
-import { MoreItem } from "components/save/MoreItem";
-import microphone from "public/images/microphone.png";
-import preservingGuide from "public/images/preserving-guide.png";
-import saveVideo from "public/images/save-video.png";
+// import microphone from "public/images/microphone.png";
+// import preservingGuide from "public/images/preserving-guide.png";
+// import saveVideo from "public/images/save-video.png";
 
-export const MoreSection: FC = () => {
+export const MoreSection: FC = ({ children }) => {
   const t = useTranslate();
   const { white } = colors;
   const { h2, bodyLarge } = typography;
@@ -55,24 +54,7 @@ export const MoreSection: FC = () => {
             [tl]: { flexDirection: "row" },
           }}
         >
-          <MoreItem
-            title={t("pressRelease")}
-            description=""
-            image={microphone}
-            url=""
-          />
-          <MoreItem
-            title={t("guide")}
-            description=""
-            image={preservingGuide}
-            url=""
-          />
-          <MoreItem
-            title={t("video")}
-            description=""
-            image={saveVideo}
-            url=""
-          />
+          {children}
         </Grid>
       </Grid>
     </PageSection>

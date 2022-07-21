@@ -4,14 +4,13 @@ import { useTranslate } from "react-polyglot";
 import { typography, colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { HorizontalCarousel } from "components/common/HorizontalCarousel";
-import { TestimonialItem } from "components/common/TestimonialItem";
-import darius from "public/images/darius.png";
 
-export const TestimonialsSection: FC = () => {
+export const TestimonialsSection: FC = ({ children }) => {
   const t = useTranslate();
   const { h2 } = typography;
   const { lightGrey } = colors;
 
+  console.log({ children });
   return (
     <PageSection backgroundColor={lightGrey}>
       <Box
@@ -19,44 +18,7 @@ export const TestimonialsSection: FC = () => {
         sx={{ ...h2, mb: "60px" }}
         dangerouslySetInnerHTML={{ __html: t("testimonialsTitle") }}
       />
-      <HorizontalCarousel>
-        <TestimonialItem
-          name={t("testimonialDariusName")}
-          position={t("testimonialDariusPosition")}
-          quote={t("testimonialDariusQuote")}
-          image={darius}
-        />
-        <TestimonialItem
-          name={t("testimonialDariusName")}
-          position={t("testimonialDariusPosition")}
-          quote={t("testimonialDariusQuote")}
-          image={darius}
-        />
-        <TestimonialItem
-          name={t("testimonialDariusName")}
-          position={t("testimonialDariusPosition")}
-          quote={t("testimonialDariusQuote")}
-          image={darius}
-        />
-        <TestimonialItem
-          name={t("testimonialDariusName")}
-          position={t("testimonialDariusPosition")}
-          quote={t("testimonialDariusQuote")}
-          image={darius}
-        />
-        <TestimonialItem
-          name={t("testimonialDariusName")}
-          position={t("testimonialDariusPosition")}
-          quote={t("testimonialDariusQuote")}
-          image={darius}
-        />
-        <TestimonialItem
-          name={t("testimonialDariusName")}
-          position={t("testimonialDariusPosition")}
-          quote={t("testimonialDariusQuote")}
-          image={darius}
-        />
-      </HorizontalCarousel>
+      <HorizontalCarousel>{children}</HorizontalCarousel>
     </PageSection>
   );
 };

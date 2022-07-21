@@ -1,6 +1,12 @@
 import * as fs from "fs";
 import matter from "gray-matter";
 
+export const getImagePath = (image: string) => {
+  const basePath = process.env.CI ? "/web-next" : "";
+
+  return `${basePath}/images/${image}`;
+};
+
 export const getIndexProps = (basePath: string) => {
   const paths = fs.readdirSync(basePath);
   const pages = paths

@@ -1,36 +1,24 @@
-import { FC, PropsWithChildren } from "react";
-import { StaticImageData } from "next/image";
+import { FC } from "react";
 import { Box, Grid } from "@mui/material";
-import { useTranslate } from "react-polyglot";
 import { typography, breakpoints } from "styles/theme";
 
+/*
 type AcronymItemProps = PropsWithChildren<{
   titleKey: string;
   descriptionOneKey: string;
   descriptionTwoKey: string;
   image: StaticImageData;
 }>;
-
-export const AcronymItem: FC<AcronymItemProps> = ({
-  titleKey,
-  descriptionOneKey,
-  descriptionTwoKey,
-  image,
-}) => {
-  const t = useTranslate();
-  const { h2, bodyLarge } = typography;
+*/
+export const AcronymItem: FC = ({ children }) => {
+  const { bodyLarge } = typography;
   const { ps, tl } = breakpoints;
+  const [image, title, ...description] = children as any[];
 
   return (
     <Grid item container direction="column">
       <Grid item>
-        <Box
-          component="h2"
-          sx={{ ...h2, textAlign: "center", mb: "70px" }}
-          dangerouslySetInnerHTML={{
-            __html: t(titleKey),
-          }}
-        />
+        <Box sx={{ textAlign: "center", mb: "70px" }}>{title}</Box>
       </Grid>
       <Grid
         item
@@ -51,13 +39,9 @@ export const AcronymItem: FC<AcronymItemProps> = ({
             [tl]: { width: "33%" },
           }}
         >
-          <Box
-            component="p"
-            sx={bodyLarge}
-            dangerouslySetInnerHTML={{
-              __html: t(descriptionOneKey),
-            }}
-          />
+          <Box component="p" sx={bodyLarge}>
+            {description}
+          </Box>
         </Grid>
         <Grid
           item
@@ -75,20 +59,16 @@ export const AcronymItem: FC<AcronymItemProps> = ({
             [tl]: { width: "33%" },
           }}
         >
-          <Box
-            component="p"
-            sx={bodyLarge}
-            dangerouslySetInnerHTML={{
-              __html: t(descriptionTwoKey),
-            }}
-          />
+          <Box component="p" sx={bodyLarge}>
+            {description}
+          </Box>
         </Grid>
       </Grid>
       <Grid item>
         <Box
           sx={{
             height: "550px",
-            backgroundImage: `url(${image.src})`,
+            backgroundImage: `url(${image})`,
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center 75px",
             backgroundSize: "1250px",

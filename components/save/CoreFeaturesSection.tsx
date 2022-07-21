@@ -3,16 +3,15 @@ import { Box, Grid } from "@mui/material";
 import { useTranslate } from "react-polyglot";
 import { typography, colors, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
-import { CoreFeatureItem } from "components/save/CoreFeatureItem";
-import coreFeature from "public/images/information-security.svg";
 import coreFeaturesBackground from "public/images/core-features-background.png";
 
-export const CoreFeaturesSection: FC = () => {
+export const CoreFeaturesSection: FC = ({ children }) => {
   const t = useTranslate();
   const { white, turquoise } = colors;
   const { h2, bodyLarge } = typography;
   const { ps, tl } = breakpoints;
 
+  console.log({ children });
   return (
     <PageSection backgroundColor={white}>
       <Grid container direction="column">
@@ -98,6 +97,7 @@ export const CoreFeaturesSection: FC = () => {
                 {t("coreFeaturesIntro")}
               </Box>
             </Grid>
+            {/*
             <CoreFeatureItem
               title={t("sendMediaSecureTitle")}
               description=""
@@ -117,7 +117,7 @@ export const CoreFeaturesSection: FC = () => {
               title={t("simplifyWorkflowsTitle")}
               description=""
               image={coreFeature}
-            />
+              /> */}
           </Grid>
           <Grid
             item

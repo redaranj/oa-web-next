@@ -1,16 +1,16 @@
 import { FC } from "react";
 import { Box, Grid } from "@mui/material";
 import { useTranslate } from "react-polyglot";
-import { typography, colors, breakpoints } from "styles/theme";
+import { colors, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { AdditionalFeatureItem } from "components/save/AdditionalFeatureItem";
 import additionalFeature from "public/images/information-security.svg";
 
-export const AdditionalFeaturesSection: FC = () => {
+export const AdditionalFeaturesSection: FC = ({ children }) => {
   const t = useTranslate();
   const { lightGrey, white, turquoise, black } = colors;
-  const { h2 } = typography;
   const { ps, tl } = breakpoints;
+  const [first, ...rest] = children as any[];
 
   return (
     <PageSection backgroundColor={lightGrey}>
@@ -21,13 +21,7 @@ export const AdditionalFeaturesSection: FC = () => {
         }}
       >
         <Grid item>
-          <Box
-            component="h2"
-            sx={{ ...h2, mb: "120px" }}
-            dangerouslySetInnerHTML={{
-              __html: t("additionalFeaturesTitle"),
-            }}
-          />
+          <Box sx={{ mb: "120px" }}>{first}</Box>
         </Grid>
         <Grid
           item
@@ -40,6 +34,7 @@ export const AdditionalFeaturesSection: FC = () => {
             [tl]: { flexDirection: "row" },
           }}
         >
+          {rest}
           <AdditionalFeatureItem
             title={t("addMetadata")}
             description=""

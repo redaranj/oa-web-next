@@ -1,22 +1,13 @@
-import { FC, PropsWithChildren } from "react";
-import Image, { StaticImageData } from "next/image";
+import { FC } from "react";
+import Image from "next/image";
 import { Box, Grid } from "@mui/material";
 import { typography, colors, loader, breakpoints } from "styles/theme";
 
-type CoreFeatureItemProps = PropsWithChildren<{
-  title: string;
-  description: string;
-  image: StaticImageData;
-}>;
-
-export const CoreFeatureItem: FC<CoreFeatureItemProps> = ({
-  title,
-  description,
-  image,
-}) => {
+export const CoreFeatureItem: FC = ({ children }) => {
   const { h5, bodyLarge } = typography;
   const { lightGrey } = colors;
   const { ps, tl } = breakpoints;
+  const [image, title, ...description] = children as any[];
 
   return (
     <Grid
