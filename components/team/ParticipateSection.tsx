@@ -23,6 +23,7 @@ export const ParticipateSection: FC = ({ children }) => {
           spacing={6}
           alignItems="flex-end"
           sx={{
+            pt: 6,
             pb: 12,
             flexDirection: "row",
             [ps]: { flexDirection: "column" },
