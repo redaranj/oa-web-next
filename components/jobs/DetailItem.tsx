@@ -14,7 +14,7 @@ export const DetailItem: FC = ({ children }) => {
           flexDirection: "row",
         }}
       >
-        <Grid item xs={6}>
+        <Grid item xs={6} sx={{ pt: 1 }}>
           {first}
         </Grid>
         <Grid item xs={6}>

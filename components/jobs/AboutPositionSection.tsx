@@ -1,7 +1,9 @@
 import { FC } from "react";
-import { Grid } from "@mui/material";
-import { colors } from "styles/theme";
+import Image from "next/image";
+import { Grid, Box } from "@mui/material";
+import { colors, loader } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
+import eyes from "public/images/eyes.svg";
 
 export const AboutPositionSection: FC = ({ children }) => {
   const { lightGrey } = colors;
@@ -11,10 +13,17 @@ export const AboutPositionSection: FC = ({ children }) => {
       <Grid
         container
         sx={{
-          flexDirection: "column",
+          flexDirection: "row",
         }}
       >
-        {children}
+        <Grid item sx={{ width: "50%" }}>
+          {children}
+        </Grid>
+        <Grid item sx={{ width: "50%", textAlign: "center" }}>
+          <Box sx={{ px: 8, py: 20 }}>
+            <Image src={eyes} alt="" loader={loader} />
+          </Box>
+        </Grid>
       </Grid>
     </PageSection>
   );

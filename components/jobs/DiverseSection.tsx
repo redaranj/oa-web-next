@@ -17,17 +17,15 @@ export const DiverseSection: FC = () => {
           flexDirection: "row",
         }}
       >
-        <Grid
-          item
-          xs={6}
-          sx={{
-            backgroundImage: `url(${Diverse.src})`,
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center center",
-            backgroundSize: "cover",
-          }}
-        >
-          {" "}
+        <Grid item xs={6}>
+          <Box
+            sx={{
+              backgroundImage: `url(${Diverse.src})`,
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center center",
+              backgroundSize: "cover",
+            }}
+          />
         </Grid>
         <Grid item xs={6}>
           <Box sx={h1}>

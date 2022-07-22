@@ -8,7 +8,7 @@ export const DetailsSection: FC = ({ children }) => {
 
   return (
     <Box sx={{ backgroundColor: lightGrey, p: 6 }}>
-      <Stack spacing={3}>{children}</Stack>
+      <Stack spacing={6}>{children}</Stack>
       <ContactBox />
     </Box>
   );
