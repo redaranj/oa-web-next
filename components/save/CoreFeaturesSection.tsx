@@ -10,8 +10,8 @@ export const CoreFeaturesSection: FC = ({ children }) => {
   const { white, turquoise } = colors;
   const { h2, bodyLarge } = typography;
   const { ps, tl } = breakpoints;
+  const [title, description, ...rest] = children as any[];
 
-  console.log({ children });
   return (
     <PageSection backgroundColor={white}>
       <Grid container direction="column">
@@ -34,13 +34,7 @@ export const CoreFeaturesSection: FC = ({ children }) => {
               [tl]: { width: "50%" },
             }}
           >
-            <Box
-              component="h2"
-              sx={{ ...h2 }}
-              dangerouslySetInnerHTML={{
-                __html: t("coreFeaturesTitle"),
-              }}
-            />
+            {title}
           </Grid>
           <Grid
             item
@@ -50,9 +44,7 @@ export const CoreFeaturesSection: FC = ({ children }) => {
               [tl]: { width: "50%" },
             }}
           >
-            <Box component="p" sx={{ ...bodyLarge }}>
-              {t("coreFeaturesDescription")}
-            </Box>
+            {description}
           </Grid>
         </Grid>
         <Grid
@@ -77,47 +69,7 @@ export const CoreFeaturesSection: FC = ({ children }) => {
             }}
             spacing={6}
           >
-            <Grid
-              item
-              sx={{
-                width: "50%",
-                [ps]: { width: "100%" },
-                [tl]: { width: "50%" },
-              }}
-            >
-              <Box
-                sx={{
-                  width: "100%",
-                  minHeight: "300px",
-                  backgroundColor: turquoise,
-                  color: white,
-                  p: 3,
-                }}
-              >
-                {t("coreFeaturesIntro")}
-              </Box>
-            </Grid>
-            {/*
-            <CoreFeatureItem
-              title={t("sendMediaSecureTitle")}
-              description=""
-              image={coreFeature}
-            />
-            <CoreFeatureItem
-              title={t("preserveMobileMediaTitle")}
-              description=""
-              image={coreFeature}
-            />
-            <CoreFeatureItem
-              title={t("communicateIntentionsTitle")}
-              description=""
-              image={coreFeature}
-            />
-            <CoreFeatureItem
-              title={t("simplifyWorkflowsTitle")}
-              description=""
-              image={coreFeature}
-              /> */}
+            {rest}
           </Grid>
           <Grid
             item

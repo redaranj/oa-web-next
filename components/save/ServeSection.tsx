@@ -1,76 +1,52 @@
 import { FC } from "react";
-import { Box, Grid } from "@mui/material";
-import { useTranslate } from "react-polyglot";
-import { typography, colors, breakpoints } from "styles/theme";
+import { Box } from "@mui/material";
+import { colors, typography, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 
 export const ServeSection: FC = ({ children }) => {
-  const t = useTranslate();
-  const { lightGrey } = colors;
-  const { h2, h6, bodyLarge } = typography;
-  const { ps, tl } = breakpoints;
+  const { white, lightGrey, turquoise } = colors;
+  const { bodyLarge } = typography;
+  const { ps, tl, ds } = breakpoints;
 
   return (
     <PageSection backgroundColor={lightGrey}>
-      <Grid container direction="column">
-        <Grid
-          container
-          item
-          sx={{
-            flexDirection: "row",
-            [ps]: { flexDirection: "column" },
-            [tl]: { flexDirection: "row" },
-          }}
-        >
-          <Grid
-            container
-            direction="column"
-            item
-            sx={{
+      <Box
+        sx={{
+          h5: { width: "50%" },
+          ul: {
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "flex-start",
+            counterReset: "whoCounter",
+          },
+          li: {
+            counterIncrement: "whoCounter",
+            backgroundColor: white,
+            display: "flex",
+            p: 3,
+            m: 3,
+            width: "30%",
+            [ps]: {
+              width: "100%",
+            },
+            [tl]: {
               width: "50%",
-              [ps]: { width: "100%" },
-              [tl]: { width: "50%" },
-            }}
-          >
-            <Box
-              component="h2"
-              sx={{ ...h2 }}
-              dangerouslySetInnerHTML={{
-                __html: t("gettingStartedTitle"),
-              }}
-            />
-          </Grid>
-          <Grid
-            item
-            sx={{
-              width: "50%",
-              [ps]: { width: "100%" },
-              [tl]: { width: "50%" },
-            }}
-          >
-            <Box component="p" sx={{ ...bodyLarge, mb: 16 }}>
-              {t("gettingStartedDescription")}
-            </Box>
-          </Grid>
-        </Grid>
-        <Grid item>
-          <Box component="h6" sx={{ ...h6, mb: 6 }}>
-            {t("threeEasySteps")}
-          </Box>
-        </Grid>
-        <Grid
-          container
-          item
-          spacing={8}
-          sx={{
-            flexDirection: "row",
-            [ps]: { flexDirection: "column" },
-            [tl]: { flexDirection: "row" },
-          }}
-        >
-          {children}
-        </Grid>
-      </Grid>
+            },
+            [ds]: {
+              width: "30%",
+            },
+          },
+          "li::before": {
+            ...bodyLarge,
+            content: "counter(whoCounter, decimal-leading-zero)",
+            color: turquoise,
+            display: "block",
+            width: "100%",
+          },
+        }}
+      >
+        {children}
+      </Box>
     </PageSection>
   );
 };
