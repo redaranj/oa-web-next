@@ -25,7 +25,6 @@ export const HeaderSection: FC<HeaderSectionProps> = ({
     >
       <Box
         sx={{
-          minHeight: 20,
           pt: "90px",
           [ps]: { pt: "50px" },
           [ts]: { pt: "80px" },

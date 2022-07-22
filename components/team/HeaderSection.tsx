@@ -1,24 +1,22 @@
 import { FC } from "react";
 import Image from "next/image";
 import { Box, Grid } from "@mui/material";
-import { useTranslate } from "react-polyglot";
 import { typography, colors, loader, breakpoints } from "styles/theme";
-import { PageSection } from "components/common/PageSection";
-import { OutlinedButton } from "components/common/OutlinedButton";
-import ourTeam from "public/images/our-team.svg";
+import { HeaderSection as BaseHeaderSection } from "components/common/HeaderSection";
+import ourTeamHeader from "public/images/our-team-header.svg";
 
 export const HeaderSection: FC = ({ children }) => {
-  const t = useTranslate();
-  const { lightGrey } = colors;
+  const { lightGrey, mediumGrey } = colors;
   const { bodyLarge } = typography;
   const { ps, pl, ts, tl, ds, dl } = breakpoints;
   const [first, ...rest] = children as any[];
 
   return (
-    <PageSection backgroundColor={lightGrey}>
+    <BaseHeaderSection backgroundColor={lightGrey}>
       <Grid
         container
         sx={{
+          borderBottom: `1px solid ${mediumGrey}`,
           flexDirection: "row",
           [ps]: { flexDirection: "column" },
           [tl]: { flexDirection: "row" },
@@ -56,9 +54,6 @@ export const HeaderSection: FC = ({ children }) => {
                 {rest}
               </Box>
             </Grid>
-            <Grid item>
-              <OutlinedButton arrowDirection="down">{t("more")}</OutlinedButton>
-            </Grid>
           </Grid>
         </Grid>
         <Grid
@@ -72,18 +67,18 @@ export const HeaderSection: FC = ({ children }) => {
           <Box
             sx={{
               width: 700,
-              mb: -8,
+              mb: -1,
               [ps]: { width: "100%", margin: "auto", mt: 6 },
               [ts]: { width: 600, mb: 0, mt: 8 },
               [tl]: { width: 550 },
-              [ds]: { mr: "-20px", width: 600 },
+              [ds]: { mr: "-20px", width: 600, mb: -1 },
               [dl]: { mr: "-20px", width: 700 },
             }}
           >
-            <Image src={ourTeam} alt="" loader={loader} />
+            <Image src={ourTeamHeader} alt="" loader={loader} />
           </Box>
         </Grid>
       </Grid>
-    </PageSection>
+    </BaseHeaderSection>
   );
 };

@@ -11,8 +11,12 @@ export const ParticipateSection: FC = ({ children }) => {
   return (
     <PageSection backgroundColor={white}>
       <Grid container direction="column">
-        <Grid item>{title}</Grid>
-        <Grid item>{description}</Grid>
+        <Grid item sx={{ textAlign: "center" }}>
+          {title}
+        </Grid>
+        <Grid item sx={{ textAlign: "center" }}>
+          {description}
+        </Grid>
         <Grid
           item
           container

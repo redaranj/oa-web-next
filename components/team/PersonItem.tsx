@@ -1,7 +1,6 @@
 import { FC } from "react";
 import { Box, Grid } from "@mui/material";
 import { typography, colors, breakpoints } from "styles/theme";
-import { OutlinedButton } from "components/common/OutlinedButton";
 
 interface PersonItemProps {
   backgroundColor: string;
@@ -12,13 +11,13 @@ export const PersonItem: FC<PersonItemProps> = ({
   children,
 }) => {
   const { turquoise } = colors;
-  const { h6, bodyLarge, body } = typography;
+  const { bodyLarge } = typography;
   const { ps, tl } = breakpoints;
   const [image, name, jobTitle, ...bio] = children as any[];
 
   return (
     <Grid item>
-      <Box sx={{ backgroundColor, p: 6 }}>
+      <Box sx={{ backgroundColor, p: 6, pb: 0 }}>
         <Grid
           item
           container
@@ -38,24 +37,19 @@ export const PersonItem: FC<PersonItemProps> = ({
             flexWrap="nowrap"
             spacing={4}
           >
-            <Grid item>{image}</Grid>
+            <Grid item>
+              <Box sx={{ mt: -10 }}>{image}</Box>
+            </Grid>
             <Grid item container direction="column">
-              <Box component="h6" sx={h6}>
-                {name}
-              </Box>
-              <Box component="p" sx={{ ...body, color: turquoise }}>
-                {jobTitle}
-              </Box>
+              {name}
+              <Box sx={{ mt: 2, "> p": { color: turquoise } }}>{jobTitle}</Box>
             </Grid>
           </Grid>
-          <Grid item container direction="column">
+          <Grid item container direction="column" sx={{ width: "50%" }}>
             <Grid item>
               <Box component="p" sx={{ ...bodyLarge, pb: 3 }}>
                 {bio}
               </Box>
-            </Grid>
-            <Grid item>
-              <OutlinedButton arrowDirection="down">More</OutlinedButton>
             </Grid>
           </Grid>
         </Grid>

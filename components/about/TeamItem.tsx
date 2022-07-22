@@ -2,6 +2,7 @@ import { FC } from "react";
 import Link from "next/link";
 import { Box, Grid } from "@mui/material";
 import { colors, typography, breakpoints } from "styles/theme";
+import { getImagePath } from "lib/frontendHelpers";
 
 export const TeamItem: FC = ({ children }) => {
   const { white } = colors;
@@ -27,7 +28,7 @@ export const TeamItem: FC = ({ children }) => {
           direction="column-reverse"
           sx={{
             height,
-            backgroundImage: `url(/images/${image})`,
+            backgroundImage: `url(${getImagePath(image)})`,
             backgroundSize: "cover",
           }}
         >
