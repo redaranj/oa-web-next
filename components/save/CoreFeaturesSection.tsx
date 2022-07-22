@@ -1,14 +1,11 @@
 import { FC } from "react";
 import { Box, Grid } from "@mui/material";
-import { useTranslate } from "react-polyglot";
-import { typography, colors, breakpoints } from "styles/theme";
+import { colors, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import coreFeaturesBackground from "public/images/core-features-background.png";
 
 export const CoreFeaturesSection: FC = ({ children }) => {
-  const t = useTranslate();
-  const { white, turquoise } = colors;
-  const { h2, bodyLarge } = typography;
+  const { white } = colors;
   const { ps, tl } = breakpoints;
   const [title, description, ...rest] = children as any[];
 

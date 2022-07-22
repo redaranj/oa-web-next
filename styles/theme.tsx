@@ -118,6 +118,7 @@ export const typography = {
     fontWeight: 600,
     fontSize: "34px",
     lineHeight: "44.2px",
+    mb: 3,
   },
   h5: {
     ...typographyDefaults,

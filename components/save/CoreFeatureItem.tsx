@@ -1,7 +1,6 @@
 import { FC } from "react";
-import Image from "next/image";
 import { Box, Grid } from "@mui/material";
-import { typography, colors, loader, breakpoints } from "styles/theme";
+import { typography, colors, breakpoints } from "styles/theme";
 
 export const CoreFeatureItem: FC = ({ children }) => {
   const { h5, bodyLarge } = typography;

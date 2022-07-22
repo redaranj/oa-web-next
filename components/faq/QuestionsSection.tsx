@@ -22,7 +22,8 @@ export const QuestionsSection: FC = ({ children }) => {
             content: "counter(questionCounter, decimal-leading-zero)",
             color: mediumGrey,
             display: "flex",
-            p: "4px",
+            pl: "10px",
+            pt: "9px",
           },
         }}
       >

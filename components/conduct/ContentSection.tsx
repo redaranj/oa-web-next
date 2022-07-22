@@ -8,7 +8,7 @@ export const ContentSection: FC = ({ children }) => {
 
   return (
     <PageSection backgroundColor={white}>
-      <Box sx={{ maxWidth: "710px" }}>{children}</Box>
+      <Box sx={{ maxWidth: "710px", margin: "0 auto" }}>{children}</Box>
     </PageSection>
   );
 };
