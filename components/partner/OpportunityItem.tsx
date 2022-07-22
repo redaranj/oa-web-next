@@ -1,29 +1,28 @@
 import { FC } from "react";
-import { Grid } from "@mui/material";
-import { colors } from "styles/theme";
-import { PageSection } from "components/common/PageSection";
+import { Grid, Box } from "@mui/material";
+import { getImagePath } from "lib/frontendHelpers";
 
 export const OpportunityItem: FC = ({ children }) => {
-  const { white } = colors;
   const [first, ...rest] = children as any[];
-  console.log({ neat: "neat", children: first.props.children });
+  const image = first.props.children.props.src;
 
   return (
-    <PageSection backgroundColor={white}>
-      <Grid
-        container
-        justifyContent="space-around"
-        sx={{
-          flexDirection: "row",
-        }}
-      >
-        <Grid item xs={6}>
-          {first}
-        </Grid>
-        <Grid item xs={6}>
-          {rest}
-        </Grid>
+    <Grid container justifyContent="space-around" className="opportunityItem">
+      <Grid item xs={6}>
+        <Box
+          sx={{
+            width: "100%",
+            height: "100%",
+            backgroundImage: `url(${getImagePath(image)})`,
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center center",
+            backgroundSize: "cover",
+          }}
+        />
       </Grid>
-    </PageSection>
+      <Grid item xs={6}>
+        <Box sx={{ p: 3 }}>{rest}</Box>
+      </Grid>
+    </Grid>
   );
 };

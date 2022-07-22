@@ -1,9 +1,14 @@
 import { FC } from "react";
+import { Box } from "@mui/material";
 import { colors } from "styles/theme";
-import { PageSection } from "components/common/PageSection";
+import { HeaderSection as BaseHeaderSection } from "components/common/HeaderSection";
 
 export const HeaderSection: FC = ({ children }) => {
   const { white } = colors;
 
-  return <PageSection backgroundColor={white}>{children}</PageSection>;
+  return (
+    <BaseHeaderSection backgroundColor={white}>
+      <Box sx={{ textAlign: "center" }}>{children}</Box>
+    </BaseHeaderSection>
+  );
 };
