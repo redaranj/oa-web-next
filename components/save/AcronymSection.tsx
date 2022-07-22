@@ -17,7 +17,7 @@ export const AcronymSection: FC = ({ children }) => {
 
   return (
     <PageSection backgroundColor={white} sx={{ pb: 0, mb: -13 }}>
-      <Box sx={{ height: 700, overflow: "hidden" }}>
+      <Box sx={{ height: 500, overflow: "hidden" }}>
         <Swiper
           modules={[Autoplay, EffectFade]}
           direction="vertical"

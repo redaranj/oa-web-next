@@ -9,11 +9,13 @@ const { white } = colors;
 type HeaderSectionProps = PropsWithChildren<{
   backgroundColor?: string;
   backgroundImage?: StaticImageData;
+  sx?: any;
 }>;
 
 export const HeaderSection: FC<HeaderSectionProps> = ({
   backgroundColor = white,
   backgroundImage,
+  sx = {},
   children,
 }) => {
   const { ps, ts, dl } = breakpoints;
@@ -22,6 +24,7 @@ export const HeaderSection: FC<HeaderSectionProps> = ({
     <PageSection
       backgroundColor={backgroundColor}
       backgroundImage={backgroundImage}
+      sx={sx}
     >
       <Box
         sx={{

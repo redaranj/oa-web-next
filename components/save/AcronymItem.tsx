@@ -2,14 +2,6 @@ import { FC } from "react";
 import { Box, Grid } from "@mui/material";
 import { typography, breakpoints } from "styles/theme";
 
-/*
-type AcronymItemProps = PropsWithChildren<{
-  titleKey: string;
-  descriptionOneKey: string;
-  descriptionTwoKey: string;
-  image: StaticImageData;
-}>;
-*/
 export const AcronymItem: FC = ({ children }) => {
   const { bodyLarge } = typography;
   const { ps, tl } = breakpoints;
@@ -26,45 +18,17 @@ export const AcronymItem: FC = ({ children }) => {
         direction="row"
         flexWrap="nowrap"
         sx={{
+          width: "50%",
+          [ps]: { width: "100%" },
+          [tl]: { width: "33%" },
           flexDirection: "row",
           [ps]: { flexDirection: "column" },
           [tl]: { flexDirection: "row" },
         }}
       >
-        <Grid
-          item
-          sx={{
-            width: "35%",
-            [ps]: { width: "100%" },
-            [tl]: { width: "33%" },
-          }}
-        >
-          <Box component="p" sx={bodyLarge}>
-            {description}
-          </Box>
-        </Grid>
-        <Grid
-          item
-          sx={{
-            width: "17%",
-            [ps]: { width: "100%" },
-            [tl]: { width: "17%" },
-          }}
-        />
-        <Grid
-          item
-          sx={{
-            width: "35%",
-            [ps]: { width: "100%" },
-            [tl]: { width: "33%" },
-          }}
-        >
-          <Box component="p" sx={bodyLarge}>
-            {description}
-          </Box>
-        </Grid>
+        <Box sx={{ "> p": bodyLarge }}>{description}</Box>
       </Grid>
-      <Grid item>
+      <Grid item sx={{ width: "50%" }}>
         <Box
           sx={{
             height: "550px",

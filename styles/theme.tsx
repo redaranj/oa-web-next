@@ -150,13 +150,16 @@ export const typography = {
     lineHeight: "29px",
     fontWeight: 600,
   },
-  p: { ...typographyDefaults },
+  p: {
+    ...typographyDefaults,
+  },
   bodyLarge: {
     ...typographyDefaults,
     fontFamily: "Montserrat, sans-serif",
     fontWeight: 400,
     fontSize: "22px",
     lineHeight: "150%",
+    mb: 3,
     [breakpoints.ps]: {
       fontSize: "16px",
     },
@@ -174,6 +177,10 @@ export const typography = {
     },
     [breakpoints.dl]: {
       fontSize: "22px",
+    },
+    "& em > strong": {
+      fontWeight: 600,
+      color: colors.turquoise,
     },
   },
   body: {
@@ -200,6 +207,10 @@ export const typography = {
     },
     [breakpoints.dl]: {
       fontSize: "18px",
+    },
+    "& em > strong": {
+      fontWeight: 600,
+      color: colors.turquoise,
     },
   },
   blockquote: { ...typographyDefaults },
