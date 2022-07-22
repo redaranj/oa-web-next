@@ -1,6 +1,7 @@
 import { FC, PropsWithChildren } from "react";
 import Link from "next/link";
 import { Box, Grid } from "@mui/material";
+import { OutlinedButton } from "components/common/OutlinedButton";
 import { typography, colors, breakpoints } from "styles/theme";
 
 type JobItemProps = PropsWithChildren<{
@@ -11,12 +12,12 @@ type JobItemProps = PropsWithChildren<{
 
 export const JobItem: FC<JobItemProps> = ({ title, date, path }) => {
   const { h5, bodyLarge } = typography;
-  const { white, lightGrey, turquoise } = colors;
+  const { white, mediumGrey, turquoise, black } = colors;
   const { ps, tl } = breakpoints;
 
   return (
     <Link href={path}>
-      <Box sx={{ backgroundColor: white }}>
+      <Box sx={{ backgroundColor: white, px: 3, py: 1 }}>
         <Grid
           item
           container
@@ -28,11 +29,11 @@ export const JobItem: FC<JobItemProps> = ({ title, date, path }) => {
             [tl]: { flexDirection: "row" },
           }}
         >
-          <Grid item>
+          <Grid item sx={{ width: "20%" }}>
             <Box
               sx={{
                 ...bodyLarge,
-                color: lightGrey,
+                color: mediumGrey,
                 mt: 2,
               }}
             >
@@ -42,18 +43,35 @@ export const JobItem: FC<JobItemProps> = ({ title, date, path }) => {
               sx={{
                 ...bodyLarge,
                 color: turquoise,
-                mt: 2,
+                mt: 0,
               }}
             >
               Job Opening
             </Box>
           </Grid>
-          <Grid item container direction="column" sx={{ mt: 0, p: 4 }}>
+          <Grid
+            item
+            container
+            direction="column"
+            justifyContent="space-around"
+            sx={{ mt: 0, p: 2, width: "65%" }}
+          >
             <Grid item>
               <Box component="h5" sx={h5}>
                 {title}
               </Box>
             </Grid>
+          </Grid>
+          <Grid
+            item
+            container
+            direction="column"
+            justifyContent="space-around"
+            sx={{ width: "15%", pt: 2 }}
+          >
+            <OutlinedButton textColor={black} arrowDirection="right">
+              More
+            </OutlinedButton>
           </Grid>
         </Grid>
       </Box>
