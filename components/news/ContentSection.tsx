@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Grid } from "@mui/material";
+import { Box } from "@mui/material";
 import { colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 
@@ -8,15 +8,7 @@ export const ContentSection: FC = ({ children }) => {
 
   return (
     <PageSection backgroundColor={white}>
-      <Grid
-        container
-        justifyContent="space-around"
-        sx={{
-          flexDirection: "column",
-        }}
-      >
-        <Grid item>{children}</Grid>
-      </Grid>
+      <Box sx={{ maxWidth: "710px", margin: "0 auto" }}>{children}</Box>
     </PageSection>
   );
 };

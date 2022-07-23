@@ -19,7 +19,7 @@ export const NewsItem: FC<NewsItemProps> = ({
   image,
 }) => {
   const { h5, bodyLarge } = typography;
-  const { lightGrey, white } = colors;
+  const { white } = colors;
   const { ps, tl } = breakpoints;
 
   return (
@@ -64,7 +64,7 @@ export const NewsItem: FC<NewsItemProps> = ({
           item
           container
           direction="column"
-          sx={{ backgroundColor: lightGrey, mt: 0, p: 4 }}
+          sx={{ mt: 0, p: 4, backgroundColor: white }}
         >
           <Grid item>
             <Box component="h5" sx={h5}>
