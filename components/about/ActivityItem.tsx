@@ -1,18 +1,17 @@
 import { FC } from "react";
-import Link from "next/link";
 import { Box, Grid } from "@mui/material";
-import { colors, typography, breakpoints } from "styles/theme";
+import { getImagePath } from "lib/frontendHelpers";
+import { colors, breakpoints } from "styles/theme";
 
 export const ActivityItem: FC = ({ children }) => {
   const { white } = colors;
-  const { h5 } = typography;
   const { ps, tl } = breakpoints;
-  const [image, ...rest] = children as any[];
-  const url = "";
-  const height = 400;
+  const [first, ...rest] = children as any[];
+  const image = first.props.children.props.src;
 
   return (
     <Grid
+      className="activityContainer"
       item
       sx={{
         width: "33%",
@@ -20,27 +19,19 @@ export const ActivityItem: FC = ({ children }) => {
         [tl]: { width: "33%" },
       }}
     >
-      <Link href={url}>
-        <Grid
-          item
-          container
-          direction="column-reverse"
-          sx={{
-            height,
-            backgroundImage: `url(/images/${image})`,
-            backgroundSize: "cover",
-          }}
-        >
+      <Box
+        sx={{
+          height: "100%",
+          backgroundImage: `url(${getImagePath(image)})`,
+          backgroundSize: "cover",
+        }}
+      >
+        <Grid item container direction="column-reverse" sx={{ height: "100%" }}>
           <Grid item>
-            <Box
-              component="h5"
-              sx={{ ...h5, color: white, pl: 3, pb: 1, maxWidth: "50%" }}
-            >
-              {rest}
-            </Box>
+            <Box sx={{ h5: { color: white }, pl: 3, pb: 1 }}>{rest}</Box>
           </Grid>
         </Grid>
-      </Link>
+      </Box>
     </Grid>
   );
 };

@@ -27,6 +27,12 @@ export const ActivitiesSection: FC = ({ children }) => {
             flexDirection: "row",
             [ps]: { flexDirection: "column" },
             [tl]: { flexDirection: "row" },
+            ".activityContainer:nth-of-type(odd)": {
+              height: 400,
+            },
+            ".activityContainer:nth-of-type(even)": {
+              height: 350,
+            },
           }}
         >
           {rest}

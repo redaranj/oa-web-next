@@ -1,11 +1,14 @@
 import { FC } from "react";
 import Link from "next/link";
-import { Box, Grid } from "@mui/material";
+import { Grid } from "@mui/material";
 import { breakpoints } from "styles/theme";
+import { getImagePath } from "lib/frontendHelpers";
 
 export const PartnerItem: FC = ({ children }) => {
   const { ps, tl } = breakpoints;
-  const [image, url, ...rest] = children as any[];
+  const [first, url, ...rest] = children as any[];
+  const image = first.props.children.props.src;
+  console.log({ image });
   const name = rest as unknown as string;
 
   return (
@@ -15,15 +18,10 @@ export const PartnerItem: FC = ({ children }) => {
       direction="column"
       sx={{ width: "33%", [ps]: { width: "100%" }, [tl]: { width: "33%" } }}
       alignItems="center"
+      justifyContent="space-around"
     >
       <Link href={url}>
-        <Box
-          sx={{
-            maxWidth: "300px",
-          }}
-        >
-          <img src={`/images${image}`} alt={name} />
-        </Box>
+        <img src={getImagePath(image)} alt={name} style={{ width: "150px" }} />
       </Link>
     </Grid>
   );

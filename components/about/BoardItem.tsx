@@ -1,9 +1,63 @@
 import { FC } from "react";
-import { colors } from "styles/theme";
-import { PersonItem } from "components/team/PersonItem";
+import Link from "next/link";
+import { Box, Grid } from "@mui/material";
+import { colors, breakpoints } from "styles/theme";
+import advisoryBoard from "public/images/advisory-board.svg";
 
 export const BoardItem: FC = ({ children }) => {
   const { lightGrey } = colors;
+  const { ps, tl } = breakpoints;
 
-  return <PersonItem backgroundColor={lightGrey}>{children}</PersonItem>;
+  return (
+    <Link href="/team">
+      <Box
+        sx={{
+          backgroundColor: lightGrey,
+          mb: 8,
+          p: 6,
+        }}
+      >
+        <Grid
+          container
+          sx={{
+            flexDirection: "row-reverse",
+            [ps]: { flexDirection: "column" },
+            [tl]: { flexDirection: "row-reverse" },
+          }}
+        >
+          <Grid
+            item
+            sx={{
+              width: "50%",
+              [ps]: { width: "100%" },
+              [tl]: { width: "50%" },
+            }}
+          >
+            <Box
+              sx={{
+                backgroundImage: `url(${advisoryBoard.src})`,
+                backgroundSize: "75%",
+                backgroundPosition: "center center",
+                backgroundRepeat: "no-repeat",
+                height: "100%",
+              }}
+            />
+          </Grid>
+          <Grid
+            item
+            container
+            direction="column"
+            justifyContent="space-around"
+            sx={{
+              width: "50%",
+              [ps]: { width: "100%" },
+              [tl]: { width: "50%" },
+            }}
+          >
+            <Box sx={{ p: 6 }}>{children}</Box>
+          </Grid>
+        </Grid>
+      </Box>
+    </Link>
+  );
 };

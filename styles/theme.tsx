@@ -94,6 +94,7 @@ export const typography = {
     fontWeight: 600,
     fontSize: "40px",
     lineHeight: "40px",
+    mb: 3,
     [breakpoints.ps]: {
       fontSize: "16px",
     },

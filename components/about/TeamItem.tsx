@@ -1,47 +1,63 @@
 import { FC } from "react";
 import Link from "next/link";
 import { Box, Grid } from "@mui/material";
-import { colors, typography, breakpoints } from "styles/theme";
-import { getImagePath } from "lib/frontendHelpers";
+import { colors, breakpoints } from "styles/theme";
+import staff from "public/images/staff.svg";
 
 export const TeamItem: FC = ({ children }) => {
-  const { white } = colors;
-  const { h5 } = typography;
+  const { lightGrey } = colors;
   const { ps, tl } = breakpoints;
-  const [image, ...rest] = children as any[];
-  const url = "";
-  const height = 400;
 
   return (
-    <Grid
-      item
-      sx={{
-        width: "33%",
-        [ps]: { width: "100%" },
-        [tl]: { width: "33%" },
-      }}
-    >
-      <Link href={url}>
+    <Link href="/team">
+      <Box
+        sx={{
+          backgroundColor: lightGrey,
+          mb: 8,
+          p: 6,
+        }}
+      >
         <Grid
-          item
           container
-          direction="column-reverse"
           sx={{
-            height,
-            backgroundImage: `url(${getImagePath(image)})`,
-            backgroundSize: "cover",
+            flexDirection: "row",
+            [ps]: { flexDirection: "column" },
+            [tl]: { flexDirection: "row" },
           }}
         >
-          <Grid item>
+          <Grid
+            item
+            sx={{
+              width: "50%",
+              [ps]: { width: "100%" },
+              [tl]: { width: "50%" },
+            }}
+          >
             <Box
-              component="h5"
-              sx={{ ...h5, color: white, pl: 3, pb: 1, maxWidth: "50%" }}
-            >
-              {rest}
-            </Box>
+              sx={{
+                backgroundImage: `url(${staff.src})`,
+                backgroundSize: "75%",
+                backgroundPosition: "center center",
+                backgroundRepeat: "no-repeat",
+                height: "100%",
+              }}
+            />
+          </Grid>
+          <Grid
+            item
+            container
+            direction="column"
+            justifyContent="space-around"
+            sx={{
+              width: "50%",
+              [ps]: { width: "100%" },
+              [tl]: { width: "50%" },
+            }}
+          >
+            <Box sx={{ p: 6 }}>{children}</Box>
           </Grid>
         </Grid>
-      </Link>
-    </Grid>
+      </Box>
+    </Link>
   );
 };
