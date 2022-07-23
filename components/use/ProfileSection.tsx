@@ -19,7 +19,7 @@ export const ProfileSection: FC = ({ children }) => {
             <Grid item>
               <Box sx={{ width: 300 }}>{image}</Box>
             </Grid>
-            <Grid item container direction="column">
+            <Grid item container direction="column" sx={{ ml: "20px" }}>
               <Grid item>{name}</Grid>
               <Grid item>{title}</Grid>
               <Grid item>{quote}</Grid>
@@ -28,17 +28,38 @@ export const ProfileSection: FC = ({ children }) => {
           <Grid item>
             <Box
               sx={{
-                table: { borderCollapse: "collapse" },
-                tr: { borderTop: `1px solid ${mediumGrey}` },
-                td: { minWidth: 300 },
-                "td:nth-of-type(odd)": { color: turquoise, fontWeight: "bold" },
+                table: { borderCollapse: "collapse", borderSpacing: 0 },
+                tr: {
+                  borderTop: `1px solid ${mediumGrey}`,
+                },
+                td: { py: 2 },
+                "td:nth-of-type(odd)": {
+                  color: turquoise,
+                  fontWeight: "bold",
+                  minWidth: 320,
+                },
               }}
             >
               {stats}
             </Box>
           </Grid>
-          <Grid item sx={{ ul: { listStyle: "none" } }}>
-            {details}
+          <Grid item container direction="row" wrap="nowrap">
+            <Grid item>
+              <Box sx={{ width: 320 }}> </Box>
+            </Grid>
+            <Grid item>
+              <Box
+                sx={{
+                  mt: 6,
+                  backgroundColor: white,
+                  p: 3,
+                  "td:nth-of-type(odd)": { textAlign: "center" },
+                  "td:nth-of-type(even)": { p: 2 },
+                }}
+              >
+                {details}
+              </Box>
+            </Grid>
           </Grid>
         </Grid>
       </PageSection>
