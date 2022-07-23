@@ -5,16 +5,14 @@ import { typography, colors, breakpoints } from "styles/theme";
 
 type JobItemProps = PropsWithChildren<{
   jobTitle: string;
-  details: string;
   date: Date;
 }>;
 
-export const JobItem: FC<JobItemProps> = ({ jobTitle, details, date }) => {
+export const JobItem: FC<JobItemProps> = ({ jobTitle, date }) => {
   const t = useTranslate();
   const { white, turquoise } = colors;
   const { h5, body } = typography;
   const { ps, ts } = breakpoints;
-  console.log({ details });
 
   return (
     <Grid

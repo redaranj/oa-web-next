@@ -8,7 +8,6 @@ export const PartnerItem: FC = ({ children }) => {
   const { ps, tl } = breakpoints;
   const [first, url, ...rest] = children as any[];
   const image = first.props.children.props.src;
-  console.log({ image });
   const name = rest as unknown as string;
 
   return (

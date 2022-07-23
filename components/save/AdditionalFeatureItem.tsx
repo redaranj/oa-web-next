@@ -20,7 +20,6 @@ export const AdditionalFeatureItem: FC<AdditionalFeatureItemProps> = ({
 }) => {
   const { h5, bodyLarge } = typography;
   const { ps, tl } = breakpoints;
-  console.log({ description });
 
   return (
     <Grid
@@ -42,7 +41,9 @@ export const AdditionalFeatureItem: FC<AdditionalFeatureItemProps> = ({
           </Box>
         </Grid>
         <Grid item>
-          <Box component="p" sx={{ ...bodyLarge, textColor }} />
+          <Box component="p" sx={{ ...bodyLarge, textColor }}>
+            {description}
+          </Box>
         </Grid>
       </Grid>
     </Grid>

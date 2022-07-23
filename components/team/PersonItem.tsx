@@ -2,9 +2,9 @@ import { FC } from "react";
 import { Box, Grid } from "@mui/material";
 import { typography, colors, breakpoints } from "styles/theme";
 
-interface PersonItemProps {
+type PersonItemProps = {
   backgroundColor: string;
-}
+};
 
 export const PersonItem: FC<PersonItemProps> = ({
   backgroundColor,

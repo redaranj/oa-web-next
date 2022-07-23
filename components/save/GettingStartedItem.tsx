@@ -9,7 +9,6 @@ export const GettingStartedItem: FC = ({ children }) => {
   const { white, turquoise } = colors;
   const { ps, tl } = breakpoints;
   const step = 1;
-  console.log({ children });
   const [first, ...rest] = children as any[];
 
   return (

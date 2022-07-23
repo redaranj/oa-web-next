@@ -4,9 +4,9 @@ import { colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { UseCaseItem } from "components/use/UseCaseItem";
 
-interface UseCasesSectionProps {
+type UseCasesSectionProps = {
   pages: any[];
-}
+};
 
 export const UseCasesSection: FC<UseCasesSectionProps> = ({ pages }) => {
   const { white } = colors;

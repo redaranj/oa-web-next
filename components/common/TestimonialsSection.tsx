@@ -10,7 +10,6 @@ export const TestimonialsSection: FC = ({ children }) => {
   const { h2 } = typography;
   const { lightGrey } = colors;
 
-  console.log({ children });
   return (
     <PageSection backgroundColor={lightGrey}>
       <Box

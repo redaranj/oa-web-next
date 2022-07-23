@@ -5,9 +5,9 @@ import { PageSection } from "components/common/PageSection";
 import { FilledButton } from "components/common/FilledButton";
 import { NewsItem } from "components/news/NewsItem";
 
-interface NewsSectionProps {
+type NewsSectionProps = {
   pages: any[];
-}
+};
 
 export const NewsSection: FC<NewsSectionProps> = ({ pages }) => {
   const { lightGrey, white, black } = colors;

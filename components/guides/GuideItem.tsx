@@ -56,7 +56,7 @@ export const GuideItem: FC<GuideItemProps> = ({
               mt: 2,
             }}
           >
-            Category
+            {category}
           </Box>
         </Box>
       </Grid>

@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Grid } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import { colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { GuideItem } from "components/guides/GuideItem";
@@ -8,7 +8,7 @@ type GuidesSectionProps = {
   pages: any[];
 };
 
-export const GuidesSection: FC<GuidesSectionProps> = ({ pages }) => {
+export const GuidesSection: FC<GuidesSectionProps> = ({ pages, children }) => {
   const { white, mediumGrey } = colors;
 
   return (
@@ -23,6 +23,9 @@ export const GuidesSection: FC<GuidesSectionProps> = ({ pages }) => {
           flexDirection: "column",
         }}
       >
+        <Grid item sx={{ textAlign: "center" }}>
+          <Box sx={{ maxWidth: 700, margin: "0 auto" }}>{children}</Box>
+        </Grid>
         {pages.map((page) => (
           <GuideItem key={page.path} {...page} />
         ))}

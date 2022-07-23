@@ -6,10 +6,10 @@ import {
 } from "@mui/icons-material";
 import { colors } from "styles/theme";
 
-interface QuestionProps {
+type QuestionProps = {
   expanded: boolean;
   children: any;
-}
+};
 
 export const Question: FC<QuestionProps> = ({ expanded, children }) => {
   const { darkGrey, turquoise } = colors;
