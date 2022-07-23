@@ -1,68 +1,66 @@
 import { FC } from "react";
+import Image from "next/image";
 import { Box, Grid } from "@mui/material";
-import { colors, breakpoints } from "styles/theme";
+import { colors, breakpoints, loader } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
-import handPhone from "public/images/hand-phone.svg";
+import vision from "public/images/vision.png";
 
 export const VisionSection: FC = ({ children }) => {
-  const { white } = colors;
+  const { white, lightGrey } = colors;
   const { ps, tl } = breakpoints;
 
   return (
     <PageSection backgroundColor={white}>
-      <Grid container direction="column">
+      <Grid
+        item
+        container
+        sx={{
+          flexDirection: "row",
+          [ps]: {
+            flexDirection: "column",
+          },
+          [tl]: {
+            flexDirection: "row",
+          },
+        }}
+      >
         <Grid
           item
           container
-          spacing={8}
+          justifyContent="space-around"
           sx={{
-            flexDirection: "row",
+            width: "50%",
             [ps]: {
-              flexDirection: "column",
+              width: "100%",
             },
             [tl]: {
-              flexDirection: "row",
+              width: "50%",
             },
           }}
         >
-          <Grid
-            item
-            sx={{
-              width: "50%",
-              [ps]: {
-                width: "100%",
-              },
-              [tl]: {
-                width: "50%",
-              },
-            }}
-          >
-            <Box
-              sx={{
-                backgroundImage: `url(${handPhone.src})`,
-                backgroundSize: "40%",
-                backgroundPosition: "center center",
-                backgroundRepeat: "no-repeat",
-                height: "100%",
-                marginLeft: -4,
-              }}
-            />
+          <Grid item>
+            <Box sx={{}}>
+              <Image src={vision} alt="" loader={loader} />
+            </Box>
           </Grid>
-          <Grid
-            container
-            direction="column"
-            item
-            sx={{
+        </Grid>
+        <Grid
+          container
+          direction="column"
+          justifyContent="space-around"
+          item
+          sx={{
+            width: "50%",
+            [ps]: {
+              width: "100%",
+            },
+            [tl]: {
               width: "50%",
-              [ps]: {
-                width: "100%",
-              },
-              [tl]: {
-                width: "50%",
-              },
-            }}
-          >
-            <Grid item>{children}</Grid>
+            },
+          }}
+        >
+          <Grid item>
+            <Box sx={{ backgroundColor: lightGrey, p: 6 }}>{children}</Box>
           </Grid>
         </Grid>
       </Grid>
