@@ -2,19 +2,10 @@ import { FC } from "react";
 import { Box, Grid } from "@mui/material";
 import { colors, typography } from "styles/theme";
 
-/*
-type TestimonialItemProps = PropsWithChildren<{
-  name: string;
-  position: string;
-  quote: string;
-  image: StaticImageData;
-}>;
-*/
-
 export const TestimonialItem: FC = ({ children }) => {
   const { white, turquoise } = colors;
   const { h6, body } = typography;
-  const [image, quote, name, position, url] = children as any[];
+  const [quote, name, position, url] = children as any[];
 
   return (
     <Grid item container direction="column" spacing="32px">
@@ -22,12 +13,6 @@ export const TestimonialItem: FC = ({ children }) => {
         <Box sx={{ backgroundColor: white, p: 3 }}>{quote}</Box>
       </Grid>
       <Grid item container direction="row" flexWrap="nowrap" spacing={3}>
-        <Grid item>
-          <Box sx={{ width: 60, height: 60 }}>
-            {image}
-            {/* <Image src={image} loader={loader} /> */}
-          </Box>
-        </Grid>
         <Grid item container direction="column">
           <Grid item>
             <Box component="h6" sx={{ ...h6, mt: "-4px" }}>
