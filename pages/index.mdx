@@ -8,10 +8,12 @@ import { TestimonialsSection } from "components/common/TestimonialsSection";
 import { TestimonialItem } from "components/common/TestimonialItem";
 import { RoleSection } from "components/common/RoleSection";
 
+export const getStaticProps = async (context) => getIndexProps("pages/use");
+
 <HeaderSection>
-  # Empowering eyewitnesses to **preserve truth** to power 
-  
-  Anyone with a phone can expose global injustice. OpenArchive helps history's first responders safely store, verify, and share critical evidence. We conduct co-research, build tools, and _create guides_ that advance human rights every day.
+  # Empowering eyewitnesses to **preserve truth** to power
+
+Anyone with a phone can expose global injustice. OpenArchive helps history's first responders safely store, verify, and share critical evidence. We conduct co-research, build tools, and _create guides_ that advance human rights every day.
 
 </HeaderSection>
 <ArchivingSection>
@@ -23,7 +25,7 @@ We are a team of archival activists collaborating with human rights defenders an
 
 <ImpactSection>
 
-# Our **impact**
+## Our **impact**
 
 <ImpactItem>
   [](information-security.svg)
@@ -60,7 +62,7 @@ We work at the forefront of digital freedom, contributing research and emergent 
 </ImpactItem>
 </ImpactSection>
 <ProjectsSection />
-<WhoSection>
+<WhoSection pages={props.pages}>
   ## Who we serve
 
 Citizen reporters • Eyewitnesses • Activists • Documentarians • Human Rights Defenders • Legal Advocates • Academics Media • Organizations • Archivists • Librarians • Historians
