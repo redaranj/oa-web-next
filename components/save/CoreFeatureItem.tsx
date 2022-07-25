@@ -3,7 +3,7 @@ import { Box, Grid } from "@mui/material";
 import { typography, colors, breakpoints } from "styles/theme";
 
 export const CoreFeatureItem: FC = ({ children }) => {
-  const { h5, bodyLarge } = typography;
+  const { bodyLarge } = typography;
   const { lightGrey, turquoise, white } = colors;
   const { ps, tl } = breakpoints;
   const [image, title, ...description] = children as any[];
@@ -11,40 +11,48 @@ export const CoreFeatureItem: FC = ({ children }) => {
   return (
     <Grid
       item
-      container
-      direction="column"
       sx={{
         width: "50%",
+        height: "400px",
         [ps]: { width: "100%" },
         [tl]: { width: "50%" },
-        "&:hover #slide": {
-          transition: "1s",
-          bottom: "0px",
-        },
-        position: "relative",
       }}
     >
-      <Grid item sx={{ backgroundColor: lightGrey, p: 3 }}>
-        {image}
-      </Grid>
-      <Grid item sx={{ backgroundColor: lightGrey, p: 3 }}>
-        <Box component="h5" sx={h5}>
-          {title}
-        </Box>
-      </Grid>
       <Box
-        id="slide"
         sx={{
+          backgroundColor: lightGrey,
           width: "100%",
-          backgroundColor: turquoise,
-          color: white,
-          height: "300px",
-          position: "absolute",
-          bottom: "-300px",
-          transition: "1s",
+          height: "100%",
+          "&:hover .slide": {
+            transition: "1s",
+            bottom: "0px",
+          },
+          position: "relative",
+          overflow: "hidden",
         }}
       >
-        <Box sx={{ ...bodyLarge, color: white, p: 6 }}>{description}</Box>
+        <Grid container direction="column" justifyContent="space-around">
+          <Grid item>
+            <Box sx={{ p: 6, pb: 0 }}>
+              {image}
+              {title}
+            </Box>
+          </Grid>
+        </Grid>
+        <Box
+          className="slide"
+          sx={{
+            width: "100%",
+            backgroundColor: turquoise,
+            color: white,
+            height: "400px",
+            position: "absolute",
+            bottom: "-400px",
+            transition: "1s",
+          }}
+        >
+          <Box sx={{ ...bodyLarge, color: white, p: 6 }}>{description}</Box>
+        </Box>
       </Box>
     </Grid>
   );

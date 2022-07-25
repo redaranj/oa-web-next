@@ -2,21 +2,23 @@ import { FC } from "react";
 import { Box, Grid } from "@mui/material";
 import { typography, colors, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
-import coreFeaturesBackground from "public/images/core-features-background.png";
 
 export const GettingStartedSection: FC = ({ children }) => {
-  const { white, turquoise } = colors;
-  const { bodyLarge } = typography;
+  const { lightGrey, mediumGrey, turquoise } = colors;
+  const { bodyLarge, outlinedButton } = typography;
   const { ps, tl } = breakpoints;
   const [title, description, intro, ...rest] = children as any[];
 
   return (
-    <PageSection backgroundColor={white}>
+    <PageSection backgroundColor={lightGrey}>
       <Grid container direction="column">
         <Grid
           container
           item
           sx={{
+            borderBottom: `1px solid ${mediumGrey}`,
+            pb: 3,
+            mb: 6,
             flexDirection: "row",
             [ps]: { flexDirection: "column" },
             [tl]: { flexDirection: "row" },
@@ -42,9 +44,12 @@ export const GettingStartedSection: FC = ({ children }) => {
               [tl]: { width: "50%" },
             }}
           >
-            <Box component="p" sx={{ ...bodyLarge }}>
-              {description}
-            </Box>
+            <Box sx={{ "> p": bodyLarge }}>{description}</Box>
+          </Grid>
+        </Grid>
+        <Grid container direction="row">
+          <Grid item sx={{ width: "50%" }}>
+            {intro}
           </Grid>
         </Grid>
         <Grid
@@ -56,60 +61,23 @@ export const GettingStartedSection: FC = ({ children }) => {
             flexDirection: "row",
             [ps]: { flexDirection: "column" },
             [tl]: { flexDirection: "row" },
+            counterReset: "stepCounter",
+            ".step": {
+              counterIncrement: "stepCounter",
+            },
+            ".step::before": {
+              ...bodyLarge,
+              content: "counter(stepCounter, decimal-leading-zero)",
+              color: turquoise,
+              fontWeight: "bold",
+              display: "flex",
+              pl: "10px",
+              pt: "9px",
+            },
+            a: outlinedButton,
           }}
         >
-          <Grid
-            container
-            item
-            sx={{
-              width: "50%",
-              flexDirection: "row",
-              [ps]: { flexDirection: "column", width: "100%" },
-              [tl]: { flexDirection: "row", width: "50%" },
-            }}
-            spacing={6}
-          >
-            <Grid
-              item
-              sx={{
-                width: "50%",
-                [ps]: { width: "100%" },
-                [tl]: { width: "50%" },
-              }}
-            >
-              <Box
-                sx={{
-                  width: "100%",
-                  minHeight: "300px",
-                  backgroundColor: turquoise,
-                  color: white,
-                  p: 3,
-                }}
-              >
-                {intro}
-              </Box>
-            </Grid>
-            {rest}
-          </Grid>
-          <Grid
-            item
-            sx={{
-              width: "50%",
-              [ps]: { width: "100%" },
-              [tl]: { width: "50%" },
-            }}
-          >
-            <Box
-              sx={{
-                width: "100%",
-                height: 1000,
-                backgroundImage: `url(${coreFeaturesBackground.src})`,
-                backgroundSize: "cover",
-                backgroundPosition: "top",
-                backgroundRepeat: "no-repeat",
-              }}
-            />
-          </Grid>
+          {rest}
         </Grid>
       </Grid>
     </PageSection>

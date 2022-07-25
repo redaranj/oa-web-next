@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Box, Grid } from "@mui/material";
+import { Grid } from "@mui/material";
 import { colors, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import coreFeaturesBackground from "public/images/core-features-background.png";
@@ -53,39 +53,25 @@ export const CoreFeaturesSection: FC = ({ children }) => {
             flexDirection: "row",
             [ps]: { flexDirection: "column" },
             [tl]: { flexDirection: "row" },
+            backgroundImage: `url(${coreFeaturesBackground.src})`,
+            backgroundPosition: "100% 100%",
+            backgroundSize: "50%",
+            backgroundRepeat: "no-repeat",
           }}
         >
           <Grid
             container
             item
             sx={{
-              width: "50%",
+              width: "70%",
+              zIndex: 100,
               flexDirection: "row",
               [ps]: { flexDirection: "column", width: "100%" },
-              [tl]: { flexDirection: "row", width: "50%" },
+              [tl]: { flexDirection: "row", width: "70%" },
             }}
             spacing={6}
           >
             {rest}
-          </Grid>
-          <Grid
-            item
-            sx={{
-              width: "50%",
-              [ps]: { width: "100%" },
-              [tl]: { width: "50%" },
-            }}
-          >
-            <Box
-              sx={{
-                width: "100%",
-                height: 1000,
-                backgroundImage: `url(${coreFeaturesBackground.src})`,
-                backgroundSize: "cover",
-                backgroundPosition: "top",
-                backgroundRepeat: "no-repeat",
-              }}
-            />
           </Grid>
         </Grid>
       </Grid>

@@ -1,43 +1,56 @@
 import { FC } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Box, Grid } from "@mui/material";
-import { colors, typography, breakpoints } from "styles/theme";
+import { colors, breakpoints, loader } from "styles/theme";
+import { getImagePath } from "lib/frontendHelpers";
+import rightArrow from "public/images/right-arrow.svg";
 
 export const MoreItem: FC = ({ children }) => {
-  const { white, black, lightGrey } = colors;
-  const { h5, bodyLarge } = typography;
+  const { lightGrey } = colors;
   const { ps, tl } = breakpoints;
-  const url = "";
-  const image = "";
+  const [first, title, url] = children as any[];
+  const image = first.props.children.props.src;
 
   return (
     <Grid
       item
-      container
-      direction="column"
       sx={{ width: "33%", [ps]: { width: "100%" }, [tl]: { width: "33%" } }}
     >
       <Link href={url}>
-        <Box
-          sx={{
-            backgroundColor: lightGrey,
-            height: "500px",
-            backgroundImage: `url(${image})`,
-            backgroundSize: "450px",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center bottom",
-            p: 3,
-          }}
-        >
-          <Grid item>
-            <Box component="h5" sx={{ ...h5, color: black }}>
-              {children}
-            </Box>
+        <Grid container direction="column" sx={{ backgroundColor: lightGrey }}>
+          <Grid item container direction="row" justifyContent="space-between">
+            <Grid item>
+              <Box sx={{ width: "100%", backgroundColor: lightGrey, p: 3 }}>
+                {title}
+              </Box>
+            </Grid>
+            <Grid item>
+              <Box sx={{ px: 3, py: 5 }}>
+                <Image
+                  src={rightArrow}
+                  alt=""
+                  loader={loader}
+                  width={20}
+                  height={20}
+                />
+              </Box>
+            </Grid>
           </Grid>
           <Grid item>
-            <Box sx={{ ...bodyLarge, color: white }}>{children}</Box>
+            <Box
+              sx={{
+                height: "300px",
+                width: "100%",
+                backgroundImage: `url(${getImagePath(image)})`,
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center",
+                p: 3,
+              }}
+            />
           </Grid>
-        </Box>
+        </Grid>
       </Link>
     </Grid>
   );

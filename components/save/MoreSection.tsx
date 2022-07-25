@@ -1,17 +1,12 @@
 import { FC } from "react";
 import { Box, Grid } from "@mui/material";
-import { useTranslate } from "react-polyglot";
-import { typography, colors, breakpoints } from "styles/theme";
+import { colors, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
-// import microphone from "public/images/microphone.png";
-// import preservingGuide from "public/images/preserving-guide.png";
-// import saveVideo from "public/images/save-video.png";
 
 export const MoreSection: FC = ({ children }) => {
-  const t = useTranslate();
   const { white } = colors;
-  const { h2, bodyLarge } = typography;
   const { ps, tl } = breakpoints;
+  const [title, description, ...items] = children as any[];
 
   return (
     <PageSection backgroundColor={white}>
@@ -19,29 +14,22 @@ export const MoreSection: FC = ({ children }) => {
         container
         sx={{
           flexDirection: "column",
+          justifyContent: "flex-end",
         }}
       >
-        <Grid item>
-          <Box
-            component="h2"
-            sx={{ ...h2, textAlign: "center" }}
-            dangerouslySetInnerHTML={{
-              __html: t("moreAboutSaveTitle"),
-            }}
-          />
+        <Grid item sx={{ textAlign: "center" }}>
+          {title}
         </Grid>
         <Grid item>
           <Box
-            component="p"
             sx={{
-              ...bodyLarge,
               textAlign: "center",
-              mb: "80px",
+              mb: "100px",
               maxWidth: 700,
               margin: "auto",
             }}
           >
-            {t("moreAboutSaveDescription")}
+            {description}
           </Box>
         </Grid>
         <Grid
@@ -54,7 +42,7 @@ export const MoreSection: FC = ({ children }) => {
             [tl]: { flexDirection: "row" },
           }}
         >
-          {children}
+          {items}
         </Grid>
       </Grid>
     </PageSection>

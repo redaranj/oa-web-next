@@ -1,51 +1,22 @@
-import { FC, PropsWithChildren } from "react";
-import Image, { StaticImageData } from "next/image";
+import { FC } from "react";
 import { Box, Grid } from "@mui/material";
-import { typography, loader, breakpoints } from "styles/theme";
+import { breakpoints, colors } from "styles/theme";
 
-type AdditionalFeatureItemProps = PropsWithChildren<{
-  title: string;
-  description: string;
-  backgroundColor: string;
-  textColor: string;
-  image: StaticImageData;
-}>;
-
-export const AdditionalFeatureItem: FC<AdditionalFeatureItemProps> = ({
-  title,
-  description,
-  backgroundColor,
-  textColor,
-  image,
-}) => {
-  const { h5, bodyLarge } = typography;
+export const AdditionalFeatureItem: FC = ({ children }) => {
+  const { white } = colors;
   const { ps, tl } = breakpoints;
+  const [image, title, ...description] = children as any[];
 
   return (
     <Grid
       item
-      sx={{ width: "50%", [ps]: { width: "100%" }, [tl]: { width: "100%" } }}
+      sx={{ width: "50%", [ps]: { width: "100%" }, [tl]: { width: "50%" } }}
     >
-      <Grid
-        container
-        direction="column"
-        sx={{ backgroundColor, minHeight: 200, p: 6 }}
-        rowSpacing={3}
-      >
-        <Grid item>
-          <Image src={image} loader={loader} alt="" />
-        </Grid>
-        <Grid item>
-          <Box component="h5" sx={{ ...h5, textColor }}>
-            {title}
-          </Box>
-        </Grid>
-        <Grid item>
-          <Box component="p" sx={{ ...bodyLarge, textColor }}>
-            {description}
-          </Box>
-        </Grid>
-      </Grid>
+      <Box sx={{ p: 6, backgroundColor: white, width: "100%", height: "100%" }}>
+        {image}
+        {title}
+        {description}
+      </Box>
     </Grid>
   );
 };
