@@ -46,7 +46,7 @@ export const QuestionsSection: FC = ({ children }) => {
           sx={{ mb: 6 }}
         >
           {categories.map((category) => (
-            <Grid item>
+            <Grid item key={category}>
               <ToggleButton
                 on={category === selectedCategory}
                 onClick={() => toggleCategory(category)}
