@@ -18,7 +18,7 @@ export const GuideItem: FC<GuideItemProps> = ({
   image,
 }) => {
   const { h5, bodyLarge } = typography;
-  const { lightGrey, white } = colors;
+  const { lightGrey, darkGrey } = colors;
   const { ps, tl } = breakpoints;
 
   console.log({ category, date });
@@ -38,7 +38,7 @@ export const GuideItem: FC<GuideItemProps> = ({
       <Grid item>
         <Box
           sx={{
-            height: 300,
+            height: "100%",
             width: 400,
             [ps]: { width: "100%" },
             [tl]: { width: 400 },
@@ -47,18 +47,7 @@ export const GuideItem: FC<GuideItemProps> = ({
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
           }}
-        >
-          <Box
-            sx={{
-              ...bodyLarge,
-              color: white,
-              borderTop: `1px solid ${white}`,
-              mt: 2,
-            }}
-          >
-            {category}
-          </Box>
-        </Box>
+        />
       </Grid>
       <Grid
         item
@@ -66,6 +55,17 @@ export const GuideItem: FC<GuideItemProps> = ({
         direction="column"
         sx={{ backgroundColor: lightGrey, mt: 0, p: 4 }}
       >
+        <Grid item>
+          <Box
+            sx={{
+              ...bodyLarge,
+              color: darkGrey,
+              mt: 2,
+            }}
+          >
+            {category}
+          </Box>
+        </Grid>
         <Grid item>
           <Box component="h5" sx={h5}>
             {title}

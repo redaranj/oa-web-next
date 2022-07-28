@@ -1,35 +1,21 @@
-import { FC, PropsWithChildren } from "react";
-import { StaticImageData } from "next/image";
+import { FC } from "react";
 import Link from "next/link";
 import { Box, Grid } from "@mui/material";
 import { colors, typography } from "styles/theme";
 
-type ProjectItemProps = PropsWithChildren<{
-  title: string;
-  description?: string;
-  image: StaticImageData;
-  url: string;
-}>;
-
-export const ProjectItem: FC<ProjectItemProps> = ({
-  title,
-  description,
-  image,
-  url,
-}) => {
-  const { white, black, turquoise } = colors;
-  const { h5, bodyLarge } = typography;
-  //  const containerRef = useRef(null);
-  //  const [visible, setVisible] = useState(false);
-  // ref={containerRef}
-  // onMouseOver={() => setVisible(!visible)}
-
+export const ProjectItem: FC = ({ children }) => {
+  const { white, turquoise } = colors;
+  const { bodyLarge } = typography;
+  const [first, title, description, url] = children as any[];
+  const image = first.props.children.props.src;
+  console.log({ image });
   return (
     <Grid
       item
       container
       direction="column"
       sx={{
+        width: "33%",
         overflow: "hidden",
       }}
     >
@@ -46,9 +32,7 @@ export const ProjectItem: FC<ProjectItemProps> = ({
         >
           <Grid item container direction="row" justifyContent="space-between">
             <Grid item>
-              <Box component="h5" sx={{ ...h5, color: black, p: 3 }}>
-                {title}
-              </Box>
+              <Box sx={{ p: 3 }}>{title}</Box>
             </Grid>
             <Grid item />
           </Grid>
@@ -56,7 +40,7 @@ export const ProjectItem: FC<ProjectItemProps> = ({
             <Box
               sx={{
                 height: "400px",
-                backgroundImage: `url(${image.src})`,
+                backgroundImage: `url(${image})`,
                 backgroundSize: "cover",
               }}
             >

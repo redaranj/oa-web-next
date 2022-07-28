@@ -21,7 +21,8 @@ export const TopNav = () => {
   const router = useRouter();
   const t = useTranslate();
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const { white, mediumGrey, mediumBurgundy, black, turquoise } = colors;
+  const { white, mediumGrey, mediumBurgundy, darkBurgundy, black, turquoise } =
+    colors;
   const { body } = typography;
   const { ps, pl, ts, tl, ds, dl } = breakpoints;
   const menuItemProps = {
@@ -164,7 +165,7 @@ export const TopNav = () => {
                         <Grid item>
                           <Link href="/save" passHref>
                             <Box component="a" sx={menuItemProps}>
-                              {t("save")}
+                              {t("saveApp")}
                             </Box>
                           </Link>
                         </Grid>
@@ -259,7 +260,7 @@ export const TopNav = () => {
                         <Grid item>
                           <Link href="/jobs" passHref>
                             <Box component="a" sx={menuItemProps}>
-                              {t("jobs")}
+                              {t("workWithUs")}
                             </Box>
                           </Link>
                         </Grid>
@@ -291,6 +292,7 @@ export const TopNav = () => {
                     <FilledButton
                       textColor={white}
                       backgroundColor={mediumBurgundy}
+                      highlightColor={darkBurgundy}
                       onClick={() => router.push("/donate")}
                     >
                       {t("donate")}

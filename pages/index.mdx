@@ -3,6 +3,7 @@ import { ArchivingSection } from "components/home/ArchivingSection";
 import { ImpactSection } from "components/home/ImpactSection";
 import { ImpactItem } from "components/home/ImpactItem";
 import { ProjectsSection } from "components/home/ProjectsSection";
+import { ProjectItem } from "components/home/ProjectItem";
 import { WhoSection } from "components/home/WhoSection";
 import { TestimonialsSection } from "components/common/TestimonialsSection";
 import { TestimonialItem } from "components/common/TestimonialItem";
@@ -20,7 +21,9 @@ Anyone with a phone can expose global injustice. OpenArchive helps history's fir
 <ArchivingSection>
   ## **Radical Archiving** in practice
 
-We are a team of archival activists collaborating with human rights defenders and at-risk communities to create responsive, secure, and ethical archiving technologies to advance justice and accountability.
+OpenArchive is dedicated to protecting media freedom: preserving, amplifying, and securely routing [mobile media](/save) to community-maintained collections in accessible public and private archives, outside the corporate walled gardens currently dominating the online media ecosystem.
+
+[About us](/about)
 
 </ArchivingSection>
 
@@ -62,7 +65,40 @@ We work at the forefront of digital freedom, contributing research and emergent 
 
 </ImpactItem>
 </ImpactSection>
-<ProjectsSection />
+<ProjectsSection>
+  ## Projects
+
+  <ProjectItem>
+    ![](project-save.png)
+
+    ##### Save App
+
+    Save helps eyewitnesses preserve, protect, authenticate and amplify crucial records of human rights abuses. Download Save for iOS and Android.
+
+    [Save](/save)
+
+  </ProjectItem>
+  <ProjectItem>
+    ![](project-guide.png)
+
+    ## Guides
+
+    Explore our guides and toolkits to learn how to preserve evidence of global injustice and combat disinformation",
+
+    [Guides](/guides)
+
+  </ProjectItem>
+  <ProjectItem>
+    ![](project-research.png)
+    
+    ## Research
+  
+    Our work is a result of more than a decade of applied research and collaboration with at-risk communities and human rights defense organizations around the world.
+
+    [Research](/research)
+
+  </ProjectItem>
+</ProjectsSection>
 <WhoSection pages={props.pages}>
   ## Who we serve
 
