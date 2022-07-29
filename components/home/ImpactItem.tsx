@@ -1,7 +1,7 @@
 import { FC } from "react";
 import Image from "next/image";
 import { Box, Grid } from "@mui/material";
-import { typography, breakpoints } from "styles/theme";
+import { typography, breakpoints, loader } from "styles/theme";
 
 export const ImpactItem: FC = ({ children }) => {
   const { h5, bodyLarge } = typography;
@@ -34,6 +34,7 @@ export const ImpactItem: FC = ({ children }) => {
           alt=""
           width="50px"
           style={{ marginBottom: "8px" }}
+          loader={loader}
         />
       </Grid>
       <Grid item>

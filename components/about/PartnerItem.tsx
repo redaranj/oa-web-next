@@ -2,7 +2,7 @@ import { FC } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Grid } from "@mui/material";
-import { breakpoints } from "styles/theme";
+import { breakpoints, loader } from "styles/theme";
 
 export const PartnerItem: FC = ({ children }) => {
   const { ps, tl } = breakpoints;
@@ -21,7 +21,7 @@ export const PartnerItem: FC = ({ children }) => {
       justifyContent="space-around"
     >
       <Link href={url}>
-        <Image src={image} alt={name} width={150} />
+        <Image src={image} alt={name} width={150} loader={loader} />
       </Link>
     </Grid>
   );
