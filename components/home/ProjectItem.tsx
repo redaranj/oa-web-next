@@ -2,13 +2,15 @@ import { FC } from "react";
 import Link from "next/link";
 import { Box, Grid } from "@mui/material";
 import { colors, typography } from "styles/theme";
+import { getImagePath } from "lib/frontendHelpers";
 
 export const ProjectItem: FC = ({ children }) => {
   const { white, turquoise } = colors;
   const { bodyLarge } = typography;
-  const [first, title, description, url] = children as any[];
+  const [first, title, description, last] = children as any[];
   const image = first.props.children.props.src;
-  console.log({ image });
+  const url = last.props.children.props.href;
+  console.log({ url });
   return (
     <Grid
       item
@@ -40,7 +42,7 @@ export const ProjectItem: FC = ({ children }) => {
             <Box
               sx={{
                 height: "400px",
-                backgroundImage: `url(${image})`,
+                backgroundImage: `url(${getImagePath(image)})`,
                 backgroundSize: "cover",
               }}
             >

@@ -316,7 +316,7 @@ export const Footer: FC = () => {
               alignContent="center"
             >
               <Grid item>
-                <Box sx={{ mt: "2px" }}>
+                <Box sx={{ mt: "4px" }}>
                   <Image src={emailIcon} alt="" loader={loader} />
                 </Box>
               </Grid>

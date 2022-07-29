@@ -113,6 +113,10 @@ export const typography = {
     [breakpoints.dl]: {
       fontSize: "40px",
     },
+    "& strong": {
+      fontWeight: 600,
+      color: colors.turquoise,
+    },
   },
   h4: {
     ...typographyDefaults,

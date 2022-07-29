@@ -1,6 +1,5 @@
 import { HeaderSection } from "components/guides/HeaderSection";
 import { GuidesSection } from "components/guides/GuidesSection";
-import { RoleSection } from "components/common/RoleSection";
 import { getIndexProps } from "lib/helpers";
 
 export const getStaticProps = async (context) => getIndexProps("pages/guides");
@@ -13,4 +12,3 @@ export const getStaticProps = async (context) => getIndexProps("pages/guides");
 <GuidesSection pages={props.pages}>
     ###### Explore our guides and toolkits to learn how to preserve evidence of global injustice and combat disinformation.
 </GuidesSection>
-<RoleSection />
