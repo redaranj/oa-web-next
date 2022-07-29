@@ -19,6 +19,7 @@ export const HeaderSection: FC = ({ children }) => {
           [ps]: { flexDirection: "column-reverse" },
           [pl]: { flexDirection: "row" },
         }}
+        spacing={6}
       >
         <Grid
           container
@@ -35,7 +36,7 @@ export const HeaderSection: FC = ({ children }) => {
           }}
         >
           <Grid item>{first}</Grid>
-          <Grid item container direction="column" spacing={6} sx={{ mb: 12 }}>
+          <Grid item container direction="column" sx={{ mb: 12 }}>
             <Grid item>{rest}</Grid>
           </Grid>
         </Grid>
@@ -58,10 +59,11 @@ export const HeaderSection: FC = ({ children }) => {
               minHeight: 500,
               overflow: "visible",
               width: "100%",
-              backgroundImage: `url(${header1.src}), url(${header2.src})`,
-              backgroundSize: "400px",
-              backgroundPosition: "0% 0%, 25% 0%",
+              backgroundImage: `url(${header2.src}), url(${header1.src})`,
+              backgroundSize: "100%",
+              backgroundPosition: "100% 100%, 0% 0%",
               backgroundRepeat: "no-repeat",
+              ml: 5,
               [ps]: {
                 width: "100%",
                 height: 200,
@@ -71,7 +73,6 @@ export const HeaderSection: FC = ({ children }) => {
               [tl]: {},
               [ds]: {
                 backgroundSize: "250px",
-                backgroundPosition: "60px -100px, 380px 0px",
               },
               [dl]: {
                 backgroundSize: "400px",

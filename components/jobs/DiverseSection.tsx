@@ -2,7 +2,7 @@ import { FC } from "react";
 import { Grid, Box } from "@mui/material";
 import { colors, typography } from "styles/theme";
 import { HeaderSection as BaseHeaderSection } from "components/common/HeaderSection";
-import Diverse from "public/images/diverse.png";
+import diverse from "public/images/diverse.png";
 
 export const DiverseSection: FC = () => {
   const { white } = colors;
@@ -16,11 +16,14 @@ export const DiverseSection: FC = () => {
         sx={{
           flexDirection: "row",
         }}
+        spacing={6}
       >
         <Grid item xs={6}>
           <Box
             sx={{
-              backgroundImage: `url(${Diverse.src})`,
+              height: "100%",
+              width: "100%",
+              backgroundImage: `url(${diverse.src})`,
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center center",
               backgroundSize: "cover",
