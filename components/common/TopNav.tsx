@@ -150,7 +150,7 @@ export const TopNav = () => {
                     container
                     direction="column"
                     justifyContent="space-around"
-                    sx={{
+                    sx={{                      
                       display: "initial",
                       [ps]: {
                         display: "none",
@@ -234,7 +234,7 @@ export const TopNav = () => {
                       },
                     }}
                   >
-                    <MenuButton title="About" anchorEl={getAnchorRef}>
+                    <MenuButton title={t("about")} anchorEl={getAnchorRef}>
                       <Grid container direction="column" spacing={2}>
                         <Grid item>
                           <Link href="/about" passHref>

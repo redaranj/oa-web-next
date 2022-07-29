@@ -1,6 +1,6 @@
 import { FC, PropsWithChildren } from "react";
 import Image from "next/image";
-import { Box, Button, Popover } from "@mui/material";
+import { Box, Button, Popover, Grid } from "@mui/material";
 import PopupState, { bindTrigger, bindPopover } from "material-ui-popup-state";
 import { colors, typography, loader } from "styles/theme";
 import downArrow from "public/images/down-arrow.svg";
@@ -28,6 +28,8 @@ export const MenuButton: FC<MenuButtonProps> = ({
               sx={{
                 ...body,
                 height: "100%",
+                minWidth: 120,
+                textAlign: "center",
                 fontWeight: 700,
                 textTransform: "none",
                 color: black,
@@ -44,10 +46,14 @@ export const MenuButton: FC<MenuButtonProps> = ({
               }}
               {...bindTrigger(popupState)}
             >
-              {title}
-              <Box sx={{ ml: "6px", mt: "-3px" }}>
-                <Image src={downArrow} alt="" loader={loader} />
-              </Box>
+              <Grid container direction="row" wrap="nowrap">
+                <Grid item>{title}</Grid>
+                <Grid item>
+                  <Box sx={{ ml: "6px", mt: "-3px", width: 20 }}>
+                    <Image src={downArrow} alt="" loader={loader} />
+                  </Box>
+                </Grid>
+              </Grid>
             </Button>
             <Popover
               elevation={0}

@@ -1,13 +1,14 @@
 import { FC } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Grid } from "@mui/material";
 import { breakpoints } from "styles/theme";
-import { getImagePath } from "lib/frontendHelpers";
 
 export const PartnerItem: FC = ({ children }) => {
   const { ps, tl } = breakpoints;
   const [first, url, ...rest] = children as any[];
-  const image = first.props.children.props.src;
+  const image =
+    require(`public/images/${first.props.children.props.src}`).default;
   const name = rest as unknown as string;
 
   return (
@@ -20,7 +21,7 @@ export const PartnerItem: FC = ({ children }) => {
       justifyContent="space-around"
     >
       <Link href={url}>
-        <img src={getImagePath(image)} alt={name} style={{ width: "150px" }} />
+        <Image src={image} alt={name} width={150} />
       </Link>
     </Grid>
   );
