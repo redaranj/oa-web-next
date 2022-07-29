@@ -16,11 +16,13 @@ import instagram from "public/images/instagram-black.svg";
 import github from "public/images/github-black.svg";
 import linkedin from "public/images/linkedin-black.svg";
 import youtube from "public/images/youtube-black.svg";
+import emailIcon from "public/images/email-icon.svg";
 
 export const Footer: FC = () => {
   const t = useTranslate();
   const { h6 } = typography;
-  const { lightGrey, mediumGrey, turquoise } = colors;
+  const { lightGrey, mediumGrey, mediumBurgundy, darkBurgundy, turquoise } =
+    colors;
   const { ps, pl, ds } = breakpoints;
   const linkStyles = {
     ...h6,
@@ -190,7 +192,20 @@ export const Footer: FC = () => {
             spacing={3}
           >
             <Grid item>
-              <Link href="/work-with-us">
+              <Link href="/donate">
+                <Box
+                  sx={{
+                    ...linkStyles,
+                    color: mediumBurgundy,
+                    "&:hover": { color: darkBurgundy },
+                  }}
+                >
+                  {t("donate")}
+                </Box>
+              </Link>
+            </Grid>
+            <Grid item>
+              <Link href="/jobs">
                 <Box sx={linkStyles}>{t("workWithUs")}</Box>
               </Link>
             </Grid>
@@ -292,14 +307,28 @@ export const Footer: FC = () => {
                 }}
               />
             </Grid>
-            <Grid item>
-              <Box
-                component="a"
-                sx={{ textDecoration: "none" }}
-                href="mailto:info@open-archive.org"
-              >
-                <Box sx={linkStyles}>Contact us</Box>
-              </Box>
+            <Grid
+              item
+              container
+              direction="row"
+              spacing={1}
+              alignItems="center"
+              alignContent="center"
+            >
+              <Grid item>
+                <Box sx={{ mt: "2px" }}>
+                  <Image src={emailIcon} alt="" loader={loader} />
+                </Box>
+              </Grid>
+              <Grid item>
+                <Box
+                  component="a"
+                  sx={{ textDecoration: "none" }}
+                  href="mailto:info@open-archive.org"
+                >
+                  <Box sx={linkStyles}>info[at]open-archive.org</Box>
+                </Box>
+              </Grid>
             </Grid>
           </Grid>
         </Grid>

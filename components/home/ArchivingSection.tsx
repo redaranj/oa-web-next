@@ -1,26 +1,31 @@
 import { FC } from "react";
-import { Grid } from "@mui/material";
-import { useTranslate } from "react-polyglot";
+import { Box, Grid } from "@mui/material";
 import { PageSection } from "components/common/PageSection";
-import { OutlinedButton } from "components/common/OutlinedButton";
+import { breakpoints, colors, typography } from "styles/theme";
 import mission1 from "public/images/mission-1.png";
 import mission2 from "public/images/mission-2.png";
 
 export const ArchivingSection: FC = ({ children }) => {
-  const t = useTranslate();
+  const { outlinedButton } = typography;
+  const { lightGrey } = colors;
+  const { ps, pl } = breakpoints;
 
   return (
-    <PageSection backgroundColor="gray.light">
+    <PageSection backgroundColor={lightGrey}>
       <Grid
         container
         sx={{
-          flexDirection: { ps: "column", pl: "row" },
+          flexDirection: "row",
+          [ps]: { flexDirection: "column" },
+          [pl]: { flexDirection: "row" },
         }}
       >
         <Grid
           item
           sx={{
-            width: { ps: "100%", pl: "50%" },
+            width: "50%",
+            [ps]: { width: "100%" },
+            [pl]: { width: "50%" },
             position: "relative",
             overflow: "visible",
             ":before": {
@@ -44,14 +49,20 @@ export const ArchivingSection: FC = ({ children }) => {
           container
           direction="column"
           sx={{
-            width: { ps: "100%", pl: "50%" },
+            width: "50%",
+            [ps]: { width: "100%" },
+            [pl]: { width: "50%" },
           }}
         >
-          <Grid item>{children}</Grid>
           <Grid item>
-            <OutlinedButton arrowDirection="right" href="/about">
-              {t("learnMore")}
-            </OutlinedButton>
+            <Box
+              sx={{
+                a: outlinedButton,
+                "> p": { mb: 4 },
+              }}
+            >
+              {children}
+            </Box>
           </Grid>
         </Grid>
       </Grid>

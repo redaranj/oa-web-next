@@ -1,11 +1,13 @@
 import { FC } from "react";
 import { Box, Grid } from "@mui/material";
 import { typography, breakpoints } from "styles/theme";
+import { getImagePath } from "lib/frontendHelpers";
 
 export const ImpactItem: FC = ({ children }) => {
   const { h5, bodyLarge } = typography;
   const { tl, pl, ps } = breakpoints;
-  const [image, title, ...description] = children as any[];
+  const [first, title, ...description] = children as any[];
+  const image = first.props.children.props.src;
 
   return (
     <Grid
@@ -26,7 +28,12 @@ export const ImpactItem: FC = ({ children }) => {
       }}
     >
       <Grid item>
-        <img src={image} alt="" width="60px" />
+        <img
+          src={getImagePath(image)}
+          alt=""
+          width="50px"
+          style={{ marginBottom: "8px" }}
+        />
       </Grid>
       <Grid item>
         <Box component="h5" sx={h5}>

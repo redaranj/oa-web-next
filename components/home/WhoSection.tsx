@@ -1,18 +1,19 @@
 import { FC } from "react";
 import { Box, Grid } from "@mui/material";
-import { useTranslate } from "react-polyglot";
 import { typography, colors, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { HorizontalCarousel } from "components/common/HorizontalCarousel";
 import { WhoItem } from "components/home/WhoItem";
-import megan from "public/images/megan.svg";
-import kevin from "public/images/kevin.svg";
 
-export const WhoSection: FC = () => {
-  const t = useTranslate();
-  const { h2, bodyLarge } = typography;
+type WhoSectionProps = {
+  pages: any[];
+};
+
+export const WhoSection: FC<WhoSectionProps> = ({ pages, children }) => {
+  const { bodyLarge } = typography;
   const { white } = colors;
   const { ps, ts } = breakpoints;
+  const [title, ...description] = children as any[];
 
   return (
     <PageSection backgroundColor={white}>
@@ -43,11 +44,7 @@ export const WhoSection: FC = () => {
               },
             }}
           >
-            <Box
-              component="h2"
-              sx={h2}
-              dangerouslySetInnerHTML={{ __html: t("whoServeTitle") }}
-            />
+            {title}
           </Grid>
           <Grid
             item
@@ -61,47 +58,15 @@ export const WhoSection: FC = () => {
               },
             }}
           >
-            <Box component="p" sx={bodyLarge}>
-              {t("whoServeDescription")}
-            </Box>
+            <Box sx={{ "> p": bodyLarge }}>{description}</Box>
           </Grid>
         </Grid>
       </Box>
       <Box>
         <HorizontalCarousel columnOnMobile visibleCount={1.5}>
-          <WhoItem
-            name={t("whoAnnaName")}
-            profile={t("whoAnnaProfile")}
-            description={t("whoAnnaDescription")}
-            image={megan}
-            url=""
-            backgroundProps={{
-              backgroundSize: "180px",
-              backgroundPosition: "30px 45px",
-            }}
-          />
-          <WhoItem
-            name={t("whoDariusName")}
-            profile={t("whoDariusProfile")}
-            description={t("whoDariusDescription")}
-            image={kevin}
-            url=""
-            backgroundProps={{
-              backgroundSize: "220px",
-              backgroundPosition: "0px 50px",
-            }}
-          />
-          <WhoItem
-            name={t("whoKaiName")}
-            profile={t("whoKaiProfile")}
-            description={t("whoKaiDescription")}
-            image={megan}
-            url=""
-            backgroundProps={{
-              backgroundSize: "180px",
-              backgroundPosition: "20px 45px",
-            }}
-          />
+          {pages.map((page) => (
+            <WhoItem key={page.path} {...page} />
+          ))}
         </HorizontalCarousel>
       </Box>
     </PageSection>

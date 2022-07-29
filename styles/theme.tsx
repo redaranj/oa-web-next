@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Box } from "@mui/material";
 
 export const breakpoints = {
@@ -94,7 +93,7 @@ export const typography = {
     ...typographyDefaults,
     fontWeight: 600,
     fontSize: "40px",
-    lineHeight: "40px",
+    lineHeight: "125%",
     mb: 3,
     [breakpoints.ps]: {
       fontSize: "16px",

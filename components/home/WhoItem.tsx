@@ -1,25 +1,26 @@
 import { FC, PropsWithChildren } from "react";
-import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 import { Box, Grid } from "@mui/material";
 import { colors, loader, typography } from "styles/theme";
+import { getImagePath } from "lib/frontendHelpers";
 import plus from "public/images/plus.svg";
-import quote from "public/images/quote.svg";
+import quotationMark from "public/images/quote.svg";
 
 type WhoItemProps = PropsWithChildren<{
   name: string;
-  profile: string;
-  description: string;
-  url: string;
-  image: StaticImageData;
+  title: string;
+  quote: string;
+  path: string;
+  image: string;
   backgroundProps: any;
 }>;
 
 export const WhoItem: FC<WhoItemProps> = ({
   name,
-  profile,
-  description,
-  url,
+  title,
+  quote,
+  path,
   image,
   backgroundProps,
 }) => {
@@ -27,7 +28,7 @@ export const WhoItem: FC<WhoItemProps> = ({
   const { h5, body, bodyLarge } = typography;
 
   return (
-    <Link href={url}>
+    <Link href={path}>
       <Grid
         item
         container
@@ -39,7 +40,7 @@ export const WhoItem: FC<WhoItemProps> = ({
           <Box
             sx={{
               backgroundColor: lightGrey,
-              backgroundImage: `url(${image.src})`,
+              backgroundImage: `url(${getImagePath(image)})`,
               backgroundSize: "150px",
               backgroundPosition: "40px 50px",
               backgroundRepeat: "no-repeat",
@@ -70,13 +71,13 @@ export const WhoItem: FC<WhoItemProps> = ({
           </Grid>
           <Grid item>
             <Box component="p" sx={{ ...body, mb: 4 }}>
-              {profile}
+              {title}
             </Box>
           </Grid>
           <Grid item>
-            <Image src={quote} loader={loader} />
+            <Image src={quotationMark} loader={loader} />
             <Box component="p" sx={{ bodyLarge, mb: 2 }}>
-              {description}
+              {quote}
             </Box>
           </Grid>
         </Grid>
