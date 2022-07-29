@@ -3,7 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { Box, Grid } from "@mui/material";
 import { colors, loader, typography } from "styles/theme";
-import { getImagePath } from "lib/frontendHelpers";
 import plus from "public/images/plus.svg";
 import quotationMark from "public/images/quote.svg";
 
@@ -26,6 +25,7 @@ export const WhoItem: FC<WhoItemProps> = ({
 }) => {
   const { lightGrey } = colors;
   const { h5, body, bodyLarge } = typography;
+  const loadedImage = require(`public/images/${image}`).default;
 
   return (
     <Link href={path}>
@@ -40,7 +40,7 @@ export const WhoItem: FC<WhoItemProps> = ({
           <Box
             sx={{
               backgroundColor: lightGrey,
-              backgroundImage: `url(${getImagePath(image)})`,
+              backgroundImage: `url(${loadedImage.src})`,
               backgroundSize: "150px",
               backgroundPosition: "40px 50px",
               backgroundRepeat: "no-repeat",

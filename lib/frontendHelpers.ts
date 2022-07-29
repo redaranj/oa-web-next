@@ -1,5 +1,5 @@
-export const getImagePath = (image: string) => {
-  const basePath = process.env.CI ? "/web-next" : "";
+export const loadImage = (imageElement: any) =>
+  require(`public/images/${imageElement.props.children.props.src}`).default;
 
-  return `${basePath}/images/${image}`;
-};
+export const getURL = (linkElement: any) =>
+  linkElement.props.children.props.href;

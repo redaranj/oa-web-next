@@ -1,10 +1,10 @@
 import { FC } from "react";
 import { Grid, Box } from "@mui/material";
-import { getImagePath } from "lib/frontendHelpers";
+import { loadImage } from "lib/frontendHelpers";
 
 export const OpportunityItem: FC = ({ children }) => {
   const [first, ...rest] = children as any[];
-  const image = first.props.children.props.src;
+  const image = loadImage(first);
 
   return (
     <Grid container justifyContent="space-around" className="opportunityItem">
@@ -13,7 +13,7 @@ export const OpportunityItem: FC = ({ children }) => {
           sx={{
             width: "100%",
             height: "100%",
-            backgroundImage: `url(${getImagePath(image)})`,
+            backgroundImage: `url(${image.src})`,
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center center",
             backgroundSize: "cover",

@@ -1,13 +1,13 @@
 import { FC } from "react";
 import { Box, Grid } from "@mui/material";
 import { colors, breakpoints } from "styles/theme";
+import { loadImage } from "lib/frontendHelpers";
 
 export const ActivityItem: FC = ({ children }) => {
   const { white } = colors;
   const { ps, tl } = breakpoints;
   const [first, ...rest] = children as any[];
-  const image =
-    require(`public/images/${first.props.children.props.src}`).default;
+  const image = loadImage(first);
 
   return (
     <Grid

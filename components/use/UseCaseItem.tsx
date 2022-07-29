@@ -1,7 +1,8 @@
 import { FC } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Grid, Box } from "@mui/material";
-import { colors, typography } from "styles/theme";
+import { colors, typography, loader } from "styles/theme";
 
 type UseCaseItemProps = {
   name: string;
@@ -20,13 +21,14 @@ export const UseCaseItem: FC<UseCaseItemProps> = ({
 }) => {
   const { lightGrey } = colors;
   const { h5, h6, bodyLarge } = typography;
+  const loadedImage = require(`public/images/${image}`).default;
 
   return (
     <Link href={path}>
       <Box sx={{ backgroundColor: lightGrey, p: 6 }}>
         <Grid container direction="row" wrap="nowrap" spacing={3}>
           <Grid item flexGrow={0}>
-            <img src={`images/${image}`} />
+            <Image src={loadedImage} alt="" loader={loader} />
           </Grid>
           <Grid item flexGrow={1}>
             <Box component="h5" sx={h5}>

@@ -3,14 +3,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { Box, Grid } from "@mui/material";
 import { colors, breakpoints, loader } from "styles/theme";
-import { getImagePath } from "lib/frontendHelpers";
+import { loadImage } from "lib/frontendHelpers";
 import rightArrow from "public/images/right-arrow.svg";
 
 export const MoreItem: FC = ({ children }) => {
   const { lightGrey } = colors;
   const { ps, tl } = breakpoints;
   const [first, title, url] = children as any[];
-  const image = first.props.children.props.src;
+  const image = loadImage(first);
 
   return (
     <Grid
@@ -42,7 +42,7 @@ export const MoreItem: FC = ({ children }) => {
               sx={{
                 height: "300px",
                 width: "100%",
-                backgroundImage: `url(${getImagePath(image)})`,
+                backgroundImage: `url(${image.src})`,
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "center",

@@ -4,12 +4,12 @@ import Link from "next/link";
 import { Box, Grid } from "@mui/material";
 import { colors, loader } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
-import { getImagePath } from "lib/frontendHelpers";
+import { loadImage } from "lib/frontendHelpers";
 
 export const ArticleHeaderSection: FC = ({ children }) => {
   const { lightGrey, darkGrey, turquoise } = colors;
   const [first, date, category, title, ...description] = children as any[];
-  const image = first.props.children.props.src;
+  const image = loadImage(first);
 
   return (
     <Box sx={{ mb: 10 }}>
@@ -60,7 +60,7 @@ export const ArticleHeaderSection: FC = ({ children }) => {
               }}
             >
               <Image
-                src={getImagePath(image)}
+                src={image}
                 alt=""
                 loader={loader}
                 width="500px"
