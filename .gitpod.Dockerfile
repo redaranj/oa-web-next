@@ -1,3 +1,3 @@
-FROM gitpod/workspace-base:latest
+FROM gitpod/workspace-full:latest
 
-RUN npm i -g npm-check-updates
+RUN npm i --location=global npm-check-updates
