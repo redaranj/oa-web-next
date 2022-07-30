@@ -1,22 +1,26 @@
 import { FC } from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { Box, Grid } from "@mui/material";
 import { typography, colors, breakpoints, loader } from "styles/theme";
-import { loadImage } from "lib/frontendHelpers";
 
 type PersonItemProps = {
+  name: string;
+  jobTitle?: string;
+  bio: any;
+  image: StaticImageData;
   backgroundColor: string;
 };
 
 export const PersonItem: FC<PersonItemProps> = ({
+  name,
+  jobTitle = "",
+  bio,
+  image,
   backgroundColor,
-  children,
 }) => {
   const { turquoise } = colors;
   const { bodyLarge } = typography;
   const { ps, tl } = breakpoints;
-  const [first, name, jobTitle, ...bio] = children as any[];
-  const image = loadImage(first);
 
   return (
     <Grid item>

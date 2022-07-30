@@ -1,4 +1,6 @@
+import Image from "next/image";
 import { Box } from "@mui/material";
+import { loadImage } from "lib/frontendHelpers";
 
 export const breakpoints = {
   dl: "@media (min-width: 1366px)",
@@ -306,10 +308,9 @@ export const components = {
     </Box>
   ),
   img: (props) => {
-    const basePath = !!process.env.CI ? "/web-next" : "";
-    return (
-      <img {...props} src={`${basePath}/images/${props.src}`} alt={props.alt} />
-    );
+    const image = require(`public/images/${props.src}`).default;
+
+    return <Image src={image} alt={props.alt} loader={loader} />;
   },
   a: ({ children }) => {
     return (
