@@ -1,12 +1,15 @@
 import { FC } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Grid, Box } from "@mui/material";
-import { colors } from "styles/theme";
+import { colors, loader } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
+import { loadImage } from "lib/frontendHelpers";
 
 export const ProfileSection: FC = ({ children }) => {
   const { white, lightGrey, mediumGrey, turquoise } = colors;
-  const [image, name, title, quote, stats, ...details] = children as any[];
+  const [first, name, title, quote, stats, ...details] = children as any[];
+  const image = loadImage(first);
 
   return (
     <>
@@ -17,7 +20,9 @@ export const ProfileSection: FC = ({ children }) => {
         <Grid container direction="column">
           <Grid item container direction="row" wrap="nowrap">
             <Grid item>
-              <Box sx={{ width: 300 }}>{image}</Box>
+              <Box sx={{ width: 300 }}>
+                <Image src={image} alt="" loader={loader} />
+              </Box>
             </Grid>
             <Grid item container direction="column" sx={{ ml: "20px" }}>
               <Grid item>{name}</Grid>
