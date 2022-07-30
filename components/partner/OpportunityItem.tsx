@@ -21,7 +21,7 @@ export const OpportunityItem: FC = ({ children }) => {
         />
       </Grid>
       <Grid item xs={6}>
-        <Box sx={{ p: 3 }}>{rest}</Box>
+        <Box sx={{ px: 5, py: 10 }}>{rest}</Box>
       </Grid>
     </Grid>
   );
