@@ -9,6 +9,7 @@ export const ActivityItem: FC = ({ children }) => {
   const [first, ...rest] = children as any[];
   const image = loadImage(first);
 
+  console.log({ image });
   return (
     <Grid
       className="activityContainer"

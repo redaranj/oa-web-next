@@ -307,10 +307,10 @@ export const components = {
       {children}
     </Box>
   ),
-  img: (props) => {
-    const image = require(`public/images/${props.src}`).default;
+  img: ({ src, alt }) => {
+    const image = require(`public/images/${src}`).default;
 
-    return <Image src={image} alt={props.alt} loader={loader} />;
+    return <Image src={image} alt={alt} loader={loader} />;
   },
   a: ({ children }) => {
     return (

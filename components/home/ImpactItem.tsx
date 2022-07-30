@@ -1,14 +1,11 @@
 import { FC } from "react";
-import Image from "next/image";
 import { Box, Grid } from "@mui/material";
-import { typography, breakpoints, loader } from "styles/theme";
+import { typography, breakpoints } from "styles/theme";
 
 export const ImpactItem: FC = ({ children }) => {
   const { h5, bodyLarge } = typography;
   const { tl, pl, ps } = breakpoints;
-  const [first, title, ...description] = children as any[];
-  const image =
-    require(`public/images/${first.props.children.props.src}`).default;
+  const [image, title, ...description] = children as any[];
 
   return (
     <Grid
@@ -29,13 +26,7 @@ export const ImpactItem: FC = ({ children }) => {
       }}
     >
       <Grid item>
-        <Image
-          src={image}
-          alt=""
-          width="50px"
-          style={{ marginBottom: "8px" }}
-          loader={loader}
-        />
+        <Box sx={{ width: "50px", mb: "8px" }}>{image}</Box>
       </Grid>
       <Grid item>
         <Box component="h5" sx={h5}>
