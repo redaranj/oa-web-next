@@ -1,6 +1,8 @@
 import { FC } from "react";
+import Image from "next/image";
 import { Box, Grid } from "@mui/material";
-import { typography, colors, breakpoints } from "styles/theme";
+import { typography, colors, breakpoints, loader } from "styles/theme";
+import { loadImage } from "lib/frontendHelpers";
 
 type PersonItemProps = {
   backgroundColor: string;
@@ -13,7 +15,8 @@ export const PersonItem: FC<PersonItemProps> = ({
   const { turquoise } = colors;
   const { bodyLarge } = typography;
   const { ps, tl } = breakpoints;
-  const [image, name, jobTitle, ...bio] = children as any[];
+  const [first, name, jobTitle, ...bio] = children as any[];
+  const image = loadImage(first);
 
   return (
     <Grid item>
@@ -38,7 +41,9 @@ export const PersonItem: FC<PersonItemProps> = ({
             spacing={4}
           >
             <Grid item>
-              <Box sx={{ mt: -10 }}>{image}</Box>
+              <Box sx={{ mt: -10, width: 120 }}>
+                <Image src={image} alt="" loader={loader} />
+              </Box>
             </Grid>
             <Grid item container direction="column">
               {name}

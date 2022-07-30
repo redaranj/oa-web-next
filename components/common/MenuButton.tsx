@@ -1,6 +1,6 @@
 import { FC, PropsWithChildren } from "react";
 import Image from "next/image";
-import { Box, Button, Popover, Grid } from "@mui/material";
+import { Box, Button, Grid } from "@mui/material";
 import PopupState, { bindHover, bindPopover } from "material-ui-popup-state";
 import HoverPopover from "material-ui-popup-state/HoverPopover";
 import { colors, typography, loader } from "styles/theme";

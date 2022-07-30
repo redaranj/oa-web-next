@@ -80,6 +80,17 @@ export const Footer: FC = () => {
             spacing={2}
             justifyContent="space-between"
             alignItems="center"
+            sx={{
+              flexWrap: "nowrap",
+              [ps]: {
+                flexDirection: "column-reverse",
+                flexWrap: "wrap",
+              },
+              [ds]: {
+                flexDirection: "row",
+                flexWrap: "nowrap",
+              },
+            }}
           >
             <Grid item>
               <Box sx={{ width: 200 }}>
@@ -96,10 +107,20 @@ export const Footer: FC = () => {
             <Grid
               item
               container
-              direction="row"
-              wrap="nowrap"
               spacing={0}
-              sx={{ mt: "-4px" }}
+              sx={{
+                mt: "-4px",
+                flexWrap: "nowrap",
+                flexDirection: "row",
+                [ps]: {
+                  flexDirection: "column-reverse",
+                  flexWrap: "wrap",
+                },
+                [ds]: {
+                  flexDirection: "row",
+                  flexWrap: "nowrap",
+                },
+              }}
             >
               <Grid item sx={{ m: 0, p: 0 }}>
                 <IconLink
@@ -249,7 +270,7 @@ export const Footer: FC = () => {
             }}
             justifyContent="space-between"
           >
-            <Grid item container direction="row" wrap="nowrap" spacing={2}>
+            <Grid item container direction="row" spacing={2}>
               <Grid item>
                 <IconLink
                   image={twitter}
