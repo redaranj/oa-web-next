@@ -69,7 +69,13 @@ export const HorizontalCarousel: FC<HorizontalCarouselProps> = ({
 
   return (
     <Box>
-      <Box>
+      <Box
+        sx={{
+          display: "block",
+          [ps]: { display: columnOnMobile ? "none" : "block" },
+          [ts]: { display: "block" },
+        }}
+      >
         <Swiper
           modules={[A11y]}
           spaceBetween={spaceBetween}
@@ -82,6 +88,21 @@ export const HorizontalCarousel: FC<HorizontalCarouselProps> = ({
           ))}
           <SlideNavigation />
         </Swiper>
+      </Box>
+      <Box
+        sx={{
+          display: "none",
+          [ps]: { display: columnOnMobile ? "block" : "none" },
+          [ts]: { display: "none" },
+        }}
+      >
+        <Grid container direction="column">
+          {(children as any).map((child: any, index: number) => (
+            <Grid item key={index}>
+              {child}
+            </Grid>
+          ))}
+        </Grid>
       </Box>
     </Box>
   );

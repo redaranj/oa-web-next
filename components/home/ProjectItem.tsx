@@ -1,12 +1,13 @@
 import { FC } from "react";
 import Link from "next/link";
 import { Box, Grid } from "@mui/material";
-import { colors, typography } from "styles/theme";
+import { colors, typography, breakpoints } from "styles/theme";
 import { loadImage, getURL } from "lib/frontendHelpers";
 
 export const ProjectItem: FC = ({ children }) => {
   const { white, turquoise } = colors;
   const { bodyLarge } = typography;
+  const { ps, ts } = breakpoints;
   const [first, title, description, last] = children as any[];
   const image = loadImage(first);
   const url = getURL(last);
@@ -19,6 +20,8 @@ export const ProjectItem: FC = ({ children }) => {
       sx={{
         width: "33%",
         overflow: "hidden",
+        [ps]: { width: "100%" },
+        [ts]: { width: "33%" },
       }}
     >
       <Link href={url}>
