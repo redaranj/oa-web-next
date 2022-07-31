@@ -3,7 +3,8 @@ import { Box } from "@mui/material";
 import { colors } from "styles/theme";
 
 export const DonateBox: FC = ({ children }) => {
-  const { mediumBurgundy, black, lightGrey } = colors;
+  const { mediumBurgundy, darkBurgundy, turquoise, black, lightGrey, white } =
+    colors;
 
   return (
     <Box
@@ -15,6 +16,7 @@ export const DonateBox: FC = ({ children }) => {
           flexWrap: "wrap",
           flexDirection: "row",
           justifyContent: "flex-start",
+          p: 0,
         },
         li: {
           backgroundColor: lightGrey,
@@ -27,10 +29,15 @@ export const DonateBox: FC = ({ children }) => {
           textAlign: "center",
           fontWeight: "bold",
           textColor: "bold",
-          width: "25%",
+          width: "29%",
+          cursor: "pointer",
+          "&:hover": {
+            backgroundColor: turquoise,
+            border: `1px solid ${turquoise}`,
+            color: white,
+          },
         },
-        "li strong": {
-          backgroundColor: "purple",
+        "li em": {
           fontStyle: "normal",
           textAlign: "center",
           display: "block",
@@ -38,9 +45,21 @@ export const DonateBox: FC = ({ children }) => {
         },
         a: {
           backgroundColor: mediumBurgundy,
+          textDecoration: "none",
+          textAlign: "center",
+          fontWeight: "bold",
+          color: white,
           borderRadius: 10,
-          padding: 3,
-          margin: 3,
+          px: 3,
+          py: 1,
+          m: 0,
+          mb: 2,
+          display: "block",
+          width: "100%",
+          "&:hover": {
+            backgroundColor: darkBurgundy,            
+            color: white,
+          },
         },
       }}
     >
