@@ -16,6 +16,21 @@ export const QuestionsSection: FC = ({ children }) => {
         : setSelectedCategory(category),
     [selectedCategory, setSelectedCategory]
   );
+  let filteredChildren = children;
+  if (selectedCategory === "About OpenArchive") {
+    filteredChildren = [children[0], children[4]];
+  } else if (selectedCategory === "Save") {
+    filteredChildren = [
+      children[1],
+      children[2],
+      children[3],
+      children[5],
+      children[6],
+      children[7],
+    ];
+  } else if (selectedCategory === "Support / Donations") {
+    filteredChildren = [children[8]];
+  }
 
   return (
     <PageSection backgroundColor={lightGrey}>
@@ -56,7 +71,7 @@ export const QuestionsSection: FC = ({ children }) => {
             </Grid>
           ))}
         </Grid>
-        <Box>{children}</Box>
+        <Box>{filteredChildren}</Box>
       </Grid>
     </PageSection>
   );

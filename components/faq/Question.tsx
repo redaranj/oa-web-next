@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Grid, AccordionSummary } from "@mui/material";
+import { Box, Grid, AccordionSummary } from "@mui/material";
 import {
   ExpandLess as ExpandLessIcon,
   ExpandMore as ExpandMoreIcon,
@@ -24,7 +24,7 @@ export const Question: FC<QuestionProps> = ({ expanded, children }) => {
       >
         <Grid item className="question" />
         <Grid item flexGrow={1}>
-          {children}
+          <Box sx={{ mt: "11px" }}>{children}</Box>
         </Grid>
         <Grid item>
           {expanded ? (
