@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Box } from "@mui/material";
 import { loadImage } from "lib/frontendHelpers";
 
@@ -312,8 +313,8 @@ export const components = {
 
     return <Image src={image} alt={alt} loader={loader} />;
   },
-  a: ({ children }) => {
-    return (
+  a: ({ href, children }) => (
+    <Link href={href} passHref>
       <Box
         component="a"
         sx={{
@@ -326,6 +327,6 @@ export const components = {
       >
         {children}
       </Box>
-    );
-  },
+    </Link>
+  ),
 };
