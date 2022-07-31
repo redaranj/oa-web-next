@@ -28,6 +28,7 @@ export const MoreItem: FC = ({ children }) => {
             <Grid item>
               <Box sx={{ px: 3, py: 5 }}>
                 <Image
+
                   src={rightArrow}
                   alt=""
                   loader={loader}

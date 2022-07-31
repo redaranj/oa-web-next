@@ -7,21 +7,18 @@ import role1 from "public/images/role-1.png";
 import role2 from "public/images/role-2.png";
 import role3 from "public/images/role-3.png";
 
-export const RoleSection: FC = () => {
+export const RoleSection: FC = ({ children }) => {
   const t = useTranslate();
-  const { h2, h3, h5, bodyLarge } = typography;
+  const { h3, h5, bodyLarge } = typography;
   const { white } = colors;
   const { ps, ts } = breakpoints;
+  const [title, description, item1, item2, item3] = children as any[];
 
   return (
     <PageSection backgroundColor={white}>
       <Grid container direction="column">
         <Grid item sx={{ textAlign: "center" }}>
-          <Box
-            component="h2"
-            sx={h2}
-            dangerouslySetInnerHTML={{ __html: t("roleToPlayTitle") }}
-          />
+          <Box>{title}</Box>
           <Box
             component="p"
             sx={{
@@ -37,7 +34,7 @@ export const RoleSection: FC = () => {
               margin: "auto",
             }}
           >
-            {t("roleToPlayDescription")}
+            {description}
           </Box>
         </Grid>
         <Grid
@@ -94,7 +91,7 @@ export const RoleSection: FC = () => {
                   backgroundPosition: "center",
                 }}
               >
-                {t("haveQuestions")}
+                {item1}
               </Box>
             </Grid>
             <Grid
@@ -121,7 +118,7 @@ export const RoleSection: FC = () => {
                   backgroundPosition: "center",
                 }}
               >
-                {t("getInvolved")}
+                {item2}
               </Box>
             </Grid>
           </Grid>
@@ -154,7 +151,7 @@ export const RoleSection: FC = () => {
                 backgroundPosition: "center",
               }}
             >
-              {t("wantToParticipate")}
+              {item3}
             </Box>
           </Grid>
         </Grid>

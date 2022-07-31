@@ -9,6 +9,7 @@ export const ArchivingSection: FC = ({ children }) => {
   const { outlinedButton } = typography;
   const { lightGrey } = colors;
   const { ps, pl } = breakpoints;
+  const [ title, description, ...button] = children as any[];
 
   return (
     <PageSection backgroundColor={lightGrey}>
@@ -55,13 +56,15 @@ export const ArchivingSection: FC = ({ children }) => {
           }}
         >
           <Grid item>
+            <Box>{title}</Box>
+            <Box>{description}</Box>
             <Box
               sx={{
                 a: outlinedButton,
                 "> p": { mb: 4 },
               }}
             >
-              {children}
+              {button}
             </Box>
           </Grid>
         </Grid>
