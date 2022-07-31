@@ -4,7 +4,7 @@ import { colors, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 
 export const ParticipateSection: FC = ({ children }) => {
-  const { white } = colors;
+  const { white, mediumBurgundy, darkBurgundy } = colors;
   const { ps, tl } = breakpoints;
   const [title, description, ...items] = children as any[];
 
@@ -29,6 +29,14 @@ export const ParticipateSection: FC = ({ children }) => {
             [ps]: { flexDirection: "column" },
             [tl]: {
               flexDirection: "row",
+            },
+            ".participateItem:nth-of-type(2) a": {
+              border: 0,
+              color: white,
+              backgroundColor: mediumBurgundy,
+              "&:hover": {
+                backgroundColor: darkBurgundy,
+              },
             },
           }}
         >
