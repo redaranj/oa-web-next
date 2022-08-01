@@ -8,7 +8,8 @@ import { PartnersSection } from "components/about/PartnersSection";
 import { TeamItem } from "components/about/TeamItem";
 import { BoardItem } from "components/about/BoardItem";
 import { PartnerItem } from "components/about/PartnerItem";
-import { RoleSection } from "components/about/RoleSection";
+import { InvolvedSection } from "components/about/InvolvedSection";
+import { InvolvedItem } from "components/about/InvolvedItem";
 
 <HeaderSection>
     # About Us
@@ -113,13 +114,26 @@ import { RoleSection } from "components/about/RoleSection";
     </PartnerItem>
 
 </PartnersSection>
-<RoleSection>
+<InvolvedSection>
     ## Get **Involved**
 
     Together, we can preserve truth to power!
 
-    Partner with us
+    <InvolvedItem>
+        ![](involved-partner.png)
 
-    Support us
+        ##### Partner with us
 
-</RoleSection>
+        [Partner with us](/partner)
+
+    </InvolvedItem>
+    <InvolvedItem>
+        ![](involved-support.png)
+
+        ##### Support us
+
+        [Donate](/donate)
+
+    </InvolvedItem>
+
+</InvolvedSection>
