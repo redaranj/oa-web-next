@@ -13,7 +13,7 @@ export const ProjectsSection: FC = ({ children }) => {
       <Box>{first}</Box>
       <Grid
         container
-        spacing={6}
+        spacing={3}
         sx={{
           flexDirection: "row",
           [ps]: {

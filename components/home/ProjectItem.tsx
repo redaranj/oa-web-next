@@ -44,9 +44,11 @@ export const ProjectItem: FC = ({ children }) => {
           <Grid item>
             <Box
               sx={{
-                height: "400px",
+                height: "280px",
                 backgroundImage: `url(${image.src})`,
-                backgroundSize: "cover",
+                backgroundSize: "100%",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "bottom center",
               }}
             >
               <Box
@@ -55,13 +57,13 @@ export const ProjectItem: FC = ({ children }) => {
                   width: "100%",
                   backgroundColor: turquoise,
                   color: white,
-                  height: "300px",
+                  height: "280px",
                   position: "absolute",
-                  bottom: "-300px",
+                  bottom: "-280px",
                   transition: "1s",
                 }}
               >
-                <Box sx={{ ...bodyLarge, color: white, p: 6 }}>
+                <Box sx={{ "> p": { ...bodyLarge, color: white }, p: 3 }}>
                   {description}
                 </Box>
               </Box>

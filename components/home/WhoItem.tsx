@@ -34,15 +34,15 @@ export const WhoItem: FC<WhoItemProps> = ({
         container
         direction="row"
         flexWrap="nowrap"
-        sx={{ height: 600 }}
+        sx={{ height: 400 }}
       >
         <Grid item sx={{ width: "250px" }}>
           <Box
             sx={{
               backgroundColor: lightGrey,
               backgroundImage: `url(${loadedImage.src})`,
-              backgroundSize: "150px",
-              backgroundPosition: "40px 50px",
+              backgroundSize: "210px",
+              backgroundPosition: "30px 40px",
               backgroundRepeat: "no-repeat",
               width: "100%",
               height: "100%",
@@ -76,7 +76,7 @@ export const WhoItem: FC<WhoItemProps> = ({
           </Grid>
           <Grid item>
             <Image src={quotationMark} loader={loader} />
-            <Box component="p" sx={{ bodyLarge, mb: 2 }}>
+            <Box component="p" sx={{ ...bodyLarge, mb: 2 }}>
               {quote}
             </Box>
           </Grid>

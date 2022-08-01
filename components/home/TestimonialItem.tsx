@@ -3,7 +3,7 @@ import { Box, Grid } from "@mui/material";
 import { colors, typography, breakpoints } from "styles/theme";
 
 export const TestimonialItem: FC = ({ children }) => {
-  const { white, turquoise } = colors;
+  const { white, turquoise, darkGrey } = colors;
   const { h6, body } = typography;
   const [quote, name, position, url] = children as any[];
   const { ps, ts } = breakpoints;
@@ -36,7 +36,7 @@ export const TestimonialItem: FC = ({ children }) => {
       >
         <Box
           className="quoteBox"
-          sx={{ height: "100%", backgroundColor: white, p: 3 }}
+          sx={{ height: "100%", backgroundColor: white, p: 6 }}
         >
           <Grid
             container
@@ -48,7 +48,7 @@ export const TestimonialItem: FC = ({ children }) => {
             <Grid item container direction="row" flexWrap="nowrap" spacing={3}>
               <Grid item container direction="column">
                 <Grid item>
-                  <Box component="h6" sx={{ ...h6, mt: "-4px" }}>
+                  <Box component="h6" sx={{ ...h6, mb: 2 }}>
                     {name}
                   </Box>
                 </Grid>
@@ -56,7 +56,7 @@ export const TestimonialItem: FC = ({ children }) => {
                   <Box sx={{ ...body, "> p": { color: turquoise } }}>
                     {position}
                   </Box>
-                  <Box>{url}</Box>
+                  <Box sx={{ ...body, "> p": { color: darkGrey } }}>{url}</Box>
                 </Grid>
               </Grid>
             </Grid>
