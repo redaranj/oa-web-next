@@ -1,6 +1,7 @@
 import { FC } from "react";
+import Image from "next/image";
 import { Box, Grid } from "@mui/material";
-import { colors, breakpoints } from "styles/theme";
+import { colors, breakpoints, loader } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import header1 from "public/images/home-header-1.png";
 import header2 from "public/images/home-header-2.png";
@@ -56,29 +57,16 @@ export const HeaderSection: FC = ({ children }) => {
           <Box
             sx={{
               height: "100%",
-              minHeight: 500,
-              overflow: "visible",
-              width: "100%",
-              backgroundImage: `url(${header2.src}), url(${header1.src})`,
-              backgroundSize: "100%",
-              backgroundPosition: "100% 100%, 0% 0%",
-              backgroundRepeat: "no-repeat",
-              ml: 5,
-              [ps]: {
-                width: "100%",
-                height: 200,
-              },
-              [pl]: {},
-              [ts]: {},
-              [tl]: {},
-              [ds]: {
-                backgroundSize: "250px",
-              },
-              [dl]: {
-                backgroundSize: "400px",
-              },
+              position: "relative",
             }}
-          />
+          >
+            <Box sx={{ position: "absolute", width: 300, top: 0, left: 0 }}>
+              <Image src={header1} alt="" loader={loader} />
+            </Box>
+            <Box sx={{ position: "absolute", width: 300, bottom: 0, right: 0 }}>
+              <Image src={header2} alt="" loader={loader} />
+            </Box>
+          </Box>
         </Grid>
       </Grid>
     </PageSection>
