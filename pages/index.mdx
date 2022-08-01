@@ -8,6 +8,7 @@ import { WhoSection } from "components/home/WhoSection";
 import { TestimonialsSection } from "components/home/TestimonialsSection";
 import { TestimonialItem } from "components/home/TestimonialItem";
 import { RoleSection } from "components/home/RoleSection";
+import { RoleItem } from "components/home/RoleItem";
 import { getIndexProps } from "lib/helpers";
 
 export const getStaticProps = async (context) => getIndexProps("pages/use");
@@ -122,7 +123,6 @@ Citizen reporters • Eyewitnesses • Activists • Documentarians • Human Ri
   <TestimonialItem>
     We must bring justice to the Ukrainian victims of Russian atrocities. It is crucial to document these horrific war crimes and ensure we preserve and verify this evidence effectively and securely. OpenArchive is playing a critical role to help us bolster this process. With their help, we are able to implement more streamlined ways to document war crimes with new technologies and create a more robust and secure archive. Our partnership is invaluable!
 
-
     ###### Yevgeniy Zakharov
 
     Director Kharkiv Human Rights Protection Group
@@ -132,14 +132,33 @@ Citizen reporters • Eyewitnesses • Activists • Documentarians • Human Ri
   </TestimonialItem>
 </TestimonialsSection>
 <RoleSection>
-  Get **Involved**
+  ## Get **Involved**
 
 Together, we can preserve truth to power!
 
-Contact us
+  <RoleItem>
+    ![](role-contact.png)
 
-Partner with us
+    ##### Contact us
 
-Support us
+    [Contact](/contact)
+
+  </RoleItem>
+  <RoleItem>
+    ![](role-partner.png)
+
+    ##### Partner with us
+
+    [Partner](/partner)
+
+  </RoleItem>
+  <RoleItem>
+    ![](role-support.png)
+
+    ##### Support us
+
+    [Donate](/donate)
+
+  </RoleItem>
 
 </RoleSection>

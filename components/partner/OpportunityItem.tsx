@@ -33,6 +33,10 @@ export const OpportunityItem: FC = ({ children }) => {
             "li::marker": {
               color: turquoise,
               content: "'•'",
+              fontSize: "40px",
+              lineHeight: "0px",
+              m: 0,
+              p: 0,
             },
           }}
         >
