@@ -2,7 +2,6 @@ import { FC, PropsWithChildren } from "react";
 import Link from "next/link";
 import { Box, Grid } from "@mui/material";
 import { typography, colors, breakpoints } from "styles/theme";
-import { loadImage } from "lib/frontendHelpers";
 
 type NewsItemProps = PropsWithChildren<{
   title: string;
