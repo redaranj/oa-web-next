@@ -8,7 +8,7 @@ import header2 from "public/images/home-header-2.png";
 
 export const HeaderSection: FC = ({ children }) => {
   const { white } = colors;
-  const { ps, pl, ts, tl, ds, dl } = breakpoints;
+  const { ps, pl, tl } = breakpoints;
   const [first, ...rest] = children as any[];
 
   return (
