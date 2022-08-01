@@ -2,11 +2,13 @@ import { FC, PropsWithChildren } from "react";
 import Link from "next/link";
 import { Box, Grid } from "@mui/material";
 import { typography, colors, breakpoints } from "styles/theme";
+import { loadImage } from "lib/frontendHelpers";
 
 type NewsItemProps = PropsWithChildren<{
   title: string;
   description: string;
   category: string;
+  date: string;
   path: string;
   image: string;
 }>;
@@ -15,12 +17,14 @@ export const NewsItem: FC<NewsItemProps> = ({
   title,
   description,
   category,
+  date,
   path,
   image,
 }) => {
   const { h5, bodyLarge } = typography;
-  const { white } = colors;
+  const { white, darkGrey } = colors;
   const { ps, tl } = breakpoints;
+  const loadedImage = require(`public/images/${image}`).default;
 
   return (
     <Link href={path}>
@@ -43,7 +47,7 @@ export const NewsItem: FC<NewsItemProps> = ({
               [ps]: { width: "100%" },
               [tl]: { width: 400 },
               p: 2,
-              backgroundImage: `url(/images/${image})`,
+              backgroundImage: `url(${loadedImage.src})`,
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
             }}
@@ -52,11 +56,10 @@ export const NewsItem: FC<NewsItemProps> = ({
               sx={{
                 ...bodyLarge,
                 color: white,
-                borderTop: `1px solid ${white}`,
-                mt: 2,
+                m: 2,
               }}
             >
-              {category}
+              {date}
             </Box>
           </Box>
         </Grid>
@@ -66,6 +69,17 @@ export const NewsItem: FC<NewsItemProps> = ({
           direction="column"
           sx={{ mt: 0, p: 4, backgroundColor: white }}
         >
+          <Grid item>
+            <Box
+              sx={{
+                ...bodyLarge,
+                color: darkGrey,
+                mt: 2,
+              }}
+            >
+              {category}
+            </Box>
+          </Grid>
           <Grid item>
             <Box component="h5" sx={h5}>
               {title}
