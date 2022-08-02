@@ -61,12 +61,9 @@ export const Cursor = () => {
 
   return (
     <div
-      className={
-        "cursor " +
-        (hidden ? "c--hidden " : " ") +
-        (click ? "c--click " : " ") +
-        (linkHover ? "c--hover " : " ")
-      }
+      className={`cursor ${hidden ? "c--hidden " : " "} ${
+        click ? "c--click " : " "
+      } ${linkHover ? "c--hover " : " "}`}
       style={{
         left: `${position.x}px`,
         top: `${position.y}px`,
