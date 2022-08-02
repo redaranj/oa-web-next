@@ -21,7 +21,7 @@ export const TopNav = () => {
   const router = useRouter();
   const t = useTranslate();
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const { white, mediumGrey, mediumBurgundy, darkBurgundy, black, turquoise } =
+  const { white, mediumGrey, mediumBurgundy, darkBurgundy } =
     colors;
   const { body } = typography;
   const { ps, pl, ts, tl, ds, dl } = breakpoints;
@@ -117,7 +117,6 @@ export const TopNav = () => {
               <Image alt="search" src={search} loader={loader} />
             </Grid> */}
                 <Grid
-                  ref={ref}
                   item
                   container
                   direction="row"
@@ -138,6 +137,7 @@ export const TopNav = () => {
                     }}
                   >
                     <Box
+                      ref={ref}
                       sx={{
                         backgroundColor: mediumGrey,
                         height: "100%",
@@ -150,7 +150,7 @@ export const TopNav = () => {
                     container
                     direction="column"
                     justifyContent="space-around"
-                    sx={{                      
+                    sx={{
                       display: "initial",
                       [ps]: {
                         display: "none",
@@ -199,27 +199,7 @@ export const TopNav = () => {
                     }}
                   >
                     <Link href="/news" passHref>
-                      <Button
-                        sx={{
-                          ...body,
-                          height: "100%",
-                          fontWeight: 700,
-                          textTransform: "none",
-                          color: black,
-                          whiteSpace: "nowrap",
-                          cursor: "pointer",
-                          "&:hover": {
-                            color: turquoise,
-                            backgroundColor: "transparent",
-                            img: {
-                              filter:
-                                "brightness(0) saturate(100%) invert(47%) sepia(82%) saturate(4262%) hue-rotate(155deg) brightness(99%) contrast(101%)",
-                            },
-                          },
-                        }}
-                      >
-                        {t("news")}
-                      </Button>
+                      <MenuButton title={t("news")} anchorEl={getAnchorRef} />
                     </Link>
                   </Grid>
                   <Grid

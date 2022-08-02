@@ -29,15 +29,17 @@ export const MenuButton: FC<MenuButtonProps> = ({
               sx={{
                 ...body,
                 height: "100%",
-                minWidth: 120,
                 textAlign: "center",
                 fontWeight: 700,
                 textTransform: "none",
                 color: black,
                 whiteSpace: "nowrap",
                 cursor: "pointer",
+                borderTop: `6px solid transparent`,
+                borderRadius: 0,
                 "&:hover": {
                   color: turquoise,
+                  borderTop: `6px solid ${turquoise}`,
                   backgroundColor: "transparent",
                   img: {
                     filter:
@@ -49,27 +51,31 @@ export const MenuButton: FC<MenuButtonProps> = ({
             >
               <Grid container direction="row" wrap="nowrap">
                 <Grid item>{title}</Grid>
-                <Grid item>
-                  <Box sx={{ ml: "6px", mt: "-3px", width: 20 }}>
-                    <Image src={downArrow} alt="" loader={loader} />
-                  </Box>
-                </Grid>
+                {children && (
+                  <Grid item>
+                    <Box sx={{ ml: "6px", mr: "-6px", mt: "-3px", width: 20 }}>
+                      <Image src={downArrow} alt="" loader={loader} />
+                    </Box>
+                  </Grid>
+                )}
               </Grid>
             </Button>
-            <HoverPopover
-              elevation={0}
-              {...bindPopover(popupState)}
-              anchorEl={anchorEl}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              PaperProps={{
-                sx: { backgroundColor: turquoise, minWidth: 400, mt: 1 },
-              }}
-            >
-              <Box sx={{ p: 4 }}>{children}</Box>
-            </HoverPopover>
+            {children && (
+              <HoverPopover
+                elevation={0}
+                {...bindPopover(popupState)}
+                anchorEl={anchorEl}
+                anchorOrigin={{
+                  vertical: "bottom",
+                  horizontal: "left",
+                }}
+                PaperProps={{
+                  sx: { backgroundColor: turquoise, minWidth: 584, mt: -1 },
+                }}
+              >
+                <Box sx={{ p: 4 }}>{children}</Box>
+              </HoverPopover>
+            )}
           </>
         )}
       </PopupState>
