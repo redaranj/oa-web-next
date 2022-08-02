@@ -28,7 +28,9 @@ export const UseCaseItem: FC<UseCaseItemProps> = ({
       <Box sx={{ backgroundColor: lightGrey, p: 6 }}>
         <Grid container direction="row" wrap="nowrap" spacing={3}>
           <Grid item flexGrow={0}>
-            <Image src={loadedImage} alt="" loader={loader} />
+            <Box sx={{ width: 200 }}>
+              <Image src={loadedImage} alt="" loader={loader} />
+            </Box>
           </Grid>
           <Grid item flexGrow={1}>
             <Box component="h5" sx={h5}>

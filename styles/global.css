@@ -10,6 +10,10 @@ body {
   overscroll-behavior: none;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 a {
   color: inherit;
   text-decoration: underline;
@@ -18,20 +22,16 @@ a {
   cursor: pointer;
 }
 
-* {
-  box-sizing: border-box;
-}
+
 
 /*
-html,body {
-  cursor: none
+a:hover {
+  background-color: "#00b4a6";
+  text-decoration: double;
 }
-html *,body * {
-  cursor: none;
-}
-
 .c--hidden {
-   opacity: 0;
+  opacity: 0;
+  cursor: none;
 }
 
 .cursor {
