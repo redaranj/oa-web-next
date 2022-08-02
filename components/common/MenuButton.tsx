@@ -70,7 +70,11 @@ export const MenuButton: FC<MenuButtonProps> = ({
                   horizontal: "left",
                 }}
                 PaperProps={{
-                  sx: { backgroundColor: turquoise, minWidth: 584, mt: -1 },
+                  sx: {
+                    backgroundColor: `${turquoise}ef`,
+                    minWidth: 584,
+                    mt: -1,
+                  },
                 }}
               >
                 <Box sx={{ p: 4 }}>{children}</Box>

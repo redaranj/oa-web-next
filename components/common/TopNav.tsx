@@ -198,22 +198,6 @@ export const TopNav = () => {
                       },
                     }}
                   >
-                    <Link href="/news" passHref>
-                      <MenuButton title={t("news")} anchorEl={getAnchorRef} />
-                    </Link>
-                  </Grid>
-                  <Grid
-                    item
-                    sx={{
-                      display: "initial",
-                      [ps]: {
-                        display: "none",
-                      },
-                      [ds]: {
-                        display: "initial",
-                      },
-                    }}
-                  >
                     <MenuButton title={t("about")} anchorEl={getAnchorRef}>
                       <Grid container direction="column" spacing={2}>
                         <Grid item>
@@ -260,6 +244,22 @@ export const TopNav = () => {
                         </Grid>
                       </Grid>
                     </MenuButton>
+                  </Grid>
+                  <Grid
+                    item
+                    sx={{
+                      display: "initial",
+                      [ps]: {
+                        display: "none",
+                      },
+                      [ds]: {
+                        display: "initial",
+                      },
+                    }}
+                  >
+                    <Link href="/news" passHref>
+                      <MenuButton title={t("news")} anchorEl={getAnchorRef} />
+                    </Link>
                   </Grid>
                   <Grid
                     item
