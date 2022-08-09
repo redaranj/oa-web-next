@@ -20,9 +20,9 @@ export const colors = {
   darkGrey: "#7f8d7d",
   turquoise: "#00b4a6",
   lightTurquoise: "#aae6e1",
-  darkBurgundy: "#7d595a",
-  mediumBurgundy: "#ad898a",
-  lightBurgundy: "#ffdfd9",
+  darkBurgundy: "#5e1618",
+  mediumBurgundy: "#7d595a",
+  lightBurgundy: "#ad898a",
 };
 
 const typographyDefaults = {
@@ -62,6 +62,10 @@ export const typography = {
       fontWeight: 600,
       color: colors.turquoise,
     },
+    "& em > strong": {
+      fontWeight: 900,
+      color: colors.turquoise,
+    },
   },
   h2: {
     ...typographyDefaults,
@@ -91,6 +95,10 @@ export const typography = {
       fontWeight: 600,
       color: colors.turquoise,
     },
+    "& em > strong": {
+      fontWeight: 900,
+      color: colors.turquoise,
+    },
   },
   h3: {
     ...typographyDefaults,
@@ -118,6 +126,10 @@ export const typography = {
     },
     "& strong": {
       fontWeight: 600,
+      color: colors.turquoise,
+    },
+    "& em > strong": {
+      fontWeight: 900,
       color: colors.turquoise,
     },
   },
@@ -317,6 +329,7 @@ export const components = {
     <Link href={href} passHref>
       <Box
         component="a"
+        target={href.startsWith("http") ? "_blank" : "_self"}
         sx={{
           color: "inherit",
           textDecoration: "underline",

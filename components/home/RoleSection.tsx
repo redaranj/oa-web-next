@@ -13,20 +13,19 @@ export const RoleSection: FC = ({ children }) => {
     <PageSection backgroundColor={white}>
       <Grid container direction="column">
         <Grid item sx={{ textAlign: "center" }}>
-          <Box>{title}</Box>
+          <Box sx={{ h2: { mb: 2 } }}>{title}</Box>
           <Box
-            component="p"
             sx={{
-              ...bodyLarge,
-              mb: 12,
+              margin: "0 auto",
+              "> p": bodyLarge,
+              mb: 6,
               [ps]: {
-                mb: 6,
+                mb: 4,
               },
               [ts]: {
-                mb: 12,
+                mb: 6,
               },
               maxWidth: 700,
-              margin: "auto",
             }}
           >
             {description}
@@ -37,7 +36,8 @@ export const RoleSection: FC = ({ children }) => {
           container
           flexWrap="nowrap"
           sx={{
-            height: 500,
+            height: 360,
+            h5: { m: 0 },
             flexDirection: "row",
             [ps]: {
               flexDirection: "column",
@@ -81,12 +81,12 @@ export const RoleSection: FC = ({ children }) => {
               item
               sx={{
                 height: "50%",
-                pt: 3,
+                pt: 0,
                 [ps]: {
-                  pt: 1,
+                  pt: 0,
                 },
                 [ts]: {
-                  pt: 3,
+                  pt: 0,
                 },
               }}
             >
@@ -98,7 +98,7 @@ export const RoleSection: FC = ({ children }) => {
             sx={{
               width: "50%",
               pt: 0,
-              pl: 6,
+              pl: 3,
               [ps]: {
                 width: "100%",
                 pt: 2,
@@ -107,7 +107,7 @@ export const RoleSection: FC = ({ children }) => {
               [ts]: {
                 width: "50%",
                 pt: 0,
-                pl: 6,
+                pl: 3,
               },
             }}
           >
