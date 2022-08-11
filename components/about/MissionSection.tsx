@@ -1,11 +1,12 @@
 import { FC } from "react";
 import { Box, Grid } from "@mui/material";
-import { colors, breakpoints } from "styles/theme";
+import { colors, breakpoints, typography } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import bullhorn from "public/images/bullhorn.svg";
 
 export const MissionSection: FC = ({ children }) => {
   const { white } = colors;
+  const { bodyLarge } = typography;
   const { ps, tl } = breakpoints;
 
   return (
@@ -38,7 +39,7 @@ export const MissionSection: FC = ({ children }) => {
             [tl]: { width: "50%" },
           }}
         >
-          {children}
+          <Box sx={{ "> p": bodyLarge }}>{children}</Box>
         </Grid>
       </Grid>
     </PageSection>

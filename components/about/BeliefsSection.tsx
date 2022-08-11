@@ -1,11 +1,12 @@
 import { FC } from "react";
 import { Box, Grid } from "@mui/material";
-import { colors, breakpoints } from "styles/theme";
+import { colors, breakpoints, typography } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import handPhone from "public/images/hand-phone.svg";
 
 export const BeliefsSection: FC = ({ children }) => {
   const { lightGrey } = colors;
+  const { bodyLarge } = typography;
   const { ps, tl } = breakpoints;
 
   return (
@@ -62,7 +63,9 @@ export const BeliefsSection: FC = ({ children }) => {
               },
             }}
           >
-            <Grid item>{children}</Grid>
+            <Grid item>
+              <Box sx={{ "> p": bodyLarge }}>{children}</Box>
+            </Grid>
           </Grid>
         </Grid>
       </Grid>

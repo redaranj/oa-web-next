@@ -1,12 +1,13 @@
 import { FC } from "react";
 import Image from "next/image";
 import { Box, Grid } from "@mui/material";
-import { colors, breakpoints, loader } from "styles/theme";
+import { colors, breakpoints, loader, typography } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import vision from "public/images/vision.png";
 
 export const VisionSection: FC = ({ children }) => {
   const { white, lightGrey } = colors;
+  const { bodyLarge } = typography;
   const { ps, tl } = breakpoints;
 
   return (
@@ -60,7 +61,9 @@ export const VisionSection: FC = ({ children }) => {
           }}
         >
           <Grid item>
-            <Box sx={{ backgroundColor: lightGrey, p: 6 }}>{children}</Box>
+            <Box sx={{ "> p": bodyLarge, backgroundColor: lightGrey, p: 6 }}>
+              {children}
+            </Box>
           </Grid>
         </Grid>
       </Grid>
