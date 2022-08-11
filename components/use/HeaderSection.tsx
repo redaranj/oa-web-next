@@ -2,13 +2,12 @@ import { FC } from "react";
 import { Stack } from "@mui/material";
 import { colors } from "styles/theme";
 import { HeaderSection as BaseHeaderSection } from "components/common/HeaderSection";
-import useCasesHeader from "public/images/use-cases-header.png";
 
 export const HeaderSection: FC = ({ children }) => {
-  const { white } = colors;
+  const { white, turquoise } = colors;
 
   return (
-    <BaseHeaderSection backgroundColor={white} backgroundImage={useCasesHeader}>
+    <BaseHeaderSection backgroundColor={turquoise}>
       <Stack
         justifyContent="space-around"
         sx={{

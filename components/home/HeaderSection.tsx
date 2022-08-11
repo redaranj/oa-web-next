@@ -1,13 +1,14 @@
 import { FC } from "react";
 import Image from "next/image";
 import { Box, Grid } from "@mui/material";
-import { colors, breakpoints, loader } from "styles/theme";
+import { colors, breakpoints, loader, typography } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import header1 from "public/images/home-header-1.png";
 import header2 from "public/images/home-header-2.png";
 
 export const HeaderSection: FC = ({ children }) => {
   const { white } = colors;
+  const { bodyLarge } = typography;
   const { ps, pl, tl } = breakpoints;
   const [first, ...rest] = children as any[];
 
@@ -38,7 +39,9 @@ export const HeaderSection: FC = ({ children }) => {
         >
           <Grid item>{first}</Grid>
           <Grid item container direction="column" sx={{ mb: 12 }}>
-            <Grid item>{rest}</Grid>
+            <Grid item>
+              <Box sx={{ "> p": bodyLarge }}>{rest}</Box>
+            </Grid>
           </Grid>
         </Grid>
         <Grid

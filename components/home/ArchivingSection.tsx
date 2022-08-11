@@ -7,7 +7,7 @@ import mission1 from "public/images/mission-1.png";
 import mission2 from "public/images/mission-2.png";
 
 export const ArchivingSection: FC = ({ children }) => {
-  const { outlinedButton } = typography;
+  const { outlinedButton, bodyLarge } = typography;
   const { lightGrey } = colors;
   const { ps, pl } = breakpoints;
   const [title, description, ...button] = children as any[];
@@ -50,7 +50,7 @@ export const ArchivingSection: FC = ({ children }) => {
         >
           <Grid item>
             <Box>{title}</Box>
-            <Box>{description}</Box>
+            <Box sx={{ "> p": bodyLarge }}>{description}</Box>
             <Box
               sx={{
                 a: outlinedButton,

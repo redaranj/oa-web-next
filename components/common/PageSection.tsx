@@ -31,7 +31,7 @@ export const PageSection: FC<PageSectionProps> = ({
         sx={{
           margin: "auto",
           maxWidth: 1920,
-          py: 13,
+          py: 11,
           px: 11.25,
           [ps]: {
             py: 6,
@@ -50,11 +50,11 @@ export const PageSection: FC<PageSectionProps> = ({
             px: 4.375,
           },
           [ds]: {
-            py: 13,
+            py: 10,
             px: 6.25,
           },
           [dl]: {
-            py: 13,
+            py: 11,
             px: 11.25,
           },
           ...sx,

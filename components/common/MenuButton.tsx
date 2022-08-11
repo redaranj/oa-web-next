@@ -71,7 +71,7 @@ export const MenuButton: FC<MenuButtonProps> = ({
                 }}
                 PaperProps={{
                   sx: {
-                    backgroundColor: `${turquoise}ef`,
+                    backgroundColor: `${turquoise}df`,
                     minWidth: 584,
                     mt: -1,
                   },
