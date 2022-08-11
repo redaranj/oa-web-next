@@ -7,7 +7,7 @@ export const GettingStartedSection: FC = ({ children }) => {
   const { lightGrey, mediumGrey, turquoise } = colors;
   const { bodyLarge, outlinedButton } = typography;
   const { ps, tl } = breakpoints;
-  const [title, description, intro, ...rest] = children as any[];
+  const [title, description, ...rest] = children as any[];
 
   return (
     <PageSection backgroundColor={lightGrey}>
@@ -18,7 +18,7 @@ export const GettingStartedSection: FC = ({ children }) => {
           sx={{
             borderBottom: `1px solid ${mediumGrey}`,
             pb: 3,
-            mb: 6,
+            mb: 2,
             flexDirection: "row",
             [ps]: { flexDirection: "column" },
             [tl]: { flexDirection: "row" },
@@ -47,17 +47,12 @@ export const GettingStartedSection: FC = ({ children }) => {
             <Box sx={{ "> p": bodyLarge }}>{description}</Box>
           </Grid>
         </Grid>
-        <Grid container direction="row">
-          <Grid item sx={{ width: "50%" }}>
-            {intro}
-          </Grid>
-        </Grid>
         <Grid
           container
           item
           spacing={8}
           sx={{
-            mt: "100px",
+            mt: 0,
             flexDirection: "row",
             [ps]: { flexDirection: "column" },
             [tl]: { flexDirection: "row" },

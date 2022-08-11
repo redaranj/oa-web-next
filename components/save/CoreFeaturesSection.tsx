@@ -1,11 +1,12 @@
 import { FC } from "react";
-import { Grid } from "@mui/material";
-import { colors, breakpoints } from "styles/theme";
+import { Box, Grid } from "@mui/material";
+import { colors, breakpoints, typography } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import coreFeaturesBackground from "public/images/core-features-background.png";
 
 export const CoreFeaturesSection: FC = ({ children }) => {
   const { white } = colors;
+  const { bodyLarge } = typography;
   const { ps, tl } = breakpoints;
   const [title, description, ...rest] = children as any[];
 
@@ -41,7 +42,7 @@ export const CoreFeaturesSection: FC = ({ children }) => {
               [tl]: { width: "50%" },
             }}
           >
-            {description}
+            <Box sx={{ "> p": bodyLarge }}>{description}</Box>
           </Grid>
         </Grid>
         <Grid

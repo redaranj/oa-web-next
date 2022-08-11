@@ -1,10 +1,11 @@
 import { FC } from "react";
 import { Box, Grid } from "@mui/material";
-import { colors, breakpoints } from "styles/theme";
+import { colors, breakpoints, typography } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 
 export const MoreSection: FC = ({ children }) => {
   const { white } = colors;
+  const { bodyLarge } = typography;
   const { ps, tl } = breakpoints;
   const [title, description, ...items] = children as any[];
 
@@ -14,7 +15,6 @@ export const MoreSection: FC = ({ children }) => {
         container
         sx={{
           flexDirection: "column",
-          justifyContent: "flex-end",
         }}
       >
         <Grid item sx={{ textAlign: "center" }}>
@@ -24,9 +24,9 @@ export const MoreSection: FC = ({ children }) => {
           <Box
             sx={{
               textAlign: "center",
-              mb: "100px",
               maxWidth: 700,
               margin: "auto",
+              "> p": bodyLarge,
             }}
           >
             {description}
@@ -37,6 +37,7 @@ export const MoreSection: FC = ({ children }) => {
           container
           columnSpacing={6}
           sx={{
+            mt: 6,
             flexDirection: "row",
             [ps]: { flexDirection: "column" },
             [tl]: { flexDirection: "row" },
