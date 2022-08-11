@@ -108,7 +108,7 @@ export const HeaderSection: FC = ({ children }) => {
               <Grid item>
                 <Box
                   component="p"
-                  sx={{ ...bodyLarge, maxWidth: "550px", mb: "60px" }}
+                  sx={{ "> p": bodyLarge, maxWidth: "550px", mb: "60px" }}
                 >
                   {description}
                 </Box>

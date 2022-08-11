@@ -21,15 +21,22 @@ export const TopNav = () => {
   const router = useRouter();
   const t = useTranslate();
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const { white, mediumGrey, mediumBurgundy, darkBurgundy } =
-    colors;
+  const { white, turquoise, mediumGrey, mediumBurgundy, darkBurgundy } = colors;
   const { body } = typography;
   const { ps, pl, ts, tl, ds, dl } = breakpoints;
   const menuItemProps = {
     ...body,
     fontWeight: 600,
+    width: "100%",
+    display: "block",
     color: white,
+    py: 1,
+    px: 2,
+    m: 0,
     textDecoration: "none",
+    "&:hover": {
+      backgroundColor: `${turquoise}dd`,
+    },
   };
   const getAnchorRef = () => ref.current;
 
@@ -161,7 +168,7 @@ export const TopNav = () => {
                     }}
                   >
                     <MenuButton title={t("ourWork")} anchorEl={getAnchorRef}>
-                      <Grid container direction="column" spacing={2}>
+                      <Grid container direction="column" spacing={0}>
                         <Grid item>
                           <Link href="/save" passHref>
                             <Box component="a" sx={menuItemProps}>
@@ -199,7 +206,7 @@ export const TopNav = () => {
                     }}
                   >
                     <MenuButton title={t("about")} anchorEl={getAnchorRef}>
-                      <Grid container direction="column" spacing={2}>
+                      <Grid container direction="column" spacing={0}>
                         <Grid item>
                           <Link href="/about" passHref>
                             <Box component="a" sx={menuItemProps}>
