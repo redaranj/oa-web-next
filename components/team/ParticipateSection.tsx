@@ -1,10 +1,11 @@
 import { FC } from "react";
 import { Grid } from "@mui/material";
-import { colors, breakpoints } from "styles/theme";
+import { colors, breakpoints, typography } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 
 export const ParticipateSection: FC = ({ children }) => {
   const { white, mediumBurgundy, darkBurgundy } = colors;
+  const { bodyLarge } = typography;
   const { ps, tl } = breakpoints;
   const [title, description, ...items] = children as any[];
 
@@ -14,7 +15,7 @@ export const ParticipateSection: FC = ({ children }) => {
         <Grid item sx={{ textAlign: "center" }}>
           {title}
         </Grid>
-        <Grid item sx={{ textAlign: "center" }}>
+        <Grid item sx={{ textAlign: "center", "> p": bodyLarge }}>
           {description}
         </Grid>
         <Grid

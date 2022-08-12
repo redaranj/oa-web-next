@@ -20,17 +20,18 @@ import emailIcon from "public/images/email-icon.svg";
 
 export const Footer: FC = () => {
   const t = useTranslate();
-  const { h6 } = typography;
+  const { bodyLarge } = typography;
   const { lightGrey, mediumGrey, mediumBurgundy, darkBurgundy, turquoise } =
     colors;
   const { ps, pl, ds } = breakpoints;
   const linkStyles = {
-    ...h6,
+    ...bodyLarge,
+    fontWeight: 900,
     "&:hover": { color: turquoise },
     cursor: "pointer",
   };
   const creativeCommonsIconSize = "19px";
-  const socialIconSize = "36px";
+  const socialIconSize = "32px";
 
   return (
     <PageSection backgroundColor={lightGrey}>
@@ -210,7 +211,7 @@ export const Footer: FC = () => {
               [ps]: { width: "100%" },
               [pl]: { width: "50%" },
             }}
-            spacing={3}
+            spacing={0}
           >
             <Grid item>
               <Link href="/donate">
@@ -270,7 +271,7 @@ export const Footer: FC = () => {
             }}
             justifyContent="space-between"
           >
-            <Grid item container direction="row" spacing={2}>
+            <Grid item container direction="row" spacing={1}>
               <Grid item>
                 <IconLink
                   image={twitter}
@@ -337,7 +338,7 @@ export const Footer: FC = () => {
               alignContent="center"
             >
               <Grid item>
-                <Box sx={{ mt: "4px" }}>
+                <Box sx={{ mt: "-18px" }}>
                   <Image src={emailIcon} alt="" loader={loader} />
                 </Box>
               </Grid>

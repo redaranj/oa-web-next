@@ -14,7 +14,7 @@ export const ParticipateItem: FC = ({ children }) => {
       item
       sx={{
         width: "33%",
-        height: 350,
+        height: 360,
         [ps]: { width: "100%" },
         [tl]: { width: "50%" },
         [ds]: { width: "33%" },

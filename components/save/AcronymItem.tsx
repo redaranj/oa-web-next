@@ -1,16 +1,19 @@
 import { FC } from "react";
+import Image from "next/image";
 import { Box, Grid } from "@mui/material";
-import { typography, breakpoints } from "styles/theme";
+import { typography, breakpoints, loader } from "styles/theme";
+import { loadImage } from "lib/frontendHelpers";
 
 export const AcronymItem: FC = ({ children }) => {
   const { bodyLarge } = typography;
   const { ps, tl } = breakpoints;
-  const [image, title, ...description] = children as any[];
+  const [first, title, ...description] = children as any[];
+  const image = loadImage(first);
 
   return (
-    <Grid item container direction="column">
+    <Grid item container direction="column" spacing={0}>
       <Grid item>
-        <Box sx={{ textAlign: "center", mb: "70px" }}>{title}</Box>
+        <Box sx={{ textAlign: "center", "> h2": { mb: 3 } }}>{title}</Box>
       </Grid>
       <Grid
         item
@@ -18,26 +21,33 @@ export const AcronymItem: FC = ({ children }) => {
         direction="row"
         flexWrap="nowrap"
         sx={{
-          width: "50%",
-          [ps]: { width: "100%" },
-          [tl]: { width: "33%" },
+          pt: "70px",
           flexDirection: "row",
           [ps]: { flexDirection: "column" },
           [tl]: { flexDirection: "row" },
         }}
       >
-        <Box sx={{ "> p": bodyLarge }}>{description}</Box>
-      </Grid>
-      <Grid item sx={{ width: "50%" }}>
-        <Box
-          sx={{
-            height: "550px",
-            backgroundImage: `url(${image})`,
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center 75px",
-            backgroundSize: "1250px",
-          }}
-        />
+        <Grid item sx={{ width: "50%" }}>
+          <Box sx={{ "> p": bodyLarge }}>{description}</Box>
+        </Grid>
+        <Grid
+          container
+          item
+          sx={{ width: "50%", overflow: "visible" }}
+          justifyContent="flex-end"
+        >
+          <Grid item>
+            <Box
+              sx={{
+                overflow: "visible",
+                width: "100%",
+                mt: "-104px",
+              }}
+            >
+              <Image src={image} alt="" loader={loader} />
+            </Box>
+          </Grid>
+        </Grid>
       </Grid>
     </Grid>
   );
