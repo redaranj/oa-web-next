@@ -173,11 +173,8 @@ export const TopNav = () => {
                       href="/save"
                     >
                       <Grid container direction="column" spacing={0}>
-                        <Grid item sx={{ border: "1px solid red", p: 0, m: 0 }}>
-                          <Link
-                            href="/save"
-                            passHref
-                          >
+                        <Grid item>
+                          <Link href="/save" passHref>
                             <Box component="a" sx={menuItemProps}>
                               {t("saveApp")}
                             </Box>

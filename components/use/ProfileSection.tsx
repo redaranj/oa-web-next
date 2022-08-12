@@ -72,6 +72,7 @@ export const ProfileSection: FC = ({ children }) => {
                   p: 3,
                   "td:nth-of-type(odd)": { textAlign: "center" },
                   "td:nth-of-type(even)": { p: 2 },
+                  "& img": { width: "50px !important" },
                 }}
               >
                 {details}
