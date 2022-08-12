@@ -37,6 +37,7 @@ export const NewsSection: FC<NewsSectionProps> = ({ pages }) => {
       <Grid
         container
         justifyContent="space-around"
+        spacing={6}
         sx={{
           flexDirection: "column",
         }}
