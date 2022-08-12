@@ -20,12 +20,12 @@ import emailIcon from "public/images/email-icon.svg";
 
 export const Footer: FC = () => {
   const t = useTranslate();
-  const { bodyLarge } = typography;
+  const { body } = typography;
   const { lightGrey, mediumGrey, mediumBurgundy, darkBurgundy, turquoise } =
     colors;
   const { ps, pl, ds } = breakpoints;
   const linkStyles = {
-    ...bodyLarge,
+    ...body,
     fontWeight: 900,
     "&:hover": { color: turquoise },
     cursor: "pointer",
@@ -271,7 +271,7 @@ export const Footer: FC = () => {
             }}
             justifyContent="space-between"
           >
-            <Grid item container direction="row" spacing={1}>
+            <Grid item container direction="row" spacing={0}>
               <Grid item>
                 <IconLink
                   image={twitter}

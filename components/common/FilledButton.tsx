@@ -49,6 +49,7 @@ export const FilledButton: FC<FilledButtonProps> = ({
       textTransform: "none",
       color: textColor,
       backgroundColor,
+      whitespace: "nowrap",
       p: 1,
       m: 0,
       pl: "30px",
@@ -62,7 +63,12 @@ export const FilledButton: FC<FilledButtonProps> = ({
   >
     {children}
     {arrowDirection === "right" && (
-      <Box sx={{ ml: "8px" }}>
+      <Box
+        sx={{
+          ml: "8px",
+          filter: "brightness(0) invert(1)",
+        }}
+      >
         <Image src={rightArrow} alt="" loader={loader} />
       </Box>
     )}
