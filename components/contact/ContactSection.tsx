@@ -6,7 +6,7 @@ import contactHeader from "public/images/contact-header.png";
 
 export const ContactSection: FC = ({ children }) => {
   const { white } = colors;
-  const { outlinedButton } = typography;
+  const { outlinedButton, bodyLarge } = typography;
 
   return (
     <BaseHeaderSection backgroundColor={white}>
@@ -34,10 +34,10 @@ export const ContactSection: FC = ({ children }) => {
           <Box
             sx={{
               a: outlinedButton,
-              "> p": { mb: 4 },
+              "> p": { ...bodyLarge, mb: 6 },
               "> h6": { mb: 4 },
               py: 6,
-              img: { mr: 2 },
+              img: { pr: "10px !important" },
             }}
           >
             {children}

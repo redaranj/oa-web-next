@@ -167,7 +167,11 @@ export const TopNav = () => {
                       },
                     }}
                   >
-                    <MenuButton title={t("ourWork")} anchorEl={getAnchorRef}>
+                    <MenuButton
+                      title={t("ourWork")}
+                      anchorEl={getAnchorRef}
+                      href="/save"
+                    >
                       <Grid container direction="column" spacing={0}>
                         <Grid item>
                           <Link href="/save" passHref>
@@ -205,7 +209,11 @@ export const TopNav = () => {
                       },
                     }}
                   >
-                    <MenuButton title={t("about")} anchorEl={getAnchorRef}>
+                    <MenuButton
+                      title={t("about")}
+                      anchorEl={getAnchorRef}
+                      href="/about"
+                    >
                       <Grid container direction="column" spacing={0}>
                         <Grid item>
                           <Link href="/about" passHref>
@@ -264,9 +272,11 @@ export const TopNav = () => {
                       },
                     }}
                   >
-                    <Link href="/news" passHref>
-                      <MenuButton title={t("news")} anchorEl={getAnchorRef} />
-                    </Link>
+                    <MenuButton
+                      title={t("news")}
+                      anchorEl={getAnchorRef}
+                      href="/news"
+                    />
                   </Grid>
                   <Grid
                     item

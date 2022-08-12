@@ -17,12 +17,12 @@ export const InvolvedSection: FC = ({ children }) => {
           <Box
             sx={{
               "> p": bodyLarge,
-              mb: 12,
+              mb: 8,
               [ps]: {
                 mb: 6,
               },
               [ts]: {
-                mb: 12,
+                mb: 8,
               },
               maxWidth: 700,
               margin: "auto",
@@ -37,7 +37,7 @@ export const InvolvedSection: FC = ({ children }) => {
           flexWrap="nowrap"
           spacing={6}
           sx={{
-            height: 500,
+            height: 360,
             flexDirection: "row",
             [ps]: {
               flexDirection: "column",

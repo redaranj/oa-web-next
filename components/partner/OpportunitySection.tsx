@@ -12,7 +12,7 @@ export const OpportunitySection: FC = ({ children }) => {
         sx={{
           ".opportunityItem:nth-of-type(even)": {
             flexDirection: "row-reverse",
-            backgroundColor: white
+            backgroundColor: white,
           },
           ".opportunityItem:nth-of-type(odd)": {
             flexDirection: "row",

@@ -48,7 +48,7 @@ export const QuestionsSection: FC = ({ children }) => {
             color: mediumGrey,
             display: "flex",
             pl: "10px",
-            pt: "9px",
+            pt: "16px",
           },
         }}
       >

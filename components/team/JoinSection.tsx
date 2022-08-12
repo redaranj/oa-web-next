@@ -7,7 +7,7 @@ import joinTeam from "public/images/join-team.png";
 
 export const JoinSection: FC = ({ children }) => {
   const { white, lightGrey } = colors;
-  const { outlinedButton } = typography;
+  const { outlinedButton, bodyLarge } = typography;
   const { ps, tl } = breakpoints;
 
   return (
@@ -34,6 +34,7 @@ export const JoinSection: FC = ({ children }) => {
           <Grid item>
             <Box
               sx={{
+                "> p": bodyLarge,
                 backgroundColor: lightGrey,
                 py: 10,
                 px: 5,

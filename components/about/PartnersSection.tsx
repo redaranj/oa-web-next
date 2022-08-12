@@ -26,10 +26,7 @@ export const PartnersSection: FC = ({ children }) => {
         <Grid item>{board}</Grid>
         <Grid item container direction="column">
           <Grid item>
-            <Box
-              component="h5"
-              sx={{ ...h5, textAlign: "center", mt: 12, mb: 6 }}
-            >
+            <Box component="h5" sx={{ ...h5, mt: 3, mb: 6 }}>
               {t("partners")}
             </Box>
           </Grid>
@@ -37,7 +34,7 @@ export const PartnersSection: FC = ({ children }) => {
             item
             container
             sx={{
-              pb: 8,
+              pb: 2,
               flexDirection: "row",
               [ps]: { flexDirection: "column" },
               [tl]: { flexDirection: "row" },

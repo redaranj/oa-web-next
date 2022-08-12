@@ -6,7 +6,7 @@ import diverse from "public/images/diverse.png";
 
 export const DiverseSection: FC = () => {
   const { white } = colors;
-  const { h1, body } = typography;
+  const { h1, bodyLarge } = typography;
 
   return (
     <BaseHeaderSection backgroundColor={white}>
@@ -34,7 +34,7 @@ export const DiverseSection: FC = () => {
           <Box sx={h1}>
             Creating a <strong>diverse environment</strong>
           </Box>
-          <Box sx={body}>
+          <Box sx={bodyLarge}>
             OpenArchive is committed to creating a diverse environment and is
             proud to be an equal opportunity employer. All qualified applicants
             will receive consideration for employment without regard to race,

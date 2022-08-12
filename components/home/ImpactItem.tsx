@@ -34,9 +34,7 @@ export const ImpactItem: FC = ({ children }) => {
         </Box>
       </Grid>
       <Grid item>
-        <Box component="p" sx={bodyLarge}>
-          {description}
-        </Box>
+        <Box sx={{ "> p": bodyLarge }}>{description}</Box>
       </Grid>
     </Grid>
   );

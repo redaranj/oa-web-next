@@ -1,12 +1,13 @@
 import { FC } from "react";
 import Image from "next/image";
 import { Grid, Box } from "@mui/material";
-import { colors, loader } from "styles/theme";
+import { colors, loader, typography } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import eyes from "public/images/eyes.svg";
 
 export const AboutPositionSection: FC = ({ children }) => {
   const { lightGrey } = colors;
+  const { bodyLarge } = typography;
 
   return (
     <PageSection backgroundColor={lightGrey}>
@@ -17,7 +18,7 @@ export const AboutPositionSection: FC = ({ children }) => {
         }}
       >
         <Grid item sx={{ width: "50%" }}>
-          {children}
+          <Box sx={{ "> p": bodyLarge }}>{children}</Box>
         </Grid>
         <Grid item sx={{ width: "50%", textAlign: "center" }}>
           <Box sx={{ px: 8, py: 20 }}>

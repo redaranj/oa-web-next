@@ -61,7 +61,13 @@ export const VisionSection: FC = ({ children }) => {
           }}
         >
           <Grid item>
-            <Box sx={{ "> p": bodyLarge, backgroundColor: lightGrey, p: 6 }}>
+            <Box
+              sx={{
+                "> p": { ...bodyLarge, fontWeight: 600 },
+                backgroundColor: lightGrey,
+                p: 6,
+              }}
+            >
               {children}
             </Box>
           </Grid>

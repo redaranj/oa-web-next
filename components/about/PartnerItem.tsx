@@ -21,7 +21,7 @@ export const PartnerItem: FC = ({ children }) => {
       justifyContent="space-around"
     >
       <Link href={url}>
-        <Box sx={{ width: 150 }}>
+        <Box>
           <Image src={image} alt={name} loader={loader} />
         </Box>
       </Link>

@@ -1,11 +1,13 @@
 import { FC } from "react";
 import Link from "next/link";
 import { Box, Grid } from "@mui/material";
-import { colors, breakpoints } from "styles/theme";
+import { colors, breakpoints, typography } from "styles/theme";
 import staff from "public/images/staff.svg";
 
 export const TeamItem: FC = ({ children }) => {
   const { lightGrey } = colors;
+  const { bodyLarge } = typography;
+  
   const { ps, tl } = breakpoints;
 
   return (
@@ -54,7 +56,7 @@ export const TeamItem: FC = ({ children }) => {
               [tl]: { width: "50%" },
             }}
           >
-            <Box sx={{ p: 6 }}>{children}</Box>
+            <Box sx={{ p: 6, "> p": bodyLarge }}>{children}</Box>
           </Grid>
         </Grid>
       </Box>

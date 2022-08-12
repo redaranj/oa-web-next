@@ -8,7 +8,7 @@ import jobAbout2 from "public/images/job-about-2.png";
 
 export const AboutSection: FC = () => {
   const { white } = colors;
-  const { h2, body } = typography;
+  const { h2, bodyLarge } = typography;
 
   return (
     <PageSection backgroundColor={white}>
@@ -40,7 +40,7 @@ export const AboutSection: FC = () => {
           <Box component="h2" sx={h2}>
             About <strong>OpenArchive</strong>
           </Box>
-          <Box component="p" sx={body}>
+          <Box sx={bodyLarge}>
             OpenArchive is an experienced research and development nonprofit
             organization dedicated to the ethical collection and long-term
             preservation of mobile media. We work to promote freedom of

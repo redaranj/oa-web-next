@@ -1,9 +1,10 @@
 import { FC } from "react";
 import { Box, Grid } from "@mui/material";
-import { colors } from "styles/theme";
+import { colors, typography } from "styles/theme";
 
 export const DetailItem: FC = ({ children }) => {
   const { white } = colors;
+  const { bodyLarge } = typography;
   const [first, ...rest] = children as any[];
 
   return (
@@ -18,7 +19,15 @@ export const DetailItem: FC = ({ children }) => {
           {first}
         </Grid>
         <Grid item xs={6}>
-          {rest}
+          <Box
+            sx={{
+              "& p": bodyLarge,
+              ul: { p: 0, m: 0 },
+              li: { ...bodyLarge, mb: 1, listStylePosition: "outside" },
+            }}
+          >
+            {rest}
+          </Box>
         </Grid>
       </Grid>
     </Box>

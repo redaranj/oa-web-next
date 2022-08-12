@@ -5,7 +5,7 @@ import { loadImage } from "lib/frontendHelpers";
 
 export const OpportunityItem: FC = ({ children }) => {
   const [first, ...rest] = children as any[];
-  const { outlinedButton } = typography;
+  const { outlinedButton, bodyLarge } = typography;
   const { turquoise } = colors;
   const image = loadImage(first);
 
@@ -30,10 +30,11 @@ export const OpportunityItem: FC = ({ children }) => {
             py: 10,
             a: outlinedButton,
             ul: { p: 0 },
+            "& p": bodyLarge,
             "li::marker": {
               color: turquoise,
-              content: "'•'",
-              fontSize: "40px",
+              content: "'• '",
+              fontSize: "30px",
               lineHeight: "0px",
               m: 0,
               p: 0,

@@ -143,6 +143,7 @@ export const HeaderSection: FC = ({ children }) => {
         <PageSection backgroundColor={white}>
           <Grid
             container
+            spacing={3}
             sx={{
               flexDirection: "row",
               [ps]: { flexDirection: "column" },
@@ -162,7 +163,7 @@ export const HeaderSection: FC = ({ children }) => {
               />
             </Grid>
             <Grid item sx={{ width: "50%" }}>
-              <Box sx={{ p: 3 }}>{rest}</Box>
+              <Box sx={{ p: 3, "> p": bodyLarge }}>{rest}</Box>
             </Grid>
           </Grid>
         </PageSection>

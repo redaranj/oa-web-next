@@ -2,17 +2,18 @@ import { FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Box, Grid } from "@mui/material";
-import { colors, loader } from "styles/theme";
+import { colors, loader, typography } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { loadImage } from "lib/frontendHelpers";
 
 export const ArticleHeaderSection: FC = ({ children }) => {
   const { lightGrey, darkGrey, turquoise } = colors;
+  const { bodyLarge } = typography;
   const [first, date, category, title, ...description] = children as any[];
   const image = loadImage(first);
 
   return (
-    <Box sx={{ mb: 10 }}>
+    <Box sx={{ mb: 16 }}>
       <PageSection backgroundColor={lightGrey}>
         <Grid
           container
@@ -28,6 +29,7 @@ export const ArticleHeaderSection: FC = ({ children }) => {
                 sx={{
                   a: { textDecoration: "none" },
                   "& p": { fontWeight: "bold" },
+                  mt: 3,
                   mb: 3,
                 }}
               >
@@ -46,9 +48,14 @@ export const ArticleHeaderSection: FC = ({ children }) => {
             </Grid>
             <Grid item>{title}</Grid>
             <Grid item sx={{ mb: 10, width: "75%" }}>
-              {description}
+              <Box
+                sx={{
+                  "& p": bodyLarge,
+                }}
+              >
+                {description}
+              </Box>
             </Grid>
-
             <Box
               sx={{
                 position: "absolute",

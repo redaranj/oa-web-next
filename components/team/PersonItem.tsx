@@ -56,9 +56,7 @@ export const PersonItem: FC<PersonItemProps> = ({
           </Grid>
           <Grid item container direction="column" sx={{ width: "50%" }}>
             <Grid item>
-              <Box component="p" sx={{ ...bodyLarge, pb: 3 }}>
-                {bio}
-              </Box>
+              <Box sx={{ "> p": bodyLarge, pb: 2 }}>{bio}</Box>
             </Grid>
           </Grid>
         </Grid>

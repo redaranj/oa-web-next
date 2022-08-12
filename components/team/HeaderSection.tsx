@@ -39,9 +39,8 @@ export const HeaderSection: FC = ({ children }) => {
             <Grid item>{first}</Grid>
             <Grid item>
               <Box
-                component="p"
                 sx={{
-                  ...bodyLarge,
+                  "> p": bodyLarge,
                   maxWidth: 600,
                   mb: 6,
                   [ps]: { maxWidth: "100%", mb: 4 },
