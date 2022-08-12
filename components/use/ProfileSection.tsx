@@ -31,11 +31,18 @@ export const ProfileSection: FC = ({ children }) => {
               <Grid item>
                 <Box
                   sx={{
-                    table: { borderCollapse: "collapse", borderSpacing: 0 },
+                    table: {
+                      borderCollapse: "collapse",
+                      borderSpacing: 0,
+                      width: "100%",
+                    },
                     tr: {
                       borderTop: `1px solid ${mediumGrey}`,
                     },
-                    td: { py: 2 },
+                    "thead > tr": {
+                      borderTop: 0,
+                    },
+                    td: { ...bodyLarge, py: 2 },
                     "td:nth-of-type(odd)": {
                       color: turquoise,
                       fontWeight: "bold",
@@ -47,7 +54,9 @@ export const ProfileSection: FC = ({ children }) => {
                 </Box>
               </Grid>
               <Grid item sx={{ mt: 6 }}>
-                <Image src={quotationMark} loader={loader} />
+                <Box sx={{ width: 80 }}>
+                  <Image src={quotationMark} alt="" loader={loader} />
+                </Box>
                 <Box sx={{ mt: 1, "> blockquote": bodyLarge }}>{quote}</Box>
               </Grid>
             </Grid>

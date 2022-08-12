@@ -1,63 +1,59 @@
 import { FC } from "react";
-import { Box, Grid } from "@mui/material";
-import { breakpoints, colors, typography } from "styles/theme";
+import Image from "next/image";
+import { Box } from "@mui/material";
+import { colors, typography, loader } from "styles/theme";
+import { loadImage } from "lib/frontendHelpers";
 
 export const AdditionalFeatureItem: FC = ({ children }) => {
-  const { white, turquoise, lightGrey } = colors;
+  const { white, turquoise } = colors;
   const { bodyLarge } = typography;
-  const { ps, tl } = breakpoints;
-  const [image, title, ...description] = children as any[];
+  const [first, title, ...description] = children as any[];
+  const image = loadImage(first);
 
   return (
-    <Grid
-      item
-      sx={{ width: "50%", [ps]: { width: "100%" }, [tl]: { width: "50%" } }}
+    <Box
+      sx={{
+        height: "370px",
+        backgroundColor: turquoise,
+        "&:hover .slide": {
+          transition: "0.5s",
+          bottom: "0px",
+        },
+        position: "relative",
+        overflow: "hidden",
+      }}
     >
+      <Box sx={{ p: 6, backgroundColor: white, width: "100%", height: "100%" }}>
+        <Box sx={{ width: 60, mb: 3 }}>
+          <Image src={image} alt="" loader={loader} />
+        </Box>
+        {title}
+      </Box>
       <Box
+        className="slide"
         sx={{
-          height: "370px",
-          backgroundColor: lightGrey,
           width: "100%",
-          "&:hover .slide": {
-            transition: "1s",
-            bottom: "0px",
-          },
-          position: "relative",
-          overflow: "hidden",
+          backgroundColor: `${turquoise}fd`,
+          color: white,
+          height: "370px",
+          position: "absolute",
+          bottom: "-370px",
+          transition: "1.5s",
         }}
       >
         <Box
-          sx={{ p: 6, backgroundColor: white, width: "100%", height: "100%" }}
-        >
-          {image}
-          {title}
-        </Box>
-        <Box
-          className="slide"
           sx={{
-            width: "100%",
-            backgroundColor: `${turquoise}fd`,
-            color: white,
-            height: "370px",
-            position: "absolute",
-            bottom: "-370px",
-            transition: "1s",
+            "> p": {
+              ...bodyLarge,
+              color: white,
+              p: 4,
+              m: 0,
+            },
           }}
         >
-          <Box
-            sx={{
-              "> p": {
-                ...bodyLarge,
-                color: white,
-                p: 4,
-                m: 0,
-              },
-            }}
-          >
-            {description}
-          </Box>
+          {description}
         </Box>
       </Box>
-    </Grid>
+    </Box>
   );
 };

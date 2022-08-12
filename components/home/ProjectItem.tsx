@@ -29,7 +29,7 @@ export const ProjectItem: FC = ({ children }) => {
           sx={{
             backgroundColor: white,
             "&:hover #slide": {
-              transition: "1s",
+              transition: "0.5s",
               bottom: "0px",
             },
             position: "relative",
@@ -60,10 +60,16 @@ export const ProjectItem: FC = ({ children }) => {
                   height: "280px",
                   position: "absolute",
                   bottom: "-280px",
-                  transition: "1s",
+                  transition: "1.5s",
                 }}
               >
-                <Box sx={{ "> p": { ...bodyLarge, color: white }, p: 3 }}>
+                <Box
+                  sx={{
+                    "> p": { ...bodyLarge, color: white },
+                    strong: { color: "white !important" },
+                    p: 3,
+                  }}
+                >
                   {description}
                 </Box>
               </Box>

@@ -24,7 +24,7 @@ export const CoreFeatureItem: FC = ({ children }) => {
           backgroundColor: lightGrey,
           width: "100%",
           "&:hover .slide": {
-            transition: "1s",
+            transition: "0.5s",
             bottom: "0px",
           },
           position: "relative",
@@ -48,7 +48,7 @@ export const CoreFeatureItem: FC = ({ children }) => {
             height: "470px",
             position: "absolute",
             bottom: "-470px",
-            transition: "1s",
+            transition: "1.5s",
           }}
         >
           <Box
@@ -58,6 +58,10 @@ export const CoreFeatureItem: FC = ({ children }) => {
                 color: white,
                 p: 4,
                 m: 0,
+              },
+              a: {
+                textDecoration: "underline",
+                textDecorationStyle: "dashed",
               },
             }}
           >

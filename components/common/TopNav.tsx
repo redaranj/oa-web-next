@@ -30,9 +30,9 @@ export const TopNav = () => {
     width: "100%",
     display: "block",
     color: white,
-    py: 1,
-    px: 2,
+    p: 2,
     m: 0,
+    borderRadius: 2,
     textDecoration: "none",
     "&:hover": {
       backgroundColor: `${turquoise}dd`,
@@ -173,8 +173,11 @@ export const TopNav = () => {
                       href="/save"
                     >
                       <Grid container direction="column" spacing={0}>
-                        <Grid item>
-                          <Link href="/save" passHref>
+                        <Grid item sx={{ border: "1px solid red", p: 0, m: 0 }}>
+                          <Link
+                            href="/save"
+                            passHref
+                          >
                             <Box component="a" sx={menuItemProps}>
                               {t("saveApp")}
                             </Box>

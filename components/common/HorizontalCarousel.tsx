@@ -61,7 +61,7 @@ export const HorizontalCarousel: FC<HorizontalCarouselProps> = ({
   breakpoints = {},
   columnOnMobile = false,
   visibleCount = 2.5,
-  spaceBetween = 20,
+  spaceBetween = 40,
   children,
 }) => {
   const { ps, ts } = breakpoints;
