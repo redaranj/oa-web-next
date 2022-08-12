@@ -46,7 +46,7 @@ export const JoinSection: FC = ({ children }) => {
           </Grid>
         </Grid>
         <Grid item sx={{ width: "50%" }}>
-          <Box sx={{ height: 700 }}>
+          <Box sx={{ width: "100%" }}>
             <Image src={joinTeam} alt="" loader={loader} />
           </Box>
         </Grid>

@@ -3,7 +3,7 @@ import { Box } from "@mui/material";
 import { colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 // import sharePhone from "public/images/share-phone.png";
-import { Autoplay, EffectFade } from "swiper";
+import { Autoplay, EffectFade, Navigation } from "swiper";
 /* eslint-disable import/no-unresolved */
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -19,8 +19,9 @@ export const AcronymSection: FC = ({ children }) => {
     <PageSection backgroundColor={white} sx={{ pb: 0, mb: -13 }}>
       <Box sx={{ height: 500, overflow: "hidden" }}>
         <Swiper
-          modules={[Autoplay, EffectFade]}
+          modules={[Autoplay, EffectFade, Navigation]}
           direction="vertical"
+          navigation
           autoHeight
           effect="fade"
           slidesPerView={1}

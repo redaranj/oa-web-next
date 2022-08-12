@@ -1,52 +1,34 @@
 import { FC } from "react";
-import { Box } from "@mui/material";
-import { colors, typography, breakpoints } from "styles/theme";
+import { Box, Stack } from "@mui/material";
+import { colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 
 export const ServeSection: FC = ({ children }) => {
-  const { white, lightGrey, turquoise } = colors;
-  const { bodyLarge } = typography;
-  const { ps, tl, ds } = breakpoints;
+  const { lightGrey } = colors;
+  const [title, subtitle, ...rest] = children as any[];
 
   return (
     <PageSection backgroundColor={lightGrey}>
       <Box
         sx={{
-          h5: { width: "50%" },
-          ul: {
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "flex-start",
-            counterReset: "whoCounter",
+          h5: { width: "50%", mb: 6 },
+        }}
+      >
+        {title}
+        {subtitle}
+      </Box>
+      <Stack
+        sx={{
+          ".serveItem:nth-of-type(even)": {
+            flexDirection: "row-reverse",
           },
-          li: {
-            counterIncrement: "whoCounter",
-            backgroundColor: white,
-            display: "flex",
-            p: 3,
-            m: 3,
-            width: "30%",
-            [ps]: {
-              width: "100%",
-            },
-            [tl]: {
-              width: "50%",
-            },
-            [ds]: {
-              width: "30%",
-            },
-          },
-          "li::before": {
-            ...bodyLarge,
-            content: "counter(whoCounter, decimal-leading-zero)",
-            color: turquoise,
-            display: "block",
-            width: "100%",
+          ".serveItem:nth-of-type(odd)": {
+            flexDirection: "row",
           },
         }}
       >
-        {children}
-      </Box>
+        {rest}
+      </Stack>
     </PageSection>
   );
 };

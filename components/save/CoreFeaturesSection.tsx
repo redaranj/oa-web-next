@@ -48,7 +48,7 @@ export const CoreFeaturesSection: FC = ({ children }) => {
         <Grid
           container
           item
-          spacing={8}
+          spacing={0}
           sx={{
             mt: "100px",
             flexDirection: "row",

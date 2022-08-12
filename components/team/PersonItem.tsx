@@ -18,7 +18,7 @@ export const PersonItem: FC<PersonItemProps> = ({
   image,
   backgroundColor,
 }) => {
-  const { turquoise } = colors;
+  const { turquoise, mediumGrey, white } = colors;
   const { bodyLarge } = typography;
   const { ps, tl } = breakpoints;
 
@@ -45,7 +45,15 @@ export const PersonItem: FC<PersonItemProps> = ({
             spacing={4}
           >
             <Grid item>
-              <Box sx={{ mt: -10, width: 120 }}>
+              <Box
+                sx={{
+                  mt: -10,
+                  width: 120,
+                  p: 1,
+                  backgroundColor: white,
+                  border: `1px solid ${mediumGrey}`,
+                }}
+              >
                 <Image src={image} alt="" loader={loader} />
               </Box>
             </Grid>

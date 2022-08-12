@@ -13,16 +13,16 @@ export const CoreFeatureItem: FC = ({ children }) => {
       item
       sx={{
         width: "50%",
-        height: "400px",
+
         [ps]: { width: "100%" },
         [tl]: { width: "50%" },
       }}
     >
       <Box
         sx={{
+          height: "470px",
           backgroundColor: lightGrey,
           width: "100%",
-          height: "100%",
           "&:hover .slide": {
             transition: "1s",
             bottom: "0px",
@@ -45,13 +45,24 @@ export const CoreFeatureItem: FC = ({ children }) => {
             width: "100%",
             backgroundColor: turquoise,
             color: white,
-            height: "400px",
+            height: "470px",
             position: "absolute",
-            bottom: "-400px",
+            bottom: "-470px",
             transition: "1s",
           }}
         >
-          <Box sx={{ ...bodyLarge, color: white, p: 6 }}>{description}</Box>
+          <Box
+            sx={{
+              "> p": {
+                ...bodyLarge,
+                color: white,
+                p: 4,
+                m: 0,
+              },
+            }}
+          >
+            {description}
+          </Box>
         </Box>
       </Box>
     </Grid>
