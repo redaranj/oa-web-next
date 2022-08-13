@@ -18,7 +18,7 @@ export const GuidesSection: FC<GuidesSectionProps> = ({ pages, children }) => {
     >
       <Grid
         container
-        rowSpacing={8}
+        rowSpacing={6}
         sx={{
           flexDirection: "column",
         }}
