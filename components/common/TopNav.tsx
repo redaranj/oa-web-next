@@ -33,9 +33,11 @@ export const TopNav = () => {
     p: 2,
     m: 0,
     borderRadius: 2,
+    border: "1px solid transparent",
     textDecoration: "none",
     "&:hover": {
       backgroundColor: `${turquoise}dd`,
+      border: `1px solid ${white}`,
     },
   };
   const getAnchorRef = () => ref.current;
