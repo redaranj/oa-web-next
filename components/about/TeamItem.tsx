@@ -1,7 +1,8 @@
 import { FC } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Box, Grid } from "@mui/material";
-import { colors, breakpoints, typography } from "styles/theme";
+import { colors, breakpoints, typography, loader } from "styles/theme";
 import { OutlinedButton } from "components/common/OutlinedButton";
 import staff from "public/images/staff.svg";
 
@@ -38,13 +39,12 @@ export const TeamItem: FC = ({ children }) => {
           >
             <Box
               sx={{
-                backgroundImage: `url(${staff.src})`,
-                backgroundSize: "75%",
-                backgroundPosition: "center center",
-                backgroundRepeat: "no-repeat",
-                height: "100%",
+                width: "75%",
+                margin: "0 auto",
               }}
-            />
+            >
+              <Image src={staff} alt="" loader={loader} />
+            </Box>
           </Grid>
           <Grid
             item

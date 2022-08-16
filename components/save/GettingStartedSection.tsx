@@ -38,13 +38,29 @@ export const GettingStartedSection: FC = ({ children }) => {
           </Grid>
           <Grid
             item
+            container
+            direction="column"
+            justifyContent="center"
             sx={{
               width: "50%",
               [ps]: { width: "100%" },
               [tl]: { width: "50%" },
             }}
           >
-            <Box sx={{ "> p": bodyLarge }}>{description}</Box>
+            <Grid item>
+              <Box
+                sx={{
+                  "> p": {
+                    ...bodyLarge,
+                    textAlign: "right",
+                    maxWidth: "90%",
+                    mt: 2,
+                  },
+                }}
+              >
+                {description}
+              </Box>
+            </Grid>
           </Grid>
         </Grid>
         <Grid

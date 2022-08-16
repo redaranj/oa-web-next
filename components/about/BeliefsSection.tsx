@@ -1,6 +1,7 @@
 import { FC } from "react";
+import Image from "next/image";
 import { Box, Grid } from "@mui/material";
-import { colors, breakpoints, typography } from "styles/theme";
+import { colors, breakpoints, typography, loader } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import handPhone from "public/images/hand-phone.svg";
 
@@ -40,14 +41,12 @@ export const BeliefsSection: FC = ({ children }) => {
           >
             <Box
               sx={{
-                backgroundImage: `url(${handPhone.src})`,
-                backgroundSize: "40%",
-                backgroundPosition: "center center",
-                backgroundRepeat: "no-repeat",
-                height: "100%",
-                marginLeft: -4,
+                margin: "0 auto",
+                textAlign: "center",
               }}
-            />
+            >
+              <Image src={handPhone} alt="" loader={loader} />
+            </Box>
           </Grid>
           <Grid
             container

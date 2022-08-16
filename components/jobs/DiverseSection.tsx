@@ -1,8 +1,9 @@
 import { FC } from "react";
+import Image from "next/image";
 import { Grid, Box } from "@mui/material";
-import { colors, typography } from "styles/theme";
+import { colors, typography, loader } from "styles/theme";
 import { HeaderSection as BaseHeaderSection } from "components/common/HeaderSection";
-import diverse from "public/images/diverse.png";
+import ourTeam from "public/images/our-team-who-we-are.png";
 
 export const DiverseSection: FC = () => {
   const { white } = colors;
@@ -18,17 +19,17 @@ export const DiverseSection: FC = () => {
         }}
         spacing={6}
       >
-        <Grid item xs={6}>
-          <Box
-            sx={{
-              height: "100%",
-              width: "100%",
-              backgroundImage: `url(${diverse.src})`,
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "center center",
-              backgroundSize: "cover",
-            }}
-          />
+        <Grid item container direction="column" justifyContent="center" xs={6}>
+          <Grid item>
+            <Box
+              sx={{
+                height: "100%",
+                width: "90%",
+              }}
+            >
+              <Image src={ourTeam} alt="" loader={loader} />
+            </Box>
+          </Grid>
         </Grid>
         <Grid item xs={6}>
           <Box sx={h1}>

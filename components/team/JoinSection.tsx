@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Box, Grid } from "@mui/material";
 import { colors, breakpoints, loader, typography } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
-import joinTeam from "public/images/join-team.png";
+import joinOurTeam from "public/images/join-our-team.png";
 
 export const JoinSection: FC = ({ children }) => {
   const { white, lightGrey } = colors;
@@ -21,9 +21,6 @@ export const JoinSection: FC = ({ children }) => {
         }}
       >
         <Grid
-          container
-          direction="column"
-          justifyContent="space-around"
           item
           sx={{
             width: "50%",
@@ -31,24 +28,43 @@ export const JoinSection: FC = ({ children }) => {
             [tl]: { width: "50%" },
           }}
         >
-          <Grid item>
+          <Box sx={{ backgroundColor: lightGrey }}>
+            <Grid container direction="column" justifyContent="space-around">
+              <Grid item>
+                <Box
+                  sx={{
+                    "> p": bodyLarge,
+
+                    py: 10,
+                    px: 5,
+                    a: outlinedButton,
+                  }}
+                >
+                  {children}
+                </Box>
+              </Grid>
+            </Grid>
+          </Box>
+        </Grid>
+        <Grid
+          item
+          container
+          direction="column"
+          justifyContent="center"
+          alignItems="flex-end"
+          sx={{ width: "50%", backgroundColor: lightGrey }}
+        >
+          <Grid item sx={{ width: "100%" }}>
             <Box
               sx={{
-                "> p": bodyLarge,
+                width: "80%",
                 backgroundColor: lightGrey,
-                py: 10,
-                px: 5,
-                a: outlinedButton,
+                margin: "0 auto",
               }}
             >
-              {children}
+              <Image src={joinOurTeam} alt="" loader={loader} />
             </Box>
           </Grid>
-        </Grid>
-        <Grid item sx={{ width: "50%" }}>
-          <Box sx={{ width: "100%" }}>
-            <Image src={joinTeam} alt="" loader={loader} />
-          </Box>
         </Grid>
       </Grid>
     </PageSection>
