@@ -6,7 +6,7 @@ import { FilledButton } from "components/common/FilledButton";
 
 export const ContactBox: FC = () => {
   const router = useRouter();
-  const { lightTurquoise, lightGrey, white, black } = colors;
+  const { lightTurquoise, white, black } = colors;
   const { h5, bodyLarge } = typography;
 
   return (
@@ -14,7 +14,6 @@ export const ContactBox: FC = () => {
       sx={{
         pt: 6,
         mb: 6,
-        background: `linear-gradient(to top, ${lightGrey} 50%, ${white} 50%)`,
       }}
     >
       <Box

@@ -9,6 +9,8 @@ export const DonateBox: FC = ({ children }) => {
   return (
     <Box
       sx={{
+        maxWidth: 500,
+        m: "0 auto",
         backgroundColor: lightGrey,
         p: 3,
         ul: {
@@ -57,7 +59,7 @@ export const DonateBox: FC = ({ children }) => {
           display: "block",
           width: "100%",
           "&:hover": {
-            backgroundColor: darkBurgundy,            
+            backgroundColor: darkBurgundy,
             color: white,
           },
         },

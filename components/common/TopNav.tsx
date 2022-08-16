@@ -65,7 +65,8 @@ export const TopNav = () => {
         <Grid item>
           <Box
             sx={{
-              maxWidth: 1920,
+              maxWidth: 1600,
+              m: "0 auto",
               width: "100%",
               px: 11.25,
               [ps]: { px: 3 },

@@ -9,12 +9,17 @@ import downArrow from "public/images/down-arrow.svg";
 type InnerButtonProps = PropsWithChildren<{
   textColor?: string;
   borderColor?: string;
-  arrowDirection?: "right" | "down" | "none";
+  arrowDirection?: "right" | "up" | "down" | "none";
   onClick?: () => void;
 }>;
 
 const { black, white, mediumGrey, turquoise } = colors;
 const { body } = typography;
+const arrows = {
+  up: downArrow,
+  down: downArrow,
+  right: rightArrow,
+};
 
 export const InnerButton: FC<InnerButtonProps> = ({
   textColor = black,
@@ -47,14 +52,15 @@ export const InnerButton: FC<InnerButtonProps> = ({
     }}
   >
     {children}
-    {arrowDirection === "right" && (
-      <Box sx={{ ml: "8px", mt: "-3px" }}>
-        <Image src={rightArrow} alt="" loader={loader} />
-      </Box>
-    )}
-    {arrowDirection === "down" && (
-      <Box sx={{ ml: "8px", mt: "-3px" }}>
-        <Image src={downArrow} alt="" loader={loader} />
+    {arrowDirection !== "none" && (
+      <Box
+        sx={{
+          ml: "8px",
+          mt: arrowDirection === "up" ? "4px" : "-3px",
+          transform: arrowDirection === "up" ? "rotate(180deg)" : null,
+        }}
+      >
+        <Image src={arrows[arrowDirection]} alt="" loader={loader} />
       </Box>
     )}
   </Button>
@@ -63,7 +69,7 @@ export const InnerButton: FC<InnerButtonProps> = ({
 type OutlinedButtonProps = PropsWithChildren<{
   textColor?: string;
   borderColor?: string;
-  arrowDirection?: "right" | "down" | "none";
+  arrowDirection?: "right" | "up" | "down" | "none";
   href?: string;
   onClick?: () => void;
 }>;

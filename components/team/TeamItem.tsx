@@ -1,9 +1,13 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import { colors } from "styles/theme";
 import { PersonItem } from "components/team/PersonItem";
 import { loadImage } from "lib/frontendHelpers";
 
-export const TeamItem: FC = ({ children }) => {
+type TeamItemProps = PropsWithChildren<{
+  expand?: boolean;
+}>;
+
+export const TeamItem: FC<TeamItemProps> = ({ expand = false, children }) => {
   const { white } = colors;
   const [first, name, jobTitle, ...bio] = children as any[];
   const image = loadImage(first);
@@ -15,6 +19,7 @@ export const TeamItem: FC = ({ children }) => {
       bio={bio}
       image={image}
       backgroundColor={white}
+      expand={expand}
     />
   );
 };

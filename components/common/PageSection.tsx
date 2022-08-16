@@ -30,7 +30,7 @@ export const PageSection: FC<PageSectionProps> = ({
       <Box
         sx={{
           margin: "auto",
-          maxWidth: 1920,
+          maxWidth: 1600,
           py: 11,
           px: 11.25,
           [ps]: {
