@@ -33,8 +33,8 @@ export const OpportunityItem: FC = ({ children }) => {
             "& p": bodyLarge,
             "li::marker": {
               color: turquoise,
-              content: "'• '",
-              fontSize: "30px",
+              content: "'•'",
+              fontSize: "20px",
               lineHeight: "0px",
               m: 0,
               p: 0,

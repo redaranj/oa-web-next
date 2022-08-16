@@ -9,7 +9,7 @@ export const PartnersSection: FC = ({ children }) => {
   const { white } = colors;
   const { h5 } = typography;
   const { ps, tl } = breakpoints;
-  const [title, team, board, ...rest] = children as any[];
+  const [title, team, ...rest] = children as any[];
 
   return (
     <PageSection backgroundColor={white}>
@@ -23,7 +23,6 @@ export const PartnersSection: FC = ({ children }) => {
           <Box sx={{ textAlign: "center" }}>{title}</Box>
         </Grid>
         <Grid item>{team}</Grid>
-        <Grid item>{board}</Grid>
         <Grid item container direction="column">
           <Grid item>
             <Box component="h5" sx={{ ...h5, mt: 3, mb: 6 }}>

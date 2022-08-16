@@ -22,17 +22,13 @@ export const ActivitiesSection: FC = ({ children }) => {
           container
           columnSpacing={6}
           rowSpacing={6}
-          alignItems="flex-end"
+          justifyContent="center"
+          alignItems="center"
+          alignContent="center"
           sx={{
             flexDirection: "row",
             [ps]: { flexDirection: "column" },
             [tl]: { flexDirection: "row" },
-            ".activityContainer:nth-of-type(odd)": {
-              height: 400,
-            },
-            ".activityContainer:nth-of-type(even)": {
-              height: 350,
-            },
           }}
         >
           {rest}

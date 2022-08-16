@@ -2,12 +2,13 @@ import { FC } from "react";
 import Link from "next/link";
 import { Box, Grid } from "@mui/material";
 import { colors, breakpoints, typography } from "styles/theme";
+import { OutlinedButton } from "components/common/OutlinedButton";
 import staff from "public/images/staff.svg";
 
 export const TeamItem: FC = ({ children }) => {
-  const { lightGrey } = colors;
+  const { lightGrey, black } = colors;
   const { bodyLarge } = typography;
-  
+
   const { ps, tl } = breakpoints;
 
   return (
@@ -56,7 +57,14 @@ export const TeamItem: FC = ({ children }) => {
               [tl]: { width: "50%" },
             }}
           >
-            <Box sx={{ p: 6, "> p": bodyLarge }}>{children}</Box>
+            <Box sx={{ pl: 6, pb: 2, "> p": bodyLarge }}>{children}</Box>
+            <Box sx={{ pl: 6, maxWidth: "50%" }}>
+              <Link href="/team">
+                <OutlinedButton textColor={black} arrowDirection="right">
+                  Learn more
+                </OutlinedButton>
+              </Link>
+            </Box>
           </Grid>
         </Grid>
       </Box>

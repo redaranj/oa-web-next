@@ -3,7 +3,7 @@ import { Box, Grid } from "@mui/material";
 import { colors, typography } from "styles/theme";
 
 export const DetailItem: FC = ({ children }) => {
-  const { white } = colors;
+  const { white, turquoise } = colors;
   const { bodyLarge } = typography;
   const [first, ...rest] = children as any[];
 
@@ -24,6 +24,14 @@ export const DetailItem: FC = ({ children }) => {
               "& p": bodyLarge,
               ul: { p: 0, m: 0 },
               li: { ...bodyLarge, mb: 1, listStylePosition: "outside" },
+              "li::marker": {
+                color: turquoise,
+                content: "'•'",
+                fontSize: "20px",
+                lineHeight: "0px",
+                m: 0,
+                p: 0,
+              },
             }}
           >
             {rest}

@@ -11,7 +11,6 @@ export const ActivityItem: FC = ({ children }) => {
 
   return (
     <Grid
-      className="activityContainer"
       item
       sx={{
         width: "33%",
@@ -21,7 +20,7 @@ export const ActivityItem: FC = ({ children }) => {
     >
       <Box
         sx={{
-          height: "100%",
+          height: 350,
           backgroundImage: `url(${image.src})`,
           backgroundSize: "cover",
         }}
