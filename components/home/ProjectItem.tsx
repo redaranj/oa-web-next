@@ -33,6 +33,7 @@ export const ProjectItem: FC = ({ children }) => {
               bottom: "0px",
             },
             position: "relative",
+            cursor: "pointer",
           }}
         >
           <Grid item container direction="row" justifyContent="space-between">

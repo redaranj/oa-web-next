@@ -348,6 +348,11 @@ export const components = {
           textDecorationColor: "#00b4a6",
           textDecorationStyle: "dashed",
           cursor: "pointer",
+          "&:hover": {
+            color: colors.white,
+            backgroundColor: colors.turquoise,
+            textDecorationColor: "#ffffff",
+          },
         }}
       >
         {children}

@@ -265,17 +265,17 @@ export const TopNav = () => {
                     container
                     direction="column"
                     justifyContent="space-around"
-                    alignItems="center"
-                    alignContent="center"
                   >
-                    <FilledButton
-                      textColor={white}
-                      backgroundColor={mediumBurgundy}
-                      highlightColor={darkBurgundy}
-                      onClick={() => router.push("/donate")}
-                    >
-                      {t("donate")}
-                    </FilledButton>
+                    <Grid item>
+                      <FilledButton
+                        textColor={white}
+                        backgroundColor={mediumBurgundy}
+                        highlightColor={darkBurgundy}
+                        onClick={() => router.push("/donate")}
+                      >
+                        {t("donate")}
+                      </FilledButton>
+                    </Grid>
                   </Grid>
                 </Grid>
                 <Grid

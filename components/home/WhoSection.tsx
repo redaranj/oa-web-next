@@ -11,7 +11,7 @@ type WhoSectionProps = {
 
 export const WhoSection: FC<WhoSectionProps> = ({ pages, children }) => {
   const { bodyLarge } = typography;
-  const { white } = colors;
+  const { white, turquoise } = colors;
   const { ps, ts } = breakpoints;
   const [title, ...description] = children as any[];
 
@@ -58,7 +58,16 @@ export const WhoSection: FC<WhoSectionProps> = ({ pages, children }) => {
               },
             }}
           >
-            <Box sx={{ "> p": bodyLarge }}>{description}</Box>
+            <Box
+              sx={{
+                "> p": {
+                  ...bodyLarge,
+                  em: { color: turquoise, fontWeight: "bold" },
+                },
+              }}
+            >
+              {description}
+            </Box>
           </Grid>
         </Grid>
       </Box>
