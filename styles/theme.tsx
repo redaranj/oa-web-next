@@ -139,6 +139,10 @@ export const typography = {
     fontSize: "34px",
     lineHeight: "44.2px",
     mb: 3,
+    "& em > strong": {
+      fontWeight: 600,
+      color: colors.turquoise,
+    },
   },
   h5: {
     ...typographyDefaults,
@@ -164,12 +168,20 @@ export const typography = {
     [breakpoints.dl]: {
       fontSize: "34px",
     },
+    "& em > strong": {
+      fontWeight: 600,
+      color: colors.turquoise,
+    },
   },
   h6: {
     ...typographyDefaults,
     fontSize: "22px",
     lineHeight: "29px",
     fontWeight: 600,
+    "& em > strong": {
+      fontWeight: 600,
+      color: colors.turquoise,
+    },
   },
   p: {
     ...typographyDefaults,
