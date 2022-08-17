@@ -108,7 +108,7 @@ export const HeaderSection: FC = ({ children }) => {
                   arrowDirection="down"
                   onClick={() => setShowMore(!showMore)}
                 >
-                  {t("more")}
+                  {t("readMore")}
                 </OutlinedButton>
               </Grid>
             </Grid>
