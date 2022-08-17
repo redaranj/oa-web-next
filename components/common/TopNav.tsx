@@ -21,7 +21,7 @@ export const TopNav = () => {
   const router = useRouter();
   const t = useTranslate();
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const { white, turquoise, mediumGrey, mediumBurgundy, darkBurgundy } = colors;
+  const { white, turquoise, mediumBurgundy, darkBurgundy } = colors;
   const { body } = typography;
   const { ps, pl, ts, tl, ds, dl } = breakpoints;
   const menuItemProps = {
@@ -33,11 +33,10 @@ export const TopNav = () => {
     p: 2,
     m: 0,
     borderRadius: 2,
-    border: "1px solid transparent",
     textDecoration: "none",
     "&:hover": {
-      backgroundColor: `${turquoise}dd`,
-      border: `1px solid ${white}`,
+      color: turquoise,
+      backgroundColor: white,
     },
   };
   const getAnchorRef = () => ref.current;
@@ -133,28 +132,8 @@ export const TopNav = () => {
                   flexWrap="nowrap"
                   spacing={4}
                   xs="auto"
+                  ref={ref}
                 >
-                  <Grid
-                    item
-                    sx={{
-                      display: "initial",
-                      [ps]: {
-                        display: "none",
-                      },
-                      [ds]: {
-                        display: "initial",
-                      },
-                    }}
-                  >
-                    <Box
-                      ref={ref}
-                      sx={{
-                        backgroundColor: mediumGrey,
-                        height: "100%",
-                        width: "1px",
-                      }}
-                    />
-                  </Grid>
                   <Grid
                     item
                     container
@@ -297,15 +276,6 @@ export const TopNav = () => {
                     >
                       {t("donate")}
                     </FilledButton>
-                  </Grid>
-                  <Grid item>
-                    <Box
-                      sx={{
-                        backgroundColor: mediumGrey,
-                        height: "100%",
-                        width: "1px",
-                      }}
-                    />
                   </Grid>
                 </Grid>
                 <Grid

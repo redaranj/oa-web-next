@@ -23,23 +23,53 @@ export const Footer: FC = () => {
   const { body } = typography;
   const { lightGrey, mediumGrey, mediumBurgundy, darkBurgundy, turquoise } =
     colors;
-  const { ps, pl, ds } = breakpoints;
+  const { ps, pl, ts, tl, ds, dl } = breakpoints;
   const linkStyles = {
     ...body,
+    mb: 2,
     fontWeight: 900,
     "&:hover": { color: turquoise },
     cursor: "pointer",
   };
   const creativeCommonsIconSize = "19px";
-  const socialIconSize = "32px";
+  const socialIconSize = "28px";
 
   return (
-    <PageSection backgroundColor={lightGrey}>
+    <PageSection
+      backgroundColor={lightGrey}
+      sx={{
+        py: 5,
+        [ps]: {
+          py: 1,
+          px: 3,
+        },
+        [pl]: {
+          py: 1,
+          px: 3,
+        },
+        [ts]: {
+          py: 4,
+          px: 4.375,
+        },
+        [tl]: {
+          py: 4,
+          px: 4.375,
+        },
+        [ds]: {
+          py: 5,
+          px: 6.25,
+        },
+        [dl]: {
+          py: 5,
+          px: 11.25,
+        },
+      }}
+    >
       <Grid
         container
         sx={{
           paddingTop: 0,
-          paddingBottom: 6,
+          paddingBottom: 0,
           flexDirection: "row",
           flexWrap: "nowrap",
           [ps]: {
@@ -71,7 +101,7 @@ export const Footer: FC = () => {
               width: "40%",
             },
           }}
-          spacing={8}
+          spacing={4}
         >
           <Grid
             item
@@ -271,7 +301,13 @@ export const Footer: FC = () => {
             }}
             justifyContent="space-between"
           >
-            <Grid item container direction="row" spacing={0}>
+            <Grid
+              item
+              container
+              direction="row"
+              spacing={0}
+              justifyContent="flex-start"
+            >
               <Grid item>
                 <IconLink
                   image={twitter}
@@ -308,7 +344,7 @@ export const Footer: FC = () => {
                 <IconLink
                   image={youtube}
                   size={socialIconSize}
-                  url="https://youtube.com/openarchive"
+                  url="https://www.youtube.com/channel/UCE91tUcpuC93VtcBvJ8vqcQ"
                   alt="YouTube logo"
                 />
               </Grid>
@@ -338,7 +374,7 @@ export const Footer: FC = () => {
               alignContent="center"
             >
               <Grid item>
-                <Box sx={{ mt: "-18px" }}>
+                <Box sx={{ mt: "-6px" }}>
                   <Image src={emailIcon} alt="" loader={loader} />
                 </Box>
               </Grid>

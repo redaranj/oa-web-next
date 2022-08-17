@@ -13,7 +13,7 @@ import saveMore from "public/images/save-more.png";
 export const HeaderSection: FC = ({ children }) => {
   const [showMore, setShowMore] = useState(false);
   const t = useTranslate();
-  const { lightGrey, mediumGrey, white } = colors;
+  const { lightGrey, white } = colors;
   const { bodyLarge } = typography;
   const { ps, pl, ts, tl, ds, dl } = breakpoints;
   const [title, description, ...rest] = children as any[];
@@ -91,16 +91,6 @@ export const HeaderSection: FC = ({ children }) => {
                 >
                   <Image src={saveLogo} loader={loader} alt="Save logo" />
                 </Box>
-              </Grid>
-              <Grid item>
-                <Box
-                  sx={{
-                    width: "1px",
-                    mt: "12px",
-                    height: "70%",
-                    backgroundColor: mediumGrey,
-                  }}
-                />
               </Grid>
               <Grid item>{title}</Grid>
             </Grid>
