@@ -21,14 +21,21 @@ export const AcronymItem: FC = ({ children }) => {
         direction="row"
         flexWrap="nowrap"
         sx={{
-          pt: "70px",
           flexDirection: "row",
           [ps]: { flexDirection: "column" },
           [tl]: { flexDirection: "row" },
         }}
       >
-        <Grid item sx={{ width: "50%" }}>
-          <Box sx={{ "> p": bodyLarge }}>{description}</Box>
+        <Grid
+          container
+          item
+          sx={{ width: "50%" }}
+          direction="column"
+          justifyContent="center"
+        >
+          <Grid item>
+            <Box sx={{ "> p": bodyLarge }}>{description}</Box>
+          </Grid>
         </Grid>
         <Grid
           container
@@ -39,9 +46,8 @@ export const AcronymItem: FC = ({ children }) => {
           <Grid item>
             <Box
               sx={{
-                overflow: "visible",
-                width: "100%",
-                mt: "-104px",
+                width: "90%",
+                margin: "0 auto",
               }}
             >
               <Image src={image} alt="" loader={loader} />

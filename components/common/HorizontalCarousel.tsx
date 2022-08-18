@@ -23,6 +23,7 @@ const SlideNavigation = () => {
         position: "absolute",
         bottom: 35,
         width: "100%",
+        zIndex: 1000,
       }}
     >
       <Grid container direction="row" spacing={3} alignItems="center">
@@ -53,6 +54,7 @@ type HorizontalCarouselProps = PropsWithChildren<{
   columnOnMobile?: boolean;
   visibleCount?: number;
   spaceBetween?: number;
+  paddingBottom?: number;
   autoplay?: boolean;
 }>;
 
@@ -63,6 +65,7 @@ export const HorizontalCarousel: FC<HorizontalCarouselProps> = ({
   columnOnMobile = false,
   visibleCount = 2.5,
   spaceBetween = 40,
+  paddingBottom = 90,
   autoplay = false,
   children,
 }) => {
@@ -80,11 +83,11 @@ export const HorizontalCarousel: FC<HorizontalCarouselProps> = ({
       >
         <Swiper
           modules={[A11y, Autoplay]}
-          autoplay={{ delay: autoplay ? 4000 : null }}
+          autoplay={autoplay ? { delay: 4000 } : false}
           spaceBetween={spaceBetween}
           slidesPerView={visibleCount}
           breakpoints={breakpoints}
-          style={{ paddingBottom: 23 }}
+          style={{ paddingBottom }}
         >
           {(children as any).map((child: any, index: number) => (
             <SwiperSlide key={index}>{child}</SwiperSlide>
