@@ -16,15 +16,17 @@ export const PartnerItem: FC = ({ children }) => {
       item
       container
       direction="column"
-      sx={{ width: "33%", [ps]: { width: "100%" }, [tl]: { width: "33%" } }}
+      sx={{ width: "20%", [ps]: { width: "100%" }, [tl]: { width: "20%" } }}
       alignItems="center"
       justifyContent="space-around"
     >
-      <Link href={url}>
-        <Box>
-          <Image src={image} alt={name} loader={loader} />
-        </Box>
-      </Link>
+      <Grid item>
+        <Link href={url}>
+          <Box sx={{ width: 150 }}>
+            <Image src={image} alt={name} loader={loader} />
+          </Box>
+        </Link>
+      </Grid>
     </Grid>
   );
 };

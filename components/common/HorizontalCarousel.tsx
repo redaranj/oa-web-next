@@ -1,7 +1,7 @@
 import { FC, PropsWithChildren } from "react";
 import Image from "next/image";
 import { Box, Button, Grid } from "@mui/material";
-import { A11y, Autoplay } from "swiper";
+import { A11y, Autoplay, Mousewheel, Keyboard } from "swiper";
 /* eslint-disable import/no-unresolved */
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import "swiper/css";
@@ -35,10 +35,9 @@ const SlideNavigation = () => {
             <Image src={forward} loader={loader} />
           </Button>
         </Grid>
-        <Grid item sx={{ width: "80%" }}>
+        <Grid item flexGrow={1}>
           <Box
             sx={{
-              flexGrow: 1,
               height: "1px",
               width: "100%",
               backgroundColor: mediumGrey,
@@ -82,11 +81,13 @@ export const HorizontalCarousel: FC<HorizontalCarouselProps> = ({
         }}
       >
         <Swiper
-          modules={[A11y, Autoplay]}
+          modules={[A11y, Autoplay, Keyboard, Mousewheel]}
           autoplay={autoplay ? { delay: 4000 } : false}
           spaceBetween={spaceBetween}
           slidesPerView={visibleCount}
           breakpoints={breakpoints}
+          mousewheel
+          keyboard
           style={{ paddingBottom }}
         >
           {(children as any).map((child: any, index: number) => (
