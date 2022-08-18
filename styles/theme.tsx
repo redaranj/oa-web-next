@@ -245,6 +245,10 @@ export const typography = {
       fontWeight: 600,
       color: colors.turquoise,
     },
+    "& strong > em": {
+      fontWeight: 600,
+      color: colors.turquoise,
+    },
   },
   blockquote: { ...typographyDefaults },
   outlinedButton: {

@@ -1,9 +1,9 @@
 import { FC } from "react";
 import Image from "next/image";
-import { Grid } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import { colors, loader, typography } from "styles/theme";
 import { HeaderSection as BaseHeaderSection } from "components/common/HeaderSection";
-import codeConduct from "public/images/code-conduct.svg";
+import codeConduct from "public/images/code-of-conduct.png";
 
 export const HeaderSection: FC = ({ children }) => {
   const { lightGrey } = colors;
@@ -22,7 +22,9 @@ export const HeaderSection: FC = ({ children }) => {
           {children}
         </Grid>
         <Grid item xs={5}>
-          <Image src={codeConduct} alt="" loader={loader} />
+          <Box sx={{ width: "70%", margin: "0 auto" }}>
+            <Image src={codeConduct} alt="" loader={loader} />
+          </Box>
         </Grid>
       </Grid>
     </BaseHeaderSection>

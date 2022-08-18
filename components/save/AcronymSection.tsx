@@ -10,7 +10,7 @@ export const AcronymSection: FC = ({ children }) => {
 
   return (
     <PageSection backgroundColor={white} sx={{ pb: 0 }}>
-      <HorizontalCarousel visibleCount={1}>
+      <HorizontalCarousel visibleCount={1} autoplay>
         {items.map((item, index) => (
           <SwiperSlide key={index}>{item}</SwiperSlide>
         ))}

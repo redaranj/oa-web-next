@@ -4,7 +4,7 @@ import { colors, typography } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 
 export const ContentSection: FC = ({ children }) => {
-  const { white } = colors;
+  const { white, turquoise } = colors;
   const { bodyLarge } = typography;
 
   return (

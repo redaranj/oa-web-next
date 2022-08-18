@@ -1,7 +1,7 @@
 import { FC, PropsWithChildren } from "react";
 import Image from "next/image";
 import { Box, Button, Grid } from "@mui/material";
-import { A11y } from "swiper";
+import { A11y, Autoplay } from "swiper";
 /* eslint-disable import/no-unresolved */
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import "swiper/css";
@@ -53,6 +53,7 @@ type HorizontalCarouselProps = PropsWithChildren<{
   columnOnMobile?: boolean;
   visibleCount?: number;
   spaceBetween?: number;
+  autoplay?: boolean;
 }>;
 
 // const { mediumGrey } = colors;t
@@ -62,6 +63,7 @@ export const HorizontalCarousel: FC<HorizontalCarouselProps> = ({
   columnOnMobile = false,
   visibleCount = 2.5,
   spaceBetween = 40,
+  autoplay = false,
   children,
 }) => {
   const { ps, ts } = breakpoints;
@@ -77,11 +79,12 @@ export const HorizontalCarousel: FC<HorizontalCarouselProps> = ({
         }}
       >
         <Swiper
-          modules={[A11y]}
+          modules={[A11y, Autoplay]}
+          autoplay={{ delay: autoplay ? 4000 : null }}
           spaceBetween={spaceBetween}
           slidesPerView={visibleCount}
           breakpoints={breakpoints}
-          style={{ paddingBottom: 90 }}
+          style={{ paddingBottom: 23 }}
         >
           {(children as any).map((child: any, index: number) => (
             <SwiperSlide key={index}>{child}</SwiperSlide>
