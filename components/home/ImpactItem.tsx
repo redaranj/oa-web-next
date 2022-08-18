@@ -26,7 +26,7 @@ export const ImpactItem: FC = ({ children }) => {
       }}
     >
       <Grid item>
-        <Box sx={{ width: "50px", mb: "8px" }}>{image}</Box>
+        <Box sx={{ width: "70px", height: "70px", mb: 3 }}>{image}</Box>
       </Grid>
       <Grid item>
         <Box component="h5" sx={h5}>

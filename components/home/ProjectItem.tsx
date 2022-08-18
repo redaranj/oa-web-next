@@ -1,8 +1,10 @@
 import { FC } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Box, Grid } from "@mui/material";
-import { colors, typography, breakpoints } from "styles/theme";
+import { colors, typography, breakpoints, loader } from "styles/theme";
 import { loadImage, getURL } from "lib/frontendHelpers";
+import rightArrow from "public/images/right-arrow.svg";
 
 export const ProjectItem: FC = ({ children }) => {
   const { white, turquoise } = colors;
@@ -22,6 +24,15 @@ export const ProjectItem: FC = ({ children }) => {
         overflow: "hidden",
         [ps]: { width: "100%" },
         [ts]: { width: "33%" },
+        "&:hover": {
+          "& h5": {
+            color: turquoise,
+          },
+          "& img": {
+            filter:
+            "brightness(0) saturate(100%) invert(47%) sepia(82%) saturate(4262%) hue-rotate(155deg) brightness(99%) contrast(101%)",
+          },
+        },
       }}
     >
       <Link href={url}>
@@ -40,7 +51,17 @@ export const ProjectItem: FC = ({ children }) => {
             <Grid item>
               <Box sx={{ p: 3 }}>{title}</Box>
             </Grid>
-            <Grid item />
+            <Grid item>
+              <Box sx={{ px: 3, py: 5 }}>
+                <Image
+                  src={rightArrow}
+                  alt=""
+                  loader={loader}
+                  width={20}
+                  height={20}
+                />
+              </Box>
+            </Grid>
           </Grid>
           <Grid item>
             <Box

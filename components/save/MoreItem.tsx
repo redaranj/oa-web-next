@@ -7,7 +7,7 @@ import { loadImage, getURL } from "lib/frontendHelpers";
 import rightArrow from "public/images/right-arrow.svg";
 
 export const MoreItem: FC = ({ children }) => {
-  const { lightGrey } = colors;
+  const { lightGrey, turquoise } = colors;
   const { ps, tl } = breakpoints;
   const [first, title, last] = children as any[];
   const image = loadImage(first);
@@ -16,7 +16,20 @@ export const MoreItem: FC = ({ children }) => {
   return (
     <Grid
       item
-      sx={{ width: "33%", [ps]: { width: "100%" }, [tl]: { width: "33%" } }}
+      sx={{
+        width: "33%",
+        [ps]: { width: "100%" },
+        [tl]: { width: "33%" },
+        "&:hover": {
+          "& h5": {
+            color: turquoise,
+          },
+          "& img": {
+            filter:
+              "brightness(0) saturate(100%) invert(47%) sepia(82%) saturate(4262%) hue-rotate(155deg) brightness(99%) contrast(101%)",
+          },
+        },
+      }}
     >
       <Link href={url}>
         <Grid container direction="column" sx={{ backgroundColor: lightGrey }}>
