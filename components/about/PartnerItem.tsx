@@ -22,8 +22,8 @@ export const PartnerItem: FC = ({ children }) => {
     >
       <Grid item>
         <Link href={url}>
-          <Box sx={{ width: 150 }}>
-            <Image src={image} alt={name} loader={loader} />
+          <Box sx={{ width: 150, position: "relative" }}>
+            <Image src={image} alt={name} loader={loader} objectFit="contain" />
           </Box>
         </Link>
       </Grid>

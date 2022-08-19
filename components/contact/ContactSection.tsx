@@ -7,6 +7,8 @@ import contactHeader from "public/images/contact-header.png";
 export const ContactSection: FC = ({ children }) => {
   const { white } = colors;
   const { outlinedButton, bodyLarge } = typography;
+  const rest = (children as any[]).slice(0, -1);
+  const last = (children as any[]).slice(-1);
 
   return (
     <BaseHeaderSection backgroundColor={white}>
@@ -33,14 +35,29 @@ export const ContactSection: FC = ({ children }) => {
         <Grid item xs={6}>
           <Box
             sx={{
-              a: outlinedButton,
+              a: {
+                "&:hover": {
+                  background: "none",
+                  filter:
+                    "brightness(0) saturate(100%) invert(47%) sepia(82%) saturate(4262%) hue-rotate(155deg) brightness(99%) contrast(101%)",
+                },
+              },
               "> p": { ...bodyLarge, mb: 6 },
               "> h6": { mb: 4 },
-              py: 6,
+              pt: 6,
               img: { pr: "10px !important" },
             }}
           >
-            {children}
+            {rest}
+          </Box>
+          <Box
+            sx={{
+              a: {
+                ...outlinedButton,
+              },
+            }}
+          >
+            {last}
           </Box>
         </Grid>
       </Grid>

@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Box, Grid } from "@mui/material";
 import { typography, colors, loader, breakpoints } from "styles/theme";
 import { HeaderSection as BaseHeaderSection } from "components/common/HeaderSection";
-import ourTeamHeader from "public/images/our-team-header.svg";
+import ourTeamHeader from "public/images/our-team-who-we-are.png";
 
 export const HeaderSection: FC = ({ children }) => {
   const { lightGrey, mediumGrey } = colors;

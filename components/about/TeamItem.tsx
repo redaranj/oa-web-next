@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Box, Grid } from "@mui/material";
 import { colors, breakpoints, typography, loader } from "styles/theme";
 import { OutlinedButton } from "components/common/OutlinedButton";
-import staff from "public/images/staff.svg";
+import ourTeam from "public/images/our-team-who-we-are.png";
 
 export const TeamItem: FC = ({ children }) => {
   const { lightGrey, black } = colors;
@@ -31,20 +31,25 @@ export const TeamItem: FC = ({ children }) => {
         >
           <Grid
             item
+            container
+            direction="column"
+            justifyContent="center"
             sx={{
               width: "50%",
               [ps]: { width: "100%" },
               [tl]: { width: "50%" },
             }}
           >
-            <Box
-              sx={{
-                width: "75%",
-                margin: "0 auto",
-              }}
-            >
-              <Image src={staff} alt="" loader={loader} />
-            </Box>
+            <Grid item>
+              <Box
+                sx={{
+                  width: "85%",
+                  margin: "0 auto",
+                }}
+              >
+                <Image src={ourTeam} alt="" loader={loader} />
+              </Box>
+            </Grid>
           </Grid>
           <Grid
             item
