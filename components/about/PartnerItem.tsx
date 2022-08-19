@@ -3,11 +3,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { Box, Grid } from "@mui/material";
 import { breakpoints, loader } from "styles/theme";
-import { loadImage } from "lib/frontendHelpers";
+import { loadImage, getURL } from "lib/frontendHelpers";
 
 export const PartnerItem: FC = ({ children }) => {
   const { ps, tl } = breakpoints;
-  const [first, url, ...rest] = children as any[];
+  const [first, second, ...rest] = children as any[];
+  const url = getURL(second);
   const image = loadImage(first);
   const name = rest as unknown as string;
 
