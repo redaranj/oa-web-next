@@ -2,7 +2,7 @@ import { FC } from "react";
 import { Grid, Box } from "@mui/material";
 import { colors, typography } from "styles/theme";
 import { HeaderSection as BaseHeaderSection } from "components/common/HeaderSection";
-import contactHeader from "public/images/contact-header.png";
+import contactUs from "public/images/contact-us.png";
 
 export const ContactSection: FC = ({ children }) => {
   const { white } = colors;
@@ -25,7 +25,7 @@ export const ContactSection: FC = ({ children }) => {
             sx={{
               height: "100%",
               width: "100%",
-              backgroundImage: `url(${contactHeader.src})`,
+              backgroundImage: `url(${contactUs.src})`,
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center center",
               backgroundSize: "cover",

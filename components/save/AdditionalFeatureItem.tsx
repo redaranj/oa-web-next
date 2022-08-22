@@ -46,6 +46,9 @@ export const AdditionalFeatureItem: FC = ({ children }) => {
             "> p": {
               ...bodyLarge,
               color: white,
+              "& em > strong": {
+                color: white,
+              },
               p: 4,
               m: 0,
             },

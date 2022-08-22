@@ -1,12 +1,11 @@
 import { FC } from "react";
 import { Grid, Box } from "@mui/material";
-import { colors, typography } from "styles/theme";
+import { typography } from "styles/theme";
 import { loadImage } from "lib/frontendHelpers";
 
 export const OpportunityItem: FC = ({ children }) => {
   const [first, ...rest] = children as any[];
   const { outlinedButton, bodyLarge } = typography;
-  const { turquoise } = colors;
   const image = loadImage(first);
 
   return (
@@ -29,16 +28,7 @@ export const OpportunityItem: FC = ({ children }) => {
             px: 5,
             py: 10,
             a: outlinedButton,
-            ul: { p: 0 },
             "& p": bodyLarge,
-            "li::marker": {
-              color: turquoise,
-              content: "'•'",
-              fontSize: "20px",
-              lineHeight: "0px",
-              m: 0,
-              p: 0,
-            },
           }}
         >
           {rest}
