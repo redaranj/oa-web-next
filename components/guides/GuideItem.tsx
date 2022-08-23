@@ -1,13 +1,13 @@
 import { FC, PropsWithChildren } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Box, Grid } from "@mui/material";
-import { typography, colors, breakpoints } from "styles/theme";
+import { typography, colors, breakpoints, loader } from "styles/theme";
 
 type GuideItemProps = PropsWithChildren<{
   title: string;
   description: string;
   category: string;
-  date: string;
   path: string;
   image: string;
 }>;
@@ -16,15 +16,13 @@ export const GuideItem: FC<GuideItemProps> = ({
   title,
   description,
   category,
-  date,
   path,
-  image,
+  image: imageName,
 }) => {
   const { h5, bodyLarge } = typography;
   const { lightGrey, darkGrey } = colors;
   const { ps, tl } = breakpoints;
-
-  console.log({ category, date });
+  const image = require(`public/images/${imageName}`).default;
 
   return (
     <Link href={path} passHref>
@@ -46,12 +44,11 @@ export const GuideItem: FC<GuideItemProps> = ({
               width: 400,
               [ps]: { width: "100%" },
               [tl]: { width: 400 },
-              p: 2,
-              backgroundImage: `url(images/${image})`,
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
+              border: `1px solid ${lightGrey}`,
             }}
-          />
+          >
+            <Image src={image} alt="" loader={loader} />
+          </Box>
         </Grid>
         <Grid
           item

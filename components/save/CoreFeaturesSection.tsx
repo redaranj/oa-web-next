@@ -2,7 +2,7 @@ import { FC } from "react";
 import { Box, Grid } from "@mui/material";
 import { colors, breakpoints, typography } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
-import coreFeaturesBackground from "public/images/core-features-background.png";
+import { HorizontalCarousel } from "components/common/HorizontalCarousel";
 
 export const CoreFeaturesSection: FC = ({ children }) => {
   const { white } = colors;
@@ -23,7 +23,6 @@ export const CoreFeaturesSection: FC = ({ children }) => {
           }}
         >
           <Grid
-            container
             direction="column"
             item
             sx={{
@@ -45,35 +44,10 @@ export const CoreFeaturesSection: FC = ({ children }) => {
             <Box sx={{ "> p": bodyLarge }}>{description}</Box>
           </Grid>
         </Grid>
-        <Grid
-          container
-          item
-          spacing={0}
-          sx={{
-            mt: "100px",
-            flexDirection: "row",
-            [ps]: { flexDirection: "column" },
-            [tl]: { flexDirection: "row" },
-            backgroundImage: `url(${coreFeaturesBackground.src})`,
-            backgroundPosition: "100% 100%",
-            backgroundSize: "50%",
-            backgroundRepeat: "no-repeat",
-          }}
-        >
-          <Grid
-            container
-            item
-            sx={{
-              width: "70%",
-              zIndex: 100,
-              flexDirection: "row",
-              [ps]: { flexDirection: "column", width: "100%" },
-              [tl]: { flexDirection: "row", width: "70%" },
-            }}
-            spacing={6}
-          >
+        <Grid item sx={{ width: "100%" }}>
+          <HorizontalCarousel columnOnMobile visibleCount={2.5}>
             {rest}
-          </Grid>
+          </HorizontalCarousel>
         </Grid>
       </Grid>
     </PageSection>

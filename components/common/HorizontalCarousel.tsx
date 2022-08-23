@@ -1,7 +1,7 @@
 import { FC, PropsWithChildren } from "react";
 import Image from "next/image";
 import { Box, Button, Grid } from "@mui/material";
-import { A11y, Autoplay, Mousewheel, Keyboard } from "swiper";
+import { A11y, Autoplay, Mousewheel, Keyboard, EffectFade } from "swiper";
 /* eslint-disable import/no-unresolved */
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import "swiper/css";
@@ -29,10 +29,10 @@ const SlideNavigation = () => {
       <Grid container direction="row" spacing={3} alignItems="center">
         <Grid item>
           <Button onClick={() => swiper.slidePrev()}>
-            <Image src={back} loader={loader} />
+            <Image src={back} alt="Previous slide" loader={loader} />
           </Button>
           <Button onClick={() => swiper.slideNext()}>
-            <Image src={forward} loader={loader} />
+            <Image src={forward} alt="Next slide" loader={loader} />
           </Button>
         </Grid>
         <Grid item flexGrow={1}>
@@ -55,6 +55,7 @@ type HorizontalCarouselProps = PropsWithChildren<{
   spaceBetween?: number;
   paddingBottom?: number;
   autoplay?: boolean;
+  transition?: any;
 }>;
 
 // const { mediumGrey } = colors;t
@@ -66,6 +67,7 @@ export const HorizontalCarousel: FC<HorizontalCarouselProps> = ({
   spaceBetween = 40,
   paddingBottom = 90,
   autoplay = false,
+  transition = "slide",
   children,
 }) => {
   const { ps, ts } = breakpoints;
@@ -81,13 +83,19 @@ export const HorizontalCarousel: FC<HorizontalCarouselProps> = ({
         }}
       >
         <Swiper
-          modules={[A11y, Autoplay, Keyboard, Mousewheel]}
-          autoplay={autoplay ? { delay: 4000 } : false}
+          modules={[A11y, Autoplay, Keyboard, Mousewheel, EffectFade]}
+          autoplay={
+            autoplay ? { delay: 4000, disableOnInteraction: true } : false
+          }
           spaceBetween={spaceBetween}
           slidesPerView={visibleCount}
           breakpoints={breakpoints}
           mousewheel
           keyboard
+          effect={transition}
+          fadeEffect={{
+            crossFade: true,
+          }}
           style={{ paddingBottom }}
         >
           {(children as any).map((child: any, index: number) => (

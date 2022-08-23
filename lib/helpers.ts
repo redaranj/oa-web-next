@@ -29,7 +29,7 @@ export const getIndexProps = (basePath: string) => {
         date,
         image,
       };
-    });
+    }).sort((a, b) => a.date < b.date ? -1 : 1);
 
   return {
     props: { pages },
