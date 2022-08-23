@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Box, Grid } from "@mui/material";
 import { colors, breakpoints, typography, loader } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
-import handPhone from "public/images/hand-phone.svg";
+import handPhone from "public/images/hand-phone.png";
 
 export const BeliefsSection: FC = ({ children }) => {
   const { lightGrey } = colors;
@@ -43,6 +43,7 @@ export const BeliefsSection: FC = ({ children }) => {
               sx={{
                 margin: "0 auto",
                 textAlign: "center",
+                width: 300,
               }}
             >
               <Image src={handPhone} alt="" loader={loader} />
