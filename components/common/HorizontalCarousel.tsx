@@ -71,8 +71,7 @@ export const HorizontalCarousel: FC<HorizontalCarouselProps> = ({
   children,
 }) => {
   const { ps, ts } = breakpoints;
-  console.log({ columnOnMobile, ps, ts });
-
+  
   return (
     <Box>
       <Box

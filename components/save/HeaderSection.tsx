@@ -8,7 +8,7 @@ import { PageSection } from "components/common/PageSection";
 import { OutlinedButton } from "components/common/OutlinedButton";
 import saveHeader from "public/images/save-header.png";
 import saveLogo from "public/images/save-logo.png";
-import saveMore from "public/images/save-more.png";
+import saveHand from "public/images/save-hand.png";
 
 export const HeaderSection: FC = ({ children }) => {
   const [showMore, setShowMore] = useState(false);
@@ -145,7 +145,7 @@ export const HeaderSection: FC = ({ children }) => {
                 sx={{
                   width: "100%",
                   height: "100%",
-                  backgroundImage: `url(${saveMore.src})`,
+                  backgroundImage: `url(${saveHand.src})`,
                   backgroundRepeat: "no-repeat",
                   backgroundPosition: "center center",
                   backgroundSize: "cover",

@@ -12,7 +12,6 @@ type WhoItemProps = PropsWithChildren<{
   quote: string;
   path: string;
   image: string;
-  backgroundProps: any;
 }>;
 
 export const WhoItem: FC<WhoItemProps> = ({
@@ -21,9 +20,8 @@ export const WhoItem: FC<WhoItemProps> = ({
   quote,
   path,
   image,
-  backgroundProps,
 }) => {
-  const { lightGrey } = colors;
+  const { lightGrey, turquoise } = colors;
   const { h5, body, bodyLarge } = typography;
   const loadedImage = require(`public/images/${image}`).default;
 
@@ -34,28 +32,29 @@ export const WhoItem: FC<WhoItemProps> = ({
         container
         direction="row"
         flexWrap="nowrap"
-        sx={{ height: 400 }}
+        sx={{
+          height: 450,
+          backgroundColor: lightGrey,
+          ":hover": { backgroundColor: turquoise, cursor: "pointer" },
+        }}
       >
-        <Grid item sx={{ width: "250px" }}>
+        <Grid item>
           <Box
             sx={{
-              backgroundColor: lightGrey,
-              backgroundImage: `url(${loadedImage.src})`,
-              backgroundSize: "210px",
-              backgroundPosition: "30px 40px",
-              backgroundRepeat: "no-repeat",
-              width: "100%",
-              height: "100%",
-              ...backgroundProps,
+              width: 250,
+              mt: 6,
+              ml: 6,
             }}
-          />
+          >
+            <Image src={loadedImage} alt={name} loader={loader} />
+          </Box>
         </Grid>
         <Grid
           container
           direction="column"
           wrap="nowrap"
           item
-          sx={{ width: "70%", backgroundColor: lightGrey, p: 6 }}
+          sx={{ width: "70%", backgroundColor: "transparent", p: 6 }}
         >
           <Grid item container direction="row" spacing={2} alignItems="center">
             <Grid item>
@@ -65,7 +64,7 @@ export const WhoItem: FC<WhoItemProps> = ({
             </Grid>
             <Grid item>
               <Box sx={{ mt: -1 }}>
-                <Image src={plus} loader={loader} />
+                <Image src={plus} alt="" loader={loader} />
               </Box>
             </Grid>
           </Grid>
@@ -75,7 +74,7 @@ export const WhoItem: FC<WhoItemProps> = ({
             </Box>
           </Grid>
           <Grid item>
-            <Image src={quotationMark} loader={loader} />
+            <Image src={quotationMark} alt="" loader={loader} />
             <Box component="p" sx={{ ...bodyLarge, mb: 2 }}>
               {quote}
             </Box>

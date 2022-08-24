@@ -28,6 +28,9 @@ export const RoleItem: FC = ({ children }) => {
             backgroundImage: `url(${image.src})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
+            ":hover": {
+              border: "1px solid red",
+            },
           }}
         >
           {title}

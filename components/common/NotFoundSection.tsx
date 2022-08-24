@@ -21,9 +21,9 @@ export const NotFoundSection: FC = ({ children }) => {
           <Box sx={{ ...h6, mb: 6 }}>{t("cantFindPage")}</Box>
   <OutlinedButton>{t("goToMainPage")}</OutlinedButton> */}
         </Box>
-        <Image src={FourOne} loader={loader} />
-        <Image src={Zero} loader={loader} />
-        <Image src={FourTwo} loader={loader} />
+        <Image src={FourOne} alt="four" loader={loader} />
+        <Image src={Zero} alt="oh" loader={loader} />
+        <Image src={FourTwo} alt="four" loader={loader} />
       </Box>
     </PageSection>
   );
