@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
 import { Box, Grid } from "@mui/material";
@@ -7,6 +8,9 @@ import { PageSection } from "components/common/PageSection";
 import { loadImage } from "lib/frontendHelpers";
 
 export const ArticleHeaderSection: FC = ({ children }) => {
+  const router = useRouter();
+  const pathComponents = router.pathname.split("/");
+  const section = pathComponents.at(-2);
   const { lightGrey, darkGrey, turquoise } = colors;
   const { bodyLarge } = typography;
   const [first, date, category, title, ...description] = children as any[];
@@ -24,7 +28,7 @@ export const ArticleHeaderSection: FC = ({ children }) => {
           }}
         >
           <Grid item>
-            <Link href="/news">
+            <Link href={`/${section}`}>
               <Box
                 sx={{
                   a: { textDecoration: "none" },
@@ -33,7 +37,7 @@ export const ArticleHeaderSection: FC = ({ children }) => {
                   mb: 3,
                 }}
               >
-                All news
+                All {section}
               </Box>
             </Link>
           </Grid>

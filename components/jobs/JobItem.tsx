@@ -29,7 +29,14 @@ export const JobItem: FC<JobItemProps> = ({ title, date, path }) => {
             [tl]: { flexDirection: "row" },
           }}
         >
-          <Grid item sx={{ width: "20%" }}>
+          <Grid
+            item
+            sx={{
+              width: "20%",
+              [ps]: { width: "100%" },
+              [tl]: { width: "20%" },
+            }}
+          >
             <Box
               sx={{
                 ...bodyLarge,
@@ -54,7 +61,13 @@ export const JobItem: FC<JobItemProps> = ({ title, date, path }) => {
             container
             direction="column"
             justifyContent="space-around"
-            sx={{ mt: 0, p: 2, width: "65%" }}
+            sx={{
+              mt: 0,
+              p: 2,
+              width: "65%",
+              [ps]: { width: "100%", p: 0 },
+              [tl]: { width: "65%" },
+            }}
           >
             <Grid item>
               <Box component="h5" sx={h5}>
@@ -67,7 +80,12 @@ export const JobItem: FC<JobItemProps> = ({ title, date, path }) => {
             container
             direction="column"
             justifyContent="space-around"
-            sx={{ width: "15%", pt: 2 }}
+            sx={{
+              width: "15%",
+              pt: 2,
+              [ps]: { width: "100%" },
+              [tl]: { width: "15%" },
+            }}
           >
             <OutlinedButton textColor={black} arrowDirection="right">
               More

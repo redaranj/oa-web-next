@@ -28,7 +28,15 @@ export const PersonItem: FC<PersonItemProps> = ({
 
   return (
     <Grid item>
-      <Box sx={{ backgroundColor, p: 6, pb: 0 }}>
+      <Box
+        sx={{
+          backgroundColor,
+          p: 6,
+          pb: 0,
+          [ps]: { p: 3, mt: 3 },
+          [tl]: { p: 6, mt: 0 },
+        }}
+      >
         <Grid
           item
           container
@@ -44,7 +52,15 @@ export const PersonItem: FC<PersonItemProps> = ({
             item
             container
             direction="row"
-            sx={{ width: "50%" }}
+            sx={{
+              width: "50%",
+              flexDirection: "row",
+              [ps]: {
+                width: "100%",
+                flexDirection: "column",
+              },
+              [tl]: { width: "50%", flexDirection: "row" },
+            }}
             flexWrap="nowrap"
             spacing={4}
           >
@@ -63,11 +79,34 @@ export const PersonItem: FC<PersonItemProps> = ({
             </Grid>
             <Grid item container direction="column">
               {name}
-              <Box sx={{ mt: 2, "> p": { color: turquoise } }}>{jobTitle}</Box>
+              <Box
+                sx={{
+                  mt: 2,
+                  "> p": { color: turquoise, mb: 0 },
+                }}
+              >
+                {jobTitle}
+              </Box>
             </Grid>
           </Grid>
-          <Grid item container direction="column" sx={{ width: "50%" }}>
-            <Grid item>
+          <Grid
+            item
+            container
+            direction="column"
+            sx={{
+              width: "50%",
+              [ps]: { width: "100%" },
+              [tl]: { width: "50%" },
+            }}
+          >
+            <Grid
+              item
+              sx={{
+                borderTop: "none",
+                [ps]: { borderTop: `1px solid ${mediumGrey}`, pt: 4 },
+                [tl]: { borderTop: "none", pt: 0 },
+              }}
+            >
               {!expand && (
                 <Box
                   sx={{

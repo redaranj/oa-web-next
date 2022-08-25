@@ -8,7 +8,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 /* eslint-enable import/no-unresolved */
-import { colors, loader } from "styles/theme";
+import { colors, loader, breakpoints as bp } from "styles/theme";
 import back from "public/images/back.svg";
 import forward from "public/images/forward.svg";
 
@@ -70,8 +70,8 @@ export const HorizontalCarousel: FC<HorizontalCarouselProps> = ({
   transition = "slide",
   children,
 }) => {
-  const { ps, ts } = breakpoints;
-  
+  const { ps, ts } = bp;
+
   return (
     <Box>
       <Box

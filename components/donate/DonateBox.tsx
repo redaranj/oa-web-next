@@ -1,10 +1,11 @@
 import { FC } from "react";
 import { Box } from "@mui/material";
-import { colors } from "styles/theme";
+import { colors, breakpoints } from "styles/theme";
 
 export const DonateBox: FC = ({ children }) => {
   const { mediumBurgundy, darkBurgundy, turquoise, black, lightGrey, white } =
     colors;
+  const { ps, ts } = breakpoints;
 
   return (
     <Box
@@ -32,6 +33,8 @@ export const DonateBox: FC = ({ children }) => {
           fontWeight: "bold",
           textColor: "bold",
           width: "29%",
+          [ps]: { width: "40%" },
+          [ts]: { width: "29%" },
           cursor: "pointer",
           "&:hover": {
             backgroundColor: turquoise,

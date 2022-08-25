@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Box } from "@mui/material";
-import { loadImage } from "lib/frontendHelpers";
 
 export const breakpoints = {
   dl: "@media (min-width: 1366px)",
@@ -37,7 +36,7 @@ export const typography = {
     ...typographyDefaults,
     fontWeight: 600,
     fontSize: "90px",
-    lineHeight: "110%",
+    lineHeight: "100%",
     marginBottom: "40px",
     [breakpoints.ps]: {
       fontSize: "34px",
@@ -148,7 +147,7 @@ export const typography = {
     ...typographyDefaults,
     fontWeight: 700,
     fontSize: "30px",
-    lineHeight: "39px",
+    lineHeight: "130%",
     mb: 2,
     [breakpoints.ps]: {
       fontSize: "20px",
@@ -175,9 +174,27 @@ export const typography = {
   },
   h6: {
     ...typographyDefaults,
-    fontSize: "22px",
-    lineHeight: "29px",
+    fontSize: "24px",
+    lineHeight: "150%",
     fontWeight: 600,
+    [breakpoints.ps]: {
+      fontSize: "18px",
+    },
+    [breakpoints.pl]: {
+      fontSize: "18px",
+    },
+    [breakpoints.ts]: {
+      fontSize: "20px",
+    },
+    [breakpoints.tl]: {
+      fontSize: "20px",
+    },
+    [breakpoints.ds]: {
+      fontSize: "22px",
+    },
+    [breakpoints.dl]: {
+      fontSize: "24px",
+    },
     "& em > strong": {
       fontWeight: 600,
       color: colors.turquoise,

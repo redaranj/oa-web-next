@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Grid, Box } from "@mui/material";
 import { OutlinedButton } from "components/common/OutlinedButton";
-import { colors, typography, loader } from "styles/theme";
+import { colors, typography, loader, breakpoints } from "styles/theme";
 import quotationMark from "public/images/quote.svg";
 
 type UseCaseItemProps = {
@@ -23,12 +23,21 @@ export const UseCaseItem: FC<UseCaseItemProps> = ({
 }) => {
   const { lightGrey, mediumGrey, black } = colors;
   const { h5, h6, bodyLarge } = typography;
+  const { ps, tl } = breakpoints;
   const loadedImage = require(`public/images/${image}`).default;
 
   return (
     <Link href={path}>
       <Box sx={{ backgroundColor: lightGrey, cursor: "pointer" }}>
-        <Grid container direction="row" wrap="nowrap">
+        <Grid
+          container
+          sx={{
+            flexDirection: "row",
+            flexWrap: "nowrap",
+            [ps]: { flexDirection: "column" },
+            [tl]: { flexDirection: "row" },
+          }}
+        >
           <Grid item flexGrow={0}>
             <Box sx={{ width: 220, m: 6, mr: 2 }}>
               <Image src={loadedImage} alt="" loader={loader} />

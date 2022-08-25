@@ -55,7 +55,6 @@ export const QuestionsSection: FC = ({ children }) => {
         <Grid
           container
           direction="row"
-          wrap="nowrap"
           justifyContent="center"
           spacing={3}
           sx={{ mb: 6 }}
@@ -71,7 +70,7 @@ export const QuestionsSection: FC = ({ children }) => {
             </Grid>
           ))}
         </Grid>
-        <Box>{filteredChildren}</Box>
+        <Box sx={{ width: "100%" }}>{filteredChildren}</Box>
       </Grid>
     </PageSection>
   );

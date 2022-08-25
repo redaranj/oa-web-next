@@ -1,17 +1,23 @@
 import { FC } from "react";
 import { Box, Stack } from "@mui/material";
-import { colors } from "styles/theme";
+import { colors, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 
 export const ServeSection: FC = ({ children }) => {
   const { lightGrey } = colors;
+  const { ps, ts } = breakpoints;
   const [title, subtitle, ...rest] = children as any[];
 
   return (
     <PageSection backgroundColor={lightGrey}>
       <Box
         sx={{
-          h5: { width: "50%", mb: 6 },
+          h5: {
+            width: "50%",
+            mb: 6,
+            [ps]: { width: "100%" },
+            [ts]: { width: "50%" },
+          },
         }}
       >
         {title}
@@ -25,6 +31,15 @@ export const ServeSection: FC = ({ children }) => {
           ".serveItem:nth-of-type(odd)": {
             flexDirection: "row",
           },
+          [ps]: {
+            ".serveItem:nth-of-type(even)": {
+              flexDirection: "column",
+            },
+            ".serveItem:nth-of-type(odd)": {
+              flexDirection: "column",
+            },
+          },
+          [ts]: { flexDirection: "row-reverse" },
         }}
       >
         {rest}

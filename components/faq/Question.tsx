@@ -19,6 +19,7 @@ export const Question: FC<QuestionProps> = ({ expanded, children }) => {
       <Grid
         container
         direction="row"
+        wrap="nowrap"
         justifyContent="space-between"
         spacing={3}
       >

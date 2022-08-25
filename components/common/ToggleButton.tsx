@@ -39,6 +39,7 @@ export const ToggleButton: FC<ToggleButtonProps> = ({
         },
         borderRadius: "500px",
         fontWeight: 700,
+        whiteSpace: "nowrap",
         textTransform: "none",
         color: black,
         backgroundColor: on ? lightTurquoise : lightGrey,

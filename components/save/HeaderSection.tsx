@@ -76,7 +76,7 @@ export const HeaderSection: FC = ({ children }) => {
               [ps]: {
                 width: "100%",
               },
-              [ts]: {
+              [tl]: {
                 width: "50%",
               },
             }}
@@ -119,10 +119,12 @@ export const HeaderSection: FC = ({ children }) => {
             direction="column"
             sx={{
               width: "50%",
+              [ps]: { width: "100%" },
+              [ts]: { width: "100%" },
             }}
           >
             <Grid item>
-              <Box sx={{ width: "100%", [ps]: { width: "100%" } }}>
+              <Box sx={{ width: "100%" }}>
                 <Image src={saveHeader} loader={loader} alt="" />
               </Box>
             </Grid>
@@ -140,7 +142,14 @@ export const HeaderSection: FC = ({ children }) => {
               [ts]: { flexDirection: "row" },
             }}
           >
-            <Grid item sx={{ width: "50%" }}>
+            <Grid
+              item
+              sx={{
+                width: "50%",
+                [ps]: { width: "100%" },
+                [ts]: { width: "100%" },
+              }}
+            >
               <Box
                 sx={{
                   width: "100%",
@@ -152,7 +161,14 @@ export const HeaderSection: FC = ({ children }) => {
                 }}
               />
             </Grid>
-            <Grid item sx={{ width: "50%" }}>
+            <Grid
+              item
+              sx={{
+                width: "50%",
+                [ps]: { width: "100%" },
+                [ts]: { width: "100%" },
+              }}
+            >
               <Box sx={{ p: 3, "> p": bodyLarge }}>{rest}</Box>
             </Grid>
           </Grid>

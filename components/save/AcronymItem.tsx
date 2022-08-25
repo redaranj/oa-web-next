@@ -29,7 +29,7 @@ export const AcronymItem: FC = ({ children }) => {
         <Grid
           container
           item
-          sx={{ width: "50%" }}
+          sx={{ width: "50%", [ps]: { width: "100%" }, [tl]: { width: "50%" } }}
           direction="column"
           justifyContent="center"
         >
@@ -40,7 +40,12 @@ export const AcronymItem: FC = ({ children }) => {
         <Grid
           container
           item
-          sx={{ width: "50%", overflow: "visible" }}
+          sx={{
+            width: "50%",
+            [ps]: { width: "100%" },
+            [tl]: { width: "50%" },
+            overflow: "visible",
+          }}
           justifyContent="flex-end"
         >
           <Grid item>

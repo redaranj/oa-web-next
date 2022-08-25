@@ -1,12 +1,13 @@
 import { FC } from "react";
 import { Grid, Box } from "@mui/material";
-import { colors, typography } from "styles/theme";
+import { colors, typography, breakpoints } from "styles/theme";
 import { HeaderSection as BaseHeaderSection } from "components/common/HeaderSection";
 import contactUs from "public/images/contact-us.png";
 
 export const ContactSection: FC = ({ children }) => {
   const { white } = colors;
   const { outlinedButton, bodyLarge } = typography;
+  const { ps, tl } = breakpoints;
   const rest = (children as any[]).slice(0, -1);
   const last = (children as any[]).slice(-1);
 
@@ -18,13 +19,20 @@ export const ContactSection: FC = ({ children }) => {
         spacing={6}
         sx={{
           flexDirection: "row",
+          [ps]: { flexDirection: "column" },
+          [tl]: { flexDirection: "row" },
         }}
       >
-        <Grid item xs={6}>
+        <Grid
+          item
+          sx={{ width: "50%", [ps]: { width: "100%" }, [tl]: { width: "50%" } }}
+        >
           <Box
             sx={{
               height: "100%",
               width: "100%",
+              [ps]: { height: 200 },
+              [tl]: { height: "100%" },
               backgroundImage: `url(${contactUs.src})`,
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center center",
@@ -32,7 +40,10 @@ export const ContactSection: FC = ({ children }) => {
             }}
           />
         </Grid>
-        <Grid item xs={6}>
+        <Grid
+          item
+          sx={{ width: "50%", [ps]: { width: "100%" }, [tl]: { width: "50%" } }}
+        >
           <Box
             sx={{
               a: {

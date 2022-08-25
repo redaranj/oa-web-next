@@ -45,7 +45,13 @@ export const CoreFeaturesSection: FC = ({ children }) => {
           </Grid>
         </Grid>
         <Grid item sx={{ width: "100%" }}>
-          <HorizontalCarousel columnOnMobile visibleCount={2.5}>
+          <HorizontalCarousel
+            breakpoints={{
+              0: { slidesPerView: 1.25, spaceBetween: 20 },
+              576: { slidesPerView: 2.5, spaceBetween: 40 },
+            }}
+            visibleCount={2.5}
+          >
             {rest}
           </HorizontalCarousel>
         </Grid>
