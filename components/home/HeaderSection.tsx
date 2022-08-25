@@ -9,7 +9,7 @@ import header2 from "public/images/home-header-2.png";
 export const HeaderSection: FC = ({ children }) => {
   const { white } = colors;
   const { bodyLarge } = typography;
-  const { ps, pl, tl } = breakpoints;
+  const { ps, ts, tl } = breakpoints;
   const [first, ...rest] = children as any[];
 
   return (
@@ -19,7 +19,7 @@ export const HeaderSection: FC = ({ children }) => {
         sx={{
           flexDirection: "row",
           [ps]: { flexDirection: "column-reverse" },
-          [pl]: { flexDirection: "row" },
+          [ts]: { flexDirection: "row" },
         }}
         spacing={6}
       >
@@ -38,7 +38,12 @@ export const HeaderSection: FC = ({ children }) => {
           }}
         >
           <Grid item>{first}</Grid>
-          <Grid item container direction="column" sx={{ mb: 12 }}>
+          <Grid
+            item
+            container
+            direction="column"
+            sx={{ mb: 12, [ps]: { mb: 0 }, [tl]: { mb: 12 } }}
+          >
             <Grid item>
               <Box sx={{ "> p": bodyLarge }}>{rest}</Box>
             </Grid>
@@ -46,9 +51,11 @@ export const HeaderSection: FC = ({ children }) => {
         </Grid>
         <Grid
           item
+          container
+          direction="row"
+          justifyContent="center"
           sx={{
             width: "50%",
-            overflow: "visible",
             [ps]: {
               width: "100%",
             },
@@ -57,19 +64,36 @@ export const HeaderSection: FC = ({ children }) => {
             },
           }}
         >
-          <Box
+          <Grid
+            item
             sx={{
               height: "100%",
-              position: "relative",
+              width: "80%",
             }}
           >
-            <Box sx={{ position: "absolute", width: 300, top: 0, left: 0 }}>
-              <Image src={header1} alt="" loader={loader} />
+            <Box
+              sx={{
+                position: "relative",
+                width: "100%",
+                height: "100%",
+                minHeight: 300,
+              }}
+            >
+              <Box sx={{ position: "absolute", width: "65%", top: 0, left: 0 }}>
+                <Image src={header1} alt="" loader={loader} />
+              </Box>
+              <Box
+                sx={{
+                  position: "absolute",
+                  width: "65%",
+                  top: "35%",
+                  left: "35%",
+                }}
+              >
+                <Image src={header2} alt="" loader={loader} />
+              </Box>
             </Box>
-            <Box sx={{ position: "absolute", width: 300, bottom: 0, right: 0 }}>
-              <Image src={header2} alt="" loader={loader} />
-            </Box>
-          </Box>
+          </Grid>
         </Grid>
       </Grid>
     </PageSection>

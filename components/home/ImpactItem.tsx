@@ -4,7 +4,7 @@ import { typography, breakpoints } from "styles/theme";
 
 export const ImpactItem: FC = ({ children }) => {
   const { h5, bodyLarge } = typography;
-  const { tl, pl, ps } = breakpoints;
+  const { tl, ts, ps } = breakpoints;
   const [image, title, ...description] = children as any[];
 
   return (
@@ -17,7 +17,7 @@ export const ImpactItem: FC = ({ children }) => {
         [ps]: {
           width: "100%",
         },
-        [pl]: {
+        [ts]: {
           width: "50%",
         },
         [tl]: {

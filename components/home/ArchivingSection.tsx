@@ -9,7 +9,7 @@ import mission2 from "public/images/mission-2.png";
 export const ArchivingSection: FC = ({ children }) => {
   const { outlinedButton, bodyLarge } = typography;
   const { lightGrey } = colors;
-  const { ps, pl } = breakpoints;
+  const { ps, tl } = breakpoints;
   const [title, description, ...button] = children as any[];
 
   return (
@@ -20,23 +20,54 @@ export const ArchivingSection: FC = ({ children }) => {
         sx={{
           flexDirection: "row",
           [ps]: { flexDirection: "column" },
-          [pl]: { flexDirection: "row" },
+          [tl]: { flexDirection: "row" },
         }}
       >
-        <Grid item sx={{ width: "50%" }}>
-          <Box
+        <Grid
+          item
+          container
+          direction="row"
+          justifyContent="center"
+          sx={{
+            width: "50%",
+            [ps]: {
+              width: "100%",
+            },
+            [tl]: {
+              width: "50%",
+            },
+          }}
+        >
+          <Grid
+            item
             sx={{
+              width: "90%",
               height: "100%",
-              position: "relative",
             }}
           >
-            <Box sx={{ position: "absolute", width: 400, bottom: 0, right: 0 }}>
-              <Image src={mission2} alt="" loader={loader} />
+            <Box
+              sx={{
+                height: "100%",
+                width: "100%",
+                position: "relative",
+                minHeight: 300,
+              }}
+            >
+              <Box sx={{ position: "absolute", width: "65%", top: 0, left: 0 }}>
+                <Image src={mission2} alt="" loader={loader} />
+              </Box>
+              <Box
+                sx={{
+                  position: "absolute",
+                  width: "65%",
+                  top: "35%",
+                  left: "35%",
+                }}
+              >
+                <Image src={mission1} alt="" loader={loader} />
+              </Box>
             </Box>
-            <Box sx={{ position: "absolute", width: 400, top: 0, left: 0 }}>
-              <Image src={mission1} alt="" loader={loader} />
-            </Box>
-          </Box>
+          </Grid>
         </Grid>
         <Grid
           item
@@ -45,7 +76,7 @@ export const ArchivingSection: FC = ({ children }) => {
           sx={{
             width: "50%",
             [ps]: { width: "100%" },
-            [pl]: { width: "50%" },
+            [tl]: { width: "50%" },
           }}
         >
           <Grid item>

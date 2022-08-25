@@ -2,7 +2,7 @@ import { FC, PropsWithChildren } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Box, Grid } from "@mui/material";
-import { colors, loader, typography } from "styles/theme";
+import { colors, loader, typography, breakpoints } from "styles/theme";
 import plus from "public/images/plus.svg";
 import quotationMark from "public/images/quote.svg";
 
@@ -23,6 +23,7 @@ export const WhoItem: FC<WhoItemProps> = ({
 }) => {
   const { lightGrey, turquoise } = colors;
   const { h5, body, bodyLarge } = typography;
+  const { ps, ts } = breakpoints;
   const loadedImage = require(`public/images/${image}`).default;
 
   return (
@@ -30,10 +31,18 @@ export const WhoItem: FC<WhoItemProps> = ({
       <Grid
         item
         container
-        direction="row"
-        flexWrap="nowrap"
         sx={{
-          height: 450,
+          height: "100%",
+          flexDirection: "row",
+          flexWrap: "nowrap",
+          [ps]: {
+            flexDirection: "column",
+            flexWrap: "wrap",
+          },
+          [ts]: {
+            flexDirection: "row",
+            flexWrap: "nowrap",
+          },
           backgroundColor: lightGrey,
           ":hover": { backgroundColor: turquoise, cursor: "pointer" },
         }}
@@ -54,7 +63,13 @@ export const WhoItem: FC<WhoItemProps> = ({
           direction="column"
           wrap="nowrap"
           item
-          sx={{ width: "70%", backgroundColor: "transparent", p: 6 }}
+          sx={{
+            width: "70%",
+            backgroundColor: "transparent",
+            p: 6,
+            [ps]: { width: "100%", p: 2 },
+            [ts]: { width: "70%", p: 6 },
+          }}
         >
           <Grid item container direction="row" spacing={2} alignItems="center">
             <Grid item>
