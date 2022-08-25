@@ -120,7 +120,7 @@ export const HeaderSection: FC = ({ children }) => {
             sx={{
               width: "50%",
               [ps]: { width: "100%" },
-              [ts]: { width: "100%" },
+              [ts]: { width: "50%" },
             }}
           >
             <Grid item>
@@ -147,7 +147,7 @@ export const HeaderSection: FC = ({ children }) => {
               sx={{
                 width: "50%",
                 [ps]: { width: "100%" },
-                [ts]: { width: "100%" },
+                [ts]: { width: "50%" },
               }}
             >
               <Box
@@ -166,7 +166,7 @@ export const HeaderSection: FC = ({ children }) => {
               sx={{
                 width: "50%",
                 [ps]: { width: "100%" },
-                [ts]: { width: "100%" },
+                [ts]: { width: "50%" },
               }}
             >
               <Box sx={{ p: 3, "> p": bodyLarge }}>{rest}</Box>

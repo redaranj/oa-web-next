@@ -5,7 +5,7 @@ import { colors, breakpoints } from "styles/theme";
 import { getURL, loadImage } from "lib/frontendHelpers";
 
 export const InvolvedItem: FC = ({ children }) => {
-  const { white } = colors;
+  const { white, turquoise } = colors;
   const { ps, ts } = breakpoints;
   const [first, title, link] = children as any[];
   const image = loadImage(first);
@@ -31,6 +31,9 @@ export const InvolvedItem: FC = ({ children }) => {
             backgroundImage: `url(${image.src})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
+            ":hover": {
+              background: `linear-gradient(to top, ${turquoise}bb, ${turquoise}bb), url(${image.src}) center / cover`,
+            },
           }}
         >
           {title}

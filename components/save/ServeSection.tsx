@@ -39,7 +39,14 @@ export const ServeSection: FC = ({ children }) => {
               flexDirection: "column",
             },
           },
-          [ts]: { flexDirection: "row-reverse" },
+          [ts]: {
+            ".serveItem:nth-of-type(even)": {
+              flexDirection: "row-reverse",
+            },
+            ".serveItem:nth-of-type(odd)": {
+              flexDirection: "row",
+            },
+          },
         }}
       >
         {rest}

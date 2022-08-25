@@ -5,7 +5,7 @@ import { colors } from "styles/theme";
 import { getURL, loadImage } from "lib/frontendHelpers";
 
 export const RoleItem: FC = ({ children }) => {
-  const { white } = colors;
+  const { white, turquoise } = colors;
   const [first, title, link] = children as any[];
   const image = loadImage(first);
   const href = getURL(link);
@@ -29,7 +29,7 @@ export const RoleItem: FC = ({ children }) => {
             backgroundSize: "cover",
             backgroundPosition: "center",
             ":hover": {
-              border: "1px solid red",
+              background: `linear-gradient(to top, ${turquoise}bb, ${turquoise}bb), url(${image.src}) center / cover`,
             },
           }}
         >
