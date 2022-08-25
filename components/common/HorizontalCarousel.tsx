@@ -89,7 +89,7 @@ export const HorizontalCarousel: FC<HorizontalCarouselProps> = ({
           spaceBetween={spaceBetween}
           slidesPerView={visibleCount}
           breakpoints={breakpoints}
-          mousewheel
+          mousewheel={{ forceToAxis: true, releaseOnEdges: true }}
           keyboard
           effect={transition}
           fadeEffect={{

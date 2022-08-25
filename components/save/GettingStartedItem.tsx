@@ -30,7 +30,9 @@ export const GettingStartedItem: FC = ({ children }) => {
             </Box>
           </Grid>
         </Grid>
-        <Grid item>{children}</Grid>
+        <Grid item>
+          <Box>{children}</Box>
+        </Grid>
       </Grid>
     </Grid>
   );
