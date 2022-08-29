@@ -149,7 +149,6 @@ export const Footer: FC = () => {
                   size={creativeCommonsIconSize}
                   url="https://creativecommons.org/licenses/by-nc-sa/4.0/"
                   alt="Creative Commons Attribution"
-                  inset={`-${creativeCommonsIconSize}`}
                 />
               </Grid>
               <Grid item>
@@ -158,7 +157,6 @@ export const Footer: FC = () => {
                   size={creativeCommonsIconSize}
                   url="https://creativecommons.org/licenses/by-nc-sa/4.0/"
                   alt="Creative Commons Non-Commercial"
-                  inset={`-${creativeCommonsIconSize}`}
                 />
               </Grid>
               <Grid item>
@@ -167,7 +165,6 @@ export const Footer: FC = () => {
                   size={creativeCommonsIconSize}
                   url="https://creativecommons.org/licenses/by-nc-sa/4.0/"
                   alt="Creative Commons Share-Alike"
-                  inset={`-${creativeCommonsIconSize}`}
                 />
               </Grid>
             </Grid>

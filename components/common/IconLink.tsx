@@ -1,26 +1,17 @@
 import { FC, PropsWithChildren } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Box, Button } from "@mui/material";
-import { colors, loader, breakpoints } from "styles/theme";
+import { Box } from "@mui/material";
+import { loader, breakpoints } from "styles/theme";
 
 type IconLinkProps = PropsWithChildren<{
   image: string;
   size: string;
   url: string;
   alt: string;
-  inset?: string;
 }>;
 
-const { black } = colors;
-
-export const IconLink: FC<IconLinkProps> = ({
-  image,
-  size,
-  url,
-  alt,
-  inset = "0px",
-}) => {
+export const IconLink: FC<IconLinkProps> = ({ image, size, url, alt }) => {
   const { ps, pl } = breakpoints;
 
   return (
