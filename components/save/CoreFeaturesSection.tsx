@@ -23,6 +23,7 @@ export const CoreFeaturesSection: FC = ({ children }) => {
           }}
         >
           <Grid
+            container
             direction="column"
             item
             sx={{

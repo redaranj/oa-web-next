@@ -2,7 +2,7 @@ import { FC, PropsWithChildren } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Box, Button } from "@mui/material";
-import { colors, loader } from "styles/theme";
+import { colors, loader, breakpoints } from "styles/theme";
 
 type IconLinkProps = PropsWithChildren<{
   image: string;
@@ -20,41 +20,28 @@ export const IconLink: FC<IconLinkProps> = ({
   url,
   alt,
   inset = "0px",
-}) => (
-  <Link href={url}>
-    <Button
-      sx={{
-        fontFamily: "Montserrat, sans-serif",
-        fontWeight: 700,
-        textTransform: "none",
-        color: black,
-        whiteSpace: "nowrap",
-        width: size,
-        p: 0,
-        m: 0,
-        ml: inset,
-        mr: inset,
-        "&:hover": {
-          background: "none",
-        },
-      }}
-    >
+}) => {
+  const { ps, pl } = breakpoints;
+
+  return (
+    <Link href={url}>
       <Box
         sx={{
           "&:hover": {
             filter:
               "brightness(0) saturate(100%) invert(47%) sepia(82%) saturate(4262%) hue-rotate(155deg) brightness(99%) contrast(101%)",
           },
+          width: size,
+          height: size,
+          [ps]: {
+            width: parseInt(size, 10) / 1.25,
+            height: parseInt(size, 10) / 1.25,
+          },
+          [pl]: { width: size, height: size },
         }}
       >
-        <Image
-          src={image}
-          alt={alt}
-          width={size}
-          height={size}
-          loader={loader}
-        />
+        <Image src={image} alt={alt} loader={loader} />
       </Box>
-    </Button>
-  </Link>
-);
+    </Link>
+  );
+};

@@ -40,11 +40,11 @@ export const Footer: FC = () => {
       sx={{
         py: 5,
         [ps]: {
-          py: 1,
+          py: 5,
           px: 3,
         },
         [pl]: {
-          py: 1,
+          py: 5,
           px: 3,
         },
         [ts]: {
@@ -90,18 +90,15 @@ export const Footer: FC = () => {
             width: "40%",
             flexDirection: "column",
             [ps]: {
-              flexDirection: "colum",
+              flexDirection: "column",
               width: "100%",
-            },
-            [pl]: {
-              flexDirection: "row",
             },
             [ds]: {
               flexDirection: "column",
               width: "40%",
             },
           }}
-          spacing={4}
+          spacing={0}
         >
           <Grid
             item
@@ -112,19 +109,18 @@ export const Footer: FC = () => {
             justifyContent="space-between"
             alignItems="center"
             sx={{
+              flexDirection: "row",
               flexWrap: "nowrap",
-              [ps]: {
-                flexDirection: "column-reverse",
-                flexWrap: "wrap",
-              },
-              [ds]: {
-                flexDirection: "row",
-                flexWrap: "nowrap",
-              },
+              mb: 4,
+              mt: 0,
+              [ps]: { mt: 4, mb: 0 },
+              [ts]: { mt: 0, mb: 4 },
             }}
           >
             <Grid item>
-              <Box sx={{ width: 200 }}>
+              <Box
+                sx={{ width: 200, [ps]: { width: 150 }, [ts]: { width: 200 } }}
+              >
                 <Link href="/">
                   <Image
                     alt="OpenArchive logo"
@@ -138,22 +134,16 @@ export const Footer: FC = () => {
             <Grid
               item
               container
-              spacing={0}
+              spacing={0.5}
               sx={{
-                mt: "-4px",
                 flexWrap: "nowrap",
                 flexDirection: "row",
-                [ps]: {
-                  flexDirection: "column-reverse",
-                  flexWrap: "wrap",
-                },
-                [ds]: {
-                  flexDirection: "row",
-                  flexWrap: "nowrap",
-                },
+                mt: -1,
+                [ps]: { mt: -2 },
+                [ts]: { mt: -1 },
               }}
             >
-              <Grid item sx={{ m: 0, p: 0 }}>
+              <Grid item>
                 <IconLink
                   image={attribution}
                   size={creativeCommonsIconSize}
@@ -192,12 +182,20 @@ export const Footer: FC = () => {
             }}
           >
             <Link href="https://demch.co">
-              <Image
-                alt="Site designed by demch.co"
-                src={demchco}
-                loader={loader}
-                style={{ cursor: "pointer" }}
-              />
+              <Box
+                sx={{
+                  width: 200,
+                  [ps]: { width: 150 },
+                  [ts]: { width: 200 },
+                  cursor: "pointer",
+                }}
+              >
+                <Image
+                  alt="Site designed by demch.co"
+                  src={demchco}
+                  loader={loader}
+                />
+              </Box>
             </Link>
           </Grid>
         </Grid>
@@ -211,6 +209,8 @@ export const Footer: FC = () => {
               mb: 4,
               display: "none",
               [ps]: {
+                mt: 0,
+                mb: 0,
                 display: "block",
               },
               [ds]: {
@@ -226,7 +226,7 @@ export const Footer: FC = () => {
             width: "60%",
             flexDirection: "row",
             [ps]: { width: "100%", flexDirection: "column" },
-            [pl]: { flexDirection: "row" },
+            [ts]: { flexDirection: "row" },
             [ds]: {
               width: "60%",
             },
@@ -239,7 +239,7 @@ export const Footer: FC = () => {
             sx={{
               width: "50%",
               [ps]: { width: "100%" },
-              [pl]: { width: "50%" },
+              [ts]: { width: "50%" },
             }}
             spacing={0}
           >
@@ -283,9 +283,13 @@ export const Footer: FC = () => {
                 display: "none",
                 [ps]: {
                   display: "block",
+                  mt: 4,
+                  mb: 6,
                 },
-                [pl]: {
+                [ts]: {
                   display: "none",
+                  mt: 12,
+                  mb: 4,
                 },
               }}
             />
@@ -297,15 +301,16 @@ export const Footer: FC = () => {
             sx={{
               width: "50%",
               [ps]: { width: "100%" },
-              [pl]: { width: "50%" },
+              [ts]: { width: "50%" },
             }}
             justifyContent="space-between"
+            spacing={1}
           >
             <Grid
               item
               container
               direction="row"
-              spacing={0}
+              spacing={3}
               justifyContent="flex-start"
             >
               <Grid item>
@@ -359,7 +364,7 @@ export const Footer: FC = () => {
                   [ps]: {
                     display: "none",
                   },
-                  [pl]: {
+                  [ts]: {
                     display: "block",
                   },
                 }}
@@ -372,9 +377,21 @@ export const Footer: FC = () => {
               spacing={1}
               alignItems="center"
               alignContent="center"
+              sx={{
+                mt: 0,
+                mb: 0,
+                [ps]: {
+                  mt: 0,
+                  mb: 4,
+                },
+                [ts]: {
+                  mt: 0,
+                  mb: 0,
+                },
+              }}
             >
               <Grid item>
-                <Box sx={{ mt: "-6px" }}>
+                <Box sx={{ mt: -1.5 }}>
                   <Image src={emailIcon} alt="" loader={loader} />
                 </Box>
               </Grid>

@@ -121,10 +121,9 @@ export const TopNav = () => {
                   },
                 }}
               >
-                {/*
-            <Grid item>
-              <Image alt="search" src={search} loader={loader} />
-            </Grid> */}
+                <Grid item flexGrow={1}>
+                  <Box />
+                </Grid>
                 <Grid
                   item
                   container
@@ -282,10 +281,10 @@ export const TopNav = () => {
                   item
                   container
                   direction="row"
+                  justifyContent="flex-end"
                   flexWrap="nowrap"
-                  xs="auto"
-                  spacing={0}
-                  sx={{ ml: "32px" }}
+                  spacing={2}
+                  sx={{ width: "150px" }}
                 >
                   <Grid item>
                     <IconLink
