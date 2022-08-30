@@ -5,7 +5,7 @@ import { PageSection } from "components/common/PageSection";
 
 export const GettingStartedSection: FC = ({ children }) => {
   const { lightGrey, mediumGrey, turquoise } = colors;
-  const { bodyLarge, outlinedButton } = typography;
+  const { bodyLarge } = typography;
   const { ps, tl } = breakpoints;
   const [title, description, ...rest] = children as any[];
 
@@ -85,7 +85,7 @@ export const GettingStartedSection: FC = ({ children }) => {
               pl: "10px",
               pt: "9px",
             },
-            a: outlinedButton,
+            // a: outlinedButton,
           }}
         >
           {rest}

@@ -32,6 +32,7 @@ export const PartnersSection: FC = ({ children }) => {
           <Grid
             item
             container
+            spacing={3}
             sx={{
               pb: 2,
               flexDirection: "row",

@@ -1,16 +1,23 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import Image from "next/image";
 import { Grid, Box } from "@mui/material";
 import { colors, typography, loader } from "styles/theme";
 import { HeaderSection as BaseHeaderSection } from "components/common/HeaderSection";
 import diverseEnvironment from "public/images/diverse-environment.png";
 
-export const DiverseSection: FC = () => {
-  const { white } = colors;
+const { white } = colors;
+
+type DiverseSectionProps = PropsWithChildren<{
+  backgroundColor: string;
+}>;
+
+export const DiverseSection: FC<DiverseSectionProps> = ({
+  backgroundColor = white,
+}) => {
   const { h1, bodyLarge } = typography;
 
   return (
-    <BaseHeaderSection backgroundColor={white}>
+    <BaseHeaderSection backgroundColor={backgroundColor}>
       <Grid
         container
         justifyContent="space-between"

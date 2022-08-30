@@ -16,7 +16,7 @@ export const JobsSection: FC<JobsSectionProps> = ({ pages, children }) => {
     <PageSection
       backgroundColor={lightGrey}
       sx={{
-        py: 4,
+        py: 8,
         px: 11.25,
         [ps]: {
           py: 2,
@@ -27,19 +27,19 @@ export const JobsSection: FC<JobsSectionProps> = ({ pages, children }) => {
           px: 3,
         },
         [ts]: {
-          py: 3,
+          py: 5,
           px: 4.375,
         },
         [tl]: {
-          py: 3,
+          py: 5,
           px: 4.375,
         },
         [ds]: {
-          py: 4,
+          py: 8,
           px: 6.25,
         },
         [dl]: {
-          py: 4,
+          py: 8,
           px: 11.25,
         },
       }}
