@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Grid, Box } from "@mui/material";
 import { colors, typography, loader } from "styles/theme";
 import { HeaderSection as BaseHeaderSection } from "components/common/HeaderSection";
-import ourTeam from "public/images/our-team-who-we-are.png";
+import diverseEnvironment from "public/images/diverse-environment.png";
 
 export const DiverseSection: FC = () => {
   const { white } = colors;
@@ -24,10 +24,10 @@ export const DiverseSection: FC = () => {
             <Box
               sx={{
                 height: "100%",
-                width: "90%",
+                width: "110%",
               }}
             >
-              <Image src={ourTeam} alt="" loader={loader} />
+              <Image src={diverseEnvironment} alt="" loader={loader} />
             </Box>
           </Grid>
         </Grid>
