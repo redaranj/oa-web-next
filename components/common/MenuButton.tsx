@@ -84,7 +84,7 @@ export const MenuButton: FC<MenuButtonProps> = ({
                   },
                 }}
               >
-                <Box sx={{ p: 4 }}>{children}</Box>
+                <Box sx={{ pt: 2 }}>{children}</Box>
               </HoverPopover>
             )}
           </>

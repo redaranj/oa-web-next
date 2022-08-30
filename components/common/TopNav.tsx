@@ -30,9 +30,9 @@ export const TopNav = () => {
     width: "100%",
     display: "block",
     color: white,
-    p: 2,
+    py: 2,
+    px: 4,
     m: 0,
-    borderRadius: 2,
     textDecoration: "none",
     "&:hover": {
       color: turquoise,

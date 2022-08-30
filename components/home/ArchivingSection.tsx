@@ -3,8 +3,8 @@ import Image from "next/image";
 import { Box, Grid } from "@mui/material";
 import { PageSection } from "components/common/PageSection";
 import { breakpoints, colors, typography, loader } from "styles/theme";
-import mission1 from "public/images/mission-1.png";
-import mission2 from "public/images/mission-2.png";
+import mainTop3 from "public/images/main-top-3.png";
+import mainTop4 from "public/images/main-top-4.png";
 
 export const ArchivingSection: FC = ({ children }) => {
   const { outlinedButton, bodyLarge } = typography;
@@ -53,8 +53,16 @@ export const ArchivingSection: FC = ({ children }) => {
                 minHeight: 300,
               }}
             >
-              <Box sx={{ position: "absolute", width: "65%", top: 0, left: 0 }}>
-                <Image src={mission2} alt="" loader={loader} />
+              <Box
+                sx={{
+                  position: "absolute",
+                  width: "65%",
+                  top: 0,
+                  left: 0,
+                  zIndex: 100,
+                }}
+              >
+                <Image src={mainTop3} alt="" loader={loader} />
               </Box>
               <Box
                 sx={{
@@ -64,7 +72,7 @@ export const ArchivingSection: FC = ({ children }) => {
                   left: "35%",
                 }}
               >
-                <Image src={mission1} alt="" loader={loader} />
+                <Image src={mainTop4} alt="" loader={loader} />
               </Box>
             </Box>
           </Grid>
