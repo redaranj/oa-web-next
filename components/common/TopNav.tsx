@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslate } from "react-polyglot";
-import { AppBar, Box, Grid, Drawer, Button } from "@mui/material";
+import { AppBar, Box, Grid, Drawer } from "@mui/material";
 import { colors, typography, loader, breakpoints } from "styles/theme";
 import { FilledButton } from "components/common/FilledButton";
 import { MenuButton } from "components/common/MenuButton";
@@ -313,20 +313,21 @@ export const TopNav = () => {
                 </Grid>
               </Grid>
               <Grid item>
-                <Button
+                <Box
                   onClick={() => setDrawerOpen(true)}
                   sx={{
                     display: "none",
                     [ps]: {
                       display: "initial",
                     },
-                    [ts]: {
+                    [ds]: {
                       display: "none",
                     },
+                    ml: 3,
                   }}
                 >
                   <Image src={menuIcon} alt="menu" loader={loader} />
-                </Button>
+                </Box>
               </Grid>
             </Grid>
           </Box>

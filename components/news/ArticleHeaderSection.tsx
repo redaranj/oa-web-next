@@ -64,19 +64,15 @@ export const ArticleHeaderSection: FC = ({ children }) => {
               sx={{
                 position: "absolute",
                 bottom: "-250px",
-                left: "calc(50% - 250px)",
-                maxWidth: "500px",
+                left: "calc(50% - 350px)",
+                height: 300,
+                maxWidth: 700,
                 margin: "0 auto",
                 mt: 6,
+                overflow: "hidden",
               }}
             >
-              <Image
-                src={image}
-                alt=""
-                loader={loader}
-                width="500px"
-                height="300px"
-              />
+              <Image src={image} alt="" loader={loader} />
             </Box>
           </Grid>
         </Grid>
