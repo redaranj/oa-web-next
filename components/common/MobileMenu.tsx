@@ -1,7 +1,9 @@
 import { FC } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useTranslate } from "react-polyglot";
-import { Box, Grid } from "@mui/material";
+import { Box, Button, Grid } from "@mui/material";
+import { Close as CloseIcon } from "@mui/icons-material";
 import { colors, typography } from "styles/theme";
 import { FilledButton } from "components/common/FilledButton";
 
@@ -13,7 +15,7 @@ type MenuItemProps = {
 const MenuItem: FC<MenuItemProps> = ({ title, url }) => {
   const { body } = typography;
   const { white } = colors;
-  const itemStyles = { ...body, fontWeight: 600, color: white, mb: 0 };
+  const itemStyles = { ...body, color: white, mb: 0 };
 
   return (
     <Grid item>
@@ -36,9 +38,10 @@ type MobileMenuProps = {
 
 export const MobileMenu: FC<MobileMenuProps> = ({ closeMenu }) => {
   const t = useTranslate();
+  const router = useRouter();
   const { white, black, turquoise } = colors;
   const { body } = typography;
-  const headerStyles = { ...body, color: white, mb: 1 };
+  const headerStyles = { ...body, fontWeight: 600, color: white, mb: 1 };
   console.log({ closeMenu });
 
   return (
@@ -49,9 +52,16 @@ export const MobileMenu: FC<MobileMenuProps> = ({ closeMenu }) => {
         height: "100vh",
         width: "100vw",
         overflow: "scroll",
+        position: "relative",
         p: 3,
       }}
     >
+      <Button
+        sx={{ position: "absolute", top: 12, right: 4 }}
+        onClick={closeMenu}
+      >
+        <CloseIcon sx={{ color: white }} />
+      </Button>
       <Grid container direction="column" justifyContent="space-between">
         <Grid item container direction="column">
           <Grid item container direction="column">
@@ -61,11 +71,6 @@ export const MobileMenu: FC<MobileMenuProps> = ({ closeMenu }) => {
             <MenuItem title={t("saveApp")} url="/save" />
             <MenuItem title={t("guides")} url="/guides" />
             <MenuItem title={t("useCases")} url="/use" />
-          </Grid>
-          <Grid item container direction="column">
-            <Box sx={{ borderTop: `1px solid ${white}`, mt: 3, pt: 3 }}>
-              <MenuItem title={t("news")} url="/news" />
-            </Box>
           </Grid>
           <Grid item container direction="column">
             <Box sx={{ borderTop: `1px solid ${white}`, mt: 3, pt: 3 }}>
@@ -80,9 +85,18 @@ export const MobileMenu: FC<MobileMenuProps> = ({ closeMenu }) => {
               <MenuItem title={t("faq")} url="/faq" />
             </Box>
           </Grid>
-          <Grid item sx={{ textAlign: "center" }}>
+          <Grid item container direction="column">
+            <Box sx={{ borderTop: `1px solid ${white}`, mt: 3, pt: 3 }}>
+              <MenuItem title={t("news")} url="/news" />
+            </Box>
+          </Grid>
+          <Grid item>
             <Box sx={{ width: "100%", mt: 6 }}>
-              <FilledButton backgroundColor={white} textColor={black}>
+              <FilledButton
+                backgroundColor={white}
+                textColor={black}
+                onClick={() => router.push("/donate")}
+              >
                 {t("donate")}
               </FilledButton>
             </Box>
