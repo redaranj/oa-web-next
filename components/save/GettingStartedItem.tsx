@@ -18,7 +18,11 @@ export const GettingStartedItem: FC = ({ children }) => {
       <Grid
         container
         direction="column"
-        sx={{ backgroundColor: white, p: 3, height: "100%" }}
+        sx={{
+          backgroundColor: white,
+          p: 3,
+          height: "100%",
+        }}
       >
         <Grid container item direction="row" spacing={1} alignItems="center">
           <Grid item>
@@ -31,7 +35,20 @@ export const GettingStartedItem: FC = ({ children }) => {
           </Grid>
         </Grid>
         <Grid item>
-          <Box>{children}</Box>
+          <Box
+            sx={{
+              "& img": {
+                float: "left !important",
+                height: "60px !important",
+                pr: "5px !important",
+                ":hover": {
+                  backgroundColor: "transparent !important",
+                },
+              },
+            }}
+          >
+            {children}
+          </Box>
         </Grid>
       </Grid>
     </Grid>
