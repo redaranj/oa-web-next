@@ -1,7 +1,7 @@
 import { FC, PropsWithChildren } from "react";
 import Image from "next/image";
 import { Grid, Box } from "@mui/material";
-import { colors, typography, loader } from "styles/theme";
+import { colors, typography, loader, breakpoints } from "styles/theme";
 import { HeaderSection as BaseHeaderSection } from "components/common/HeaderSection";
 import diverseEnvironment from "public/images/diverse-environment.png";
 
@@ -15,6 +15,7 @@ export const DiverseSection: FC<DiverseSectionProps> = ({
   backgroundColor = white,
 }) => {
   const { h1, bodyLarge } = typography;
+  const { ps, ts } = breakpoints;
 
   return (
     <BaseHeaderSection backgroundColor={backgroundColor}>
@@ -23,10 +24,20 @@ export const DiverseSection: FC<DiverseSectionProps> = ({
         justifyContent="space-between"
         sx={{
           flexDirection: "row",
+          [ps]: {
+            flexDirection: "column",
+          },
+          [ts]: { flexDirection: "row" },
         }}
         spacing={6}
       >
-        <Grid item container direction="column" justifyContent="center" xs={6}>
+        <Grid
+          item
+          container
+          direction="column"
+          justifyContent="center"
+          sx={{ width: "50%", [ps]: { width: "100%", [ts]: { width: "50%" } } }}
+        >
           <Grid item>
             <Box
               sx={{
@@ -38,7 +49,10 @@ export const DiverseSection: FC<DiverseSectionProps> = ({
             </Box>
           </Grid>
         </Grid>
-        <Grid item xs={6}>
+        <Grid
+          item
+          sx={{ width: "50%", [ps]: { width: "100%", [ts]: { width: "50%" } } }}
+        >
           <Box sx={h1}>
             Creating a <strong>diverse environment</strong>
           </Box>
