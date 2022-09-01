@@ -34,6 +34,7 @@ export const InnerButton: FC<InnerButtonProps> = ({
       border: `1px solid ${borderColor}`,
       ...body,
       borderRadius: "500px",
+      whiteSpace: "nowrap",
       fontWeight: 700,
       textTransform: "none",
       color: textColor,

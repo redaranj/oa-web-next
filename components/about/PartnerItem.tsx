@@ -17,9 +17,9 @@ export const PartnerItem: FC = ({ children }) => {
       item
       container
       direction="column"
-      sx={{ width: "20%", [ps]: { width: "100%" }, [tl]: { width: "20%" } }}
+      sx={{ width: "33%", [ps]: { width: "100%" }, [tl]: { width: "33%" } }}
       alignItems="center"
-      justifyContent="space-around"
+      justifyContent="center"
     >
       <Grid item>
         <Link href={url}>
