@@ -15,8 +15,10 @@ export const IconLink: FC<IconLinkProps> = ({ image, size, url, alt }) => {
   const { ps, pl } = breakpoints;
 
   return (
-    <Link href={url}>
+    <Link href={url} passHref>
       <Box
+        component="a"
+        target="_blank"
         sx={{
           "&:hover": {
             filter:
