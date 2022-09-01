@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Box, Grid } from "@mui/material";
-import { colors, breakpoints } from "styles/theme";
+import { colors, breakpoints, typography } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { JobItem } from "components/jobs/JobItem";
 
@@ -11,6 +11,7 @@ type JobsSectionProps = {
 export const JobsSection: FC<JobsSectionProps> = ({ pages, children }) => {
   const { lightGrey } = colors;
   const { ps, pl, ts, tl, ds, dl } = breakpoints;
+  const { bodyLarge } = typography;
 
   return (
     <PageSection
@@ -51,7 +52,11 @@ export const JobsSection: FC<JobsSectionProps> = ({ pages, children }) => {
         }}
       >
         <Grid item>
-          <Box>{children}</Box>
+          <Box
+            sx={{ ">p": bodyLarge, maxWidth: "80%", margin: "0 auto", mb: 8 }}
+          >
+            {children}
+          </Box>
         </Grid>
         {pages.map((page: any) => (
           <JobItem key={page.path} {...page} />

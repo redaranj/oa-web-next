@@ -17,7 +17,7 @@ export const JobItem: FC<JobItemProps> = ({ title, date, path }) => {
 
   return (
     <Link href={path}>
-      <Box sx={{ backgroundColor: white, px: 3, py: 1 }}>
+      <Box sx={{ backgroundColor: white, px: 3, py: 1, cursor: "pointer" }}>
         <Grid
           item
           container

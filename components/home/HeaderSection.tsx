@@ -20,6 +20,7 @@ export const HeaderSection: FC = ({ children }) => {
           flexDirection: "row",
           [ps]: { flexDirection: "column-reverse" },
           [ts]: { flexDirection: "row" },
+          pt: 8,
         }}
         spacing={6}
       >

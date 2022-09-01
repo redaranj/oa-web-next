@@ -7,7 +7,7 @@ import { typography, colors, breakpoints, loader } from "styles/theme";
 type GuideItemProps = PropsWithChildren<{
   title: string;
   description: string;
-  category: string;
+  date: string;
   path: string;
   image: string;
 }>;
@@ -15,7 +15,7 @@ type GuideItemProps = PropsWithChildren<{
 export const GuideItem: FC<GuideItemProps> = ({
   title,
   description,
-  category,
+  date,
   path,
   image: imageName,
 }) => {
@@ -64,7 +64,7 @@ export const GuideItem: FC<GuideItemProps> = ({
                 mt: 2,
               }}
             >
-              {category}
+              {date}
             </Box>
           </Grid>
           <Grid item>
