@@ -30,16 +30,24 @@ export const GettingStartedItem: FC = ({ children }) => {
           </Grid>
           <Grid item>
             <Box component="p" sx={{ ...body }}>
-              {t("step")}
+              {t("step")}:
             </Box>
           </Grid>
         </Grid>
         <Grid item>
           <Box
             sx={{
+              "& p": { mb: 0 },
+              ul: {
+                listStyleType: "none",
+                m: 0,
+                p: 0,
+                listStylePosition: "outside",
+              },
               "& img": {
                 float: "left !important",
                 height: "60px !important",
+                pt: "15px !important",
                 pr: "5px !important",
                 ":hover": {
                   backgroundColor: "transparent !important",

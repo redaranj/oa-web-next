@@ -353,6 +353,7 @@ export const components = {
       {children}
     </Box>
   ),
+  hr: () => <Box component="hr" sx={{ mb: 3 }} />,
   img: ({ src, alt }) => {
     const image = require(`public/images/${src}`).default;
 
