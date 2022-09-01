@@ -10,12 +10,13 @@ import { FilledButton } from "components/common/FilledButton";
 type MenuItemProps = {
   title: string;
   url: string;
+  sx?: any;
 };
 
-const MenuItem: FC<MenuItemProps> = ({ title, url }) => {
+const MenuItem: FC<MenuItemProps> = ({ title, url, sx = {} }) => {
   const { body } = typography;
   const { white } = colors;
-  const itemStyles = { ...body, color: white, mb: 0 };
+  const itemStyles = { ...body, color: white, mb: 1, ...sx };
 
   return (
     <Grid item>
@@ -87,7 +88,11 @@ export const MobileMenu: FC<MobileMenuProps> = ({ closeMenu }) => {
           </Grid>
           <Grid item container direction="column">
             <Box sx={{ borderTop: `1px solid ${white}`, mt: 3, pt: 3 }}>
-              <MenuItem title={t("news")} url="/news" />
+              <MenuItem
+                title={t("news")}
+                url="/news"
+                sx={{ fontWeight: 600 }}
+              />
             </Box>
           </Grid>
           <Grid item>
