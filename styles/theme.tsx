@@ -58,11 +58,11 @@ export const typography = {
       fontSize: "90px",
     },
     "& strong": {
-      fontWeight: 600,
+      fontWeight: 700,
       color: colors.turquoise,
     },
     "& em > strong": {
-      fontWeight: 900,
+      fontWeight: 700,
       color: colors.turquoise,
     },
   },
@@ -91,11 +91,11 @@ export const typography = {
       fontSize: "66px",
     },
     "& strong": {
-      fontWeight: 600,
+      fontWeight: 700,
       color: colors.turquoise,
     },
     "& em > strong": {
-      fontWeight: 900,
+      fontWeight: 700,
       color: colors.turquoise,
     },
   },
@@ -124,11 +124,11 @@ export const typography = {
       fontSize: "40px",
     },
     "& strong": {
-      fontWeight: 600,
+      fontWeight: 700,
       color: colors.turquoise,
     },
     "& em > strong": {
-      fontWeight: 900,
+      fontWeight: 700,
       color: colors.turquoise,
     },
   },
@@ -139,7 +139,7 @@ export const typography = {
     lineHeight: "44.2px",
     mb: 3,
     "& em > strong": {
-      fontWeight: 600,
+      fontWeight: 700,
       color: colors.turquoise,
     },
   },
@@ -168,7 +168,7 @@ export const typography = {
       fontSize: "34px",
     },
     "& em > strong": {
-      fontWeight: 600,
+      fontWeight: 700,
       color: colors.turquoise,
     },
   },
@@ -196,7 +196,7 @@ export const typography = {
       fontSize: "24px",
     },
     "& em > strong": {
-      fontWeight: 600,
+      fontWeight: 700,
       color: colors.turquoise,
     },
   },
@@ -229,7 +229,7 @@ export const typography = {
       fontSize: "22px",
     },
     "& em > strong": {
-      fontWeight: 600,
+      fontWeight: 700,
       color: colors.turquoise,
     },
   },
@@ -259,11 +259,11 @@ export const typography = {
       fontSize: "18px",
     },
     "& em > strong": {
-      fontWeight: 600,
+      fontWeight: 700,
       color: colors.turquoise,
     },
     "& strong > em": {
-      fontWeight: 600,
+      fontWeight: 700,
       color: colors.turquoise,
     },
   },

@@ -18,6 +18,7 @@ export const MoreItem: FC = ({ children }) => {
       item
       sx={{
         width: "33%",
+        cursor: "pointer",
         [ps]: { width: "100%" },
         [tl]: { width: "33%" },
         "&:hover": {
