@@ -26,7 +26,14 @@ export const OpportunitySection: FC = ({ children }) => {
               flexDirection: "column",
             },
           },
-          [ts]: { flexDirection: "row-reverse" },
+          [ts]: {
+            ".opportunityItem:nth-of-type(even)": {
+              flexDirection: "row-reverse",
+            },
+            ".opportunityItem:nth-of-type(odd)": {
+              flexDirection: "row",
+            },
+          },
         }}
       >
         {children}

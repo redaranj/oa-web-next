@@ -13,66 +13,64 @@ export const TeamItem: FC = ({ children }) => {
   const { ps, tl } = breakpoints;
 
   return (
-    <Link href="/team">
-      <Box
+    <Box
+      sx={{
+        backgroundColor: lightGrey,
+        mb: 8,
+        p: 6,
+      }}
+    >
+      <Grid
+        container
         sx={{
-          backgroundColor: lightGrey,
-          mb: 8,
-          p: 6,
+          flexDirection: "row",
+          [ps]: { flexDirection: "column" },
+          [tl]: { flexDirection: "row" },
         }}
       >
         <Grid
+          item
           container
+          direction="column"
+          justifyContent="center"
           sx={{
-            flexDirection: "row",
-            [ps]: { flexDirection: "column" },
-            [tl]: { flexDirection: "row" },
+            width: "50%",
+            [ps]: { width: "100%" },
+            [tl]: { width: "50%" },
           }}
         >
-          <Grid
-            item
-            container
-            direction="column"
-            justifyContent="center"
-            sx={{
-              width: "50%",
-              [ps]: { width: "100%" },
-              [tl]: { width: "50%" },
-            }}
-          >
-            <Grid item>
-              <Box
-                sx={{
-                  width: "85%",
-                  margin: "0 auto",
-                }}
-              >
-                <Image src={ourTeam} alt="" loader={loader} />
-              </Box>
-            </Grid>
-          </Grid>
-          <Grid
-            item
-            container
-            direction="column"
-            justifyContent="space-around"
-            sx={{
-              width: "50%",
-              [ps]: { width: "100%" },
-              [tl]: { width: "50%" },
-            }}
-          >
-            <Box sx={{ pl: 6, pb: 2, "> p": bodyLarge }}>{children}</Box>
-            <Box sx={{ pl: 6, maxWidth: "50%" }}>
-              <Link href="/team">
-                <OutlinedButton textColor={black} arrowDirection="right">
-                  Learn more
-                </OutlinedButton>
-              </Link>
+          <Grid item>
+            <Box
+              sx={{
+                width: "85%",
+                margin: "0 auto",
+              }}
+            >
+              <Image src={ourTeam} alt="" loader={loader} />
             </Box>
           </Grid>
         </Grid>
-      </Box>
-    </Link>
+        <Grid
+          item
+          container
+          direction="column"
+          justifyContent="space-around"
+          sx={{
+            width: "50%",
+            [ps]: { width: "100%" },
+            [tl]: { width: "50%" },
+          }}
+        >
+          <Box sx={{ pl: 6, pb: 2, "> p": bodyLarge }}>{children}</Box>
+          <Box sx={{ pl: 6, maxWidth: "50%" }}>
+            <Link href="/team">
+              <OutlinedButton textColor={black} arrowDirection="right">
+                Learn more
+              </OutlinedButton>
+            </Link>
+          </Box>
+        </Grid>
+      </Grid>
+    </Box>
   );
 };
