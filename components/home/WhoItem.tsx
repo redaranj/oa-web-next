@@ -2,6 +2,7 @@ import { FC, PropsWithChildren } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Box, Grid } from "@mui/material";
+import { OutlinedButton } from "components/common/OutlinedButton";
 import { colors, loader, typography, breakpoints } from "styles/theme";
 import plus from "public/images/plus.svg";
 import quotationMark from "public/images/quote.svg";
@@ -21,7 +22,7 @@ export const WhoItem: FC<WhoItemProps> = ({
   path,
   image,
 }) => {
-  const { lightGrey, turquoise } = colors;
+  const { lightGrey, turquoise, black } = colors;
   const { h5, body, bodyLarge } = typography;
   const { ps, ts } = breakpoints;
   const loadedImage = require(`public/images/${image}`).default;
@@ -44,7 +45,7 @@ export const WhoItem: FC<WhoItemProps> = ({
             flexWrap: "nowrap",
           },
           backgroundColor: lightGrey,
-          ":hover": { backgroundColor: turquoise, cursor: "pointer" },
+          cursor: "pointer",
         }}
       >
         <Grid item>
@@ -93,6 +94,11 @@ export const WhoItem: FC<WhoItemProps> = ({
             <Box component="p" sx={{ ...bodyLarge, mb: 2 }}>
               {quote}
             </Box>
+          </Grid>
+          <Grid item sx={{ pt: 3 }}>
+            <OutlinedButton textColor={black} arrowDirection="right">
+              More
+            </OutlinedButton>
           </Grid>
         </Grid>
       </Grid>

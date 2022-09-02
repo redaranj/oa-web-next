@@ -89,7 +89,7 @@ export const HeaderSection: FC = ({ children }) => {
                   zIndex: 100,
                 }}
               >
-                <Image src={mainTop1} alt="" loader={loader} />
+                <Image src={mainTop2} alt="" loader={loader} />
               </Box>
               <Box
                 sx={{
@@ -99,7 +99,7 @@ export const HeaderSection: FC = ({ children }) => {
                   left: "35%",
                 }}
               >
-                <Image src={mainTop2} alt="" loader={loader} />
+                <Image src={mainTop1} alt="" loader={loader} />
               </Box>
             </Box>
           </Grid>

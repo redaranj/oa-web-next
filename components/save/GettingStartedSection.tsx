@@ -53,6 +53,8 @@ export const GettingStartedSection: FC = ({ children }) => {
                   "> p": {
                     ...bodyLarge,
                     textAlign: "right",
+                    [ps]: { textAlign: "left" },
+                    [tl]: { textAlign: "right" },
                     maxWidth: "90%",
                     mt: 2,
                   },

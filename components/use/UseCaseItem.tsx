@@ -81,7 +81,7 @@ export const UseCaseItem: FC<UseCaseItemProps> = ({
                 }}
               >
                 <OutlinedButton textColor={black} arrowDirection="right">
-                  More
+                  Learn more
                 </OutlinedButton>
               </Grid>
             </Grid>
