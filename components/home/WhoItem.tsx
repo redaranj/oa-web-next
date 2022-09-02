@@ -22,7 +22,7 @@ export const WhoItem: FC<WhoItemProps> = ({
   path,
   image,
 }) => {
-  const { lightGrey, turquoise, black } = colors;
+  const { lightGrey, black } = colors;
   const { h5, body, bodyLarge } = typography;
   const { ps, ts } = breakpoints;
   const loadedImage = require(`public/images/${image}`).default;
