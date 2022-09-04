@@ -27,13 +27,16 @@ export const PartnerItem: FC = ({ children }) => {
           <Box
             sx={{
               position: "relative",
+              width: "100%",
+              height: "100%",
+              backgroundImage: `url(${image.src})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
               ":hover": {
                 background: `linear-gradient(to top, ${turquoise}bb, ${turquoise}bb), url(${image.src}) center / cover`,
               },
             }}
-          >
-            <Image src={image} alt={name} loader={loader} objectFit="contain" />
-          </Box>
+          />
         </Link>
       </Grid>
     </Grid>
