@@ -8,10 +8,48 @@ import joinOurTeam from "public/images/join-our-team.png";
 export const JoinSection: FC = ({ children }) => {
   const { white, lightGrey } = colors;
   const { outlinedButton, bodyLarge } = typography;
-  const { ps, tl } = breakpoints;
+  const { ps, pl, ts, tl, ds, dl } = breakpoints;
 
   return (
-    <PageSection backgroundColor={white}>
+    <PageSection
+      backgroundColor={white}
+      sx={{
+        mb: -1,
+        py: 13,
+        pb: 0,
+        px: 11.25,
+        [ps]: {
+          py: 6,
+          px: 3,
+          pb: 0,
+        },
+        [pl]: {
+          py: 6,
+          px: 3,
+          pb: 0,
+        },
+        [ts]: {
+          py: 7,
+          px: 4.375,
+          pb: 0,
+        },
+        [tl]: {
+          py: 9,
+          px: 4.375,
+          pb: 0,
+        },
+        [ds]: {
+          py: 13,
+          px: 6.25,
+          pb: 0,
+        },
+        [dl]: {
+          py: 13,
+          px: 11.25,
+          pb: 0,
+        },
+      }}
+    >
       <Grid
         container
         sx={{

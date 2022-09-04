@@ -6,11 +6,17 @@ import { typography, colors, breakpoints } from "styles/theme";
 
 type JobItemProps = PropsWithChildren<{
   title: string;
+  description: string;
   date: string;
   path: string;
 }>;
 
-export const JobItem: FC<JobItemProps> = ({ title, date, path }) => {
+export const JobItem: FC<JobItemProps> = ({
+  title,
+  description,
+  date,
+  path,
+}) => {
   const { h5, bodyLarge } = typography;
   const { white, mediumGrey, turquoise, black } = colors;
   const { ps, tl } = breakpoints;
@@ -70,9 +76,10 @@ export const JobItem: FC<JobItemProps> = ({ title, date, path }) => {
             }}
           >
             <Grid item>
-              <Box component="h5" sx={h5}>
+              <Box component="h5" sx={{ ...h5, pr: 3, pt: 3 }}>
                 {title}
               </Box>
+              <Box sx={{ "> p": bodyLarge, pr: 3, pb: 3 }}>{description}</Box>
             </Grid>
           </Grid>
           <Grid
