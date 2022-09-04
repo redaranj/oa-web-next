@@ -34,7 +34,13 @@ export const AcronymItem: FC = ({ children }) => {
           justifyContent="center"
         >
           <Grid item>
-            <Box sx={{ "> p": bodyLarge }}>{description}</Box>
+            <Box
+              sx={{
+                "> p": bodyLarge,
+              }}
+            >
+              {description}
+            </Box>
           </Grid>
         </Grid>
         <Grid
@@ -52,7 +58,7 @@ export const AcronymItem: FC = ({ children }) => {
             <Box
               sx={{
                 width: "90%",
-                margin: "0 auto",
+                ml: "10%",
               }}
             >
               <Image src={image} alt="" loader={loader} />

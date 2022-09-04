@@ -19,11 +19,9 @@ const SlideNavigation = () => {
   return (
     <Box
       sx={{
-        height: 25,
-        position: "absolute",
-        bottom: 35,
         width: "100%",
         zIndex: 1000,
+        mt: 3,
       }}
     >
       <Grid container direction="row" spacing={3} alignItems="center">
