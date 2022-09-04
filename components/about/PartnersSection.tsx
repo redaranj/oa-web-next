@@ -33,6 +33,9 @@ export const PartnersSection: FC = ({ children }) => {
             item
             container
             spacing={3}
+            justifyContent="center"
+            alignItems="center"
+            alignContent="center"
             sx={{
               pb: 2,
               flexDirection: "row",
