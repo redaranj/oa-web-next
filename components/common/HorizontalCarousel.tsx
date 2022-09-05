@@ -93,10 +93,12 @@ export const HorizontalCarousel: FC<HorizontalCarouselProps> = ({
           fadeEffect={{
             crossFade: true,
           }}
-          style={{ paddingBottom }}
+          style={{ paddingBottom, height: "auto" }}
         >
           {(children as any).map((child: any, index: number) => (
-            <SwiperSlide key={index}>{child}</SwiperSlide>
+            <SwiperSlide key={index} style={{ height: "auto" }}>
+              {child}
+            </SwiperSlide>
           ))}
           <SlideNavigation />
         </Swiper>

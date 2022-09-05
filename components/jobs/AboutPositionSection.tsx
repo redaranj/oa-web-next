@@ -18,7 +18,7 @@ export const AboutPositionSection: FC = ({ children }) => {
         }}
       >
         <Grid item sx={{ width: "50%" }}>
-          <Box sx={{ "> p": bodyLarge }}>{children}</Box>
+          <Box sx={{ "> p": bodyLarge, "> ul": bodyLarge }}>{children}</Box>
         </Grid>
         <Grid item sx={{ width: "50%", textAlign: "center" }}>
           <Box sx={{ px: 8, py: 20 }}>

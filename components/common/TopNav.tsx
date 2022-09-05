@@ -283,8 +283,8 @@ export const TopNav = () => {
                   direction="row"
                   justifyContent="flex-end"
                   flexWrap="nowrap"
-                  spacing={2}
-                  sx={{ width: "150px" }}
+                  spacing={3}
+                  sx={{ width: "180px" }}
                 >
                   <Grid item>
                     <IconLink

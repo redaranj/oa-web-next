@@ -43,7 +43,6 @@ export const MobileMenu: FC<MobileMenuProps> = ({ closeMenu }) => {
   const { white, black, turquoise } = colors;
   const { body } = typography;
   const headerStyles = { ...body, fontWeight: 600, color: white, mb: 1 };
-  console.log({ closeMenu });
 
   return (
     <Box
