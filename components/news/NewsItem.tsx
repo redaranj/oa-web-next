@@ -21,7 +21,7 @@ export const NewsItem: FC<NewsItemProps> = ({
   image,
 }) => {
   const { h5, bodyLarge } = typography;
-  const { white, darkGrey } = colors;
+  const { white, turquoise, mediumGrey } = colors;
   const { ps, tl } = breakpoints;
   const loadedImage = require(`public/images/${image}`).default;
 
@@ -36,12 +36,19 @@ export const NewsItem: FC<NewsItemProps> = ({
           flexDirection: "row",
           [ps]: { flexDirection: "column" },
           [tl]: { flexDirection: "row" },
+          cursor: "pointer",
+          ":hover": {
+            ".teaserImage": {
+              background: `linear-gradient(to top, ${turquoise}bb, ${turquoise}bb), url(${loadedImage.src}) center / cover`,
+            },
+          },
         }}
       >
         <Grid item>
           <Box
+            className="teaserImage"
             sx={{
-              height: 300,
+              height: "100%",
               width: 400,
               [ps]: { width: "100%" },
               [tl]: { width: 400 },
@@ -49,18 +56,9 @@ export const NewsItem: FC<NewsItemProps> = ({
               backgroundImage: `url(${loadedImage.src})`,
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
             }}
-          >
-            <Box
-              sx={{
-                ...bodyLarge,
-                color: white,
-                m: 2,
-              }}
-            >
-              {date}
-            </Box>
-          </Box>
+          />
         </Grid>
         <Grid
           item
@@ -72,7 +70,16 @@ export const NewsItem: FC<NewsItemProps> = ({
             <Box
               sx={{
                 ...bodyLarge,
-                color: darkGrey,
+                color: mediumGrey,
+              }}
+            >
+              {date}
+            </Box>
+            <Box
+              sx={{
+                ...bodyLarge,
+                fontStyle: "italic",
+                color: turquoise,
                 mt: 2,
               }}
             >
