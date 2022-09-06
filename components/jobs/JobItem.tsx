@@ -79,7 +79,9 @@ export const JobItem: FC<JobItemProps> = ({
               <Box component="h5" sx={{ ...h5, pr: 3, pt: 3 }}>
                 {title}
               </Box>
-              <Box sx={{ "> p": bodyLarge, pr: 3, pb: 3 }}>{description}</Box>
+              <Box component="p" sx={{ ...bodyLarge, pr: 3 }}>
+                {description}
+              </Box>
             </Grid>
           </Grid>
           <Grid
