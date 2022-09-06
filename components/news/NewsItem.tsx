@@ -49,6 +49,7 @@ export const NewsItem: FC<NewsItemProps> = ({
             className="teaserImage"
             sx={{
               height: "100%",
+              minHeight: 200,
               width: 400,
               [ps]: { width: "100%" },
               [tl]: { width: 400 },
