@@ -1,10 +1,9 @@
 import { FC } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { Grid, Box } from "@mui/material";
-import { colors, typography, loader } from "styles/theme";
+import { colors, typography } from "styles/theme";
 import { HeaderSection as BaseHeaderSection } from "components/common/HeaderSection";
-import rightArrow from "public/images/right-arrow.svg";
+// import rightArrow from "public/images/right-arrow.svg";
 
 export const JobHeaderSection: FC = ({ children }) => {
   const { lightGrey, darkGrey, turquoise } = colors;
@@ -16,15 +15,14 @@ export const JobHeaderSection: FC = ({ children }) => {
       <Grid container direction="column">
         <Grid item>
           <Box
-            component="p"
             sx={{
               ...body,
               color: darkGrey,
-              "img": { pr: 2 },
+              "> img": { pr: "8px !important" },
               a: { textDecoration: "none" },
             }}
           >
-            <Image src={rightArrow} alt="" loader={loader} />
+            {/* <Image src={rightArrow} alt="" loader={loader} /> */}
             <Link href="/jobs">All vacancies</Link>
           </Box>
         </Grid>
