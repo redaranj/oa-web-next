@@ -3,8 +3,8 @@ import Image from "next/image";
 import { Box, Grid } from "@mui/material";
 import { colors, breakpoints, loader, typography } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
-import mainTop1 from "public/images/main-top-1.png";
-import mainTop2 from "public/images/main-top-2.png";
+import mainPage1 from "public/images/main-page-1.png";
+import mainPage2 from "public/images/main-page-2.png";
 
 export const HeaderSection: FC = ({ children }) => {
   const { white } = colors;
@@ -89,7 +89,7 @@ export const HeaderSection: FC = ({ children }) => {
                   zIndex: 100,
                 }}
               >
-                <Image src={mainTop2} alt="" loader={loader} />
+                <Image src={mainPage1} alt="" loader={loader} />
               </Box>
               <Box
                 sx={{
@@ -99,7 +99,7 @@ export const HeaderSection: FC = ({ children }) => {
                   left: "35%",
                 }}
               >
-                <Image src={mainTop1} alt="" loader={loader} />
+                <Image src={mainPage2} alt="" loader={loader} />
               </Box>
             </Box>
           </Grid>

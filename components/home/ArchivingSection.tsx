@@ -4,7 +4,7 @@ import { Box, Grid } from "@mui/material";
 import { PageSection } from "components/common/PageSection";
 import { breakpoints, colors, typography, loader } from "styles/theme";
 import mainTop3 from "public/images/main-top-3.png";
-import mainTop4 from "public/images/main-top-4.png";
+import mainPage4 from "public/images/main-page-4.png";
 
 export const ArchivingSection: FC = ({ children }) => {
   const { outlinedButton, bodyLarge } = typography;
@@ -72,7 +72,7 @@ export const ArchivingSection: FC = ({ children }) => {
                   left: "35%",
                 }}
               >
-                <Image src={mainTop4} alt="" loader={loader} />
+                <Image src={mainPage4} alt="" loader={loader} />
               </Box>
             </Box>
           </Grid>
