@@ -1,8 +1,7 @@
 import { FC, PropsWithChildren } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { Box, Grid } from "@mui/material";
-import { typography, colors, breakpoints, loader } from "styles/theme";
+import { typography, colors, breakpoints } from "styles/theme";
 
 type GuideItemProps = PropsWithChildren<{
   title: string;
@@ -20,7 +19,7 @@ export const GuideItem: FC<GuideItemProps> = ({
   image: imageName,
 }) => {
   const { h5, bodyLarge } = typography;
-  const { lightGrey, darkGrey } = colors;
+  const { lightGrey, darkGrey, turquoise } = colors;
   const { ps, tl } = breakpoints;
   const image = require(`public/images/${imageName}`).default;
 
@@ -35,20 +34,29 @@ export const GuideItem: FC<GuideItemProps> = ({
           flexDirection: "row",
           [ps]: { flexDirection: "column" },
           [tl]: { flexDirection: "row" },
+          cursor: "pointer",
+          ":hover": {
+            ".teaserImage": {
+              background: `linear-gradient(to top, ${turquoise}bb, ${turquoise}bb), url(${image.src}) center / cover`,
+            },
+          },
         }}
       >
         <Grid item>
           <Box
+            className="teaserImage"
             sx={{
               height: "100%",
               width: 400,
               [ps]: { width: "100%" },
               [tl]: { width: 400 },
               border: `1px solid ${lightGrey}`,
+              backgroundImage: `url(${image.src})`,
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
             }}
-          >
-            <Image src={image} alt="" loader={loader} />
-          </Box>
+          />
         </Grid>
         <Grid
           item

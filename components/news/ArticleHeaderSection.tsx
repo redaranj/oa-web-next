@@ -1,9 +1,8 @@
 import { FC } from "react";
 import { useRouter } from "next/router";
-import Image from "next/image";
 import Link from "next/link";
 import { Box, Grid } from "@mui/material";
-import { colors, loader, typography } from "styles/theme";
+import { colors, typography, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { loadImage } from "lib/frontendHelpers";
 
@@ -11,14 +10,53 @@ export const ArticleHeaderSection: FC = ({ children }) => {
   const router = useRouter();
   const pathComponents = router.pathname.split("/");
   const section = pathComponents.at(-2);
-  const { lightGrey, darkGrey, turquoise } = colors;
+  const { white, lightGrey, darkGrey, turquoise } = colors;
+  const { ps, pl, ts, tl, ds, dl } = breakpoints;
   const { bodyLarge } = typography;
   const [first, date, category, title, ...description] = children as any[];
   const image = loadImage(first);
 
   return (
-    <Box sx={{ mb: 16 }}>
-      <PageSection backgroundColor={lightGrey}>
+    <Box>
+      <PageSection
+        backgroundColor={lightGrey}
+        sx={{
+          mb: -1,
+          py: 13,
+          pb: 0,
+          px: 11.25,
+          [ps]: {
+            py: 6,
+            px: 3,
+            pb: 0,
+          },
+          [pl]: {
+            py: 6,
+            px: 3,
+            pb: 0,
+          },
+          [ts]: {
+            py: 7,
+            px: 4.375,
+            pb: 0,
+          },
+          [tl]: {
+            py: 9,
+            px: 4.375,
+            pb: 0,
+          },
+          [ds]: {
+            py: 13,
+            px: 6.25,
+            pb: 0,
+          },
+          [dl]: {
+            py: 13,
+            px: 11.25,
+            pb: 0,
+          },
+        }}
+      >
         <Grid
           container
           justifyContent="space-around"
@@ -51,7 +89,7 @@ export const ArticleHeaderSection: FC = ({ children }) => {
               </Grid>
             </Grid>
             <Grid item>{title}</Grid>
-            <Grid item sx={{ mb: 10, width: "75%" }}>
+            <Grid item sx={{ width: "75%" }}>
               <Box
                 sx={{
                   "& p": bodyLarge,
@@ -60,23 +98,34 @@ export const ArticleHeaderSection: FC = ({ children }) => {
                 {description}
               </Box>
             </Grid>
-            <Box
-              sx={{
-                position: "absolute",
-                bottom: "-250px",
-                left: "calc(50% - 350px)",
-                height: 300,
-                maxWidth: 700,
-                margin: "0 auto",
-                mt: 6,
-                overflow: "hidden",
-              }}
-            >
-              <Image src={image} alt="" loader={loader} />
-            </Box>
           </Grid>
         </Grid>
       </PageSection>
+      <Box
+        sx={{
+          width: "100%",
+          background: `linear-gradient(to bottom, ${lightGrey} 50%, ${white} 50%)`,
+          p: 3,
+        }}
+      >
+        <Box
+          sx={{
+            height: 300,
+            width: "50%",
+            [ps]: {
+              width: "100%",
+            },
+            [ts]: {
+              width: "50%",
+            },
+            margin: "0 auto",
+            backgroundImage: `url(${image.src})`,
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+          }}
+        />
+      </Box>
     </Box>
   );
 };
