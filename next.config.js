@@ -19,15 +19,6 @@ const config = withMDX({
     loader: "custom",
   },
   pageExtensions: ["ts", "tsx", "mdx"],
-  async redirects() {
-    return [
-      {
-        source: "/RJob",
-        destination: "/jobs/decentralized-storage-researcher",
-        permanent: true,
-      },
-    ];
-  },
 });
 
 export default config;
