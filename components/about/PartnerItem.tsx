@@ -6,7 +6,7 @@ import { loadImage, getURL } from "lib/frontendHelpers";
 
 export const PartnerItem: FC = ({ children }) => {
   const { ps, tl } = breakpoints;
-  const { turquoise } = colors;
+  const { white, turquoise } = colors;
   const [first, second] = children as any[];
   const url = getURL(second);
   const image = loadImage(first);
@@ -20,7 +20,7 @@ export const PartnerItem: FC = ({ children }) => {
       alignItems="center"
       justifyContent="center"
     >
-      <Grid item sx={{ cursor: "pointer" }}>
+      <Grid item sx={{ cursor: "pointer", width: "100%", height: 180 }}>
         <Link href={url}>
           <Box
             sx={{
@@ -30,8 +30,9 @@ export const PartnerItem: FC = ({ children }) => {
               backgroundImage: `url(${image.src})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
+              border: `1px solid ${white}`,
               ":hover": {
-                background: `linear-gradient(to top, ${turquoise}bb, ${turquoise}bb), url(${image.src}) center / cover`,
+                border: `1px solid ${turquoise}`,
               },
             }}
           />
