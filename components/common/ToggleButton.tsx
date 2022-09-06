@@ -20,7 +20,6 @@ export const ToggleButton: FC<ToggleButtonProps> = ({
       sx={{
         fontFamily: "Montserrat, sans-serif",
         fontStyle: "normal",
-        color: black,
         margin: 0,
         lineHeight: "24px",
         [breakpoints.ps]: {
