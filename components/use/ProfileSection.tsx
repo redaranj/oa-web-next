@@ -2,7 +2,7 @@ import { FC } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Grid, Box } from "@mui/material";
-import { colors, loader, typography } from "styles/theme";
+import { colors, loader, typography, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { loadImage } from "lib/frontendHelpers";
 import quotationMark from "public/images/quote.svg";
@@ -10,6 +10,7 @@ import quotationMark from "public/images/quote.svg";
 export const ProfileSection: FC = ({ children }) => {
   const { white, lightGrey, mediumGrey, turquoise } = colors;
   const { bodyLarge } = typography;
+  const { ps, ts } = breakpoints;
   const [first, name, stats, quote, ...details] = children as any[];
   const image = loadImage(first);
 
@@ -20,13 +21,33 @@ export const ProfileSection: FC = ({ children }) => {
       </PageSection>
       <PageSection backgroundColor={lightGrey}>
         <Grid container direction="column">
-          <Grid item container direction="row" wrap="nowrap">
+          <Grid
+            item
+            container
+            sx={{
+              flexDirection: "row",
+              flexWrap: "nowrap",
+              [ps]: { flexDirection: "column", flexWrap: "wrap" },
+              [ts]: { flexDirection: "row", flexWrap: "nowrap" },
+            }}
+          >
             <Grid item>
-              <Box sx={{ width: 300 }}>
+              <Box
+                sx={{
+                  width: 300,
+                  [ps]: { width: "100%" },
+                  [ts]: { width: 300 },
+                }}
+              >
                 <Image src={image} alt="" loader={loader} />
               </Box>
             </Grid>
-            <Grid item container direction="column" sx={{ ml: "20px" }}>
+            <Grid
+              item
+              container
+              direction="column"
+              sx={{ mx: 3, [ps]: { mx: 1 }, [ts]: { mx: 3 } }}
+            >
               <Grid item>{name}</Grid>
               <Grid item>
                 <Box
@@ -47,6 +68,9 @@ export const ProfileSection: FC = ({ children }) => {
                       color: turquoise,
                       fontWeight: "bold",
                       minWidth: 320,
+                      pr: 2,
+                      [ps]: { minWidth: 0 },
+                      [ts]: { minWidth: 320 },
                     },
                   }}
                 >
@@ -63,7 +87,15 @@ export const ProfileSection: FC = ({ children }) => {
           </Grid>
           <Grid item container direction="row" wrap="nowrap">
             <Grid item>
-              <Box sx={{ width: 320 }}> </Box>
+              <Box
+                sx={{
+                  width: 320,
+                  [ps]: { width: "100%" },
+                  [ts]: { width: 320 },
+                }}
+              >
+                {" "}
+              </Box>
             </Grid>
             <Grid item sx={{ mt: 6 }}>
               <Box
