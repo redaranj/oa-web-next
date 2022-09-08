@@ -19,6 +19,25 @@ const config = withMDX({
     loader: "custom",
   },
   pageExtensions: ["ts", "tsx", "mdx"],
+  async redirects() {
+    return [
+      {
+        source: "/RJob",
+        destination: "/jobs/decentralized-storage-researcher",
+        permanent: true,
+      },
+      {
+        source: "/UkraineMediaGuide",
+        destination: "/guides/ukraine-media-guide",
+        permanent: true,
+      },
+      {
+        source: "/2022-02-24-Ukraine-Media-Guide",
+        destination: "/guides/ukraine-media-guide",
+        permanent: true,
+      },
+    ];
+  },
 });
 
 export default config;

@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "export": "next export",
-    "lint": "next lint"
+    "lint": "next lint",
+    "redirects": "node scripts/generateRedirects.js"
   },
   "dependencies": {
     "@emotion/cache": "^11.10.3",

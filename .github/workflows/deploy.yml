@@ -38,6 +38,7 @@ jobs:
         run: |
           npm ci
           npm run build
+          npm run redirects
           npm run export
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
