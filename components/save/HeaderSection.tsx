@@ -16,7 +16,7 @@ export const HeaderSection: FC<PropsWithChildren> = ({ children }) => {
   const { lightGrey, white } = colors;
   const { bodyLarge } = typography;
   const { ps, pl, ts, tl, ds, dl } = breakpoints;
-  const [title, description, ...rest] = children as any[];
+  const [title, description, appStoreButtons, ...rest] = children as any[];
 
   return (
     <>
@@ -96,11 +96,26 @@ export const HeaderSection: FC<PropsWithChildren> = ({ children }) => {
             </Grid>
             <Grid item container direction="column">
               <Grid item>
-                <Box
-                  component="p"
-                  sx={{ "> p": bodyLarge, maxWidth: "550px", mb: "60px" }}
-                >
+                <Box component="p" sx={{ "> p": bodyLarge, maxWidth: "550px" }}>
                   {description}
+                </Box>
+              </Grid>
+              <Grid item>
+                <Box
+                  sx={{
+                    mb: "60px",
+                    "& img": {
+                      float: "left !important",
+                      height: "60px !important",
+                      pt: "15px !important",
+                      pr: "5px !important",
+                      ":hover": {
+                        backgroundColor: "transparent !important",
+                      },
+                    },
+                  }}
+                >
+                  {appStoreButtons}
                 </Box>
               </Grid>
               <Grid item>
