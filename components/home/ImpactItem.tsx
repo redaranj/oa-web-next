@@ -1,8 +1,8 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import { Box, Grid } from "@mui/material";
 import { typography, breakpoints } from "styles/theme";
 
-export const ImpactItem: FC = ({ children }) => {
+export const ImpactItem: FC<PropsWithChildren> = ({ children }) => {
   const { h5, bodyLarge } = typography;
   const { tl, ts, ps } = breakpoints;
   const [image, title, ...description] = children as any[];

@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { Box, Grid } from "@mui/material";
@@ -6,7 +6,7 @@ import { colors, typography, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { loadImage } from "lib/frontendHelpers";
 
-export const ArticleHeaderSection: FC = ({ children }) => {
+export const ArticleHeaderSection: FC<PropsWithChildren> = ({ children }) => {
   const router = useRouter();
   const pathComponents = router.pathname.split("/");
   const section = pathComponents.at(-2);

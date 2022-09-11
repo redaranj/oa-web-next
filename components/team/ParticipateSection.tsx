@@ -1,9 +1,9 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import { Grid } from "@mui/material";
 import { colors, breakpoints, typography } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 
-export const ParticipateSection: FC = ({ children }) => {
+export const ParticipateSection: FC<PropsWithChildren> = ({ children }) => {
   const { white, mediumBurgundy, darkBurgundy } = colors;
   const { bodyLarge } = typography;
   const { ps, tl } = breakpoints;

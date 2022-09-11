@@ -1,11 +1,11 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import Link from "next/link";
 import { Grid, Box } from "@mui/material";
 import { colors, typography } from "styles/theme";
 import { HeaderSection as BaseHeaderSection } from "components/common/HeaderSection";
 // import rightArrow from "public/images/right-arrow.svg";
 
-export const JobHeaderSection: FC = ({ children }) => {
+export const JobHeaderSection: FC<PropsWithChildren> = ({ children }) => {
   const { lightGrey, darkGrey, turquoise } = colors;
   const { body } = typography;
   const [first, ...rest] = children as any[];

@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Grid, Box } from "@mui/material";
@@ -7,7 +7,7 @@ import { PageSection } from "components/common/PageSection";
 import { loadImage } from "lib/frontendHelpers";
 import quotationMark from "public/images/quote.svg";
 
-export const ProfileSection: FC = ({ children }) => {
+export const ProfileSection: FC<PropsWithChildren> = ({ children }) => {
   const { white, lightGrey, mediumGrey, turquoise } = colors;
   const { bodyLarge } = typography;
   const { ps, ts } = breakpoints;

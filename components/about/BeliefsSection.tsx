@@ -1,11 +1,11 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import Image from "next/image";
 import { Box, Grid } from "@mui/material";
 import { colors, breakpoints, typography, loader } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import handPhone from "public/images/hand-phone.png";
 
-export const BeliefsSection: FC = ({ children }) => {
+export const BeliefsSection: FC<PropsWithChildren> = ({ children }) => {
   const { lightGrey } = colors;
   const { bodyLarge } = typography;
   const { ps, tl } = breakpoints;

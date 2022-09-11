@@ -1,11 +1,11 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import Image from "next/image";
 import { Box, Grid } from "@mui/material";
 import { colors, breakpoints, loader, typography } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import vision from "public/images/vision.png";
 
-export const VisionSection: FC = ({ children }) => {
+export const VisionSection: FC<PropsWithChildren> = ({ children }) => {
   const { white, lightGrey } = colors;
   const { bodyLarge } = typography;
   const { ps, tl } = breakpoints;

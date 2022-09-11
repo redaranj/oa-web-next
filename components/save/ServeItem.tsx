@@ -1,9 +1,9 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import { Grid, Box } from "@mui/material";
 import { colors, typography, breakpoints } from "styles/theme";
 import { loadImage } from "lib/frontendHelpers";
 
-export const ServeItem: FC = ({ children }) => {
+export const ServeItem: FC<PropsWithChildren> = ({ children }) => {
   const [first, ...rest] = children as any[];
   const { outlinedButton, bodyLarge } = typography;
   const { ps, ts } = breakpoints;

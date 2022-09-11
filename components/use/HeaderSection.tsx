@@ -1,9 +1,9 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import { Stack } from "@mui/material";
 import { colors } from "styles/theme";
 import { HeaderSection as BaseHeaderSection } from "components/common/HeaderSection";
 
-export const HeaderSection: FC = ({ children }) => {
+export const HeaderSection: FC<PropsWithChildren> = ({ children }) => {
   const { white, turquoise } = colors;
 
   return (

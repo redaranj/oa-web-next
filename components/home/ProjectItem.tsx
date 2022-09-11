@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Box, Grid } from "@mui/material";
@@ -6,7 +6,7 @@ import { colors, typography, breakpoints, loader } from "styles/theme";
 import { loadImage, getURL } from "lib/frontendHelpers";
 import rightArrow from "public/images/right-arrow.svg";
 
-export const ProjectItem: FC = ({ children }) => {
+export const ProjectItem: FC<PropsWithChildren> = ({ children }) => {
   const { white, turquoise } = colors;
   const { bodyLarge } = typography;
   const { ps, ts } = breakpoints;
@@ -30,7 +30,7 @@ export const ProjectItem: FC = ({ children }) => {
           },
           "& img": {
             filter:
-            "brightness(0) saturate(100%) invert(47%) sepia(82%) saturate(4262%) hue-rotate(155deg) brightness(99%) contrast(101%)",
+              "brightness(0) saturate(100%) invert(47%) sepia(82%) saturate(4262%) hue-rotate(155deg) brightness(99%) contrast(101%)",
           },
         },
       }}

@@ -1,8 +1,8 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import { Box } from "@mui/material";
 import { colors, breakpoints } from "styles/theme";
 
-export const DonateBox: FC = ({ children }) => {
+export const DonateBox: FC<PropsWithChildren> = ({ children }) => {
   const { mediumBurgundy, darkBurgundy, turquoise, black, lightGrey, white } =
     colors;
   const { ps, ts } = breakpoints;

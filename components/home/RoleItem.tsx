@@ -1,10 +1,10 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import Link from "next/link";
 import { Box, Grid } from "@mui/material";
 import { colors } from "styles/theme";
 import { getURL, loadImage } from "lib/frontendHelpers";
 
-export const RoleItem: FC = ({ children }) => {
+export const RoleItem: FC<PropsWithChildren> = ({ children }) => {
   const { white, turquoise } = colors;
   const [first, title, link] = children as any[];
   const image = loadImage(first);

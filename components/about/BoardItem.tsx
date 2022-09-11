@@ -1,10 +1,10 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import Link from "next/link";
 import { Box, Grid } from "@mui/material";
 import { colors, breakpoints, typography } from "styles/theme";
 import advisoryBoard from "public/images/advisory-board.svg";
 
-export const BoardItem: FC = ({ children }) => {
+export const BoardItem: FC<PropsWithChildren> = ({ children }) => {
   const { lightGrey } = colors;
   const { bodyLarge } = typography;
   const { ps, tl } = breakpoints;

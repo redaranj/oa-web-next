@@ -1,11 +1,11 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import Image from "next/image";
 import { Box, Grid } from "@mui/material";
 import { colors, breakpoints, loader, typography } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import joinOurTeam from "public/images/join-our-team.png";
 
-export const JoinSection: FC = ({ children }) => {
+export const JoinSection: FC<PropsWithChildren> = ({ children }) => {
   const { white, lightGrey } = colors;
   const { outlinedButton, bodyLarge } = typography;
   const { ps, pl, ts, tl, ds, dl } = breakpoints;

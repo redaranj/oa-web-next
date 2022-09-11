@@ -1,11 +1,11 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import Image from "next/image";
 import { Box, Grid } from "@mui/material";
 import { colors, loader, typography, breakpoints } from "styles/theme";
 import { HeaderSection as BaseHeaderSection } from "components/common/HeaderSection";
 import codeConduct from "public/images/code-of-conduct.png";
 
-export const HeaderSection: FC = ({ children }) => {
+export const HeaderSection: FC<PropsWithChildren> = ({ children }) => {
   const { lightGrey } = colors;
   const { outlinedButton } = typography;
   const { ps, ts } = breakpoints;

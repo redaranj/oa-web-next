@@ -1,9 +1,9 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import { Box, Grid } from "@mui/material";
 import { colors, breakpoints } from "styles/theme";
 import { loadImage } from "lib/frontendHelpers";
 
-export const ActivityItem: FC = ({ children }) => {
+export const ActivityItem: FC<PropsWithChildren> = ({ children }) => {
   const { white } = colors;
   const { ps, tl } = breakpoints;
   const [first, ...rest] = children as any[];

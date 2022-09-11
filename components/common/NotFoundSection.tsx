@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import Image from "next/image";
 import { MDXProvider } from "@mdx-js/react";
 import { Box } from "@mui/material";
@@ -8,7 +8,7 @@ import FourOne from "public/images/not-found-four-one.svg";
 import Zero from "public/images/not-found-zero.svg";
 import FourTwo from "public/images/not-found-four-two.svg";
 
-export const NotFoundSection: FC = ({ children }) => {
+export const NotFoundSection: FC<PropsWithChildren> = ({ children }) => {
   const { white } = colors;
 
   return (

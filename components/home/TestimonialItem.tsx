@@ -1,8 +1,8 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import { Box, Grid } from "@mui/material";
 import { colors, typography, breakpoints } from "styles/theme";
 
-export const TestimonialItem: FC = ({ children }) => {
+export const TestimonialItem: FC<PropsWithChildren> = ({ children }) => {
   const { white, turquoise, darkGrey } = colors;
   const { h6, body } = typography;
   const [quote, name, position, url] = children as any[];

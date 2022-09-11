@@ -1,12 +1,12 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import { Box, Grid } from "@mui/material";
 import { colors, breakpoints, typography } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { JobItem } from "components/jobs/JobItem";
 
-type JobsSectionProps = {
+type JobsSectionProps = PropsWithChildren<{
   pages: any[];
-};
+}>;
 
 export const JobsSection: FC<JobsSectionProps> = ({ pages, children }) => {
   const { lightGrey } = colors;

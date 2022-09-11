@@ -1,10 +1,10 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import { Stack } from "@mui/material";
 import { colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { ContactBox } from "components/jobs/ContactBox";
 
-export const DetailsSection: FC = ({ children }) => {
+export const DetailsSection: FC<PropsWithChildren> = ({ children }) => {
   const { lightGrey } = colors;
 
   return (

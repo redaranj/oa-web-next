@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import Image from "next/image";
 import { Box, Grid } from "@mui/material";
 import { colors, breakpoints, loader, typography } from "styles/theme";
@@ -6,7 +6,7 @@ import { PageSection } from "components/common/PageSection";
 import mainPage1 from "public/images/main-page-1.png";
 import mainPage2 from "public/images/main-page-2.png";
 
-export const HeaderSection: FC = ({ children }) => {
+export const HeaderSection: FC<PropsWithChildren> = ({ children }) => {
   const { white } = colors;
   const { bodyLarge } = typography;
   const { ps, ts, tl } = breakpoints;

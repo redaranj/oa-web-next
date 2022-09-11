@@ -1,10 +1,10 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import { Box, Grid } from "@mui/material";
 import { useTranslate } from "react-polyglot";
 import { typography, colors, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 
-export const PartnersSection: FC = ({ children }) => {
+export const PartnersSection: FC<PropsWithChildren> = ({ children }) => {
   const t = useTranslate();
   const { white } = colors;
   const { h5 } = typography;

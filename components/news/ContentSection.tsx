@@ -1,9 +1,9 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import { Box } from "@mui/material";
 import { colors, typography } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 
-export const ContentSection: FC = ({ children }) => {
+export const ContentSection: FC<PropsWithChildren> = ({ children }) => {
   const { white } = colors;
   const { bodyLarge } = typography;
 

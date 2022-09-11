@@ -1,10 +1,10 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import Link from "next/link";
 import { Box, Grid } from "@mui/material";
 import { colors, breakpoints } from "styles/theme";
 import { getURL, loadImage } from "lib/frontendHelpers";
 
-export const InvolvedItem: FC = ({ children }) => {
+export const InvolvedItem: FC<PropsWithChildren> = ({ children }) => {
   const { white, turquoise } = colors;
   const { ps, ts } = breakpoints;
   const [first, title, link] = children as any[];

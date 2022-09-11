@@ -1,8 +1,8 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import { Box, Grid } from "@mui/material";
 import { breakpoints, colors, typography } from "styles/theme";
 
-export const ParticipateItem: FC = ({ children }) => {
+export const ParticipateItem: FC<PropsWithChildren> = ({ children }) => {
   const { lightTurquoise } = colors;
   const { ps, tl, ds } = breakpoints;
   const { outlinedButton } = typography;

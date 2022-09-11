@@ -1,10 +1,10 @@
-import { FC, useState, useCallback } from "react";
+import { FC, PropsWithChildren, useState, useCallback } from "react";
 import { Box, Grid } from "@mui/material";
 import { colors, typography } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { ToggleButton } from "components/common/ToggleButton";
 
-export const QuestionsSection: FC = ({ children }) => {
+export const QuestionsSection: FC<PropsWithChildren> = ({ children }) => {
   const { lightGrey, mediumGrey } = colors;
   const { bodyLarge } = typography;
   const categories = ["About OpenArchive", "About Save", "Support / Donations"];

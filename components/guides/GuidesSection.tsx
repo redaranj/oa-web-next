@@ -1,12 +1,12 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import { Box, Grid } from "@mui/material";
 import { colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { GuideItem } from "components/guides/GuideItem";
 
-type GuidesSectionProps = {
+type GuidesSectionProps = PropsWithChildren<{
   pages: any[];
-};
+}>;
 
 export const GuidesSection: FC<GuidesSectionProps> = ({ pages, children }) => {
   const { white, mediumGrey } = colors;

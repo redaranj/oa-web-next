@@ -1,8 +1,8 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import { Box, Grid } from "@mui/material";
 import { colors, typography, breakpoints } from "styles/theme";
 
-export const DetailItem: FC = ({ children }) => {
+export const DetailItem: FC<PropsWithChildren> = ({ children }) => {
   const { white } = colors;
   const { bodyLarge } = typography;
   const { ps, ts } = breakpoints;

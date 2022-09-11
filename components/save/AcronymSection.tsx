@@ -1,9 +1,9 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import { colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { HorizontalCarousel } from "components/common/HorizontalCarousel";
 
-export const AcronymSection: FC = ({ children }) => {
+export const AcronymSection: FC<PropsWithChildren> = ({ children }) => {
   const { white } = colors;
 
   return (

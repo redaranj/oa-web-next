@@ -1,8 +1,8 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import { Box, AccordionDetails } from "@mui/material";
 import { typography } from "styles/theme";
 
-export const Answer: FC = ({ children }) => {
+export const Answer: FC<PropsWithChildren> = ({ children }) => {
   const { bodyLarge } = typography;
 
   return (

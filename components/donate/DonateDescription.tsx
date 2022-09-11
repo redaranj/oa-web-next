@@ -1,7 +1,7 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import { Box, Grid } from "@mui/material";
 
-export const DonateDescription: FC = ({ children }) => (
+export const DonateDescription: FC<PropsWithChildren> = ({ children }) => (
   <Grid
     container
     justifyContent="space-around"

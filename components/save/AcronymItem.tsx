@@ -1,10 +1,10 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import Image from "next/image";
 import { Box, Grid } from "@mui/material";
 import { typography, breakpoints, loader } from "styles/theme";
 import { loadImage } from "lib/frontendHelpers";
 
-export const AcronymItem: FC = ({ children }) => {
+export const AcronymItem: FC<PropsWithChildren> = ({ children }) => {
   const { bodyLarge } = typography;
   const { ps, tl } = breakpoints;
   const [first, title, ...description] = children as any[];

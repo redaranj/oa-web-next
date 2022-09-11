@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Box, Grid } from "@mui/material";
@@ -6,7 +6,7 @@ import { colors, breakpoints, loader } from "styles/theme";
 import { loadImage, getURL } from "lib/frontendHelpers";
 import rightArrow from "public/images/right-arrow.svg";
 
-export const MoreItem: FC = ({ children }) => {
+export const MoreItem: FC<PropsWithChildren> = ({ children }) => {
   const { lightGrey, turquoise } = colors;
   const { ps, tl } = breakpoints;
   const [first, title, last] = children as any[];

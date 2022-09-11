@@ -1,9 +1,9 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import { Grid, Box } from "@mui/material";
 import { typography, breakpoints } from "styles/theme";
 import { loadImage } from "lib/frontendHelpers";
 
-export const OpportunityItem: FC = ({ children }) => {
+export const OpportunityItem: FC<PropsWithChildren> = ({ children }) => {
   const [first, ...rest] = children as any[];
   const { outlinedButton, bodyLarge } = typography;
   const { ps, tl } = breakpoints;

@@ -1,10 +1,10 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import { Grid, Box } from "@mui/material";
 import { colors, typography, breakpoints } from "styles/theme";
 import { HeaderSection as BaseHeaderSection } from "components/common/HeaderSection";
 import contactUs from "public/images/contact-us.png";
 
-export const ContactSection: FC = ({ children }) => {
+export const ContactSection: FC<PropsWithChildren> = ({ children }) => {
   const { white } = colors;
   const { outlinedButton, bodyLarge } = typography;
   const { ps, tl } = breakpoints;

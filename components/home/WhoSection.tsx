@@ -1,13 +1,13 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import { Box, Grid } from "@mui/material";
 import { typography, colors, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { HorizontalCarousel } from "components/common/HorizontalCarousel";
 import { WhoItem } from "components/home/WhoItem";
 
-type WhoSectionProps = {
+type WhoSectionProps = PropsWithChildren<{
   pages: any[];
-};
+}>;
 
 export const WhoSection: FC<WhoSectionProps> = ({ pages, children }) => {
   const { bodyLarge } = typography;

@@ -1,10 +1,10 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import { Box } from "@mui/material";
 import { colors } from "styles/theme";
 import { HeaderSection as BaseHeaderSection } from "components/common/HeaderSection";
 import FAQHeader from "public/images/faq-header.png";
 
-export const HeaderSection: FC = ({ children }) => {
+export const HeaderSection: FC<PropsWithChildren> = ({ children }) => {
   const { white } = colors;
 
   return (

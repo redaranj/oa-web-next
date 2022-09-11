@@ -1,11 +1,11 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import Image from "next/image";
 import { Box, Grid } from "@mui/material";
 import { typography, colors, loader, breakpoints } from "styles/theme";
 import { HeaderSection as BaseHeaderSection } from "components/common/HeaderSection";
 import ourTeamHeader from "public/images/our-team-who-we-are.png";
 
-export const HeaderSection: FC = ({ children }) => {
+export const HeaderSection: FC<PropsWithChildren> = ({ children }) => {
   const { lightGrey, mediumGrey } = colors;
   const { bodyLarge } = typography;
   const { ps, pl, ts, tl, ds, dl } = breakpoints;

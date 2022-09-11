@@ -1,10 +1,10 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import Image from "next/image";
 import { Box, Grid } from "@mui/material";
 import { colors, loader, typography, breakpoints } from "styles/theme";
 import { loadImage } from "lib/frontendHelpers";
 
-export const AchievementItem: FC = ({ children }) => {
+export const AchievementItem: FC<PropsWithChildren> = ({ children }) => {
   const { white } = colors;
   const { bodyLarge } = typography;
   const { ps, ts } = breakpoints;

@@ -1,9 +1,9 @@
-import { FC, useState } from "react";
+import { FC, PropsWithChildren, useState } from "react";
 import { Accordion } from "@mui/material";
 import { Question } from "components/faq/Question";
 import { Answer } from "components/faq/Answer";
 
-export const QuestionItem: FC = ({ children }) => {
+export const QuestionItem: FC<PropsWithChildren> = ({ children }) => {
   const [expanded, setExpanded] = useState(false);
   const [first, ...rest] = children as any[];
 

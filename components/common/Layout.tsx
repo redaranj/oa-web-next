@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import Head from "next/head";
 // import { useRouter } from "next/router";
 import { Stack } from "@mui/material";
@@ -7,7 +7,7 @@ import { Footer } from "components/common/Footer";
 // import { Cursor } from "components/common/Cursor";
 // import { BreakpointIndicator } from "components/common/BreakpointIndicator";
 
-export const Layout: FC = ({ children }) => {
+export const Layout: FC<PropsWithChildren> = ({ children }) => {
   // const router = useRouter();
   // const basePath = router.pathname.split("/")[0];
   const title = "OpenArchive";

@@ -1,9 +1,9 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import { Box, Stack } from "@mui/material";
 import { colors, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 
-export const ServeSection: FC = ({ children }) => {
+export const ServeSection: FC<PropsWithChildren> = ({ children }) => {
   const { lightGrey } = colors;
   const { ps, ts } = breakpoints;
   const [title, subtitle, ...rest] = children as any[];

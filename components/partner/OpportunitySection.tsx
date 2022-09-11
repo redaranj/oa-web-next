@@ -1,9 +1,9 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import { Stack } from "@mui/material";
 import { colors, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 
-export const OpportunitySection: FC = ({ children }) => {
+export const OpportunitySection: FC<PropsWithChildren> = ({ children }) => {
   const { white, lightGrey } = colors;
   const { ps, ts } = breakpoints;
 

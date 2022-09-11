@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, PropsWithChildren, useState } from "react";
 import Image from "next/image";
 import { Box, Grid, Collapse } from "@mui/material";
 import { useTranslate } from "react-polyglot";
@@ -10,7 +10,7 @@ import saveHeader from "public/images/save-header.png";
 import saveLogo from "public/images/save-logo.png";
 import saveHand from "public/images/save-hand.png";
 
-export const HeaderSection: FC = ({ children }) => {
+export const HeaderSection: FC<PropsWithChildren> = ({ children }) => {
   const [showMore, setShowMore] = useState(false);
   const t = useTranslate();
   const { lightGrey, white } = colors;

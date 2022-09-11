@@ -1,10 +1,12 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import { Box, Grid } from "@mui/material";
 import { colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { HorizontalCarousel } from "components/common/HorizontalCarousel";
 
-export const AdditionalFeaturesSection: FC = ({ children }) => {
+export const AdditionalFeaturesSection: FC<PropsWithChildren> = ({
+  children,
+}) => {
   const { lightGrey } = colors;
   const [first, ...rest] = children as any[];
 

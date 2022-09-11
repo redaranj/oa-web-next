@@ -1,11 +1,11 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import Image from "next/image";
 import { Grid, Box } from "@mui/material";
 import { colors, loader, typography, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import aboutPosition from "public/images/about-position.png";
 
-export const AboutPositionSection: FC = ({ children }) => {
+export const AboutPositionSection: FC<PropsWithChildren> = ({ children }) => {
   const { lightGrey } = colors;
   const { bodyLarge } = typography;
   const { ps, ts } = breakpoints;

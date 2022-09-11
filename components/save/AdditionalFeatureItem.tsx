@@ -1,10 +1,10 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import Image from "next/image";
 import { Box } from "@mui/material";
 import { colors, typography, loader } from "styles/theme";
 import { loadImage } from "lib/frontendHelpers";
 
-export const AdditionalFeatureItem: FC = ({ children }) => {
+export const AdditionalFeatureItem: FC<PropsWithChildren> = ({ children }) => {
   const { white, turquoise } = colors;
   const { bodyLarge } = typography;
   const [first, title, ...description] = children as any[];
