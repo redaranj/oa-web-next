@@ -33,6 +33,8 @@ export const NewsItem: FC<NewsItemProps> = ({
         flexWrap="nowrap"
         spacing={0}
         sx={{
+          width: "100%",
+          height: "auto",
           flexDirection: "row",
           [ps]: { flexDirection: "column" },
           [tl]: { flexDirection: "row" },

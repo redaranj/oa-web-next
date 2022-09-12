@@ -1,5 +1,5 @@
 import { FC, PropsWithChildren } from "react";
-import { Button } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import { colors, breakpoints } from "styles/theme";
 
 type ToggleButtonProps = PropsWithChildren<{
@@ -14,6 +14,7 @@ export const ToggleButton: FC<ToggleButtonProps> = ({
 }) => {
   const { black, white, lightGrey, mediumGrey, turquoise, lightTurquoise } =
     colors;
+  console.log({ children });
 
   return (
     <Button
@@ -54,11 +55,23 @@ export const ToggleButton: FC<ToggleButtonProps> = ({
         "&:hover": {
           backgroundColor: turquoise,
           color: white,
+          "& em > strong": {
+            fontWeight: 700,
+            color: `${white} !important`,
+          },
         },
       }}
       onClick={onClick}
     >
-      {children}
+      <Box
+        sx={{
+          "& em > strong": {
+            fontWeight: 700,
+            color: colors.turquoise,
+          },
+        }}
+        dangerouslySetInnerHTML={{ __html: children as string }}
+      />
     </Button>
   );
 };

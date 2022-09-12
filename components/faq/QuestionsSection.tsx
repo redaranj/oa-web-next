@@ -7,7 +7,11 @@ import { ToggleButton } from "components/common/ToggleButton";
 export const QuestionsSection: FC<PropsWithChildren> = ({ children }) => {
   const { lightGrey, mediumGrey } = colors;
   const { bodyLarge } = typography;
-  const categories = ["About OpenArchive", "About Save", "Support / Donations"];
+  const categories = [
+    "About OpenArchive",
+    "About <em><strong>Save</em></strong>",
+    "Support / Donations",
+  ];
   const [selectedCategory, setSelectedCategory] = useState(null);
   const toggleCategory = useCallback(
     (category) =>
@@ -19,7 +23,7 @@ export const QuestionsSection: FC<PropsWithChildren> = ({ children }) => {
   let filteredChildren = children;
   if (selectedCategory === "About OpenArchive") {
     filteredChildren = [children[0], children[4]];
-  } else if (selectedCategory === "About Save") {
+  } else if (selectedCategory === "About <em><strong>Save</em></strong>") {
     filteredChildren = [
       children[1],
       children[2],

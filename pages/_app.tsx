@@ -1,5 +1,7 @@
 import { AppProps } from "next/app";
 import Head from "next/head";
+import createCache from "@emotion/cache";
+import { CacheProvider } from "@emotion/react";
 import { CssBaseline } from "@mui/material";
 import { MDXProvider } from "@mdx-js/react";
 import { Layout } from "components/common/Layout";
@@ -15,8 +17,10 @@ import "@fontsource/montserrat/700.css";
 const locale = "en";
 const messages = { en };
 
+const cache = createCache({ key: "next" });
+
 const OpenArchiveWeb = ({ Component, pageProps }: AppProps) => (
-  <>
+  <CacheProvider value={cache}>
     <Head>
       <link rel="icon" type="image/png" href={Favicon.src} />
     </Head>
@@ -31,7 +35,7 @@ const OpenArchiveWeb = ({ Component, pageProps }: AppProps) => (
         <Component {...pageProps} />
       </MDXProvider>
     </I18n>
-  </>
+  </CacheProvider>
 );
 
 export default OpenArchiveWeb;

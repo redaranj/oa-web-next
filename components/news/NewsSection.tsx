@@ -44,18 +44,11 @@ export const NewsSection: FC<NewsSectionProps> = ({ pages }) => {
           </Grid>
         </Box>
       </Grid>
-      <Grid
-        container
-        justifyContent="space-around"
-        spacing={6}
-        sx={{
-          flexDirection: "column",
-        }}
-      >
+      <Box display="grid" gridAutoRows="1fr" gap={6}>
         {filteredPages.map((page: any) => (
           <NewsItem key={page.path} {...page} />
         ))}
-      </Grid>
+      </Box>
     </PageSection>
   );
 };

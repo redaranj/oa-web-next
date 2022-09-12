@@ -18,6 +18,9 @@ const config = withMDX({
   images: {
     loader: "custom",
   },
+  compiler: {
+    emotion: true,
+  },
   pageExtensions: ["ts", "tsx", "mdx"],
   async redirects() {
     return [
