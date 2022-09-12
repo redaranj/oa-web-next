@@ -48,9 +48,9 @@ export const GuideItem: FC<GuideItemProps> = ({
             sx={{
               height: "100%",
               minHeight: 200,
-              width: 400,
+              width: 500,
               [ps]: { width: "100%" },
-              [tl]: { width: 400 },
+              [tl]: { width: 500 },
               border: `1px solid ${lightGrey}`,
               backgroundImage: `url(${image.src})`,
               backgroundPosition: "center",
