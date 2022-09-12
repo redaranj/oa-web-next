@@ -79,7 +79,7 @@ export const HeaderSection: FC<PropsWithChildren> = ({ children }) => {
                 sx={{
                   position: "relative",
                   overflow: "hidden",
-                  height: 500,
+                  height: 700,
                   [ps]: {
                     height: 200,
                   },
@@ -90,13 +90,13 @@ export const HeaderSection: FC<PropsWithChildren> = ({ children }) => {
                     height: 550,
                   },
                   [tl]: {
-                    height: 450,
+                    height: 550,
                   },
                   [ds]: {
-                    height: 450,
+                    height: 550,
                   },
                   [dl]: {
-                    height: 500,
+                    height: 700,
                   },
                 }}
               >
@@ -115,16 +115,16 @@ export const HeaderSection: FC<PropsWithChildren> = ({ children }) => {
                       height: 100,
                     },
                     [ts]: {
-                      height: 300,
-                    },
-                    [tl]: {
                       height: 200,
                     },
+                    [tl]: {
+                      height: 300,
+                    },
                     [ds]: {
-                      height: 250,
+                      height: 350,
                     },
                     [dl]: {
-                      height: 300,
+                      height: 400,
                     },
                   }}
                 >
@@ -144,16 +144,16 @@ export const HeaderSection: FC<PropsWithChildren> = ({ children }) => {
                       height: 100,
                     },
                     [ts]: {
-                      height: 300,
-                    },
-                    [tl]: {
                       height: 200,
                     },
+                    [tl]: {
+                      height: 300,
+                    },
                     [ds]: {
-                      height: 250,
+                      height: 350,
                     },
                     [dl]: {
-                      height: 300,
+                      height: 400,
                     },
                   }}
                 >
