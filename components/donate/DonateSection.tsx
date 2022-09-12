@@ -7,7 +7,7 @@ import donate2 from "public/images/donate-2.png";
 
 export const DonateSection: FC<PropsWithChildren> = ({ children }) => {
   const { white, darkBurgundy, mediumBurgundy } = colors;
-  const { ps, pl, ts, tl, ds, dl } = breakpoints;
+  const { ps, ts } = breakpoints;
   const [title, button, ...rest] = children as any;
 
   return (

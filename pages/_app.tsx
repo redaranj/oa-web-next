@@ -8,12 +8,12 @@ import { Layout } from "components/common/Layout";
 import { components } from "styles/theme";
 import { I18n } from "react-polyglot";
 import Favicon from "public/images/favicon.ico";
+import mainTop1 from "public/images/main-top-1.png";
 import en from "../locales/en.json";
 import "styles/global.css";
 import "@fontsource/montserrat/400.css";
 import "@fontsource/montserrat/600.css";
 import "@fontsource/montserrat/700.css";
-import mainTop1 from "public/images/main-top-1.png";
 
 const locale = "en";
 const messages = { en };
