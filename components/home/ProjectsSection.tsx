@@ -6,7 +6,7 @@ import { PageSection } from "components/common/PageSection";
 export const ProjectsSection: FC<PropsWithChildren> = ({ children }) => {
   const { lightGrey } = colors;
   const [first, ...rest] = children as any[];
-  const { ps, ts } = breakpoints;
+  const { ps, tl } = breakpoints;
 
   return (
     <PageSection backgroundColor={lightGrey}>
@@ -19,7 +19,7 @@ export const ProjectsSection: FC<PropsWithChildren> = ({ children }) => {
           [ps]: {
             flexDirection: "column",
           },
-          [ts]: { flexDirection: "row" },
+          [tl]: { flexDirection: "row" },
         }}
       >
         {rest}

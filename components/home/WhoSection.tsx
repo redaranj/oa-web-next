@@ -72,7 +72,17 @@ export const WhoSection: FC<WhoSectionProps> = ({ pages, children }) => {
         </Grid>
       </Box>
       <Box>
-        <HorizontalCarousel columnOnMobile visibleCount={1.5}>
+        <HorizontalCarousel columnOnMobile visibleCount={1.5}
+        breakpoints={{
+          0: { slidesPerView: 1, spaceBetween: 20, visibleCount: 1 },
+          575: {
+            slidesPerView: 1.25,
+            spaceBetween: 20,
+            visibleCount: 1.25,
+          },
+          1024: { slidesPerView: 1.5, spaceBetween: 40, visibleCount: 1.5 },
+        }}
+        >
           {pages.map((page) => (
             <WhoItem key={page.path} {...page} />
           ))}

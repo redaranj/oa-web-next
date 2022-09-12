@@ -9,7 +9,7 @@ import mainPage2 from "public/images/main-page-2.png";
 export const HeaderSection: FC<PropsWithChildren> = ({ children }) => {
   const { white } = colors;
   const { bodyLarge } = typography;
-  const { ps, ts, tl } = breakpoints;
+  const { ps, pl, ts, tl, ds, dl } = breakpoints;
   const [first, ...rest] = children as any[];
 
   return (
@@ -19,7 +19,7 @@ export const HeaderSection: FC<PropsWithChildren> = ({ children }) => {
         sx={{
           flexDirection: "row",
           [ps]: { flexDirection: "column-reverse" },
-          [ts]: { flexDirection: "row" },
+          [tl]: { flexDirection: "row" },
           pt: 8,
         }}
         spacing={6}
@@ -73,33 +73,92 @@ export const HeaderSection: FC<PropsWithChildren> = ({ children }) => {
             }}
           >
             <Box
-              sx={{
-                position: "relative",
-                width: "100%",
-                height: "100%",
-                minHeight: 300,
-              }}
+              sx={{ width: "100%", [ps]: { mb: 6 }, [tl]: { mb: 0 }, mb: 0 }}
             >
               <Box
                 sx={{
-                  position: "absolute",
-                  width: "65%",
-                  top: 0,
-                  left: 0,
-                  zIndex: 100,
+                  position: "relative",
+                  overflow: "hidden",
+                  height: 500,
+                  [ps]: {
+                    height: 200,
+                  },
+                  [pl]: {
+                    height: 450,
+                  },
+                  [ts]: {
+                    height: 550,
+                  },
+                  [tl]: {
+                    height: 450,
+                  },
+                  [ds]: {
+                    height: 450,
+                  },
+                  [dl]: {
+                    height: 500,
+                  },
                 }}
               >
-                <Image src={mainPage1} alt="" loader={loader} />
-              </Box>
-              <Box
-                sx={{
-                  position: "absolute",
-                  width: "65%",
-                  top: "35%",
-                  left: "35%",
-                }}
-              >
-                <Image src={mainPage2} alt="" loader={loader} />
+                <Box
+                  sx={{
+                    position: "absolute",
+                    width: "65%",
+                    top: 0,
+                    left: 0,
+                    zIndex: 100,
+                    height: 300,
+                    [ps]: {
+                      height: 100,
+                    },
+                    [pl]: {
+                      height: 100,
+                    },
+                    [ts]: {
+                      height: 300,
+                    },
+                    [tl]: {
+                      height: 200,
+                    },
+                    [ds]: {
+                      height: 250,
+                    },
+                    [dl]: {
+                      height: 300,
+                    },
+                  }}
+                >
+                  <Image src={mainPage1} alt="" loader={loader} />
+                </Box>
+                <Box
+                  sx={{
+                    position: "absolute",
+                    width: "65%",
+                    top: "35%",
+                    left: "35%",
+                    height: 300,
+                    [ps]: {
+                      height: 100,
+                    },
+                    [pl]: {
+                      height: 100,
+                    },
+                    [ts]: {
+                      height: 300,
+                    },
+                    [tl]: {
+                      height: 200,
+                    },
+                    [ds]: {
+                      height: 250,
+                    },
+                    [dl]: {
+                      height: 300,
+                    },
+                  }}
+                >
+                  <Image src={mainPage2} alt="" loader={loader} />
+                </Box>
               </Box>
             </Box>
           </Grid>

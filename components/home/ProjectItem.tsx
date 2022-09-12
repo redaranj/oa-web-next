@@ -9,7 +9,7 @@ import rightArrow from "public/images/right-arrow.svg";
 export const ProjectItem: FC<PropsWithChildren> = ({ children }) => {
   const { white, turquoise } = colors;
   const { bodyLarge } = typography;
-  const { ps, ts } = breakpoints;
+  const { ps, tl } = breakpoints;
   const [first, title, description, last] = children as any[];
   const image = loadImage(first);
   const url = getURL(last);
@@ -23,7 +23,7 @@ export const ProjectItem: FC<PropsWithChildren> = ({ children }) => {
         width: "33%",
         overflow: "hidden",
         [ps]: { width: "100%" },
-        [ts]: { width: "33%" },
+        [tl]: { width: "33%" },
         "&:hover": {
           "& h5": {
             color: turquoise,

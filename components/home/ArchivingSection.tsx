@@ -51,6 +51,7 @@ export const ArchivingSection: FC<PropsWithChildren> = ({ children }) => {
                 width: "100%",
                 position: "relative",
                 minHeight: 300,
+                overflow: "hidden",
               }}
             >
               <Box
