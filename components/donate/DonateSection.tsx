@@ -1,60 +1,26 @@
 import { FC, PropsWithChildren } from "react";
-import { Grid } from "@mui/material";
-import { colors, breakpoints } from "styles/theme";
+import Image from "next/image";
+import { Box, Grid } from "@mui/material";
+import { colors, breakpoints, loader } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
+import donate2 from "public/images/donate-2.png";
 
 export const DonateSection: FC<PropsWithChildren> = ({ children }) => {
-  const { white } = colors;
-  const [first, ...rest] = children as any[];
+  const { white, darkBurgundy, mediumBurgundy } = colors;
   const { ps, pl, ts, tl, ds, dl } = breakpoints;
+  const [title, button, ...rest] = children as any;
 
   return (
-    <PageSection
-      backgroundColor={white}
-      sx={{
-        py: 13,
-        px: 11.25,
-        pt: 2,
-        [ps]: {
-          py: 6,
-          px: 3,
-          pt: 0,
-        },
-        [pl]: {
-          py: 6,
-          px: 3,
-          pt: 1,
-        },
-        [ts]: {
-          py: 7,
-          px: 4.375,
-          pt: 1,
-        },
-        [tl]: {
-          py: 9,
-          px: 4.375,
-          pt: 2,
-        },
-        [ds]: {
-          py: 13,
-          px: 6.25,
-          pt: 2,
-        },
-        [dl]: {
-          py: 13,
-          px: 11.25,
-          pt: 0,
-        },
-      }}
-    >
+    <PageSection backgroundColor={white}>
       <Grid
         container
         justifyContent="space-around"
         spacing={6}
         sx={{
+          mt: 2,
           flexDirection: "row",
-          [ps]: { flexDirection: "column" },
-          [ts]: { flexDirection: "row" },
+          [ps]: { flexDirection: "column", mt: 0 },
+          [ts]: { flexDirection: "row", mt: 0 },
         }}
       >
         <Grid
@@ -65,7 +31,7 @@ export const DonateSection: FC<PropsWithChildren> = ({ children }) => {
             [ts]: { width: "50%" },
           }}
         >
-          {first}
+          <Image src={donate2} alt="" loader={loader} />
         </Grid>
         <Grid
           item
@@ -73,8 +39,34 @@ export const DonateSection: FC<PropsWithChildren> = ({ children }) => {
             width: "50%",
             [ps]: { width: "100%" },
             [ts]: { width: "50%" },
+            pt: 10,
           }}
         >
+          {title}
+          <Box
+            sx={{
+              a: {
+                backgroundColor: mediumBurgundy,
+                textDecoration: "none",
+                textAlign: "center",
+                fontWeight: "bold",
+                color: white,
+                borderRadius: 10,
+                px: 3,
+                py: 1,
+                m: 0,
+                mb: 2,
+                display: "block",
+                maxWidth: 200,
+                "&:hover": {
+                  backgroundColor: darkBurgundy,
+                  color: white,
+                },
+              },
+            }}
+          >
+            {button}
+          </Box>
           {rest}
         </Grid>
       </Grid>
