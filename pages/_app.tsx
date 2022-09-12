@@ -13,67 +13,44 @@ import "styles/global.css";
 import "@fontsource/montserrat/400.css";
 import "@fontsource/montserrat/600.css";
 import "@fontsource/montserrat/700.css";
+import mainTop1 from "public/images/main-top-1.png";
 
 const locale = "en";
 const messages = { en };
 
 const cache = createCache({ key: "next" });
+const siteDescription =
+  "OpenArchive helps history's first responders safely store, verify, and share critical evidence.";
+// Twitter & Facebook meta tags temporarily hard-coded
 
-const OpenArchiveWeb = (props: AppProps) => {
-  const { Component, pageProps } = props;
-  const pageInfo: any = {};
+const OpenArchiveWeb = ({ Component, pageProps }: AppProps) => (
+  <CacheProvider value={cache}>
+    <Head>
+      <link rel="icon" type="image/png" href={Favicon.src} />
+      <meta name="twitter:site" content="@open_archive" />
+      <meta name="twitter:title" content="OpenArchive" />
+      <meta name="twitter:description" content={siteDescription} />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:image" content={mainTop1.src} />
 
-  return (
-    <CacheProvider value={cache}>
-      <Head>
-        <link rel="icon" type="image/png" href={Favicon.src} />
-
-        <meta name="twitter:site" content="@open_archive" />
-        <meta name="twitter:title" content="page.title" />
-        {pageInfo.description ? (
-          <meta name="twitter:description" content="page.description" />
-        ) : (
-          <meta name="twitter:description" content="site.description" />
-        )}
-        {pageInfo.image ? (
-          <>
-            <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:image" content="site.url page.image" />
-          </>
-        ) : (
-          <>
-            <meta name="twitter:card" content="summary" />
-            <meta name="twitter:image" content="site.title_image" />
-          </>
-        )}
-
-        <meta property="og:title" content="page.title" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="site.url page.permalink" />
-        {pageInfo.description ? (
-          <meta name="og:description" content="page.description" />
-        ) : (
-          <meta name="og:description" content="site.description" />
-        )}
-        {pageInfo.image ? (
-          <meta property="og:image" content="site.url page.image" />
-        ) : (
-          <meta property="og:image" content="site.title_image" />
-        )}
-      </Head>
-      <CssBaseline />
-      <I18n locale={locale} messages={messages[locale]}>
-        <MDXProvider
-          components={{
-            wrapper: Layout,
-            ...components,
-          }}
-        >
-          <Component {...pageProps} />
-        </MDXProvider>
-      </I18n>
-    </CacheProvider>
-  );
-};
+      <meta property="og:title" content="OpenArchive" />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://open-archive.org" />
+      <meta name="og:description" content={siteDescription} />
+      <meta property="og:image" content={mainTop1.src} />
+    </Head>
+    <CssBaseline />
+    <I18n locale={locale} messages={messages[locale]}>
+      <MDXProvider
+        components={{
+          wrapper: Layout,
+          ...components,
+        }}
+      >
+        <Component {...pageProps} />
+      </MDXProvider>
+    </I18n>
+  </CacheProvider>
+);
 
 export default OpenArchiveWeb;
