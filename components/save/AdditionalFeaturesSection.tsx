@@ -19,12 +19,17 @@ export const AdditionalFeaturesSection: FC<PropsWithChildren> = ({
         }}
       >
         <Grid item>
-          <Box sx={{ mb: "120px" }}>{first}</Box>
+          <Box sx={{ mb: 6 }}>{first}</Box>
         </Grid>
         <Grid item sx={{ width: "100%" }}>
           <HorizontalCarousel
             breakpoints={{
-              0: { slidesPerView: 1.25, spaceBetween: 20, visibleCount: 1.25 },
+              0: { slidesPerView: 1, spaceBetween: 20, visibleCount: 1 },
+              575: {
+                slidesPerView: 1.25,
+                spaceBetween: 20,
+                visibleCount: 1.25,
+              },
               1024: { slidesPerView: 2.5, spaceBetween: 40, visibleCount: 2.5 },
             }}
             visibleCount={2.5}

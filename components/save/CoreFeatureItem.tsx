@@ -21,9 +21,14 @@ export const CoreFeatureItem: FC<PropsWithChildren> = ({ children }) => {
         overflow: "hidden",
       }}
     >
-      <Grid container direction="column" justifyContent="space-around">
-        <Grid item>
-          <Box sx={{ p: 6, pb: 0 }}>
+      <Grid
+        container
+        direction="column"
+        justifyContent="space-around"
+        sx={{ width: "100%" }}
+      >
+        <Grid item sx={{ width: "100%" }}>
+          <Box sx={{ p: 6, pb: 0, width: "100%" }}>
             {image}
             {title}
           </Box>

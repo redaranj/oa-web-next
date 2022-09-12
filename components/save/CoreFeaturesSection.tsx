@@ -48,7 +48,12 @@ export const CoreFeaturesSection: FC<PropsWithChildren> = ({ children }) => {
         <Grid item sx={{ width: "100%" }}>
           <HorizontalCarousel
             breakpoints={{
-              0: { slidesPerView: 1.25, spaceBetween: 20, visibleCount: 1.25 },
+              0: { slidesPerView: 1, spaceBetween: 20, visibleCount: 1 },
+              575: {
+                slidesPerView: 1.25,
+                spaceBetween: 20,
+                visibleCount: 1.25,
+              },
               1024: { slidesPerView: 2.5, spaceBetween: 40, visibleCount: 2.5 },
             }}
           >

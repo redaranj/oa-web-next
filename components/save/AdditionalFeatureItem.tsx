@@ -14,6 +14,7 @@ export const AdditionalFeatureItem: FC<PropsWithChildren> = ({ children }) => {
     <Box
       sx={{
         height: "370px",
+        width: "100%",
         backgroundColor: turquoise,
         "&:hover .slide": {
           transition: "0.5s",
@@ -27,7 +28,7 @@ export const AdditionalFeatureItem: FC<PropsWithChildren> = ({ children }) => {
         <Box sx={{ width: 60, mb: 3 }}>
           <Image src={image} alt="" loader={loader} />
         </Box>
-        {title}
+        <Box sx={{ width: "80%" }}>{title}</Box>
       </Box>
       <Box
         className="slide"

@@ -65,17 +65,22 @@ export const ArticleHeaderSection: FC<PropsWithChildren> = ({ children }) => {
             flexDirection: "column",
           }}
         >
-          <Grid item>
-            <Link href={`/${section}`}>
+          <Grid item sx={{ my: 3 }}>
+            <Link href={`/${section}`} passHref>
               <Box
+                component="a"
                 sx={{
-                  a: { textDecoration: "none" },
-                  "& p": { fontWeight: "bold" },
-                  mt: 3,
-                  mb: 3,
+                  "&:hover": {
+                    color: turquoise,
+                  },
+                  textDecoration: "none !important",
+                  "> p": {
+                    ...bodyLarge,
+                    fontWeight: "bold",
+                  },
                 }}
               >
-                All {section}
+                ❮ All {section}
               </Box>
             </Link>
           </Grid>

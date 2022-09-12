@@ -14,7 +14,6 @@ export const ToggleButton: FC<ToggleButtonProps> = ({
 }) => {
   const { black, white, lightGrey, mediumGrey, turquoise, lightTurquoise } =
     colors;
-  console.log({ children });
 
   return (
     <Button
