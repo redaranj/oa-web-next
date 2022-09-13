@@ -8,7 +8,7 @@ import { Layout } from "components/common/Layout";
 import { components } from "styles/theme";
 import { I18n } from "react-polyglot";
 import Favicon from "public/images/favicon.ico";
-import archiving1 from "public/images/archiving-1.png";
+import twitterShare from "public/images/twitter-share.png";
 import en from "../locales/en.json";
 import "styles/global.css";
 import "@fontsource/montserrat/400.css";
@@ -27,17 +27,24 @@ const OpenArchiveWeb = ({ Component, pageProps }: AppProps) => (
   <CacheProvider value={cache}>
     <Head>
       <link rel="icon" type="image/png" href={Favicon.src} />
+
       <meta name="twitter:site" content="@open_archive" />
       <meta name="twitter:title" content="OpenArchive" />
       <meta name="twitter:description" content={siteDescription} />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:image" content={archiving1.src} />
+      <meta
+        name="twitter:image"
+        content={`https://open-archive.org${twitterShare.src}`}
+      />
 
       <meta property="og:title" content="OpenArchive" />
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://open-archive.org" />
       <meta name="og:description" content={siteDescription} />
-      <meta property="og:image" content={archiving1.src} />
+      <meta
+        property="og:image"
+        content={`https://open-archive.org${twitterShare.src}`}
+      />
     </Head>
     <CssBaseline />
     <I18n locale={locale} messages={messages[locale]}>
