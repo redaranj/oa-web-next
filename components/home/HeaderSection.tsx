@@ -18,11 +18,11 @@ export const HeaderSection: FC<PropsWithChildren> = ({ children }) => {
         container
         sx={{
           flexDirection: "row",
-          [ps]: { flexDirection: "column-reverse" },
-          [tl]: { flexDirection: "row" },
+          [ps]: { flexDirection: "column-reverse", pt: 0 },
+          [tl]: { flexDirection: "row", pt: 8 },
           pt: 8,
         }}
-        spacing={6}
+        columnSpacing={6}
       >
         <Grid
           container
@@ -43,7 +43,11 @@ export const HeaderSection: FC<PropsWithChildren> = ({ children }) => {
             item
             container
             direction="column"
-            sx={{ mb: 12, [ps]: { mb: 0 }, [tl]: { mb: 12 } }}
+            sx={{
+              mb: 12,
+              [ps]: { mb: 0 },
+              [tl]: { mb: 12 },
+            }}
           >
             <Grid item>
               <Box sx={{ "> p": bodyLarge }}>{rest}</Box>
@@ -73,7 +77,7 @@ export const HeaderSection: FC<PropsWithChildren> = ({ children }) => {
             }}
           >
             <Box
-              sx={{ width: "100%", [ps]: { mb: 6 }, [tl]: { mb: 0 }, mb: 0 }}
+              sx={{ width: "100%", [ps]: { mb: 0 }, [tl]: { mb: 0 }, mb: 0 }}
             >
               <Box
                 sx={{
@@ -81,10 +85,10 @@ export const HeaderSection: FC<PropsWithChildren> = ({ children }) => {
                   overflow: "hidden",
                   height: 700,
                   [ps]: {
-                    height: 200,
+                    height: 350,
                   },
                   [pl]: {
-                    height: 450,
+                    height: 350,
                   },
                   [ts]: {
                     height: 550,

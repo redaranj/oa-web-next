@@ -16,7 +16,7 @@ export const ArchivingSection: FC<PropsWithChildren> = ({ children }) => {
     <PageSection backgroundColor={lightGrey}>
       <Grid
         container
-        spacing={6}
+        columnSpacing={6}
         sx={{
           flexDirection: "row",
           [ps]: { flexDirection: "column" },
