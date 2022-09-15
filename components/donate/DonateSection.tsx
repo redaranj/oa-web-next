@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Box, Grid } from "@mui/material";
 import { colors, breakpoints, loader } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
-import donate2 from "public/images/donate-3.jpg";
+import donate2 from "public/images/donate-2.jpg";
 
 export const DonateSection: FC<PropsWithChildren> = ({ children }) => {
   const { white, darkBurgundy, mediumBurgundy } = colors;
