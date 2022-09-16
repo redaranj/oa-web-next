@@ -132,7 +132,7 @@ export const HeaderSection: FC<PropsWithChildren> = ({ children }) => {
                     },
                   }}
                 >
-                  <Image src={mainPage1} alt="" loader={loader} />
+                  <Image src={mainPage1} alt="" loader={loader} priority />
                 </Box>
                 <Box
                   sx={{
@@ -161,7 +161,7 @@ export const HeaderSection: FC<PropsWithChildren> = ({ children }) => {
                     },
                   }}
                 >
-                  <Image src={mainPage2} alt="" loader={loader} />
+                  <Image src={mainPage2} alt="" loader={loader} priority />
                 </Box>
               </Box>
             </Box>
