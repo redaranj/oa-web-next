@@ -47,6 +47,7 @@ export const JobsSection: FC<JobsSectionProps> = ({ pages, children }) => {
     >
       <Grid
         container
+        rowSpacing={6}
         sx={{
           flexDirection: "column",
         }}

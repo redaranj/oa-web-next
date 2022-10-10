@@ -10,6 +10,7 @@ import { AboutPositionSection } from "components/jobs/AboutPositionSection";
 import { DetailsSection } from "components/jobs/DetailsSection";
 import { DetailItem } from "components/jobs/DetailItem";
 import { DiverseSection } from "components/jobs/DiverseSection";
+import { ContactBox } from "components/jobs/ContactBox";
 
 <JobHeaderSection>
 {date}
@@ -27,8 +28,8 @@ The mobile interaction designer will work closely with the Tech Lead and the Exe
 
 Usability is key when building secure tools as there is always a security-usability trade-off. This role will help us improve the usability and accessibility of our secure mobile archiving application **_Save_** so that it continues to be a leading human rights tool that prioritizes usability as much as privacy. Our larger goal is to show that secure tools can be so easy to use, they become the rule and not the exception. We strive to regularly incorporate new ux research findings into the app every few months, so this work will be ongoing and iterative.
 
-The mobile interaction designer will work with the Executive, Tech, and QA teams to identify user flow / ux frictions in both Android and iOS versions of **_Save_**. They will then offer ux and design solutions, reporting back to our Tech Lead and the Executive Director. After critical user pathways are addressed, this role will then work with the Executive and Tech teams to create a spec / roadmap of improvements to implement as we further decentralize and add new features to the app.  
-  
+The mobile interaction designer will work with the Executive, Tech, and QA teams to identify user flow / ux frictions in both Android and iOS versions of **_Save_**. They will then offer ux and design solutions, reporting back to our Tech Lead and the Executive Director. After critical user pathways are addressed, this role will then work with the Executive and Tech teams to create a spec / roadmap of improvements to implement as we further decentralize and add new features to the app.
+
 </AboutPositionSection>
 
 <DetailsSection>
@@ -42,7 +43,7 @@ The mobile interaction designer will work with the Executive, Tech, and QA teams
 - Participate in the development process from definition, through design, build, test, release, and maintenance;
 - Break any design problem down into viable actionable chunks and solve them with clarity and precision;
 - Stay in the loop and on top of the latest UX trends, standards, changes, trends in the mobile design field and in parallel analogous worlds.
-  
+
 </DetailItem>
 <DetailItem>
 ### Required skills and experience
@@ -52,7 +53,7 @@ The mobile interaction designer will work with the Executive, Tech, and QA teams
 - Strong ability to recognize and predict use-cases and user interaction, including happy path, edge and corner cases, and incorporate them into designs;
 - Excellent understanding of user-experience design for mobile and the web, technology trends, and demonstrable design skills;
 - A collaborative person who can easily adapt in a rapidly changing environment;
-- Expert level skills in relevant interaction design tools  (e.g. Photoshop, InvisionApp, UXPin);
+- Expert level skills in relevant interaction design tools (e.g. Photoshop, InvisionApp, UXPin);
 - Deep understanding of Apple’s human interface design guidelines, Android design and other mobile platform designs, including Google’s material design.
 
 </DetailItem>
@@ -91,6 +92,14 @@ To apply, please send the following:
 - A link to an example of your relevant work that best represents the competencies outlined here.
 
 </DetailItem>
+<ContactBox>
+  [](mailto:info@open-archive.org)
+
+##### Please submit your application directly to: jobs[at]open-archive.org
+
+We will consider applications on a rolling basis.
+
+</ContactBox>
 </DetailsSection>
 
 <DiverseSection />

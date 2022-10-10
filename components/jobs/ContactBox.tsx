@@ -1,13 +1,16 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import { useRouter } from "next/router";
 import { Box } from "@mui/material";
 import { colors, typography } from "styles/theme";
 import { FilledButton } from "components/common/FilledButton";
+import { getURL } from "lib/frontendHelpers";
 
-export const ContactBox: FC = () => {
+export const ContactBox: FC<PropsWithChildren> = ({ children }) => {
   const router = useRouter();
   const { lightTurquoise, lightGrey, white, black } = colors;
-  const { h5, bodyLarge } = typography;
+  const { bodyLarge } = typography;
+  const [first, title, ...description] = children as any[];
+  const url = getURL(first);
 
   return (
     <Box
@@ -27,16 +30,12 @@ export const ContactBox: FC = () => {
           z: 1000,
         }}
       >
-        <Box sx={h5}>
-          Please submit your application directly to: jobs[at]open-archive.org
-        </Box>
-        <Box sx={bodyLarge}>
-          We will consider applications on a rolling basis.
-        </Box>
+        <Box>{title}</Box>
+        <Box sx={{ "> p": bodyLarge }}>{description}</Box>
         <FilledButton
           backgroundColor={white}
           textColor={black}
-          onClick={() => router.push("mailto:info@open-archive.org")}
+          onClick={() => router.push(url)}
         >
           Submit
         </FilledButton>
