@@ -90,9 +90,11 @@ export const NewsItem: FC<NewsItemProps> = ({
             </Box>
           </Grid>
           <Grid item>
-            <Box component="h5" sx={h5}>
-              {title}
-            </Box>
+            <Box
+              component="h5"
+              sx={h5}
+              dangerouslySetInnerHTML={{ __html: title }}
+            />
           </Grid>
           <Grid item>
             <Box component="p" sx={bodyLarge}>
