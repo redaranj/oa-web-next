@@ -4,7 +4,7 @@ import { Box, Grid } from "@mui/material";
 import { PageSection } from "components/common/PageSection";
 import { breakpoints, colors, typography, loader } from "styles/theme";
 import mainTop3 from "public/images/main-top-3.png";
-import mainPage4 from "public/images/main-page-4.png";
+import mainPage4 from "public/images/MainPage/main-page-2.png";
 
 export const ArchivingSection: FC<PropsWithChildren> = ({ children }) => {
   const { outlinedButton, bodyLarge } = typography;
