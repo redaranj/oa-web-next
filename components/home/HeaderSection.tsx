@@ -4,7 +4,7 @@ import { Box, Grid } from "@mui/material";
 import { colors, breakpoints, loader, typography } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import mainPage1 from "public/images/main-page-1.png";
-import mainPage2 from "public/images/main-page-2.png";
+import mainPage2 from "public/images/MainPage/main-page-1.png";
 
 export const HeaderSection: FC<PropsWithChildren> = ({ children }) => {
   const { white } = colors;
