@@ -4,7 +4,7 @@ import { Box, Grid } from "@mui/material";
 import { colors, breakpoints, loader, typography } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import vision from "public/images/AboutUs/about-us-1.png";
-
+ 
 export const VisionSection: FC<PropsWithChildren> = ({ children }) => {
   const { white, lightGrey } = colors;
   const { bodyLarge } = typography;
