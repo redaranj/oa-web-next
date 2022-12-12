@@ -48,9 +48,7 @@ export const TestimonialItem: FC<PropsWithChildren> = ({ children }) => {
             <Grid item container direction="row" flexWrap="nowrap" spacing={3}>
               <Grid item container direction="column">
                 <Grid item>
-                  <Box component="h6" sx={{ ...h6, mb: 2 }}>
-                    {name}
-                  </Box>
+                  <Box sx={{ ...h6, mb: 2 }}>{name}</Box>
                 </Grid>
                 <Grid item>
                   <Box sx={{ ...body, "> p": { color: turquoise } }}>

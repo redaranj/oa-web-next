@@ -27,26 +27,6 @@ a:hover {
   background-color: "#00b4a6";
 }
 
-
-/*
-a:hover {
-  background-color: "#00b4a6";
-  text-decoration: double;
+.next-link {
+  text-decoration: none !important;
 }
-.c--hidden {
-  opacity: 0;
-  cursor: none;
-}
-
-.cursor {
-  width: 40px;
-  height: 40px;
-  border: 2px solid #121212;
-  border-radius: 100%;
-  position: fixed;
-  transform: translate(-50%, -50%);
-  transition: all 100ms ease;
-  transition-property: opacity;
-  z-index: 3000;
-}
-*/

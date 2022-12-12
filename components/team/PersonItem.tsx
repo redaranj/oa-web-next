@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import Image, { StaticImageData } from "next/image";
+import Image, { StaticImageData } from "next/legacy/image";
 import { Box, Grid, Collapse } from "@mui/material";
 import { OutlinedButton } from "components/common/OutlinedButton";
 import { typography, colors, breakpoints, loader } from "styles/theme";

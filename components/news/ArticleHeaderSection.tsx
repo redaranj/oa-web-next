@@ -74,9 +74,8 @@ export const ArticleHeaderSection: FC<PropsWithChildren> = ({ children }) => {
             }}
           >
             <Grid item sx={{ my: 3 }}>
-              <Link href={`/${section}`} passHref>
+              <Link href={`/${section}`}>
                 <Box
-                  component="a"
                   sx={{
                     "&:hover": {
                       color: turquoise,

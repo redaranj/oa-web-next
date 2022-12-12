@@ -20,8 +20,8 @@ const MenuItem: FC<MenuItemProps> = ({ title, url, sx = {} }) => {
 
   return (
     <Grid item>
-      <Link href={url} passHref>
-        <Box component="a" sx={{ textDecoration: "none" }}>
+      <Link href={url}>
+        <Box sx={{ textDecoration: "none" }}>
           <Grid container direction="row" spacing={1}>
             <Grid item>
               <Box sx={itemStyles}>{title}</Box>

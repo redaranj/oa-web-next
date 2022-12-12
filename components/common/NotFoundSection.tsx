@@ -1,5 +1,5 @@
 import { FC, PropsWithChildren } from "react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { MDXProvider } from "@mdx-js/react";
 import { Box } from "@mui/material";
 import { colors, loader } from "styles/theme";

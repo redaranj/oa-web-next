@@ -3,7 +3,7 @@ import { Box, Grid } from "@mui/material";
 import { typography, breakpoints } from "styles/theme";
 
 export const ImpactItem: FC<PropsWithChildren> = ({ children }) => {
-  const { h5, bodyLarge } = typography;
+  const { bodyLarge } = typography;
   const { tl, ts, ps } = breakpoints;
   const [image, title, ...description] = children as any[];
 
@@ -28,11 +28,7 @@ export const ImpactItem: FC<PropsWithChildren> = ({ children }) => {
       <Grid item>
         <Box sx={{ width: "70px", height: "70px", mb: 3 }}>{image}</Box>
       </Grid>
-      <Grid item>
-        <Box component="h5" sx={h5}>
-          {title}
-        </Box>
-      </Grid>
+      <Grid item>{title}</Grid>
       <Grid item>
         <Box sx={{ "> p": bodyLarge }}>{description}</Box>
       </Grid>

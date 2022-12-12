@@ -16,6 +16,7 @@ export const RoleItem: FC<PropsWithChildren> = ({ children }) => {
       sx={{
         width: "100%",
         height: "100%",
+        a: { textDecoration: "none" },
       }}
     >
       <Link href={href}>

@@ -48,7 +48,7 @@ export const UseCasesSection: FC<UseCasesSectionProps> = ({
       }}
     >
       <Box>{children}</Box>
-      <Stack spacing={6}>
+      <Stack spacing={6} sx={{ a: { textDecoration: "none" } }}>
         {pages.map((page) => (
           <UseCaseItem key={page.path} {...page} />
         ))}

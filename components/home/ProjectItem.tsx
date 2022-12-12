@@ -1,6 +1,6 @@
 import { FC, PropsWithChildren } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { Box, Grid } from "@mui/material";
 import { colors, typography, breakpoints, loader } from "styles/theme";
 import { loadImage, getURL } from "lib/frontendHelpers";
@@ -24,6 +24,7 @@ export const ProjectItem: FC<PropsWithChildren> = ({ children }) => {
         overflow: "hidden",
         [ps]: { width: "100%" },
         [tl]: { width: "33%" },
+        a: { textDecoration: "none" },
         "&:hover": {
           "& h5": {
             color: turquoise,

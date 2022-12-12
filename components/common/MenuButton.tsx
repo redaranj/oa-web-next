@@ -1,6 +1,6 @@
 import { FC, PropsWithChildren } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { Box, Button, Grid } from "@mui/material";
 import PopupState, { bindHover, bindPopover } from "material-ui-popup-state";
 import HoverPopover from "material-ui-popup-state/HoverPopover";
@@ -28,7 +28,7 @@ export const MenuButton: FC<MenuButtonProps> = ({
       <PopupState variant="popover" popupId={title}>
         {(popupState) => (
           <>
-            <Link href={href} passHref>
+            <Link href={href}>
               <Button
                 sx={{
                   ...body,
@@ -81,6 +81,7 @@ export const MenuButton: FC<MenuButtonProps> = ({
                     backgroundColor: `${turquoise}df`,
                     minWidth: 584,
                     mt: -1,
+                    a: { textDecoration: "none" },
                   },
                 }}
               >

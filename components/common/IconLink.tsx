@@ -1,6 +1,6 @@
 import { FC, PropsWithChildren } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { Box } from "@mui/material";
 import { loader, breakpoints } from "styles/theme";
 
@@ -15,10 +15,8 @@ export const IconLink: FC<IconLinkProps> = ({ image, size, url, alt }) => {
   const { ps, pl } = breakpoints;
 
   return (
-    <Link href={url} passHref>
+    <Link href={url} target="_blank">
       <Box
-        component="a"
-        target="_blank"
         sx={{
           "&:hover": {
             filter:

@@ -1,5 +1,5 @@
 import { FC, PropsWithChildren } from "react";
-import { StaticImageData } from "next/image";
+import { StaticImageData } from "next/legacy/image";
 import { Box } from "@mui/material";
 import { breakpoints } from "styles/theme";
 

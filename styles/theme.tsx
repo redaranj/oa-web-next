@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 import { Box } from "@mui/material";
 
@@ -274,6 +274,7 @@ export const typography = {
     fontFamily: "Montserrat, sans-serif",
     fontSize: "18px",
     lineHeight: "24px",
+    a: { textDecoration: "none" },
     mt: 3,
     mb: 3,
     [breakpoints.ps]: {
@@ -360,10 +361,14 @@ export const components = {
     return <Image src={image} alt={alt} loader={loader} />;
   },
   a: ({ href, children }) => (
-    <Link href={href} passHref>
+    <Link
+      href={href}
+      target={href.startsWith("http") ? "_blank" : "_self"}
+      style={{ textDecoration: "none" }}
+    >
       <Box
-        component="a"
-        target={href.startsWith("http") ? "_blank" : "_self"}
+        component="span"
+        className="mdx-link"
         sx={{
           color: "inherit",
           textDecoration: "underline",

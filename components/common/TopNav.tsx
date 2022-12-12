@@ -1,20 +1,28 @@
 import { useState, useRef } from "react";
 import { useRouter } from "next/router";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { useTranslate } from "react-polyglot";
 import { AppBar, Box, Grid, Drawer } from "@mui/material";
 import { colors, typography, loader, breakpoints } from "styles/theme";
 import { FilledButton } from "components/common/FilledButton";
-import { MenuButton } from "components/common/MenuButton";
 import { MobileMenu } from "components/common/MobileMenu";
 import { IconLink } from "components/common/IconLink";
 import openArchiveLogo from "public/images/open-archive.svg";
 // import search from "public/images/search.svg";
 import twitter from "public/images/twitter-grey.svg";
+import mastodon from "public/images/mastodon-grey.svg";
 import instagram from "public/images/instagram-grey.svg";
 import github from "public/images/github-grey.svg";
 import menuIcon from "public/images/menu-icon.svg";
+
+const MenuButton = dynamic(
+  () => import("components/common/MenuButton").then((mod) => mod.MenuButton),
+  {
+    ssr: false,
+  }
+);
 
 export const TopNav = () => {
   const ref = useRef(null);
@@ -88,19 +96,17 @@ export const TopNav = () => {
               alignContent="center"
             >
               <Grid item sx={{ mt: 0.5 }} xs="auto">
-                <Link href="/" passHref>
-                  <Box component="a">
-                    <Box
-                      sx={{
-                        width: 200,
-                        [ps]: {
-                          width: 150,
-                        },
-                        [ts]: { width: 200 },
-                      }}
-                    >
-                      <Image alt="" src={openArchiveLogo} loader={loader} />
-                    </Box>
+                <Link href="/">
+                  <Box
+                    sx={{
+                      width: 200,
+                      [ps]: {
+                        width: 150,
+                      },
+                      [ts]: { width: 200 },
+                    }}
+                  >
+                    <Image alt="" src={openArchiveLogo} loader={loader} />
                   </Box>
                 </Link>
               </Grid>
@@ -155,24 +161,18 @@ export const TopNav = () => {
                     >
                       <Grid container direction="column" spacing={0}>
                         <Grid item>
-                          <Link href="/save" passHref>
-                            <Box component="a" sx={menuItemProps}>
-                              {t("saveApp")}
-                            </Box>
+                          <Link href="/save">
+                            <Box sx={menuItemProps}>{t("saveApp")}</Box>
                           </Link>
                         </Grid>
                         <Grid item>
-                          <Link href="/guides" passHref>
-                            <Box component="a" sx={menuItemProps}>
-                              {t("guides")}
-                            </Box>
+                          <Link href="/guides">
+                            <Box sx={menuItemProps}>{t("guides")}</Box>
                           </Link>
                         </Grid>
                         <Grid item>
-                          <Link href="/use" passHref>
-                            <Box component="a" sx={menuItemProps}>
-                              {t("useCases")}
-                            </Box>
+                          <Link href="/use">
+                            <Box sx={menuItemProps}>{t("useCases")}</Box>
                           </Link>
                         </Grid>
                       </Grid>
@@ -197,45 +197,33 @@ export const TopNav = () => {
                     >
                       <Grid container direction="column" spacing={0}>
                         <Grid item>
-                          <Link href="/about" passHref>
-                            <Box component="a" sx={menuItemProps}>
-                              {t("aboutUs")}
-                            </Box>
+                          <Link href="/about">
+                            <Box sx={menuItemProps}>{t("aboutUs")}</Box>
                           </Link>
                         </Grid>
                         <Grid item>
-                          <Link href="/team" passHref>
-                            <Box component="a" sx={menuItemProps}>
-                              {t("team")}
-                            </Box>
+                          <Link href="/team">
+                            <Box sx={menuItemProps}>{t("team")}</Box>
                           </Link>
                         </Grid>
                         <Grid item>
-                          <Link href="/partner" passHref>
-                            <Box component="a" sx={menuItemProps}>
-                              {t("partnerWithUs")}
-                            </Box>
+                          <Link href="/partner">
+                            <Box sx={menuItemProps}>{t("partnerWithUs")}</Box>
                           </Link>
                         </Grid>
                         <Grid item>
-                          <Link href="/jobs" passHref>
-                            <Box component="a" sx={menuItemProps}>
-                              {t("workWithUs")}
-                            </Box>
+                          <Link href="/jobs">
+                            <Box sx={menuItemProps}>{t("workWithUs")}</Box>
                           </Link>
                         </Grid>
                         <Grid item>
-                          <Link href="/contact" passHref>
-                            <Box component="a" sx={menuItemProps}>
-                              {t("contactUs")}
-                            </Box>
+                          <Link href="/contact">
+                            <Box sx={menuItemProps}>{t("contactUs")}</Box>
                           </Link>
                         </Grid>
                         <Grid item>
-                          <Link href="/faq" passHref>
-                            <Box component="a" sx={menuItemProps}>
-                              {t("faq")}
-                            </Box>
+                          <Link href="/faq">
+                            <Box sx={menuItemProps}>{t("faq")}</Box>
                           </Link>
                         </Grid>
                       </Grid>
@@ -284,7 +272,7 @@ export const TopNav = () => {
                   justifyContent="flex-end"
                   flexWrap="nowrap"
                   spacing={3}
-                  sx={{ width: "180px" }}
+                  sx={{ width: "220px" }}
                 >
                   <Grid item>
                     <IconLink
@@ -292,6 +280,14 @@ export const TopNav = () => {
                       size="24px"
                       url="https://twitter.com/open_archive"
                       alt="Twitter logo"
+                    />
+                  </Grid>
+                  <Grid item>
+                    <IconLink
+                      image={mastodon}
+                      size="22px"
+                      url="https://mstdn.social/@OpenArchive"
+                      alt="Mastodon logo"
                     />
                   </Grid>
                   <Grid item>

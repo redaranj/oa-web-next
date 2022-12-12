@@ -1,5 +1,5 @@
 import { FC, PropsWithChildren, useState } from "react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { Box, Grid, Collapse } from "@mui/material";
 import { useTranslate } from "react-polyglot";
 import { typography, colors, breakpoints, loader } from "styles/theme";
@@ -96,7 +96,7 @@ export const HeaderSection: FC<PropsWithChildren> = ({ children }) => {
             </Grid>
             <Grid item container direction="column">
               <Grid item>
-                <Box component="p" sx={{ "> p": bodyLarge, maxWidth: "550px" }}>
+                <Box sx={{ "> p": bodyLarge, maxWidth: "550px" }}>
                   {description}
                 </Box>
               </Grid>

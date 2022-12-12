@@ -1,6 +1,6 @@
 import { FC, PropsWithChildren } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { Grid, Box } from "@mui/material";
 import { colors, loader, typography, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";

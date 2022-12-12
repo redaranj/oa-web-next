@@ -1,6 +1,6 @@
 import { FC, PropsWithChildren } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { Box, Button } from "@mui/material";
 import { colors, loader, typography } from "styles/theme";
 import rightArrow from "public/images/right-arrow.svg";
@@ -84,7 +84,7 @@ export const OutlinedButton: FC<OutlinedButtonProps> = ({
   children,
 }) =>
   href ? (
-    <Link href={href} passHref>
+    <Link href={href} style={{ textDecoration: "none !important" }}>
       <InnerButton
         textColor={textColor}
         borderColor={borderColor}

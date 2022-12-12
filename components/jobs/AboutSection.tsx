@@ -1,5 +1,5 @@
 import { FC } from "react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { Grid, Box } from "@mui/material";
 import { colors, typography, loader, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";

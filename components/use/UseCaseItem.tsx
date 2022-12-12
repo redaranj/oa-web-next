@@ -1,6 +1,6 @@
 import { FC } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { Grid, Box } from "@mui/material";
 import { OutlinedButton } from "components/common/OutlinedButton";
 import { colors, typography, loader, breakpoints } from "styles/theme";

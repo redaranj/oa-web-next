@@ -1,5 +1,5 @@
 import { FC, PropsWithChildren } from "react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { Box, Button, Grid } from "@mui/material";
 import { A11y, Autoplay, Mousewheel, Keyboard, EffectFade } from "swiper";
 /* eslint-disable import/no-unresolved */

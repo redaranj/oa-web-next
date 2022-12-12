@@ -1,5 +1,5 @@
 import { FC, PropsWithChildren } from "react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { Box, Grid } from "@mui/material";
 import { colors, breakpoints, loader } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
@@ -58,6 +58,13 @@ export const DonateSection: FC<PropsWithChildren> = ({ children }) => {
                 mb: 2,
                 display: "block",
                 maxWidth: 200,
+                ".mdx-link": {
+                  textDecoration: "none",
+                  "&:hover": {
+                    backgroundColor: darkBurgundy,
+                    color: white,
+                  },
+                },
                 "&:hover": {
                   backgroundColor: darkBurgundy,
                   color: white,

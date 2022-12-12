@@ -24,7 +24,7 @@ export const GuideItem: FC<GuideItemProps> = ({
   const image = require(`public/images/${imageName}`).default;
 
   return (
-    <Link href={path} passHref>
+    <Link href={path}>
       <Grid
         item
         container

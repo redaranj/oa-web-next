@@ -21,23 +21,21 @@ export const PartnerItem: FC<PropsWithChildren> = ({ children }) => {
       justifyContent="center"
     >
       <Grid item sx={{ cursor: "pointer", width: "100%", height: 180 }}>
-        <Link href={url} passHref>
-          <Box component="a" target="_blank">
-            <Box
-              sx={{
-                position: "relative",
-                width: "100%",
-                height: "100%",
-                backgroundImage: `url(${image.src})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                border: `1px solid ${white}`,
-                ":hover": {
-                  border: `1px solid ${turquoise}`,
-                },
-              }}
-            />
-          </Box>
+        <Link href={url} target="_blank">
+          <Box
+            sx={{
+              position: "relative",
+              width: "100%",
+              height: "100%",
+              backgroundImage: `url(${image.src})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              border: `1px solid ${white}`,
+              ":hover": {
+                border: `1px solid ${turquoise}`,
+              },
+            }}
+          />
         </Link>
       </Grid>
     </Grid>

@@ -1,5 +1,5 @@
 import { FC } from "react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 import { Box, Grid } from "@mui/material";
 import { useTranslate } from "react-polyglot";
@@ -12,6 +12,7 @@ import nonCommercial from "public/images/non-commercial.svg";
 import shareAlike from "public/images/share-alike.svg";
 import demchco from "public/images/demchco.svg";
 import twitter from "public/images/twitter-black.svg";
+import mastodon from "public/images/mastodon-black.svg";
 import instagram from "public/images/instagram-black.svg";
 import github from "public/images/github-black.svg";
 import linkedin from "public/images/linkedin-black.svg";
@@ -30,6 +31,7 @@ export const Footer: FC = () => {
     fontWeight: 900,
     "&:hover": { color: turquoise },
     cursor: "pointer",
+    "&a": { textDecoration: "none !important" },
   };
   const creativeCommonsIconSize = "19px";
   const socialIconSize = "28px";
@@ -237,6 +239,7 @@ export const Footer: FC = () => {
               width: "50%",
               [ps]: { width: "100%" },
               [ts]: { width: "50%" },
+              a: { textDecoration: "none" },
             }}
             spacing={0}
           >
@@ -320,6 +323,14 @@ export const Footer: FC = () => {
               </Grid>
               <Grid item>
                 <IconLink
+                  image={mastodon}
+                  size="26px"
+                  url="https://mstdn.social/@OpenArchive"
+                  alt="Mastodon logo"
+                />
+              </Grid>
+              <Grid item>
+                <IconLink
                   image={instagram}
                   size={socialIconSize}
                   url="https://instagram.com/open__archive"
@@ -375,6 +386,7 @@ export const Footer: FC = () => {
               alignItems="center"
               alignContent="center"
               sx={{
+                a: { textDecoration: "none" },
                 mt: 0,
                 mb: 0,
                 [ps]: {
@@ -393,13 +405,9 @@ export const Footer: FC = () => {
                 </Box>
               </Grid>
               <Grid item>
-                <Box
-                  component="a"
-                  sx={{ textDecoration: "none" }}
-                  href="mailto:info@open-archive.org"
-                >
+                <Link href="mailto:info@open-archive.org">
                   <Box sx={linkStyles}>info[at]open-archive.org</Box>
-                </Box>
+                </Link>
               </Grid>
             </Grid>
           </Grid>

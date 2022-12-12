@@ -38,6 +38,7 @@ export const InvolvedSection: FC<PropsWithChildren> = ({ children }) => {
           spacing={6}
           sx={{
             height: 360,
+            a: { textDecoration: "none" },
             flexDirection: "row",
             [ps]: {
               flexDirection: "column",

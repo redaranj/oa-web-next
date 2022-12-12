@@ -35,13 +35,14 @@ export const ParticipateItem: FC<PropsWithChildren> = ({ children }) => {
             pb: 0,
             "> p": { display: "inline-block" },
             a: { ...outlinedButton, m: 0, mr: 1 },
+            ".mdx-link": { textDecoration: "none" },
           }}
         >
           <Grid
             container
             direction="column"
             justifyContent="space-between"
-            sx={{ height: "100%" }}
+            sx={{ height: "100%", a: { textDecoration: "none" } }}
           >
             <Grid item>{first}</Grid>
             <Grid item>{rest}</Grid>

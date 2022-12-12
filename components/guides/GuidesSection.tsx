@@ -26,7 +26,12 @@ export const GuidesSection: FC<GuidesSectionProps> = ({ pages, children }) => {
         <Grid item sx={{ textAlign: "center" }}>
           <Box sx={{ maxWidth: 700, margin: "0 auto", mb: 6 }}>{children}</Box>
         </Grid>
-        <Box display="grid" gridAutoRows="1fr" gap={6}>
+        <Box
+          display="grid"
+          gridAutoRows="1fr"
+          gap={6}
+          sx={{ a: { textDecoration: "none" } }}
+        >
           {pages.map((page) => (
             <GuideItem key={page.path} {...page} />
           ))}
