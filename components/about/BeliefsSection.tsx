@@ -3,7 +3,7 @@ import Image from "next/legacy/image";
 import { Box, Grid } from "@mui/material";
 import { colors, breakpoints, typography, loader } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
-import handPhone from "public/images/hand-phone.png";
+import handPhone from "public/images/AboutUs/Why-this-work-matter.png";
 
 export const BeliefsSection: FC<PropsWithChildren> = ({ children }) => {
   const { lightGrey } = colors;
