@@ -3,7 +3,7 @@ import Image from "next/legacy/image";
 import { Box, Grid } from "@mui/material";
 import { colors, breakpoints, typography, loader } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
-import bullhorn from "public/images/bullhorn.svg";
+import bullhorn from "public/images/AboutUs/Our-Mission.png";
 
 export const MissionSection: FC<PropsWithChildren> = ({ children }) => {
   const { white } = colors;
