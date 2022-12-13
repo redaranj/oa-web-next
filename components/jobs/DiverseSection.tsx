@@ -3,7 +3,7 @@ import Image from "next/legacy/image";
 import { Grid, Box } from "@mui/material";
 import { colors, typography, loader, breakpoints } from "styles/theme";
 import { HeaderSection as BaseHeaderSection } from "components/common/HeaderSection";
-import diverseEnvironment from "public/images/diverse-environment.png";
+import diverseEnvironment from "public/images/WorkWithUs/Creating-a-diverse-environment.png";
 
 const { white } = colors;
 
