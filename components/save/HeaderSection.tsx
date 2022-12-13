@@ -6,7 +6,7 @@ import { typography, colors, breakpoints, loader } from "styles/theme";
 import { HeaderSection as BaseHeaderSection } from "components/common/HeaderSection";
 import { PageSection } from "components/common/PageSection";
 import { OutlinedButton } from "components/common/OutlinedButton";
-import saveHeader from "public/images/save-header.png";
+import saveHeader from "public/images/Save/Save-top-image.png";
 import saveLogo from "public/images/save-logo.png";
 import saveHand from "public/images/save-hand.png";
 
