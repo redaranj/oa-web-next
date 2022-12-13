@@ -16,14 +16,20 @@ export const NotFoundSection: FC<PropsWithChildren> = ({ children }) => {
       <Box>
         <Box sx={{ textAlign: "center" }}>
           <MDXProvider>{children}</MDXProvider>
-          {/*
-          <Box sx={{ ...h2, color: turquoise }}>{t("oops")}</Box>
-          <Box sx={{ ...h6, mb: 6 }}>{t("cantFindPage")}</Box>
-  <OutlinedButton>{t("goToMainPage")}</OutlinedButton> */}
         </Box>
-        <Image src={FourOne} alt="four" loader={loader} />
-        <Image src={Zero} alt="oh" loader={loader} />
-        <Image src={FourTwo} alt="four" loader={loader} />
+        <Box sx={{ position: "relative", minHeight: 700, mt: 5 }}>
+          <Box sx={{ position: "absolute", top: 40, left: 0, width: "38%" }}>
+            <Image src={FourOne} alt="four" loader={loader} />
+          </Box>
+          <Box sx={{ position: "absolute", top: 0, left: "33%", width: "38%" }}>
+            <Image src={Zero} alt="oh" loader={loader} />
+          </Box>
+          <Box
+            sx={{ position: "absolute", top: 90, left: "66%", width: "38%" }}
+          >
+            <Image src={FourTwo} alt="four" loader={loader} />
+          </Box>
+        </Box>
       </Box>
     </PageSection>
   );

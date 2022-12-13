@@ -1,0 +1,13 @@
+import { HeaderSection } from "components/search/HeaderSection";
+import { ResultsSection } from "components/search/ResultsSection";
+import { getSearchDocumentsProps } from "lib/helpers";
+
+export const getStaticProps = async (context) =>
+  await getSearchDocumentsProps();
+
+<HeaderSection>
+    # Search
+
+</HeaderSection>
+
+<ResultsSection documents={props.documents} />

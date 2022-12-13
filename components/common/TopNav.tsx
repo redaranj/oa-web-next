@@ -139,6 +139,21 @@ export const TopNav = () => {
                   xs="auto"
                   ref={ref}
                 >
+                  {/*
+                  <Grid
+                    item
+                    container
+                    direction="column"
+                    justifyContent="space-around"
+                    sx={{ mt: 1 }}
+                  >
+                    <IconLink
+                      image={search}
+                      size="24px"
+                      url="/search"
+                      alt="Search"
+                    />
+              </Grid> */}
                   <Grid
                     item
                     container

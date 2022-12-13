@@ -19,7 +19,7 @@ const MenuItem: FC<MenuItemProps> = ({ title, url, sx = {} }) => {
   const itemStyles = { ...body, color: white, mb: 1, ...sx };
 
   return (
-    <Grid item>
+    <Grid item sx={{ a: { textDecoration: "none" } }}>
       <Link href={url}>
         <Box sx={{ textDecoration: "none" }}>
           <Grid container direction="row" spacing={1}>
