@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Box, Grid } from "@mui/material";
 import { colors, breakpoints, typography, loader } from "styles/theme";
 import { OutlinedButton } from "components/common/OutlinedButton";
-import ourTeam from "public/images/our-team-who-we-are.png";
+import ourTeam from "public/images/AboutUs/Who-we-are.png";
 
 export const TeamItem: FC<PropsWithChildren> = ({ children }) => {
   const { lightGrey, black } = colors;
