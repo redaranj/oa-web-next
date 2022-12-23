@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Box, Grid, TextField } from "@mui/material";
 import { colors, breakpoints, typography } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
+import Highlighter from "react-highlight-words";
 
 type ResultsSectionProps = PropsWithChildren<{
   documents: any;
@@ -12,7 +13,7 @@ type ResultsSectionProps = PropsWithChildren<{
 export const ResultsSection: FC<ResultsSectionProps> = ({ documents }) => {
   const { lightGrey, turquoise } = colors;
   const { ps, pl, ts, tl, ds, dl } = breakpoints;
-  const { bodyLarge } = typography;
+  const { bodyLarge, body } = typography;
   const [query, setQuery] = useState(null);
   const [results, setResults] = useState([]);
 
@@ -24,18 +25,18 @@ export const ResultsSection: FC<ResultsSectionProps> = ({ documents }) => {
     const findText = (q, t) => {
       console.log({ q, t });
       const regex = new RegExp(`\\s?([^\\s]+\\s${q}\\s[^\\s]+)\\s?`, "i");
-      return t.match(regex) && t.match(regex)[1];
+      return t.match(regex) && t.match(regex);
     };
     const res = [];
     Object.keys(documents).forEach((key) => {
       const val = documents[key];
-      console.log({ query, match: val.match(query), val });
       if (val.match(query)) {
         console.log({ found: findText(query, val) });
-        res.push({ [key]: findText(query, val) });
+        res.push({ [key]: findText(query, val)?.join("...") ?? "" });
       }
     });
     setResults(res);
+    console.log({ res });
   }, [query, documents]);
 
   return (
@@ -99,18 +100,27 @@ export const ResultsSection: FC<ResultsSectionProps> = ({ documents }) => {
             }}
           >
             {results.map((result, idx) => (
-              <Box
-                key={idx}
-                sx={{
-                  fontSize: 20,
-                  mb: 3,
-                  color: turquoise,
-                  textDecoration: "underline",
-                }}
-              >
-                <Link href={Object.keys(result)[0]}>
-                  {Object.keys(result)[0]} {results[Object.keys(result)[0]]}
-                </Link>
+              <Box key={idx} sx={{ mb: 6 }}>
+                <Box
+                  sx={{
+                    ...bodyLarge,
+                    mb: 1,
+                    color: turquoise,
+                    textDecoration: "underline",
+                  }}
+                >
+                  <Link href={Object.keys(result)[0]}>
+                    {Object.keys(result)[0]}
+                  </Link>
+                </Box>
+                <Box sx={body}>
+                  <Highlighter
+                    highlightClassName="search-highlight"
+                    searchWords={query?.split(" ") ?? []}
+                    autoEscape
+                    textToHighlight={result[Object.keys(result)[0]]}
+                  />
+                </Box>
               </Box>
             ))}
           </Box>
