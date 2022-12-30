@@ -27,7 +27,15 @@ export const MenuButton: FC<MenuButtonProps> = ({
     isBrowser && (
       <PopupState variant="popover" popupId={title}>
         {(popupState) => (
-          <>
+          <Box
+            sx={{
+              height: "100%",
+              a: { textDecoration: "none" },
+              "a:hover": {
+                backgroundColor: "transparent",
+              },
+            }}
+          >
             <Link href={href}>
               <Button
                 sx={{
@@ -39,6 +47,7 @@ export const MenuButton: FC<MenuButtonProps> = ({
                   color: black,
                   whiteSpace: "nowrap",
                   cursor: "pointer",
+                  border: 0,
                   borderTop: `6px solid transparent`,
                   borderRadius: 0,
                   "&:hover": {
@@ -88,7 +97,7 @@ export const MenuButton: FC<MenuButtonProps> = ({
                 <Box sx={{ pt: 2 }}>{children}</Box>
               </HoverPopover>
             )}
-          </>
+          </Box>
         )}
       </PopupState>
     )

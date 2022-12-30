@@ -15,7 +15,7 @@ export const IconLink: FC<IconLinkProps> = ({ image, size, url, alt }) => {
   const { ps, pl } = breakpoints;
 
   return (
-    <Link href={url} target="_blank">
+    <Link href={url} target={url?.startsWith("/") ? "_self" : "_blank"}>
       <Box
         sx={{
           "&:hover": {

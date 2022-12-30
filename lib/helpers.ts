@@ -1,6 +1,11 @@
 import { promises as fs, readFileSync, readdirSync } from "fs";
 import { resolve } from "path";
 import matter from "gray-matter";
+import { unified } from 'unified';
+import remarkParse from "remark-parse";
+import remarkMdx from 'remark-mdx';
+import { visit } from "unist-util-visit";
+import strip from 'strip-markdown';
 
 const getFiles = async (dir: string) => {
   const dirents = await fs.readdir(dir, { withFileTypes: true });
@@ -48,15 +53,25 @@ export const getIndexProps = async (basePath: string) => {
 
 export const getSearchDocumentsProps = async () => {
   const files = await getFiles("pages/");
-  const documents = files
+  const documents = await files
     .filter((path) => path.endsWith(".mdx") && !path.endsWith("index.mdx"))
     .reduce((acc, path) => {
       const key = path.replace(/.+?pages\//, '').replace('.mdx', '')
       const contents = readFileSync(path, 'utf8');
-      acc[key] = contents.toString();
+      const texts = [];
+      const ast = unified().use(remarkParse).use(remarkMdx).parse(contents);
+      const visitMdx = () => tree => {
+        visit(tree, () => true, node => {
+          if (node.type === "text") {
+            texts.push(node.value.replace(/(\r\n|\n|\r|\||-)/gm, "").replace(/ +(?= )/g, " "));
+          }
+        })
+      }
+      const processor = unified().use(strip).use(visitMdx);
+      processor.runSync(ast)
+      acc[key] = texts.join(" ")
       return acc;
     }, {})
-
 
   return {
     props: { documents },

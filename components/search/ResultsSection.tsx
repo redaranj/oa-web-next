@@ -23,20 +23,20 @@ export const ResultsSection: FC<ResultsSectionProps> = ({ documents }) => {
       return;
     }
     const findText = (q, t) => {
-      console.log({ q, t });
-      const regex = new RegExp(`\\s?([^\\s]+\\s${q}\\s[^\\s]+)\\s?`, "i");
-      return t.match(regex) && t.match(regex);
+      // const regex = new RegExp(`\\s?([^\\s]+\\s${q}\\s[^\\s]+)\\s?`, "i");
+      const regex = new RegExp(`(\\w+ ){0,10}${q}( \\w+){0,10}`, "i");
+      return t.match(regex);
     };
     const res = [];
     Object.keys(documents).forEach((key) => {
       const val = documents[key];
-      if (val.match(query)) {
-        console.log({ found: findText(query, val) });
-        res.push({ [key]: findText(query, val)?.join("...") ?? "" });
+      if (findText(query, val)?.length > 0) {
+        res.push({
+          [key]: findText(query, val)[0],
+        });
       }
     });
     setResults(res);
-    console.log({ res });
   }, [query, documents]);
 
   return (
@@ -83,7 +83,6 @@ export const ResultsSection: FC<ResultsSectionProps> = ({ documents }) => {
           <TextField
             placeholder="Search"
             onChange={(e) => {
-              console.log("here");
               setQuery(e.target.value);
             }}
             sx={{ width: "50%", margin: "0 auto" }}

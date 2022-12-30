@@ -10,7 +10,7 @@ import { FilledButton } from "components/common/FilledButton";
 import { MobileMenu } from "components/common/MobileMenu";
 import { IconLink } from "components/common/IconLink";
 import openArchiveLogo from "public/images/open-archive.svg";
-// import search from "public/images/search.svg";
+import search from "public/images/search.svg";
 import twitter from "public/images/twitter-grey.svg";
 import mastodon from "public/images/mastodon-grey.svg";
 import instagram from "public/images/instagram-grey.svg";
@@ -139,21 +139,33 @@ export const TopNav = () => {
                   xs="auto"
                   ref={ref}
                 >
-                  {/*
                   <Grid
                     item
                     container
                     direction="column"
-                    justifyContent="space-around"
-                    sx={{ mt: 1 }}
+                    justifyContent="center"
+                    sx={{
+                      display: "inherit",
+                      [ps]: {
+                        display: "none",
+                      },
+                      [ds]: {
+                        display: "inherit",
+                      },
+                      "a:hover": {
+                        backgroundColor: "transparent",
+                      },
+                    }}
                   >
-                    <IconLink
-                      image={search}
-                      size="24px"
-                      url="/search"
-                      alt="Search"
-                    />
-              </Grid> */}
+                    <Grid item sx={{ height: "24px", mt: "2px" }}>
+                      <IconLink
+                        image={search}
+                        size="24px"
+                        url="/search"
+                        alt="Search"
+                      />
+                    </Grid>
+                  </Grid>
                   <Grid
                     item
                     container
