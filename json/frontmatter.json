@@ -1,0 +1,160 @@
+{
+  "/404": {
+    "path": "/404"
+  },
+  "/about": {
+    "path": "/about",
+    "title": "About Us",
+    "description": "People armed with smartphones are history's first responders, amassing rich, contextualized records of injustice and fostering unprecedented demand for change.",
+    "image": "AboutUs/Why-this-work-matter.png"
+  },
+  "/conduct": {
+    "path": "/conduct"
+  },
+  "/contact": {
+    "path": "/contact"
+  },
+  "/donate": {
+    "path": "/donate"
+  },
+  "/faq": {
+    "path": "/faq"
+  },
+  "/guides/ethical-citizen-reporting": {
+    "path": "/guides/ethical-citizen-reporting",
+    "title": "OpenArchive’s guide to ethical citizen reporting",
+    "description": "Harm reduction tools for citizen journalists",
+    "image": "Guides/ethical-citizen-reporting.png"
+  },
+  "/guides": {
+    "path": "/guides"
+  },
+  "/guides/preserving-truth": {
+    "path": "/guides/preserving-truth",
+    "title": "OpenArchive's Guide to Preserving Truth to Power",
+    "description": "Learn how to ethically and safely store sensitive mobile media",
+    "image": "Guides/preserving-truth.jpeg"
+  },
+  "/guides/protest-survival": {
+    "path": "/guides/protest-survival",
+    "title": "OpenArchive’s U.S. Protest Survival Guide",
+    "description": "Harm reduction for documenting protests",
+    "image": "Guides/protest-survival.jpeg"
+  },
+  "/guides/ukraine-media-guide": {
+    "path": "/guides/ukraine-media-guide",
+    "title": "Filtering out the noise - Navigating the news around Russia’s attack on Ukraine",
+    "description": "Tools to help you look beyond the headlines",
+    "image": "Guides/ukraine-media-guide.jpeg"
+  },
+  "/": {
+    "path": "/",
+    "title": "OpenArchive",
+    "description": "Anyone with a phone can expose global injustice. OpenArchive helps history's first responders safely store, verify, and share critical evidence.",
+    "image": "main-page-1.png"
+  },
+  "/jobs/decentralized-storage-researcher": {
+    "path": "/jobs/decentralized-storage-researcher",
+    "title": "Decentralized Storage Researcher",
+    "description": "To guide our development of decentralized archiving options within our app, Save, we’re seeking a researcher who can evaluate the needs of our archivist communities and the potential of various decentralized storage technologies to meet those needs."
+  },
+  "/jobs": {
+    "path": "/jobs"
+  },
+  "/news/KHPG-partnership": {
+    "path": "/news/KHPG-partnership",
+    "title": "Documenting Russian war crimes in Ukraine&#58; OpenArchive partners with Kharkiv Human Rights Protection Group",
+    "description": "OpenArchive’s team of archival activists is supporting human rights defenders in Ukraine to preserve evidence of Russian war crimes and other human rights atrocities.",
+    "image": "ukraine-war-damage.png"
+  },
+  "/news/archiving-forward-part-2": {
+    "path": "/news/archiving-forward-part-2",
+    "title": "Archiving Forward Part 2 - Mapping Our Decentralized Ecosystem",
+    "description": "How we build our organizational infrastructure for action",
+    "image": "archiving-forward-part2.png"
+  },
+  "/news/archiving-forward": {
+    "path": "/news/archiving-forward",
+    "title": "Archiving Forward Part 1 - Demystifying the Cloud",
+    "description": "Learn about what the benefits of drawbacks of preserving your media in the cloud",
+    "image": "archiving-forward-part1.png"
+  },
+  "/news/congress-privacy-bill": {
+    "path": "/news/congress-privacy-bill",
+    "title": "What you need to know about the United States’ latest privacy bill",
+    "description": "A federal privacy bill may give Americans more control over their data but does not go far enough and would weaken existing state protections.",
+    "image": "usprivacybill.jpeg"
+  },
+  "/news/digital-impact-podcast": {
+    "path": "/news/digital-impact-podcast",
+    "title": "Digital Impact Interview with Natalie",
+    "description": "Founder, Natalie Cadranel, discusses how \"Save\" protects citizen eye-witnesses from online threats with Chris Delatorre",
+    "image": "digital-impact-interview-with-Natalie.png"
+  },
+  "/news/ffdw-grant": {
+    "path": "/news/ffdw-grant",
+    "title": "FFDW and OpenArchive Collaborate to Deploy Decentralized Archive for Human Rights Data",
+    "description": "OpenArchive receives Grant from FFDW to Help Secure, Share, and Store Critical Human Rights DataInformation on the Decentralized Web",
+    "image": "FFDW-and-OpenArchive-Collaborate-to-Deploy-Decentralized-Archive-for-Human-Rights-Data.png"
+  },
+  "/news/hello-mobilized-world": {
+    "path": "/news/hello-mobilized-world",
+    "title": "Why OpenArchive?",
+    "description": "The web we want",
+    "image": "Why-OpenArchive.png"
+  },
+  "/news": {
+    "path": "/news"
+  },
+  "/news/introducing-save": {
+    "path": "/news/introducing-save",
+    "title": "Introducing Save",
+    "description": "The OpenArchive team is proud to announce the launch of Save, our new mobile application that integrates privacy-enhancing technologies with digital media preservation to make media findable, verifiable, and archived for long-term access.",
+    "image": "Introducing-Save.png"
+  },
+  "/news/pttp-resistance-in-myanmar": {
+    "path": "/news/pttp-resistance-in-myanmar",
+    "title": "Preserving Truth to Power - Sustaining resistance in Myanmar",
+    "description": "After a military coup in early 2021, civilians against the junta are capturing, archiving, and maintaining a movement.",
+    "image": "Sustaining-resistance-in-Myanmar.png"
+  },
+  "/news/save-press-release": {
+    "path": "/news/save-press-release",
+    "title": "OpenArchive launches Save",
+    "description": "OpenArchive launches new app Save to help journalists and human rights advocates protect and preserve highly sensitive digital media.",
+    "image": "OpenArchive-launches-Save.png"
+  },
+  "/partner": {
+    "path": "/partner"
+  },
+  "/privacy": {
+    "path": "/privacy"
+  },
+  "/save": {
+    "path": "/save"
+  },
+  "/search": {
+    "path": "/search"
+  },
+  "/team": {
+    "path": "/team"
+  },
+  "/use/anna": {
+    "path": "/use/anna",
+    "title": "Archivist",
+    "image": "anna.svg"
+  },
+  "/use/darius": {
+    "path": "/use/darius",
+    "title": "Freelance Videographer",
+    "image": "darius.svg"
+  },
+  "/use": {
+    "path": "/use"
+  },
+  "/use/kai": {
+    "path": "/use/kai",
+    "title": "Researcher",
+    "image": "kai.svg"
+  }
+}
