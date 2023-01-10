@@ -1,7 +1,5 @@
 import { FC } from "react";
-import Head from "next/head";
-import { loadImage } from "lib/frontendHelpers";
-import twitterShare from "public/images/twitter-share.png";
+import { loadImageFromPath } from "lib/frontendHelpers";
 
 type SocialMetaTagsProps = {
   title?: string;
@@ -13,13 +11,13 @@ type SocialMetaTagsProps = {
 export const SocialMetaTags: FC<SocialMetaTagsProps> = ({
   title = "OpenArchive",
   description = "OpenArchive helps history's first responders safely store, verify, and share critical evidence.",
-  url = "",
-  image,
+  url = "/",
+  image = "twitter-share.png",
 }) => {
-  const imageFile = image ? loadImage(image) : twitterShare;
+  const imageFile = loadImageFromPath(image);
 
   return (
-    <Head>
+    <>
       <meta name="twitter:site" content="@open_archive" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
@@ -36,6 +34,6 @@ export const SocialMetaTags: FC<SocialMetaTagsProps> = ({
         property="og:image"
         content={`https://open-archive.org${imageFile.src}`}
       />
-    </Head>
+    </>
   );
 };

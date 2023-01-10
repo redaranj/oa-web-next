@@ -15,6 +15,11 @@ const withMDX = mdx({
 
 const config = withMDX({
   reactStrictMode: true,
+  webpack: (conf) => {
+    // eslint-disable-next-line no-param-reassign
+    conf.resolve.alias.fs = false;
+    return conf;
+  },
   images: {
     loader: "custom",
   },

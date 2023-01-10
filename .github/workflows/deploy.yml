@@ -38,6 +38,7 @@ jobs:
         run: |
           npm ci
           npm run redirects
+          npm run frontmatter
           npm run build
           npm run export
       - name: Deploy

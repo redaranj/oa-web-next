@@ -51,16 +51,18 @@ export const getIndexProps = async (basePath: string) => {
   };
 };
 
+
+
 export const getSearchDocumentsProps = async () => {
   const files = await getFiles("pages/");
   const documents = await files
-    .filter((path) => path.endsWith(".mdx") && !path.endsWith("index.mdx"))
-    .reduce((acc, path) => {
+    .filter((path: string) => path.endsWith(".mdx") && !path.endsWith("index.mdx"))
+    .reduce((acc: Object, path: string): Object => {
       const key = path.replace(/.+?pages\//, '').replace('.mdx', '')
       const contents = readFileSync(path, 'utf8');
       const texts = [];
       const ast = unified().use(remarkParse).use(remarkMdx).parse(contents);
-      const visitMdx = () => tree => {
+      const visitMdx = () => (tree: any) => {
         visit(tree, () => true, node => {
           if (node.type === "text") {
             texts.push(node.value.replace(/(\r\n|\n|\r|\||-)/gm, "").replace(/ +(?= )/g, " "));
