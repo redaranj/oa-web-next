@@ -152,9 +152,24 @@
   "/use": {
     "path": "/use"
   },
+  "/use/ivan": {
+    "path": "/use/ivan",
+    "title": "Project Coordinator for KHPG",
+    "image": "UseCases/Ivan_user.png"
+  },
   "/use/kai": {
     "path": "/use/kai",
     "title": "Researcher",
     "image": "kai.svg"
+  },
+  "/use/nadia": {
+    "path": "/use/nadia",
+    "title": "Documenter for KHPG partner organization",
+    "image": "UseCases/Nadia_user.png"
+  },
+  "/use/oleksandra": {
+    "path": "/use/oleksandra",
+    "title": "Documenter and database manager for KHPG",
+    "image": "UseCases/Oleksandra_user.png"
   }
 }
