@@ -112,6 +112,12 @@
     "description": "The OpenArchive team is proud to announce the launch of Save, our new mobile application that integrates privacy-enhancing technologies with digital media preservation to make media findable, verifiable, and archived for long-term access.",
     "image": "Introducing-Save.png"
   },
+  "/news/memo-from-kharkiv": {
+    "path": "/news/memo-from-kharkiv",
+    "title": "Memo from Kharkiv",
+    "description": "Mapping the realities of Ukrainian documenter communities",
+    "image": "KHPGBlog/1.jpg"
+  },
   "/news/pttp-resistance-in-myanmar": {
     "path": "/news/pttp-resistance-in-myanmar",
     "title": "Preserving Truth to Power - Sustaining resistance in Myanmar",
