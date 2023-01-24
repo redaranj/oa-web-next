@@ -147,7 +147,7 @@
   },
   "/use/anna": {
     "path": "/use/anna",
-    "title": "Archivist",
+    "title": "Archivist at HRW",
     "image": "anna.svg"
   },
   "/use/darius": {
@@ -160,22 +160,22 @@
   },
   "/use/ivan": {
     "path": "/use/ivan",
-    "title": "Project Coordinator for KHPG",
+    "title": "Project Coordinator at KHPG",
     "image": "UseCases/Ivan.svg"
   },
   "/use/kai": {
     "path": "/use/kai",
-    "title": "Researcher",
+    "title": "Researcher at HRW",
     "image": "kai.svg"
   },
   "/use/nadia": {
     "path": "/use/nadia",
-    "title": "Documenter for KHPG partner organization",
+    "title": "Documenter at KHPG partner organization",
     "image": "UseCases/Nadia.svg"
   },
   "/use/oleksandra": {
     "path": "/use/oleksandra",
-    "title": "Documenter and database manager for KHPG",
+    "title": "Documenter and database manager at KHPG",
     "image": "UseCases/Oleksandra.svg"
   }
 }
