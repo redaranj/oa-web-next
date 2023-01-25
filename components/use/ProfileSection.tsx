@@ -13,6 +13,7 @@ export const ProfileSection: FC<PropsWithChildren> = ({ children }) => {
   const { ps, ts } = breakpoints;
   const [first, name, stats, quote, ...details] = children as any[];
   const image = loadImage(first);
+  const hasQuote = quote?.props?.children?.join("").replace(/[\n ]+/g, "") !== "" ?? false;
 
   return (
     <>
@@ -77,7 +78,7 @@ export const ProfileSection: FC<PropsWithChildren> = ({ children }) => {
                   {stats}
                 </Box>
               </Grid>
-              <Grid item sx={{ mt: 6 }}>
+              <Grid item sx={ !hasQuote ? {display: "none"} : {mt: 6 }}>
                 <Box sx={{ width: 80 }}>
                   <Image src={quotationMark} alt="" loader={loader} />
                 </Box>
