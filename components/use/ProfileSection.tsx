@@ -80,7 +80,7 @@ export const ProfileSection: FC<PropsWithChildren> = ({ children }) => {
               </Grid>
               <Grid item sx={ !hasQuote ? {display: "none"} : {mt: 6 }}>
                 <Box sx={{ width: 80 }}>
-                  <Image src={quotationMark} alt="" loader={loader} />
+                  <Image src={!hasQuote ? {display: "none"} : quotationMark} alt="" loader={loader} />
                 </Box>
                 <Box sx={{ mt: 1, "> blockquote": bodyLarge }}>{quote}</Box>
               </Grid>

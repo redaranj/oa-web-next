@@ -90,7 +90,7 @@ export const WhoItem: FC<WhoItemProps> = ({
             </Box>
           </Grid>
           <Grid item sx={!quote ? {display: "none"} : {}}>
-            <Image src={quotationMark} alt="" loader={loader} />
+            <Image src={!quote ? {display: "none"} : quotationMark} alt="" loader={loader} />
             <Box component="p" sx={{ ...bodyLarge, mb: 2 }}>
               {quote}
             </Box>
