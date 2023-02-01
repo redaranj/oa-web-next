@@ -55,7 +55,7 @@ export const UseCaseItem: FC<UseCaseItemProps> = ({
               <Box component="h6" sx={h6}>
                 {title}
               </Box>
-              <Box sx={{ width: 80, mt: 3 }}>
+              <Box sx={{ width: 80, mt: 3, display: !quote ? "none" : "inherit" }}>
                 <Image src={quotationMark} alt="" loader={loader} />
               </Box>
               <Box component="p" sx={bodyLarge}>
