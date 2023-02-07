@@ -158,11 +158,6 @@
     "title": "Project Coordinator at KHPG",
     "image": "UseCases/Ivan.svg"
   },
-  "/use/kai": {
-    "path": "/use/kai",
-    "title": "Researcher at a human rights organizations",
-    "image": "kai.svg"
-  },
   "/use/nadia": {
     "path": "/use/nadia",
     "title": "Documenter at KHPG partner organization",
@@ -177,5 +172,10 @@
     "path": "/use/test",
     "title": "Archivist at a human rights organization",
     "image": "kai.svg"
+  },
+  "/use/test3": {
+    "path": "/use/test3",
+    "title": "Researcher at a human rights organizations",
+    "image": "anna.svg"
   }
 }
