@@ -136,6 +136,39 @@
   "/privacy": {
     "path": "/privacy"
   },
+  "/research/anna": {
+    "path": "/research/anna",
+    "title": "Researcher at a human rights organizations",
+    "image": "anna.svg"
+  },
+  "/research/darius": {
+    "path": "/research/darius",
+    "title": "Freelance Videographer",
+    "image": "darius.svg"
+  },
+  "/research": {
+    "path": "/research"
+  },
+  "/research/ivan": {
+    "path": "/research/ivan",
+    "title": "Project Coordinator at KHPG",
+    "image": "UseCases/Ivan.svg"
+  },
+  "/research/kai": {
+    "path": "/research/kai",
+    "title": "Archivist at a human rights organization",
+    "image": "kai.svg"
+  },
+  "/research/nadia": {
+    "path": "/research/nadia",
+    "title": "Documenter at KHPG partner organization",
+    "image": "UseCases/Nadia.svg"
+  },
+  "/research/oleksandra": {
+    "path": "/research/oleksandra",
+    "title": "Documenter and database manager at KHPG",
+    "image": "UseCases/Oleksandra.svg"
+  },
   "/save": {
     "path": "/save"
   },
@@ -144,38 +177,5 @@
   },
   "/team": {
     "path": "/team"
-  },
-  "/use/anna": {
-    "path": "/use/anna",
-    "title": "Researcher at a human rights organizations",
-    "image": "anna.svg"
-  },
-  "/use/darius": {
-    "path": "/use/darius",
-    "title": "Freelance Videographer",
-    "image": "darius.svg"
-  },
-  "/use": {
-    "path": "/use"
-  },
-  "/use/ivan": {
-    "path": "/use/ivan",
-    "title": "Project Coordinator at KHPG",
-    "image": "UseCases/Ivan.svg"
-  },
-  "/use/kai": {
-    "path": "/use/kai",
-    "title": "Archivist at a human rights organization",
-    "image": "kai.svg"
-  },
-  "/use/nadia": {
-    "path": "/use/nadia",
-    "title": "Documenter at KHPG partner organization",
-    "image": "UseCases/Nadia.svg"
-  },
-  "/use/oleksandra": {
-    "path": "/use/oleksandra",
-    "title": "Documenter and database manager at KHPG",
-    "image": "UseCases/Oleksandra.svg"
   }
 }
