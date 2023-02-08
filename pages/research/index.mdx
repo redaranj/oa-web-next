@@ -1,11 +1,12 @@
-import { HeaderSection } from "components/use/HeaderSection";
-import { UseCasesSection } from "components/use/UseCasesSection";
+import { HeaderSection } from "components/research/HeaderSection";
+import { UseCasesSection } from "components/research/UseCasesSection";
 import { getIndexProps } from "lib/helpers";
 
-export const getStaticProps = async (context) => getIndexProps("pages/use");
+export const getStaticProps = async (context) =>
+  getIndexProps("pages/research");
 
 <HeaderSection>
-    # Use Cases
+    # Research
 </HeaderSection>
 <UseCasesSection pages={props.pages}>
     When co-creating with our partner communities, OpenArchive uses a deliberately slow and in-depth [human rights centered research and design methodology](https://www.humanrightscentered.design/) to threat-model and create personas in order to map out the use cases and ecosystem.  Through this co-research, we are able to identify key pain points and threats these communities face and incorporate this research into building responsive, usable tools to help mitigate harm and technological challenges.

@@ -139,21 +139,21 @@
   "/team": {
     "path": "/team"
   },
-  "/use/anna": {
-    "path": "/use/anna",
+  "/research/anna": {
+    "path": "/research/anna",
     "title": "Archivist",
     "image": "anna.svg"
   },
-  "/use/darius": {
-    "path": "/use/darius",
+  "/research/darius": {
+    "path": "/research/darius",
     "title": "Freelance Videographer",
     "image": "darius.svg"
   },
-  "/use": {
-    "path": "/use"
+  "/research": {
+    "path": "/research"
   },
-  "/use/kai": {
-    "path": "/use/kai",
+  "/research/kai": {
+    "path": "/research/kai",
     "title": "Researcher",
     "image": "kai.svg"
   }

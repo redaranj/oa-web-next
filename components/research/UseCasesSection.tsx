@@ -2,7 +2,7 @@ import { FC, PropsWithChildren } from "react";
 import { Box, Stack } from "@mui/material";
 import { colors, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
-import { UseCaseItem } from "components/use/UseCaseItem";
+import { UseCaseItem } from "components/research/UseCaseItem";
 
 type UseCasesSectionProps = PropsWithChildren<{
   pages: any[];

@@ -18,7 +18,7 @@ export const ProfileSection: FC<PropsWithChildren> = ({ children }) => {
   return (
     <>
       <PageSection backgroundColor={white}>
-        <Link href="/use">All use cases</Link>
+        <Link href="/research">All use cases</Link>
       </PageSection>
       <PageSection backgroundColor={lightGrey}>
         <Grid container direction="column">
@@ -78,9 +78,9 @@ export const ProfileSection: FC<PropsWithChildren> = ({ children }) => {
                   {stats}
                 </Box>
               </Grid>
-              <Grid item sx={ !hasQuote ? {display: "none"} : {mt: 6 }}>
+              <Grid item sx={!hasQuote ? { display: "none" } : { mt: 6 }}>
                 <Box sx={{ width: 80 }}>
-                  <Image src={!hasQuote ? {display: "none"} : quotationMark} alt="" loader={loader} />
+                  <Image src={!hasQuote ? { display: "none" } : quotationMark} alt="" loader={loader} />
                 </Box>
                 <Box sx={{ mt: 1, "> blockquote": bodyLarge }}>{quote}</Box>
               </Grid>
