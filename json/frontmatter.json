@@ -61,6 +61,12 @@
   "/jobs": {
     "path": "/jobs"
   },
+  "/news/IraqiNetwork-partnership": {
+    "path": "/news/IraqiNetwork-partnership",
+    "title": "OpenArchive Partners with the Iraqi Network for Social Media",
+    "description": "OpenArchive is partnering with digital rights defenders in Iraq to strengthen archiving efforts and workflows in the region.",
+    "image": "iraq-blog.jpeg"
+  },
   "/news/KHPG-partnership": {
     "path": "/news/KHPG-partnership",
     "title": "Documenting Russian war crimes in Ukraine&#58; OpenArchive partners with Kharkiv Human Rights Protection Group",
