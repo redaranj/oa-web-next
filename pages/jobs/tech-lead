@@ -13,7 +13,7 @@ import { DiverseSection } from "components/jobs/DiverseSection";
 import { ContactBox } from "components/jobs/ContactBox";
 
 <JobHeaderSection>
-{date}
+{frontmatter.date}
 
 ## {title}
 
@@ -42,7 +42,7 @@ The Technical Lead manages OpenArchive’s overall technical effort, overseeing 
 - Scope timelines that align tech progress with OpenArchive’s programmatic work with Executive Director and Deputy Director;
 - Timely communication with Executive Team (e.g., responses to emails and messages within 24 hours);
 - Recruit and hire developers and other tech team members as needed;
-- Consult on the development of technical blog posts, guides, and other ***Save*** related materials; 
+- Consult on the development of technical blog posts, guides, and other ***Save*** related materials;
 - Attend or present at conferences on behalf of OpenArchive when appropriate.
 
 
@@ -57,7 +57,7 @@ The Technical Lead manages OpenArchive’s overall technical effort, overseeing 
 - Experience with at least one primary mobile development language, Kotlin or Swift, as well as Javascript or Typescript-based cross-platform frameworks;
 - Experience implementing continuous integration, delivery, and automated testing;
 - Experience with threat modeling and analysis, and implementing security features to address these threats;
-- Deep appreciation and respect for advanced security and privacy feature implementation and principles; 
+- Deep appreciation and respect for advanced security and privacy feature implementation and principles;
 - Proven ability to not only meet deadlines yourself but ensure that others you are managing do as well;
 - Exceptional operational, project management, and organizational skills including experience with project management tracking software such as Airtable, GitLab / GitHub projects, etc.;
 - Interest in working within the archival, civil society, human rights, nonprofit, foundation, or NGO sectors;

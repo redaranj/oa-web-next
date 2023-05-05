@@ -2,7 +2,7 @@ import { FC, PropsWithChildren } from "react";
 import { Box, Stack } from "@mui/material";
 import { colors, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
-import { UseCaseItem } from "components/research/UseCaseItem";
+import { UseCaseItem } from "components/programs/our-users/UseCaseItem";
 
 type UseCasesSectionProps = PropsWithChildren<{
   pages: any[];
@@ -12,6 +12,7 @@ export const UseCasesSection: FC<UseCasesSectionProps> = ({
   pages,
   children,
 }) => {
+  const filteredPages = pages.filter((page) => !!page.quote);
   const { white } = colors;
   const { ps, pl, ts, tl, ds, dl } = breakpoints;
 
@@ -49,7 +50,7 @@ export const UseCasesSection: FC<UseCasesSectionProps> = ({
     >
       <Box>{children}</Box>
       <Stack spacing={6} sx={{ a: { textDecoration: "none" } }}>
-        {pages.map((page) => (
+        {filteredPages.map((page) => (
           <UseCaseItem key={page.path} {...page} />
         ))}
       </Stack>

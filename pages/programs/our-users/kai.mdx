@@ -5,14 +5,14 @@ quote: Social media and messaging apps compress audio and video before upload, w
 image: kai.svg
 ---
 
-import { ProfileSection } from "components/research/ProfileSection";
-import { AchievementsSection } from "components/research/AchievementsSection";
-import { AchievementItem } from "components/research/AchievementItem";
+import { ProfileSection } from "components/programs/our-users/ProfileSection";
+import { AchievementsSection } from "components/programs/our-users/AchievementsSection";
+import { AchievementItem } from "components/programs/our-users/AchievementItem";
 
 <ProfileSection>
 ![](kai.svg)
 
-## **{name}**
+## **{frontmatter.name}**
 
 |        |                                                            |
 | ------ | ---------------------------------------------------------- |
@@ -21,7 +21,7 @@ import { AchievementItem } from "components/research/AchievementItem";
 | Role   | Archivist for a human rights organization                  |
 | Skills | Cataloging and preserving data, digital systems management |
 
-> {quote}
+> {frontmatter.quote}
 
 |                    |                                                                                                                                                        |
 | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |

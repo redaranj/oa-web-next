@@ -5,14 +5,14 @@ quote: I don’t always capture media from professional cameras. I use my iPhone
 image: darius.svg
 ---
 
-import { ProfileSection } from "components/research/ProfileSection";
-import { AchievementsSection } from "components/research/AchievementsSection";
-import { AchievementItem } from "components/research/AchievementItem";
+import { ProfileSection } from "components/programs/our-users/ProfileSection";
+import { AchievementsSection } from "components/programs/our-users/AchievementsSection";
+import { AchievementItem } from "components/programs/our-users/AchievementItem";
 
 <ProfileSection>
 ![](darius.svg)
 
-## **{name}**
+## **{frontmatter.name}**
 
 |        |                                                          |
 | ------ | -------------------------------------------------------- |
@@ -21,7 +21,7 @@ import { AchievementItem } from "components/research/AchievementItem";
 | Role   | Freelance Videographer                                   |
 | Skills | Capturing files using a professional camera, drones, etc |
 
-> {quote}
+> {frontmatter.quote}
 
 |                    |                                                                                                                                                                                                                            |
 | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

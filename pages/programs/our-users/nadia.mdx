@@ -5,14 +5,14 @@ quote:
 image: UseCases/Nadia.svg
 ---
 
-import { ProfileSection } from "components/research/ProfileSection";
-import { AchievementsSection } from "components/research/AchievementsSection";
-import { AchievementItem } from "components/research/AchievementItem";
+import { ProfileSection } from "components/programs/our-users/ProfileSection";
+import { AchievementsSection } from "components/programs/our-users/AchievementsSection";
+import { AchievementItem } from "components/programs/our-users/AchievementItem";
 
 <ProfileSection>
 ![](UseCases/Nadia.svg)
 
-## **{name}**
+## **{frontmatter.name}**
 
 |               |                                                                                                                                                                                      |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -22,7 +22,7 @@ import { AchievementItem } from "components/research/AchievementItem";
 | Skills        | Captures evidence first-hand – in the form of mobile media, testimonials, and/or primary source research – and inputs this information into a larger body or collection of evidence. |
 | Base Location | Kharkiv                                                                                                                                                                              |
 
-> {quote}
+> {frontmatter.quote}
 
 |                  |                                                                                                                                                                                                                    |
 | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |

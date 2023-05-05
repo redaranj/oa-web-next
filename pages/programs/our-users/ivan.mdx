@@ -5,14 +5,14 @@ quote:
 image: UseCases/Ivan.svg
 ---
 
-import { ProfileSection } from "components/research/ProfileSection";
-import { AchievementsSection } from "components/research/AchievementsSection";
-import { AchievementItem } from "components/research/AchievementItem";
+import { ProfileSection } from "components/programs/our-users/ProfileSection";
+import { AchievementsSection } from "components/programs/our-users/AchievementsSection";
+import { AchievementItem } from "components/programs/our-users/AchievementItem";
 
 <ProfileSection>
 ![](UseCases/Ivan.svg)
 
-## **{name}**
+## **{frontmatter.name}**
 
 |               |                                                                                                                |
 | ------------- | -------------------------------------------------------------------------------------------------------------- |
@@ -22,7 +22,7 @@ import { AchievementItem } from "components/research/AchievementItem";
 | Skills        | Organizes, maintains, and uses the first-hand evidence received from the contributor to advance a shared goal. |
 | Base Location | Kyiv                                                                                                           |
 
-> {quote}
+> {frontmatter.quote}
 
 |                    |                                                                                                                                                                             |
 | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
