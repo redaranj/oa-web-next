@@ -70,7 +70,8 @@ export const MobileMenu: FC<MobileMenuProps> = ({ closeMenu }) => {
             </Grid>
             <MenuItem title={t("saveApp")} url="/save" />
             <MenuItem title={t("guides")} url="/guides" />
-            <MenuItem title={t("research")} url="/research" />
+            <MenuItem title={t("programs")} url="/programs" />
+            <MenuItem title={t("ourUsers")} url="/programs/our-users" />
           </Grid>
           <Grid item container direction="column">
             <Box sx={{ borderTop: `1px solid ${white}`, mt: 3, pt: 3 }}>

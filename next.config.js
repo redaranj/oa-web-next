@@ -44,6 +44,11 @@ const config = withMDX({
         destination: "/guides/ukraine-media-guide",
         permanent: true,
       },
+      {
+        source: "/research",
+        destination: "/programs/our-users",
+        permanent: true,
+      },
     ];
   },
 });

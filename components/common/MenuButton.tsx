@@ -24,7 +24,7 @@ export const MenuButton: FC<MenuButtonProps> = ({
   const isBrowser = typeof window !== "undefined";
 
   return (
-    isBrowser && (
+    isBrowser ? (
       <PopupState variant="popover" popupId={title}>
         {(popupState) => (
           <Box
@@ -100,6 +100,6 @@ export const MenuButton: FC<MenuButtonProps> = ({
           </Box>
         )}
       </PopupState>
-    )
+    ) : null
   );
 };
