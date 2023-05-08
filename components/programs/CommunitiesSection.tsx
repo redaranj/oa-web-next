@@ -1,24 +1,19 @@
 import { FC, PropsWithChildren } from "react";
 import Image from "next/legacy/image";
 import { Grid, Box } from "@mui/material";
-import { colors, typography, loader, breakpoints } from "styles/theme";
+import { loader, breakpoints, typography } from "styles/theme";
 import { HeaderSection as BaseHeaderSection } from "components/common/HeaderSection";
-import diverseEnvironment from "public/images/WorkWithUs/Creating-a-diverse-environment.png";
+import programsHeader from "public/images/programs-header.svg";
 
-const { white } = colors;
 
-type CommunitiesSectionProps = PropsWithChildren<{
-  backgroundColor: string;
-}>;
-
-export const CommunitiesSection: FC<CommunitiesSectionProps> = ({
-  backgroundColor = white,
+export const CommunitiesSection: FC<PropsWithChildren> = ({
+  children
 }) => {
-  const { h1, bodyLarge } = typography;
+  const { bodyLarge } = typography;
   const { ps, ts } = breakpoints;
 
   return (
-    <BaseHeaderSection backgroundColor={backgroundColor}>
+    <BaseHeaderSection>
       <Grid
         container
         justifyContent="space-between"
@@ -35,38 +30,31 @@ export const CommunitiesSection: FC<CommunitiesSectionProps> = ({
           item
           sx={{ width: "50%", [ps]: { width: "100%", [ts]: { width: "50%" } } }}
         >
-          <Box sx={h1}>
-            Creating a <strong>diverse environment</strong>
-          </Box>
-          <Box sx={bodyLarge}>
-            OpenArchive is committed to creating a diverse environment and is
-            proud to be an equal opportunity employer. All qualified applicants
-            will receive consideration for employment without regard to race,
-            color, religion, gender, gender identity or expression, sexual
-            orientation, national origin, genetics, disability, age, or veteran
-            status.
+          <Box sx={{ "> p": bodyLarge, "> ul": bodyLarge }}>
+            {children}
           </Box>
         </Grid>
         <Grid
           item
           container
           direction="column"
-          justifyContent="center"
+          justifyContent="top"
           sx={{ width: "50%", [ps]: { width: "100%", [ts]: { width: "50%" } } }}
         >
           <Grid item>
             <Box
               sx={{
-                height: "100%",
-                width: "110%",
+                float: "right",
+                height: "80%",
+                width: "80%",
               }}
             >
-              <Image src={diverseEnvironment} alt="" loader={loader} />
+              <Image src={programsHeader} alt="" loader={loader} />
             </Box>
           </Grid>
         </Grid>
 
       </Grid>
-    </BaseHeaderSection>
+    </BaseHeaderSection >
   );
 };
