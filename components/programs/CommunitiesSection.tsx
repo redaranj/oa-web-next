@@ -1,7 +1,7 @@
 import { FC, PropsWithChildren } from "react";
 import Image from "next/legacy/image";
 import { Grid, Box } from "@mui/material";
-import { loader, breakpoints, typography } from "styles/theme";
+import { loader, breakpoints, typography, colors } from "styles/theme";
 import { HeaderSection as BaseHeaderSection } from "components/common/HeaderSection";
 import programsHeader from "public/images/programs-header.svg";
 
@@ -9,11 +9,12 @@ import programsHeader from "public/images/programs-header.svg";
 export const CommunitiesSection: FC<PropsWithChildren> = ({
   children
 }) => {
+  const { lightGrey } = colors;
   const { bodyLarge } = typography;
   const { ps, ts } = breakpoints;
 
   return (
-    <BaseHeaderSection>
+    <BaseHeaderSection backgroundColor={lightGrey}>
       <Grid
         container
         justifyContent="space-between"
