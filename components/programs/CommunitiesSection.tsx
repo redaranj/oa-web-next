@@ -21,11 +21,11 @@ export const CommunitiesSection: FC<PropsWithChildren> = ({
         sx={{
           flexDirection: "row",
           [ps]: {
-            flexDirection: "column",
+            flexDirection: "column-reverse",
           },
           [ts]: { flexDirection: "row" },
         }}
-        spacing={6}
+        spacing={4}
       >
         <Grid
           item
@@ -46,6 +46,10 @@ export const CommunitiesSection: FC<PropsWithChildren> = ({
             <Box
               sx={{
                 float: "right",
+                [ps]: {
+                  float: "none", margin: "0 auto"
+                },
+                [ts]: { float: "right" },
                 height: "80%",
                 width: "80%",
               }}

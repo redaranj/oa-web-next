@@ -1,30 +1,18 @@
 import { FC, PropsWithChildren } from "react";
-import { Grid, } from "@mui/material";
-import { breakpoints, colors } from "styles/theme";
-import { HeaderSection as BaseHeaderSection } from "components/common/HeaderSection";
+import { Box } from "@mui/material";
+import { colors } from "styles/theme";
+import { PageSection } from "components/common/PageSection";
 
 export const ResearchSection: FC<PropsWithChildren> = ({
   children
 }) => {
   const { lightGrey } = colors;
-  const { ps, ts } = breakpoints;
 
   return (
-    <BaseHeaderSection backgroundColor={lightGrey}>
-      <Grid
-        container
-        justifyContent="space-between"
-        sx={{
-          flexDirection: "row",
-          [ps]: {
-            flexDirection: "column",
-          },
-          [ts]: { flexDirection: "row" },
-        }}
-        spacing={6}
-      >
+    <PageSection backgroundColor={lightGrey}>
+      <Box>
         {children}
-      </Grid>
-    </BaseHeaderSection >
+      </Box>
+    </PageSection >
   );
 };

@@ -1,7 +1,8 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import Image, { StaticImageData } from "next/legacy/image";
+import Link from "next/link";
 import { Box, Grid } from "@mui/material";
-import { colors, breakpoints, loader } from "styles/theme";
+import { colors, typography, breakpoints, loader } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import northAmerica from "public/images/north-america.png";
 import latinAmerica from "public/images/latin-america.png";
@@ -11,42 +12,73 @@ import mena from "public/images/mena.png";
 type RegionItemProps = {
   image: StaticImageData;
   name: string;
+  url: string;
 };
 
-const RegionItem: FC<RegionItemProps> = ({ image, name }) => {
+const RegionItem: FC<RegionItemProps> = ({ image, name, url }) => {
   const { ps, ts } = breakpoints;
+  const { h5 } = typography;
+  const { lightGrey } = colors;
 
   return (
+
     <Grid
       item
       sx={{
-        width: "25%",
+        "> a": {
+          textDecoration: "none",
+        },
+        ":hover": {
+          backgroundColor: lightGrey,
+        },
+        borderRadius: 2,
+        width: "50%",
         [ps]: { width: "100%" },
-        [ts]: { width: "25%" },
+        [ts]: { width: "50%" },
       }}
     >
-      <Box sx={{ width: "100%", height: "100%" }}>
-        <Image src={image} alt={name} loader={loader} />
-      </Box>
+      <Link href={url}>
+        <Grid
+          container
+          direction="column"
+          justifyContent="center"
+        >
+          <Grid item>
+            <Box sx={{ width: "100%", height: "100%", cursor: "pointer", }}>
+              <Image src={image} alt={name} loader={loader} />
+            </Box>
+          </Grid>
+          <Grid item>
+            <Box component="h5" sx={{ ...h5, textAlign: "center", maxWidth: 300, margin: "0 auto", mt: -2, cursor: "pointer", }}>{name}</Box>
+          </Grid>
+        </Grid>
+      </Link>
     </Grid>
   );
 };
 
-export const RegionsSection: FC = () => {
+export const RegionsSection: FC<PropsWithChildren> = ({ children }) => {
   const { white } = colors;
+  const { bodyLarge } = typography;
 
   return (
     <PageSection backgroundColor={white}>
-      <Grid
-        container
-        sx={{
-          flexDirection: "row",
-        }}
-      >
-        <RegionItem image={northAmerica} name="North America" />
-        <RegionItem image={latinAmerica} name="Latin America" />
-        <RegionItem image={easternEurope} name="Eastern Europe" />
-        <RegionItem image={mena} name="Middle East and North America" />
+      <Grid container direction="column">
+        <Grid item>
+          <Box sx={{ "> p": bodyLarge }}>{children}</Box>
+        </Grid>
+        <Grid
+          item
+          container
+          sx={{
+            flexDirection: "row",
+          }}
+        >
+          <RegionItem image={northAmerica} name="North America" url="/programs/our-users/north-america" />
+          <RegionItem image={latinAmerica} name="Latin America" url="/programs/our-users/latin-america" />
+          <RegionItem image={easternEurope} name="Eastern Europe" url="/programs/our-users/eastern-europe" />
+          <RegionItem image={mena} name="Middle East and North America" url="/programs/our-users/mena" />
+        </Grid>
       </Grid>
     </PageSection>
   );
