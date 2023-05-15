@@ -113,6 +113,12 @@
     "description": "The OpenArchive team is proud to announce the launch of Save, our new mobile application that integrates privacy-enhancing technologies with digital media preservation to make media findable, verifiable, and archived for long-term access.",
     "image": "Introducing-Save.png"
   },
+  "/news/memo-from-baghdad": {
+    "path": "/news/memo-from-baghdad",
+    "title": "Memo from Baghdad: Identifying and Addressing the Needs of Iraqi Documenters",
+    "description": "In a moment when free speech is under direct threat in Iraq, our recent needs assessment with the Iraqi Network for Social Media (INSM-Iraq) offers an insightful glimpse into the realities, challenges, and opportunities that Iraq human rights defenders are facing as they document and archive evidence of injustice.",
+    "image": "INSMBlog/1.png"
+  },
   "/news/memo-from-kharkiv": {
     "path": "/news/memo-from-kharkiv",
     "title": "Memo from Kharkiv: mapping the realities of Ukrainian documenter communities",
