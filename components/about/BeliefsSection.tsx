@@ -3,7 +3,7 @@ import Image from "next/legacy/image";
 import { Box, Grid } from "@mui/material";
 import { colors, breakpoints, typography, loader } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
-import handPhone from "public/images/AboutUs/Why-this-work-matter.png";
+import bullhorn from "public/images/AboutUs/Our-Mission.png";
 
 export const BeliefsSection: FC<PropsWithChildren> = ({ children }) => {
   const { lightGrey } = colors;
@@ -43,10 +43,9 @@ export const BeliefsSection: FC<PropsWithChildren> = ({ children }) => {
               sx={{
                 margin: "0 auto",
                 textAlign: "center",
-                width: 300,
               }}
             >
-              <Image src={handPhone} alt="" loader={loader} />
+              <Image src={bullhorn} alt="" loader={loader} />
             </Box>
           </Grid>
           <Grid

@@ -3,7 +3,7 @@ import Image from "next/legacy/image";
 import { Box, Grid } from "@mui/material";
 import { colors, breakpoints, typography, loader } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
-import bullhorn from "public/images/AboutUs/Our-Mission.png";
+import handPhone from "public/images/AboutUs/Why-this-work-matter.png";
 
 export const MissionSection: FC<PropsWithChildren> = ({ children }) => {
   const { white } = colors;
@@ -27,7 +27,7 @@ export const MissionSection: FC<PropsWithChildren> = ({ children }) => {
               textAlign: "center",
             }}
           >
-            <Image src={bullhorn} alt="" loader={loader} />
+            <Image src={handPhone} alt="" loader={loader} />
           </Box>
         </Grid>
         <Grid

@@ -7,27 +7,19 @@ export const ActivitiesSection: FC<PropsWithChildren> = ({ children }) => {
   const { lightGrey } = colors;
   const { ps, tl } = breakpoints;
   const [first, ...rest] = children as any[];
-
   return (
     <PageSection backgroundColor={lightGrey}>
-      <Grid
-        container
-        sx={{
-          flexDirection: "column",
-        }}
-      >
+      <Grid container spacing={3} direction="column">
         <Grid item>{first}</Grid>
         <Grid
           item
           container
-          columnSpacing={6}
-          rowSpacing={6}
-          justifyContent="center"
-          alignItems="center"
-          alignContent="center"
+          spacing={3}
           sx={{
             flexDirection: "row",
-            [ps]: { flexDirection: "column" },
+            [ps]: {
+              flexDirection: "column",
+            },
             [tl]: { flexDirection: "row" },
           }}
         >
