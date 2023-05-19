@@ -6,7 +6,7 @@ import { OutlinedButton } from "components/common/OutlinedButton";
 import { colors, typography, loader, breakpoints } from "styles/theme";
 import quotationMark from "public/images/quote.svg";
 
-type UseCaseItemProps = {
+type ResearchItemProps = {
   name: string;
   title: string;
   quote: string;
@@ -14,21 +14,21 @@ type UseCaseItemProps = {
   path: string;
 };
 
-export const UseCaseItem: FC<UseCaseItemProps> = ({
+export const ResearchItem: FC<ResearchItemProps> = ({
   name,
   title,
   quote,
   image,
   path,
 }) => {
-  const { lightGrey, mediumGrey, black } = colors;
+  const { white, mediumGrey, black } = colors;
   const { h5, h6, bodyLarge } = typography;
   const { ps, tl } = breakpoints;
   const loadedImage = require(`public/images/${image}`).default;
 
   return (
     <Link href={path}>
-      <Box sx={{ backgroundColor: lightGrey, cursor: "pointer" }}>
+      <Box sx={{ backgroundColor: white, cursor: "pointer" }}>
         <Grid
           container
           sx={{
@@ -55,7 +55,9 @@ export const UseCaseItem: FC<UseCaseItemProps> = ({
               <Box component="h6" sx={h6}>
                 {title}
               </Box>
-              <Box sx={{ width: 80, mt: 3, display: !quote ? "none" : "inherit" }}>
+              <Box
+                sx={{ width: 80, mt: 3, display: !quote ? "none" : "inherit" }}
+              >
                 <Image src={quotationMark} alt="" loader={loader} />
               </Box>
               <Box component="p" sx={bodyLarge}>
