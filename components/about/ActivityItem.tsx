@@ -50,11 +50,11 @@ export const ActivityItem: FC<PropsWithChildren> = ({ children }) => {
           }}
         >
           <Grid item container direction="row" justifyContent="space-between">
-            <Grid item xs={10}>
-              <Box sx={{ p: 3, height: 140 }}>{title}</Box>
+            <Grid item xs={10.5}>
+              <Box sx={{ p: 3, pr: 0, height: 140 }}>{title}</Box>
             </Grid>
-            <Grid item xs={2}>
-              <Box sx={{ px: 3, py: 4.5 }}>
+            <Grid item xs={1.5}>
+              <Box sx={{ px: 0, pl: 2, py: 4.5 }}>
                 <Image
                   src={rightArrow}
                   alt=""
