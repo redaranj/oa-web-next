@@ -12,7 +12,7 @@ export const ResearchSection: FC<ResearchSectionProps> = ({
   pages,
   children,
 }) => {
-  const filteredPages = pages.filter((page) => !!page.quote);
+  const filteredPages = pages.filter((page) => !!page.name);
   const { lightGrey } = colors;
   const { ps, pl, ts, tl, ds, dl } = breakpoints;
   const [first, ...rest] = children as any[];
