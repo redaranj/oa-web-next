@@ -3,15 +3,16 @@ import Link from "next/link";
 import Image from "next/legacy/image";
 import { Box, Grid } from "@mui/material";
 import { colors, breakpoints, loader, typography } from "styles/theme";
-import { loadImage } from "lib/frontendHelpers";
+import { loadImage, getURL } from "lib/frontendHelpers";
 import rightArrow from "public/images/right-arrow.svg";
 
 export const ActivityItem: FC<PropsWithChildren> = ({ children }) => {
   const { white, turquoise } = colors;
   const { bodyLarge } = typography;
   const { ps, tl } = breakpoints;
-  const [first, title, ...rest] = children as any[];
+  const [first, title, rawURL, ...rest] = children as any[];
   const image = loadImage(first);
+  const url = getURL(rawURL);
 
   return (
     <Grid
@@ -35,7 +36,7 @@ export const ActivityItem: FC<PropsWithChildren> = ({ children }) => {
         },
       }}
     >
-      <Link href="/">
+      <Link href={url}>
         <Box
           sx={{
             backgroundColor: white,
@@ -50,10 +51,10 @@ export const ActivityItem: FC<PropsWithChildren> = ({ children }) => {
         >
           <Grid item container direction="row" justifyContent="space-between">
             <Grid item xs={10}>
-              <Box sx={{ p: 3 }}>{title}</Box>
+              <Box sx={{ p: 3, height: 140 }}>{title}</Box>
             </Grid>
             <Grid item xs={2}>
-              <Box sx={{ px: 3, py: 5 }}>
+              <Box sx={{ px: 3, py: 4.5 }}>
                 <Image
                   src={rightArrow}
                   alt=""

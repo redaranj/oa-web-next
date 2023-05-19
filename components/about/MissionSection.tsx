@@ -25,6 +25,9 @@ export const MissionSection: FC<PropsWithChildren> = ({ children }) => {
             sx={{
               margin: "0 auto",
               textAlign: "center",
+              mb: 0,
+              [ps]: { mb: 4 },
+              [tl]: { mb: 0 },
             }}
           >
             <Image src={handPhone} alt="" loader={loader} />
