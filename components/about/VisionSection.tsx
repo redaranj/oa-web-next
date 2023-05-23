@@ -1,7 +1,6 @@
 import { FC, PropsWithChildren } from "react";
-import Image from "next/legacy/image";
 import { Box, Grid } from "@mui/material";
-import { colors, breakpoints, loader, typography } from "styles/theme";
+import { colors, breakpoints, typography } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import vision from "public/images/AboutUs/about-us-1.png";
 
@@ -16,6 +15,7 @@ export const VisionSection: FC<PropsWithChildren> = ({ children }) => {
         item
         container
         sx={{
+          backgroundColor: lightGrey,
           flexDirection: "row",
           [ps]: {
             flexDirection: "column",
@@ -23,6 +23,7 @@ export const VisionSection: FC<PropsWithChildren> = ({ children }) => {
           [tl]: {
             flexDirection: "row",
           },
+          height: "100%",
         }}
       >
         <Grid
@@ -30,6 +31,7 @@ export const VisionSection: FC<PropsWithChildren> = ({ children }) => {
           container
           justifyContent="space-around"
           sx={{
+            height: "100%",
             width: "50%",
             [ps]: {
               width: "100%",
@@ -39,18 +41,21 @@ export const VisionSection: FC<PropsWithChildren> = ({ children }) => {
             },
           }}
         >
-          <Grid item>
-            <Box sx={{}}>
-              <Image src={vision} alt="" loader={loader} />
-            </Box>
-          </Grid>
+          <Box
+            sx={{
+              height: "100%",
+              width: "100%",
+              backgroundImage: `url(${vision.src})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              minHeight: 360,
+            }}
+          />
         </Grid>
         <Grid
-          container
-          direction="column"
-          justifyContent="space-around"
           item
           sx={{
+            height: "100%",
             width: "50%",
             [ps]: {
               width: "100%",
@@ -60,17 +65,18 @@ export const VisionSection: FC<PropsWithChildren> = ({ children }) => {
             },
           }}
         >
-          <Grid item>
-            <Box
-              sx={{
-                "> p": { ...bodyLarge, fontWeight: 600 },
-                backgroundColor: lightGrey,
-                p: 6,
-              }}
-            >
-              {children}
-            </Box>
-          </Grid>
+          <Box
+            sx={{
+              height: "100%",
+              "> p": { ...bodyLarge, fontWeight: 600 },
+              backgroundColor: lightGrey,
+              p: 6,
+              pt: 8,
+              minHeight: 330,
+            }}
+          >
+            {children}
+          </Box>
         </Grid>
       </Grid>
     </PageSection>

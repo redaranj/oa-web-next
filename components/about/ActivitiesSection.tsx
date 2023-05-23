@@ -8,7 +8,7 @@ export const ActivitiesSection: FC<PropsWithChildren> = ({ children }) => {
   const { ps, tl } = breakpoints;
   const [first, ...rest] = children as any[];
   return (
-    <PageSection backgroundColor={lightGrey}>
+    <PageSection backgroundColor={lightGrey} sx={{ pb: "16px !important" }}>
       <Grid container spacing={3} direction="column">
         <Grid item>{first}</Grid>
         <Grid

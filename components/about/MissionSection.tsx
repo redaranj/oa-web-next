@@ -11,7 +11,7 @@ export const MissionSection: FC<PropsWithChildren> = ({ children }) => {
   const { ps, tl } = breakpoints;
 
   return (
-    <PageSection backgroundColor={white}>
+    <PageSection backgroundColor={white} sx={{ pb: "0 !important" }}>
       <Grid item container sx={{ flexDirection: "row-reverse" }}>
         <Grid
           item

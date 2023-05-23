@@ -21,14 +21,14 @@ export const ResearchItem: FC<ResearchItemProps> = ({
   image,
   path,
 }) => {
-  const { white, mediumGrey, black } = colors;
+  const { lightGrey, mediumGrey, black } = colors;
   const { h5, h6, bodyLarge } = typography;
   const { ps, tl } = breakpoints;
   const loadedImage = require(`public/images/${image}`).default;
 
   return (
     <Link href={path}>
-      <Box sx={{ backgroundColor: white, cursor: "pointer" }}>
+      <Box sx={{ backgroundColor: lightGrey, cursor: "pointer" }}>
         <Grid
           container
           sx={{

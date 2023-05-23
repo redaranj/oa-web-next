@@ -21,7 +21,6 @@ const RegionItem: FC<RegionItemProps> = ({ image, name, url }) => {
   const { lightGrey } = colors;
 
   return (
-
     <Grid
       item
       sx={{
@@ -38,18 +37,26 @@ const RegionItem: FC<RegionItemProps> = ({ image, name, url }) => {
       }}
     >
       <Link href={url}>
-        <Grid
-          container
-          direction="column"
-          justifyContent="center"
-        >
+        <Grid container direction="column" justifyContent="center">
           <Grid item>
-            <Box sx={{ width: "100%", height: "100%", cursor: "pointer", }}>
+            <Box sx={{ width: "100%", height: "100%", cursor: "pointer" }}>
               <Image src={image} alt={name} loader={loader} />
             </Box>
           </Grid>
           <Grid item>
-            <Box component="h5" sx={{ ...h5, textAlign: "center", maxWidth: 300, margin: "0 auto", mt: -2, cursor: "pointer", }}>{name}</Box>
+            <Box
+              component="h5"
+              sx={{
+                ...h5,
+                textAlign: "center",
+                maxWidth: 300,
+                margin: "0 auto",
+                mt: -2,
+                cursor: "pointer",
+              }}
+            >
+              {name}
+            </Box>
           </Grid>
         </Grid>
       </Link>
@@ -74,10 +81,26 @@ export const RegionsSection: FC<PropsWithChildren> = ({ children }) => {
             flexDirection: "row",
           }}
         >
-          <RegionItem image={northAmerica} name="North America" url="/programs/our-users/north-america" />
-          <RegionItem image={latinAmerica} name="Latin America" url="/programs/our-users/latin-america" />
-          <RegionItem image={easternEurope} name="Eastern Europe" url="/programs/our-users/eastern-europe" />
-          <RegionItem image={mena} name="Middle East and North America" url="/programs/our-users/mena" />
+          <RegionItem
+            image={northAmerica}
+            name="North America"
+            url="/programs/our-users/northamerica"
+          />
+          <RegionItem
+            image={latinAmerica}
+            name="Latin America"
+            url="/programs/our-users/latam"
+          />
+          <RegionItem
+            image={easternEurope}
+            name="Eastern Europe"
+            url="/programs/our-users/easterneurope"
+          />
+          <RegionItem
+            image={mena}
+            name="Middle East and North Africa"
+            url="/programs/our-users/mena"
+          />
         </Grid>
       </Grid>
     </PageSection>

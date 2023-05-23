@@ -199,7 +199,14 @@ export const TopNav = () => {
                         </Grid>
                         <Grid item>
                           <Link href="/programs">
-                            <Box sx={menuItemProps}>{t("programs")}</Box>
+                            <Box sx={menuItemProps}>
+                              {t("programs")}
+                              <Link href="/programs/our-users">
+                                <Box sx={{ ...menuItemProps, mt: 0, mb: 0 }}>
+                                  {t("ourUsers")}
+                                </Box>
+                              </Link>
+                            </Box>
                           </Link>
                         </Grid>
                       </Grid>

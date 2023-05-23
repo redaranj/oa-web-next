@@ -2,7 +2,7 @@ import { FC, PropsWithChildren } from "react";
 import { Box, Stack } from "@mui/material";
 import { colors, breakpoints } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
-import { ResearchItem } from "components/programs/ResearchItem";
+import { ResearchItem } from "components/programs/our-users/ResearchItem";
 
 type ResearchSectionProps = PropsWithChildren<{
   pages: any[];
@@ -13,13 +13,13 @@ export const ResearchSection: FC<ResearchSectionProps> = ({
   children,
 }) => {
   const filteredPages = pages.filter((page) => !!page.name);
-  const { lightGrey } = colors;
+  const { white } = colors;
   const { ps, pl, ts, tl, ds, dl } = breakpoints;
   const [first, ...rest] = children as any[];
 
   return (
     <PageSection
-      backgroundColor={lightGrey}
+      backgroundColor={white}
       sx={{
         py: 4,
         px: 11.25,
