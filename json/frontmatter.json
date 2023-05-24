@@ -68,6 +68,12 @@
     "description": "OpenArchive’s team of archival activists is supporting human rights defenders in Ukraine to preserve evidence of Russian war crimes and other human rights atrocities.",
     "image": "ukraine-war-damage.png"
   },
+  "/news/LatAm-Partnership": {
+    "path": "/news/LatAm-Partnership",
+    "title": "OpenArchive Launches New Partnerships in Latin America with Cubalex and ALDEA Foundation",
+    "description": "OpenArchive is partnering with two human rights organizations in Latin America to strengthen archiving efforts and workflows in the region.",
+    "image": "LatAmPressRelease/1.png"
+  },
   "/news/archiving-forward-part-2": {
     "path": "/news/archiving-forward-part-2",
     "title": "Archiving Forward Part 2 - Mapping Our Decentralized Ecosystem",
