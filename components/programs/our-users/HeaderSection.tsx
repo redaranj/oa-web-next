@@ -21,5 +21,6 @@ export const HeaderSection: FC<PropsWithChildren> = ({ children }) => {
         {children}
       </Stack>
     </BaseHeaderSection>
+    
   );
 };

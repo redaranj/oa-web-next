@@ -13,12 +13,30 @@ export const ProfileSection: FC<PropsWithChildren> = ({ children }) => {
   const { ps, ts } = breakpoints;
   const [first, name, stats, quote, ...details] = children as any[];
   const image = loadImage(first);
-  const hasQuote = quote?.props?.children?.join("").replace(/[\n ]+/g, "") !== "" ?? false;
+  const hasQuote =
+    quote?.props?.children?.join("").replace(/[\n ]+/g, "") !== "" ?? false;
 
   return (
     <>
-      <PageSection backgroundColor={white}>
-        <Link href="/research">All use cases</Link>
+      <PageSection
+        backgroundColor={lightGrey}
+        sx={{
+          pb: "0 !important",
+          "> a": { textDecoration: "none !important" },
+        }}
+      >
+        <Link href="/research">
+          <Box
+            sx={{
+              ...bodyLarge,
+              fontWeight: "bold",
+              color: turquoise,
+              mt: 3,
+            }}
+          >
+            ❮ All use cases
+          </Box>
+        </Link>
       </PageSection>
       <PageSection backgroundColor={lightGrey}>
         <Grid container direction="column">
@@ -80,7 +98,11 @@ export const ProfileSection: FC<PropsWithChildren> = ({ children }) => {
               </Grid>
               <Grid item sx={!hasQuote ? { display: "none" } : { mt: 6 }}>
                 <Box sx={{ width: 80 }}>
-                  <Image src={!hasQuote ? { display: "none" } : quotationMark} alt="" loader={loader} />
+                  <Image
+                    src={!hasQuote ? { display: "none" } : quotationMark}
+                    alt=""
+                    loader={loader}
+                  />
                 </Box>
                 <Box sx={{ mt: 1, "> blockquote": bodyLarge }}>{quote}</Box>
               </Grid>

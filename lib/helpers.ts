@@ -32,6 +32,8 @@ export const getIndexProps = async (basePath: string) => {
           category = "",
           date = "",
           image = "",
+          region = "",
+          country = ""
         },
       } = matter(readFileSync(fullPath));
       return {
@@ -43,6 +45,8 @@ export const getIndexProps = async (basePath: string) => {
         category,
         date,
         image,
+        region,
+        country
       };
     }).sort((a, b) => new Date(a.date) > new Date(b.date) ? -1 : 1);
 

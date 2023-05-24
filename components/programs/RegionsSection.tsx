@@ -4,9 +4,9 @@ import Link from "next/link";
 import { Box, Grid } from "@mui/material";
 import { colors, typography, breakpoints, loader } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
-import northAmerica from "public/images/north-america.png";
-import latinAmerica from "public/images/latin-america.png";
-import easternEurope from "public/images/eastern-europe.png";
+import northAmerica from "public/images/northamerica.png";
+import latinAmerica from "public/images/latam.png";
+import easternEurope from "public/images/easterneurope.png";
 import mena from "public/images/mena.png";
 
 type RegionItemProps = {

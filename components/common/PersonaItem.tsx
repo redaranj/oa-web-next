@@ -7,7 +7,7 @@ import { colors, loader, typography, breakpoints } from "styles/theme";
 import plus from "public/images/plus.svg";
 import quotationMark from "public/images/quote.svg";
 
-type WhoItemProps = PropsWithChildren<{
+type PersonaItemProps = PropsWithChildren<{
   name: string;
   title: string;
   quote: string;
@@ -15,7 +15,7 @@ type WhoItemProps = PropsWithChildren<{
   image: string;
 }>;
 
-export const WhoItem: FC<WhoItemProps> = ({
+export const PersonaItem: FC<PersonaItemProps> = ({
   name,
   title,
   quote,
@@ -90,7 +90,11 @@ export const WhoItem: FC<WhoItemProps> = ({
             </Box>
           </Grid>
           <Grid item sx={!quote ? { display: "none" } : {}}>
-            <Image src={!quote ? { display: "none" } : quotationMark} alt="" loader={loader} />
+            <Image
+              src={!quote ? { display: "none" } : quotationMark}
+              alt=""
+              loader={loader}
+            />
             <Box component="p" sx={{ ...bodyLarge, mb: 2 }}>
               {quote}
             </Box>

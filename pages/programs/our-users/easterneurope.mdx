@@ -1,7 +1,50 @@
 import { HeaderSection } from "components/programs/our-users/HeaderSection";
+import { IntroSection } from "components/programs/our-users/IntroSection";
+import { RegionalNewsSection } from "components/programs/our-users/RegionalNewsSection";
+import { PersonasSection } from "components/programs/our-users/PersonasSection";
+import { getIndexProps } from "lib/helpers";
+
+export const getStaticProps = async (context) => {
+  const {
+    props: { pages: personas },
+  } = await getIndexProps("pages/programs/our-users");
+  const {
+    props: { pages: newsItems },
+  } = await getIndexProps("pages/news");
+
+return { props: { personas, newsItems } };
+};
 
 <HeaderSection>
 
 # Eastern Europe
 
 </HeaderSection>
+
+<IntroSection>
+![](easterneurope.png)
+
+OpenArchive has an active partnership in Eastern Europe.
+
+OpenArchive partnered with the Kharkiv Human Rights Protection Group (KHPG) to support and enhance their impressive archival work. KHPG documents, preserves, and uses evidentiary media to hold Russia accountable for its war crimes and bring justice to the Ukrainian people.
+
+This partnership bolsters KHPG’s work by supporting a decentralized archivist community of journalists, historians, lawyers, and other on-the-ground eyewitnesses to facilitate trainings on best practices for archiving and digital security in active war zones.
+
+Below you’ll find use cases, press releases, and updates from our co-research with our Ukrainian community partners.
+
+</IntroSection>
+
+<RegionalNewsSection items={props.newsItems} region="easterneurope">
+
+## Regional Updates
+
+Read more about our Eastern Europe work in these posts:
+
+</RegionalNewsSection>
+
+<PersonasSection personas={props.personas} region="easterneurope">
+## Personas
+
+The following profiles represent potential **_Save_** users based on our needs assessment research with communities in Ukraine.
+
+</PersonasSection>

@@ -3,7 +3,7 @@ import { Box, Grid } from "@mui/material";
 import { colors } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
 import { FilledButton } from "components/common/FilledButton";
-import { NewsItem } from "components/news/NewsItem";
+import { NewsItem } from "components/common/NewsItem";
 
 type NewsSectionProps = {
   pages: any[];

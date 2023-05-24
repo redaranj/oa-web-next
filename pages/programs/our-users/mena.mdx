@@ -1,7 +1,50 @@
 import { HeaderSection } from "components/programs/our-users/HeaderSection";
+import { IntroSection } from "components/programs/our-users/IntroSection";
+import { RegionalNewsSection } from "components/programs/our-users/RegionalNewsSection";
+import { PersonasSection } from "components/programs/our-users/PersonasSection";
+import { getIndexProps } from "lib/helpers";
+
+export const getStaticProps = async (context) => {
+  const {
+    props: { pages: personas },
+  } = await getIndexProps("pages/programs/our-users");
+  const {
+    props: { pages: newsItems },
+  } = await getIndexProps("pages/news");
+
+return { props: { personas, newsItems } };
+};
 
 <HeaderSection>
 
 # MENA
 
 </HeaderSection>
+
+<IntroSection>
+![](mena.png)
+
+OpenArchive has two active partnerships in the MENA region.
+
+In 2023, OpenArchive partnered with the Iraqi Network for Social Media (INSM-Iraq), the first network of digital rights defenders and experts in Iraq, to bolster their archiving efforts and workflows. Established in 2011, INSM-Iraq is a nonprofit, nongovernmental civil society organization that advocates for a free, open, diverse, and safe internet.
+
+OpenArchive and a Sudanese NGO – who wishes to remain anonymous due to security concerns – joined forces in Spring 2023 to strengthen the resources and support for those documenting and archiving injustices at a time of burgeoning crisis and conflict.
+
+Below you’ll find use cases, press releases, and updates from our co-research with our Iraqi and Sudanese community partners.
+
+</IntroSection>
+
+<RegionalNewsSection items={props.newsItems} region="mena">
+
+## Regional Updates
+
+Read more about our MENA work in these posts:
+
+</RegionalNewsSection>
+
+<PersonasSection personas={props.personas} region="mena">
+## Personas
+
+The following profiles represent potential **_Save_** users based on our needs assessment research with communities in the MENA region.
+
+</PersonasSection>
