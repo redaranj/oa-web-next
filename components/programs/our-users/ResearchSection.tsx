@@ -1,18 +1,11 @@
 import { FC, PropsWithChildren } from "react";
-import { Box, Stack } from "@mui/material";
+import { Box } from "@mui/material";
 import { colors, breakpoints, typography } from "styles/theme";
 import { PageSection } from "components/common/PageSection";
-import { ResearchItem } from "components/programs/our-users/ResearchItem";
+// import { ResearchItem } from "components/programs/our-users/ResearchItem";
 
-type ResearchSectionProps = PropsWithChildren<{
-  pages: any[];
-}>;
-
-export const ResearchSection: FC<ResearchSectionProps> = ({
-  pages,
-  children,
-}) => {
-  const filteredPages = pages.filter((page) => !!page.name);
+export const ResearchSection: FC<PropsWithChildren> = ({ children }) => {
+  // const filteredPages = pages.filter((page) => !!page.name);
   const { white } = colors;
   const { bodyLarge } = typography;
   const { ps, pl, ts, tl, ds, dl } = breakpoints;
@@ -50,11 +43,11 @@ export const ResearchSection: FC<ResearchSectionProps> = ({
       }}
     >
       <Box sx={{ pt: 4, pb: 4, "> p": bodyLarge }}>{children}</Box>
-      <Stack spacing={6} sx={{ a: { textDecoration: "none" } }}>
+      {/*       <Stack spacing={6} sx={{ a: { textDecoration: "none" } }}>
         {filteredPages.map((page) => (
           <ResearchItem key={page.path} {...page} />
         ))}
-      </Stack>
+      </Stack> */}
     </PageSection>
   );
 };

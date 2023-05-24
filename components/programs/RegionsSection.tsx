@@ -3,7 +3,6 @@ import Image, { StaticImageData } from "next/legacy/image";
 import Link from "next/link";
 import { Box, Grid } from "@mui/material";
 import { colors, typography, breakpoints, loader } from "styles/theme";
-import { PageSection } from "components/common/PageSection";
 import northAmerica from "public/images/northamerica.png";
 import latinAmerica from "public/images/latam.png";
 import easternEurope from "public/images/easterneurope.png";
@@ -33,7 +32,7 @@ const RegionItem: FC<RegionItemProps> = ({ image, name, url }) => {
         borderRadius: 2,
         width: "50%",
         [ps]: { width: "100%" },
-        [ts]: { width: "50%" },
+        [ts]: { width: "33%" },
       }}
     >
       <Link href={url}>
@@ -65,44 +64,41 @@ const RegionItem: FC<RegionItemProps> = ({ image, name, url }) => {
 };
 
 export const RegionsSection: FC<PropsWithChildren> = ({ children }) => {
-  const { white } = colors;
   const { bodyLarge } = typography;
 
   return (
-    <PageSection backgroundColor={white}>
-      <Grid container direction="column">
-        <Grid item>
-          <Box sx={{ "> p": bodyLarge }}>{children}</Box>
-        </Grid>
-        <Grid
-          item
-          container
-          sx={{
-            flexDirection: "row",
-          }}
-        >
-          <RegionItem
-            image={northAmerica}
-            name="North America"
-            url="/programs/our-users/northamerica"
-          />
-          <RegionItem
-            image={latinAmerica}
-            name="Latin America"
-            url="/programs/our-users/latam"
-          />
-          <RegionItem
-            image={easternEurope}
-            name="Eastern Europe"
-            url="/programs/our-users/easterneurope"
-          />
-          <RegionItem
-            image={mena}
-            name="Middle East and North Africa"
-            url="/programs/our-users/mena"
-          />
-        </Grid>
+    <Grid container direction="column" sx={{ mb: 8 }}>
+      <Grid item>
+        <Box sx={{ "> p": bodyLarge }}>{children}</Box>
       </Grid>
-    </PageSection>
+      <Grid
+        item
+        container
+        sx={{
+          flexDirection: "row",
+        }}
+      >
+        <RegionItem
+          image={northAmerica}
+          name="North America"
+          url="/programs/our-users/northamerica"
+        />
+        <RegionItem
+          image={latinAmerica}
+          name="Latin America"
+          url="/programs/our-users/latam"
+        />
+        <RegionItem
+          image={easternEurope}
+          name="Eastern Europe"
+          url="/programs/our-users/easterneurope"
+        />
+        <RegionItem
+          image={mena}
+          name="Middle East and North Africa"
+          url="/programs/our-users/mena"
+        />
+      </Grid>
+    </Grid>
   );
 };
