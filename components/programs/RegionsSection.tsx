@@ -32,7 +32,7 @@ const RegionItem: FC<RegionItemProps> = ({ image, name, url }) => {
         borderRadius: 2,
         width: "50%",
         [ps]: { width: "100%" },
-        [ts]: { width: "33%" },
+        [ts]: { width: "50%" },
       }}
     >
       <Link href={url}>
