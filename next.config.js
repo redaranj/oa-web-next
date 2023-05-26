@@ -23,7 +23,6 @@ const config = withMDX({
   images: {
     loader: "custom",
   },
-  basePath: "/oa-web-next",
   compiler: {
     emotion: true,
   },

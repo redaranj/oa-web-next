@@ -3,9 +3,9 @@ import Image, { StaticImageData } from "next/legacy/image";
 import Link from "next/link";
 import { Box, Grid } from "@mui/material";
 import { colors, typography, breakpoints, loader } from "styles/theme";
-import northAmerica from "public/images/northamerica.png";
+import northAmerica from "public/images/north-america.png";
 import latinAmerica from "public/images/latam.png";
-import easternEurope from "public/images/easterneurope.png";
+import easternEurope from "public/images/eastern-europe.png";
 import mena from "public/images/mena.png";
 
 type RegionItemProps = {
@@ -81,7 +81,7 @@ export const RegionsSection: FC<PropsWithChildren> = ({ children }) => {
         <RegionItem
           image={northAmerica}
           name="North America"
-          url="/programs/our-users/northamerica"
+          url="/programs/our-users/north-america"
         />
         <RegionItem
           image={latinAmerica}
@@ -91,7 +91,7 @@ export const RegionsSection: FC<PropsWithChildren> = ({ children }) => {
         <RegionItem
           image={easternEurope}
           name="Eastern Europe"
-          url="/programs/our-users/easterneurope"
+          url="/programs/our-users/easter-neurope"
         />
         <RegionItem
           image={mena}
